@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+ <html>
+	 <title>Default Exported</title>
+
+	<head>
+		<meta name="viewport" content="width-device-width, initial-scale=1">
+		<meta name="generator" content="DBM v2021">
+		<meta charset ="UTF-8">
+		<style>
+				table,td, th {border:1 px solid #ddd;text-align:left;}
+				table {border-collapse: collapse; width: 100%;}
+				th,td {padding: 5px;}
+				tr:hover{background-color:#f5f5f5}
+				th,td#Main {background-color: #4CAF50;color: white;font-size:120%;border:0px;text-align:center}
+		</style>
+	</head>
+
+	<body>
+		<div style="overflow-x:auto;">
+			<table>
+				<tr>
+					<td id="Main" colspan="2">Default</td>
+				</tr>
+				<tr>
+					<th>ID</th>
+					<th>Help</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>5</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

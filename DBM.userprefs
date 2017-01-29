@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{88F827AA-CAD0-4FED-980D-83B9821E9BBB}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.DBM PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DBM\DBM.cs">
+    <Files>
+      <File FileName="DBM\DBM.cs" Line="180" Column="6" />
+      <File FileName="DBM\Settings.cs" Line="87" Column="4" />
+      <File FileName="DBM\SQLITE.cs" Line="63" Column="13" />
+      <File FileName="DBM\Plugin.cs" Line="43" Column="6" />
+      <File FileName="DBM\GlobalStatic.cs" Line="92" Column="55" />
+      <File FileName="DBM\Utilities.cs" Line="83" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
