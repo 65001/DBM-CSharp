@@ -133,10 +133,12 @@ namespace DBM
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQLVIEW , GlobalStatic.UserName, "Auto Creation Statements", false);
 			Engines.Command(GlobalStatic.TransactionDB, GlobalStatic.TransactionsSQL , GlobalStatic.UserName, "Auto Creation Statements", false);
 
-			TextWindow.WriteLine(Engines.Load_DB(4,GlobalStatic.LogDBpath) + ":" + GlobalStatic.LogDB);
+			GlobalStatic.LogNumber = Engines.Query(GlobalStatic.LogDB,"SELECT COUNT(ID) FROM LOG;",null,true,GlobalStatic.UserName,"Fetch Log")[1]["COUNT(ID)"];
+			//TextWindow.WriteLine(GlobalStatic.LogNumber);
+			//TextWindow.WriteLine(Engines.Load_DB(4,GlobalStatic.LogDBpath) + ":" + GlobalStatic.LogDB);
 		}
 
-		static void AddToList(string Path,string Name,string ShortName,int Engine) 
+		private static void AddToList(string Path,string Name,string ShortName,int Engine)  
 		{
 			LDList.Add(GlobalStatic.List_DB_Path, Path);
 			LDList.Add(GlobalStatic.List_DB_Name, Name);

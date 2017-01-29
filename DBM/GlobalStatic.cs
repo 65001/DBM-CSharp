@@ -22,12 +22,12 @@ namespace DBM
 
 			//Self Aware Data
 			public const string Copyright = "2016 through 2017";
-			public const string ProductID = "DBM";
+			public const string ProductID = "DBM C#";
 			public const int VersionID = 1122;
 
-			public static int DefaultWidth, DefaultHeight;
+			public static int DefaultWidth, DefaultHeight,DefaultFontSize,LogNumber;
 
-			public static string UserName = LDFile.UserName;
+			public static string UserName = LDFile.UserName,CurrentDatabase;
 			//URI
 			public static string AssetPath = ProgramDirectory + "\\Assets\\";
 			public static string LocalizationFolder = ProgramDirectory + "\\Localization\\";
@@ -50,9 +50,7 @@ namespace DBM
 			public static int Listview_Height;
 			public static int LastVersion;
 			public static Primitive Extensions;
-			public static bool Transactions;
-			public static bool Transaction_Query;
-			public static bool Transaction_Commands;
+			public static bool Transactions,Transaction_Query,Transaction_Commands;
 			public static string Deliminator;
 			public static int TimeOut;
 			public static string LastFolder;
@@ -61,9 +59,10 @@ namespace DBM
 			public static bool EULA_Acceptance;
 			public static string LanguageCode;
 			public static string EULA_Newest_Version;
-			public static Primitive LangList;
+			public static Primitive LangList,Schema;
 			//Lists
-			public static string ExportT2 = "Export T2"; public static string ExportT1 = "Export T1";
+			public static string ExportT2 = "Export T2",ExportT1 = "Export T1";
+
 			public static string TrackDefaultTable = "TrackDefaultTable";
 			public static string List_Mod_Name = "Mod_Name";
 			public static string List_Mod_Path = "Mod_Path";

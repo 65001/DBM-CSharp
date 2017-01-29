@@ -119,11 +119,21 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.MainMenu()");
 			LDGraphicsWindow.ExitButtonMode(GraphicsWindow.Title, "Enabled");
 			GraphicsWindow.CanResize = true;
-
-			if (GlobalStatic.DebugMode == true) //Implement
-				{ }
-			else if (GlobalStatic.DebugMode == false)//Implement
-				{ }
+			GlobalStatic.CheckList[GlobalStatic.LangList["Toggle Debug"]] = GlobalStatic.DebugMode;
+			GlobalStatic.CheckList[GlobalStatic.LangList["Toggle Transaction Log"]] = GlobalStatic.Transactions;
+			LDGraphicsWindow.State = 2;
+			GraphicsWindow.Title = GlobalStatic.Title + " ";
+			GlobalStatic.DefaultFontSize = GraphicsWindow.FontSize;
+			if (GlobalStatic.DebugMode == true) //Implement 
+			{
+				Events.LogMessage("Debug Mode is ON", "UI"); //Localize
+			}
+			 Primitive Sorts;
+			Sorts = "1=" + GlobalStatic.LangList["Table"] + ";2= " + GlobalStatic.LangList["View"] + ";3=" + GlobalStatic.LangList["Index"] + ";4=" +GlobalStatic.LangList["Master Table"] + ";";
+			if (GlobalStatic.CurrentDatabase != null)
+			{
+				Engines.GetSchema(GlobalStatic.CurrentDatabase);
+			}
 		}
 
 		static string GetPath(int EngineMode)
@@ -175,26 +185,51 @@ namespace DBM
 
 	public static class Events
 	{
-		public static void LogEvents()
+		public static void LogEvents() //Error Handler
 		{
-			//TextWindow.WriteLine("Error : " + LDEvents.LastError);
-			Events.LogMessage(LDEvents.LastError, "Error");
+			Events.LogMessage(LDEvents.LastError, GlobalStatic.LangList["System"]);
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogEvents()");
 		}
-		public static void LogMessage(Primitive Message, Primitive Type) //Logs Message to all applicable locations
+
+		public static void LogMessage(Primitive Message, string Type) //Logs Message to all applicable locations
 		{
-			
-			TextWindow.WriteLine(LDList.GetAt(GlobalStatic.List_Stack_Trace, LDList.Count(GlobalStatic.List_Stack_Trace))+":"+ Type + ":" + Message);
+			if (GlobalStatic.DebugMode = true && Type != GlobalStatic.LangList["System"]) //Writes Log Message to TextWindow
+			{
+				TextWindow.WriteLine(LDList.GetAt(GlobalStatic.List_Stack_Trace, LDList.Count(GlobalStatic.List_Stack_Trace)) + ":" + Type + ":" + Message);
+			}
+
+			if (Type.Equals("Debug") == true && GlobalStatic.DebugMode == false) { }
+			else
+			{
+				if (string.IsNullOrEmpty(Type)) { Type = "Unknown"; }
+				if (GlobalStatic.DebugMode == true)
+				{
+					if (Text.IsSubText(Message, "LDDataBase.Query") == true || Text.IsSubText(Message, "LDDataBase.Command") == true) 
+					{
+						TextWindow.WriteLine(GlobalStatic.CurrentDatabase + "\n" + Message);
+					}
+				}
+			}
+			GlobalStatic.LogNumber = GlobalStatic.LogNumber + 1;
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogMessage()");
+
+			SBFile.AppendContents(GlobalStatic.LogCSVpath,GlobalStatic.LogNumber +"," + Clock.Date + "," + Clock.Time +"," + "\"" + LDText.Replace( GlobalStatic.Username , "\"" , "\"" + "\"" ) + "\"" +"," + GlobalStatic.ProductID +","+ GlobalStatic.VersionID+"," + "\"" +  LDText.Replace( Type, "\"" , "\"" + "\"") + "\"" +","+  "\"" +  LDText.Replace(Message ,"\"" , "\"" + "\"" ) + "\"");
+			string LogCMD;
+			LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'";
+				LogCMD = LogCMD + GlobalStatic.Username + "','" + GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');";
+			Engines.Command(GlobalStatic.LogDB, LogCMD, GlobalStatic.LangList["App"], GlobalStatic.LangList["Auto Log"],false);
+
 		}
 		public static void BC()
 		{
 			TextWindow.WriteLine(Controls.LastClickedButton);
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.BC()");
 		}
+
 		public static void Closing() //Implement
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.Closing()");
 		}
+
 	}
 }

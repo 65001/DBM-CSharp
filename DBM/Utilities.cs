@@ -111,7 +111,7 @@ namespace DBM
 					LDList.SetAt(GlobalStatic.List_UI_Action, index, Action);
 				}
 
-				if (PreviousNode_OR_ToolTip == "" || PreviousNode_OR_ToolTip.Equals(null) == true)
+				if (!string.IsNullOrWhiteSpace(PreviousNode_OR_ToolTip))
 				{
 					LDDialogs.ToolTip(Caption_OR_Name, PreviousNode_OR_ToolTip);
 				}
