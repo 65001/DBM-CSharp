@@ -36,6 +36,8 @@
     <Compile Include="GlobalStatic.cs" />
     <Compile Include="EULA.cs" />
     <Compile Include="Utilities.cs" />
+    <Compile Include="UnitTests.cs" />
+    <Compile Include="Handlers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SmallBasicLibrary">
@@ -47,6 +49,12 @@
     <Reference Include="LitDev">
       <HintPath>..\..\..\..\..\..\Program Files %28x86%29\Microsoft\Small Basic\lib\LitDev.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

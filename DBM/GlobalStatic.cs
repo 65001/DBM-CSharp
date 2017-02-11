@@ -11,7 +11,7 @@ namespace DBM
 		{
 			public static string ProgramDirectory = Program.Directory;
 			public static string Username = LDFile.UserName;
-			public static float Ping;
+			public static int Ping;
 			public static string TabKey = Text.GetCharacter(9);
 			public static bool DebugMode;
 			public static bool DebugParser;

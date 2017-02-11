@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+ * using System;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 using SBArray = Microsoft.SmallBasic.Library.Array;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 namespace DBM
 {
+	
 	public class Plugin
 	{
 		public static void FindAll()
@@ -23,27 +25,58 @@ namespace DBM
 				}
 			}
 		}
-		public static Primitive AutoRunFile(string URI) //IMPLEMENT 
+		public static string[] AutoRunFile(string URI) //IMPLEMENT 
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Plugin. AutoRunFile()");
 				return Utilities.ReadFile(URI);
 		}
-		public static void AutoRun(Primitive ListOfPluginsToExecute) //Implement
-		{ 
+		public static void AutoRun(string[] ListOfPluginsToExecute) //Implement
+		{
+			for (int i = 0; i < ListOfPluginsToExecute.Length; i++)
+			{
+				Console.WriteLine(ListOfPluginsToExecute[i]);
+			}
+		//	GraphicsWindow.ShowMessage("Currently not supported!", "");
 		LDList.Add(GlobalStatic.List_Stack_Trace, "Plugin.AutoRun()");
 		}
+
 
 		public static void Menu(string URI) //IMPLEMENT 
 		{
 		LDList.Add(GlobalStatic.List_Stack_Trace, "Plugin.Menu)");
+			Console.WriteLine("External Menu from {0} and it exists? {1}",URI,LDFile.Exists(URI));
 			if (LDFile.Exists(URI) == true) 
 			{
-				Primitive CNTS = Utilities.ReadFile(URI);
-				for (int i = 1; i < SBArray.GetItemCount(CNTS); i++)
+				string[] CNTS = Utilities.ReadFile(URI);
+				string[][] CNTS2= new string[CNTS.Length][];
+				for (int i = 0; i < CNTS.Length; i++)
 				{
+					CNTS2[i] = new string[1] { CNTS[i]};
+					//CNTS2[i] = CNTS[i];
+					for (int ii = 1; ii < CNTS2[i].Length; i++) 
+					{ 
+						Console.WriteLine("MENU : {0} : {1}", ii, CNTS2[i][ii]);
+					}
+				}
+				//Array.GetItemCount(CNTS);
+				//CNTS.GetLength();
+				/*for (int i = 1; i <= SBArray.GetItemCount(CNTS); i++)
+				{
+					if ( (CNTS[i][6] == 1 || CNTS[i][6] == string.Empty) && GlobalStatic.LangList[CNTS[i][2]] != string.Empty )
+					{
+						Primitive Temp = CNTS[i]; Temp = GlobalStatic.LangList[GlobalStatic.LangList[i][2]];
+						CNTS[i] = Temp; 
+					}
+					if (!string.IsNullOrEmpty(GlobalStatic.LangList[CNTS[i][4]]))
+					{
+						CNTS[i][4] = GlobalStatic.LangList[CNTS[i][4]];
+					}
 
 				}
+				GlobalStatic.MenuList = CNTS;
+
 			}
+
 		}
 	}
-}
+}*/

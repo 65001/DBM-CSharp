@@ -9,8 +9,7 @@ namespace DBM
 {
 	public class Utilities
 	{
-		// Loads localized text from XML File
-		public static void LocalizationXML() 
+		public static void LocalizationXML()  // Loads localized text from XML File
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Utilities.LocalizationXML()");
 			string XMLPath = GlobalStatic.LocalizationFolder + GlobalStatic.LanguageCode + ".xml";
@@ -41,31 +40,42 @@ namespace DBM
 				Events.LogMessage("Localization XML Missing", "Application");
 			}
 		}
+
 		static string XMLAttributes() { return "1=" + LDText.Replace(LDText.Replace(LDxml.Attributes, "=", "\\="), ";", "\\;") + ";2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
 
 		// Reads File and Parses it
-		public static Primitive ReadFile(string URI)
+		public static string[] ReadFile(string URI) //Reads a file and ignores certain types of data
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Utilities.ReadFile()");
 			string List_File_Read = "File_Read";
-			if (LDFile.Exists(URI) == true)
+
+			if (System.IO.File.Exists(URI) == true)
 			{
 				LDList.Clear(List_File_Read);
-				Primitive CNTS = LDFile.ReadToArray(URI);
-				int itemCount = SBArray.GetItemCount(CNTS);
-				for (int i = 1; i <= itemCount; i++)
+				string[] CNTS = System.IO.File.ReadAllLines(URI);
+				int itemCount = CNTS.Length;
+				for (int i = 0; i < itemCount; i++)
 				{
-					if (Text.StartsWith(CNTS[i], "#") == false && CNTS[i] != " ")
+					if (Text.StartsWith(CNTS[i], "#") == false && !string.IsNullOrWhiteSpace( CNTS[i] ) )
 					{
 						LDList.Add(List_File_Read, CNTS[i]);
 					}
+						CNTS[i] = null;
 				}
-				CNTS = LDList.ToArray(List_File_Read);
+				string[] CNTS2 = new string[LDList.Count(List_File_Read)];
+				for (int i = 1; i < LDList.Count(List_File_Read); i++)
+				{
+					CNTS2[i] = LDList.GetAt(List_File_Read, i);
+				}
 				LDList.Clear(List_File_Read);
-				return CNTS;
+				return CNTS2;
 			}
-			Events.LogMessage("URI isn't accessable or incorrect Parameters given.", "Exception");
-			return 0;
+			else 
+			{
+				Events.LogMessage("URI isn't accessable or incorrect Parameters given.", "Exception");
+			}
+
+			return null;
 		}
 
 		// Update Function

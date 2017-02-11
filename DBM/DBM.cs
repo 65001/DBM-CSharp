@@ -69,7 +69,7 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Startup()");
 			Settings.LoadSettings(); //Load Application Settings from text file
 			Settings.IniateDatabases();
-			Plugin.FindAll();
+			//Plugin.FindAll();
 			Utilities.LocalizationXML();
 			Events.LogMessage(GlobalStatic.LangList["PRGM Start"], GlobalStatic.LangList["Application"]);
 			if (Program.ArgumentCount == 1)
@@ -103,7 +103,7 @@ namespace DBM
 			LDScrollBars.Add(GlobalStatic.Listview_Width + 500, GlobalStatic.Listview_Height);
 			LDGraphicsWindow.State = 2;
 			PreMainMenu();
-			Plugin.AutoRun(Plugin.AutoRunFile(GlobalStatic.AutoRunPluginPath));
+			//Plugin.AutoRun( Plugin.AutoRunFile(GlobalStatic.AutoRunPluginPath) );
 			Events.LogMessage("Startup Time: " + (Clock.ElapsedMilliseconds - UI.StartTime) + " (ms)", GlobalStatic.LangList["UI"]);
 			MainMenu();
 		}
@@ -111,7 +111,63 @@ namespace DBM
 		public static void PreMainMenu() //Implement //Defines Buttons
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.PreMainMenu()");
-			//string Button_View = GlobalStatic.LangList["View"];
+			GlobalStatic.DefaultFontSize = GraphicsWindow.FontSize;
+			//Main
+			GlobalStatic.MenuList[GlobalStatic.LangList["File"]] = "Main";
+			GlobalStatic.MenuList[GlobalStatic.LangList["Edit"]] = "Main";
+			GlobalStatic.MenuList[GlobalStatic.LangList["View"]] = "Main";
+			GlobalStatic.MenuList[GlobalStatic.LangList["Save"]] = "Main";
+			GlobalStatic.MenuList[GlobalStatic.LangList["Import"]] = "Main";
+			GlobalStatic.MenuList[GlobalStatic.LangList["Export"]] = "Main";
+			GlobalStatic.MenuList[GlobalStatic.LangList["Settings"]] = "Main";
+			GlobalStatic.MenuList["Developer"] = "Main"; //Localize
+			GlobalStatic.MenuList["Plugin"] = "Main"; //Localize
+			//File
+			GlobalStatic.MenuList[GlobalStatic.LangList["New"]] = GlobalStatic.LangList["File"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["Open"]] = GlobalStatic.LangList["File"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["Define New Table"]] = GlobalStatic.LangList["File"];
+			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["File"];
+			//Import
+			GlobalStatic.MenuList[GlobalStatic.LangList["CSV"]] = GlobalStatic.LangList["Import"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["SQL"]] = GlobalStatic.LangList["Import"];
+			GlobalStatic.MenuList["Converter"] = GlobalStatic.LangList["Import"]; //Localize
+			GlobalStatic.MenuList["HTML to CSV"] = "Converter"; //Localize
+			GlobalStatic.MenuList["-"] = "Converter";
+			GlobalStatic.MenuList["-"] = "Import";
+			//Export
+			GlobalStatic.MenuList[GlobalStatic.LangList["CSV"]+" "] = GlobalStatic.LangList["Export"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["SQL"] + " "]= GlobalStatic.LangList["Export"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["PXML"] + " "]= GlobalStatic.LangList["Export"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["HTML"] + " "]= GlobalStatic.LangList["Export"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["Export UI"]]= GlobalStatic.LangList["Export"];
+			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["Export"];
+			//Settings
+			GlobalStatic.MenuList[GlobalStatic.LangList["Help"]] = GlobalStatic.LangList["Settings"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["About"]] = GlobalStatic.LangList["Help"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["Show Help"]] = GlobalStatic.LangList["Help"];
+			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["Help"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["Settings Editor"]] = GlobalStatic.LangList["Settings"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["Toggle Debug"]] = GlobalStatic.LangList["Settings"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["Toggle Transaction Log"]] = GlobalStatic.LangList["Settings"];
+			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["Toggle Transaction Log"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["Refresh Schema"]] = GlobalStatic.LangList["Settings"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["Check for Updates"]] = GlobalStatic.LangList["Settings"];
+			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["Settings"];
+
+
+			//Developer
+			GlobalStatic.MenuList["Stack Trace"] = "Developer";
+			GlobalStatic.MenuList["Close TW"] = "Developer";
+			GlobalStatic.MenuList["Define New Table"+" "] = "Developer";
+			GlobalStatic.MenuList["Create Statistics Page"] = "Developer";
+			//Plugin Section
+			GlobalStatic.MenuList["SB Backup Script"] = "Plugin";
+			GlobalStatic.MenuList["Scan"] = "SB Backup Script";
+			GlobalStatic.MenuList["View"] = "SB Backup Script";
+			GlobalStatic.MenuList["ICF"] = "Plugin";
+
+			//Plugin.Menu(GlobalStatic.External_Menu_Items_Path);
+			string Button_View = GlobalStatic.LangList["View"];
 		}
 
 		public static void MainMenu() //Implement
@@ -119,8 +175,10 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.MainMenu()");
 			LDGraphicsWindow.ExitButtonMode(GraphicsWindow.Title, "Enabled");
 			GraphicsWindow.CanResize = true;
+
 			GlobalStatic.CheckList[GlobalStatic.LangList["Toggle Debug"]] = GlobalStatic.DebugMode;
 			GlobalStatic.CheckList[GlobalStatic.LangList["Toggle Transaction Log"]] = GlobalStatic.Transactions;
+
 			LDGraphicsWindow.State = 2;
 			GraphicsWindow.Title = GlobalStatic.Title + " ";
 			GlobalStatic.DefaultFontSize = GraphicsWindow.FontSize;
@@ -134,6 +192,19 @@ namespace DBM
 			{
 				Engines.GetSchema(GlobalStatic.CurrentDatabase);
 			}
+			GraphicsWindow.FontSize = 20;
+			string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, GlobalStatic.MenuList, null, GlobalStatic.CheckList);
+			GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
+			LDControls.MenuClicked += Events.MC;
+
+			//Test Code
+			//string Listview = LDDataBase.AddListView( GlobalStatic.Listview_Width, GlobalStatic.Listview_Height);
+			//string Path = "C:\\Users\\Abhishek\\Documents\\Proggraming\\SB\\Projects\\DB Manager\\Assets\\Test DB\\Test 2.db";
+			//string TestDB = Engines.Load_DB(4,Path);
+			//TextWindow.WriteLine(TestDB+":"+ Path +":" + LDFile.Exists(Path));
+			//Primitive start = Clock.ElapsedMilliseconds;
+			//Engines.Query(TestDB, "Select * From Majestic_million", Listview, false, null, null);
+			//TextWindow.WriteLine("Completed : " + ( Clock.ElapsedMilliseconds - start ) );
 		}
 
 		static string GetPath(int EngineMode)
@@ -223,6 +294,12 @@ namespace DBM
 		public static void BC()
 		{
 			TextWindow.WriteLine(Controls.LastClickedButton);
+			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.BC()");
+		}
+
+		public static void MC()
+		{ 
+			TextWindow.WriteLine(LDControls.LastMenuItem);
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.BC()");
 		}
 

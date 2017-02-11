@@ -11,7 +11,7 @@ namespace DBM
 	public static class Engines
 	{
 
-		public static int Command(Primitive Database, string SQL, string User, string Explanation, bool RunParser)
+		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Command()");
 			if (RunParser == false)
@@ -36,7 +36,7 @@ namespace DBM
 			}
 			else if (RunParser == true)
 			{
-				Console.WriteLine("Currently not Supported!");
+				Console.WriteLine("Database type currently not supported!");
 			}
 			return 0;
 		}
@@ -51,7 +51,7 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Query()");
 			int EngineMode = Engine_Type(DataBase);
 			TransactionRecord(UserName, DataBase, SQL, "Query", Explanation);
-
+			TextWindow.WriteLine(EngineMode +":"+ DataBase);
 			switch (EngineMode)
 			{
 				case 1:
@@ -61,6 +61,7 @@ namespace DBM
 				case 3:
 					return 0;
 				case 4:
+					TextWindow.WriteLine(ListView);
 					return LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
 				case 5:
 					return 0;
@@ -94,10 +95,11 @@ namespace DBM
 					if (LDFile.Exists(Data) == true)
 					{
 						int Index = LDList.GetAt(GlobalStatic.List_DB_Path, Data);
-						//TextWindow.WriteLine("LOAD DB INDEX : " + Index);
-
+						TextWindow.WriteLine("LOAD DB INDEX : " + Index);
+						TextWindow.WriteLine(Data);
 						if (Index == 0) //New Database
 						{
+							//TextWindow.WriteLine("New DB");
 							string Database = LDDataBase.ConnectSQLite(Data);
 							AddToList(Data, Database, LDFile.GetFile(Data), 4);
 							GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data);
@@ -107,6 +109,7 @@ namespace DBM
 						}
 						else
 						{
+							//TextWindow.WriteLine("Old db");
 							string Database = LDList.GetAt(GlobalStatic.List_DB_Name, Index);
 							LDList.Add(GlobalStatic.List_DB_ShortName, LDList.GetAt(GlobalStatic.List_DB_ShortName, Index));
 							GlobalStatic.CurrentDatabase = Database;
