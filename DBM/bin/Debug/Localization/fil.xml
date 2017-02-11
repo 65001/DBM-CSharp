@@ -90,5 +90,9 @@
     <Import_SQL language="fil">Import SQL</Import_SQL>
     <Plugin language="fil">Plugin</Plugin>
     <Opened language="fil">Binuksan</Opened>
+    <Converter language="fil">Ng conversion</Converter>
+    <HTML_to_CSV language="fil">HTML na CSV</HTML_to_CSV>
+    <Developer language="fil">Developer</Developer>
+    <Stack_Trace language="fil">Pagtunton ng stack</Stack_Trace>
   </Language>
 </root>

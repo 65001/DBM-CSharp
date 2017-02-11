@@ -90,5 +90,9 @@
     <Import_SQL language="et">Impordi SQL</Import_SQL>
     <Plugin language="et">Plugin</Plugin>
     <Opened language="et">Avatud</Opened>
+    <Converter language="et">Converter</Converter>
+    <HTML_to_CSV language="et">HTML, CSV</HTML_to_CSV>
+    <Developer language="et">Arendaja</Developer>
+    <Stack_Trace language="et">Stack Trace</Stack_Trace>
   </Language>
 </root>

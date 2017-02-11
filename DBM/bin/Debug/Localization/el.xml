@@ -90,5 +90,9 @@
     <Import_SQL language="el">Εισαγωγής SQL</Import_SQL>
     <Plugin language="el">Plugin</Plugin>
     <Opened language="el">Άνοιξε</Opened>
+    <Converter language="el">Μετατροπέας</Converter>
+    <HTML_to_CSV language="el">HTML σε μορφή CSV</HTML_to_CSV>
+    <Developer language="el">Προγραμματιστής</Developer>
+    <Stack_Trace language="el">Ιχνηλάτηση στοίβας</Stack_Trace>
   </Language>
 </root>

@@ -90,5 +90,9 @@
     <Import_SQL language="mt">Importazzjoni SQL</Import_SQL>
     <Plugin language="mt">Plug-in</Plugin>
     <Opened language="mt">Miftuħa</Opened>
+    <Converter language="mt">Konvertitur</Converter>
+    <HTML_to_CSV language="mt">HTML biex CSV</HTML_to_CSV>
+    <Developer language="mt">Iżviluppatur</Developer>
+    <Stack_Trace language="mt">Mazz traċċa</Stack_Trace>
   </Language>
 </root>

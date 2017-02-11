@@ -90,5 +90,9 @@
     <Import_SQL language="otq">Importación SQL</Import_SQL>
     <Plugin language="otq">Plugin</Plugin>
     <Opened language="otq">Abierto</Opened>
+    <Converter language="otq">Convertidor</Converter>
+    <HTML_to_CSV language="otq">HTML CSV</HTML_to_CSV>
+    <Developer language="otq">Desarrollador</Developer>
+    <Stack_Trace language="otq">Seguimiento ar pila</Stack_Trace>
   </Language>
 </root>

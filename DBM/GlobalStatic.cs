@@ -88,7 +88,7 @@ namespace DBM
 			public static string List_Time_Refer = "Time_Ref";
 			public static string List_ISO_Lang = "ISO_Lang";
 			public static string List_ISO_Text = "ISO_Text";
-			public static Primitive MenuList,CheckList,Buttons;
+			public static Primitive MenuList,CheckList,Buttons,ComboBox;
 			public static string Title = "Database Manager (" + ProductID + ") v" + VersionID + " ";
 			public const string AutoRunPluginMessage = "# This file designates the Mod and the subroutine the main program should call on the start of the program.\n# Use this to run your program at start up.\n# The Program accepts any of the following:\n#\tMod Name.Sub Name\n#\t1=Mod Name;2=Sub Name;\n# The character # marks the line as commented.\n# To add UI Elements without starting up your program (Please do this if you can) alter the MENU.txt file.";
 

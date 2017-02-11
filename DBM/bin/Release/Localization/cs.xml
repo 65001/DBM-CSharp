@@ -90,5 +90,9 @@
     <Import_SQL language="cs">Importovat SQL</Import_SQL>
     <Plugin language="cs">Plugin</Plugin>
     <Opened language="cs">Otevřen</Opened>
+    <Converter language="cs">Převodník</Converter>
+    <HTML_to_CSV language="cs">HTML a CSV</HTML_to_CSV>
+    <Developer language="cs">Vývojář</Developer>
+    <Stack_Trace language="cs">Trasování zásobníku</Stack_Trace>
   </Language>
 </root>

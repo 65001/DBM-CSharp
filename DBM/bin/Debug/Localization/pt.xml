@@ -90,5 +90,9 @@
     <Import_SQL language="pt">Importação SQL</Import_SQL>
     <Plugin language="pt">Plugin</Plugin>
     <Opened language="pt">Abriu</Opened>
+    <Converter language="pt">Conversor</Converter>
+    <HTML_to_CSV language="pt">HTML para CSV</HTML_to_CSV>
+    <Developer language="pt">Desenvolvedor</Developer>
+    <Stack_Trace language="pt">Rastreamento de pilha</Stack_Trace>
   </Language>
 </root>

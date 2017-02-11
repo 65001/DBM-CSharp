@@ -90,5 +90,9 @@
     <Import_SQL language="he">ייבוא SQL</Import_SQL>
     <Plugin language="he">תוסף</Plugin>
     <Opened language="he">נפתח</Opened>
+    <Converter language="he">ממיר</Converter>
+    <HTML_to_CSV language="he">HTML כדי CSV</HTML_to_CSV>
+    <Developer language="he">מפתח</Developer>
+    <Stack_Trace language="he">מעקב מחסנית</Stack_Trace>
   </Language>
 </root>

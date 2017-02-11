@@ -90,5 +90,9 @@
     <Import_SQL language="to">Hiki mai a SQL</Import_SQL>
     <Plugin language="to">Plugin</Plugin>
     <Opened language="to">Fakaava</Opened>
+    <Converter language="to">'Ene fakaului</Converter>
+    <HTML_to_CSV language="to">HTML ki he CSV</HTML_to_CSV>
+    <Developer language="to">Tokotaha fa'u</Developer>
+    <Stack_Trace language="to">Ta 'o e fokotu'unga</Stack_Trace>
   </Language>
 </root>

@@ -90,5 +90,9 @@
     <Import_SQL language="ht">Apwè ke SQL</Import_SQL>
     <Plugin language="ht">Plugin</Plugin>
     <Opened language="ht">Ouvè</Opened>
+    <Converter language="ht">Convertisseur</Converter>
+    <HTML_to_CSV language="ht">HTML pou CSV</HTML_to_CSV>
+    <Developer language="ht">Devlope</Developer>
+    <Stack_Trace language="ht">Pile mak</Stack_Trace>
   </Language>
 </root>

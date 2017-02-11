@@ -90,5 +90,9 @@
     <Import_SQL language="sm">Import SQL</Import_SQL>
     <Plugin language="sm">Plugin</Plugin>
     <Opened language="sm">Tatalaina</Opened>
+    <Converter language="sm">Ola</Converter>
+    <HTML_to_CSV language="sm">HTML e CSV</HTML_to_CSV>
+    <Developer language="sm">Fatu</Developer>
+    <Stack_Trace language="sm">Lolomi o le faaputuga</Stack_Trace>
   </Language>
 </root>

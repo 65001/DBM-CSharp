@@ -90,5 +90,9 @@
     <Import_SQL language="af">Invoer SQL</Import_SQL>
     <Plugin language="af">Plugin</Plugin>
     <Opened language="af">Geopen</Opened>
+    <Converter language="af">Converter</Converter>
+    <HTML_to_CSV language="af">HTML na CSV</HTML_to_CSV>
+    <Developer language="af">Ontwikkelaar</Developer>
+    <Stack_Trace language="af">Stapel spoor</Stack_Trace>
   </Language>
 </root>

@@ -90,5 +90,9 @@
     <Import_SQL language="id">Impor SQL</Import_SQL>
     <Plugin language="id">Plugin</Plugin>
     <Opened language="id">Dibuka</Opened>
+    <Converter language="id">Converter</Converter>
+    <HTML_to_CSV language="id">HTML ke CSV</HTML_to_CSV>
+    <Developer language="id">Pengembang</Developer>
+    <Stack_Trace language="id">Pelacakan stack</Stack_Trace>
   </Language>
 </root>

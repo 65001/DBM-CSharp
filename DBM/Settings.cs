@@ -86,7 +86,6 @@ namespace DBM
 			SaveSettings();
 		}
 
-
 		public static void SaveSettings()
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Settings.SaveSettings()");
@@ -95,7 +94,7 @@ namespace DBM
 				string status = SBFile.WriteContents(GlobalStatic.SettingsPath, GlobalStatic.Settings);
 				if (status == "FAILED") //Settings could not be saved for some reason!
 				{
-					DBM.Events.LogMessage(GlobalStatic.LangList["Failed Save Settings"], GlobalStatic.LangList["UI"]); 
+					Events.LogMessage(GlobalStatic.LangList["Failed Save Settings"], GlobalStatic.LangList["UI"]); 
 					GraphicsWindow.ShowMessage(GlobalStatic.LangList["Failed Save Settings"], GlobalStatic.LangList["Error"]);
 				}
 			}
@@ -134,8 +133,6 @@ namespace DBM
 			Engines.Command(GlobalStatic.TransactionDB, GlobalStatic.TransactionsSQL , GlobalStatic.UserName, "Auto Creation Statements", false);
 
 			GlobalStatic.LogNumber = Engines.Query(GlobalStatic.LogDB,"SELECT COUNT(ID) FROM LOG;",null,true,GlobalStatic.UserName,"Fetch Log")[1]["COUNT(ID)"];
-			//TextWindow.WriteLine(GlobalStatic.LogNumber);
-			//TextWindow.WriteLine(Engines.Load_DB(4,GlobalStatic.LogDBpath) + ":" + GlobalStatic.LogDB);
 		}
 
 		private static void AddToList(string Path,string Name,string ShortName,int Engine)  

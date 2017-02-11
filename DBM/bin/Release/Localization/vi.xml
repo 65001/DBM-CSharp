@@ -90,5 +90,9 @@
     <Import_SQL language="vi">Nhập khẩu SQL</Import_SQL>
     <Plugin language="vi">Plugin</Plugin>
     <Opened language="vi">Khai trương</Opened>
+    <Converter language="vi">Chuyển đổi</Converter>
+    <HTML_to_CSV language="vi">HTML để CSV</HTML_to_CSV>
+    <Developer language="vi">Nhà phát triển</Developer>
+    <Stack_Trace language="vi">Theo dõi stack</Stack_Trace>
   </Language>
 </root>

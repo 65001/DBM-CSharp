@@ -90,5 +90,9 @@
     <Import_SQL language="fr">Importation SQL</Import_SQL>
     <Plugin language="fr">Plugin</Plugin>
     <Opened language="fr">Ouvert</Opened>
+    <Converter language="fr">Convertisseur</Converter>
+    <HTML_to_CSV language="fr">HTML au format CSV</HTML_to_CSV>
+    <Developer language="fr">Développeur</Developer>
+    <Stack_Trace language="fr">Trace de la pile</Stack_Trace>
   </Language>
 </root>

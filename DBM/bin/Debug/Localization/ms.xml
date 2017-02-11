@@ -90,5 +90,9 @@
     <Import_SQL language="ms">Import SQL</Import_SQL>
     <Plugin language="ms">Plugin</Plugin>
     <Opened language="ms">Dibuka</Opened>
+    <Converter language="ms">Penukar</Converter>
+    <HTML_to_CSV language="ms">HTML ke CSV</HTML_to_CSV>
+    <Developer language="ms">Pemaju</Developer>
+    <Stack_Trace language="ms">Kesan tindanan</Stack_Trace>
   </Language>
 </root>

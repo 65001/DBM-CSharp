@@ -90,5 +90,9 @@
     <Import_SQL language="pl">Importu SQL</Import_SQL>
     <Plugin language="pl">Plugin</Plugin>
     <Opened language="pl">Otwarte</Opened>
+    <Converter language="pl">Konwerter</Converter>
+    <HTML_to_CSV language="pl">HTML do pliku CSV</HTML_to_CSV>
+    <Developer language="pl">Deweloper</Developer>
+    <Stack_Trace language="pl">Ślad stosu</Stack_Trace>
   </Language>
 </root>

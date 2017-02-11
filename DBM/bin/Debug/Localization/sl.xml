@@ -90,5 +90,9 @@
     <Import_SQL language="sl">Uvoz SQL</Import_SQL>
     <Plugin language="sl">Plugin</Plugin>
     <Opened language="sl">Odprl</Opened>
+    <Converter language="sl">Pretvornik</Converter>
+    <HTML_to_CSV language="sl">HTML v CSV</HTML_to_CSV>
+    <Developer language="sl">Razvijalec</Developer>
+    <Stack_Trace language="sl">Sled sklada</Stack_Trace>
   </Language>
 </root>

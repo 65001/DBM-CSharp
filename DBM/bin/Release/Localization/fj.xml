@@ -90,5 +90,9 @@
     <Import_SQL language="fj">Vakacurumi SQL</Import_SQL>
     <Plugin language="fj">Plugin</Plugin>
     <Opened language="fj">Dolavi</Opened>
+    <Converter language="fj">Dauvuki</Converter>
+    <HTML_to_CSV language="fj">HTML me CSV</HTML_to_CSV>
+    <Developer language="fj">Developer</Developer>
+    <Stack_Trace language="fj">Rewa Trace</Stack_Trace>
   </Language>
 </root>

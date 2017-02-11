@@ -90,5 +90,9 @@
     <Import_SQL language="fa">واردات SQL</Import_SQL>
     <Plugin language="fa">پلاگین</Plugin>
     <Opened language="fa">باز</Opened>
+    <Converter language="fa">مبدل</Converter>
+    <HTML_to_CSV language="fa">HTML به CSV</HTML_to_CSV>
+    <Developer language="fa">توسعه دهنده</Developer>
+    <Stack_Trace language="fa">مسیر بسته</Stack_Trace>
   </Language>
 </root>

@@ -90,5 +90,9 @@
     <Import_SQL language="hr">Uvoz SQL</Import_SQL>
     <Plugin language="hr">Čep</Plugin>
     <Opened language="hr">Otvoren</Opened>
+    <Converter language="hr">Pretvarač</Converter>
+    <HTML_to_CSV language="hr">HTML u CSV</HTML_to_CSV>
+    <Developer language="hr">Autor</Developer>
+    <Stack_Trace language="hr">Stog praćenje</Stack_Trace>
   </Language>
 </root>

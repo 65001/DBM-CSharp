@@ -90,5 +90,9 @@
     <Import_SQL language="lv">Importēšana SQL</Import_SQL>
     <Plugin language="lv">Spraudnis</Plugin>
     <Opened language="lv">Atvēra</Opened>
+    <Converter language="lv">Konvertors</Converter>
+    <HTML_to_CSV language="lv">HTML, lai CSV</HTML_to_CSV>
+    <Developer language="lv">Attīstītājs</Developer>
+    <Stack_Trace language="lv">Steka trase</Stack_Trace>
   </Language>
 </root>

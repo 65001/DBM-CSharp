@@ -90,5 +90,9 @@
     <Import_SQL language="tlh">DughajmoH sql</Import_SQL>
     <Plugin language="tlh">plugin</Plugin>
     <Opened language="tlh">poS</Opened>
+    <Converter language="tlh">converter</Converter>
+    <HTML_to_CSV language="tlh">HTML csv</HTML_to_CSV>
+    <Developer language="tlh">developer</Developer>
+    <Stack_Trace language="tlh">stack Trace</Stack_Trace>
   </Language>
 </root>

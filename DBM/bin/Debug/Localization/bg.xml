@@ -90,5 +90,9 @@
     <Import_SQL language="bg">Импортиране на SQL</Import_SQL>
     <Plugin language="bg">Плъгин</Plugin>
     <Opened language="bg">Отвори</Opened>
+    <Converter language="bg">Конвертор</Converter>
+    <HTML_to_CSV language="bg">HTML към CSV</HTML_to_CSV>
+    <Developer language="bg">Разработчици</Developer>
+    <Stack_Trace language="bg">Проследяването на стека</Stack_Trace>
   </Language>
 </root>

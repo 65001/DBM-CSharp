@@ -90,5 +90,9 @@
     <Import_SQL language="sw">Leta SQL</Import_SQL>
     <Plugin language="sw">Plugin</Plugin>
     <Opened language="sw">Kufunguliwa</Opened>
+    <Converter language="sw">Kigeuzi</Converter>
+    <HTML_to_CSV language="sw">HTML ili CSV</HTML_to_CSV>
+    <Developer language="sw">Mwendelezaji</Developer>
+    <Stack_Trace language="sw">Kuwaeleza mpororo</Stack_Trace>
   </Language>
 </root>

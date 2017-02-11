@@ -23,6 +23,7 @@ namespace DBM
 	[SmallBasicType]
 	public static class UI
 	{
+		public static String StartUpStopWatch = LDStopwatch.Add();
 		public static Primitive StartTime = Clock.ElapsedMilliseconds;
 
 		public static void Main()
@@ -31,6 +32,7 @@ namespace DBM
 			GraphicsWindow.Show();Controls.AddButton(" ", 1, 1);
 			Controls.ButtonClicked += Events.BC;
 			*/
+			LDStopwatch.Start(StartUpStopWatch);
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Main()");
 			Primitive[] Startime2 = new Primitive[10];
 			Startime2[0] = Clock.ElapsedMilliseconds;
@@ -42,14 +44,13 @@ namespace DBM
 			LDGraphicsWindow.CancelClose = true;
 
 			LDGraphicsWindow.Closing += Events.Closing;
-			LDEvents.Error += DBM.Events.LogEvents;
+			LDEvents.Error += Events.LogEvents;
 
 			GlobalStatic.Ping = LDNetwork.Ping(GlobalStatic.IP_Ping_Address, 500);
 			if (GlobalStatic.Ping != -1)
 			{
 				Startime2[1] = Clock.ElapsedMilliseconds;
 				LDNetwork.DownloadFile(GlobalStatic.EULA_Text_File, GlobalStatic.Online_EULA_URI);
-				//TextWindow.WriteLine("Download Time : " + (Clock.ElapsedMilliseconds - Startime2[1]));
 			}
 
 			string EulaVersion = LDText.Replace(SBFile.ReadLine(GlobalStatic.EULA_Text_File, 1), " ", "");
@@ -74,11 +75,12 @@ namespace DBM
 			Events.LogMessage(GlobalStatic.LangList["PRGM Start"], GlobalStatic.LangList["Application"]);
 			if (Program.ArgumentCount == 1)
 			{
-				Engines.Load_DB(4, GetPath(4));
+				Engines.Load_DB(4, GetPath(4) );
 			}
 			if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_Username == LDFile.UserName && GlobalStatic.LastVersion == GlobalStatic.VersionID && GlobalStatic.EulaTest == false)
 			{
-				Events.LogMessage("Start up GUI", "Debug"); StartupGUI();
+				Events.LogMessage("Start up GUI", "Debug"); 
+				StartupGUI();
 			}
 			else
 			{
@@ -94,6 +96,9 @@ namespace DBM
 				Settings.SaveSettings();
 				EULA.UI(GlobalStatic.EULA_Text_File);
 			}
+
+			LDStopwatch.Stop(StartUpStopWatch);
+			GraphicsWindow.ShowMessage(LDStopwatch.ElapsedMilliseconds(StartUpStopWatch), "");
 		}
 
 		public static void StartupGUI()
@@ -120,8 +125,8 @@ namespace DBM
 			GlobalStatic.MenuList[GlobalStatic.LangList["Import"]] = "Main";
 			GlobalStatic.MenuList[GlobalStatic.LangList["Export"]] = "Main";
 			GlobalStatic.MenuList[GlobalStatic.LangList["Settings"]] = "Main";
-			GlobalStatic.MenuList["Developer"] = "Main"; //Localize
-			GlobalStatic.MenuList["Plugin"] = "Main"; //Localize
+			GlobalStatic.MenuList[GlobalStatic.LangList["Developer"]] = "Main"; 
+			//GlobalStatic.MenuList["Plugin"] = "Main"; //Localize
 			//File
 			GlobalStatic.MenuList[GlobalStatic.LangList["New"]] = GlobalStatic.LangList["File"];
 			GlobalStatic.MenuList[GlobalStatic.LangList["Open"]] = GlobalStatic.LangList["File"];
@@ -139,7 +144,7 @@ namespace DBM
 			GlobalStatic.MenuList[GlobalStatic.LangList["SQL"] + " "]= GlobalStatic.LangList["Export"];
 			GlobalStatic.MenuList[GlobalStatic.LangList["PXML"] + " "]= GlobalStatic.LangList["Export"];
 			GlobalStatic.MenuList[GlobalStatic.LangList["HTML"] + " "]= GlobalStatic.LangList["Export"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["Export UI"]]= GlobalStatic.LangList["Export"];
+			//GlobalStatic.MenuList[GlobalStatic.LangList["Export UI"]]= GlobalStatic.LangList["Export"];
 			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["Export"];
 			//Settings
 			GlobalStatic.MenuList[GlobalStatic.LangList["Help"]] = GlobalStatic.LangList["Settings"];
@@ -154,20 +159,18 @@ namespace DBM
 			GlobalStatic.MenuList[GlobalStatic.LangList["Check for Updates"]] = GlobalStatic.LangList["Settings"];
 			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["Settings"];
 
-
 			//Developer
-			GlobalStatic.MenuList["Stack Trace"] = "Developer";
-			GlobalStatic.MenuList["Close TW"] = "Developer";
-			GlobalStatic.MenuList["Define New Table"+" "] = "Developer";
-			GlobalStatic.MenuList["Create Statistics Page"] = "Developer";
+			GlobalStatic.MenuList[GlobalStatic.LangList["Stack Trace"]] = GlobalStatic.LangList["Developer"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["Close TW"]] = GlobalStatic.LangList["Developer"];
+			GlobalStatic.MenuList[GlobalStatic.LangList["Create Statistics Page"]] = GlobalStatic.LangList["Developer"];
+
 			//Plugin Section
-			GlobalStatic.MenuList["SB Backup Script"] = "Plugin";
+			GlobalStatic.MenuList["SB Backup Script"] = GlobalStatic.LangList["Plugin"];
 			GlobalStatic.MenuList["Scan"] = "SB Backup Script";
 			GlobalStatic.MenuList["View"] = "SB Backup Script";
-			GlobalStatic.MenuList["ICF"] = "Plugin";
+			GlobalStatic.MenuList["ICF"] = GlobalStatic.LangList["Plugin"];
 
 			//Plugin.Menu(GlobalStatic.External_Menu_Items_Path);
-			string Button_View = GlobalStatic.LangList["View"];
 		}
 
 		public static void MainMenu() //Implement
@@ -175,7 +178,6 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.MainMenu()");
 			LDGraphicsWindow.ExitButtonMode(GraphicsWindow.Title, "Enabled");
 			GraphicsWindow.CanResize = true;
-
 			GlobalStatic.CheckList[GlobalStatic.LangList["Toggle Debug"]] = GlobalStatic.DebugMode;
 			GlobalStatic.CheckList[GlobalStatic.LangList["Toggle Transaction Log"]] = GlobalStatic.Transactions;
 
@@ -194,8 +196,17 @@ namespace DBM
 			}
 			GraphicsWindow.FontSize = 20;
 			string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, GlobalStatic.MenuList, null, GlobalStatic.CheckList);
+			Shapes.Move(Shapes.AddText(GlobalStatic.LangList["Sort"] + ":"), 990, 1) ;
+			            
+			int SortOffset = LDText.GetWidth(GlobalStatic.LangList["Sort"] + ":");
+
 			GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
 			LDControls.MenuClicked += Events.MC;
+
+			GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox(LDList.ToArray(GlobalStatic.List_SCHEMA_Table), 100, 100);
+
+
+			Controls.Move(GlobalStatic.ComboBox["Table"], 1075 + 185 + SortOffset, 1);
 
 			//Test Code
 			//string Listview = LDDataBase.AddListView( GlobalStatic.Listview_Width, GlobalStatic.Listview_Height);
@@ -258,13 +269,13 @@ namespace DBM
 	{
 		public static void LogEvents() //Error Handler
 		{
-			Events.LogMessage(LDEvents.LastError, GlobalStatic.LangList["System"]);
+			LogMessage(LDEvents.LastError, GlobalStatic.LangList["System"]);
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogEvents()");
 		}
 
 		public static void LogMessage(Primitive Message, string Type) //Logs Message to all applicable locations
 		{
-			if (GlobalStatic.DebugMode = true && Type != GlobalStatic.LangList["System"]) //Writes Log Message to TextWindow
+			if (GlobalStatic.DebugMode == true && Type != GlobalStatic.LangList["System"]) //Writes Log Message to TextWindow
 			{
 				TextWindow.WriteLine(LDList.GetAt(GlobalStatic.List_Stack_Trace, LDList.Count(GlobalStatic.List_Stack_Trace)) + ":" + Type + ":" + Message);
 			}
@@ -297,9 +308,9 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.BC()");
 		}
 
-		public static void MC()
-		{ 
-			TextWindow.WriteLine(LDControls.LastMenuItem);
+		public static void MC() //Menu Clicked Event Handler
+		{
+			Handlers.Menu(LDControls.LastMenuItem);
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.BC()");
 		}
 

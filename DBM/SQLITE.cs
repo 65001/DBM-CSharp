@@ -17,7 +17,7 @@ namespace DBM
 			if (RunParser == false)
 			{
 				int EngineMode = Engine_Type(Database);
-				Engines.TransactionRecord(User, Database, SQL, "CMD", Explanation);
+				TransactionRecord(User, Database, SQL, "CMD", Explanation);
 				switch (EngineMode)
 				{
 					case 1:
@@ -51,19 +51,19 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Query()");
 			int EngineMode = Engine_Type(DataBase);
 			TransactionRecord(UserName, DataBase, SQL, "Query", Explanation);
-			TextWindow.WriteLine(EngineMode +":"+ DataBase);
+
 			switch (EngineMode)
 			{
-				case 1:
+				case 1: //MySQL
 					return 0;
-				case 2:
+				case 2: //ODBC
 					return 0;
-				case 3:
+				case 3://OLEDB
 					return 0;
-				case 4:
-					TextWindow.WriteLine(ListView);
+				case 4: //SQLITE
+					//TextWindow.WriteLine(ListView);
 					return LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
-				case 5:
+				case 5: //SQLServer
 					return 0;
 				default:
 					return 0;
@@ -95,21 +95,19 @@ namespace DBM
 					if (LDFile.Exists(Data) == true)
 					{
 						int Index = LDList.GetAt(GlobalStatic.List_DB_Path, Data);
-						TextWindow.WriteLine("LOAD DB INDEX : " + Index);
-						TextWindow.WriteLine(Data);
+						Events.LogMessage("LOAD DB INDEX : " + Index, "Debug");
+						Events.LogMessage("LOAD DB : " + Data , "Debug");
 						if (Index == 0) //New Database
 						{
-							//TextWindow.WriteLine("New DB");
 							string Database = LDDataBase.ConnectSQLite(Data);
 							AddToList(Data, Database, LDFile.GetFile(Data), 4);
 							GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data);
-							DBM.Settings.SaveSettings();
+							Settings.SaveSettings();
 							GlobalStatic.CurrentDatabase = Database;
 							return Database;
 						}
 						else
 						{
-							//TextWindow.WriteLine("Old db");
 							string Database = LDList.GetAt(GlobalStatic.List_DB_Name, Index);
 							LDList.Add(GlobalStatic.List_DB_ShortName, LDList.GetAt(GlobalStatic.List_DB_ShortName, Index));
 							GlobalStatic.CurrentDatabase = Database;
@@ -142,7 +140,7 @@ namespace DBM
 				}
 				string Default_Table = LDList.GetAt(GlobalStatic.List_SCHEMA_Table, 1);
 				LDList.Add(GlobalStatic.TrackDefaultTable,Database + "." + Default_Table);
-				Engines.GetSchemaofTable(Database, Default_Table);
+				GetSchemaofTable(Database, Default_Table);
 			}
 		}
 

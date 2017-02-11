@@ -90,5 +90,9 @@
     <Import_SQL language="tr">Alma SQL</Import_SQL>
     <Plugin language="tr">Eklenti</Plugin>
     <Opened language="tr">Açıldı</Opened>
+    <Converter language="tr">Dönüştürücü</Converter>
+    <HTML_to_CSV language="tr">HTML için CSV</HTML_to_CSV>
+    <Developer language="tr">Geliştirici</Developer>
+    <Stack_Trace language="tr">Yığın izleme</Stack_Trace>
   </Language>
 </root>

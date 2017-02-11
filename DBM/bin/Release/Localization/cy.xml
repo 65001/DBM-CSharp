@@ -90,5 +90,9 @@
     <Import_SQL language="cy">Mewnforio SQL</Import_SQL>
     <Plugin language="cy">Ategyn</Plugin>
     <Opened language="cy">Agor</Opened>
+    <Converter language="cy">Troswr</Converter>
+    <HTML_to_CSV language="cy">HTML i CSV</HTML_to_CSV>
+    <Developer language="cy">Datblygwr</Developer>
+    <Stack_Trace language="cy">Stac</Stack_Trace>
   </Language>
 </root>

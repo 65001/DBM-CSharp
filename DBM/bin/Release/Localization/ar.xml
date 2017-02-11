@@ -90,5 +90,9 @@
     <Import_SQL language="ar">استيراد SQL</Import_SQL>
     <Plugin language="ar">البرنامج المساعد</Plugin>
     <Opened language="ar">فتحت</Opened>
+    <Converter language="ar">محول</Converter>
+    <HTML_to_CSV language="ar">إتش تي أم ال إلى CSV</HTML_to_CSV>
+    <Developer language="ar">المطور</Developer>
+    <Stack_Trace language="ar">تتبع مكدس الذاكرة المؤقتة</Stack_Trace>
   </Language>
 </root>

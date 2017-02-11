@@ -90,5 +90,9 @@
     <Import_SQL language="lt">Importuoti SQL</Import_SQL>
     <Plugin language="lt">Įskiepis</Plugin>
     <Opened language="lt">Atidarytas</Opened>
+    <Converter language="lt">Konverteris</Converter>
+    <HTML_to_CSV language="lt">HTML į CSV</HTML_to_CSV>
+    <Developer language="lt">Kūrėjas</Developer>
+    <Stack_Trace language="lt">Dėklo stebėjimas</Stack_Trace>
   </Language>
 </root>

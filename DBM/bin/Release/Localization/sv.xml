@@ -40,7 +40,7 @@
     <Search language="sv">Sök</Search>
     <Functions language="sv">Funktioner</Functions>
     <Strict_Search language="sv">Strikt Sök</Strict_Search>
-    <Run_Function language="sv">Run Function</Run_Function>
+    <Run_Function language="sv">Kör funktionen</Run_Function>
     <Query language="sv">Fråga</Query>
     <Command language="sv">Kommandot</Command>
     <Error_No_DB language="sv">Fel: Ingen databas har lästs</Error_No_DB>
@@ -90,5 +90,9 @@
     <Import_SQL language="sv">Importera SQL</Import_SQL>
     <Plugin language="sv">Plugin</Plugin>
     <Opened language="sv">Öppnas</Opened>
+    <Converter language="sv">Omvandlare</Converter>
+    <HTML_to_CSV language="sv">HTML till CSV</HTML_to_CSV>
+    <Developer language="sv">Utvecklare</Developer>
+    <Stack_Trace language="sv">Stackspårning</Stack_Trace>
   </Language>
 </root>

@@ -90,5 +90,9 @@
     <Import_SQL language="ja">SQL のインポート</Import_SQL>
     <Plugin language="ja">プラグイン</Plugin>
     <Opened language="ja">オープン</Opened>
+    <Converter language="ja">コンバーター</Converter>
+    <HTML_to_CSV language="ja">Csv ファイルに HTML</HTML_to_CSV>
+    <Developer language="ja">開発者</Developer>
+    <Stack_Trace language="ja">スタック トレース</Stack_Trace>
   </Language>
 </root>

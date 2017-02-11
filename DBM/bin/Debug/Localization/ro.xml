@@ -90,5 +90,9 @@
     <Import_SQL language="ro">Import SQL</Import_SQL>
     <Plugin language="ro">Plugin-ul</Plugin>
     <Opened language="ro">Deschis</Opened>
+    <Converter language="ro">Convertor</Converter>
+    <HTML_to_CSV language="ro">HTML în format CSV</HTML_to_CSV>
+    <Developer language="ro">Dezvoltator</Developer>
+    <Stack_Trace language="ro">Trasarea stivei</Stack_Trace>
   </Language>
 </root>

@@ -90,5 +90,9 @@
     <Import_SQL language="hi">आयात SQL</Import_SQL>
     <Plugin language="hi">प्लगइन</Plugin>
     <Opened language="hi">खोला</Opened>
+    <Converter language="hi">कनवर्टर</Converter>
+    <HTML_to_CSV language="hi">CSV के लिए HTML</HTML_to_CSV>
+    <Developer language="hi">डेवलपर</Developer>
+    <Stack_Trace language="hi">स्टैक ट्रेस</Stack_Trace>
   </Language>
 </root>

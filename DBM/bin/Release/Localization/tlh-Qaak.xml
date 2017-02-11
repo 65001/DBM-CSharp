@@ -90,5 +90,9 @@
     <Import_SQL language="tlh-Qaak"> </Import_SQL>
     <Plugin language="tlh-Qaak"></Plugin>
     <Opened language="tlh-Qaak"></Opened>
+    <Converter language="tlh-Qaak"></Converter>
+    <HTML_to_CSV language="tlh-Qaak"> </HTML_to_CSV>
+    <Developer language="tlh-Qaak"></Developer>
+    <Stack_Trace language="tlh-Qaak"> </Stack_Trace>
   </Language>
 </root>

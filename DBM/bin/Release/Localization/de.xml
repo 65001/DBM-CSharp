@@ -16,7 +16,7 @@
     <Help language="de">Hilfe</Help>
     <About language="de">Über</About>
     <Show_Help language="de">Hilfe anzeigen</Show_Help>
-    <Settings_Editor language="de">Settings Editor</Settings_Editor>
+    <Settings_Editor language="de">Einstellungen-Editor</Settings_Editor>
     <Toggle_Debug language="de">Toggle Debug</Toggle_Debug>
     <Toggle_Transaction_Log language="de">Toggle Transaktionsprotokoll</Toggle_Transaction_Log>
     <Refresh_Schema language="de">Schema aktualisieren</Refresh_Schema>
@@ -90,5 +90,9 @@
     <Import_SQL language="de">Import von SQL</Import_SQL>
     <Plugin language="de">Plugin</Plugin>
     <Opened language="de">Geöffnet</Opened>
+    <Converter language="de">Konverter</Converter>
+    <HTML_to_CSV language="de">HTML, CSV</HTML_to_CSV>
+    <Developer language="de">Entwickler</Developer>
+    <Stack_Trace language="de">Stack-Trace</Stack_Trace>
   </Language>
 </root>

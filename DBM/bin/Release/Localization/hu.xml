@@ -90,5 +90,9 @@
     <Import_SQL language="hu">Importálása SQL</Import_SQL>
     <Plugin language="hu">Plugin</Plugin>
     <Opened language="hu">Nyitott</Opened>
+    <Converter language="hu">Átalakító</Converter>
+    <HTML_to_CSV language="hu">HTML, CSV</HTML_to_CSV>
+    <Developer language="hu">Fejlesztő</Developer>
+    <Stack_Trace language="hu">Verem-nyomkövetési</Stack_Trace>
   </Language>
 </root>

@@ -90,5 +90,9 @@
     <Import_SQL language="sr-Latn">Uvoz SQL</Import_SQL>
     <Plugin language="sr-Latn">Dodatna komponenta</Plugin>
     <Opened language="sr-Latn">Otvorena je</Opened>
+    <Converter language="sr-Latn">Konvertor</Converter>
+    <HTML_to_CSV language="sr-Latn">HTML za CSV</HTML_to_CSV>
+    <Developer language="sr-Latn">Za programere</Developer>
+    <Stack_Trace language="sr-Latn">Praćenje steka</Stack_Trace>
   </Language>
 </root>

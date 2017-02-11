@@ -90,5 +90,9 @@
     <Import_SQL language="sk">Importovať SQL</Import_SQL>
     <Plugin language="sk">Plugin</Plugin>
     <Opened language="sk">Otvoril</Opened>
+    <Converter language="sk">Konvertor</Converter>
+    <HTML_to_CSV language="sk">HTML do formátu CSV</HTML_to_CSV>
+    <Developer language="sk">Vývojár</Developer>
+    <Stack_Trace language="sk">Trasovanie zásobníka</Stack_Trace>
   </Language>
 </root>

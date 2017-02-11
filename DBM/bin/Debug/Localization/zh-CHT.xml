@@ -90,5 +90,9 @@
     <Import_SQL language="zh-CHT">導入 SQL</Import_SQL>
     <Plugin language="zh-CHT">外掛程式</Plugin>
     <Opened language="zh-CHT">打開</Opened>
+    <Converter language="zh-CHT">轉換器</Converter>
+    <HTML_to_CSV language="zh-CHT">HTML 到 CSV</HTML_to_CSV>
+    <Developer language="zh-CHT">開發人員</Developer>
+    <Stack_Trace language="zh-CHT">堆疊追蹤</Stack_Trace>
   </Language>
 </root>

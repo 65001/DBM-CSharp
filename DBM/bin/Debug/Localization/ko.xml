@@ -90,5 +90,9 @@
     <Import_SQL language="ko">가져오기 SQL</Import_SQL>
     <Plugin language="ko">플러그인</Plugin>
     <Opened language="ko">개설</Opened>
+    <Converter language="ko">컨버터</Converter>
+    <HTML_to_CSV language="ko">CSV로 HTML</HTML_to_CSV>
+    <Developer language="ko">개발자</Developer>
+    <Stack_Trace language="ko">스택 추적</Stack_Trace>
   </Language>
 </root>

@@ -90,5 +90,9 @@
     <Import_SQL language="uk">Імпорт SQL</Import_SQL>
     <Plugin language="uk">Плагін</Plugin>
     <Opened language="uk">Відкрито</Opened>
+    <Converter language="uk">Конвертор валют</Converter>
+    <HTML_to_CSV language="uk">HTML в CSV</HTML_to_CSV>
+    <Developer language="uk">Розробник</Developer>
+    <Stack_Trace language="uk">Трасування стека</Stack_Trace>
   </Language>
 </root>

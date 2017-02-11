@@ -90,5 +90,9 @@
     <Import_SQL language="mww">Ntshuam SQL</Import_SQL>
     <Plugin language="mww">Plugin</Plugin>
     <Opened language="mww">Qhib</Opened>
+    <Converter language="mww">Converter</Converter>
+    <HTML_to_CSV language="mww">HTML rau CSV</HTML_to_CSV>
+    <Developer language="mww">Tsim tawm</Developer>
+    <Stack_Trace language="mww">Pawg ib txoj lw</Stack_Trace>
   </Language>
 </root>

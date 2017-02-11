@@ -90,5 +90,9 @@
     <Import_SQL language="mg">Tena lanjan' SQL</Import_SQL>
     <Plugin language="mg">Plugin</Plugin>
     <Opened language="mg">Nanokatra</Opened>
+    <Converter language="mg">Converter</Converter>
+    <HTML_to_CSV language="mg">HTML mba CSV</HTML_to_CSV>
+    <Developer language="mg">Ho an' ny développeur</Developer>
+    <Stack_Trace language="mg">Amboaran miisa Manoritra</Stack_Trace>
   </Language>
 </root>

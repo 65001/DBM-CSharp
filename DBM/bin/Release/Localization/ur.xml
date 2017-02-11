@@ -90,5 +90,9 @@
     <Import_SQL language="ur">SQL درآمد کریں</Import_SQL>
     <Plugin language="ur">پلگ ان</Plugin>
     <Opened language="ur">کھولا</Opened>
+    <Converter language="ur">کنورٹر</Converter>
+    <HTML_to_CSV language="ur">HTML CSV</HTML_to_CSV>
+    <Developer language="ur">ڈویلپر</Developer>
+    <Stack_Trace language="ur">قطار کی کھوج</Stack_Trace>
   </Language>
 </root>

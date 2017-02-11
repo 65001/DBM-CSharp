@@ -90,5 +90,9 @@
     <Import_SQL language="fi">Tuo SQL</Import_SQL>
     <Plugin language="fi">Plugin</Plugin>
     <Opened language="fi">Avattu</Opened>
+    <Converter language="fi">Muunnin</Converter>
+    <HTML_to_CSV language="fi">HTML CSV</HTML_to_CSV>
+    <Developer language="fi">Kehittäjä</Developer>
+    <Stack_Trace language="fi">Pinon jäljitys</Stack_Trace>
   </Language>
 </root>
