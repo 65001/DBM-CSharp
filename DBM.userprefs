@@ -5,22 +5,16 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="DBM\DBM.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DBM\UnitTests.cs">
     <Files>
-      <File FileName="DBM\DBM.cs" Line="255" Column="3" />
-      <File FileName="DBM\SQLITE.cs" Line="140" Column="6" />
-      <File FileName="DBM\Utilities.cs" Line="55" Column="15" />
-      <File FileName="DBM\Settings.cs" Line="97" Column="6" />
-      <File FileName="DBM\GlobalStatic.cs" Line="91" Column="63" />
-      <File FileName="DBM\Handlers.cs" Line="52" Column="58" />
-      <File FileName="DBM\UnitTests.cs" Line="19" Column="4" />
+      <File FileName="DBM\DBM.cs" Line="3" Column="67" />
+      <File FileName="DBM\SQLITE.cs" Line="3" Column="67" />
+      <File FileName="DBM\Utilities.cs" Line="3" Column="67" />
+      <File FileName="DBM\Settings.cs" Line="3" Column="67" />
+      <File FileName="DBM\GlobalStatic.cs" Line="3" Column="67" />
+      <File FileName="DBM\Handlers.cs" Line="3" Column="67" />
+      <File FileName="DBM\UnitTests.cs" Line="4" Column="14" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="DBM" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
+  <AuthorInfo Name="Abhishek Sathiabalan" Email="asathiabalan@gmail.com" Copyright="(C) 2016 - 2017. All rights Reserved. Goverened by Included EULA" Company="" Trademark="" />
 </Properties>
