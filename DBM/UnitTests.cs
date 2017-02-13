@@ -1,6 +1,6 @@
 ﻿// asathiabalan@gmail.com
 // Author : Abhishek Sathiabalan
-// C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
+// (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
 using Microsoft.SmallBasic.Library;
 using NUnit.Framework;
@@ -19,7 +19,7 @@ namespace DBM
 		[Test]
 		public void Connect()
 		{
-			Engines.Load_DB(4, LitDev.LDDialogs.OpenFile("db", ""));
+			Engines.Load_DB(Engines.EnginesModes.SQLITE, LitDev.LDDialogs.OpenFile("db", ""));
 			Assert.True(true);
 			    
 		}

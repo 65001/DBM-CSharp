@@ -1,4 +1,3 @@
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\DBM.cs
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\DBM.exe
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\ESB.dll
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\LitDev.dll
@@ -10,12 +9,3 @@ C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\LitDev.xml
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\nunit.framework.xml
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\obj\x86\Release\DBM.exe
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\obj\x86\Release\DBM.csprojResolveAssemblyReference.cache
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\SQLITE.cs
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Settings.cs
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Plugin.cs
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\GlobalStatic.cs
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\EULA.cs
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Utilities.cs
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\UnitTests.cs
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Handlers.cs
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\packages.config

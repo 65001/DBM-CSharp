@@ -1,6 +1,6 @@
 ﻿// asathiabalan@gmail.com
 // Author : Abhishek Sathiabalan
-// C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
+// (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
 using LitDev;
 using Microsoft.SmallBasic.Library;
@@ -13,6 +13,7 @@ namespace DBM
 	[SmallBasicType]
 	public static class Engines
 	{
+		public enum EnginesModes {MySQL=1, ODBC=2,OLEDB=3,SQLITE=4,SQLSERVER=5}
 
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
@@ -29,7 +30,7 @@ namespace DBM
 						return 0;
 					case 3:
 						return 0;
-					case 4:
+					case (int)EnginesModes.SQLITE:
 						return LDDataBase.Command(Database, SQL);
 					case 5:
 						return 0;
@@ -54,47 +55,31 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Query()");
 			int EngineMode = Engine_Type(DataBase);
 			TransactionRecord(UserName, DataBase, SQL, "Query", Explanation);
-
-			switch (EngineMode)
-			{
-				case 1: //MySQL
-					return 0;
-				case 2: //ODBC
-					return 0;
-				case 3://OLEDB
-					return 0;
-				case 4: //SQLITE
-					//TextWindow.WriteLine(ListView);
-					return LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
-				case 5: //SQLServer
-					return 0;
-				default:
-					return 0;
-			}
+			return LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
 		}
 
-		public static void Emulator()
+		public static void Emulator() //Implement
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Emulator()");
 		}
 
-		public static void TransactionRecord(string UserName, string DataBase, string SQL, string Type, string Reason)
+		public static void TransactionRecord(string UserName, string DataBase, string SQL, string Type, string Reason) //Implement
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.TransactionRecord()");
 		}
 
-		public static string Load_DB(int EngineMode, Primitive Data)
+		public static string Load_DB(EnginesModes Mode, Primitive Data)
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Load_DB()");
-			switch (EngineMode)
+			switch (Mode)
 			{
-				case 1: //MySQL
+				case EnginesModes.MySQL: //MySQL
 					return "";
-				case 2: //ODBC
+				case EnginesModes.ODBC: //ODBC
 					return "";
-				case 3: //OLEDB
+				case EnginesModes.OLEDB: //OLEDB
 					return "";
-				case 4: //SQLITE
+				case EnginesModes.SQLITE: //SQLITE
 					if (LDFile.Exists(Data) == true)
 					{
 						int Index = LDList.GetAt(GlobalStatic.List_DB_Path, Data);
@@ -118,7 +103,7 @@ namespace DBM
 						}
 					}
 					return "";
-				case 5: //SQLServer
+				case EnginesModes.SQLSERVER: //SQLServer
 					return "";
 				default:
 					return "Incorrect Paramters"; ;
@@ -165,13 +150,19 @@ namespace DBM
 		public static void GenerateQuery(bool Search,bool Sort,bool Function) //Implement //Interface to private classes
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.GenerateQuery()");
+			if (Search)
+			{ }
+			if (Sort)
+			{ }
+			if (Function)
+			{ }
 		}
 
-		static void GenerateSearch()
+		static void GenerateSearch() //Implement
 		{ }
-		static void GenerateSort()
+		static void GenerateSort() //Implement
 		{ }
-		static void GenerateFunction()
+		static void GenerateFunction() //Implement
 		{ }
 
 		public static void CreateStatisticsPage() //Implement
@@ -179,7 +170,7 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.CreateStatisticsPage()");
 		}
 
-		static int Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database
+		private static int Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database 
 		{
 			int Index = LDList.IndexOf(GlobalStatic.List_DB_Name, Database);
 			if (Index != 0)

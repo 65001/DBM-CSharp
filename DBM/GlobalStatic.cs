@@ -1,6 +1,6 @@
 ﻿// asathiabalan@gmail.com
 // Author : Abhishek Sathiabalan
-// C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
+// (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
 using LitDev;
 using Microsoft.SmallBasic.Library;
@@ -10,18 +10,16 @@ using System.Collections.Generic;
 using System.IO;
 namespace DBM
 {
-		public static class GlobalStatic //List of Variables shared across everything through this class
+		public class GlobalStatic //List of Variables shared across everything through this class
 		{
 			public static string ProgramDirectory = Program.Directory;
 			public static string Username = LDFile.UserName;
 			public static int Ping;
 			public static string TabKey = Text.GetCharacter(9);
-			public static bool DebugMode;
-			public static bool DebugParser;
-			public static bool EulaTest = false;
+			public static bool DebugMode,DebugParser;
+			public static bool EulaTest = false,LoadedFile = false;
 
 			public const string IP_Ping_Address = "8.8.8.8";
-			public static bool LoadedFile = false;
 
 			//Self Aware Data
 			public const string Copyright = "2016 through 2017";
@@ -48,14 +46,11 @@ namespace DBM
 			public static string OnlineDB_Refrence_Location = "https://docs.google.com/uc?id=0B2v4xbFnpKvRVmNVODZ4bnppd3c&export=download";
 			//Settings Data
 			public static bool RestoreSettings = false;
-			public static Primitive Settings;
-			public static int Listview_Width;
-			public static int Listview_Height;
-			public static int LastVersion;
-			public static Primitive Extensions;
+			public static Primitive Settings,Extensions;
+			public static int Listview_Width,Listview_Height,UIx,LastVersion,TimeOut,SortBy;
+
 			public static bool Transactions,Transaction_Query,Transaction_Commands;
 			public static string Deliminator;
-			public static int TimeOut;
 			public static string LastFolder;
 			public static string EULA_Username;
 			public static string EULA_Accepted_Version;
@@ -92,16 +87,14 @@ namespace DBM
 			public static string List_ISO_Lang = "ISO_Lang";
 			public static string List_ISO_Text = "ISO_Text";
 
-			public static string Dataview;
-			public static string ListView;
+			public static string Dataview,ListView;
 			public static Primitive MenuList,CheckList,Buttons,ComboBox,TextBox,CheckBox,HideDisplayResults;
-			public static string SQLFunctionsList = Text.ConvertToUpperCase("1=AVG;2=COUNT;3=MAX;4=MIN;5=SUM;6=TOTAL;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;");
+			public static string SQLFunctionsList = Text.ConvertToUpperCase("1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;");
 
 			public static string Title = "Database Manager (" + ProductID + ") v" + VersionID + " ";
 			public const string AutoRunPluginMessage = "# This file designates the Mod and the subroutine the main program should call on the start of the program.\n# Use this to run your program at start up.\n# The Program accepts any of the following:\n#\tMod Name.Sub Name\n#\t1=Mod Name;2=Sub Name;\n# The character # marks the line as commented.\n# To add UI Elements without starting up your program (Please do this if you can) alter the MENU.txt file.";
 
 			public static string LogDB, TransactionDB;
-			//public static string TransactionDB;
 
 			static string DQC = "\"";
 			public static string LOGSQL = "CREATE TABLE IF NOT EXISTS Log (ID Integer PRIMARY KEY,\"UTC DATE\" TEXT," + DQC + "UTC TIME" + DQC + " TEXT,Date TEXT,Time TEXT,USER TEXT,ProductID TEXT,ProductVersion INTEGER,Type TEXT,Event TEXT);";

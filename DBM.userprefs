@@ -5,15 +5,15 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="DBM\UnitTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DBM\Handlers.cs">
     <Files>
-      <File FileName="DBM\DBM.cs" Line="3" Column="67" />
-      <File FileName="DBM\SQLITE.cs" Line="3" Column="67" />
-      <File FileName="DBM\Utilities.cs" Line="3" Column="67" />
-      <File FileName="DBM\Settings.cs" Line="3" Column="67" />
-      <File FileName="DBM\GlobalStatic.cs" Line="3" Column="67" />
-      <File FileName="DBM\Handlers.cs" Line="3" Column="67" />
-      <File FileName="DBM\UnitTests.cs" Line="4" Column="14" />
+      <File FileName="DBM\DBM.cs" Line="434" Column="31" />
+      <File FileName="DBM\SQLITE.cs" Line="171" Column="4" />
+      <File FileName="DBM\Utilities.cs" Line="3" Column="5" />
+      <File FileName="DBM\Settings.cs" Line="39" Column="28" />
+      <File FileName="DBM\Handlers.cs" Line="10" Column="3" />
+      <File FileName="DBM\UnitTests.cs" Line="22" Column="47" />
+      <File FileName="DBM\GlobalStatic.cs" Line="19" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <AuthorInfo Name="Abhishek Sathiabalan" Email="asathiabalan@gmail.com" Copyright="(C) 2016 - 2017. All rights Reserved. Goverened by Included EULA" Company="" Trademark="" />

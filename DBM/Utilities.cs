@@ -1,6 +1,6 @@
 ﻿// asathiabalan@gmail.com
 // Author : Abhishek Sathiabalan
-// C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
+// (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
 using LitDev;
 using Microsoft.SmallBasic.Library;
@@ -82,7 +82,7 @@ namespace DBM
 		}
 
 		// Update Function
-		public static void Updater()
+		public static void Updater() //Implement
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Utilities.Updater()");
 		}
@@ -92,7 +92,7 @@ namespace DBM
 			Add_UI_Controls("Menu", Caption,Handler, PreviousNode, Action);
 		}
 
-		public static void AddControl()
+		public static void AddControl() 
 		{ }
 
 
