@@ -507,3 +507,1506 @@ Parameter name: index"
 505,2/12/2017,9:00:55 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
 506,2/12/2017,9:00:57 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5830.58 (ms)"
 507,2/12/2017,9:00:58 PM,"Abhishek",DBM C#,1122,"UI","6442"
+508,2/13/2017,4:17:34 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+509,2/13/2017,4:17:34 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+510,2/13/2017,4:17:36 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5632.51 (ms)"
+511,2/13/2017,4:17:37 PM,"Abhishek",DBM C#,1122,"UI","6342"
+512,2/13/2017,4:21:33 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+513,2/13/2017,4:21:34 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+514,2/13/2017,4:21:36 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5173.78 (ms)"
+515,2/13/2017,4:21:37 PM,"Abhishek",DBM C#,1122,"UI","5891"
+516,2/13/2017,4:23:55 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+517,2/13/2017,4:23:55 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+518,2/13/2017,4:23:57 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5312.63 (ms)"
+519,2/13/2017,4:23:58 PM,"Abhishek",DBM C#,1122,"UI","5967"
+520,2/13/2017,4:25:49 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+521,2/13/2017,4:25:49 PM,"Abhishek",DBM C#,1122,"Debug","Run EULA"
+522,2/13/2017,4:25:52 PM,"Abhishek",DBM C#,1122,"UI","5831"
+523,2/13/2017,4:29:03 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+524,2/13/2017,4:29:03 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+525,2/13/2017,4:29:05 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5033.87 (ms)"
+526,2/13/2017,4:29:06 PM,"Abhishek",DBM C#,1122,"UI","5708"
+527,2/13/2017,4:29:20 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+528,2/13/2017,4:29:20 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+529,2/13/2017,4:29:23 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4784.47 (ms)"
+530,2/13/2017,4:29:23 PM,"Abhishek",DBM C#,1122,"UI","5387"
+531,2/13/2017,4:32:25 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+532,2/13/2017,4:32:26 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+533,2/13/2017,4:32:28 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4817.9 (ms)"
+534,2/13/2017,4:32:29 PM,"Abhishek",DBM C#,1122,"UI","5443"
+535,2/13/2017,4:34:28 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+536,2/13/2017,4:34:28 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+537,2/13/2017,4:34:30 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5067.44 (ms)"
+538,2/13/2017,4:34:31 PM,"Abhishek",DBM C#,1122,"UI","5708"
+539,2/13/2017,4:37:22 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+540,2/13/2017,4:37:22 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+541,2/13/2017,4:37:25 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4869.16 (ms)"
+542,2/13/2017,4:37:25 PM,"Abhishek",DBM C#,1122,"UI","5577"
+543,2/13/2017,4:39:24 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+544,2/13/2017,4:39:24 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+545,2/13/2017,4:39:26 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4076.55 (ms)"
+546,2/13/2017,4:39:27 PM,"Abhishek",DBM C#,1122,"UI","4709"
+547,2/13/2017,4:44:39 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+548,2/13/2017,4:44:39 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+549,2/13/2017,4:44:41 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4951.50 (ms)"
+550,2/13/2017,4:44:42 PM,"Abhishek",DBM C#,1122,"UI","5638"
+551,2/13/2017,4:44:43 PM,"Abhishek",DBM C#,1122,"UI","Error : No Database has been loaded"
+552,2/13/2017,4:50:51 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+553,2/13/2017,4:50:51 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+554,2/13/2017,4:50:53 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5113.49 (ms)"
+555,2/13/2017,4:50:54 PM,"Abhishek",DBM C#,1122,"UI","5749"
+556,2/13/2017,4:51:13 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+557,2/13/2017,4:51:13 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+558,2/13/2017,4:51:15 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4724.79 (ms)"
+559,2/13/2017,4:51:16 PM,"Abhishek",DBM C#,1122,"UI","5339"
+560,2/13/2017,4:52:37 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+561,2/13/2017,4:52:37 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+562,2/13/2017,4:52:40 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5336.18 (ms)"
+563,2/13/2017,4:52:41 PM,"Abhishek",DBM C#,1122,"UI","6085"
+564,2/13/2017,4:52:47 PM,"Abhishek",DBM C#,1122,"UI","Error : No Database has been loaded"
+565,2/13/2017,6:23:42 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+566,2/13/2017,6:23:42 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+567,2/13/2017,6:23:44 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5229.02 (ms)"
+568,2/13/2017,6:23:45 PM,"Abhishek",DBM C#,1122,"UI","5833"
+569,2/13/2017,6:32:22 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+570,2/13/2017,6:32:22 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+571,2/13/2017,6:32:25 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5229.67 (ms)"
+572,2/13/2017,6:32:26 PM,"Abhishek",DBM C#,1122,"UI","5879"
+573,2/13/2017,6:32:27 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+574,2/13/2017,6:32:27 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+575,2/13/2017,6:32:27 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+576,2/13/2017,6:32:27 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+577,2/13/2017,6:33:06 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+578,2/13/2017,6:33:06 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+579,2/13/2017,6:33:13 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+580,2/13/2017,6:33:13 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+581,2/13/2017,6:33:15 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4876.61 (ms)"
+582,2/13/2017,6:33:16 PM,"Abhishek",DBM C#,1122,"UI","5480"
+583,2/13/2017,6:33:18 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+584,2/13/2017,6:33:18 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+585,2/13/2017,6:33:18 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+586,2/13/2017,6:33:18 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+587,2/13/2017,6:34:50 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+588,2/13/2017,6:34:50 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+589,2/13/2017,6:34:55 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+590,2/13/2017,6:34:55 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+591,2/13/2017,6:34:57 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4881.57 (ms)"
+592,2/13/2017,6:34:58 PM,"Abhishek",DBM C#,1122,"UI","5643"
+593,2/13/2017,6:34:59 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+594,2/13/2017,6:34:59 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+595,2/13/2017,6:35:00 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+596,2/13/2017,6:35:00 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+597,2/13/2017,6:35:24 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+598,2/13/2017,6:35:24 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+599,2/13/2017,6:35:26 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4080.94 (ms)"
+600,2/13/2017,6:35:27 PM,"Abhishek",DBM C#,1122,"UI","4695"
+601,2/13/2017,6:35:28 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+602,2/13/2017,6:35:28 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+603,2/13/2017,6:35:28 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+604,2/13/2017,6:35:29 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+605,2/13/2017,6:37:25 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+606,2/13/2017,6:37:25 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+607,2/13/2017,6:37:27 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5613.63 (ms)"
+608,2/13/2017,6:37:28 PM,"Abhishek",DBM C#,1122,"UI","6229"
+609,2/13/2017,6:37:29 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+610,2/13/2017,6:37:29 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+611,2/13/2017,6:37:29 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+612,2/13/2017,6:37:29 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+613,2/13/2017,6:38:28 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+614,2/13/2017,6:38:28 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+615,2/13/2017,6:38:30 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4929.52 (ms)"
+616,2/13/2017,6:38:31 PM,"Abhishek",DBM C#,1122,"UI","5619"
+617,2/13/2017,6:38:32 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+618,2/13/2017,6:38:33 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+619,2/13/2017,6:38:33 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+620,2/13/2017,6:38:33 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+621,2/13/2017,6:44:20 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+622,2/13/2017,6:44:20 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+623,2/13/2017,6:44:23 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5006.88 (ms)"
+624,2/13/2017,6:44:23 PM,"Abhishek",DBM C#,1122,"UI","5714"
+625,2/13/2017,6:44:25 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+626,2/13/2017,6:44:26 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+627,2/13/2017,6:44:26 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+628,2/13/2017,6:44:26 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+629,2/13/2017,6:44:46 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+630,2/13/2017,6:44:46 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+631,2/13/2017,6:44:48 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4823.89 (ms)"
+632,2/13/2017,6:44:49 PM,"Abhishek",DBM C#,1122,"UI","5518"
+633,2/13/2017,6:44:51 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+634,2/13/2017,6:44:51 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+635,2/13/2017,6:44:51 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+636,2/13/2017,6:44:51 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+637,2/13/2017,6:48:20 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+638,2/13/2017,6:48:20 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+639,2/13/2017,6:48:23 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4838.99 (ms)"
+640,2/13/2017,6:48:24 PM,"Abhishek",DBM C#,1122,"UI","5447"
+641,2/13/2017,6:48:25 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+642,2/13/2017,6:48:25 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+643,2/13/2017,6:48:25 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+644,2/13/2017,6:48:25 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+645,2/13/2017,6:56:05 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+646,2/13/2017,6:56:05 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+647,2/13/2017,6:56:08 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5033.94 (ms)"
+648,2/13/2017,6:56:08 PM,"Abhishek",DBM C#,1122,"UI","5618"
+649,2/13/2017,6:56:10 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+650,2/13/2017,6:56:10 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+651,2/13/2017,6:56:10 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+652,2/13/2017,6:56:10 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+653,2/13/2017,6:59:56 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+654,2/13/2017,6:59:56 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+655,2/13/2017,6:59:59 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4156.02 (ms)"
+656,2/13/2017,6:59:59 PM,"Abhishek",DBM C#,1122,"UI","4807"
+657,2/13/2017,7:00:24 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+658,2/13/2017,7:00:24 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+659,2/13/2017,7:00:26 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4903.32 (ms)"
+660,2/13/2017,7:00:27 PM,"Abhishek",DBM C#,1122,"UI","5518"
+661,2/13/2017,7:00:28 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+662,2/13/2017,7:00:28 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+663,2/13/2017,7:00:28 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+664,2/13/2017,7:00:28 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+665,2/13/2017,7:04:40 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+666,2/13/2017,7:04:40 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+667,2/13/2017,7:04:43 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5044.54 (ms)"
+668,2/13/2017,7:04:43 PM,"Abhishek",DBM C#,1122,"UI","5676"
+669,2/13/2017,7:04:45 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+670,2/13/2017,7:04:45 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+671,2/13/2017,7:04:45 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+672,2/13/2017,7:04:45 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+673,2/13/2017,7:09:31 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+674,2/13/2017,7:09:31 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+675,2/13/2017,7:09:33 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5005.65 (ms)"
+676,2/13/2017,7:09:34 PM,"Abhishek",DBM C#,1122,"UI","5617"
+677,2/13/2017,7:09:40 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+678,2/13/2017,7:09:40 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+679,2/13/2017,7:09:40 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+680,2/13/2017,7:09:41 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+681,2/13/2017,7:27:13 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+682,2/13/2017,7:27:14 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+683,2/13/2017,7:27:16 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5050.54 (ms)"
+684,2/13/2017,7:27:17 PM,"Abhishek",DBM C#,1122,"UI","5649"
+685,2/13/2017,7:27:18 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+686,2/13/2017,7:27:18 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+687,2/13/2017,7:27:18 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+688,2/13/2017,7:27:18 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+689,2/13/2017,7:27:50 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+690,2/13/2017,7:27:50 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+691,2/13/2017,7:27:52 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4818.20 (ms)"
+692,2/13/2017,7:27:53 PM,"Abhishek",DBM C#,1122,"UI","5453"
+693,2/13/2017,7:27:54 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+694,2/13/2017,7:27:54 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+695,2/13/2017,7:27:54 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+696,2/13/2017,7:27:55 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+697,2/13/2017,7:27:57 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+698,2/13/2017,7:27:57 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+699,2/13/2017,7:27:57 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+700,2/13/2017,7:27:58 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+701,2/13/2017,7:30:02 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+702,2/13/2017,7:30:02 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+703,2/13/2017,7:30:04 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5009.01 (ms)"
+704,2/13/2017,7:30:05 PM,"Abhishek",DBM C#,1122,"UI","5598"
+705,2/13/2017,7:30:06 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+706,2/13/2017,7:30:06 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+707,2/13/2017,7:30:06 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+708,2/13/2017,7:30:06 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+709,2/13/2017,7:30:10 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+710,2/13/2017,7:30:10 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+711,2/13/2017,7:30:10 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+712,2/13/2017,7:30:10 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+713,2/13/2017,7:30:32 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+714,2/13/2017,7:30:32 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+715,2/13/2017,7:30:33 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 1661.86 (ms)"
+716,2/13/2017,7:30:33 PM,"Abhishek",DBM C#,1122,"UI","1856"
+717,2/13/2017,7:30:34 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+718,2/13/2017,7:30:35 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+719,2/13/2017,7:30:35 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+720,2/13/2017,7:30:35 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+721,2/13/2017,7:30:37 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+722,2/13/2017,7:30:38 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+723,2/13/2017,7:30:38 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+724,2/13/2017,7:30:38 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+725,2/13/2017,7:31:26 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+726,2/13/2017,7:31:26 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+727,2/13/2017,7:31:29 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4839.50 (ms)"
+728,2/13/2017,7:31:29 PM,"Abhishek",DBM C#,1122,"UI","5415"
+729,2/13/2017,7:31:31 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+730,2/13/2017,7:31:31 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+731,2/13/2017,7:31:31 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+732,2/13/2017,7:31:31 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+733,2/13/2017,7:35:10 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+734,2/13/2017,7:35:10 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+735,2/13/2017,7:35:13 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5100.96 (ms)"
+736,2/13/2017,7:35:13 PM,"Abhishek",DBM C#,1122,"UI","5697"
+737,2/13/2017,7:35:15 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+738,2/13/2017,7:35:15 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+739,2/13/2017,7:35:16 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+740,2/13/2017,7:35:16 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+741,2/13/2017,7:35:16 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+742,2/13/2017,7:35:17 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+743,2/13/2017,7:35:18 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+744,2/13/2017,7:35:20 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+745,2/13/2017,7:35:21 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+746,2/13/2017,7:35:35 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+747,2/13/2017,7:35:35 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+748,2/13/2017,7:35:35 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 1430.90 (ms)"
+749,2/13/2017,7:35:36 PM,"Abhishek",DBM C#,1122,"UI","1650"
+750,2/13/2017,7:35:37 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+751,2/13/2017,7:35:37 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+752,2/13/2017,7:35:37 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+753,2/13/2017,7:35:37 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+754,2/13/2017,7:35:38 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+755,2/13/2017,7:35:38 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+756,2/13/2017,7:35:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+757,2/13/2017,7:35:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+758,2/13/2017,7:35:40 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+759,2/13/2017,7:46:24 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+760,2/13/2017,7:46:24 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+761,2/13/2017,7:46:27 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5131.79 (ms)"
+762,2/13/2017,7:46:28 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+763,2/13/2017,7:46:28 PM,"Abhishek",DBM C#,1122,"UI","5861"
+764,2/13/2017,7:46:29 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+765,2/13/2017,7:46:29 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+766,2/13/2017,7:46:29 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+767,2/13/2017,7:46:29 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+768,2/13/2017,7:46:30 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+769,2/13/2017,7:46:30 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+770,2/13/2017,7:46:31 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+771,2/13/2017,7:46:31 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+772,2/13/2017,7:46:31 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+773,2/13/2017,7:46:32 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+774,2/13/2017,7:46:33 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+775,2/13/2017,7:46:34 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+776,2/13/2017,7:46:34 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+777,2/13/2017,7:46:47 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+778,2/13/2017,7:46:47 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+779,2/13/2017,7:46:51 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+780,2/13/2017,7:46:52 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+781,2/13/2017,7:46:54 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4961.49 (ms)"
+782,2/13/2017,7:46:55 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+783,2/13/2017,7:46:55 PM,"Abhishek",DBM C#,1122,"UI","5661"
+784,2/13/2017,7:46:56 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+785,2/13/2017,7:46:56 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+786,2/13/2017,7:46:56 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+787,2/13/2017,7:46:56 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+788,2/13/2017,7:46:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+789,2/13/2017,7:46:57 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+790,2/13/2017,7:46:58 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+791,2/13/2017,7:46:58 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+792,2/13/2017,7:46:58 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+793,2/13/2017,7:46:59 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+794,2/13/2017,7:46:59 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+795,2/13/2017,7:47:01 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+796,2/13/2017,7:47:01 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+797,2/13/2017,7:47:02 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+798,2/13/2017,7:47:02 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+799,2/13/2017,7:47:02 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+800,2/13/2017,7:47:04 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+801,2/13/2017,7:47:04 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+802,2/13/2017,7:47:04 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+803,2/13/2017,7:47:05 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+804,2/13/2017,7:47:05 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+805,2/13/2017,7:47:06 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+806,2/13/2017,7:47:07 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+807,2/13/2017,7:49:40 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+808,2/13/2017,7:49:40 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+809,2/13/2017,7:49:43 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5018.83 (ms)"
+810,2/13/2017,7:49:44 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+811,2/13/2017,7:49:44 PM,"Abhishek",DBM C#,1122,"UI","5717"
+812,2/13/2017,7:50:11 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+813,2/13/2017,7:50:11 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+814,2/13/2017,7:50:14 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4113.24 (ms)"
+815,2/13/2017,7:50:15 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+816,2/13/2017,7:50:15 PM,"Abhishek",DBM C#,1122,"UI","5258"
+817,2/13/2017,7:50:16 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+818,2/13/2017,7:50:16 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+819,2/13/2017,7:50:16 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+820,2/13/2017,7:50:16 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+821,2/13/2017,7:50:17 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+822,2/13/2017,7:50:17 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+823,2/13/2017,7:50:18 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+824,2/13/2017,7:50:18 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+825,2/13/2017,7:50:18 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+826,2/13/2017,7:50:20 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+827,2/13/2017,7:50:20 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+828,2/13/2017,7:50:21 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+829,2/13/2017,7:50:21 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+830,2/13/2017,7:50:40 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+831,2/13/2017,7:50:40 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+832,2/13/2017,7:50:43 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4803.12 (ms)"
+833,2/13/2017,7:50:43 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+834,2/13/2017,7:50:43 PM,"Abhishek",DBM C#,1122,"UI","5533"
+835,2/13/2017,7:50:45 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+836,2/13/2017,7:50:45 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+837,2/13/2017,7:50:45 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+838,2/13/2017,7:50:45 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+839,2/13/2017,7:50:45 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+840,2/13/2017,7:50:45 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+841,2/13/2017,7:50:47 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+842,2/13/2017,7:50:47 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+843,2/13/2017,7:50:47 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+844,2/13/2017,7:50:48 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+845,2/13/2017,7:50:48 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+846,2/13/2017,7:50:49 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+847,2/13/2017,7:50:49 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+848,2/13/2017,7:51:29 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+849,2/13/2017,7:51:29 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+850,2/13/2017,7:51:30 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 1327.68 (ms)"
+851,2/13/2017,7:51:30 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+852,2/13/2017,7:51:30 PM,"Abhishek",DBM C#,1122,"UI","1590"
+853,2/13/2017,7:51:31 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+854,2/13/2017,7:51:31 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+855,2/13/2017,7:51:31 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+856,2/13/2017,7:51:31 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+857,2/13/2017,7:51:32 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+858,2/13/2017,7:51:32 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+859,2/13/2017,7:51:32 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+860,2/13/2017,7:51:32 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+861,2/13/2017,7:51:32 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+862,2/13/2017,7:51:33 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+863,2/13/2017,7:51:33 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+864,2/13/2017,7:51:34 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+865,2/13/2017,7:51:34 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+866,2/13/2017,7:53:26 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+867,2/13/2017,7:53:26 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+868,2/13/2017,7:53:28 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5029.88 (ms)"
+869,2/13/2017,7:53:29 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+870,2/13/2017,7:53:29 PM,"Abhishek",DBM C#,1122,"UI","5726"
+871,2/13/2017,7:53:31 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+872,2/13/2017,7:53:31 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+873,2/13/2017,7:53:31 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+874,2/13/2017,7:53:31 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+875,2/13/2017,7:53:31 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+876,2/13/2017,7:53:31 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+877,2/13/2017,7:53:33 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+878,2/13/2017,7:53:33 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+879,2/13/2017,7:53:33 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+880,2/13/2017,7:53:34 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+881,2/13/2017,7:53:34 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+882,2/13/2017,7:53:35 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+883,2/13/2017,7:53:36 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+884,2/13/2017,7:54:34 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+885,2/13/2017,7:54:34 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+886,2/13/2017,7:54:36 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5002.61 (ms)"
+887,2/13/2017,7:54:37 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+888,2/13/2017,7:54:37 PM,"Abhishek",DBM C#,1122,"UI","5723"
+889,2/13/2017,7:54:44 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+890,2/13/2017,7:54:44 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+891,2/13/2017,7:54:44 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+892,2/13/2017,7:54:44 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+893,2/13/2017,7:54:44 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+894,2/13/2017,7:54:45 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+895,2/13/2017,7:54:45 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+896,2/13/2017,7:54:45 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+897,2/13/2017,7:54:45 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+898,2/13/2017,7:54:45 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+899,2/13/2017,7:54:45 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+900,2/13/2017,7:54:46 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+901,2/13/2017,7:54:46 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+902,2/13/2017,7:54:51 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+903,2/13/2017,7:54:51 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+904,2/13/2017,7:54:51 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+905,2/13/2017,7:54:52 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+906,2/13/2017,7:54:52 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+907,2/13/2017,7:54:52 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+908,2/13/2017,7:54:53 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+909,2/13/2017,7:54:53 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+910,2/13/2017,7:54:53 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+911,2/13/2017,7:54:54 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+912,2/13/2017,7:54:55 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+913,2/13/2017,7:54:56 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+914,2/13/2017,7:54:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+915,2/13/2017,7:57:02 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+916,2/13/2017,7:57:02 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+917,2/13/2017,7:57:08 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+918,2/13/2017,7:57:08 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+919,2/13/2017,7:57:10 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5155.20 (ms)"
+920,2/13/2017,7:57:11 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+921,2/13/2017,7:57:11 PM,"Abhishek",DBM C#,1122,"UI","5870"
+922,2/13/2017,7:57:12 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+923,2/13/2017,7:57:13 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+924,2/13/2017,7:57:13 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+925,2/13/2017,7:57:13 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+926,2/13/2017,7:57:13 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+927,2/13/2017,7:57:13 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+928,2/13/2017,7:57:14 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+929,2/13/2017,7:57:14 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+930,2/13/2017,7:57:14 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+931,2/13/2017,7:57:16 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+932,2/13/2017,7:57:16 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+933,2/13/2017,7:57:17 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+934,2/13/2017,7:57:17 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+935,2/13/2017,7:57:57 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+936,2/13/2017,7:57:57 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+937,2/13/2017,7:57:59 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4873.88 (ms)"
+938,2/13/2017,7:58:00 PM,"Abhishek",DBM C#,1122,"UI","5499"
+939,2/13/2017,7:58:39 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+940,2/13/2017,7:58:39 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+941,2/13/2017,7:58:41 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5126.98 (ms)"
+942,2/13/2017,7:58:42 PM,"Abhishek",DBM C#,1122,"UI","5763"
+943,2/13/2017,7:58:44 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+944,2/13/2017,7:58:44 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+945,2/13/2017,7:58:44 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+946,2/13/2017,7:58:44 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+947,2/13/2017,7:58:44 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+948,2/13/2017,7:58:46 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+949,2/13/2017,7:58:47 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+950,2/13/2017,7:58:48 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+951,2/13/2017,8:00:06 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+952,2/13/2017,8:00:06 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+953,2/13/2017,8:00:08 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4958.05 (ms)"
+954,2/13/2017,8:00:09 PM,"Abhishek",DBM C#,1122,"UI","5544"
+955,2/13/2017,8:00:10 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+956,2/13/2017,8:00:10 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+957,2/13/2017,8:00:11 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+958,2/13/2017,8:00:11 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+959,2/13/2017,8:00:11 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+960,2/13/2017,8:00:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+961,2/13/2017,8:00:13 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+962,2/13/2017,8:00:15 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+963,2/13/2017,8:00:23 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+964,2/13/2017,8:00:23 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+965,2/13/2017,8:00:24 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 1245.81 (ms)"
+966,2/13/2017,8:00:24 PM,"Abhishek",DBM C#,1122,"UI","1398"
+967,2/13/2017,8:00:25 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+968,2/13/2017,8:00:25 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+969,2/13/2017,8:00:25 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+970,2/13/2017,8:00:26 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+971,2/13/2017,8:00:26 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+972,2/13/2017,8:00:26 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+973,2/13/2017,8:00:27 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+974,2/13/2017,8:00:27 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+975,2/13/2017,8:01:20 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+976,2/13/2017,8:01:20 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+977,2/13/2017,8:01:23 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4923.42 (ms)"
+978,2/13/2017,8:01:23 PM,"Abhishek",DBM C#,1122,"UI","5543"
+979,2/13/2017,8:01:25 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+980,2/13/2017,8:01:25 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+981,2/13/2017,8:01:25 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+982,2/13/2017,8:01:25 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+983,2/13/2017,8:01:25 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+984,2/13/2017,8:01:27 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+985,2/13/2017,8:01:28 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+986,2/13/2017,8:01:29 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+987,2/13/2017,8:02:01 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+988,2/13/2017,8:02:02 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+989,2/13/2017,8:02:04 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5163.22 (ms)"
+990,2/13/2017,8:02:05 PM,"Abhishek",DBM C#,1122,"UI","5894"
+991,2/13/2017,8:02:40 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+992,2/13/2017,8:02:40 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+993,2/13/2017,8:02:42 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4899.50 (ms)"
+994,2/13/2017,8:02:43 PM,"Abhishek",DBM C#,1122,"UI","5479"
+995,2/13/2017,8:02:46 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+996,2/13/2017,8:02:46 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+997,2/13/2017,8:02:46 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+998,2/13/2017,8:02:46 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+999,2/13/2017,8:02:46 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1000,2/13/2017,8:02:48 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1001,2/13/2017,8:02:49 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1002,2/13/2017,8:02:50 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1003,2/13/2017,8:03:20 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1004,2/13/2017,8:03:20 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1005,2/13/2017,8:03:22 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5060.87 (ms)"
+1006,2/13/2017,8:03:23 PM,"Abhishek",DBM C#,1122,"UI","5652"
+1007,2/13/2017,8:03:26 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1008,2/13/2017,8:03:26 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1009,2/13/2017,8:03:26 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1010,2/13/2017,8:03:26 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1011,2/13/2017,8:03:27 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1012,2/13/2017,8:03:28 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1013,2/13/2017,8:03:28 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1014,2/13/2017,8:03:29 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1015,2/13/2017,8:03:54 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1016,2/13/2017,8:03:54 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1017,2/13/2017,8:03:57 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4076.32 (ms)"
+1018,2/13/2017,8:03:57 PM,"Abhishek",DBM C#,1122,"UI","4654"
+1019,2/13/2017,8:04:04 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1020,2/13/2017,8:04:04 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1021,2/13/2017,8:04:04 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 1307.84 (ms)"
+1022,2/13/2017,8:04:05 PM,"Abhishek",DBM C#,1122,"UI","1452"
+1023,2/13/2017,8:04:06 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1024,2/13/2017,8:04:06 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1025,2/13/2017,8:04:07 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1026,2/13/2017,8:04:07 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1027,2/13/2017,8:04:07 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1028,2/13/2017,8:04:07 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1029,2/13/2017,8:04:08 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1030,2/13/2017,8:04:08 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1031,2/13/2017,8:04:12 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1032,2/13/2017,8:04:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1033,2/13/2017,8:04:13 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1034,2/13/2017,8:04:13 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1035,2/13/2017,8:04:14 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1036,2/13/2017,8:04:15 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1037,2/13/2017,8:04:16 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1038,2/13/2017,8:04:16 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1039,2/13/2017,8:04:16 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1040,2/13/2017,8:04:16 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+1041,2/13/2017,8:04:16 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+1042,2/13/2017,8:04:16 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+1043,2/13/2017,8:04:16 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+1044,2/13/2017,8:04:18 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1045,2/13/2017,8:04:18 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1046,2/13/2017,8:04:18 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1047,2/13/2017,8:04:18 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1048,2/13/2017,8:04:18 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1049,2/13/2017,8:04:19 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1050,2/13/2017,8:04:19 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1051,2/13/2017,8:04:20 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1052,2/13/2017,8:04:23 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1053,2/13/2017,8:04:23 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1054,2/13/2017,8:04:23 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1055,2/13/2017,8:04:23 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1056,2/13/2017,8:04:23 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1057,2/13/2017,8:04:24 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1058,2/13/2017,8:04:24 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1059,2/13/2017,8:04:25 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1060,2/13/2017,8:04:29 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1061,2/13/2017,8:04:31 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1062,2/13/2017,8:04:32 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1063,2/13/2017,8:04:34 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1064,2/13/2017,8:04:36 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1065,2/13/2017,8:04:39 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1066,2/13/2017,8:04:39 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1067,2/13/2017,8:04:39 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1068,2/13/2017,8:04:40 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1069,2/13/2017,8:04:40 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1070,2/13/2017,8:04:40 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1071,2/13/2017,8:04:40 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1072,2/13/2017,8:04:41 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1073,2/13/2017,8:04:43 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1074,2/13/2017,8:04:43 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1075,2/13/2017,8:04:44 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1076,2/13/2017,8:04:44 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1077,2/13/2017,8:04:44 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1078,2/13/2017,8:04:45 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1079,2/13/2017,8:04:45 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1080,2/13/2017,8:04:46 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1081,2/13/2017,8:04:46 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1082,2/13/2017,8:04:46 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1083,2/13/2017,8:04:46 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1084,2/13/2017,8:04:47 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1085,2/13/2017,8:04:47 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1086,2/13/2017,8:04:48 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""LOCAL"": syntax error"
+1087,2/13/2017,8:04:51 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1088,2/13/2017,8:04:53 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1089,2/13/2017,8:04:53 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1090,2/13/2017,8:04:53 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1091,2/13/2017,8:04:53 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1092,2/13/2017,8:04:53 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1093,2/13/2017,8:04:53 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1094,2/13/2017,8:04:54 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1095,2/13/2017,8:04:54 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1096,2/13/2017,8:04:57 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1097,2/13/2017,8:04:57 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1098,2/13/2017,8:04:57 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1099,2/13/2017,8:04:57 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1100,2/13/2017,8:04:57 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+1101,2/13/2017,8:04:57 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+1102,2/13/2017,8:04:57 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+1103,2/13/2017,8:04:58 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Transactions"": syntax error"
+1104,2/13/2017,8:05:00 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1105,2/13/2017,8:05:00 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1106,2/13/2017,8:05:00 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1107,2/13/2017,8:05:01 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1108,2/13/2017,8:05:01 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1109,2/13/2017,8:05:01 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1110,2/13/2017,8:05:01 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1111,2/13/2017,8:05:02 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""Log"": syntax error"
+1112,2/13/2017,8:05:59 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1113,2/13/2017,8:05:59 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1114,2/13/2017,8:06:02 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4986.75 (ms)"
+1115,2/13/2017,8:06:03 PM,"Abhishek",DBM C#,1122,"UI","5605"
+1116,2/13/2017,8:06:04 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1117,2/13/2017,8:06:04 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1118,2/13/2017,8:06:04 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1119,2/13/2017,8:06:05 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1120,2/13/2017,8:06:10 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1121,2/13/2017,8:06:10 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1122,2/13/2017,8:06:10 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1123,2/13/2017,8:06:10 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1124,2/13/2017,8:06:12 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1125,2/13/2017,8:06:12 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1126,2/13/2017,8:06:12 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1127,2/13/2017,8:06:12 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1128,2/13/2017,8:06:19 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1129,2/13/2017,8:06:19 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1130,2/13/2017,8:06:19 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 1397.77 (ms)"
+1131,2/13/2017,8:06:19 PM,"Abhishek",DBM C#,1122,"UI","1546"
+1132,2/13/2017,8:06:21 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1133,2/13/2017,8:06:21 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1134,2/13/2017,8:06:21 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1135,2/13/2017,8:06:21 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1136,2/13/2017,8:06:47 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1137,2/13/2017,8:06:47 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1138,2/13/2017,8:06:47 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1139,2/13/2017,8:06:47 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1140,2/13/2017,8:06:49 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1141,2/13/2017,8:06:49 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1142,2/13/2017,8:06:50 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1143,2/13/2017,8:06:50 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1144,2/13/2017,8:07:39 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1145,2/13/2017,8:07:39 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1146,2/13/2017,8:07:39 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Proggraming\SB\Projects\DB Manager\Assets\Test DB\Test 2.db"
+1147,2/13/2017,8:07:40 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1148,2/13/2017,8:07:40 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1149,2/13/2017,8:07:40 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""transactions"": syntax error"
+1150,2/13/2017,8:07:56 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1151,2/13/2017,8:07:56 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1152,2/13/2017,8:07:56 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1153,2/13/2017,8:07:56 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1154,2/13/2017,8:08:01 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1155,2/13/2017,8:08:01 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1156,2/13/2017,8:08:01 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Proggraming\SB\Projects\DB Manager\Assets\Test DB\Test 2.db"
+1157,2/13/2017,8:08:01 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1158,2/13/2017,8:08:01 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1159,2/13/2017,8:08:01 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1160,2/13/2017,8:08:06 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1161,2/13/2017,8:08:06 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1162,2/13/2017,8:08:06 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Proggraming\SB\Projects\DB Manager\Assets\Test DB\Test 2.db"
+1163,2/13/2017,8:08:06 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1164,2/13/2017,8:08:06 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1165,2/13/2017,8:08:06 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1166,2/13/2017,8:11:21 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1167,2/13/2017,8:11:21 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1168,2/13/2017,8:11:24 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5549 (ms)"
+1169,2/13/2017,8:11:26 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1170,2/13/2017,8:11:26 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1171,2/13/2017,8:11:26 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1172,2/13/2017,8:11:26 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1173,2/14/2017,4:20:04 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1174,2/14/2017,4:20:05 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1175,2/14/2017,4:20:08 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5898 (ms)"
+1176,2/14/2017,4:24:01 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1177,2/14/2017,4:24:01 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1178,2/14/2017,4:24:01 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1179,2/14/2017,4:24:01 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1180,2/14/2017,4:24:23 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1181,2/14/2017,4:24:23 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1182,2/14/2017,4:24:26 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5452 (ms)"
+1183,2/14/2017,4:27:45 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1184,2/14/2017,4:27:45 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1185,2/14/2017,4:27:48 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 6171 (ms)"
+1186,2/14/2017,4:32:43 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1187,2/14/2017,4:32:43 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1188,2/14/2017,4:32:46 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5744 (ms)"
+1189,2/14/2017,4:36:47 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1190,2/14/2017,4:36:47 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1191,2/14/2017,4:36:51 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5779 (ms)"
+1192,2/14/2017,4:38:16 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1193,2/14/2017,4:38:16 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1194,2/14/2017,4:38:19 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5572 (ms)"
+1195,2/14/2017,4:38:25 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1196,2/14/2017,4:38:25 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1197,2/14/2017,4:38:25 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1198,2/14/2017,4:38:25 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1199,2/14/2017,4:38:40 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1200,2/14/2017,4:38:41 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1201,2/14/2017,4:38:44 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4612 (ms)"
+1202,2/14/2017,4:39:50 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1203,2/14/2017,4:39:50 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1204,2/14/2017,4:39:53 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4745 (ms)"
+1205,2/14/2017,4:40:40 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1206,2/14/2017,4:40:40 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1207,2/14/2017,4:40:43 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5554 (ms)"
+1208,2/14/2017,4:40:45 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1209,2/14/2017,4:40:45 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1210,2/14/2017,4:40:45 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1211,2/14/2017,4:40:45 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1212,2/14/2017,4:40:49 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1213,2/14/2017,4:40:49 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1214,2/14/2017,4:40:50 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1215,2/14/2017,4:40:50 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1216,2/14/2017,4:40:53 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1217,2/14/2017,4:40:53 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1218,2/14/2017,4:40:53 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1219,2/14/2017,4:40:53 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1220,2/14/2017,4:41:15 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1221,2/14/2017,4:41:15 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1222,2/14/2017,4:41:18 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5441 (ms)"
+1223,2/14/2017,4:41:19 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1224,2/14/2017,4:41:19 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1225,2/14/2017,4:41:19 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1226,2/14/2017,4:41:20 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1227,2/14/2017,4:41:33 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1228,2/14/2017,4:41:36 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1229,2/14/2017,4:41:36 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1230,2/14/2017,4:41:37 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1231,2/14/2017,4:41:37 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1232,2/14/2017,4:42:16 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1233,2/14/2017,4:42:16 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1234,2/14/2017,4:42:19 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5569 (ms)"
+1235,2/14/2017,4:42:39 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1236,2/14/2017,4:42:39 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1237,2/14/2017,4:42:42 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5238 (ms)"
+1238,2/14/2017,4:42:43 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1239,2/14/2017,4:42:43 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1240,2/14/2017,4:42:43 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1241,2/14/2017,4:42:44 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1242,2/14/2017,4:43:21 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1243,2/14/2017,4:43:22 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1244,2/14/2017,4:43:25 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5569 (ms)"
+1245,2/14/2017,4:43:27 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1246,2/14/2017,4:43:27 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1247,2/14/2017,4:43:27 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1248,2/14/2017,4:43:27 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1249,2/14/2017,4:43:45 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1250,2/14/2017,4:43:46 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1251,2/14/2017,4:43:46 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 2628 (ms)"
+1252,2/14/2017,4:43:49 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1253,2/14/2017,4:43:49 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1254,2/14/2017,4:43:49 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1255,2/14/2017,4:43:49 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1256,2/14/2017,4:43:53 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1257,2/14/2017,4:43:53 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1258,2/14/2017,4:43:53 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1259,2/14/2017,4:43:53 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1260,2/14/2017,4:43:56 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1261,2/14/2017,4:43:56 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1262,2/14/2017,4:43:56 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1263,2/14/2017,4:43:56 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1264,2/14/2017,4:44:39 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1265,2/14/2017,4:44:39 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1266,2/14/2017,4:44:39 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1267,2/14/2017,4:44:39 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1268,2/14/2017,4:44:42 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1269,2/14/2017,4:44:43 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1270,2/14/2017,4:44:43 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1271,2/14/2017,4:44:43 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1272,2/14/2017,4:44:46 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1273,2/14/2017,4:44:46 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1274,2/14/2017,4:44:46 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1275,2/14/2017,4:44:47 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1276,2/14/2017,4:44:50 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1277,2/14/2017,4:44:50 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1278,2/14/2017,4:44:50 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1279,2/14/2017,4:44:50 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1280,2/14/2017,4:44:54 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1281,2/14/2017,4:44:54 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1282,2/14/2017,4:44:54 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1283,2/14/2017,4:44:54 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1284,2/14/2017,4:45:13 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1285,2/14/2017,4:45:14 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1286,2/14/2017,4:45:17 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5473 (ms)"
+1287,2/14/2017,4:45:18 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1288,2/14/2017,4:45:18 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1289,2/14/2017,4:45:18 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1290,2/14/2017,4:45:18 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1291,2/14/2017,4:45:22 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1292,2/14/2017,4:45:22 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1293,2/14/2017,4:45:22 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1294,2/14/2017,4:45:22 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1295,2/14/2017,4:45:23 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1296,2/14/2017,4:45:23 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1297,2/14/2017,4:45:23 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1298,2/14/2017,4:45:24 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1299,2/14/2017,4:45:26 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1300,2/14/2017,4:45:26 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1301,2/14/2017,4:45:26 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1302,2/14/2017,4:45:26 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1303,2/14/2017,4:45:28 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1304,2/14/2017,4:45:28 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1305,2/14/2017,4:45:28 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1306,2/14/2017,4:45:28 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1307,2/14/2017,4:45:32 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1308,2/14/2017,4:45:32 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1309,2/14/2017,4:45:32 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1310,2/14/2017,4:45:32 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1311,2/14/2017,4:45:35 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1312,2/14/2017,4:45:35 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1313,2/14/2017,4:45:35 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1314,2/14/2017,4:45:35 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1315,2/14/2017,4:45:39 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1316,2/14/2017,4:45:39 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1317,2/14/2017,4:45:39 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1318,2/14/2017,4:45:39 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1319,2/14/2017,4:45:42 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1320,2/14/2017,4:45:42 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1321,2/14/2017,4:45:43 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1322,2/14/2017,4:45:43 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1323,2/14/2017,4:45:46 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1324,2/14/2017,4:45:46 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1325,2/14/2017,4:45:46 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1326,2/14/2017,4:45:46 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1327,2/14/2017,4:45:48 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1328,2/14/2017,4:45:48 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1329,2/14/2017,4:45:48 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1330,2/14/2017,4:45:48 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1331,2/14/2017,4:45:51 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1332,2/14/2017,4:45:51 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1333,2/14/2017,4:45:51 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1334,2/14/2017,4:45:51 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1335,2/14/2017,4:45:53 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1336,2/14/2017,4:45:53 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1337,2/14/2017,4:45:53 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1338,2/14/2017,4:45:53 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1339,2/14/2017,4:45:55 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1340,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1341,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : DataReader already active on this command"
+1342,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1343,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1344,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1345,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1346,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1347,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1348,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1349,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1350,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1351,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1352,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1353,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1354,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1355,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1356,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1357,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1358,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1359,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1360,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1361,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1362,2/14/2017,4:45:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1342,2/14/2017,4:51:04 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1343,2/14/2017,4:51:04 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1344,2/14/2017,4:51:07 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5668 (ms)"
+1345,2/14/2017,4:51:08 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1346,2/14/2017,4:51:09 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1347,2/14/2017,4:51:09 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1348,2/14/2017,4:51:09 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1349,2/14/2017,4:56:12 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1350,2/14/2017,4:56:12 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1351,2/14/2017,4:56:15 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4756 (ms)"
+1352,2/14/2017,4:56:16 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1353,2/14/2017,4:56:16 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1354,2/14/2017,4:56:16 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1355,2/14/2017,4:56:16 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1356,2/14/2017,4:56:24 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1357,2/14/2017,4:56:24 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1358,2/14/2017,4:56:24 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1359,2/14/2017,4:56:25 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1360,2/14/2017,4:58:01 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1361,2/14/2017,4:58:01 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1362,2/14/2017,4:58:04 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5708 (ms)"
+1363,2/14/2017,4:58:06 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1364,2/14/2017,4:58:06 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1365,2/14/2017,4:58:06 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1366,2/14/2017,4:58:06 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1367,2/14/2017,4:59:19 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1368,2/14/2017,4:59:19 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1369,2/14/2017,4:59:22 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5388 (ms)"
+1370,2/14/2017,4:59:27 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1371,2/14/2017,4:59:28 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1372,2/14/2017,4:59:28 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 1355 (ms)"
+1373,2/14/2017,4:59:30 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1374,2/14/2017,4:59:30 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1375,2/14/2017,4:59:30 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1376,2/14/2017,4:59:30 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1377,2/14/2017,4:59:32 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1378,2/14/2017,4:59:32 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1379,2/14/2017,4:59:32 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1380,2/14/2017,4:59:32 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1381,2/14/2017,4:59:33 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+no such table:"
+1382,2/14/2017,4:59:36 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1383,2/14/2017,4:59:36 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1384,2/14/2017,4:59:36 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1385,2/14/2017,4:59:36 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1386,2/14/2017,4:59:41 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1387,2/14/2017,4:59:42 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1388,2/14/2017,4:59:42 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1389,2/14/2017,4:59:42 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1390,2/14/2017,4:59:44 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1391,2/14/2017,4:59:44 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1392,2/14/2017,4:59:44 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1393,2/14/2017,4:59:44 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1394,2/14/2017,5:00:34 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1395,2/14/2017,5:00:34 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1396,2/14/2017,5:00:37 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5545 (ms)"
+1397,2/14/2017,5:00:38 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1398,2/14/2017,5:00:38 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1399,2/14/2017,5:00:38 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1400,2/14/2017,5:00:38 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1401,2/14/2017,5:00:47 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1402,2/14/2017,5:00:47 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1403,2/14/2017,5:00:48 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 1370 (ms)"
+1404,2/14/2017,5:00:49 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1405,2/14/2017,5:00:49 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1406,2/14/2017,5:00:50 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1407,2/14/2017,5:00:50 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1408,2/14/2017,5:00:55 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1409,2/14/2017,5:00:55 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1410,2/14/2017,5:00:55 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1411,2/14/2017,5:00:55 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1412,2/14/2017,5:00:58 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1413,2/14/2017,5:00:59 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1414,2/14/2017,5:00:59 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1415,2/14/2017,5:00:59 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1416,2/14/2017,5:01:33 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1417,2/14/2017,5:01:33 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1418,2/14/2017,5:01:36 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5277 (ms)"
+1419,2/14/2017,5:01:37 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1420,2/14/2017,5:01:37 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1421,2/14/2017,5:01:38 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1422,2/14/2017,5:01:38 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1423,2/14/2017,5:01:39 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1424,2/14/2017,5:01:39 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1425,2/14/2017,5:01:39 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1426,2/14/2017,5:01:40 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1427,2/14/2017,5:01:40 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+no such table: Log"
+1428,2/14/2017,5:04:49 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1429,2/14/2017,5:04:49 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1430,2/14/2017,5:04:52 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5489 (ms)"
+1431,2/14/2017,5:04:53 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1432,2/14/2017,5:04:53 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1433,2/14/2017,5:04:53 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1434,2/14/2017,5:04:54 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1435,2/14/2017,5:04:57 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1436,2/14/2017,5:04:57 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1437,2/14/2017,5:04:57 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1438,2/14/2017,5:04:57 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1439,2/14/2017,5:04:58 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1440,2/14/2017,5:04:58 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1441,2/14/2017,5:04:59 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1442,2/14/2017,5:04:59 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1443,2/14/2017,5:05:03 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1444,2/14/2017,5:05:03 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1445,2/14/2017,5:05:03 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1446,2/14/2017,5:05:03 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1447,2/14/2017,5:05:07 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1448,2/14/2017,5:05:07 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1449,2/14/2017,5:05:07 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1450,2/14/2017,5:05:07 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1451,2/14/2017,5:37:23 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1452,2/14/2017,5:37:23 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1453,2/14/2017,5:37:23 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 1644 (ms)"
+1454,2/14/2017,5:37:25 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1455,2/14/2017,5:37:26 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1456,2/14/2017,5:37:26 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1457,2/14/2017,5:37:26 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1458,2/14/2017,5:37:29 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1459,2/14/2017,5:37:29 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1460,2/14/2017,5:37:29 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1461,2/14/2017,5:37:29 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1462,2/14/2017,5:37:32 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1463,2/14/2017,5:37:32 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1464,2/14/2017,5:37:32 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1465,2/14/2017,5:37:32 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1466,2/14/2017,5:37:34 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1467,2/14/2017,5:37:34 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1468,2/14/2017,5:37:35 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1469,2/14/2017,5:37:35 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1470,2/14/2017,5:37:57 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1471,2/14/2017,5:37:57 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1472,2/14/2017,5:37:58 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Proggraming\SB\Projects\DB Manager\Assets\Test DB\Test 2.db"
+1473,2/14/2017,5:37:58 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1474,2/14/2017,5:37:58 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1475,2/14/2017,5:37:58 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""transactions"": syntax error"
+1476,2/14/2017,5:38:04 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1477,2/14/2017,5:38:04 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1478,2/14/2017,5:38:04 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Log.db"
+1479,2/14/2017,5:38:04 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1480,2/14/2017,5:38:08 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1481,2/14/2017,5:38:08 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1482,2/14/2017,5:38:08 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\Assets\Transactions.db"
+1483,2/14/2017,5:38:08 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1484,2/14/2017,5:38:11 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1485,2/14/2017,5:38:11 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB INDEX : 0"
+1486,2/14/2017,5:38:11 PM,"Abhishek",DBM C#,1122,"Debug","LOAD DB : C:\Users\Abhishek\Documents\Proggraming\SB\Projects\DB Manager\Assets\Test DB\Test 2.db"
+1487,2/14/2017,5:38:11 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1488,2/14/2017,5:38:11 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1489,2/14/2017,5:38:11 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1490,2/14/2017,5:38:27 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : Cannot set CommandText while a DataReader is active"
+1491,2/14/2017,5:38:27 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : DataReader already active on this command"
+1492,2/14/2017,5:38:29 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : Cannot set CommandText while a DataReader is active"
+1493,2/14/2017,5:38:29 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : DataReader already active on this command"
+1494,2/14/2017,5:54:55 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1495,2/14/2017,5:54:55 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1496,2/14/2017,5:54:58 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5705 (ms)"
+1497,2/14/2017,5:57:27 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1498,2/14/2017,5:57:27 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1499,2/14/2017,5:57:30 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5588 (ms)"
+1500,2/14/2017,5:57:32 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1501,2/14/2017,5:57:32 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1502,2/14/2017,6:00:55 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1503,2/14/2017,6:00:55 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1504,2/14/2017,6:00:58 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5527 (ms)"
+1505,2/14/2017,6:01:07 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1506,2/14/2017,6:01:07 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1507,2/14/2017,6:04:54 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1508,2/14/2017,6:04:54 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1509,2/14/2017,6:04:57 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5448 (ms)"
+1510,2/14/2017,6:05:38 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1511,2/14/2017,6:05:38 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1512,2/14/2017,6:05:41 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 6543 (ms)"
+1513,2/14/2017,6:06:18 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1514,2/14/2017,6:06:18 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1515,2/14/2017,6:06:21 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5291 (ms)"
+1516,2/14/2017,6:06:47 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1517,2/14/2017,6:06:47 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1518,2/14/2017,6:06:50 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5580 (ms)"
+1519,2/14/2017,6:07:26 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1520,2/14/2017,6:07:26 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1521,2/14/2017,6:07:29 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5733 (ms)"
+1522,2/14/2017,6:10:36 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1523,2/14/2017,6:10:36 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1524,2/14/2017,6:10:39 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5506 (ms)"
+1525,2/14/2017,6:10:47 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1526,2/14/2017,6:10:47 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1527,2/14/2017,6:11:36 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1528,2/14/2017,6:11:36 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1529,2/14/2017,6:11:39 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5473 (ms)"
+1530,2/14/2017,6:11:41 PM,"Abhishek",DBM C#,1122,"System","LDControls.ComboBoxGetSelected : Shape not found : "
+1531,2/14/2017,6:11:59 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1532,2/14/2017,6:11:59 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1533,2/14/2017,6:12:14 PM,"Abhishek",DBM C#,1122,"System","LDControls.ComboBoxGetSelected : Shape not found : "
+1534,2/14/2017,6:21:59 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1535,2/14/2017,6:21:59 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1536,2/14/2017,6:22:02 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5640 (ms)"
+1537,2/14/2017,6:22:27 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1538,2/14/2017,6:22:28 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1539,2/14/2017,6:22:31 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5525 (ms)"
+1540,2/14/2017,6:24:00 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1541,2/14/2017,6:24:00 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1542,2/14/2017,6:24:03 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5443 (ms)"
+1543,2/14/2017,6:29:53 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1544,2/14/2017,6:29:53 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1545,2/14/2017,6:29:56 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5665 (ms)"
+1546,2/14/2017,6:42:00 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1547,2/14/2017,6:42:01 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1548,2/14/2017,6:42:04 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4545 (ms)"
+1549,2/14/2017,6:42:05 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1550,2/14/2017,6:42:05 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1551,2/14/2017,6:42:08 PM,"Abhishek",DBM C#,1122,"System","LDControls.ComboBoxGetSelected : Shape not found : "
+1552,2/14/2017,6:43:06 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1553,2/14/2017,6:43:06 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1554,2/14/2017,6:43:09 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5605 (ms)"
+1555,2/14/2017,6:43:11 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1556,2/14/2017,6:43:11 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1557,2/14/2017,6:43:12 PM,"Abhishek",DBM C#,1122,"System","LDControls.ComboBoxGetSelected : Shape not found : "
+1558,2/14/2017,6:43:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1559,2/14/2017,6:43:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1560,2/14/2017,6:43:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1561,2/14/2017,6:43:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1562,2/14/2017,6:43:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1563,2/14/2017,6:43:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1564,2/14/2017,6:43:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1565,2/14/2017,6:43:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1566,2/14/2017,6:43:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1567,2/14/2017,6:43:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1568,2/14/2017,6:43:14 PM,"Abhishek",DBM C#,1122,"System","LDControls.ComboBoxGetSelected : Shape not found : "
+1559,2/14/2017,6:45:22 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1560,2/14/2017,6:45:22 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1561,2/14/2017,6:45:25 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5679 (ms)"
+1562,2/14/2017,6:45:25 PM,"Abhishek",DBM C#,1122,"System","LDControls.ComboBoxGetSelected : Shape not found : "
+1563,2/14/2017,6:45:25 PM,"Abhishek",DBM C#,1122,"System","LDControls.ComboBoxGetSelected : Shape not found : "
+1564,2/14/2017,6:45:38 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1565,2/14/2017,6:45:38 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1566,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDControls.ComboBoxGetSelected : Shape not found : "
+1567,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1568,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1569,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1570,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1571,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1572,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1573,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1574,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1575,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1576,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1577,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1578,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1579,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1580,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1581,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1582,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1583,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1584,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1585,2/14/2017,6:45:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : Cannot set CommandText while a DataReader is active"
+1586,2/14/2017,6:45:40 PM,"Abhishek",DBM C#,1122,"System","LDControls.ComboBoxGetSelected : Shape not found : "
+1587,2/14/2017,6:45:40 PM,"Abhishek",DBM C#,1122,"System","LDControls.ComboBoxGetSelected : Shape not found : "
+1588,2/14/2017,6:45:40 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : library routine called out of sequence
+not an error"
+1589,2/14/2017,6:45:40 PM,"Abhishek",DBM C#,1122,"System","LDControls.ComboBoxGetSelected : Shape not found : "
+1570,2/14/2017,6:46:47 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1571,2/14/2017,6:46:47 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1572,2/14/2017,6:46:50 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4526 (ms)"
+1573,2/14/2017,6:46:52 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1574,2/14/2017,6:46:52 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1575,2/14/2017,6:48:51 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1576,2/14/2017,6:48:51 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1577,2/14/2017,6:48:54 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5531 (ms)"
+1578,2/14/2017,6:51:50 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1579,2/14/2017,6:51:50 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1580,2/14/2017,6:56:20 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1581,2/14/2017,6:56:20 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1582,2/14/2017,6:56:23 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5482 (ms)"
+1583,2/14/2017,6:56:25 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1584,2/14/2017,6:56:25 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1585,2/14/2017,6:56:53 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1586,2/14/2017,6:56:53 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1587,2/14/2017,6:56:56 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4582 (ms)"
+1588,2/14/2017,6:56:58 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1589,2/14/2017,6:56:58 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1590,2/14/2017,6:58:22 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1591,2/14/2017,6:58:22 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1592,2/14/2017,6:58:25 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5386 (ms)"
+1593,2/14/2017,6:58:27 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1594,2/14/2017,6:58:27 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1595,2/14/2017,7:03:50 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1596,2/14/2017,7:03:50 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1597,2/14/2017,7:03:53 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5551 (ms)"
+1598,2/14/2017,7:03:55 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1599,2/14/2017,7:03:55 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1600,2/14/2017,8:31:20 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+unrecognized token: ""'%Startup% ORDER BY ""Event"" ASC;"""
+1601,2/14/2017,8:31:20 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : SQL logic error or missing database
+near ""ORDER"": syntax error"
+1602,2/14/2017,8:31:40 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+unrecognized token: ""'%Startup% ORDER BY ""ID"" ASC;"""
+1603,2/14/2017,8:31:40 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : SQL logic error or missing database
+near ""ORDER"": syntax error"
+1602,2/14/2017,8:32:27 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1603,2/14/2017,8:32:27 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1604,2/14/2017,8:32:30 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 6104 (ms)"
+1605,2/14/2017,8:32:31 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1606,2/14/2017,8:32:32 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1607,2/14/2017,8:32:41 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+unrecognized token: ""'%Startup% ORDER BY ""ID"" ASC;"""
+1608,2/14/2017,8:32:41 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Command : SQL logic error or missing database
+near ""ORDER"": syntax error"
+1608,2/14/2017,8:33:28 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1609,2/14/2017,8:33:28 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1610,2/14/2017,8:33:31 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5779 (ms)"
+1611,2/14/2017,8:33:33 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1612,2/14/2017,8:33:33 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1613,2/14/2017,8:34:26 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1614,2/14/2017,8:34:26 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1615,2/14/2017,8:34:29 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5895 (ms)"
+1616,2/14/2017,8:34:31 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1617,2/14/2017,8:34:31 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1618,2/14/2017,8:35:12 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1619,2/14/2017,8:35:12 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1620,2/14/2017,8:35:15 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5999 (ms)"

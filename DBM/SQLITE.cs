@@ -8,31 +8,38 @@ using SBArray = Microsoft.SmallBasic.Library.Array;
 using SBFile = Microsoft.SmallBasic.Library.File;
 using System.Collections.Generic;
 using System.IO;
+using System.Diagnostics;
 namespace DBM
 {
 	[SmallBasicType]
 	public static class Engines
 	{
-		public enum EnginesModes {MySQL=1, ODBC=2,OLEDB=3,SQLITE=4,SQLSERVER=5}
+		public enum EnginesModes {NONE,MySQL=1, ODBC=2,OLEDB=3,SQLITE=4,SQLSERVER=5}
+		public static string CurrentDatabase { get;private set;}
+		public static string CurrentTable {get;private set;}
+		public static string Database_Shortname { get; private set;}
+		public static Primitive Schema { get; private set;}
+		public static string GQ_CMD { get; private set;}
 
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Command()");
 			if (RunParser == false)
 			{
-				int EngineMode = Engine_Type(Database);
+				
+				EnginesModes EngineMode = Engine_Type(Database);
 				TransactionRecord(User, Database, SQL, "CMD", Explanation);
 				switch (EngineMode)
 				{
-					case 1:
+					case EnginesModes.MySQL:
 						return 0;
-					case 2:
+					case EnginesModes.ODBC:
 						return 0;
-					case 3:
+					case EnginesModes.OLEDB:
 						return 0;
-					case (int)EnginesModes.SQLITE:
+					case EnginesModes.SQLITE:
 						return LDDataBase.Command(Database, SQL);
-					case 5:
+					case EnginesModes.SQLSERVER:
 						return 0;
 					default:
 						return 0;
@@ -52,10 +59,15 @@ namespace DBM
 
 		public static Primitive Query(string DataBase, string SQL, string ListView, bool FetchRecords, string UserName, string Explanation) //Expand
 		{
+			Stopwatch QueryTime = Stopwatch.StartNew();
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Query()");
-			int EngineMode = Engine_Type(DataBase);
 			TransactionRecord(UserName, DataBase, SQL, "Query", Explanation);
-			return LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
+			Primitive QueryResults = LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
+
+			LDList.Add(GlobalStatic.List_Time_Refer, "Query");
+			LDList.Add(GlobalStatic.List_Query_Time, QueryTime.ElapsedMilliseconds.ToString());
+			return QueryResults;
+
 		}
 
 		public static void Emulator() //Implement
@@ -83,22 +95,23 @@ namespace DBM
 					if (LDFile.Exists(Data) == true)
 					{
 						int Index = LDList.GetAt(GlobalStatic.List_DB_Path, Data);
-						Events.LogMessage("LOAD DB INDEX : " + Index, "Debug");
-						Events.LogMessage("LOAD DB : " + Data , "Debug");
+						//Events.LogMessage("LOAD DB INDEX : " + Index, "Debug");
+						//Events.LogMessage("LOAD DB : " + Data , "Debug");
 						if (Index == 0) //New Database
 						{
 							string Database = LDDataBase.ConnectSQLite(Data);
 							AddToList(Data, Database, LDFile.GetFile(Data), 4);
 							GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data);
 							Settings.SaveSettings();
-							GlobalStatic.CurrentDatabase = Database;
+							Engines.CurrentDatabase = Database;
 							return Database;
 						}
 						else
 						{
 							string Database = LDList.GetAt(GlobalStatic.List_DB_Name, Index);
-							LDList.Add(GlobalStatic.List_DB_ShortName, LDList.GetAt(GlobalStatic.List_DB_ShortName, Index));
-							GlobalStatic.CurrentDatabase = Database;
+							Database_Shortname = LDList.GetAt(GlobalStatic.List_DB_ShortName, Index);
+							LDList.Add(GlobalStatic.List_DB_ShortName, Database_Shortname);
+							Engines.CurrentDatabase = Database;
 							return Database;
 						}
 					}
@@ -126,9 +139,9 @@ namespace DBM
 				{
 					LDList.Add(Master_Schema_Lists[Master_Schema_List[i]["type"]], Master_Schema_List[i]["tbl_name"]);
 				}
-				string Default_Table = LDList.GetAt(GlobalStatic.List_SCHEMA_Table, 1);
-				LDList.Add(GlobalStatic.TrackDefaultTable,Database + "." + Default_Table);
-				GetSchemaofTable(Database, Default_Table);
+				Engines.CurrentTable = LDList.GetAt(GlobalStatic.List_SCHEMA_Table, 1);
+				LDList.Add(GlobalStatic.TrackDefaultTable,Database + "." + Engines.CurrentTable);
+				GetSchemaofTable(Database, Engines.CurrentTable);
 			}
 		}
 
@@ -138,51 +151,110 @@ namespace DBM
 			if (!string.IsNullOrEmpty(Database) && !string.IsNullOrEmpty(Table)) //Prevents calls to nonexistent tables or Databases
 			{
 				LDList.Clear("SCHEMA");
-				Primitive Schema = Query(Database, "PRAGMA table_info(\"" + Table + "\");", null, true,GlobalStatic.LangList["App"], GlobalStatic.LangList["SCHEMA-PRIVATE"]);
+				Primitive Schema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true,GlobalStatic.LangList["App"], GlobalStatic.LangList["SCHEMA-PRIVATE"]);
 				for (int i = 1;i <= SBArray.GetItemCount(Schema); i++)
 				{
 					LDList.Add("SCHEMA", Schema[i]["name"]);
 				}
-				GlobalStatic.Schema = LDList.ToArray("SCHEMA");
+				Engines.Schema = LDList.ToArray("SCHEMA");
 			}
 		}
 
-		public static void GenerateQuery(bool Search,bool Sort,bool Function) //Implement //Interface to private classes
+		public static void EditTable(string Table,string Control)
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.GenerateQuery()");
-			if (Search)
-			{ }
-			if (Sort)
-			{ }
-			if (Function)
-			{ }
+			LDDataBase.EditTable(CurrentDatabase,CurrentTable, Control);
 		}
 
-		static void GenerateSearch() //Implement
-		{ }
-		static void GenerateSort() //Implement
-		{ }
-		static void GenerateFunction() //Implement
-		{ }
+		public static void SetDefaultTable(string Table)
+		{
+			Engines.CurrentTable ="\""+ Table+"\"";
+			LDList.Add(GlobalStatic.TrackDefaultTable, CurrentDatabase + "." + CurrentTable);
+		}
+
+		public static void GenerateQuery(bool Search,bool Sort,bool Function,string SearchBy,string OrderBy,string SortOrder,bool StrictSearch,bool InvertSearch,string FunctionSelected,string FunctionColumn,string SearchText) //Implement //Interface to private classes
+		{
+			if (!string.IsNullOrEmpty(Engines.CurrentTable))
+			{
+				GQ_CMD = null;
+				GQ_CMD = "SELECT * FROM " + Engines.CurrentTable + " ";
+				LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.GenerateQuery()");
+				if (Search)
+				{
+					GQ_CMD += GenerateSearch(SearchBy,SearchText,InvertSearch,StrictSearch);
+				}
+				if (Function) 
+				{
+					GQ_CMD = GenerateFunction(FunctionSelected, FunctionColumn);
+				}
+
+				if (Sort)
+				{
+					GQ_CMD += GenerateSort(OrderBy,SortOrder );
+				}
+			}
+			//Console.WriteLine("Generate SQL : {0}", GQ_CMD);
+			Engines.Query(Engines.CurrentDatabase, GQ_CMD, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.Username);
+			GQ_CMD = null;
+		}
+
+		static string GenerateSearch(string SearchColumn,string SearchText,bool InvertSearch,bool StrictSearch) //Implement
+		{
+			string CMD;
+			CMD = "WHERE " + SearchColumn;
+			if (InvertSearch == true && StrictSearch == false)
+			{ CMD += " NOT"; }
+
+			if (StrictSearch == false)
+			{
+				CMD += " LIKE '%" + SearchText + "%' ";
+			}
+			else
+			{
+				if (InvertSearch) 
+				{
+					CMD += "!='" + SearchText + "' ";
+				}
+				else 
+				{
+					CMD += "='" + SearchText + "' ";
+				}
+			}
+			return CMD;
+		}
+
+
+		static string GenerateSort(string OrderBy,string ASCDESC) //Implement
+		{
+			string CMD;
+			CMD = "ORDER BY \"" + OrderBy + "\" " + ASCDESC + ";";
+			return CMD;
+		}
+		static string GenerateFunction(string Function,string Column) //Implement
+		{
+			string CMD;
+			CMD = "SELECT " + Function + "(\"" + Column + "\") FROM " + Engines.CurrentTable + " ";
+			return CMD;
+		}
 
 		public static void CreateStatisticsPage() //Implement
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.CreateStatisticsPage()");
 		}
 
-		private static int Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database 
+		private static EnginesModes Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database 
 		{
 			int Index = LDList.IndexOf(GlobalStatic.List_DB_Name, Database);
 			if (Index != 0)
 			{
-				return LDList.GetAt(GlobalStatic.List_DB_Engine, Index);
+				return (EnginesModes)(int)LDList.GetAt(GlobalStatic.List_DB_Engine, Index);
 			}
 			else
-			{ return 0; }
+			{ return EnginesModes.NONE; }
 		}
 
 		static void AddToList(string path, string Name, string ShortName, int Engine)
 		{
+			Database_Shortname = ShortName;
 			LDList.Add(GlobalStatic.List_DB_Path, path);
 			LDList.Add(GlobalStatic.List_DB_Name, Name);
 			LDList.Add(GlobalStatic.List_DB_ShortName, ShortName);

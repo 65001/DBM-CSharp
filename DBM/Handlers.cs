@@ -2,18 +2,24 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 namespace DBM
 {
-	public class Handlers
+	public static class Handlers
 	{
+		public static Primitive CurrentSchema;static string CorrectList;
+		public static Primitive TypeofSorts ="1="+ GlobalStatic.LangList["Table"] +";2=" + GlobalStatic.LangList["View"] +"3="+ GlobalStatic.LangList["Index"] + "4="+ GlobalStatic.LangList["Master Table"]+";";
+
 		public static void Menu(string Item) //Handles Main Menu  //Implement
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Handlers.Menu(" + Item + ")");
 
+			//Switch and Enum cannot be used because values can change
 			//File Menu Items
-			if (Item == GlobalStatic.LangList["New"])
+			if (Item == GlobalStatic.LangList["New"]) //Implement
 			{
 				string Path = LDDialogs.SaveFile(GlobalStatic.Extensions, GlobalStatic.LastFolder);
 				if (!string.IsNullOrWhiteSpace(Path))
@@ -35,7 +41,7 @@ namespace DBM
 				UI.PreMainMenu();
 				UI.MainMenu();
 			}
-			else if (Item == GlobalStatic.LangList["Define New Table"])
+			else if (Item == GlobalStatic.LangList["Define New Table"]) //Implement
 			{
 
 			}
@@ -54,12 +60,16 @@ namespace DBM
 					UI.ShowDisplayResults();
 					Controls.ShowControl(GlobalStatic.ListView);
 				}
+				if (!string.IsNullOrEmpty(Engines.CurrentTable))
+				{
+					Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Engines.CurrentTable + ";", GlobalStatic.ListView, false, GlobalStatic.LangList["App"], GlobalStatic.LangList["View Function"]);
+				}
 			}
 			else if (Item == GlobalStatic.LangList["Save"])
 			{
-				if (!string.IsNullOrEmpty(GlobalStatic.CurrentDatabase) && !string.IsNullOrEmpty(GlobalStatic.Dataview))
+				if (!string.IsNullOrEmpty(Engines.CurrentDatabase) && !string.IsNullOrEmpty(GlobalStatic.Dataview))
 				{
-					string SaveStatus = LDDataBase.SaveTable(GlobalStatic.CurrentDatabase, GlobalStatic.Dataview);
+					string SaveStatus = LDDataBase.SaveTable(Engines.CurrentDatabase, GlobalStatic.Dataview);
 					Events.LogMessage("The save was : " + SaveStatus, GlobalStatic.LangList["UI"]);
 					GraphicsWindow.ShowMessage("The save was : " + SaveStatus, "Save Status");
 				}
@@ -71,8 +81,33 @@ namespace DBM
 			}
 			else if (Item == GlobalStatic.LangList["Edit"])
 			{
-				if (!string.IsNullOrEmpty(GlobalStatic.CurrentDatabase))
+				if (!string.IsNullOrEmpty(Engines.CurrentDatabase))
 				{
+					switch (GlobalStatic.SortBy)
+					{
+						case 2:
+							Events.LogMessage(GlobalStatic.LangList["Views Read Only"], GlobalStatic.LangList["UI"]);
+							GraphicsWindow.ShowMessage(GlobalStatic.LangList["Error"] + ":" + GlobalStatic.LangList["Views Read Only"], GlobalStatic.LangList["Access Denied"]);
+							break;
+						case 4:
+							Events.LogMessage(GlobalStatic.LangList["Master Table Protected"], GlobalStatic.LangList["UI"]);
+							GraphicsWindow.ShowMessage(GlobalStatic.LangList["Error"] + ":" + GlobalStatic.LangList["Master Table Protected"], GlobalStatic.LangList["Access Denied"]);
+							break;
+						default:
+							Controls.HideControl(GlobalStatic.ListView);
+							if (String.IsNullOrEmpty(GlobalStatic.Dataview))
+							{
+								GlobalStatic.Dataview = LDControls.AddDataView(GlobalStatic.Listview_Width, GlobalStatic.Listview_Height,null);
+								Controls.Move(GlobalStatic.Dataview, 10, 35);
+							}
+							else 
+							{
+								Controls.ShowControl(GlobalStatic.Dataview);
+							}
+							Engines.EditTable(Engines.CurrentTable, GlobalStatic.Dataview);
+							UI.HideDisplayResults();
+							break;
+					}
 				
 				}
 				else
@@ -133,25 +168,39 @@ namespace DBM
 
 		public static void Buttons(string LastButton) //Implement
 		{
-			if (LastButton == GlobalStatic.Buttons["Search"])
+			if (LastButton == GlobalStatic.Buttons["Search"] || LastButton == GlobalStatic.Buttons["Sort"] || LastButton == GlobalStatic.Buttons["RunFunction"])
 			{
-				Engines.GenerateQuery(true, true, false);
-			}
-			else if (LastButton == GlobalStatic.Buttons["Sort"])
-			{
-				Engines.GenerateQuery(false, true, false);
-			}
-			else if (LastButton == GlobalStatic.Buttons["RunFunction"])
-			{
-				Engines.GenerateQuery(false, true, true);
+				Primitive ASCDESC_Sorts = "1=ASC;2=DESC;";
+				bool Search =false,Sort=true,Function=false;
+				bool StrictSearch = LDControls.CheckBoxGetState(GlobalStatic.CheckBox["StrictSearch"]);
+				bool InvertSearch = LDControls.CheckBoxGetState(GlobalStatic.CheckBox["InvertSearch"]);
+
+				string SearchIn = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Search"])];
+				string SearchText =LDText.Replace( Controls.GetTextBoxText(GlobalStatic.TextBox["Search"]),"'","''");
+				string FunctionIn = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ColumnList"])];
+				string FunctionCalled = GlobalStatic.SQLFunctionsList[ LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["FunctionList"]) ];
+
+				string SortBy = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Sort"])];
+				string ASCDESC = ASCDESC_Sorts[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ASCDESC"])];
+				//Console.WriteLine("{0} {1}", LDControls.CheckBoxGetState(GlobalStatic.ComboBox["Search"]),GlobalStatic.ComboBox);
+				if (LastButton == GlobalStatic.Buttons["Search"])
+				{
+					Search = true;
+				}
+				else if (LastButton == GlobalStatic.Buttons["RunFunction"])
+				{
+					Function = true;
+				}
+				Console.WriteLine("Search :{0} Sort : {1} Function : {2}\n Search Text : {3} Function Column : {4} Sort Order : {5} Sorts : {6}", Search, Sort, Function, SearchText,FunctionIn,ASCDESC,SortBy);
+				Engines.GenerateQuery(Search, Sort, Function, SearchIn, SortBy, ASCDESC, StrictSearch, InvertSearch, FunctionCalled, FunctionIn, SearchText);
 			}
 			else if (LastButton == GlobalStatic.Buttons["CustomQuery"])
 			{
-				Engines.Query(GlobalStatic.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.Username, GlobalStatic.LangList["User Requested"]);
+				Engines.Query(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.Username, GlobalStatic.LangList["User Requested"]);
 			}
-			else if (LastButton == GlobalStatic.Buttons["Command"])
+			else if (LastButton == GlobalStatic.Buttons["Command"]) //Custom Command
 			{
-
+				Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["Command"]), GlobalStatic.UserName, GlobalStatic.LangList["User Requested"], false);
 			}
 			else
 			{
@@ -159,9 +208,95 @@ namespace DBM
 			}
 		}
 
-		public static void ComboBox(string ComboBox, string Index) //Sets GlobalStatic.SortBy
+		public static void ComboBox(string ComboBox, int Index) //Sets GlobalStatic.SortBy
 		{
+			if (ComboBox == GlobalStatic.ComboBox["Table"])
+			{
+				TableComboBox(Index);
+			}
+			else if (ComboBox == GlobalStatic.ComboBox["Sorts"])
+			{
+				SortsComboBox(Index);
+			}
+			else if (ComboBox == GlobalStatic.ComboBox["Database"])
+			{
+				LDList.Add(GlobalStatic.List_DB_Tracker, LDList.GetAt(GlobalStatic.List_DB_ShortName, Index));
+				Engines.Load_DB(Engines.EnginesModes.SQLITE, LDList.GetAt(GlobalStatic.List_DB_Path, Index));
+				Engines.GetSchema(Engines.CurrentDatabase);
+				Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 
+				SortsComboBox(1);LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
+				TableComboBox(1);LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], 1);
+				if (GlobalStatic.SortBy == 4)
+				{
+					Engines.SetDefaultTable("sqlite_master");
+					Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+					LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], "1=" + Engines.CurrentTable + ";2=sqlite_temp_master;");
+				}
+				else 
+				{
+					LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], CurrentSchema);
+					SortsComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
+					Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+				}
+			}
+		}
+
+		static void SetComboBox()
+		{ 
+			LDControls.ComboBoxContent(GlobalStatic.ComboBox["Sort"], Engines.Schema);
+			LDControls.ComboBoxContent(GlobalStatic.ComboBox["ColumnList"], Engines.Schema);
+			LDControls.ComboBoxContent(GlobalStatic.ComboBox["Search"], Engines.Schema);
+			UI.Title();
+			Handlers.Menu(GlobalStatic.LangList["View"]); //Tasks
+		}
+
+		static void TableComboBox(int Index)
+		{ 
+			Engines.SetDefaultTable(LDList.GetAt(CorrectList, Index));
+			Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+			SetComboBox();
+		}
+
+		static void SortsComboBox(int Index)
+		{ 
+		GlobalStatic.SortBy = Index;
+
+			switch (Index)
+			{
+				case 1:
+					CorrectList = GlobalStatic.List_SCHEMA_Table;
+					break;
+				case 2:
+					CorrectList = GlobalStatic.List_SCHEMA_View;
+					break;
+				case 3:
+					CorrectList = GlobalStatic.List_Schema_Index;
+					break;
+				case 4:
+					Engines.SetDefaultTable("sqlite_master");
+					Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+					break;
+			}
+
+			if (Index != 4)
+			{
+				Engines.SetDefaultTable(LDList.GetAt(CorrectList, 1));
+				LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], LDList.ToArray(CorrectList));
+				Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+			}
+			if (!string.IsNullOrEmpty(Engines.CurrentTable))
+			{
+				UI.HideDisplayResults();
+				SetComboBox();
+				UI.Title();
+			}
+			else
+			{
+				string Message = "In the current database no " + GlobalStatic.LangList[Handlers.TypeofSorts[GlobalStatic.SortBy]] + "s can be found.";
+				Events.LogMessagePopUp(Message, Message,GlobalStatic.LangList["Error"], GlobalStatic.LangList["UI"]);
+			}
+		
 		}
 	}
 }

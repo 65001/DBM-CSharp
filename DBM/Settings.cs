@@ -23,7 +23,7 @@ namespace DBM
 				GlobalStatic.Settings = SBFile.ReadContents(GlobalStatic.SettingsPath);
 			}
 			GlobalStatic.Listview_Width = GlobalStatic.Settings["Listview_Width"];
-			GlobalStatic.Listview_Height = GlobalStatic.Settings["Listview_Width"];
+			GlobalStatic.Listview_Height = GlobalStatic.Settings["Listview_Height"];
 			GlobalStatic.LastVersion = GlobalStatic.Settings["VersionID"];
 			GlobalStatic.LastFolder = GlobalStatic.Settings["LastFolder"];
 			GlobalStatic.Extensions = GlobalStatic.Settings["Extensions"];
@@ -74,7 +74,7 @@ namespace DBM
 			}
 			if (GlobalStatic.RestoreSettings == true)
 			{
-				GlobalStatic.Listview_Width = GlobalStatic.Settings["Listview_Width"]; GlobalStatic.Listview_Height = GlobalStatic.Settings["Listview_Width"]; GlobalStatic.LastVersion = GlobalStatic.Settings["VersionID"]; GlobalStatic.LastFolder = GlobalStatic.Settings["LastFolder"]; GlobalStatic.Extensions = GlobalStatic.Settings["Extensions"];
+				GlobalStatic.Listview_Width = GlobalStatic.Settings["Listview_Width"]; GlobalStatic.Listview_Height = GlobalStatic.Settings["Listview_Height"]; GlobalStatic.LastVersion = GlobalStatic.Settings["VersionID"]; GlobalStatic.LastFolder = GlobalStatic.Settings["LastFolder"]; GlobalStatic.Extensions = GlobalStatic.Settings["Extensions"];
 				GlobalStatic.Deliminator = GlobalStatic.Settings["Deliminator"]; GlobalStatic.Transactions = GlobalStatic.Settings["Transactions"]; GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
 
 				GlobalStatic.EULA_Acceptance = GlobalStatic.Settings["EULA"]; GlobalStatic.EULA_Username = GlobalStatic.Settings["EULA_By"]; GlobalStatic.EULA_Accepted_Version = GlobalStatic.Settings["EULA_Version"];

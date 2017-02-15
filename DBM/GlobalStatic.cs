@@ -28,7 +28,7 @@ namespace DBM
 
 			public static int DefaultWidth, DefaultHeight,DefaultFontSize,LogNumber;
 
-			public static string UserName = LDFile.UserName,CurrentDatabase;
+			public static string UserName = LDFile.UserName;
 			//URI
 			public static string AssetPath = ProgramDirectory + "\\Assets\\";
 			public static string LocalizationFolder = ProgramDirectory + "\\Localization\\";
@@ -42,8 +42,8 @@ namespace DBM
 			public static string AutoRunPluginPath = AssetPath + "Auto Run Plugin.txt";
 			public static string HelpPath = AssetPath + "Help Table.html";
 			public static string External_Menu_Items_Path = AssetPath + "Menu.txt";
-			public static string Online_EULA_URI = "https://drive.google.com/uc?export=download&id=0B2v4xbFnpKvRNTFKckFKLVNNUDg";
-			public static string OnlineDB_Refrence_Location = "https://docs.google.com/uc?id=0B2v4xbFnpKvRVmNVODZ4bnppd3c&export=download";
+			public const string Online_EULA_URI = "https://drive.google.com/uc?export=download&id=0B2v4xbFnpKvRNTFKckFKLVNNUDg";
+			public const string OnlineDB_Refrence_Location = "https://docs.google.com/uc?id=0B2v4xbFnpKvRVmNVODZ4bnppd3c&export=download";
 			//Settings Data
 			public static bool RestoreSettings = false;
 			public static Primitive Settings,Extensions;
@@ -57,39 +57,39 @@ namespace DBM
 			public static bool EULA_Acceptance;
 			public static string LanguageCode;
 			public static string EULA_Newest_Version;
-			public static Primitive LangList,Schema;
+			public static Primitive LangList;
 			//Lists
-			public static string ExportT2 = "Export T2",ExportT1 = "Export T1";
+			public const string ExportT2 = "Export T2",ExportT1 = "Export T1";
 
-			public static string TrackDefaultTable = "TrackDefaultTable";
-			public static string List_Mod_Name = "Mod_Name";
-			public static string List_Mod_Path = "Mod_Path";
-			public static string List_Command_Parser = "Command_SQL_Parser";
-			public static string List_Command_Parser_Status = "Command_SQL_Parser_Status";
-			public static string List_Command_Parser_OnFail = "Command_SQL_Parser_Fail";
-			public static string List_Command_Parser_OnFail_Index = "Command_SQL_Parser_Fail_Index";
-			public static string List_UI_Name = "UI_Name";
-			public static string List_UI_Handler = "UI_Handler";
-			public static string List_UI_Action = "UI_Action";
-			public static string List_Stack_Trace = "Stack_Trace";
-			public static string List_Stack_Time = "Stack_Time";
-			public static string List_SCHEMA_Table = "SCHEMA_TABLE";
-			public static string List_SCHEMA_View = "SCHEMA_VIEW";
-			public static string List_Schema_Index = " SCHEMA_INDEX";
-			public static string List_DB_Path = "DB_Path";
-			public static string List_DB_Name = "DB_Name";
-			public static string List_DB_ShortName = "DB_SName";
-			public static string List_DB_Engine = "DB_Engine";
-			public static string List_DB_Tracker = "DB_Tracking";
-			public static string List_Query_Time = "Query_Time";
-			public static string List_CMD_Time = "CMD_Time";
-			public static string List_Time_Refer = "Time_Ref";
-			public static string List_ISO_Lang = "ISO_Lang";
-			public static string List_ISO_Text = "ISO_Text";
+			public const string TrackDefaultTable = "TrackDefaultTable";
+			public const string List_Mod_Name = "Mod_Name";
+			public const string List_Mod_Path = "Mod_Path";
+			public const string List_Command_Parser = "Command_SQL_Parser";
+			public const string List_Command_Parser_Status = "Command_SQL_Parser_Status";
+			public const string List_Command_Parser_OnFail = "Command_SQL_Parser_Fail";
+			public const string List_Command_Parser_OnFail_Index = "Command_SQL_Parser_Fail_Index";
+			public const string List_UI_Name = "UI_Name";
+			public const string List_UI_Handler = "UI_Handler";
+			public const string List_UI_Action = "UI_Action";
+			public const string List_Stack_Trace = "Stack_Trace";
+			public const string List_Stack_Time = "Stack_Time";
+			public const string List_SCHEMA_Table = "SCHEMA_TABLE";
+			public const string List_SCHEMA_View = "SCHEMA_VIEW";
+			public const string List_Schema_Index = " SCHEMA_INDEX";
+			public const string List_DB_Path = "DB_Path";
+			public const string List_DB_Name = "DB_Name";
+			public const string List_DB_ShortName = "DB_SName";
+			public const string List_DB_Engine = "DB_Engine";
+			public const string List_DB_Tracker = "DB_Tracking";
+			public const string List_Query_Time = "Query_Time";
+			public const string List_CMD_Time = "CMD_Time";
+			public const string List_Time_Refer = "Time_Ref";
+			public const string List_ISO_Lang = "ISO_Lang";
+			public const string List_ISO_Text = "ISO_Text";
 
 			public static string Dataview,ListView;
 			public static Primitive MenuList,CheckList,Buttons,ComboBox,TextBox,CheckBox,HideDisplayResults;
-			public static string SQLFunctionsList = Text.ConvertToUpperCase("1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;");
+			public static Primitive SQLFunctionsList = Text.ConvertToUpperCase("1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;");
 
 			public static string Title = "Database Manager (" + ProductID + ") v" + VersionID + " ";
 			public const string AutoRunPluginMessage = "# This file designates the Mod and the subroutine the main program should call on the start of the program.\n# Use this to run your program at start up.\n# The Program accepts any of the following:\n#\tMod Name.Sub Name\n#\t1=Mod Name;2=Sub Name;\n# The character # marks the line as commented.\n# To add UI Elements without starting up your program (Please do this if you can) alter the MENU.txt file.";

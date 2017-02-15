@@ -6,8 +6,11 @@ using LitDev;
 using Microsoft.SmallBasic.Library;
 using SBArray = Microsoft.SmallBasic.Library.Array;
 using SBFile = Microsoft.SmallBasic.Library.File;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.IO;
+using System.Diagnostics;
+using System.Windows.Forms;
 /*
 	Completed Items:
 		Settings ; EULA; Logs ;Main;
@@ -20,18 +23,15 @@ using System.IO;
 namespace DBM
 {
 	[SmallBasicType]
-	public static class UI
+	public static class UI 
 	{
-		public static String StartUpStopWatch = LDStopwatch.Add();
+		private static string SetTitle;
+		private static Stopwatch StartUpStopWatch = Stopwatch.StartNew();
 		public static Primitive StartTime = Clock.ElapsedMilliseconds;
 
 		public static void Main()
 		{
-			/* //Example Code Code
-			GraphicsWindow.Show();Controls.AddButton(" ", 1, 1);
-			Controls.ButtonClicked += Events.BC;
-			*/
-			LDStopwatch.Start(StartUpStopWatch);
+			StartUpStopWatch.Restart();
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Main()");
 			Primitive[] Startime2 = new Primitive[10];
 			Startime2[0] = Clock.ElapsedMilliseconds;
@@ -95,19 +95,17 @@ namespace DBM
 				Settings.SaveSettings();
 				EULA.UI(GlobalStatic.EULA_Text_File);
 			}
-
-			LDStopwatch.Stop(StartUpStopWatch);
-			Events.LogMessage(LDStopwatch.ElapsedMilliseconds(StartUpStopWatch),GlobalStatic.LangList["UI"]);
+			StartUpStopWatch.Stop();
+			Events.LogMessage("Startup Time: " +StartUpStopWatch.ElapsedMilliseconds + " (ms)",GlobalStatic.LangList["UI"]);
 		}
 
 		public static void StartupGUI()
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.StartupGUI()");
 			GraphicsWindow.Clear(); GraphicsWindow.Hide(); GraphicsWindow.Show();
-			LDScrollBars.Add(GlobalStatic.Listview_Width + 500, GlobalStatic.Listview_Height);
+			LDScrollBars.Add(GlobalStatic.Listview_Width + 200, GlobalStatic.Listview_Height);
 			LDGraphicsWindow.State = 2;
 			PreMainMenu();
-			Events.LogMessage("Startup Time: " + (Clock.ElapsedMilliseconds - UI.StartTime) + " (ms)", GlobalStatic.LangList["UI"]);
 			MainMenu();
 		}
 
@@ -167,12 +165,11 @@ namespace DBM
 			GlobalStatic.MenuList["Scan"] = "SB Backup Script";
 			GlobalStatic.MenuList["View"] = "SB Backup Script";
 			GlobalStatic.MenuList["ICF"] = GlobalStatic.LangList["Plugin"];
-
-			//Plugin.Menu(GlobalStatic.External_Menu_Items_Path);
 		}
 
 		public static void MainMenu()
 		{
+			
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.MainMenu()");
 			LDGraphicsWindow.ExitButtonMode(GraphicsWindow.Title, "Enabled");
 			GraphicsWindow.CanResize = true;
@@ -188,9 +185,9 @@ namespace DBM
 			}
 			 Primitive Sorts;
 			Sorts = "1=" + GlobalStatic.LangList["Table"] + ";2=" + GlobalStatic.LangList["View"] + ";3=" + GlobalStatic.LangList["Index"] + ";4=" +GlobalStatic.LangList["Master Table"] + ";";
-			if (GlobalStatic.CurrentDatabase != null)
+			if (Engines.CurrentDatabase != null)
 			{
-				Engines.GetSchema(GlobalStatic.CurrentDatabase);
+				Engines.GetSchema(Engines.CurrentDatabase);
 			}
 			GraphicsWindow.FontSize = 20;
 			string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, GlobalStatic.MenuList, null, GlobalStatic.CheckList);
@@ -214,7 +211,7 @@ namespace DBM
 			Controls.ButtonClicked += Events.BC;
 			LDControls.MenuClicked += Events.MC;
 			LDControls.ComboBoxItemChanged += Events.CB;
-
+			//TextWindow.WriteLine("Debug Mode:" + GlobalStatic.DebugMode + " Parser : " + GlobalStatic.DebugParser);
 			if (GlobalStatic.DebugMode == false && GlobalStatic.DebugParser == false)
 			{
 				TextWindow.Hide();
@@ -267,8 +264,8 @@ namespace DBM
 		public static void DisplayResults()
 		{ 
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.DisplayResults()");
-			LDGraphicsWindow.Width = Desktop.Height;
-			LDGraphicsWindow.Height = Desktop.Width;
+			LDGraphicsWindow.Width = Desktop.Width;
+			LDGraphicsWindow.Height = Desktop.Height;
 			GraphicsWindow.Left = 0;
 			GraphicsWindow.Top = 0;
 			GlobalStatic.UIx = GlobalStatic.Listview_Width + 50;
@@ -287,7 +284,7 @@ namespace DBM
 			//Sort
 			GraphicsWindow.FontSize = 13;
 			string AscDesc = "1=" + GlobalStatic.LangList["Asc"] + ";2=" + GlobalStatic.LangList["Desc"] + ";";
-			GlobalStatic.ComboBox["Sort"] = LDControls.AddComboBox(GlobalStatic.Schema, 100, 100);
+			GlobalStatic.ComboBox["Sort"] = LDControls.AddComboBox(Engines.Schema, 100, 100);
 			GlobalStatic.ComboBox["ASCDESC"] = LDControls.AddComboBox(AscDesc, 110, 100);
 			GlobalStatic.Buttons["Sort"] = Controls.AddButton(GlobalStatic.LangList["SORT"], GlobalStatic.UIx + 10, 120);
 
@@ -299,7 +296,7 @@ namespace DBM
 			LDDialogs.ToolTip(GlobalStatic.ComboBox["ASCDESC"], "Sorts Ascending and Decending based on position"); //Localize
 
 			//Search
-			GlobalStatic.ComboBox["Search"] = LDControls.AddComboBox(GlobalStatic.Schema, 200, 120);
+			GlobalStatic.ComboBox["Search"] = LDControls.AddComboBox(Engines.Schema, 200, 120);
 			GlobalStatic.TextBox["Search"] = Controls.AddTextBox(GlobalStatic.UIx + 100, 210);
 			GlobalStatic.CheckBox["StrictSearch"] = LDControls.AddCheckBox(GlobalStatic.LangList["Strict Search"]);
 			GlobalStatic.CheckBox["InvertSearch"] = LDControls.AddCheckBox("Invert"); //Localize
@@ -314,7 +311,7 @@ namespace DBM
 			//Functions
 			GlobalStatic.ComboBox["FunctionList"] = LDControls.AddComboBox(GlobalStatic.SQLFunctionsList, 130, 100);
 			Controls.Move(GlobalStatic.ComboBox["FunctionList"], GlobalStatic.UIx + 10, 310);
-			GlobalStatic.ComboBox["ColumnList"] = LDControls.AddComboBox(GlobalStatic.Schema, 135, 100);
+			GlobalStatic.ComboBox["ColumnList"] = LDControls.AddComboBox(Engines.Schema, 135, 100);
 			Controls.Move(GlobalStatic.ComboBox["ColumnList"], GlobalStatic.UIx + 160, 310);
 
 			GlobalStatic.Buttons["RunFunction"] = Controls.AddButton(Text.ConvertToUpperCase(GlobalStatic.LangList["Run Function"]), GlobalStatic.UIx + 10, 340);
@@ -367,7 +364,27 @@ namespace DBM
 
 		public static void Title()//Implement
 		{ 
-		LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Title()");
+			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Title()");
+			string TimeRef;
+			SetTitle = GlobalStatic.Title + " " + Engines.Database_Shortname + "(" + Engines.CurrentDatabase + ") :" + Handlers.TypeofSorts[GlobalStatic.SortBy] + ":" + Engines.CurrentTable;
+			TimeRef = LDList.GetAt(GlobalStatic.List_Time_Refer, LDList.Count(GlobalStatic.List_Time_Refer));
+			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
+			{
+				SetTitle = GlobalStatic.Title;
+			}
+			else 
+			{
+				switch (TimeRef)
+				{
+					case "CMD":
+						SetTitle += "( CMD TIME : " + LDList.GetAt(GlobalStatic.List_CMD_Time, LDList.Count(GlobalStatic.List_CMD_Time)) + ")";
+						break;
+					case "Query":
+						SetTitle += "( Query Time : " + LDList.GetAt(GlobalStatic.List_Query_Time, LDList.Count(GlobalStatic.List_Query_Time)) + ")";
+						break;
+				}
+			}
+			GraphicsWindow.Title = SetTitle;
 		}
 
 	}
@@ -378,6 +395,11 @@ namespace DBM
 		{
 			LogMessage(LDEvents.LastError, GlobalStatic.LangList["System"]);
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogEvents()");
+		}
+		public static void LogMessagePopUp(Primitive MessagePopUp,Primitive MessageLog, Primitive Title, Primitive Type)
+		{
+			GraphicsWindow.ShowMessage(MessagePopUp, Title);
+			LogMessage(MessageLog, Type);
 		}
 
 		public static void LogMessage(Primitive Message, string Type) //Logs Message to all applicable locations
@@ -399,7 +421,7 @@ namespace DBM
 				{
 					if (Text.IsSubText(Message, "LDDataBase.Query") == true || Text.IsSubText(Message, "LDDataBase.Command") == true) 
 					{
-						TextWindow.WriteLine(GlobalStatic.CurrentDatabase + "\n" + Message);
+						TextWindow.WriteLine(Engines.CurrentDatabase + "\n" + Message);
 					}
 				}
 			}
@@ -413,31 +435,13 @@ namespace DBM
 			Engines.Command(GlobalStatic.LogDB, LogCMD, GlobalStatic.LangList["App"], GlobalStatic.LangList["Auto Log"],false);
 		}
 
-		public static void BC()
-		{
-			Handlers.Buttons(Controls.LastClickedButton);
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.BC()");
-		}
-
-		public static void MC() //Menu Clicked Event Handler
-		{
-			Handlers.Menu(LDControls.LastMenuItem);
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.MC()");
-		}
-
-		public static void CB()
-		{
-			Handlers.ComboBox(LDControls.LastComboBox, LDControls.LastComboBoxIndex);
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.CB()");
-		}
-
 		public static void Closing()
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.Closing()");
-			if (string.IsNullOrEmpty(GlobalStatic.CurrentDatabase))
-			{ Events.LogMessage("Program Closing", GlobalStatic.LangList["Application"]); } //Localize
+			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
+			{ LogMessage("Program Closing", GlobalStatic.LangList["Application"]); } //Localize
 			else 
-			{ Events.LogMessage("Program Closing - Closing : " + GlobalStatic.CurrentDatabase, GlobalStatic.LangList["Application"]); } //Localize
+			{ LogMessage("Program Closing - Closing : " + Engines.Database_Shortname , GlobalStatic.LangList["Application"]); } //Localize
 
 			if (LDWindows.CurrentID == 0)
 			{ Program.End(); }
@@ -446,6 +450,25 @@ namespace DBM
 				GraphicsWindow.Clear();
 				GraphicsWindow.Hide();
 			}
+		}
+
+		//The following async the Handlers class to make the code faster! Warning ! Can cause bugs!!!
+		public async static void BC()
+		{
+			await Task.Run(() => { Handlers.Buttons(Controls.LastClickedButton); });
+			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.BC()");
+		}
+
+		public async static void MC() //Menu Clicked Event Handler
+		{
+			await Task.Run(() => { Handlers.Menu(LDControls.LastMenuItem); });
+			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.MC()");
+		}
+
+		public async static void CB()
+		{
+			await Task.WhenAll(Task.Run(() => { Handlers.ComboBox(LDControls.LastComboBox, LDControls.LastComboBoxIndex); }));
+			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.CB()");
 		}
 
 	}
