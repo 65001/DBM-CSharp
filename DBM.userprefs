@@ -1,17 +1,17 @@
-﻿<Properties StartupConfiguration="{88F827AA-CAD0-4FED-980D-83B9821E9BBB}|Default" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+﻿<Properties StartupConfiguration="{88F827AA-CAD0-4FED-980D-83B9821E9BBB}|Unit Tests" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.DBM PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="DBM Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DBM\UnitTests.cs">
     <Files>
-      <File FileName="DBM\SQLITE.cs" Line="195" Column="6" />
-      <File FileName="DBM\Utilities.cs" Line="25" Column="6" />
+      <File FileName="DBM\SQLITE.cs" Line="242" Column="84" />
+      <File FileName="DBM\Utilities.cs" Line="135" Column="11" />
       <File FileName="DBM\DBM.cs" Line="217" Column="23" />
-      <File FileName="DBM\Handlers.cs" Line="297" Column="45" />
-      <File FileName="DBM Status" />
+      <File FileName="DBM\Handlers.cs" Line="1" Column="1" />
+      <File FileName="DBM\UnitTests.cs" Line="15" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <AuthorInfo Name="Abhishek Sathiabalan" Email="asathiabalan@gmail.com" Copyright="(C) 2016 - 2017. All rights Reserved. Goverened by Included EULA" Company="" Trademark="" />

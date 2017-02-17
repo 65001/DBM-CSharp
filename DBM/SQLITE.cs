@@ -167,8 +167,15 @@ namespace DBM
 
 		public static void SetDefaultTable(string Table)
 		{
-			Engines.CurrentTable ="\""+ Table+"\"";
-			LDList.Add(GlobalStatic.TrackDefaultTable, CurrentDatabase + "." + CurrentTable);
+			if (!string.IsNullOrEmpty(Table))
+			{
+				Engines.CurrentTable = "\"" + Table + "\"";
+				LDList.Add(GlobalStatic.TrackDefaultTable, CurrentDatabase + "." + CurrentTable);
+			}
+			else
+			{
+				Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", GlobalStatic.LangList["System"]);
+			}
 		}
 
 		public static void GenerateQuery(bool Search,bool Sort,bool Function,string SearchBy,string OrderBy,string SortOrder,bool StrictSearch,bool InvertSearch,string FunctionSelected,string FunctionColumn,string SearchText) //Implement //Interface to private classes
@@ -236,7 +243,7 @@ namespace DBM
 			return CMD;
 		}
 
-		public static void CreateStatisticsPage() //Implement
+		public static void CreateStatisticsPage(string Table) //Implement
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.CreateStatisticsPage()");
 		}

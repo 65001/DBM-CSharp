@@ -10,6 +10,12 @@ namespace DBM
 	public class UnitTests
 	{
 		[Test]
+		public void StartUp()
+		{
+			UI.Main();Assert.True(true);
+		}
+
+		[Test]
 		public void Load_Settings()
 		{
 			GraphicsWindow.ShowMessage(GlobalStatic.SettingsPath, "");

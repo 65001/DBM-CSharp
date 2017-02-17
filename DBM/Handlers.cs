@@ -24,7 +24,9 @@ namespace DBM
 				string Path = LDDialogs.SaveFile(GlobalStatic.Extensions, GlobalStatic.LastFolder);
 				if (!string.IsNullOrWhiteSpace(Path))
 				{
+					GlobalStatic.ListView = null;GlobalStatic.Dataview = null;
 					GlobalStatic.LastFolder = LDFile.GetFolder(Path);
+					Settings.LoadSettings();
 					Settings.SaveSettings();
 					Events.LogMessage("Created DB :" + Path, GlobalStatic.LangList["Application"]);
 					UI.PreMainMenu();
@@ -108,7 +110,6 @@ namespace DBM
 							UI.HideDisplayResults();
 							break;
 					}
-				
 				}
 				else
 				{
@@ -144,18 +145,31 @@ namespace DBM
 			else if (Item == GlobalStatic.LangList["Settings Editor"])
 			{ }
 			else if (Item == GlobalStatic.LangList["Toggle Debug"])
-			{ }
+			{
+				GlobalStatic.DebugMode = !GlobalStatic.DebugMode;
+			}
 			else if (Item == GlobalStatic.LangList["Toggle Transaction Log"])
-			{ }
+			{
+				GlobalStatic.Transactions = !GlobalStatic.Transactions;
+			}
 			else if (Item == GlobalStatic.LangList["Refresh Schema"])
-			{ }
+			{
+				Engines.GetSchema(Engines.CurrentDatabase);
+				Engines.GetSchemaofTable(Engines.CurrentDatabase,Engines.CurrentTable);
+			}
 			else if (Item == GlobalStatic.LangList["Check for Updates"])
 			{ }
 			//Developer
 			else if (Item == GlobalStatic.LangList["Stack Trace"])
-			{ }
+			{
+				GlobalStatic.DebugMode = true;
+				Console.WriteLine("Debug Mode turned on due to current action.");
+				LDList.Print(GlobalStatic.List_Stack_Trace);
+			}
 			else if (Item == GlobalStatic.LangList["Close TW"])
-			{ }
+			{
+				TextWindow.Hide();
+			}
 			else if (Item == GlobalStatic.LangList["Create Statistics Page"])
 			{ }
 			//Plugins
@@ -166,7 +180,7 @@ namespace DBM
 			}
 		}
 
-		public static void Buttons(string LastButton) //Implement
+		public static void Buttons(string LastButton)
 		{
 			if (LastButton == GlobalStatic.Buttons["Search"] || LastButton == GlobalStatic.Buttons["Sort"] || LastButton == GlobalStatic.Buttons["RunFunction"])
 			{
@@ -208,7 +222,7 @@ namespace DBM
 			}
 		}
 
-		public static void ComboBox(string ComboBox, int Index) //Sets GlobalStatic.SortBy
+		public static void ComboBox(string ComboBox, int Index)
 		{
 			if (ComboBox == GlobalStatic.ComboBox["Table"])
 			{
@@ -260,7 +274,7 @@ namespace DBM
 
 		static void SortsComboBox(int Index)
 		{ 
-		GlobalStatic.SortBy = Index;
+		GlobalStatic.SortBy = Index; //Sets GlobalStatic.SortBy
 
 			switch (Index)
 			{
