@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBM", "DBM\DBM.csproj", "{88F827AA-CAD0-4FED-980D-83B9821E9BBB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7BBB1A3B-0F86-4E3B-BA2F-868E45461CE0}"
+	ProjectSection(SolutionItems) = preProject
+		DBM.sln = DBM.sln
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86

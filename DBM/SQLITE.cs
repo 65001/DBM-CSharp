@@ -14,7 +14,7 @@ namespace DBM
 	[SmallBasicType]
 	public static class Engines
 	{
-		public enum EnginesModes {NONE,MySQL=1, ODBC=2,OLEDB=3,SQLITE=4,SQLSERVER=5}
+		public enum EnginesModes {NONE,MySQL=1, ODBC=2,OLEDB=3,SQLITE=4,SQLSERVER=5} //TODO
 		public static string CurrentDatabase { get;private set;}
 		public static string CurrentTable {get;private set;}
 		public static string Database_Shortname { get; private set;}
@@ -31,16 +31,8 @@ namespace DBM
 				TransactionRecord(User, Database, SQL, "CMD", Explanation);
 				switch (EngineMode)
 				{
-					case EnginesModes.MySQL:
-						return 0;
-					case EnginesModes.ODBC:
-						return 0;
-					case EnginesModes.OLEDB:
-						return 0;
 					case EnginesModes.SQLITE:
 						return LDDataBase.Command(Database, SQL);
-					case EnginesModes.SQLSERVER:
-						return 0;
 					default:
 						return 0;
 				}
@@ -70,7 +62,7 @@ namespace DBM
 
 		}
 
-		public static void Emulator() //Implement
+		public static void Emulator() //TODO
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Emulator()");
 		}
@@ -80,23 +72,21 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.TransactionRecord()");
 		}
 
-		public static string Load_DB(EnginesModes Mode, Primitive Data)
+		public static string Load_DB(EnginesModes Mode, Primitive Data) //Tasked with connecting to a Database and adding the DB Connection Name to a list.
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Load_DB()");
 			switch (Mode)
 			{
-				case EnginesModes.MySQL: //MySQL
+				case EnginesModes.MySQL:  //TODO
 					return "";
-				case EnginesModes.ODBC: //ODBC
+				case EnginesModes.ODBC:  //TODO
 					return "";
-				case EnginesModes.OLEDB: //OLEDB
+				case EnginesModes.OLEDB: //TODO
 					return "";
-				case EnginesModes.SQLITE: //SQLITE
+				case EnginesModes.SQLITE: 
 					if (LDFile.Exists(Data) == true)
 					{
-						int Index = LDList.GetAt(GlobalStatic.List_DB_Path, Data);
-						//Events.LogMessage("LOAD DB INDEX : " + Index, "Debug");
-						//Events.LogMessage("LOAD DB : " + Data , "Debug");
+						int Index = LDList.IndexOf(GlobalStatic.List_DB_Path, Data);
 						if (Index == 0) //New Database
 						{
 							string Database = LDDataBase.ConnectSQLite(Data);
@@ -106,7 +96,7 @@ namespace DBM
 							Engines.CurrentDatabase = Database;
 							return Database;
 						}
-						else
+						else //Database already exists as a connection so set the primary connection to that
 						{
 							string Database = LDList.GetAt(GlobalStatic.List_DB_Name, Index);
 							Database_Shortname = LDList.GetAt(GlobalStatic.List_DB_ShortName, Index);
@@ -119,14 +109,13 @@ namespace DBM
 				case EnginesModes.SQLSERVER: //SQLServer
 					return "";
 				default:
-					return "Incorrect Paramters"; ;
+					return "Incorrect Paramters";
 			}
 		}
 
 		public static void GetSchema(string Database)
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.GetSchema()");
-			Events.LogMessage(Database, "Debug");
 			if (!string.IsNullOrEmpty(Database)) //Prevents Prevents Application from querying a nonexistent db 
 			{
 				LDList.Clear(GlobalStatic.List_SCHEMA_Table);
@@ -151,10 +140,10 @@ namespace DBM
 			if (!string.IsNullOrEmpty(Database) && !string.IsNullOrEmpty(Table)) //Prevents calls to nonexistent tables or Databases
 			{
 				LDList.Clear("SCHEMA");
-				Primitive Schema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true,GlobalStatic.LangList["App"], GlobalStatic.LangList["SCHEMA-PRIVATE"]);
-				for (int i = 1;i <= SBArray.GetItemCount(Schema); i++)
+				Primitive LSchema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true,GlobalStatic.LangList["App"], GlobalStatic.LangList["SCHEMA-PRIVATE"]);
+				for (int i = 1;i <= SBArray.GetItemCount(LSchema); i++)
 				{
-					LDList.Add("SCHEMA", Schema[i]["name"]);
+					LDList.Add("SCHEMA", LSchema[i]["name"]);
 				}
 				Engines.Schema = LDList.ToArray("SCHEMA");
 			}
@@ -199,7 +188,6 @@ namespace DBM
 					GQ_CMD += GenerateSort(OrderBy,SortOrder );
 				}
 			}
-			//Console.WriteLine("Generate SQL : {0}", GQ_CMD);
 			Engines.Query(Engines.CurrentDatabase, GQ_CMD, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.Username);
 			GQ_CMD = null;
 		}
@@ -230,20 +218,20 @@ namespace DBM
 		}
 
 
-		static string GenerateSort(string OrderBy,string ASCDESC) //Implement
+		static string GenerateSort(string OrderBy,string ASCDESC) 
 		{
 			string CMD;
 			CMD = "ORDER BY \"" + OrderBy + "\" " + ASCDESC + ";";
 			return CMD;
 		}
-		static string GenerateFunction(string Function,string Column) //Implement
+		static string GenerateFunction(string Function,string Column) 
 		{
 			string CMD;
 			CMD = "SELECT " + Function + "(\"" + Column + "\") FROM " + Engines.CurrentTable + " ";
 			return CMD;
 		}
 
-		public static void CreateStatisticsPage(string Table) //Implement
+		public static void CreateStatisticsPage(string Table) //TODO
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.CreateStatisticsPage()");
 		}

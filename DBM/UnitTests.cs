@@ -9,25 +9,33 @@ namespace DBM
 	[TestFixture]
 	public class UnitTests
 	{
+
 		[Test]
-		public void StartUp()
+		public void A_Load_Settings()
 		{
-			UI.Main();Assert.True(true);
+			Settings.LoadSettings();
+			GraphicsWindow.ShowMessage(GlobalStatic.SettingsPath, "");
+			Assert.Warn(GlobalStatic.SettingsPath);
 		}
 
 		[Test]
-		public void Load_Settings()
+		public void StartUp()
 		{
-			GraphicsWindow.ShowMessage(GlobalStatic.SettingsPath, "");
-			Assert.Warn(GlobalStatic.SettingsPath);
-			Settings.LoadSettings();
+			UI.Main();
+			Assert.True(true);
 		}
+
 		[Test]
 		public void Connect()
 		{
 			Engines.Load_DB(Engines.EnginesModes.SQLITE, LitDev.LDDialogs.OpenFile("db", ""));
-			Assert.True(true);
-			    
+			Assert.True(true);    
+		}
+
+		[Test]
+		public void End()
+		{
+			Assert.Fail();
 		}
 	}
 }

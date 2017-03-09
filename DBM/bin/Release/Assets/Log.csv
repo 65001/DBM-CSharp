@@ -2010,3 +2010,215 @@ Parameter name: index"
 1618,2/14/2017,8:35:12 PM,"Abhishek",DBM C#,1122,"App","Program Started"
 1619,2/14/2017,8:35:12 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
 1620,2/14/2017,8:35:15 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5999 (ms)"
+1621,2/14/2017,9:17:19 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1622,2/14/2017,9:17:19 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1623,2/14/2017,9:17:22 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5865 (ms)"
+1624,2/14/2017,9:17:25 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1625,2/14/2017,9:17:25 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1626,2/14/2017,9:17:28 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+no such table:"
+1627,2/14/2017,9:19:30 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1628,2/14/2017,9:19:30 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1629,2/14/2017,9:19:33 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5789 (ms)"
+1630,2/14/2017,9:19:35 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1631,2/14/2017,9:19:36 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1632,2/14/2017,9:19:37 PM,"Abhishek",DBM C#,1122,"System","Table does not exist in context"
+1633,2/14/2017,9:19:39 PM,"Abhishek",DBM C#,1122,"System","Table does not exist in context"
+1634,2/14/2017,9:19:41 PM,"Abhishek",DBM C#,1122,"System","Table does not exist in context"
+1635,2/14/2017,9:19:44 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+no such table:"
+1636,2/14/2017,9:20:05 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1637,2/14/2017,9:20:05 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1638,2/14/2017,9:20:08 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5797 (ms)"
+1639,2/14/2017,9:20:10 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1640,2/14/2017,9:20:10 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1641,2/14/2017,9:20:17 PM,"Abhishek",DBM C#,1122,"System","Table does not exist in context"
+1642,2/14/2017,9:20:26 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1643,2/14/2017,9:20:27 PM,"Abhishek",DBM C#,1122,"Debug","DataBase2"
+1644,2/14/2017,9:20:28 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1645,2/14/2017,9:20:28 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1646,2/15/2017,4:20:20 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1647,2/15/2017,4:20:21 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1648,2/15/2017,4:20:24 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 6394 (ms)"
+1649,2/15/2017,4:21:45 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1650,2/15/2017,4:21:45 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1651,2/15/2017,4:21:49 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5822 (ms)"
+1652,2/15/2017,4:22:07 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1653,2/15/2017,4:22:07 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1654,2/15/2017,4:22:08 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 3070 (ms)"
+1655,2/15/2017,4:26:43 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1656,2/15/2017,4:26:44 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1657,2/15/2017,4:26:47 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 6199 (ms)"
+1658,2/15/2017,4:26:49 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1659,2/15/2017,4:26:50 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1660,2/15/2017,4:27:22 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1661,2/15/2017,4:27:23 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1662,2/15/2017,4:27:23 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1663,2/15/2017,4:27:23 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""transactions"": syntax error"
+1664,2/15/2017,4:27:29 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1665,2/15/2017,4:27:29 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1666,2/15/2017,4:27:29 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1667,2/15/2017,4:27:29 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1668,2/15/2017,4:27:44 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : Cannot set CommandText while a DataReader is active"
+1669,2/15/2017,4:27:45 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : DataReader already active on this command"
+1670,2/15/2017,4:27:49 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1671,2/15/2017,4:27:49 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1672,2/15/2017,4:27:54 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1673,2/15/2017,4:27:54 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1674,2/15/2017,4:28:00 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1675,2/15/2017,4:28:00 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1676,2/15/2017,4:28:00 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : Cannot set CommandText while a DataReader is active"
+1677,2/15/2017,4:28:01 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1678,2/15/2017,4:28:01 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1679,2/15/2017,4:28:03 PM,"Abhishek",DBM C#,1122,"System","Table does not exist in context"
+1680,2/15/2017,4:28:04 PM,"Abhishek",DBM C#,1122,"UI","In the current database no Tables can be found."
+1681,2/15/2017,4:28:04 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1682,2/15/2017,4:28:06 PM,"Abhishek",DBM C#,1122,"System","Table does not exist in context"
+1683,2/15/2017,4:28:07 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1684,2/15/2017,4:28:08 PM,"Abhishek",DBM C#,1122,"System","Table does not exist in context"
+1685,2/15/2017,4:28:09 PM,"Abhishek",DBM C#,1122,"UI","In the current database no Tables can be found."
+1686,2/15/2017,4:28:11 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1687,2/15/2017,4:28:11 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1688,2/15/2017,4:28:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1689,2/15/2017,4:28:12 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1690,2/16/2017,5:31:12 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1691,2/16/2017,5:31:13 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1692,2/16/2017,5:31:16 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5621 (ms)"
+1693,2/16/2017,7:13:17 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1694,2/16/2017,7:13:17 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1695,2/16/2017,7:13:20 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 4668 (ms)"
+1696,3/7/2017,6:31:16 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1697,3/7/2017,6:31:16 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1698,3/7/2017,6:31:19 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 6764 (ms)"
+1699,3/7/2017,7:02:24 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1700,3/7/2017,7:02:24 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1701,3/7/2017,7:02:27 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 6104 (ms)"
+1702,3/7/2017,7:02:28 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1703,3/7/2017,7:02:28 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1704,3/8/2017,6:43:54 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1705,3/8/2017,6:43:54 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1706,3/8/2017,6:43:57 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 6282 (ms)"
+1707,3/8/2017,6:44:36 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1708,3/8/2017,6:44:36 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1709,3/8/2017,6:44:39 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5596 (ms)"
+1710,3/8/2017,6:44:40 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1711,3/8/2017,6:44:40 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1712,3/8/2017,6:44:57 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1713,3/8/2017,6:44:58 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1714,3/8/2017,6:44:58 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 1350 (ms)"
+1715,3/8/2017,6:45:00 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1716,3/8/2017,6:45:00 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1717,3/8/2017,6:46:05 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1718,3/8/2017,6:46:05 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1719,3/8/2017,6:46:08 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5500 (ms)"
+1720,3/8/2017,8:36:24 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1721,3/8/2017,8:36:24 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1722,3/8/2017,8:36:27 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5839 (ms)"
+1723,3/8/2017,8:36:29 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1724,3/8/2017,8:36:29 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1725,3/8/2017,8:37:37 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1726,3/8/2017,8:37:37 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1727,3/8/2017,8:37:40 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5808 (ms)"
+1728,3/8/2017,8:40:14 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1729,3/8/2017,8:40:14 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1730,3/8/2017,8:40:14 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 758 (ms)"
+1731,3/8/2017,8:40:29 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1732,3/8/2017,8:40:29 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1733,3/8/2017,8:40:47 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1734,3/8/2017,8:40:47 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1735,3/8/2017,8:41:20 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1736,3/8/2017,8:41:20 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1737,3/8/2017,8:41:20 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1738,3/8/2017,8:41:20 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""transactions"": syntax error"
+1739,3/8/2017,8:41:24 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1740,3/8/2017,8:41:25 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1741,3/8/2017,8:41:27 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1742,3/8/2017,8:41:27 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1743,3/8/2017,8:41:29 PM,"Abhishek",DBM C#,1122,"System","LDList.GetAt : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index"
+1744,3/8/2017,8:41:29 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1745,3/8/2017,8:41:29 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1746,3/8/2017,8:41:29 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1747,3/8/2017,8:41:36 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : Cannot set CommandText while a DataReader is active"
+1748,3/8/2017,8:41:36 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : Cannot set CommandText while a DataReader is active"
+1749,3/8/2017,8:41:38 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : Cannot set CommandText while a DataReader is active"
+1750,3/8/2017,8:41:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : DataReader already active on this command"
+1751,3/8/2017,8:43:30 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1752,3/8/2017,8:43:31 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1753,3/8/2017,8:43:34 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5951 (ms)"
+1754,3/8/2017,8:43:39 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1755,3/8/2017,8:43:39 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1756,3/8/2017,8:43:40 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""transactions"": syntax error"
+1757,3/8/2017,8:43:41 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1758,3/8/2017,8:43:41 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1759,3/8/2017,8:43:41 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1760,3/8/2017,8:44:48 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1761,3/8/2017,8:44:48 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1762,3/8/2017,8:44:49 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 731 (ms)"
+1763,3/8/2017,8:44:53 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1764,3/8/2017,8:44:54 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1765,3/8/2017,8:44:54 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""transactions"": syntax error"
+1766,3/8/2017,8:44:56 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1767,3/8/2017,8:44:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1768,3/8/2017,8:44:56 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1769,3/8/2017,8:45:53 PM,"Abhishek",DBM C#,1122,"Debug","DataBase3"
+1770,3/8/2017,8:45:54 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1771,3/8/2017,8:45:54 PM,"Abhishek",DBM C#,1122,"System","LDDataBase.Query : SQL logic error or missing database
+near ""realestate"": syntax error"
+1772,3/8/2017,8:45:56 PM,"Abhishek",DBM C#,1122,"Debug","DataBase1"
+1773,3/8/2017,8:47:59 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1774,3/8/2017,8:47:59 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1775,3/8/2017,8:48:02 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 5865 (ms)"
+1776,3/8/2017,9:02:34 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1777,3/8/2017,9:02:35 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1778,3/8/2017,9:02:38 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 7961 (ms)"
+1779,3/8/2017,9:02:48 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1780,3/8/2017,9:02:49 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1781,3/8/2017,9:02:51 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 7440 (ms)"
+1782,3/8/2017,9:03:04 PM,"Abhishek",DBM C#,1122,"App","Program Started"
+1783,3/8/2017,9:03:04 PM,"Abhishek",DBM C#,1122,"Debug","Start up GUI"
+1784,3/8/2017,9:03:07 PM,"Abhishek",DBM C#,1122,"UI","Startup Time: 8515 (ms)"

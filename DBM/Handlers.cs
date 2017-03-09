@@ -13,37 +13,39 @@ namespace DBM
 		public static Primitive CurrentSchema;static string CorrectList;
 		public static Primitive TypeofSorts ="1="+ GlobalStatic.LangList["Table"] +";2=" + GlobalStatic.LangList["View"] +"3="+ GlobalStatic.LangList["Index"] + "4="+ GlobalStatic.LangList["Master Table"]+";";
 
-		public static void Menu(string Item) //Handles Main Menu  //Implement
+		public static void Menu(string Item) //Handles Main Menu  //TODO 
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Handlers.Menu(" + Item + ")");
 
 			//Switch and Enum cannot be used because values can change
 			//File Menu Items
-			if (Item == GlobalStatic.LangList["New"]) //Implement
+			if (Item == GlobalStatic.LangList["New"])
 			{
 				string Path = LDDialogs.SaveFile(GlobalStatic.Extensions, GlobalStatic.LastFolder);
 				if (!string.IsNullOrWhiteSpace(Path))
 				{
-					GlobalStatic.ListView = null;GlobalStatic.Dataview = null;
+					GlobalStatic.ListView = null;
+					GlobalStatic.Dataview = null;
 					GlobalStatic.LastFolder = LDFile.GetFolder(Path);
 					Settings.LoadSettings();
 					Settings.SaveSettings();
 					Events.LogMessage("Created DB :" + Path, GlobalStatic.LangList["Application"]);
 					UI.PreMainMenu();
 					UI.MainMenu();
-					LDDataBase.Connection = null;
+					LDDataBase.Connection = null; 
 				}
 			}
 			else if (Item == GlobalStatic.LangList["Open"])
 			{
-				GlobalStatic.ListView = null; GlobalStatic.Dataview = null;
+				GlobalStatic.ListView = null; 
+				GlobalStatic.Dataview = null;
 				Settings.LoadSettings(); //Reloads Settings
 				Engines.Load_DB(Engines.EnginesModes.SQLITE, UI.GetPath(4));
 				Settings.SaveSettings();
 				UI.PreMainMenu();
 				UI.MainMenu();
 			}
-			else if (Item == GlobalStatic.LangList["Define New Table"]) //Implement
+			else if (Item == GlobalStatic.LangList["Define New Table"]) //TODO
 			{
 
 			}
@@ -118,49 +120,49 @@ namespace DBM
 				}
 			}
 			//Import
-			else if (Item == GlobalStatic.LangList["CSV"])
+			else if (Item == GlobalStatic.LangList["CSV"]) //TODO
+			{ } 
+			else if (Item == GlobalStatic.LangList["SQL"]) //TODO
 			{ }
-			else if (Item == GlobalStatic.LangList["SQL"])
+			else if (Item == GlobalStatic.LangList["SQL"]) //TODO
 			{ }
-			else if (Item == GlobalStatic.LangList["SQL"])
-			{ }
-			else if (Item == GlobalStatic.LangList["HTML to CSV"]) //Plugin
+			else if (Item == GlobalStatic.LangList["HTML to CSV"]) //Plugin //TODO
 			{ }
 			//Export
-			else if (Item == GlobalStatic.LangList["PXML"] + " ")
+			else if (Item == GlobalStatic.LangList["PXML"] + " ") //TODO
 			{ }
-			else if (Item == GlobalStatic.LangList["HTML"] + " ")
+			else if (Item == GlobalStatic.LangList["HTML"] + " ") //TODO
 			{ }
-			//else if (Item == GlobalStatic.LangList["Export UI"])
+			//else if (Item == GlobalStatic.LangList["Export UI"]) //TODO
 			//{ }
-			else if (Item == GlobalStatic.LangList["SQL"] + " ")
-			{ }
-			else if (Item == GlobalStatic.LangList["CSV"] + " ")
+			else if (Item == GlobalStatic.LangList["SQL"] + " ") //TODO
+			{ } 
+			else if (Item == GlobalStatic.LangList["CSV"] + " ") //TODO
 			{ }
 			//Settings
-			else if (Item == GlobalStatic.LangList["About"])
+			else if (Item == GlobalStatic.LangList["About"]) //TODO
 			{ }
-			else if (Item == GlobalStatic.LangList["Show Help"])
+			else if (Item == GlobalStatic.LangList["Show Help"]) //TODO
 			{ }
-			else if (Item == GlobalStatic.LangList["Settings Editor"])
+			else if (Item == GlobalStatic.LangList["Settings Editor"]) //TODO
 			{ }
 			else if (Item == GlobalStatic.LangList["Toggle Debug"])
 			{
 				GlobalStatic.DebugMode = !GlobalStatic.DebugMode;
 			}
-			else if (Item == GlobalStatic.LangList["Toggle Transaction Log"])
+			else if (Item == GlobalStatic.LangList["Toggle Transaction Log"]) 
 			{
 				GlobalStatic.Transactions = !GlobalStatic.Transactions;
 			}
-			else if (Item == GlobalStatic.LangList["Refresh Schema"])
+			else if (Item == GlobalStatic.LangList["Refresh Schema"]) //TODO
 			{
 				Engines.GetSchema(Engines.CurrentDatabase);
 				Engines.GetSchemaofTable(Engines.CurrentDatabase,Engines.CurrentTable);
 			}
-			else if (Item == GlobalStatic.LangList["Check for Updates"])
+			else if (Item == GlobalStatic.LangList["Check for Updates"]) //TODO
 			{ }
 			//Developer
-			else if (Item == GlobalStatic.LangList["Stack Trace"])
+			else if (Item == GlobalStatic.LangList["Stack Trace"]) 
 			{
 				GlobalStatic.DebugMode = true;
 				Console.WriteLine("Debug Mode turned on due to current action.");
@@ -170,7 +172,7 @@ namespace DBM
 			{
 				TextWindow.Hide();
 			}
-			else if (Item == GlobalStatic.LangList["Create Statistics Page"])
+			else if (Item == GlobalStatic.LangList["Create Statistics Page"]) //TODO
 			{ }
 			//Plugins
 
@@ -205,7 +207,7 @@ namespace DBM
 				{
 					Function = true;
 				}
-				Console.WriteLine("Search :{0} Sort : {1} Function : {2}\n Search Text : {3} Function Column : {4} Sort Order : {5} Sorts : {6}", Search, Sort, Function, SearchText,FunctionIn,ASCDESC,SortBy);
+				//Console.WriteLine("Search :{0} Sort : {1} Function : {2}\n Search Text : {3} Function Column : {4} Sort Order : {5} Sorts : {6}", Search, Sort, Function, SearchText,FunctionIn,ASCDESC,SortBy);
 				Engines.GenerateQuery(Search, Sort, Function, SearchIn, SortBy, ASCDESC, StrictSearch, InvertSearch, FunctionCalled, FunctionIn, SearchText);
 			}
 			else if (LastButton == GlobalStatic.Buttons["CustomQuery"])
@@ -234,25 +236,30 @@ namespace DBM
 			}
 			else if (ComboBox == GlobalStatic.ComboBox["Database"])
 			{
-				LDList.Add(GlobalStatic.List_DB_Tracker, LDList.GetAt(GlobalStatic.List_DB_ShortName, Index));
-				Engines.Load_DB(Engines.EnginesModes.SQLITE, LDList.GetAt(GlobalStatic.List_DB_Path, Index));
-				Engines.GetSchema(Engines.CurrentDatabase);
-				Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+				DatabaseComboBox(Index);
+			}
+		}
 
-				SortsComboBox(1);LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
-				TableComboBox(1);LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], 1);
-				if (GlobalStatic.SortBy == 4)
-				{
-					Engines.SetDefaultTable("sqlite_master");
-					Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
-					LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], "1=" + Engines.CurrentTable + ";2=sqlite_temp_master;");
-				}
-				else 
-				{
-					LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], CurrentSchema);
-					SortsComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
-					Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
-				}
+		static void DatabaseComboBox(int Index)
+		{
+			LDList.Add(GlobalStatic.List_DB_Tracker, LDList.GetAt(GlobalStatic.List_DB_ShortName, Index));
+			Engines.Load_DB(Engines.EnginesModes.SQLITE, LDList.GetAt(GlobalStatic.List_DB_Path, Index));
+			Engines.GetSchema(Engines.CurrentDatabase);
+			Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+
+			SortsComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
+			TableComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], 1);
+			if (GlobalStatic.SortBy == 4)
+			{
+				Engines.SetDefaultTable("sqlite_master");
+				Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+				LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], "1=" + Engines.CurrentTable + ";2=sqlite_temp_master;");
+			}
+			else
+			{
+				LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], CurrentSchema);
+				SortsComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
+				Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 			}
 		}
 

@@ -7,10 +7,7 @@ using Microsoft.SmallBasic.Library;
 using SBArray = Microsoft.SmallBasic.Library.Array;
 using SBFile = Microsoft.SmallBasic.Library.File;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.IO;
 using System.Diagnostics;
-using System.Windows.Forms;
 /*
 	Completed Items:
 		Settings ; EULA; Logs ;Main;
@@ -31,7 +28,6 @@ namespace DBM
 
 		public static void Main()
 		{
-			StartUpStopWatch.Restart();
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Main()");
 			Primitive[] Startime2 = new Primitive[10];
 			Startime2[0] = Clock.ElapsedMilliseconds;
@@ -70,7 +66,7 @@ namespace DBM
 			Settings.LoadSettings(); //Load Application Settings from text file
 			Settings.IniateDatabases();
 			//Plugin.FindAll();
-			Utilities.LocalizationXML();
+			Utilities.LocalizationXML(GlobalStatic.LocalizationFolder + GlobalStatic.LanguageCode + ".xml");
 			Events.LogMessage(GlobalStatic.LangList["PRGM Start"], GlobalStatic.LangList["Application"]);
 			if (Program.ArgumentCount == 1)
 			{
@@ -86,11 +82,9 @@ namespace DBM
 				Events.LogMessage("Run EULA", "Debug");
 				if (GlobalStatic.DebugMode == true)
 				{
-					Console.WriteLine(GlobalStatic.EULA_Acceptance);
-					Console.WriteLine(GlobalStatic.EULA_Username);
+					Console.WriteLine("EULA Acceptance: {0} \n EULA Username: {1}\n ",GlobalStatic.EULA_Acceptance,GlobalStatic.EULA_Username);
 					Console.WriteLine(GlobalStatic.EULA_Newest_Version + "v" + GlobalStatic.EULA_Accepted_Version);
-					Console.WriteLine(GlobalStatic.VersionID);
-					Console.WriteLine(GlobalStatic.EulaTest);
+					Console.WriteLine("Version ID : {0} \n Eula Test {1} \n ", GlobalStatic.VersionID,GlobalStatic.EulaTest);
 				}
 				Settings.SaveSettings();
 				EULA.UI(GlobalStatic.EULA_Text_File);
@@ -224,9 +218,13 @@ namespace DBM
 			if (Program.ArgumentCount == 1 && GlobalStatic.LoadedFile == false)
 			{ GlobalStatic.LoadedFile = true; return Program.GetArgument(1); }
 			{
-				if (EngineMode == 4)
-				{ return LDDialogs.OpenFile(GlobalStatic.Extensions, GlobalStatic.LastFolder + "\\"); }
-				return "Currently not Supported";
+				switch (EngineMode)
+				{ 
+					case (int)Engines.EnginesModes.SQLITE:
+						return LDDialogs.OpenFile(GlobalStatic.Extensions, GlobalStatic.LastFolder + "\\");
+					default:
+						return "Currently not Supported";
+				}
 			}
 		}
 
@@ -279,7 +277,7 @@ namespace DBM
 			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210, GlobalStatic.LangList["Search"] + ":");
 			GraphicsWindow.DrawText(GlobalStatic.UIx + 127, 290, GlobalStatic.LangList["Functions"] + ":");
 
-			//Did not implement LOG CB //Implement ?
+			//Did not implement LOG CB //TODO
 
 			//Sort
 			GraphicsWindow.FontSize = 13;
@@ -347,22 +345,22 @@ namespace DBM
 			GlobalStatic.HideDisplayResults[14] = GlobalStatic.Buttons["Command"];
 		}
 
-		public static void SettingsUI()//Implement
+		public static void SettingsUI()//TODO
 		{ 
 		LDList.Add(GlobalStatic.List_Stack_Trace, "UI.SettingsUI()");
 		}
 
-		public static void CreateTableUI()//Implement
+		public static void CreateTableUI()//TODO
 		{ 
 		LDList.Add(GlobalStatic.List_Stack_Trace, "UI.CreateTableUI()");
 		}
 
-		public static void CreateTableHandler()//Implement
+		public static void CreateTableHandler()//TODO
 		{ 
 		LDList.Add(GlobalStatic.List_Stack_Trace, "UI.CreateTableHandler()");
 		}
 
-		public static void Title()//Implement
+		public static void Title()
 		{ 
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Title()");
 			string TimeRef;

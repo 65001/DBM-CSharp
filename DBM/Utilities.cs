@@ -12,10 +12,10 @@ namespace DBM
 {
 	public class Utilities
 	{
-		public static void LocalizationXML()  // Loads localized text from XML File
+		public static void LocalizationXML(string XMLPath)  // Loads localized text from XML File
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Utilities.LocalizationXML()");
-			string XMLPath = GlobalStatic.LocalizationFolder + GlobalStatic.LanguageCode + ".xml";
+			//string XMLPath = GlobalStatic.LocalizationFolder + GlobalStatic.LanguageCode + ".xml";
 			string XMLDoc = LDxml.Open(XMLPath);
 			if (LDFile.Exists(XMLPath))
 			{
@@ -128,7 +128,6 @@ namespace DBM
 				{
 					LDDialogs.ToolTip(Caption_OR_Name, PreviousNode_OR_ToolTip);
 				}
-
 			}
 			else 
 				{
