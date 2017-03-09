@@ -31,11 +31,11 @@ namespace DBM
 			Engines.Load_DB(Engines.EnginesModes.SQLITE, LitDev.LDDialogs.OpenFile("db", ""));
 			Assert.True(true);    
 		}
-
 		[Test]
 		public void End()
 		{
 			Assert.Fail();
 		}
 	}
+
 }
