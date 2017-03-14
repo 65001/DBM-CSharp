@@ -1,4 +1,4 @@
-﻿// asathiabalan@gmail.com
+// asathiabalan@gmail.com
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
@@ -14,12 +14,13 @@ namespace DBM
 	[SmallBasicType]
 	public static class Engines
 	{
-		public enum EnginesModes {NONE,MySQL=1, ODBC=2,OLEDB=3,SQLITE=4,SQLSERVER=5} //TODO
-		public static string CurrentDatabase { get;private set;}
-		public static string CurrentTable {get;private set;}
+		public  enum EnginesModes { NONE, MySQL = 1, ODBC = 2, OLEDB = 3, SQLITE = 4, SQLSERVER = 5 } //TODO
+		public static string CurrentDatabase { get; private set; }
+		public static string CurrentTable { get; private set; }
+		public static EnginesModes CurrentMode { get; private set; }
 		public static string Database_Shortname { get; private set;}
 		public static Primitive Schema { get; private set;}
-		public static string GQ_CMD { get; private set;}
+		public static string GQ_CMD { get; private set;} //Auto Generated Query SQL Statemetns
 
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
@@ -64,11 +65,13 @@ namespace DBM
 
 		public static void Emulator() //TODO
 		{
+			//Attempts to emulate some if not all commands of a database engine by aliasing it to SQL
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Emulator()");
 		}
 
-		public static void TransactionRecord(string UserName, string DataBase, string SQL, string Type, string Reason) //Implement
+		public static void TransactionRecord(string UserName, string DataBase, string SQL, string Type, string Reason) //Implement //TODO
 		{
+			//This method should only run when the correct global Paramters are rig//Current Storage only supports SQLite
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.TransactionRecord()");
 		}
 
@@ -86,6 +89,7 @@ namespace DBM
 				case EnginesModes.SQLITE: 
 					if (LDFile.Exists(Data) == true)
 					{
+						CurrentMode = EnginesModes.SQLITE;
 						int Index = LDList.IndexOf(GlobalStatic.List_DB_Path, Data);
 						if (Index == 0) //New Database
 						{
@@ -129,12 +133,13 @@ namespace DBM
 					LDList.Add(Master_Schema_Lists[Master_Schema_List[i]["type"]], Master_Schema_List[i]["tbl_name"]);
 				}
 				Engines.CurrentTable = LDList.GetAt(GlobalStatic.List_SCHEMA_Table, 1);
-				LDList.Add(GlobalStatic.TrackDefaultTable,Database + "." + Engines.CurrentTable);
-				GetSchemaofTable(Database, Engines.CurrentTable);
+				LDList.Add(GlobalStatic.TrackDefaultTable, Database + "." + Engines.CurrentTable);
+				GetColumnsofTable(Database, Engines.CurrentTable);
+
 			}
 		}
 
-		public static void GetSchemaofTable(string Database, string Table)
+		public static void GetColumnsofTable(string Database, string Table)
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.GetSchemaofTable()");
 			if (!string.IsNullOrEmpty(Database) && !string.IsNullOrEmpty(Table)) //Prevents calls to nonexistent tables or Databases

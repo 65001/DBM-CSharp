@@ -1,4 +1,4 @@
-﻿// asathiabalan@gmail.com
+// asathiabalan@gmail.com
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
@@ -156,7 +156,7 @@ namespace DBM
 			else if (Item == GlobalStatic.LangList["Refresh Schema"]) //TODO
 			{
 				Engines.GetSchema(Engines.CurrentDatabase);
-				Engines.GetSchemaofTable(Engines.CurrentDatabase,Engines.CurrentTable);
+				Engines.GetColumnsofTable(Engines.CurrentDatabase,Engines.CurrentTable);
 			}
 			else if (Item == GlobalStatic.LangList["Check for Updates"]) //TODO
 			{ }
@@ -244,21 +244,21 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_DB_Tracker, LDList.GetAt(GlobalStatic.List_DB_ShortName, Index));
 			Engines.Load_DB(Engines.EnginesModes.SQLITE, LDList.GetAt(GlobalStatic.List_DB_Path, Index));
 			Engines.GetSchema(Engines.CurrentDatabase);
-			Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 
 			SortsComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
 			TableComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], 1);
 			if (GlobalStatic.SortBy == 4)
 			{
 				Engines.SetDefaultTable("sqlite_master");
-				Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+				Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 				LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], "1=" + Engines.CurrentTable + ";2=sqlite_temp_master;");
 			}
 			else
 			{
 				LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], CurrentSchema);
 				SortsComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
-				Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+				Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 			}
 		}
 
@@ -274,7 +274,7 @@ namespace DBM
 		static void TableComboBox(int Index)
 		{ 
 			Engines.SetDefaultTable(LDList.GetAt(CorrectList, Index));
-			Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 			SetComboBox();
 		}
 
@@ -295,7 +295,7 @@ namespace DBM
 					break;
 				case 4:
 					Engines.SetDefaultTable("sqlite_master");
-					Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+					Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 					break;
 			}
 
@@ -303,7 +303,7 @@ namespace DBM
 			{
 				Engines.SetDefaultTable(LDList.GetAt(CorrectList, 1));
 				LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], LDList.ToArray(CorrectList));
-				Engines.GetSchemaofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+				Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 			}
 			if (!string.IsNullOrEmpty(Engines.CurrentTable))
 			{

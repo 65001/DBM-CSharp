@@ -41,6 +41,7 @@ namespace DBM
 			LDGraphicsWindow.Closing += Events.Closing;
 			LDEvents.Error += Events.LogEvents;
 
+
 			GlobalStatic.Ping = LDNetwork.Ping(GlobalStatic.IP_Ping_Address, 500);
 			if (GlobalStatic.Ping != -1)
 			{
@@ -345,27 +346,12 @@ namespace DBM
 			GlobalStatic.HideDisplayResults[14] = GlobalStatic.Buttons["Command"];
 		}
 
-		public static void SettingsUI()//TODO
-		{ 
-		LDList.Add(GlobalStatic.List_Stack_Trace, "UI.SettingsUI()");
-		}
-
-		public static void CreateTableUI()//TODO
-		{ 
-		LDList.Add(GlobalStatic.List_Stack_Trace, "UI.CreateTableUI()");
-		}
-
-		public static void CreateTableHandler()//TODO
-		{ 
-		LDList.Add(GlobalStatic.List_Stack_Trace, "UI.CreateTableHandler()");
-		}
-
 		public static void Title()
 		{ 
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Title()");
 			string TimeRef;
 			SetTitle = GlobalStatic.Title + " " + Engines.Database_Shortname + "(" + Engines.CurrentDatabase + ") :" + Handlers.TypeofSorts[GlobalStatic.SortBy] + ":" + Engines.CurrentTable;
-			TimeRef = LDList.GetAt(GlobalStatic.List_Time_Refer, LDList.Count(GlobalStatic.List_Time_Refer));
+			TimeRef = LDList.GetAt(GlobalStatic.List_Time_Refer, LDList.Count(GlobalStatic.List_Time_Refer)); //Time of Last Query or Command
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
 			{
 				SetTitle = GlobalStatic.Title;
@@ -385,6 +371,21 @@ namespace DBM
 			GraphicsWindow.Title = SetTitle;
 		}
 
+
+		public static void SettingsUI()//TODO
+		{
+			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.SettingsUI()");
+		}
+
+		public static void CreateTableUI()//TODO
+		{
+			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.CreateTableUI()");
+		}
+
+		public static void CreateTableHandler()//TODO
+		{
+			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.CreateTableHandler()");
+		}
 	}
 
 	public static class Events
@@ -407,14 +408,20 @@ namespace DBM
 				TextWindow.WriteLine(LDList.GetAt(GlobalStatic.List_Stack_Trace, LDList.Count(GlobalStatic.List_Stack_Trace)) + ":" + Type + ":" + Message);
 			}
 
-			if (Type.Equals("Debug") == true && GlobalStatic.DebugMode == false) { }
+			if (Type.Equals("Debug") == true && GlobalStatic.DebugMode == false) 
+			{
+				return;
+			}
 			else if (Type.Equals("PopUp") == true) 
 			{
 				GraphicsWindow.ShowMessage(Message, LDList.GetAt(GlobalStatic.List_Stack_Trace, LDList.Count(GlobalStatic.List_Stack_Trace) + "REVERT!" ));
 			}
 			else
 			{
-				if (string.IsNullOrEmpty(Type)) { Type = "Unknown"; }
+				if (string.IsNullOrEmpty(Type))
+					{
+						Type = "Unknown"; 
+					}
 				if (GlobalStatic.DebugMode == true)
 				{
 					if (Text.IsSubText(Message, "LDDataBase.Query") == true || Text.IsSubText(Message, "LDDataBase.Command") == true) 
@@ -427,8 +434,7 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogMessage()");
 
 			SBFile.AppendContents(GlobalStatic.LogCSVpath,GlobalStatic.LogNumber +"," + Clock.Date + "," + Clock.Time +"," + "\"" + LDText.Replace( GlobalStatic.Username , "\"" , "\"" + "\"" ) + "\"" +"," + GlobalStatic.ProductID +","+ GlobalStatic.VersionID+"," + "\"" +  LDText.Replace( Type, "\"" , "\"" + "\"") + "\"" +","+  "\"" +  LDText.Replace(Message ,"\"" , "\"" + "\"" ) + "\"");
-			string LogCMD;
-			LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'";
+			string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'";
 			LogCMD = LogCMD + GlobalStatic.Username + "','" + GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');";
 			Engines.Command(GlobalStatic.LogDB, LogCMD, GlobalStatic.LangList["App"], GlobalStatic.LangList["Auto Log"],false);
 		}
