@@ -7,13 +7,13 @@ namespace DBM
 {
 	public static class Import
 	{
-		public static void CSVto2D() //TODO
+		public static void CSVto2D(string FilePath) //TODO
 		{}
 
-		public static void ArrayToSql() //TODO
+		public static void ArrayToSql(string[,] Array) //TODO
 		{ }
 
-		public static void Sql() //TODO
+		public static void Sql(string SQL) //TODO
 		{ }
 	}
 }

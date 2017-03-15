@@ -28,6 +28,9 @@ namespace DBM
 					GlobalStatic.LastFolder = LDFile.GetFolder(Path);
 					Settings.LoadSettings();
 					Settings.SaveSettings();
+					LDDataBase.ConnectSQLite(Path);
+					Engines.Load_DB(Engines.EnginesModes.SQLITE, Path);
+
 					Events.LogMessage("Created DB :" + Path, GlobalStatic.LangList["Application"]);
 					UI.PreMainMenu();
 					UI.MainMenu();
@@ -215,7 +218,7 @@ namespace DBM
 			}
 			else if (LastButton == GlobalStatic.Buttons["Command"]) //Custom Command
 			{
-				Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["Command"]), GlobalStatic.UserName, GlobalStatic.LangList["User Requested"], false);
+				Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.UserName, GlobalStatic.LangList["User Requested"], false);
 			}
 			else
 			{

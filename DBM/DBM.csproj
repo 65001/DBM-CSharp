@@ -61,7 +61,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SQLITE.cs">
+    <Compile Include="Engines.cs">
     </Compile>
     <Compile Include="Settings.cs">
     </Compile>

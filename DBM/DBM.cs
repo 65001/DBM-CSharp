@@ -14,6 +14,7 @@ using System.Diagnostics;
 	To do :
 		Emulators 
 		SQLITE setup
+		Set it up so that if no table exists in a database then revert to sqlite_master or equivalent
  */
 
 //Complete Implements and Localize
