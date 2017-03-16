@@ -24,11 +24,11 @@ namespace DBM
 			Controls.Move(EulaTextBox, 10, 10);
 			string CNTS = LDText.Replace(SBFile.ReadContents(URI), "<date>", GlobalStatic.Copyright);
 
-			if (GlobalStatic.Ping == -1) //IMPLEMENT! DEV
+			if (GlobalStatic.Ping == -1) // DEV //TODO
 			{
 
 			}
-			if (CNTS.Equals(null) == true || CNTS == "") //IMPLEMENT
+			if (CNTS.Equals(null) == true || CNTS == "") //TODO
 			{
 				Program.End();
 			}

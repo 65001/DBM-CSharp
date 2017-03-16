@@ -10,5 +10,3 @@ C:\Users\Abhishek\Documents\Projects\DBM\DBM\obj\x86\Debug\DBM.exe
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\obj\x86\Debug\DBM.pdb
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\obj\x86\Debug\DBM.csprojResolveAssemblyReference.cache
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Debug\DBM.exe.config
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Debug\DBM.exe.CodeAnalysisLog.xml
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Debug\DBM.exe.lastcodeanalysissucceeded

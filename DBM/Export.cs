@@ -7,16 +7,34 @@ namespace DBM
 {
 	public class Export
 	{
-		public static void CSV() //TODO
-		{ }
+		public static string[,] Generate2DArray(string Database, string SQL)
+		{
+			return null;
+		}
 
-		public static void SQL() //TODO
-		{ }
+		public static string[,] Generate2DArrayFromTable(string Database, string Table)
+		{
+			return null;
+		}
 
-		public static void XML() //TODO
-		{ }
+		public static void CSV(string[,] Data) //TODO
+		{ 
+		
+		}
 
-		public static void HTML() //TODO
-		{ }
+		public static void SQL(string[,] Data) //TODO
+		{ 
+		
+		}
+
+		public static void XML(string[,] Data) //TODO
+		{
+		
+		}
+
+		public static void HTML(string[,] Data) //TODO
+		{
+		
+		}
 	}
 }

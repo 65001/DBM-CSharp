@@ -29,7 +29,14 @@ namespace DBM
 
 		public static void Main()
 		{
+				string TempFile = Microsoft.SmallBasic.Library.File.GetTemporaryFilePath();
+				Import.CSV(LitDev.LDDialogs.OpenFile("csv", ""), TempFile);
+				LDProcess.Start(TempFile, "");
+			
+		
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Main()");
+
+
 			Primitive[] Startime2 = new Primitive[10];
 			Startime2[0] = Clock.ElapsedMilliseconds;
 

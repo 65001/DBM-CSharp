@@ -12,7 +12,7 @@ namespace DBM
 		public static Primitive CurrentSchema;static string CorrectList;
 		public static Primitive TypeofSorts ="1="+ GlobalStatic.LangList["Table"] +";2=" + GlobalStatic.LangList["View"] +"3="+ GlobalStatic.LangList["Index"] + "4="+ GlobalStatic.LangList["Master Table"]+";";
 
-		public static void Menu(string Item) //Handles Main Menu  //TODO 
+		public static void Menu(string Item) //Handles Main Menu
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Handlers.Menu(" + Item + ")");
 

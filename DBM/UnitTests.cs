@@ -31,6 +31,16 @@ namespace DBM
 			Engines.Load_DB(Engines.EnginesModes.SQLITE, LitDev.LDDialogs.OpenFile("db", ""));
 			Assert.True(true);    
 		}
+
+		[Test]
+		public void CSV()
+		{
+			string TempFile = Microsoft.SmallBasic.Library.File.GetTemporaryFilePath();
+			Import.CSV(LitDev.LDDialogs.OpenFile("csv", ""), TempFile);
+			LitDev.LDProcess.Start(TempFile, "");
+		}
+
+
 		[Test]
 		public void End()
 		{

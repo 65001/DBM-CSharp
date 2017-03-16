@@ -81,8 +81,7 @@ namespace DBM
 			return null;
 		}
 
-		// Update Function
-		public static void Updater() //Implement
+		public static void Updater()  //TODO
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Utilities.Updater()");
 		}
@@ -96,7 +95,7 @@ namespace DBM
 		{ }
 
 
-		static void Add_UI_Controls(string Type, string Caption_OR_Name, string Handler, string PreviousNode_OR_ToolTip, string Action) //Implement
+		static void Add_UI_Controls(string Type, string Caption_OR_Name, string Handler, string PreviousNode_OR_ToolTip, string Action) 
 		{
 			int index = LDList.IndexOf(GlobalStatic.List_UI_Name, Caption_OR_Name);
 			if (Type == "Menu")
