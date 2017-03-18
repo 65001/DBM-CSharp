@@ -4,7 +4,6 @@
 using System;
 using LitDev;
 using Microsoft.SmallBasic.Library;
-using System.Runtime.InteropServices;
 namespace DBM
 {
 	public static class Handlers
@@ -272,7 +271,7 @@ namespace DBM
 			LDControls.ComboBoxContent(GlobalStatic.ComboBox["ColumnList"], Engines.Schema);
 			LDControls.ComboBoxContent(GlobalStatic.ComboBox["Search"], Engines.Schema);
 			UI.Title();
-			Handlers.Menu(GlobalStatic.LangList["View"]); //Tasks
+			Menu(GlobalStatic.LangList["View"]); //Tasks
 		}
 
 		static void TableComboBox(int Index)
@@ -317,7 +316,7 @@ namespace DBM
 			}
 			else
 			{
-				string Message = "In the current database no " + GlobalStatic.LangList[Handlers.TypeofSorts[GlobalStatic.SortBy]] + "s can be found.";
+				string Message = "In the current database no " + GlobalStatic.LangList[TypeofSorts[GlobalStatic.SortBy]] + "s can be found.";
 				Events.LogMessagePopUp(Message, Message,GlobalStatic.LangList["Error"], GlobalStatic.LangList["UI"]);
 			}
 		

@@ -1,10 +1,6 @@
-﻿using System;
-using LitDev;
+﻿using LitDev;
 using Microsoft.SmallBasic.Library;
-using SBArray = Microsoft.SmallBasic.Library.Array;
 using SBFile = Microsoft.SmallBasic.Library.File;
-using System.Collections.Generic;
-using System.IO;
 namespace DBM
 {
 	public static class EULA
@@ -68,7 +64,7 @@ namespace DBM
 				Program.End();
 			}
 
-			Controls.ButtonClicked -= EULA.Handler; //Unsubcribes the event Handler from the event
+			Controls.ButtonClicked -= Handler; //Unsubcribes the event Handler from the event
 		}
 	}
 }

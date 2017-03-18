@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using LitDev;
 using System.Diagnostics;
 using Microsoft.SmallBasic.Library;
-using SBFile = Microsoft.SmallBasic.Library.File;
 namespace DBM
 {
 	public static class Import

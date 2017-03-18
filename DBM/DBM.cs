@@ -8,8 +8,6 @@ using SBArray = Microsoft.SmallBasic.Library.Array;
 using SBFile = Microsoft.SmallBasic.Library.File;
 using System.Threading.Tasks;
 using System.Diagnostics;
-using System.Linq;
-using System.Collections.Generic;
 /*
 	Completed Items:
 		Settings ; EULA; Logs ;Main;

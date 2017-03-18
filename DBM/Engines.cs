@@ -5,9 +5,7 @@ using System;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 using SBArray = Microsoft.SmallBasic.Library.Array;
-using SBFile = Microsoft.SmallBasic.Library.File;
 using System.Collections.Generic;
-using System.IO;
 using System.Diagnostics;
 namespace DBM
 {
@@ -24,7 +22,7 @@ namespace DBM
 		public static List<string> DB_Path = new List<string>();
 		public static List<string> DB_Name = new List<string>();
 		public static List<string> DB_ShortName = new List<string>();
-		public static List<Engines.EnginesModes> DB_Engine = new List<Engines.EnginesModes>();
+		public static List<EnginesModes> DB_Engine = new List<EnginesModes>();
 
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
@@ -42,10 +40,8 @@ namespace DBM
 						return 0;
 				}
 			}
-			else if (RunParser == true)
-			{
-				Console.WriteLine("Database type currently not supported!");
-			}
+
+			Console.WriteLine("Database type currently not supported!");
 			return 0;
 		}
 
@@ -101,7 +97,7 @@ namespace DBM
 							AddToList(Data, Database, LDFile.GetFile(Data), 4);
 							GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data);
 							Settings.SaveSettings();
-							Engines.CurrentDatabase = Database;
+							CurrentDatabase = Database;
 							return Database;
 						}
 						else //Database already exists as a connection so set the primary connection to that
@@ -109,7 +105,7 @@ namespace DBM
 							string Database = LDList.GetAt(GlobalStatic.List_DB_Name, Index);
 							Database_Shortname = LDList.GetAt(GlobalStatic.List_DB_ShortName, Index);
 							LDList.Add(GlobalStatic.List_DB_ShortName, Database_Shortname);
-							Engines.CurrentDatabase = Database;
+							CurrentDatabase = Database;
 							return Database;
 						}
 					}
@@ -143,9 +139,9 @@ namespace DBM
 						{
 							LDList.Add(Master_Schema_Lists[Master_Schema_List[i]["type"]], Master_Schema_List[i]["tbl_name"]);
 						}
-						Engines.CurrentTable = LDList.GetAt(GlobalStatic.List_SCHEMA_Table, 1);
-						LDList.Add(GlobalStatic.TrackDefaultTable, Database + "." + Engines.CurrentTable);
-						GetColumnsofTable(Database, Engines.CurrentTable);
+						CurrentTable = LDList.GetAt(GlobalStatic.List_SCHEMA_Table, 1);
+						LDList.Add(GlobalStatic.TrackDefaultTable, Database + "." + CurrentTable);
+						GetColumnsofTable(Database, CurrentTable);
 						break;
 				}
 		}
@@ -169,21 +165,21 @@ namespace DBM
 					{
 						LDList.Add("SCHEMA", LSchema[i]["name"]);
 					}
-					Engines.Schema = LDList.ToArray("SCHEMA");
+					Schema = LDList.ToArray("SCHEMA");
 					break;
 			}
 		}
 
 		public static void EditTable(string Table,string Control)
 		{
-			LDDataBase.EditTable(CurrentDatabase,CurrentTable, Control);
+			LDDataBase.EditTable(CurrentDatabase,Table, Control);
 		}
 
 		public static void SetDefaultTable(string Table)
 		{
 			if (!string.IsNullOrEmpty(Table))
 			{
-				Engines.CurrentTable = "\"" + Table + "\"";
+				CurrentTable = "\"" + Table + "\"";
 				LDList.Add(GlobalStatic.TrackDefaultTable, CurrentDatabase + "." + CurrentTable);
 			}
 			else
@@ -195,10 +191,10 @@ namespace DBM
 		public static void GenerateQuery(bool Search,bool Sort,bool Function,string SearchBy,string OrderBy,string SortOrder,bool StrictSearch,bool InvertSearch,string FunctionSelected,string FunctionColumn,string SearchText) 
 		{
 			//Interface to private classes
-			if (!string.IsNullOrEmpty(Engines.CurrentTable))
+			if (!string.IsNullOrEmpty(CurrentTable))
 			{
 				GQ_CMD = null;
-				GQ_CMD = "SELECT * FROM " + Engines.CurrentTable + " ";
+				GQ_CMD = "SELECT * FROM " + CurrentTable + " ";
 				LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.GenerateQuery()");
 				if (Search)
 				{
@@ -214,7 +210,7 @@ namespace DBM
 					GQ_CMD += GenerateSort(OrderBy,SortOrder );
 				}
 			}
-			Engines.Query(Engines.CurrentDatabase, GQ_CMD, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.Username);
+			Query(CurrentDatabase, GQ_CMD, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.Username);
 			GQ_CMD = null;
 		}
 
@@ -253,7 +249,7 @@ namespace DBM
 		static string GenerateFunction(string Function,string Column) 
 		{
 			string CMD;
-			CMD = "SELECT " + Function + "(\"" + Column + "\") FROM " + Engines.CurrentTable + " ";
+			CMD = "SELECT " + Function + "(\"" + Column + "\") FROM " + CurrentTable + " ";
 			return CMD;
 		}
 

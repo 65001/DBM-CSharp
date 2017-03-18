@@ -1,13 +1,9 @@
 ﻿// asathiabalan@gmail.com
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
-using System;
 using LitDev;
 using Microsoft.SmallBasic.Library;
-using SBArray = Microsoft.SmallBasic.Library.Array;
-using SBFile = Microsoft.SmallBasic.Library.File;
 using System.Collections.Generic;
-using System.IO;
 namespace DBM
 {
 		public class GlobalStatic //List of Variables shared across everything through this class
