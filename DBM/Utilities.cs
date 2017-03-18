@@ -81,7 +81,7 @@ namespace DBM
 			return null;
 		}
 
-		public static void Updater()  //TODO
+		public static void Updater()  //TODO Update Functionality. Possibly make this a function?
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Utilities.Updater()");
 		}

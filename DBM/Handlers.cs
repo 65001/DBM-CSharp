@@ -14,6 +14,7 @@ namespace DBM
 
 		public static void Menu(string Item) //Handles Main Menu
 		{
+        
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Handlers.Menu(" + Item + ")");
 
 			//Switch and Enum cannot be used because values can change
@@ -26,7 +27,7 @@ namespace DBM
 					GlobalStatic.ListView = null;
 					GlobalStatic.Dataview = null;
 					GlobalStatic.LastFolder = LDFile.GetFolder(Path);
-					Settings.LoadSettings();
+					Settings.LoadSettings(GlobalStatic.RestoreSettings);
 					Settings.SaveSettings();
 					LDDataBase.ConnectSQLite(Path);
 					Engines.Load_DB(Engines.EnginesModes.SQLITE, Path);
@@ -41,7 +42,7 @@ namespace DBM
 			{
 				GlobalStatic.ListView = null; 
 				GlobalStatic.Dataview = null;
-				Settings.LoadSettings(); //Reloads Settings
+				Settings.LoadSettings(GlobalStatic.RestoreSettings); //Reloads Settings
 				Engines.Load_DB(Engines.EnginesModes.SQLITE, UI.GetPath(4));
 				Settings.SaveSettings();
 				UI.PreMainMenu();

@@ -14,19 +14,24 @@ namespace DBM
 	[SmallBasicType]
 	public static class Engines
 	{
-		public  enum EnginesModes { NONE, MySQL = 1, ODBC = 2, OLEDB = 3, SQLITE = 4, SQLSERVER = 5 } //TODO
+		public  enum EnginesModes { NONE, MySQL = 1, ODBC = 2, OLEDB = 3, SQLITE = 4, SQLSERVER = 5 }
 		public static string CurrentDatabase { get; private set; }
 		public static string CurrentTable { get; private set; }
 		public static string Database_Shortname { get; private set;}
 		public static Primitive Schema { get; private set;}
-		public static string GQ_CMD { get; private set;} //Auto Generated Query SQL Statemetns
+		public static string GQ_CMD { get; private set;} //Auto Generated Query SQL Statements
+
+		public static List<string> DB_Path = new List<string>();
+		public static List<string> DB_Name = new List<string>();
+		public static List<string> DB_ShortName = new List<string>();
+		public static List<Engines.EnginesModes> DB_Engine = new List<Engines.EnginesModes>();
 
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
+			Console.WriteLine( DB_ShortName.ToArray() );
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Command()");
 			if (RunParser == false)
 			{
-				
 				EnginesModes EngineMode = Engine_Type(Database);
 				TransactionRecord(User, Database, SQL, "CMD", Explanation);
 				switch (EngineMode)
@@ -44,7 +49,7 @@ namespace DBM
 			return 0;
 		}
 
-		public static void Parser()  //TODO
+		public static void Parser()  //TODO: Implement Parser
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Parser()");
 		}
@@ -62,13 +67,13 @@ namespace DBM
 
 		}
 
-		public static void Emulator() //TODO
+		public static void Emulator() //TODO Implement Emulator atleast for sqlite for DBM
 		{
 			//Attempts to emulate some if not all commands of a database engine by aliasing it to SQL
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Emulator()");
 		}
 
-		public static void TransactionRecord(string UserName, string DataBase, string SQL, string Type, string Reason) //TODO
+		public static void TransactionRecord(string UserName, string DataBase, string SQL, string Type, string Reason) //TODO Transactions 
 		{
 			//This method should only run when the correct global Paramters are rig//Current Storage only supports SQLite
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.TransactionRecord()");

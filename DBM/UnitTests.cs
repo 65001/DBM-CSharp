@@ -9,43 +9,11 @@ namespace DBM
 	[TestFixture]
 	public class UnitTests
 	{
-
-		[Test]
-		public void A_Load_Settings()
-		{
-			Settings.LoadSettings();
-			GraphicsWindow.ShowMessage(GlobalStatic.SettingsPath, "");
-			Assert.Warn(GlobalStatic.SettingsPath);
-		}
-
-		[Test]
-		public void StartUp()
-		{
-			UI.Main();
-			Assert.True(true);
-		}
-
-		[Test]
-		public void Connect()
-		{
-			Engines.Load_DB(Engines.EnginesModes.SQLITE, LitDev.LDDialogs.OpenFile("db", ""));
-			Assert.True(true);    
-		}
-
-		[Test]
-		public void CSV()
-		{
-			string TempFile = Microsoft.SmallBasic.Library.File.GetTemporaryFilePath();
-			Import.CSV(LitDev.LDDialogs.OpenFile("csv", ""), TempFile);
-			LitDev.LDProcess.Start(TempFile, "");
-		}
-
-
-		[Test]
-		public void End()
-		{
-			Assert.Fail();
-		}
+        //
+        //public static void Test(,)
+         //   { 
+        
+         //   }
 	}
 
 }

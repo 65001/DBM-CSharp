@@ -14,11 +14,11 @@ namespace DBM
 	[SmallBasicType]
 	public static class Settings
 	{
-		public static void LoadSettings()
+		public static void LoadSettings(bool RestoreSettings)
 		{
 			//GlobalStatic.SettingsPath = "C:\\Users\\Abhishek\\Documents\\Proggraming\\SB\\Projects\\DB Manager\\Assets\\setting.txt"; //@Dev 
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Settings.LoadSettings()");
-			if (GlobalStatic.RestoreSettings == false)
+            if (RestoreSettings == false)
 			{
 				GlobalStatic.Settings = SBFile.ReadContents(GlobalStatic.SettingsPath);
 			}
@@ -62,17 +62,17 @@ namespace DBM
 				if (GlobalStatic.Settings[NullSettings[i]] == null || GlobalStatic.Settings[NullSettings[i]] == "")
 				{
 					GlobalStatic.Settings[NullSettings[i]] = Setting_Default[i];
-					GlobalStatic.RestoreSettings = true;
+                    GlobalStatic.RestoreSettings = true; RestoreSettings = true;
 				}
 				if (Setting_Files[i] == 1 && LDFile.Exists(GlobalStatic.Settings[NullSettings[i]]) == false)
 				{
 					GlobalStatic.Settings[NullSettings[i]] = Setting_Default[i];
-					GlobalStatic.RestoreSettings = true;
+					GlobalStatic.RestoreSettings = true;RestoreSettings = true;
 				}
 
 
 			}
-			if (GlobalStatic.RestoreSettings == true)
+            if (RestoreSettings == true)
 			{
 				GlobalStatic.Listview_Width = GlobalStatic.Settings["Listview_Width"]; GlobalStatic.Listview_Height = GlobalStatic.Settings["Listview_Height"]; GlobalStatic.LastVersion = GlobalStatic.Settings["VersionID"]; GlobalStatic.LastFolder = GlobalStatic.Settings["LastFolder"]; GlobalStatic.Extensions = GlobalStatic.Settings["Extensions"];
 				GlobalStatic.Deliminator = GlobalStatic.Settings["Deliminator"]; GlobalStatic.Transactions = GlobalStatic.Settings["Transactions"]; GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
@@ -103,27 +103,32 @@ namespace DBM
 			}
 		}
 
+		public static void Paths(string AssetPath,string PluginPath,string LocalizationFolder,string AutoRunPluginPath,string Localization_LanguageCodes_Path,string LogCSVPath,string AutoRunPluginMessage)
+		{ 
+			LDList.Add(GlobalStatic.List_Stack_Trace, "Settings.Paths()");
+			if (LDFile.Exists(AssetPath) == false || LDFile.Exists(PluginPath) == false || LDFile.Exists(LocalizationFolder) == false) //Creates Folders if one is missing
+			{
+				Directory.CreateDirectory(AssetPath);
+				Directory.CreateDirectory(PluginPath);
+				Directory.CreateDirectory(LocalizationFolder);
+				Directory.CreateDirectory(Localization_LanguageCodes_Path);
+			}
+
+			if (LDFile.Exists(AutoRunPluginPath) == false)
+			{
+				System.IO.File.WriteAllText(AutoRunPluginPath, AutoRunPluginMessage);
+			}
+
+			if (LDFile.Exists(LogCSVPath) == false)
+			{
+				System.IO.File.WriteAllText(LogCSVPath, "id,Local Date,Local Time,Username,Product ID,Version,Type,Event");
+			}
+		}
+
+
 		public static void IniateDatabases()
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Settings.IniateDatabases()");
-			if (LDFile.Exists(GlobalStatic.AssetPath) == false || LDFile.Exists(GlobalStatic.PluginPath) == false || LDFile.Exists(GlobalStatic.LocalizationFolder) == false) //Creates Folders if one is missing
-			{
-				SBFile.CreateDirectory(GlobalStatic.AssetPath);
-				SBFile.CreateDirectory(GlobalStatic.PluginPath);
-				SBFile.CreateDirectory(GlobalStatic.LocalizationFolder);
-				SBFile.CreateDirectory(GlobalStatic.Localization_LanguageCodes_Path);
-			}
-
-			if (LDFile.Exists(GlobalStatic.AutoRunPluginPath) == false)
-			{
-				SBFile.WriteContents(GlobalStatic.AutoRunPluginPath, GlobalStatic.AutoRunPluginMessage);
-			}
-
-			if (LDFile.Exists(GlobalStatic.LogCSVpath) == false)
-			{
-				SBFile.WriteContents(GlobalStatic.LogCSVpath, "id,Local Date,Local Time,Username,Product ID,Version,Type,Event");
-			}
-
 			GlobalStatic.LogDB = LDDataBase.ConnectSQLite(GlobalStatic.LogDBpath);
 			GlobalStatic.TransactionDB = LDDataBase.ConnectSQLite(GlobalStatic.TransactionDBPath);
 
@@ -145,6 +150,7 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_DB_ShortName, ShortName);
 			LDList.Add(GlobalStatic.List_DB_Engine, Engine);
 		}
+
 	}
 }
 

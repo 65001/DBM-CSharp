@@ -7,36 +7,35 @@ using System.Text;
 using System.Linq;
 using System.Collections.Generic;
 using LitDev;
+using System.Diagnostics;
 using Microsoft.SmallBasic.Library;
 using SBFile = Microsoft.SmallBasic.Library.File;
 namespace DBM
 {
 	public static class Import
 	{
-		static string Name;
 		static string Data; //Refers to an Instance of LDFASTARRAY
-		static  List<int> CSV_Length = new List<int>();
+		static List<int> CSV_Length = new List<int>();
 		static List<bool> CSV_IsString = new List<bool>();
-		static int Standard_Size;
 		static string HeaderSQL;
 		static string HeaderWOType;
 
-		public static void CSV(string FilePath, string DumpFilePath) //TODO
+		public static string CSV(string FilePath) //TODO
 		{			
-			//TODO 
-			//Make sure comment's are universal across SQL
-			//Then use them to insert data such as how long it took to generate the SQL
-			//and how many rows were skipped if any
+			//TODO Make sure comment's are universal across SQL.Then use them to insert data such as how long it took to generate the SQL and how many rows were skipped if any
 
 			if (LDFile.Exists(FilePath) == false)
-			{ 
-				return;
+			{
+                return string.Empty;
 			}
 
+			Stopwatch Elappsed =	Stopwatch.StartNew();
+			Elappsed.Start();
+			        
 			CSV_Length.Clear();
 			CSV_IsString.Clear();
 
-			Name = LDText.Trim(LDFile.GetFile(FilePath));
+			string Name = LDText.Trim(LDFile.GetFile(FilePath));
 			Data = LDFastArray.ReadCSV(FilePath); 
 
 			//Calculate Lengths of Data
@@ -44,7 +43,7 @@ namespace DBM
 			{
 				CSV_Length.Add(LDFastArray.Dim2(Data, i));
 			}
-			Standard_Size = CSV_Length.First();
+			int Standard_Size = CSV_Length.First();
 
 			//Sets IsInteger to true by default
 			for (int i = 1; i <= Standard_Size; i++)
@@ -54,23 +53,13 @@ namespace DBM
 
 			try
 			{
-				string CSV_SQL = ArrayToSql();
-				CSVHeaders();
+				string CSV_SQL = ArrayToSql(Standard_Size,Name);
+                CSVHeaders(Standard_Size,Name);
 				//Appending
 				CSV_SQL = "BEGIN;\n" + HeaderSQL + CSV_SQL + "COMMIT;";
 				CSV_SQL = LDText.Replace(CSV_SQL, "'NULL'", "NULL");
 				CSV_SQL = LDText.Replace(CSV_SQL, "<<HEADERS>>", HeaderWOType);
-
-				// Output FILE
-				SBFile.WriteContents(DumpFilePath, CSV_SQL);
-
-				//Command
-				decimal records = Engines.Command(Engines.CurrentDatabase, CSV_SQL, GlobalStatic.UserName, "Import CSV", false);
-				//return percentage of records added
-				records = records / (decimal)Microsoft.SmallBasic.Library.Array.GetItemCount(LDText.FindAll(CSV_SQL, ";"));
-				records = records * 100;
-				records = System.Math.Round(records);
-				GraphicsWindow.ShowMessage(records, "");
+                return CSV_SQL;
 			}
 			catch (Exception ex)
 			{
@@ -78,10 +67,11 @@ namespace DBM
 			}
 
 			//Drops The FastArray
-			LDFastArray.Remove(Data);	                        
+			LDFastArray.Remove(Data);
+            return string.Empty;            
 		}
 
-		static string ArrayToSql()
+		static string ArrayToSql(int Standard_Size,string TableName)
 		{
 			double double2;
 			StringBuilder CSV_SQL = new StringBuilder();
@@ -93,7 +83,7 @@ namespace DBM
 					//The Minus one is for the difference in data sets. One Counts from Zero and the other from one
 					//The pain of mixing these systems.
 				{
-					CSV_SQL.Append("INSERT INTO \"" + Name + "\" <<HEADERS>> VALUES('");
+                    CSV_SQL.Append("INSERT INTO \"" + TableName + "\" <<HEADERS>> VALUES('");
 					for (int ii = 1; ii <= LDFastArray.Dim2(Data, i); ii++)
 					{
 						string Temp = LDText.Replace(LDFastArray.Get2D(Data, i, ii), "'", "''");
@@ -125,9 +115,9 @@ namespace DBM
 			return CSV_SQL.ToString();
 		}
 
-		static void CSVHeaders() 
+		static void CSVHeaders(int Standard_Size,string TableName) 
 		{
-			HeaderSQL = "CREATE TABLE IF NOT EXISTS \"" + Name + "\" (";
+            HeaderSQL = "CREATE TABLE IF NOT EXISTS \"" + TableName + "\" (";
 			HeaderWOType = "(";
 			for (int i = 1; i <= Standard_Size; i++)
 			{
@@ -152,7 +142,7 @@ namespace DBM
 			HeaderWOType += ")";
 		}
 
-		public static void SQL(string FilePath) //TODO
+		public static void SQL(string FilePath) //TODO Import.SQL
 		{ 
 		
 		}

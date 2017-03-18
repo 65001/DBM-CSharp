@@ -42,6 +42,7 @@ namespace DBM
 			public static string AutoRunPluginPath = AssetPath + "Auto Run Plugin.txt";
 			public static string HelpPath = AssetPath + "Help Table.html";
 			public static string External_Menu_Items_Path = AssetPath + "Menu.txt";
+
 			public const string Online_EULA_URI = "https://drive.google.com/uc?export=download&id=0B2v4xbFnpKvRNTFKckFKLVNNUDg";
 			public const string OnlineDB_Refrence_Location = "https://docs.google.com/uc?id=0B2v4xbFnpKvRVmNVODZ4bnppd3c&export=download";
 			//Settings Data
@@ -58,6 +59,7 @@ namespace DBM
 			public static string LanguageCode;
 			public static string EULA_Newest_Version;
 			public static Primitive LangList;
+
 			//Lists
 			public const string ExportT2 = "Export T2",ExportT1 = "Export T1";
 
@@ -76,10 +78,12 @@ namespace DBM
 			public const string List_SCHEMA_Table = "SCHEMA_TABLE";
 			public const string List_SCHEMA_View = "SCHEMA_VIEW";
 			public const string List_Schema_Index = " SCHEMA_INDEX";
+
 			public const string List_DB_Path = "DB_Path";
 			public const string List_DB_Name = "DB_Name";
 			public const string List_DB_ShortName = "DB_SName";
 			public const string List_DB_Engine = "DB_Engine";
+
 			public const string List_DB_Tracker = "DB_Tracking";
 			public const string List_Query_Time = "Query_Time";
 			public const string List_CMD_Time = "CMD_Time";
@@ -87,6 +91,10 @@ namespace DBM
 			public const string List_ISO_Lang = "ISO_Lang";
 			public const string List_ISO_Text = "ISO_Text";
 
+            public static List<string> ISO_Text = new List<string>();
+            public static List<string> StackTrace = new List<string>();
+            
+            //More Lists
 			public static string Dataview,ListView;
 			public static Primitive MenuList,CheckList,Buttons,ComboBox,TextBox,CheckBox,HideDisplayResults;
 			public static Primitive SQLFunctionsList = Text.ConvertToUpperCase("1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;");

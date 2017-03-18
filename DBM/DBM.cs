@@ -8,6 +8,8 @@ using SBArray = Microsoft.SmallBasic.Library.Array;
 using SBFile = Microsoft.SmallBasic.Library.File;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Linq;
+using System.Collections.Generic;
 /*
 	Completed Items:
 		Settings ; EULA; Logs ;Main;
@@ -29,13 +31,10 @@ namespace DBM
 
 		public static void Main()
 		{
-				string TempFile = Microsoft.SmallBasic.Library.File.GetTemporaryFilePath();
-				Import.CSV(LitDev.LDDialogs.OpenFile("csv", ""), TempFile);
-				LDProcess.Start(TempFile, "");
-			
-		
+          
+            //TODO Replace all instances of LDLIST with an actual List.
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Main()");
-
+            //GlobalStatic.StackTrace.Add("UI.Main()");
 
 			Primitive[] Startime2 = new Primitive[10];
 			Startime2[0] = Clock.ElapsedMilliseconds;
@@ -72,18 +71,33 @@ namespace DBM
 		public static void Startup()
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Startup()");
-			Settings.LoadSettings(); //Load Application Settings from text file
+			Settings.LoadSettings(GlobalStatic.RestoreSettings); //Load Application Settings from text file
+
+			Settings.Paths
+			        (
+				GlobalStatic.AssetPath,
+			    GlobalStatic.PluginPath,
+			    GlobalStatic.LocalizationFolder,
+			    GlobalStatic.AutoRunPluginPath,
+			    GlobalStatic.Localization_LanguageCodes_Path,
+			    GlobalStatic.LogCSVpath,
+			    GlobalStatic.AutoRunPluginMessage
+					); //Makes sure passed paths are valid and creates them if they are not
+			
 			Settings.IniateDatabases();
 			//Plugin.FindAll();
+			GlobalStatic.DefaultWidth = GraphicsWindow.Width;
+			GlobalStatic.DefaultHeight = GraphicsWindow.Height;
+
 			Utilities.LocalizationXML(GlobalStatic.LocalizationFolder + GlobalStatic.LanguageCode + ".xml");
 			Events.LogMessage(GlobalStatic.LangList["PRGM Start"], GlobalStatic.LangList["Application"]);
+
 			if (Program.ArgumentCount == 1)
 			{
 				Engines.Load_DB( Engines.EnginesModes.SQLITE, GetPath(4) );
 			}
 			if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_Username == LDFile.UserName && GlobalStatic.LastVersion == GlobalStatic.VersionID && GlobalStatic.EulaTest == false)
-			{
-				Events.LogMessage("Start up GUI", "Debug"); 
+			{ 
 				StartupGUI();
 			}
 			else
@@ -96,7 +110,7 @@ namespace DBM
 					Console.WriteLine("Version ID : {0} \n Eula Test {1} \n ", GlobalStatic.VersionID,GlobalStatic.EulaTest);
 				}
 				Settings.SaveSettings();
-				EULA.UI(GlobalStatic.EULA_Text_File);
+				EULA.UI(GlobalStatic.EULA_Text_File,GlobalStatic.Ping);
 			}
 			StartUpStopWatch.Stop();
 			Events.LogMessage("Startup Time: " +StartUpStopWatch.ElapsedMilliseconds + " (ms)",GlobalStatic.LangList["UI"]);
@@ -203,7 +217,6 @@ namespace DBM
 			GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox(LDList.ToArray(GlobalStatic.List_SCHEMA_Table), 100, 100);
 			GlobalStatic.ComboBox["Sorts"] = LDControls.AddComboBox(Sorts,100,100);
 			GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox( LDList.ToArray(GlobalStatic.List_DB_ShortName),100,100);
-
 			Controls.Move(GlobalStatic.ComboBox["Sorts"], 970 + 185 + SortOffset, 5);
 			Controls.Move(GlobalStatic.ComboBox["Table"], 1075 + 185 + SortOffset,5);
 			Controls.Move(GlobalStatic.ComboBox["Database"], 1050 + SortOffset, 5);
@@ -380,17 +393,17 @@ namespace DBM
 		}
 
 
-		public static void SettingsUI()//TODO
+		public static void SettingsUI()//TODO: Make the Settings UI
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.SettingsUI()");
 		}
 
-		public static void CreateTableUI()//TODO
+		public static void CreateTableUI()//TODO: Create the "Create Table UI"
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.CreateTableUI()");
 		}
 
-		public static void CreateTableHandler()//TODO
+		public static void CreateTableHandler()//TODO Create the Create Table Handler
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.CreateTableHandler()");
 		}
