@@ -185,24 +185,24 @@
       <param name="index3">The third dimension integer index.</param>
       <returns>The array value or "" on failure.</returns>
     </member>
-    <member name="M:LitDev.LDFastArray.Dim(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+    <member name="M:LitDev.LDFastArray.Size(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Get the current size of a dimension.
-            Dim1, Dim2 or Dim3 methods are marginally faster for lower dimension arrays.
+            Size1, Size2 or Size3 methods are marginally faster for lower dimension arrays.
             </summary>
       <param name="arrayName">The array name.</param>
       <param name="indices">A comma (or space) separated list of indices.
             e.g. "" for first dimension or "3" for second dimension of 3rd element in first dimension.</param>
       <returns>The dimension size.</returns>
     </member>
-    <member name="M:LitDev.LDFastArray.Dim1(Microsoft.SmallBasic.Library.Primitive)">
+    <member name="M:LitDev.LDFastArray.Size1(Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Get the current size of the first dimension.
             </summary>
       <param name="arrayName">The array name.</param>
       <returns>The dimension size.</returns>
     </member>
-    <member name="M:LitDev.LDFastArray.Dim2(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+    <member name="M:LitDev.LDFastArray.Size2(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Get the current size of the second dimension.
             </summary>
@@ -210,7 +210,7 @@
       <param name="index1">The first index to get the size of, may be 1 if all rows have the same size.</param>
       <returns>The dimension size.</returns>
     </member>
-    <member name="M:LitDev.LDFastArray.Dim3(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+    <member name="M:LitDev.LDFastArray.Size3(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Get the current size of the third dimension.
             </summary>
@@ -218,6 +218,13 @@
       <param name="index1">The first index to get the size of, may be 1 if all rows have the same size.</param>
       <param name="index2">The second index to get the size of, may be 1 if all rows have the same size.</param>
       <returns>The dimension size.</returns>
+    </member>
+    <member name="M:LitDev.LDFastArray.Dimension(Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Get the dimension of an array.
+            </summary>
+      <param name="arrayName">The array name.</param>
+      <returns>The array dimension.</returns>
     </member>
     <member name="M:LitDev.LDFastArray.Remove(Microsoft.SmallBasic.Library.Primitive)">
       <summary>
@@ -228,7 +235,7 @@
     <member name="M:LitDev.LDFastArray.ReadCSV(Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Read a CSV (comma separated values) file into a 2D FastArray array.
-            The deliminator may be changed from a comma using Utilities.CSVdeliminator
+            The deliminator may be changed from a comma using Utilities.CSVDeliminator
             </summary>
       <param name="fileName">The full path of the CSV file.</param>
       <returns>A 2D FastArray with CSV file imported or "".</returns>
@@ -236,7 +243,7 @@
     <member name="M:LitDev.LDFastArray.WriteCSV(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Write a 2D FastArray array to a CSV (comma separated values) file.
-            The deliminator may be changed from a comma using Utilities.CSVdeliminator
+            The deliminator may be changed from a comma using Utilities.CSVDeliminator
             </summary>
       <param name="arrayName">The 2D array name.</param>
       <param name="fileName">The full path of the CSV file.</param>
@@ -267,13 +274,14 @@
     <member name="M:LitDev.LDFastArray.Collapse(Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Remove all empty "" entries in an array.
-            Note that indices or even dimensions may change if public entries are removed.
+            Note that indices or even dimensions may change if internal entries are removed.
             </summary>
       <param name="arrayName">The array name.</param>
     </member>
     <member name="M:LitDev.LDFastArray.Read(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Create a new array and initialise it from a file.
+            If the file is text based and doesn't have the same indexing format as Write, then a 1D array with each line is created.
             </summary>
       <param name="fileName">The full path of the file.</param>
       <param name="binary">Binary ("True") or text ("False") formatted file.</param>
@@ -282,6 +290,7 @@
     <member name="M:LitDev.LDFastArray.Write(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Save an array to a file.
+            If the array is 1D and written as a text, then each entry is just written to a line with no indexing.
             </summary>
       <param name="arrayName">The array name.</param>
       <param name="fileName">The full path of the file.</param>
@@ -301,7 +310,7 @@
     </member>
     <member name="M:LitDev.LDTimer.Add">
       <summary>
-            Create a new timer.  All timers created with this method call the event subroutine defned by Tick.
+            Create a new timer.  All timers created with this method call the event subroutine defined by Tick.
             </summary>
       <returns>The timer name.</returns>
     </member>
@@ -2863,6 +2872,12 @@
             The index of the last shape or control right click context menu item selected.
             </summary>
     </member>
+    <member name="P:LitDev.LDControls.RichTextBoxIndentToTab">
+      <summary>
+            Convert first character indents to tabs "True" (default) or "False".
+            A tab typed as a first character on a line in a RichTextBox creates an indent unless this is set to "True".
+            </summary>
+    </member>
     <member name="P:LitDev.LDControls.RichTextBoxFontBold">
       <summary>
             The font bold style "True" or "False".
@@ -2921,6 +2936,11 @@
       <summary>
             Whether word or phrase highlighting is case sensitive "True" or "False" (default).
             Set this before RichTextBoxWord is called.
+            </summary>
+    </member>
+    <member name="P:LitDev.LDControls.LastRichTextBox">
+      <summary>
+            The rich text box for which an event occurred.
             </summary>
     </member>
     <member name="P:LitDev.LDControls.LastBrowser">
@@ -3064,6 +3084,11 @@
     <member name="E:LitDev.LDControls.ContextMenuClicked">
       <summary>
             Event when a shape or control right click context menu item is selected.
+            </summary>
+    </member>
+    <member name="E:LitDev.LDControls.RichTextBoxTextTyped">
+      <summary>
+            Event when text is typed into a rich text box.
             </summary>
     </member>
     <member name="E:LitDev.LDControls.BrowserPageLoaded">
@@ -3565,9 +3590,9 @@
             </summary>
       <param name="shapeName">The 3DView object.</param>
       <param name="geometryName">The geometry object to animate.</param>
-      <param name="x">X direction of vector to rotate about.</param>
-      <param name="y">Y direction of vector to rotate about.</param>
-      <param name="z">Z direction of vector to rotate about.</param>
+      <param name="xDir">X direction of vector to rotate about.</param>
+      <param name="yDir">Y direction of vector to rotate about.</param>
+      <param name="zDir">Z direction of vector to rotate about.</param>
       <param name="startAngle">The starting angle in degrees (e.g. 0).</param>
       <param name="endAngle">The final angle in degrees (e.g. 360).</param>
       <param name="duration">The animation duration (time in sec).</param>
@@ -3801,7 +3826,7 @@
     <member name="M:LitDev.LD3DView.BoundingBox(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Get the bounding box extent of a geometry.
-            This is the coordinates on creation (before any transformation).
+            This is the current position (after any transformations).
             </summary>
       <param name="shapeName">The 3DView object.</param>
       <param name="geometryName">The geometry object.</param>
@@ -3812,6 +3837,32 @@
             array[4] = X (Xmin)
             array[5] = Y (Ymin)
             array[6] = Z (Zmin)
+            </returns>
+    </member>
+    <member name="M:LitDev.LD3DView.ResetMaterial(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Reset the material for an existing geometry.
+            </summary>
+      <param name="shapeName">The 3DView object.</param>
+      <param name="geometryName">The geometry object.</param>
+      <param name="colour">A colour or gradient brush for the object.</param>
+      <param name="materialType">A material for the object.
+            The available options are:
+            "E" Emmissive - constant brightness.
+            "D" Diffusive - affected by lights.
+            "S" Specular  - specular highlights.
+            </param>
+    </member>
+    <member name="M:LitDev.LD3DView.GetPosition(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Get the transformed (current) center position of an existing geometry.
+            </summary>
+      <param name="shapeName">The 3DView object.</param>
+      <param name="geometryName">The geometry object.</param>
+      <returns> An array of the transformed position or "FAILED".
+            array[1] = X (Xcen)
+            array[2] = Y (Ycen)
+            array[3] = Z (Zcen)
             </returns>
     </member>
     <member name="P:LitDev.LD3DView.SpecularExponent">
@@ -5199,10 +5250,52 @@
             Encryption and hash methods.
             </summary>
     </member>
+    <member name="M:LitDev.LDEncryption.RSAEncrypt(Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Encrypt an RSA message.  
+            Requires a Public key to be set (Anyone can encrypt with public key).
+            If no key is set then one created for this session is used.
+            </summary>
+      <param name="unencrypted">The message to encrypt.</param>
+      <returns>The encrypted message.</returns>
+    </member>
+    <member name="M:LitDev.LDEncryption.RSADecrypt(Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Decrpyt an RSA message.  
+            Requires a Private key to be set (Only originator can decrypt with private key).
+            If no key is set then one created for this session is used.
+            </summary>
+      <param name="encrypted">The encypted message.</param>
+      <returns>The unencrypted message.</returns>
+    </member>
+    <member name="M:LitDev.LDEncryption.RSASign(Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Sign an RSA message.  
+            Requires a Private key to be set (Only originator can sign with private key).
+            If no key is set then one created for this session is used.
+            </summary>
+      <param name="data">The message to sign.</param>
+      <returns>The signing for the message.</returns>
+    </member>
+    <member name="M:LitDev.LDEncryption.RSAVerify(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Verify a signed RSA message.  
+            Requires a Public key to be set (Anyone can verify with public key).
+            If no key is set then one created for this session is used.
+            </summary>
+      <param name="data">The message that was signed.</param>
+      <param name="sign">The signing for the message.</param>
+      <returns>"True" or "False".</returns>
+    </member>
+    <member name="M:LitDev.LDEncryption.RSAReset">
+      <summary>
+            Randomly reset the private and public keys
+            </summary>
+    </member>
     <member name="M:LitDev.LDEncryption.AESEncrypt(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Encrypt some text using AES encryption and a password key.
-            The encrypted test can be saved to a file.
+            The encrypted text can be saved to a file.
             Note that if you forget the password there is NO WAY to decrypt!
             </summary>
       <param name="source">The text to encrypt.</param>
@@ -5240,6 +5333,16 @@
             </summary>
       <param name="password">A text to create a hash (often a password).</param>
       <returns>The 128 character hex SHA512 Hash.</returns>
+    </member>
+    <member name="P:LitDev.LDEncryption.RSAPublicKey">
+      <summary>
+            Get or set a public RSA key.
+            </summary>
+    </member>
+    <member name="P:LitDev.LDEncryption.RSAPrivateKey">
+      <summary>
+            Get or set a private RSA key.
+            </summary>
     </member>
     <member name="T:LitDev.LDText">
       <summary>
@@ -5693,7 +5796,7 @@
       <summary>
             Set extended encoding for the TextWindow.
             Allowed values are:
-            "ASCII" (default), "Unicode", "BigEndianUnicode", "UTF32", "UTF7", "UTF8"
+            "ASCII" (default), "Unicode", "UTF7", "UTF8"
             </summary>
     </member>
     <member name="E:LitDev.LDTextWindow.KeyDown">
@@ -5843,7 +5946,7 @@
     </member>
     <member name="M:LitDev.LDGraphicsWindow.Reposition(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
-            Scale and move all Shapes and Contols within the GraphicsWindow.
+            Scale and move all Shapes and Controls within the GraphicsWindow.
             This method resizes and moves the view rather than the shapes, so their positions and other properties remain unchanged but appear scaled within the repositioned region.
             For example Shapes.GetLeft remains unchanged although the view has been repositioned and GraphicsWindow.MouseX reports the coordinates relative to the repositioned view.
             Imagine the entire view is repositioned as if it were a shape inside the GrapicsWindow.
@@ -5857,6 +5960,18 @@
       <param name="panX">Pan the view in the X direction in the view scaling, 0 is centered in the GraphicsWindow.</param>
       <param name="panY">Pan the view in the Y direction in the view scaling, 0 is centered in the GraphicsWindow.</param>
       <param name="angle">An angle to rotate the view.</param>
+    </member>
+    <member name="M:LitDev.LDGraphicsWindow.Animate(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Scale and move all Shapes and Controls within the GraphicsWindow, by smooth animation.
+            This is the same as the Reposition method except that the movement is animated.
+            </summary>
+      <param name="scaleX">The X direction scaling of the view.</param>
+      <param name="scaleY">The Y direction scaling of the view.</param>
+      <param name="panX">Pan the view in the X direction in the view scaling, 0 is centered in the GraphicsWindow.</param>
+      <param name="panY">Pan the view in the Y direction in the view scaling, 0 is centered in the GraphicsWindow.</param>
+      <param name="angle">An angle to rotate the view.</param>
+      <param name="duration">The time for the animation, in milliseconds.</param>
     </member>
     <member name="M:LitDev.LDGraphicsWindow.RepositionPoint(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
@@ -6106,16 +6221,14 @@
             Gets the total elapsed time measured in milliseconds.
             </summary>
       <param name="stopwatch">The stopwatch name.</param>
-      <returns>
-      </returns>
+      <returns>Elapsed milliseconds.</returns>
     </member>
     <member name="M:LitDev.LDStopwatch.ElapsedTicks(Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Gets the total elapsed time measured in timer ticks for very short intervals.
             </summary>
       <param name="stopwatch">The stopwatch name.</param>
-      <returns>
-      </returns>
+      <returns>Elapsed ticks.</returns>
     </member>
     <member name="M:LitDev.LDStopwatch.DelayUpTo(Microsoft.SmallBasic.Library.Primitive)">
       <summary>
@@ -7903,7 +8016,7 @@
     <member name="M:LitDev.LDFile.ReadCSV(Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Read a CSV (comma separated values) file into an array.
-            The deliminator may be changed from a comma using Utilities.CSVdeliminator
+            The deliminator may be changed from a comma using Utilities.CSVDeliminator
             </summary>
       <param name="fileName">
             The full path of the CSV file.
@@ -7915,7 +8028,7 @@
     <member name="M:LitDev.LDFile.ReadCSVTransposed(Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Read a CSV (comma separated values) file into an array. and transpose (swap rows and columns).
-            The deliminator may be changed from a comma using Utilities.CSVdeliminator
+            The deliminator may be changed from a comma using Utilities.CSVDeliminator
             </summary>
       <param name="fileName">
             The full path of the CSV file.
@@ -7927,7 +8040,7 @@
     <member name="M:LitDev.LDFile.WriteCSV(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Write a 2D array to a CSV (comma separated values) file.
-            The deliminator may be changed from a comma using Utilities.CSVdeliminator
+            The deliminator may be changed from a comma using Utilities.CSVDeliminator
             </summary>
       <param name="fileName">
             The full path of the CSV file.
@@ -10847,7 +10960,7 @@
     <member name="M:LitDev.LDShapes.FastMove(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Moves the shape with the specified name to a new position.
-            This method is maximally optimsed for speed.
+            This method is maximally optimised for speed.
             </summary>
       <param name="shapeName">
             The name of the shape to move.

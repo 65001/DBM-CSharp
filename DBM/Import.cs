@@ -35,12 +35,12 @@ namespace DBM
 			CSV_IsString.Clear();
 
 			string Name = LDText.Trim(LDFile.GetFile(FilePath));
-			Data = LDFastArray.ReadCSV(FilePath); 
+			Data = LDFastArray.ReadCSV(FilePath);
 
 			//Calculate Lengths of Data
-			for (int i = 1; i <= LDFastArray.Dim1(Data); i++)
+			for (int i = 1; i <= LDFastArray.Size1(Data); i++)
 			{
-				CSV_Length.Add(LDFastArray.Dim2(Data, i));
+				CSV_Length.Add(LDFastArray.Size2(Data, i));
 			}
 			int Standard_Size = CSV_Length.First();
 
@@ -75,7 +75,7 @@ namespace DBM
 			double double2;
 			StringBuilder CSV_SQL = new StringBuilder();
 
-			for (int i = 2; i <= LDFastArray.Dim1(Data); i++)
+			for (int i = 2; i <= LDFastArray.Size1(Data); i++)
 			{
 				if (CSV_Length[(i-1)] == Standard_Size) 
 					//To Prevent out of bound eras
@@ -83,7 +83,7 @@ namespace DBM
 					//The pain of mixing these systems.
 				{
                     CSV_SQL.Append("INSERT INTO \"" + TableName + "\" <<HEADERS>> VALUES('");
-					for (int ii = 1; ii <= LDFastArray.Dim2(Data, i); ii++)
+					for (int ii = 1; ii <= LDFastArray.Size2(Data, i); ii++)
 					{
 						string Temp = LDText.Replace(LDFastArray.Get2D(Data, i, ii), "'", "''");
 						if (string.IsNullOrWhiteSpace(Temp))

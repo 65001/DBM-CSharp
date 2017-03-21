@@ -6,7 +6,7 @@ using Microsoft.SmallBasic.Library;
 using System.Collections.Generic;
 namespace DBM
 {
-		public class GlobalStatic //List of Variables shared across everything through this class
+		public static class GlobalStatic //List of Variables shared across everything through this class
 		{
 			public static string ProgramDirectory = Program.Directory;
 			public static string Username = LDFile.UserName;
@@ -105,5 +105,4 @@ namespace DBM
 			public static string TransactionsSQL = "CREATE TABLE IF NOT EXISTS Transactions (ID INTEGER PRIMARY KEY,\"UTC DATE\" TEXT," + DQC + "UTC TIME" + DQC + " TEXT,USER TEXT,PATH TEXT,DB TEXT,SNAME TEXT,SQL TEXT,Type TEXT,Reason TEXT);";
 			public static string LOGSQLVIEW = "CREATE VIEW IF NOT EXISTS " + DQC + "LOCAL TIME" + DQC + " AS SELECT ID,DATE,TIME,USER,PRODUCTID,PRODUCTVERSION,Type,Event From Log;CREATE VIEW IF NOT EXISTS " + DQC + "UTC TIME" + DQC + " AS Select ID," + DQC + "UTC DATE" + DQC + "," + DQC + "UTC TIME" + DQC + ",USER,ProductID,ProductVersion,Type,Event From Log;DROP VIEW IF EXISTS LOCAL_TIME;DROP VIEW IF EXISTS UTC_TIME;";
 	}
-
 }

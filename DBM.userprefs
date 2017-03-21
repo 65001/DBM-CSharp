@@ -7,16 +7,18 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="DBM\DBM.cs">
     <Files>
-      <File FileName="DBM\DBM.cs" Line="33" Column="72" />
-      <File FileName="DBM\Utilities.cs" Line="5" Column="36" />
-      <File FileName="DBM\Import.cs" Line="11" Column="36" />
+      <File FileName="DBM\DBM.cs" Line="71" Column="4" />
+      <File FileName="DBM\Settings.cs" Line="18" Column="4" />
+      <File FileName="DBM\Utilities.cs" Line="12" Column="4" />
+      <File FileName="DBM\Import.cs" Line="86" Column="46" />
       <File FileName="DBM\Export.cs" Line="26" Column="5" />
       <File FileName="DBM\Handlers.cs" Line="6" Column="1" />
-      <File FileName="DBM\Engines.cs" Line="144" Column="35" />
-      <File FileName="DBM\GlobalStatic.cs" Line="25" Column="39" />
-      <File FileName="DBM\Settings.cs" Line="8" Column="50" />
+      <File FileName="DBM\Engines.cs" Line="86" Column="30" />
+      <File FileName="DBM\GlobalStatic.cs" Line="93" Column="6" />
+      <File FileName="DBM\EULA.cs" Line="10" Column="49" />
+      <File FileName="DBM\packages.config" Line="1" Column="1" />
+      <File FileName="DBM\Plugin.cs" Line="1" Column="1" />
       <File FileName="DBM\UnitTests.cs" Line="4" Column="1" />
-      <File FileName="DBM\EULA.cs" Line="3" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
