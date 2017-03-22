@@ -1,2 +1,5 @@
 *.pdb
 DBM/bin/Debug/DBM.pdb
+DBM/bin/Debug/Assets/Log.csv
+DBM/bin/Release/Assets/Log.csv
+DBM/bin/Debug/Assets/Log.db
