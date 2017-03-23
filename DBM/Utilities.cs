@@ -5,9 +5,8 @@ using LitDev;
 using Microsoft.SmallBasic.Library;
 namespace DBM
 {
-	public static class Utilities
+	public class Utilities
 	{
-		
 		public static void LocalizationXML(string XMLPath)  // Loads localized text from XML File
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Utilities.LocalizationXML()");

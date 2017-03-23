@@ -81,11 +81,11 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Load_DB()");
 			switch (Mode)
 			{
-				case EnginesModes.MySQL:  //TODO MySQL Load DB
+				case EnginesModes.MySQL:  //TODO
 					return null;
-				case EnginesModes.ODBC:  //TODO ODBC Load DB
+				case EnginesModes.ODBC:  //TODO
 					return null;
-				case EnginesModes.OLEDB: //TODO OLEDB Load DB
+				case EnginesModes.OLEDB: //TODO
 					return null;
 				case EnginesModes.SQLITE: 
 					if (LDFile.Exists(Data) == true)
@@ -110,7 +110,7 @@ namespace DBM
 						}
 					}
 					return null;
-				case EnginesModes.SQLSERVER: //TODO SQLServer Load DB
+				case EnginesModes.SQLSERVER: //SQLServer
 					return null;
 				default:
 					return "Incorrect Paramters";

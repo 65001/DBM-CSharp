@@ -35,7 +35,7 @@ namespace DBM
 			CSV_IsString.Clear();
 
 			string Name = LDText.Trim(LDFile.GetFile(FilePath));
-			Data = LDFastArray.ReadCSV(FilePath);
+			Data = LDFastArray.ReadCSV(FilePath); 
 
 			//Calculate Lengths of Data
 			for (int i = 1; i <= LDFastArray.Size1(Data); i++)
