@@ -12,21 +12,22 @@ namespace DBM
 	[SmallBasicType]
 	public static class Engines
 	{
-		public  enum EnginesModes { NONE, MySQL = 1, ODBC = 2, OLEDB = 3, SQLITE = 4, SQLSERVER = 5 }
+		public enum EnginesModes { NONE, MySQL = 1, ODBC = 2, OLEDB = 3, SQLITE = 4, SQLSERVER = 5 }
 		public static string CurrentDatabase { get; private set; }
 		public static string CurrentTable { get; private set; }
-		public static string Database_Shortname { get; private set;}
-		public static Primitive Schema { get; private set;}
-		public static string GQ_CMD { get; private set;} //Auto Generated Query SQL Statements
+		public static string Database_Shortname { get; private set; }
+		public static Primitive Schema { get; private set; }
+		public static string GQ_CMD { get; private set; } //Auto Generated Query SQL Statements
 
-		public static List<string> DB_Path = new List<string>();
-		public static List<string> DB_Name = new List<string>();
-		public static List<string> DB_ShortName = new List<string>();
-		public static List<EnginesModes> DB_Engine = new List<EnginesModes>();
+		public static List<string> _DB_Path = new List<string>();
+		public static List<string> _DB_Name = new List<string>();
+		public static List<string> _DB_ShortName = new List<string>();
+		public static List<EnginesModes> _DB_Engine = new List<EnginesModes>();
+		
 
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
-			Console.WriteLine( DB_ShortName.ToArray() );
+			Console.WriteLine( _DB_ShortName.ToArray() );
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Command()");
 			if (RunParser == false)
 			{
@@ -94,7 +95,7 @@ namespace DBM
 						if (Index == 0) //New Database
 						{
 							string Database = LDDataBase.ConnectSQLite(Data);
-							AddToList(Data, Database, LDFile.GetFile(Data), 4);
+							AddToList(Data, Database, LDFile.GetFile(Data), EnginesModes.SQLITE);
 							GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data);
 							Settings.SaveSettings();
 							CurrentDatabase = Database;
@@ -268,13 +269,19 @@ namespace DBM
 			return EnginesModes.NONE; 
 		}
 
-		static void AddToList(string path, string Name, string ShortName, int Engine)
+		public static void AddToList(string path, string Name, string ShortName, EnginesModes Engine)
 		{
 			Database_Shortname = ShortName;
+
+			_DB_Name.Add(Name);
+			_DB_Path.Add(path);
+			_DB_ShortName.Add(ShortName);
+			_DB_Engine.Add(Engine);
+
 			LDList.Add(GlobalStatic.List_DB_Path, path);
 			LDList.Add(GlobalStatic.List_DB_Name, Name);
 			LDList.Add(GlobalStatic.List_DB_ShortName, ShortName);
-			LDList.Add(GlobalStatic.List_DB_Engine, Engine);
+			LDList.Add(GlobalStatic.List_DB_Engine,(int)Engine);
 		}
 	}
 }

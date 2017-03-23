@@ -131,9 +131,9 @@ namespace DBM
 			GlobalStatic.LogDB = LDDataBase.ConnectSQLite(GlobalStatic.LogDBpath);
 			GlobalStatic.TransactionDB = LDDataBase.ConnectSQLite(GlobalStatic.TransactionDBPath);
 
-			AddToList("<none>", "<none>", "<none>",0);
-			AddToList(GlobalStatic.LogDBpath, GlobalStatic.LogDB, "Master Log",4);
-			AddToList(GlobalStatic.TransactionDBPath, GlobalStatic.TransactionDB, "Transaction Log",4);
+			Engines.AddToList("<none>", "<none>", "<none>",0);
+			Engines.AddToList(GlobalStatic.LogDBpath, GlobalStatic.LogDB, "Master Log",Engines.EnginesModes.SQLITE);
+			Engines.AddToList(GlobalStatic.TransactionDBPath, GlobalStatic.TransactionDB, "Transaction Log",Engines.EnginesModes.SQLITE);
 
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQL, GlobalStatic.UserName, "Auto Creation Statements", false);
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQLVIEW , GlobalStatic.UserName, "Auto Creation Statements", false);
@@ -141,15 +141,6 @@ namespace DBM
 
 			GlobalStatic.LogNumber = Engines.Query(GlobalStatic.LogDB,"SELECT COUNT(ID) FROM LOG;",null,true,GlobalStatic.UserName,"Fetch Log")[1]["COUNT(ID)"];
 		}
-
-		private static void AddToList(string Path,string Name,string ShortName,int Engine)  
-		{
-			LDList.Add(GlobalStatic.List_DB_Path, Path);
-			LDList.Add(GlobalStatic.List_DB_Name, Name);
-			LDList.Add(GlobalStatic.List_DB_ShortName, ShortName);
-			LDList.Add(GlobalStatic.List_DB_Engine, Engine);
-		}
-
 	}
 }
 
