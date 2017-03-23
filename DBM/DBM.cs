@@ -11,10 +11,17 @@ using System.Diagnostics;
 /*
 	Completed Items:
 		Settings ; EULA; Logs ;Main;
-	To do :
+	Todo :
 		Emulators 
 		SQLITE setup
 		Set it up so that if no table exists in a database then revert to sqlite_master or equivalent
+		
+	//TODO
+		Replace all instances of LDLIST with an actual List?
+		StackTrace implemented across everything. (implemented as a method)
+		StrackGetLast or somethign as a function
+		Replace all instances of GlobalStatic.List_DB_* ASAP.
+		
  */
 
 //Complete Implements and Localize
@@ -29,10 +36,8 @@ namespace DBM
 
 		public static void Main()
 		{
-          
-            //TODO Replace all instances of LDLIST with an actual List?
+
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Main()");
-            //GlobalStatic.StackTrace.Add("UI.Main()");
 
 			Primitive[] Startime2 = new Primitive[10];
 			Startime2[0] = Clock.ElapsedMilliseconds;
