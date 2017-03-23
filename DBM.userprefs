@@ -1,24 +1,21 @@
 ﻿<Properties StartupConfiguration="{88F827AA-CAD0-4FED-980D-83B9821E9BBB}|Default" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.DBM PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="DBM\DBM.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DBM\Engines.cs">
     <Files>
-      <File FileName="DBM\DBM.cs" Line="71" Column="4" />
-      <File FileName="DBM\Settings.cs" Line="18" Column="4" />
-      <File FileName="DBM\Utilities.cs" Line="12" Column="4" />
-      <File FileName="DBM\Import.cs" Line="86" Column="46" />
-      <File FileName="DBM\Export.cs" Line="26" Column="5" />
-      <File FileName="DBM\Handlers.cs" Line="6" Column="1" />
-      <File FileName="DBM\Engines.cs" Line="86" Column="30" />
-      <File FileName="DBM\GlobalStatic.cs" Line="93" Column="6" />
-      <File FileName="DBM\EULA.cs" Line="10" Column="49" />
-      <File FileName="DBM\packages.config" Line="1" Column="1" />
-      <File FileName="DBM\Plugin.cs" Line="1" Column="1" />
-      <File FileName="DBM\UnitTests.cs" Line="4" Column="1" />
+      <File FileName="DBM\DBM.cs" Line="58" Column="56" />
+      <File FileName="DBM\Settings.cs" Line="131" Column="35" />
+      <File FileName="DBM\Utilities.cs" Line="1" Column="1" />
+      <File FileName="DBM\Import.cs" Line="85" Column="56" />
+      <File FileName="DBM\Export.cs" Line="1" Column="1" />
+      <File FileName="DBM\Handlers.cs" Line="1" Column="1" />
+      <File FileName="DBM\EULA.cs" Line="1" Column="1" />
+      <File FileName="DBM\GlobalStatic.cs" Line="1" Column="1" />
+      <File FileName="DBM\Engines.cs" Line="98" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
