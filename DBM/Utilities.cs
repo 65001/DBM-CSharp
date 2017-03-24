@@ -1,6 +1,9 @@
 ﻿// asathiabalan@gmail.com
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
+using System;
+using System.Text;
+using System.Collections.Generic;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 namespace DBM
@@ -87,8 +90,19 @@ namespace DBM
 		}
 
 		public static void AddControl() 
-		{ }
+		{ 
+		
+		}
 
+		public static Primitive toArray(List<string> List)
+		{
+			StringBuilder data = new StringBuilder();
+			for (int i = 0; i < List.Count; i++)
+			{
+				data.Append(i.ToString() + "=" + List[i] + ";");
+			}
+			return data.ToString();
+		}
 
 		static void Add_UI_Controls(string Type, string Caption_OR_Name, string Handler, string PreviousNode_OR_ToolTip, string Action) 
 		{

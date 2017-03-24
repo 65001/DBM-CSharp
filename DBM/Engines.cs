@@ -6,6 +6,7 @@ using LitDev;
 using Microsoft.SmallBasic.Library;
 using SBArray = Microsoft.SmallBasic.Library.Array;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 namespace DBM
 {
@@ -19,10 +20,10 @@ namespace DBM
 		public static Primitive Schema { get; private set; }
 		public static string GQ_CMD { get; private set; } //Auto Generated Query SQL Statements
 
-		public static List<string> _DB_Path = new List<string>();
-		public static List<string> _DB_Name = new List<string>();
-		public static List<string> _DB_ShortName = new List<string>();
-		public static List<EnginesModes> _DB_Engine = new List<EnginesModes>();
+		static List<string> _DB_Path = new List<string>();
+		static List<string> _DB_Name = new List<string>();
+		static List<string> _DB_ShortName = new List<string>();
+		static List<EnginesModes> _DB_Engine = new List<EnginesModes>();
 		
 
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
@@ -277,11 +278,16 @@ namespace DBM
 			_DB_Path.Add(path);
 			_DB_ShortName.Add(ShortName);
 			_DB_Engine.Add(Engine);
-
+			//TODO Remove the following code when the rest of the application's dependency of it has been removed
 			LDList.Add(GlobalStatic.List_DB_Path, path);
 			LDList.Add(GlobalStatic.List_DB_Name, Name);
 			LDList.Add(GlobalStatic.List_DB_ShortName, ShortName);
 			LDList.Add(GlobalStatic.List_DB_Engine,(int)Engine);
+		}
+
+		public static ReadOnlyCollection<string> DB_Name 
+		{ 
+			get { return _DB_Name.AsReadOnly(); }
 		}
 	}
 }

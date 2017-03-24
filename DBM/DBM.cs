@@ -36,7 +36,7 @@ namespace DBM
 
 		public static void Main()
 		{
-
+			GlobalStatic.StackTrace.Add("UI.Main()");
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Main()");
 
 			Primitive[] Startime2 = new Primitive[10];
@@ -50,7 +50,6 @@ namespace DBM
 
 			LDGraphicsWindow.Closing += Events.Closing;
 			LDEvents.Error += Events.LogEvents;
-
 
 			GlobalStatic.Ping = LDNetwork.Ping(GlobalStatic.IP_Ping_Address, 500);
 			if (GlobalStatic.Ping != -1)
