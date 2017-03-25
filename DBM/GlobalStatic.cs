@@ -12,7 +12,6 @@ namespace DBM
 			public static string ProgramDirectory = Program.Directory;
 			public static string Username = LDFile.UserName;
 			public static int Ping;
-			public static string TabKey = Text.GetCharacter(9);
 			public static bool DebugMode,DebugParser;
 			public static bool EulaTest = false,LoadedFile = false;
 
@@ -32,8 +31,8 @@ namespace DBM
 			public static string LocalizationFolder = Path.Combine( ProgramDirectory , "Localization");
 			public static string Localization_LanguageCodes_Path = Path.Combine(LocalizationFolder, "Lang");
 			public static string PluginPath = Path.Combine( ProgramDirectory ,"Plugin");
-			public static Primitive LogCSVpath = Path.Combine( AssetPath , "Log.csv");
-			public static Primitive LogDBpath = Path.Combine(AssetPath , "Log.db");
+			public static string LogCSVpath = Path.Combine( AssetPath , "Log.csv");
+			public static string LogDBpath = Path.Combine(AssetPath , "Log.db");
 			public static string TransactionDBPath = Path.Combine(AssetPath , "Transactions.db");
 			public static string EULA_Text_File = Path.Combine(AssetPath , "EULA.txt");
 			public static string SettingsPath = Path.Combine(AssetPath ,"setting.txt");
@@ -87,7 +86,6 @@ namespace DBM
             public static List<string> ISO_Text = new List<string>();
             public static List<string> StackTrace = new List<string>();
             
-            //More Lists
 			public static string Dataview,ListView;
 			public static Primitive MenuList,CheckList,Buttons,ComboBox,TextBox,CheckBox,HideDisplayResults;
 			public static Primitive SQLFunctionsList = Text.ConvertToUpperCase("1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;");

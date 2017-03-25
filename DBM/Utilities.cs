@@ -2,39 +2,37 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
-using System.Text;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Linq;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 namespace DBM
 {
 	public class Utilities
 	{
-		public static void LocalizationXML(string XMLPath)  // Loads localized text from XML File
+        static Dictionary<string, string> _Localization = new Dictionary<string, string>();
+        
+        public static IReadOnlyDictionary<string, string> Localization
+        {
+            get { return _Localization; }
+        }
+
+        public static void LocalizationXML(string XMLPath)  // Loads localized text from XML File
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Utilities.LocalizationXML()");
-			//string XMLPath = GlobalStatic.LocalizationFolder + GlobalStatic.LanguageCode + ".xml";
 			string XMLDoc = LDxml.Open(XMLPath);
 			if (LDFile.Exists(XMLPath))
 			{
-				LDxml.FirstNode(); LDxml.FirstChild(); LDxml.LastChild();
-				Primitive XML_Array = XMLAttributes();
-				if (XML_Array[1]["language"] == GlobalStatic.LanguageCode)
-				{
-					GlobalStatic.LangList[LDText.Replace(XML_Array[4], "_", " ")] = XML_Array[6];
-				}
-				else if (GlobalStatic.DebugMode == true)
-				{ TextWindow.WriteLine("Rejected : " + XML_Array); }
+                _Localization.Clear();
+                LDxml.FirstNode();
+                LDxml.FirstChild();
+                LDxml.LastChild();
+
+                AddLocalization();
 				while (LDxml.PreviousSibling() == "SUCCESS")
 				{
-					XML_Array = XMLAttributes();
-					if (XML_Array[1]["language"] == GlobalStatic.LanguageCode)
-					{
-						GlobalStatic.LangList[LDText.Replace(XML_Array[4], "_", " ")] = XML_Array[6];
-					}
-					else if (GlobalStatic.DebugMode == true)
-					{ TextWindow.WriteLine("Rejected : " + XML_Array); }
+                    AddLocalization();
 				}
 			}
 			else
@@ -42,6 +40,28 @@ namespace DBM
 				Events.LogMessage("Localization XML Missing", "Application");
 			}
 		}
+
+        static void AddLocalization()
+        {
+            Primitive XML_Array = XMLAttributes();
+            if (XML_Array[1]["language"] == GlobalStatic.LanguageCode)
+            {
+                string key = LDText.Replace(XML_Array[4], "_", " ");
+                string value = XML_Array[6];
+                if (_Localization.ContainsKey(key) == false)
+                {
+                    _Localization.Add(LDText.Replace(XML_Array[4], "_", " "), XML_Array[6]);
+                }
+                else
+                {
+                    throw new Exception("The key : " + key +" already exists in the Localization Dictionary.");
+                }
+            }
+            else if (GlobalStatic.DebugMode == true)
+            {
+                Console.WriteLine("Rejected: {0}", XML_Array);
+            }
+        }
 
 		static string XMLAttributes() { return "1=" + LDText.Replace(LDText.Replace(LDxml.Attributes, "=", "\\="), ";", "\\;") + ";2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
 
@@ -150,7 +170,7 @@ namespace DBM
 			}
 			else 
 				{
-				Events.LogMessage("Invalid Arguments",GlobalStatic.LangList["App"]);
+				Events.LogMessage("Invalid Arguments",Utilities.Localization["App"]);
 				}
 		}
 

@@ -162,7 +162,7 @@ namespace DBM
 			{
 				case EnginesModes.SQLITE:
 					LDList.Clear("SCHEMA");
-					Primitive LSchema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA-PRIVATE"]);
+					Primitive LSchema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
 					for (int i = 1; i <= SBArray.GetItemCount(LSchema); i++)
 					{
 						LDList.Add("SCHEMA", LSchema[i]["name"]);

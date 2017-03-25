@@ -34,13 +34,11 @@ namespace DBM
 	{
 		private static string SetTitle;
 		private static Stopwatch StartUpStopWatch = Stopwatch.StartNew();
-		public static Primitive StartTime = Clock.ElapsedMilliseconds;
 
 		public static void Main()
 		{
 			GlobalStatic.StackTrace.Add("UI.Main()");
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Main()");
-            Console.WriteLine(GlobalStatic.Localization_LanguageCodes_Path);
 			Primitive[] Startime2 = new Primitive[10];
 			Startime2[0] = Clock.ElapsedMilliseconds;
 
@@ -63,7 +61,7 @@ namespace DBM
 			string EulaVersion = LDText.Replace(SBFile.ReadLine(GlobalStatic.EULA_Text_File, 1), " ", "");
 			for (int i = 1; i <= Text.GetLength(EulaVersion); i++)
 			{
-				if (Text.GetSubText(EulaVersion, i, 1) != GlobalStatic.TabKey)
+				if (Text.GetSubText(EulaVersion, i, 1) != "\t")
 				{
 					GlobalStatic.EULA_Newest_Version = GlobalStatic.EULA_Newest_Version + Text.GetSubText(EulaVersion, i, 1);
 				}
@@ -94,7 +92,7 @@ namespace DBM
 			GlobalStatic.DefaultHeight = GraphicsWindow.Height;
 
 			Utilities.LocalizationXML(Path.Combine( GlobalStatic.LocalizationFolder , GlobalStatic.LanguageCode + ".xml"));
-			Events.LogMessage(GlobalStatic.LangList["PRGM Start"], GlobalStatic.LangList["Application"]);
+			Events.LogMessage(Utilities.Localization["PRGM Start"], Utilities.Localization["Application"]);
 
 			if (Program.ArgumentCount == 1)
 			{
@@ -117,7 +115,7 @@ namespace DBM
 				EULA.UI(GlobalStatic.EULA_Text_File,GlobalStatic.Ping);
 			}
 			StartUpStopWatch.Stop();
-			Events.LogMessage("Startup Time: " +StartUpStopWatch.ElapsedMilliseconds + " (ms)",GlobalStatic.LangList["UI"]);
+			Events.LogMessage("Startup Time: " +StartUpStopWatch.ElapsedMilliseconds + " (ms)",Utilities.Localization["UI"]);
 		}
 
 		public static void StartupGUI()
@@ -134,68 +132,69 @@ namespace DBM
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.PreMainMenu()");
 			GlobalStatic.DefaultFontSize = GraphicsWindow.FontSize;
+            
 			//Main
-			GlobalStatic.MenuList[GlobalStatic.LangList["File"]] = "Main";
-			GlobalStatic.MenuList[GlobalStatic.LangList["Edit"]] = "Main";
-			GlobalStatic.MenuList[GlobalStatic.LangList["View"]+" "] = "Main";
-			GlobalStatic.MenuList[GlobalStatic.LangList["Save"]] = "Main";
-			GlobalStatic.MenuList[GlobalStatic.LangList["Import"]] = "Main";
-			GlobalStatic.MenuList[GlobalStatic.LangList["Export"]] = "Main";
-			GlobalStatic.MenuList[GlobalStatic.LangList["Settings"]] = "Main";
-			GlobalStatic.MenuList[GlobalStatic.LangList["Developer"]] = "Main"; 
+			GlobalStatic.MenuList[Utilities.Localization["File"]] = "Main";
+			GlobalStatic.MenuList[Utilities.Localization["Edit"]] = "Main";
+			GlobalStatic.MenuList[Utilities.Localization["View"]+" "] = "Main";
+			GlobalStatic.MenuList[Utilities.Localization["Save"]] = "Main";
+			GlobalStatic.MenuList[Utilities.Localization["Import"]] = "Main";
+			GlobalStatic.MenuList[Utilities.Localization["Export"]] = "Main";
+			GlobalStatic.MenuList[Utilities.Localization["Settings"]] = "Main";
+			GlobalStatic.MenuList[Utilities.Localization["Developer"]] = "Main"; 
 			//GlobalStatic.MenuList["Plugin"] = "Main"; //Localize
 			//File
-			GlobalStatic.MenuList[GlobalStatic.LangList["New"]] = GlobalStatic.LangList["File"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["Open"]] = GlobalStatic.LangList["File"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["Define New Table"]] = GlobalStatic.LangList["File"];
-			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["File"];
+			GlobalStatic.MenuList[Utilities.Localization["New"]] = Utilities.Localization["File"];
+			GlobalStatic.MenuList[Utilities.Localization["Open"]] = Utilities.Localization["File"];
+			GlobalStatic.MenuList[Utilities.Localization["Define New Table"]] = Utilities.Localization["File"];
+			GlobalStatic.MenuList["-"] = Utilities.Localization["File"];
 			//Import
-			GlobalStatic.MenuList[GlobalStatic.LangList["CSV"]] = GlobalStatic.LangList["Import"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["SQL"]] = GlobalStatic.LangList["Import"];
-			GlobalStatic.MenuList["Converter"] = GlobalStatic.LangList["Import"]; //Localize
+			GlobalStatic.MenuList[Utilities.Localization["CSV"]] = Utilities.Localization["Import"];
+			GlobalStatic.MenuList[Utilities.Localization["SQL"]] = Utilities.Localization["Import"];
+			GlobalStatic.MenuList["Converter"] = Utilities.Localization["Import"]; //Localize
 			GlobalStatic.MenuList["HTML to CSV"] = "Converter"; //Localize
 			GlobalStatic.MenuList["-"] = "Converter";
 			GlobalStatic.MenuList["-"] = "Import";
 			//Export
-			GlobalStatic.MenuList[GlobalStatic.LangList["CSV"]+" "] = GlobalStatic.LangList["Export"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["SQL"] + " "]= GlobalStatic.LangList["Export"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["PXML"] + " "]= GlobalStatic.LangList["Export"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["HTML"] + " "]= GlobalStatic.LangList["Export"];
-			//GlobalStatic.MenuList[GlobalStatic.LangList["Export UI"]]= GlobalStatic.LangList["Export"];
-			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["Export"];
+			GlobalStatic.MenuList[Utilities.Localization["CSV"]+" "] = Utilities.Localization["Export"];
+			GlobalStatic.MenuList[Utilities.Localization["SQL"] + " "]= Utilities.Localization["Export"];
+			GlobalStatic.MenuList[Utilities.Localization["PXML"] + " "]= Utilities.Localization["Export"];
+			GlobalStatic.MenuList[Utilities.Localization["HTML"] + " "]= Utilities.Localization["Export"];
+			//GlobalStatic.MenuList[Utilities.Localization["Export UI"]]= Utilities.Localization["Export"];
+			GlobalStatic.MenuList["-"] = Utilities.Localization["Export"];
 			//Settings
-			GlobalStatic.MenuList[GlobalStatic.LangList["Help"]] = GlobalStatic.LangList["Settings"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["About"]] = GlobalStatic.LangList["Help"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["Show Help"]] = GlobalStatic.LangList["Help"];
-			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["Help"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["Settings Editor"]] = GlobalStatic.LangList["Settings"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["Toggle Debug"]] = GlobalStatic.LangList["Settings"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["Toggle Transaction Log"]] = GlobalStatic.LangList["Settings"];
-			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["Toggle Transaction Log"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["Refresh Schema"]] = GlobalStatic.LangList["Settings"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["Check for Updates"]] = GlobalStatic.LangList["Settings"];
-			GlobalStatic.MenuList["-"] = GlobalStatic.LangList["Settings"];
+			GlobalStatic.MenuList[Utilities.Localization["Help"]] = Utilities.Localization["Settings"];
+			GlobalStatic.MenuList[Utilities.Localization["About"]] = Utilities.Localization["Help"];
+			GlobalStatic.MenuList[Utilities.Localization["Show Help"]] = Utilities.Localization["Help"];
+			GlobalStatic.MenuList["-"] = Utilities.Localization["Help"];
+			GlobalStatic.MenuList[Utilities.Localization["Settings Editor"]] = Utilities.Localization["Settings"];
+			GlobalStatic.MenuList[Utilities.Localization["Toggle Debug"]] = Utilities.Localization["Settings"];
+			GlobalStatic.MenuList[Utilities.Localization["Toggle Transaction Log"]] = Utilities.Localization["Settings"];
+			GlobalStatic.MenuList["-"] = Utilities.Localization["Toggle Transaction Log"];
+			GlobalStatic.MenuList[Utilities.Localization["Refresh Schema"]] = Utilities.Localization["Settings"];
+			GlobalStatic.MenuList[Utilities.Localization["Check for Updates"]] = Utilities.Localization["Settings"];
+			GlobalStatic.MenuList["-"] = Utilities.Localization["Settings"];
 
 			//Developer
-			GlobalStatic.MenuList[GlobalStatic.LangList["Stack Trace"]] = GlobalStatic.LangList["Developer"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["Close TW"]] = GlobalStatic.LangList["Developer"];
-			GlobalStatic.MenuList[GlobalStatic.LangList["Create Statistics Page"]] = GlobalStatic.LangList["Developer"];
+			GlobalStatic.MenuList[Utilities.Localization["Stack Trace"]] = Utilities.Localization["Developer"];
+			GlobalStatic.MenuList[Utilities.Localization["Close TW"]] = Utilities.Localization["Developer"];
+			GlobalStatic.MenuList[Utilities.Localization["Create Statistics Page"]] = Utilities.Localization["Developer"];
 
 			//Plugin Section
-			GlobalStatic.MenuList["SB Backup Script"] = GlobalStatic.LangList["Plugin"];
+			GlobalStatic.MenuList["SB Backup Script"] = Utilities.Localization["Plugin"];
 			GlobalStatic.MenuList["Scan"] = "SB Backup Script";
 			GlobalStatic.MenuList["View"] = "SB Backup Script";
-			GlobalStatic.MenuList["ICF"] = GlobalStatic.LangList["Plugin"];
+			GlobalStatic.MenuList["ICF"] = Utilities.Localization["Plugin"];
 		}
 
 		public static void MainMenu()
 		{
-			
+	
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.MainMenu()");
 			LDGraphicsWindow.ExitButtonMode(GraphicsWindow.Title, "Enabled");
 			GraphicsWindow.CanResize = true;
-			GlobalStatic.CheckList[GlobalStatic.LangList["Toggle Debug"]] = GlobalStatic.DebugMode;
-			GlobalStatic.CheckList[GlobalStatic.LangList["Toggle Transaction Log"]] = GlobalStatic.Transactions;
+			GlobalStatic.CheckList[Utilities.Localization["Toggle Debug"]] = GlobalStatic.DebugMode;
+			GlobalStatic.CheckList[Utilities.Localization["Toggle Transaction Log"]] = GlobalStatic.Transactions;
 
 			LDGraphicsWindow.State = 2;
 			GraphicsWindow.Title = GlobalStatic.Title + " ";
@@ -205,16 +204,16 @@ namespace DBM
 				Events.LogMessage("Debug Mode is ON", "UI"); //Localize
 			}
 			 Primitive Sorts;
-			Sorts = "1=" + GlobalStatic.LangList["Table"] + ";2=" + GlobalStatic.LangList["View"] + ";3=" + GlobalStatic.LangList["Index"] + ";4=" +GlobalStatic.LangList["Master Table"] + ";";
+			Sorts = "1=" + Utilities.Localization["Table"] + ";2=" + Utilities.Localization["View"] + ";3=" + Utilities.Localization["Index"] + ";4=" +Utilities.Localization["Master Table"] + ";";
 			if (Engines.CurrentDatabase != null)
 			{
 				Engines.GetSchema(Engines.CurrentDatabase);
 			}
 			GraphicsWindow.FontSize = 20;
 			string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, GlobalStatic.MenuList, null, GlobalStatic.CheckList);
-			Shapes.Move(Shapes.AddText(GlobalStatic.LangList["Sort"] + ":"), 990, 1) ;
+			Shapes.Move(Shapes.AddText(Utilities.Localization["Sort"] + ":"), 990, 1) ;
 			            
-			int SortOffset = LDText.GetWidth(GlobalStatic.LangList["Sort"] + ":") - LDText.GetWidth("Sort:"); //Offsets some controls when not using the default English encoding
+			int SortOffset = LDText.GetWidth(Utilities.Localization["Sort"] + ":") - LDText.GetWidth("Sort:"); //Offsets some controls when not using the default English encoding
 
 			GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
 			GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox(LDList.ToArray(GlobalStatic.List_SCHEMA_Table), 100, 100);
@@ -224,7 +223,7 @@ namespace DBM
 			Controls.Move(GlobalStatic.ComboBox["Table"], 1075 + 185 + SortOffset,5);
 			Controls.Move(GlobalStatic.ComboBox["Database"], 1050 + SortOffset, 5);
 
-			Handlers.Menu(GlobalStatic.LangList["View"]); //Virtual Call to Handler
+			Handlers.Menu(Utilities.Localization["View"]); //Virtual Call to Handler
 			Title();
 
 			Controls.ButtonClicked += Events.BC;
@@ -271,11 +270,11 @@ namespace DBM
 		LDList.Add(GlobalStatic.List_Stack_Trace, "UI.ShowDisplayResults()");
 			GraphicsWindow.DrawRectangle(GlobalStatic.UIx, 50, 310, 240);
 			GraphicsWindow.FontSize = 15;
-			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 52, GlobalStatic.LangList["Display Settings"]);
-			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 73, GlobalStatic.LangList["Sort by"]);
-			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 150, GlobalStatic.LangList["Search Settings"]);
-			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 180, GlobalStatic.LangList["Search in"]);
-			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210,GlobalStatic.LangList["Search"] + ":");
+			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 52, Utilities.Localization["Display Settings"]);
+			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 73, Utilities.Localization["Sort by"]);
+			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 150, Utilities.Localization["Search Settings"]);
+			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 180, Utilities.Localization["Search in"]);
+			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210,Utilities.Localization["Search"] + ":");
 			GraphicsWindow.FontSize = 13;
 			GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
 			for (int i = 1; i <= SBArray.GetItemCount(GlobalStatic.HideDisplayResults);i++)
@@ -295,21 +294,21 @@ namespace DBM
 
 			GraphicsWindow.DrawRectangle(GlobalStatic.UIx, 50, 310, 340);
 			GraphicsWindow.FontSize = 15;
-			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 52, GlobalStatic.LangList["Display Settings"]);
-			GraphicsWindow.DrawText(GlobalStatic.UIx+ 20, 73, GlobalStatic.LangList["Sort by"]);
-			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 150, GlobalStatic.LangList["Search Settings"]);
-			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 180, GlobalStatic.LangList["Search in"]);
-			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210, GlobalStatic.LangList["Search"] + ":");
-			GraphicsWindow.DrawText(GlobalStatic.UIx + 127, 290, GlobalStatic.LangList["Functions"] + ":");
+			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 52, Utilities.Localization["Display Settings"]);
+			GraphicsWindow.DrawText(GlobalStatic.UIx+ 20, 73, Utilities.Localization["Sort by"]);
+			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 150, Utilities.Localization["Search Settings"]);
+			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 180, Utilities.Localization["Search in"]);
+			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210, Utilities.Localization["Search"] + ":");
+			GraphicsWindow.DrawText(GlobalStatic.UIx + 127, 290, Utilities.Localization["Functions"] + ":");
 
-			//Did not implement LOG CB //TODO
+            //TODO implement LOG CB?
 
-			//Sort
-			GraphicsWindow.FontSize = 13;
-			string AscDesc = "1=" + GlobalStatic.LangList["Asc"] + ";2=" + GlobalStatic.LangList["Desc"] + ";";
+            //Sort
+            GraphicsWindow.FontSize = 13;
+			string AscDesc = "1=" + Utilities.Localization["Asc"] + ";2=" + Utilities.Localization["Desc"] + ";";
 			GlobalStatic.ComboBox["Sort"] = LDControls.AddComboBox(Engines.Schema, 100, 100);
 			GlobalStatic.ComboBox["ASCDESC"] = LDControls.AddComboBox(AscDesc, 110, 100);
-			GlobalStatic.Buttons["Sort"] = Controls.AddButton(GlobalStatic.LangList["SORT"], GlobalStatic.UIx + 10, 120);
+            GlobalStatic.Buttons["Sort"] = Controls.AddButton(Utilities.Localization["Sort"], GlobalStatic.UIx + 10, 120);
 
 			Controls.Move(GlobalStatic.ComboBox["Sort"], GlobalStatic.UIx + 80, 72);
 			Controls.Move(GlobalStatic.ComboBox["ASCDESC"], GlobalStatic.UIx+ 190, 72);
@@ -321,9 +320,9 @@ namespace DBM
 			//Search
 			GlobalStatic.ComboBox["Search"] = LDControls.AddComboBox(Engines.Schema, 200, 120);
 			GlobalStatic.TextBox["Search"] = Controls.AddTextBox(GlobalStatic.UIx + 100, 210);
-			GlobalStatic.CheckBox["StrictSearch"] = LDControls.AddCheckBox(GlobalStatic.LangList["Strict Search"]);
+			GlobalStatic.CheckBox["StrictSearch"] = LDControls.AddCheckBox(Utilities.Localization["Strict Search"]);
 			GlobalStatic.CheckBox["InvertSearch"] = LDControls.AddCheckBox("Invert"); //Localize
-			GlobalStatic.Buttons["Search"] = Controls.AddButton(Text.ConvertToUpperCase(GlobalStatic.LangList["Search"]), GlobalStatic.UIx + 10, 260);
+			GlobalStatic.Buttons["Search"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Search"]), GlobalStatic.UIx + 10, 260);
 
 			Controls.Move(GlobalStatic.CheckBox["StrictSearch"], GlobalStatic.UIx + 20, 240);
 			Controls.Move(GlobalStatic.CheckBox["InvertSearch"], GlobalStatic.UIx + 150, 240);
@@ -337,17 +336,17 @@ namespace DBM
 			GlobalStatic.ComboBox["ColumnList"] = LDControls.AddComboBox(Engines.Schema, 135, 100);
 			Controls.Move(GlobalStatic.ComboBox["ColumnList"], GlobalStatic.UIx + 160, 310);
 
-			GlobalStatic.Buttons["RunFunction"] = Controls.AddButton(Text.ConvertToUpperCase(GlobalStatic.LangList["Run Function"]), GlobalStatic.UIx + 10, 340);
+			GlobalStatic.Buttons["RunFunction"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Run Function"]), GlobalStatic.UIx + 10, 340);
 			Controls.SetSize(GlobalStatic.Buttons["RunFunction"], 290, 25);
 
 			//Custom Query
 			GlobalStatic.TextBox["CustomQuery"] = Controls.AddMultiLineTextBox(GlobalStatic.UIx, 420);
 			Controls.SetSize(GlobalStatic.TextBox["CustomQuery"], 310, 150);
 
-  			GlobalStatic.Buttons["CustomQuery"] = Controls.AddButton(Text.ConvertToUpperCase(GlobalStatic.LangList["Query"]), GlobalStatic.UIx, 580);
+  			GlobalStatic.Buttons["CustomQuery"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Query"]), GlobalStatic.UIx, 580);
   			Controls.SetSize(GlobalStatic.Buttons["CustomQuery"], 310, 25);
   			
-  			GlobalStatic.Buttons["Command"] = Controls.AddButton(Text.ConvertToUpperCase(GlobalStatic.LangList["Command"]), GlobalStatic.UIx, 580 + 35);
+  			GlobalStatic.Buttons["Command"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Command"]), GlobalStatic.UIx, 580 + 35);
 			Controls.SetSize(GlobalStatic.Buttons["Command"], 310, 25);
 			LDDialogs.ToolTip(GlobalStatic.Buttons["Command"], "Executes customized SQL command statements onto the database"); //Localize
 			string CustomQueryData = "This Textbox allows you to use Custom\nSQL Queries. Remove this and type in an SQL \nstatement. \nYou also use it to export data";//Localize
@@ -416,7 +415,7 @@ namespace DBM
 	{
 		public static void LogEvents() //Error Handler
 		{
-			LogMessage(LDEvents.LastError, GlobalStatic.LangList["System"]);
+			LogMessage(LDEvents.LastError, Utilities.Localization["System"]);
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogEvents()");
 		}
 		public static void LogMessagePopUp(Primitive MessagePopUp,Primitive MessageLog, Primitive Title, Primitive Type)
@@ -427,49 +426,56 @@ namespace DBM
 
 		public static void LogMessage(Primitive Message, string Type) //Logs Message to all applicable locations
 		{
-			if (GlobalStatic.DebugMode == true && Type != GlobalStatic.LangList["System"]) //Writes Log Message to TextWindow
-			{
-				TextWindow.WriteLine(LDList.GetAt(GlobalStatic.List_Stack_Trace, LDList.Count(GlobalStatic.List_Stack_Trace)) + ":" + Type + ":" + Message);
-			}
-
-			if (Type.Equals("Debug") == true && GlobalStatic.DebugMode == false) 
-			{
-				return;
-			}
-			else if (Type.Equals("PopUp") == true) 
-			{
-				GraphicsWindow.ShowMessage(Message, LDList.GetAt(GlobalStatic.List_Stack_Trace, LDList.Count(GlobalStatic.List_Stack_Trace) + "REVERT!" ));
-			}
-			else
-			{
-				if (string.IsNullOrEmpty(Type))
-					{
-						Type = "Unknown"; 
-					}
-				if (GlobalStatic.DebugMode == true)
-				{
-					if (Text.IsSubText(Message, "LDDataBase.Query") == true || Text.IsSubText(Message, "LDDataBase.Command") == true) 
-					{
-						TextWindow.WriteLine(Engines.CurrentDatabase + "\n" + Message);
-					}
-				}
-			}
-			GlobalStatic.LogNumber = GlobalStatic.LogNumber + 1;
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogMessage()");
-
-			SBFile.AppendContents(GlobalStatic.LogCSVpath,GlobalStatic.LogNumber +"," + Clock.Date + "," + Clock.Time +"," + "\"" + LDText.Replace( GlobalStatic.Username , "\"" , "\"" + "\"" ) + "\"" +"," + GlobalStatic.ProductID +","+ GlobalStatic.VersionID+"," + "\"" +  LDText.Replace( Type, "\"" , "\"" + "\"") + "\"" +","+  "\"" +  LDText.Replace(Message ,"\"" , "\"" + "\"" ) + "\"");
-			string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'";
-			LogCMD = LogCMD + GlobalStatic.Username + "','" + GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');";
-			Engines.Command(GlobalStatic.LogDB, LogCMD, GlobalStatic.LangList["App"], GlobalStatic.LangList["Auto Log"],false);
+            LogMessage(Message,Type, LDList.GetAt(GlobalStatic.List_Stack_Trace, LDList.Count(GlobalStatic.List_Stack_Trace)));
+            LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogMessage");
 		}
+
+        static void LogMessage(Primitive Message, string Type, string Caller)
+        {
+            if (GlobalStatic.DebugMode == true && Type != Utilities.Localization["System"]) //Writes Log Message to TextWindow
+            {
+                Console.WriteLine("Log : Caller was {0}; Type {1}; Message {2} ", Caller, Type, Message);
+            }
+
+            if (Type.Equals("Debug") == true && GlobalStatic.DebugMode == false)
+            {
+                return;
+            }
+            else if (Type.Equals("PopUp") == true)
+            {
+                GraphicsWindow.ShowMessage(Message, LDList.GetAt(GlobalStatic.List_Stack_Trace, LDList.Count(GlobalStatic.List_Stack_Trace) + "REVERT!"));
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(Type))
+                {
+                    Type = "Unknown";
+                }
+                if (GlobalStatic.DebugMode == true)
+                {
+                    if (Text.IsSubText(Message, "LDDataBase.Query") == true || Text.IsSubText(Message, "LDDataBase.Command") == true)
+                    {
+                        Console.WriteLine("{0}",Engines.CurrentDatabase + "\n" + Message);
+                    }
+                }
+            }
+            GlobalStatic.LogNumber = GlobalStatic.LogNumber + 1;
+            LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogMessage()");
+
+            SBFile.AppendContents(GlobalStatic.LogCSVpath, GlobalStatic.LogNumber + "," + Clock.Date + "," + Clock.Time + "," + "\"" + LDText.Replace(GlobalStatic.Username, "\"", "\"" + "\"") + "\"" + "," + GlobalStatic.ProductID + "," + GlobalStatic.VersionID + "," + "\"" + LDText.Replace(Type, "\"", "\"" + "\"") + "\"" + "," + "\"" + LDText.Replace(Message, "\"", "\"" + "\"") + "\"");
+            string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'";
+            LogCMD = LogCMD + GlobalStatic.Username + "','" + GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');";
+            Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"], false);
+
+        }
 
 		public static void Closing()
 		{
 			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.Closing()");
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
-			{ LogMessage("Program Closing", GlobalStatic.LangList["Application"]); } //Localize
+			{ LogMessage("Program Closing", Utilities.Localization["Application"]); } //Localize
 			else 
-			{ LogMessage("Program Closing - Closing : " + Engines.Database_Shortname , GlobalStatic.LangList["Application"]); } //Localize
+			{ LogMessage("Program Closing - Closing : " + Engines.Database_Shortname , Utilities.Localization["Application"]); } //Localize
 
 			if (LDWindows.CurrentID == 0)
 			{ Program.End(); }

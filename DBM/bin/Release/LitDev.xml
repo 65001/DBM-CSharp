@@ -4857,6 +4857,13 @@
       <param name="message">The message may be any variable including an array.</param>
       <returns>"SUCCESS", "NOT_CONNECTED", "NO_CLIENT" or "FAILED"</returns>
     </member>
+    <member name="M:LitDev.LDServer.Broadcast(Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Send a message to all clients.
+            </summary>
+      <param name="message">The message may be any variable including an array.</param>
+      <returns>A array of values "SUCCESS", "NOT_CONNECTED", "NO_CLIENT" or "FAILED" with the Client Name being the index</returns>
+    </member>
     <member name="M:LitDev.LDServer.Start(Microsoft.SmallBasic.Library.Primitive)">
       <summary>
             Start the server.
@@ -5332,6 +5339,14 @@
             This 128 character hash is recommended for the most secure password encryption.
             </summary>
       <param name="password">A text to create a hash (often a password).</param>
+      <returns>The 128 character hex SHA512 Hash.</returns>
+    </member>
+    <member name="M:LitDev.LDEncryption.SHA512HashFile(Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Create an SHA512 hash of a file.
+            This 128 character hash is for file data integrity checks (e.g. a file contents is unchanged).
+            </summary>
+      <param name="fileName">The full path to a file to get the hash.</param>
       <returns>The 128 character hex SHA512 Hash.</returns>
     </member>
     <member name="P:LitDev.LDEncryption.RSAPublicKey">

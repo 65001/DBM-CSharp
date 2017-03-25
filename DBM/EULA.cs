@@ -3,9 +3,9 @@ using Microsoft.SmallBasic.Library;
 using SBFile = Microsoft.SmallBasic.Library.File;
 namespace DBM
 {
-	public static class EULA
+    public static class EULA
 	{
-		public static string CheckBox, Accept, Decline;
+		static string CheckBox, Accept, Decline;
 
 		public static void UI(string URI,decimal Ping)
 		{
@@ -29,16 +29,14 @@ namespace DBM
 			{
 				Program.End();
 			}
-			else
-			{
-				LDControls.RichTextBoxSetText(EulaTextBox, CNTS, false);
-				CheckBox = LDControls.AddCheckBox("I have read and agree to this EULA.");
-				Accept = Controls.AddButton("Accept", 235, 390);
-				Decline = Controls.AddButton("Decline", 315, 390);
-				Controls.Move(CheckBox, 190, 365);
-				Controls.SetSize(Accept, 70, 30);
-				Controls.SetSize(Decline, 70, 30);
-			}
+		
+			LDControls.RichTextBoxSetText(EulaTextBox, CNTS, false);
+			CheckBox = LDControls.AddCheckBox("I have read and agree to this EULA.");
+			Accept = Controls.AddButton("Accept", 235, 390);
+			Decline = Controls.AddButton("Decline", 315, 390);
+			Controls.Move(CheckBox, 190, 365);
+			Controls.SetSize(Accept, 70, 30);
+			Controls.SetSize(Decline, 70, 30);
 			Controls.ButtonClicked += Handler;
 		}
 
@@ -49,8 +47,11 @@ namespace DBM
 			GlobalStatic.Settings["EULA_By"] = GlobalStatic.UserName;
 			GlobalStatic.Settings["EULA_Version"] = GlobalStatic.EULA_Newest_Version;
 			GlobalStatic.Settings["VersionID"] = LDText.Replace( GlobalStatic.VersionID.ToString(),".","");
-			//Forced to use Else If due to non-constant values
-			if (lastButton == Accept)
+
+            Controls.ButtonClicked -= Handler; //Unsubcribes the event Handler from the event
+
+            //Forced to use Else If due to non-constant values
+            if (lastButton == Accept)
 			{
 				GlobalStatic.Settings["EULA"] = true;
 				Settings.SaveSettings();
@@ -63,8 +64,6 @@ namespace DBM
 				Events.LogMessage("EULA Declined", Utilities.Localization["UI"]); //Localize
 				Program.End();
 			}
-
-			Controls.ButtonClicked -= Handler; //Unsubcribes the event Handler from the event
 		}
 	}
 }
