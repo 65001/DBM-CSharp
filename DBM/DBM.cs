@@ -21,6 +21,7 @@ using System.Diagnostics;
 		StackTrace implemented across everything. (implemented as a method)
 		StrackGetLast or somethign as a function
 		Replace all instances of GlobalStatic.List_DB_* ASAP.
+		Start to use System.Version instead of an int and replace instances of GlobablStatic.VersionID to it as well
 		
  */
 
@@ -98,7 +99,7 @@ namespace DBM
 			{
 				Engines.Load_DB( Engines.EnginesModes.SQLITE, GetPath(4) );
 			}
-			if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_Username == LDFile.UserName && GlobalStatic.LastVersion == GlobalStatic.VersionID && GlobalStatic.EulaTest == false)
+			if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_Username == LDFile.UserName && GlobalStatic.LastVersion == (int)LDText.Replace( GlobalStatic.VersionID.ToString(),".","") && GlobalStatic.EulaTest == false)
 			{ 
 				StartupGUI();
 			}
@@ -215,10 +216,9 @@ namespace DBM
 			int SortOffset = LDText.GetWidth(GlobalStatic.LangList["Sort"] + ":") - LDText.GetWidth("Sort:"); //Offsets some controls when not using the default English encoding
 
 			GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
-
 			GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox(LDList.ToArray(GlobalStatic.List_SCHEMA_Table), 100, 100);
 			GlobalStatic.ComboBox["Sorts"] = LDControls.AddComboBox(Sorts,100,100);
-			GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox( LDList.ToArray(GlobalStatic.List_DB_ShortName),100,100);
+			GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox(Utilities.toArray(Engines.DB_ShortName),100,100);
 			Controls.Move(GlobalStatic.ComboBox["Sorts"], 970 + 185 + SortOffset, 5);
 			Controls.Move(GlobalStatic.ComboBox["Table"], 1075 + 185 + SortOffset,5);
 			Controls.Move(GlobalStatic.ComboBox["Database"], 1050 + SortOffset, 5);

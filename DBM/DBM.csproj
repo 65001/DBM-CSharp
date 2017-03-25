@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="Import.cs" />
     <Compile Include="Export.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SmallBasicLibrary">

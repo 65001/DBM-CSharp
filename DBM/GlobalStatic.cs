@@ -20,7 +20,7 @@ namespace DBM
 			//Self Aware Data
 			public const string Copyright = "2016 through 2017";
 			public const string ProductID = "DBM C#";
-			public const int VersionID = 1122;
+			public static string VersionID = LDText.Replace( typeof(GlobalStatic).Assembly.GetName().Version.ToString(),".","");
 
 			public static int DefaultWidth, DefaultHeight,DefaultFontSize,LogNumber;
 
@@ -74,11 +74,6 @@ namespace DBM
 			public const string List_SCHEMA_Table = "SCHEMA_TABLE";
 			public const string List_SCHEMA_View = "SCHEMA_VIEW";
 			public const string List_Schema_Index = " SCHEMA_INDEX";
-
-			public const string List_DB_Path = "DB_Path";
-			public const string List_DB_Name = "DB_Name";
-			public const string List_DB_ShortName = "DB_SName";
-			public const string List_DB_Engine = "DB_Engine";
 
 			public const string List_DB_Tracker = "DB_Tracking";
 			public const string List_Query_Time = "Query_Time";

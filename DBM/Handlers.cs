@@ -244,8 +244,8 @@ namespace DBM
 
 		static void DatabaseComboBox(int Index)
 		{
-			LDList.Add(GlobalStatic.List_DB_Tracker, LDList.GetAt(GlobalStatic.List_DB_ShortName, Index));
-			Engines.Load_DB(Engines.EnginesModes.SQLITE, LDList.GetAt(GlobalStatic.List_DB_Path, Index));
+			LDList.Add(GlobalStatic.List_DB_Tracker, Engines.DB_ShortName[Index]);
+			Engines.Load_DB(Engines.EnginesModes.SQLITE,Engines.DB_Path[Index-1]);
 			Engines.GetSchema(Engines.CurrentDatabase);
 			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 

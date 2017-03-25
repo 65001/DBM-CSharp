@@ -48,7 +48,7 @@ namespace DBM
 			string lastButton = Controls.LastClickedButton;
 			GlobalStatic.Settings["EULA_By"] = GlobalStatic.UserName;
 			GlobalStatic.Settings["EULA_Version"] = GlobalStatic.EULA_Newest_Version;
-			GlobalStatic.Settings["VersionID"] = GlobalStatic.VersionID;
+			GlobalStatic.Settings["VersionID"] = LDText.Replace( GlobalStatic.VersionID.ToString(),".","");
 			//Forced to use Else If due to non-constant values
 			if (lastButton == Accept)
 			{

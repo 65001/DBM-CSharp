@@ -92,8 +92,8 @@ namespace DBM
 				case EnginesModes.SQLITE: 
 					if (LDFile.Exists(Data) == true)
 					{
-						int Index = LDList.IndexOf(GlobalStatic.List_DB_Path, Data);
-						if (Index == 0) //New Database
+						int Index = _DB_Path.IndexOf(Data);
+                        if (Index == 0) //New Database
 						{
 							string Database = LDDataBase.ConnectSQLite(Data);
 							AddToList(Data, Database, LDFile.GetFile(Data), EnginesModes.SQLITE);
@@ -104,9 +104,9 @@ namespace DBM
 						}
 						else //Database already exists as a connection so set the primary connection to that
 						{
-							string Database = LDList.GetAt(GlobalStatic.List_DB_Name, Index);
-							Database_Shortname = LDList.GetAt(GlobalStatic.List_DB_ShortName, Index);
-							LDList.Add(GlobalStatic.List_DB_ShortName, Database_Shortname);
+							string Database =_DB_Name[Index];
+							Database_Shortname = _DB_ShortName[Index];
+                            _DB_ShortName.Add(Database_Shortname);
 							CurrentDatabase = Database;
 							return Database;
 						}
@@ -262,10 +262,10 @@ namespace DBM
 
 		static EnginesModes Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database 
 		{
-			int Index = LDList.IndexOf(GlobalStatic.List_DB_Name, Database);
+            int Index = _DB_Name.IndexOf(Database);
 			if (Index != 0)
 			{
-				return (EnginesModes)(int)LDList.GetAt(GlobalStatic.List_DB_Engine, Index);
+                return _DB_Engine[Index];
 			}
 			return EnginesModes.NONE; 
 		}
@@ -278,16 +278,26 @@ namespace DBM
 			_DB_Path.Add(path);
 			_DB_ShortName.Add(ShortName);
 			_DB_Engine.Add(Engine);
-			//TODO Remove the following code when the rest of the application's dependency of it has been removed
-			LDList.Add(GlobalStatic.List_DB_Path, path);
-			LDList.Add(GlobalStatic.List_DB_Name, Name);
-			LDList.Add(GlobalStatic.List_DB_ShortName, ShortName);
-			LDList.Add(GlobalStatic.List_DB_Engine,(int)Engine);
 		}
 
 		public static ReadOnlyCollection<string> DB_Name 
 		{ 
 			get { return _DB_Name.AsReadOnly(); }
 		}
+
+        public static ReadOnlyCollection<string> DB_Path
+        {
+            get { return _DB_Path.AsReadOnly(); }
+        }
+
+        public static ReadOnlyCollection<string> DB_ShortName
+        {
+            get { return _DB_ShortName.AsReadOnly(); }
+        }
+
+        public static ReadOnlyCollection<EnginesModes> DB_Engine
+        {
+            get { return _DB_Engine.AsReadOnly(); }
+        }
 	}
 }
