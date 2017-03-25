@@ -29,7 +29,6 @@
     <Failed language="tlh">luj</Failed>
     <Table language="tlh">raS</Table>
     <Index language="tlh">index</Index>
-    <View language="tlh">jIH</View>
     <Master_Table language="tlh">pIn'a' raS</Master_Table>
     <Sort language="tlh">Segh</Sort>
     <Asc language="tlh">nen</Asc>
@@ -93,6 +92,5 @@
     <Converter language="tlh">converter</Converter>
     <HTML_to_CSV language="tlh">HTML csv</HTML_to_CSV>
     <Developer language="tlh">developer</Developer>
-    <Stack_Trace language="tlh">stack Trace</Stack_Trace>
   </Language>
 </root>

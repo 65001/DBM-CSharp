@@ -29,7 +29,6 @@
     <Failed language="otq">Ar himbí pwede</Failed>
     <Table language="otq">Tabla</Table>
     <Index language="otq">Índice</Index>
-    <View language="otq">Di nu'i</View>
     <Master_Table language="otq">Tabla maestra</Master_Table>
     <Sort language="otq">Ar klase</Sort>
     <Asc language="otq">Ascendente</Asc>
@@ -93,6 +92,5 @@
     <Converter language="otq">Convertidor</Converter>
     <HTML_to_CSV language="otq">HTML CSV</HTML_to_CSV>
     <Developer language="otq">Desarrollador</Developer>
-    <Stack_Trace language="otq">Seguimiento ar pila</Stack_Trace>
   </Language>
 </root>

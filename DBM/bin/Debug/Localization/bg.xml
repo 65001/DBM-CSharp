@@ -29,7 +29,6 @@
     <Failed language="bg">Неуспешно</Failed>
     <Table language="bg">Таблица</Table>
     <Index language="bg">Индекс</Index>
-    <View language="bg">Изглед</View>
     <Master_Table language="bg">Магистър Билярд</Master_Table>
     <Sort language="bg">Сортиране</Sort>
     <Asc language="bg">Възходящо</Asc>
@@ -93,6 +92,5 @@
     <Converter language="bg">Конвертор</Converter>
     <HTML_to_CSV language="bg">HTML към CSV</HTML_to_CSV>
     <Developer language="bg">Разработчици</Developer>
-    <Stack_Trace language="bg">Проследяването на стека</Stack_Trace>
   </Language>
 </root>

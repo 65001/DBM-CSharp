@@ -29,7 +29,6 @@
     <Failed language="cy">Wedi methu</Failed>
     <Table language="cy">Tabl</Table>
     <Index language="cy">Mynegai</Index>
-    <View language="cy">Barn</View>
     <Master_Table language="cy">Tabl Meistr</Master_Table>
     <Sort language="cy">Math</Sort>
     <Asc language="cy">O'r dechrau i'r diwedd</Asc>
@@ -93,6 +92,5 @@
     <Converter language="cy">Troswr</Converter>
     <HTML_to_CSV language="cy">HTML i CSV</HTML_to_CSV>
     <Developer language="cy">Datblygwr</Developer>
-    <Stack_Trace language="cy">Stac</Stack_Trace>
   </Language>
 </root>

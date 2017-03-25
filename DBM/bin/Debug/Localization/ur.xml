@@ -29,7 +29,6 @@
     <Failed language="ur">ناکام</Failed>
     <Table language="ur">جدول</Table>
     <Index language="ur">اشاریہ</Index>
-    <View language="ur">منظر</View>
     <Master_Table language="ur">ماسٹر جدول</Master_Table>
     <Sort language="ur">چھانٹیں</Sort>
     <Asc language="ur">صعودی</Asc>
@@ -93,6 +92,5 @@
     <Converter language="ur">کنورٹر</Converter>
     <HTML_to_CSV language="ur">HTML CSV</HTML_to_CSV>
     <Developer language="ur">ڈویلپر</Developer>
-    <Stack_Trace language="ur">قطار کی کھوج</Stack_Trace>
   </Language>
 </root>

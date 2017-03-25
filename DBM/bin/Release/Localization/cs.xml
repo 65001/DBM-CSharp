@@ -29,7 +29,6 @@
     <Failed language="cs">Se nezdařilo</Failed>
     <Table language="cs">Tabulka</Table>
     <Index language="cs">Rejstřík</Index>
-    <View language="cs">Pohled</View>
     <Master_Table language="cs">Hlavní tabulka</Master_Table>
     <Sort language="cs">Řazení</Sort>
     <Asc language="cs">Vzestupně</Asc>
@@ -93,6 +92,5 @@
     <Converter language="cs">Převodník</Converter>
     <HTML_to_CSV language="cs">HTML a CSV</HTML_to_CSV>
     <Developer language="cs">Vývojář</Developer>
-    <Stack_Trace language="cs">Trasování zásobníku</Stack_Trace>
   </Language>
 </root>

@@ -2,7 +2,7 @@
 <root>
   <Language language="hi">
     <File language="hi">फ़ाइल</File>
-    <New language="hi">नई</New>
+    <New language="hi">नया</New>
     <Open language="hi">खुला</Open>
     <Edit language="hi">संपादित करें</Edit>
     <View language="hi">दृश्य</View>
@@ -29,7 +29,6 @@
     <Failed language="hi">में विफल रहा</Failed>
     <Table language="hi">तालिका</Table>
     <Index language="hi">सूचकांक</Index>
-    <View language="hi">दृश्य</View>
     <Master_Table language="hi">मुख्य तालिका</Master_Table>
     <Sort language="hi">सॉर्ट करें</Sort>
     <Asc language="hi">आरोही</Asc>
@@ -93,6 +92,5 @@
     <Converter language="hi">कनवर्टर</Converter>
     <HTML_to_CSV language="hi">CSV के लिए HTML</HTML_to_CSV>
     <Developer language="hi">डेवलपर</Developer>
-    <Stack_Trace language="hi">स्टैक ट्रेस</Stack_Trace>
   </Language>
 </root>

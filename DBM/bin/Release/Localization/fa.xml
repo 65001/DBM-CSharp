@@ -29,7 +29,6 @@
     <Failed language="fa">انجام نشد</Failed>
     <Table language="fa">جدول</Table>
     <Index language="fa">شاخص</Index>
-    <View language="fa">مشاهده</View>
     <Master_Table language="fa">میز کارشناسی ارشد</Master_Table>
     <Sort language="fa">مرتب کردن بر اساس</Sort>
     <Asc language="fa">صعودی</Asc>
@@ -93,6 +92,5 @@
     <Converter language="fa">مبدل</Converter>
     <HTML_to_CSV language="fa">HTML به CSV</HTML_to_CSV>
     <Developer language="fa">توسعه دهنده</Developer>
-    <Stack_Trace language="fa">مسیر بسته</Stack_Trace>
   </Language>
 </root>

@@ -29,7 +29,6 @@
     <Failed language="fj">A sega ni</Failed>
     <Table language="fj">Teveli</Table>
     <Index language="fj">Ituvatuva vakamatanivola</Index>
-    <View language="fj">Raica</View>
     <Master_Table language="fj">Teveli ni ivakavuvuli</Master_Table>
     <Sort language="fj">Tuvai vaka</Sort>
     <Asc language="fj">Cabe cake</Asc>
@@ -93,6 +92,5 @@
     <Converter language="fj">Dauvuki</Converter>
     <HTML_to_CSV language="fj">HTML me CSV</HTML_to_CSV>
     <Developer language="fj">Developer</Developer>
-    <Stack_Trace language="fj">Rewa Trace</Stack_Trace>
   </Language>
 </root>

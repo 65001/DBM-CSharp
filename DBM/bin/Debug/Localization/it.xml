@@ -29,7 +29,6 @@
     <Failed language="it">Non riuscita</Failed>
     <Table language="it">tavolo</Table>
     <Index language="it">Indice</Index>
-    <View language="it">Vista</View>
     <Master_Table language="it">Tabella master</Master_Table>
     <Sort language="it">Ordinamento</Sort>
     <Asc language="it">Ascendente</Asc>
@@ -93,6 +92,5 @@
     <Converter language="it">Convertitore</Converter>
     <HTML_to_CSV language="it">HTML in formato CSV</HTML_to_CSV>
     <Developer language="it">Sviluppatore</Developer>
-    <Stack_Trace language="it">Analisi dello stack</Stack_Trace>
   </Language>
 </root>

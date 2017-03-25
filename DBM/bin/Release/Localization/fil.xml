@@ -29,7 +29,6 @@
     <Failed language="fil">Nabigo</Failed>
     <Table language="fil">Mesa</Table>
     <Index language="fil">Indeks</Index>
-    <View language="fil">Tanaw</View>
     <Master_Table language="fil">Mesa ng guro</Master_Table>
     <Sort language="fil">Mga uri</Sort>
     <Asc language="fil">Pataas na</Asc>
@@ -93,6 +92,5 @@
     <Converter language="fil">Ng conversion</Converter>
     <HTML_to_CSV language="fil">HTML na CSV</HTML_to_CSV>
     <Developer language="fil">Developer</Developer>
-    <Stack_Trace language="fil">Pagtunton ng stack</Stack_Trace>
   </Language>
 </root>

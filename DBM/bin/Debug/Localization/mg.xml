@@ -29,7 +29,6 @@
     <Failed language="mg">Tsy nahomby</Failed>
     <Table language="mg">Latabatra</Table>
     <Index language="mg">Ny Filaharana</Index>
-    <View language="mg">Fomba fijery</View>
     <Master_Table language="mg">Mpampianatra Latabatra</Master_Table>
     <Sort language="mg">Alaharo araka</Sort>
     <Asc language="mg">Niakarany</Asc>
@@ -93,6 +92,5 @@
     <Converter language="mg">Converter</Converter>
     <HTML_to_CSV language="mg">HTML mba CSV</HTML_to_CSV>
     <Developer language="mg">Ho an' ny développeur</Developer>
-    <Stack_Trace language="mg">Amboaran miisa Manoritra</Stack_Trace>
   </Language>
 </root>

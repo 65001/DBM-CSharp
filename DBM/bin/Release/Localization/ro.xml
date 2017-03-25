@@ -29,7 +29,6 @@
     <Failed language="ro">Nu a reușit</Failed>
     <Table language="ro">Tabel</Table>
     <Index language="ro">Index</Index>
-    <View language="ro">Vezi</View>
     <Master_Table language="ro">Tabelul de Master</Master_Table>
     <Sort language="ro">Sortare</Sort>
     <Asc language="ro">Ascendent</Asc>
@@ -93,6 +92,5 @@
     <Converter language="ro">Convertor</Converter>
     <HTML_to_CSV language="ro">HTML în format CSV</HTML_to_CSV>
     <Developer language="ro">Dezvoltator</Developer>
-    <Stack_Trace language="ro">Trasarea stivei</Stack_Trace>
   </Language>
 </root>

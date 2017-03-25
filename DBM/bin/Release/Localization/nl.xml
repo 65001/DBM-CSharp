@@ -29,7 +29,6 @@
     <Failed language="nl">Mislukt</Failed>
     <Table language="nl">Tabel</Table>
     <Index language="nl">Index</Index>
-    <View language="nl">Weergave</View>
     <Master_Table language="nl">Tabel Master</Master_Table>
     <Sort language="nl">Sorteren</Sort>
     <Asc language="nl">Oplopend</Asc>
@@ -93,6 +92,5 @@
     <Converter language="nl">Converter</Converter>
     <HTML_to_CSV language="nl">HTML naar CSV</HTML_to_CSV>
     <Developer language="nl">Ontwikkelaar</Developer>
-    <Stack_Trace language="nl">Stacktrace</Stack_Trace>
   </Language>
 </root>

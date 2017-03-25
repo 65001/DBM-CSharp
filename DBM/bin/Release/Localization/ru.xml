@@ -29,7 +29,6 @@
     <Failed language="ru">Не удалось</Failed>
     <Table language="ru">Таблица</Table>
     <Index language="ru">Индекс</Index>
-    <View language="ru">Вид</View>
     <Master_Table language="ru">Мастер таблицы</Master_Table>
     <Sort language="ru">Сортировка</Sort>
     <Asc language="ru">По возрастанию</Asc>
@@ -93,6 +92,5 @@
     <Converter language="ru">Конвертер</Converter>
     <HTML_to_CSV language="ru">HTML в CSV</HTML_to_CSV>
     <Developer language="ru">Разработчик</Developer>
-    <Stack_Trace language="ru">Трассировка стека</Stack_Trace>
   </Language>
 </root>

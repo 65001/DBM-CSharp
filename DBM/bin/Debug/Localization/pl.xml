@@ -29,7 +29,6 @@
     <Failed language="pl">Nie powiodło się</Failed>
     <Table language="pl">Stół</Table>
     <Index language="pl">Indeks</Index>
-    <View language="pl">Widok</View>
     <Master_Table language="pl">Główna tabela</Master_Table>
     <Sort language="pl">Sortowanie</Sort>
     <Asc language="pl">Rosnąco</Asc>
@@ -93,6 +92,5 @@
     <Converter language="pl">Konwerter</Converter>
     <HTML_to_CSV language="pl">HTML do pliku CSV</HTML_to_CSV>
     <Developer language="pl">Deweloper</Developer>
-    <Stack_Trace language="pl">Ślad stosu</Stack_Trace>
   </Language>
 </root>

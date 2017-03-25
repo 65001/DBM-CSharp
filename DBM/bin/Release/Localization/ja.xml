@@ -29,7 +29,6 @@
     <Failed language="ja">失敗しました</Failed>
     <Table language="ja">テーブル</Table>
     <Index language="ja">インデックス</Index>
-    <View language="ja">ビュー</View>
     <Master_Table language="ja">マスター テーブル</Master_Table>
     <Sort language="ja">並べ替え</Sort>
     <Asc language="ja">昇順</Asc>
@@ -93,6 +92,5 @@
     <Converter language="ja">コンバーター</Converter>
     <HTML_to_CSV language="ja">Csv ファイルに HTML</HTML_to_CSV>
     <Developer language="ja">開発者</Developer>
-    <Stack_Trace language="ja">スタック トレース</Stack_Trace>
   </Language>
 </root>

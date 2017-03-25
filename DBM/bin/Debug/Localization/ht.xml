@@ -29,7 +29,6 @@
     <Failed language="ht">Te tonbe</Failed>
     <Table language="ht">Tab</Table>
     <Index language="ht">Endèks</Index>
-    <View language="ht">Vi</View>
     <Master_Table language="ht">Tab mèt</Master_Table>
     <Sort language="ht">Kalite</Sort>
     <Asc language="ht">K'ap</Asc>
@@ -93,6 +92,5 @@
     <Converter language="ht">Convertisseur</Converter>
     <HTML_to_CSV language="ht">HTML pou CSV</HTML_to_CSV>
     <Developer language="ht">Devlope</Developer>
-    <Stack_Trace language="ht">Pile mak</Stack_Trace>
   </Language>
 </root>

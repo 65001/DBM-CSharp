@@ -13,7 +13,7 @@
     <Export language="yue">出口</Export>
     <HTML language="yue">HTML</HTML>
     <Settings language="yue">設置</Settings>
-    <Help language="yue">幫助</Help>
+    <Help language="yue">幫手</Help>
     <About language="yue">關於</About>
     <Show_Help language="yue">顯示幫助</Show_Help>
     <Settings_Editor language="yue">設置編輯器</Settings_Editor>
@@ -29,7 +29,6 @@
     <Failed language="yue">炒</Failed>
     <Table language="yue">表</Table>
     <Index language="yue">索引</Index>
-    <View language="yue">视图</View>
     <Master_Table language="yue">主表</Master_Table>
     <Sort language="yue">排序</Sort>
     <Asc language="yue">升序</Asc>
@@ -37,7 +36,7 @@
     <Display_Settings language="yue">顯示設置</Display_Settings>
     <Sort_by language="yue">按排序</Sort_by>
     <Search_in language="yue">在中搜索</Search_in>
-    <Search language="yue">搜索</Search>
+    <Search language="yue">搜尋</Search>
     <Functions language="yue">功能</Functions>
     <Strict_Search language="yue">嚴格搜索</Strict_Search>
     <Run_Function language="yue">運行函數</Run_Function>
@@ -93,6 +92,5 @@
     <Converter language="yue">轉換器</Converter>
     <HTML_to_CSV language="yue">HTML 到 CSV</HTML_to_CSV>
     <Developer language="yue">開發人員</Developer>
-    <Stack_Trace language="yue">堆棧跟蹤</Stack_Trace>
   </Language>
 </root>

@@ -29,7 +29,6 @@
     <Failed language="sm">Le manuia</Failed>
     <Table language="sm">Laulau</Table>
     <Index language="sm">Faasino upu</Index>
-    <View language="sm">Vaaiga</View>
     <Master_Table language="sm">Laulau a le Matai</Master_Table>
     <Sort language="sm">Faavasega</Sort>
     <Asc language="sm">Afio ae</Asc>
@@ -93,6 +92,5 @@
     <Converter language="sm">Ola</Converter>
     <HTML_to_CSV language="sm">HTML e CSV</HTML_to_CSV>
     <Developer language="sm">Fatu</Developer>
-    <Stack_Trace language="sm">Lolomi o le faaputuga</Stack_Trace>
   </Language>
 </root>

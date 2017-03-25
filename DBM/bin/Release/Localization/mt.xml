@@ -29,7 +29,6 @@
     <Failed language="mt">Ma rnexxiex</Failed>
     <Table language="mt">It-tabella</Table>
     <Index language="mt">L-indiċi</Index>
-    <View language="mt">Ara</View>
     <Master_Table language="mt">Tabella tal-kaptan</Master_Table>
     <Sort language="mt">Issortja</Sort>
     <Asc language="mt">Axxendenti</Asc>
@@ -93,6 +92,5 @@
     <Converter language="mt">Konvertitur</Converter>
     <HTML_to_CSV language="mt">HTML biex CSV</HTML_to_CSV>
     <Developer language="mt">Iżviluppatur</Developer>
-    <Stack_Trace language="mt">Mazz traċċa</Stack_Trace>
   </Language>
 </root>

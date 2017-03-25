@@ -29,7 +29,6 @@
     <Failed language="af">Het misluk</Failed>
     <Table language="af">Tabel</Table>
     <Index language="af">Indeks</Index>
-    <View language="af">Bekyk</View>
     <Master_Table language="af">Meester tabel</Master_Table>
     <Sort language="af">Rangskik</Sort>
     <Asc language="af">Stygende</Asc>
@@ -93,6 +92,5 @@
     <Converter language="af">Converter</Converter>
     <HTML_to_CSV language="af">HTML na CSV</HTML_to_CSV>
     <Developer language="af">Ontwikkelaar</Developer>
-    <Stack_Trace language="af">Stapel spoor</Stack_Trace>
   </Language>
 </root>

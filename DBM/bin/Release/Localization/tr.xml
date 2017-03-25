@@ -29,7 +29,6 @@
     <Failed language="tr">Başarısız oldu</Failed>
     <Table language="tr">Tablo</Table>
     <Index language="tr">Dizin</Index>
-    <View language="tr">Görünüm</View>
     <Master_Table language="tr">Ana Tablo</Master_Table>
     <Sort language="tr">Sıralama</Sort>
     <Asc language="tr">Artan</Asc>
@@ -93,6 +92,5 @@
     <Converter language="tr">Dönüştürücü</Converter>
     <HTML_to_CSV language="tr">HTML için CSV</HTML_to_CSV>
     <Developer language="tr">Geliştirici</Developer>
-    <Stack_Trace language="tr">Yığın izleme</Stack_Trace>
   </Language>
 </root>

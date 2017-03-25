@@ -29,7 +29,6 @@
     <Failed language="tlh-Qaak"></Failed>
     <Table language="tlh-Qaak"></Table>
     <Index language="tlh-Qaak"></Index>
-    <View language="tlh-Qaak"></View>
     <Master_Table language="tlh-Qaak"> </Master_Table>
     <Sort language="tlh-Qaak"></Sort>
     <Asc language="tlh-Qaak"></Asc>
@@ -93,6 +92,5 @@
     <Converter language="tlh-Qaak"></Converter>
     <HTML_to_CSV language="tlh-Qaak"> </HTML_to_CSV>
     <Developer language="tlh-Qaak"></Developer>
-    <Stack_Trace language="tlh-Qaak"> </Stack_Trace>
   </Language>
 </root>

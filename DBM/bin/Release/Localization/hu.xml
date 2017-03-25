@@ -29,7 +29,6 @@
     <Failed language="hu">Nem sikerült</Failed>
     <Table language="hu">Táblázat</Table>
     <Index language="hu">Index</Index>
-    <View language="hu">Nézet</View>
     <Master_Table language="hu">Törzstábla</Master_Table>
     <Sort language="hu">Rendezés</Sort>
     <Asc language="hu">Növekvő</Asc>
@@ -93,6 +92,5 @@
     <Converter language="hu">Átalakító</Converter>
     <HTML_to_CSV language="hu">HTML, CSV</HTML_to_CSV>
     <Developer language="hu">Fejlesztő</Developer>
-    <Stack_Trace language="hu">Verem-nyomkövetési</Stack_Trace>
   </Language>
 </root>

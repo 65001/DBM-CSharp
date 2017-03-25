@@ -29,7 +29,6 @@
     <Failed language="el">Απέτυχε</Failed>
     <Table language="el">Πίνακας</Table>
     <Index language="el">Ευρετήριο</Index>
-    <View language="el">Προβολή</View>
     <Master_Table language="el">Πίνακας κύριων</Master_Table>
     <Sort language="el">Είδος</Sort>
     <Asc language="el">Αύξουσα</Asc>
@@ -93,6 +92,5 @@
     <Converter language="el">Μετατροπέας</Converter>
     <HTML_to_CSV language="el">HTML σε μορφή CSV</HTML_to_CSV>
     <Developer language="el">Προγραμματιστής</Developer>
-    <Stack_Trace language="el">Ιχνηλάτηση στοίβας</Stack_Trace>
   </Language>
 </root>

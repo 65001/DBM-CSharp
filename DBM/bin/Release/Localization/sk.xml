@@ -29,7 +29,6 @@
     <Failed language="sk">Zlyhalo</Failed>
     <Table language="sk">Tabuľka</Table>
     <Index language="sk">Index</Index>
-    <View language="sk">Zobrazenie</View>
     <Master_Table language="sk">Hlavná tabuľka</Master_Table>
     <Sort language="sk">Zoradiť</Sort>
     <Asc language="sk">Vzostupne</Asc>
@@ -93,6 +92,5 @@
     <Converter language="sk">Konvertor</Converter>
     <HTML_to_CSV language="sk">HTML do formátu CSV</HTML_to_CSV>
     <Developer language="sk">Vývojár</Developer>
-    <Stack_Trace language="sk">Trasovanie zásobníka</Stack_Trace>
   </Language>
 </root>

@@ -29,7 +29,6 @@
     <Failed language="ms">Gagal</Failed>
     <Table language="ms">Jadual</Table>
     <Index language="ms">Indeks</Index>
-    <View language="ms">Pandangan</View>
     <Master_Table language="ms">Jadual induk</Master_Table>
     <Sort language="ms">Semacam</Sort>
     <Asc language="ms">Menaik</Asc>
@@ -93,6 +92,5 @@
     <Converter language="ms">Penukar</Converter>
     <HTML_to_CSV language="ms">HTML ke CSV</HTML_to_CSV>
     <Developer language="ms">Pemaju</Developer>
-    <Stack_Trace language="ms">Kesan tindanan</Stack_Trace>
   </Language>
 </root>

@@ -29,7 +29,6 @@
     <Failed language="sr-Cyrl">Није успело</Failed>
     <Table language="sr-Cyrl">Табела</Table>
     <Index language="sr-Cyrl">Индекс</Index>
-    <View language="sr-Cyrl">Приказ</View>
     <Master_Table language="sr-Cyrl">Господар табеле</Master_Table>
     <Sort language="sr-Cyrl">Сортирање</Sort>
     <Asc language="sr-Cyrl">Растућем</Asc>
@@ -93,6 +92,5 @@
     <Converter language="sr-Cyrl">Конвертор</Converter>
     <HTML_to_CSV language="sr-Cyrl">ХТМЛ за ЦСВ</HTML_to_CSV>
     <Developer language="sr-Cyrl">За програмере</Developer>
-    <Stack_Trace language="sr-Cyrl">Праћење стека</Stack_Trace>
   </Language>
 </root>

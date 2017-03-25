@@ -29,7 +29,6 @@
     <Failed language="he">נכשל</Failed>
     <Table language="he">טבלה</Table>
     <Index language="he">אינדקס</Index>
-    <View language="he">תצוגה</View>
     <Master_Table language="he">טבלת מאסטר</Master_Table>
     <Sort language="he">מיון</Sort>
     <Asc language="he">בסדר עולה</Asc>
@@ -93,6 +92,5 @@
     <Converter language="he">ממיר</Converter>
     <HTML_to_CSV language="he">HTML כדי CSV</HTML_to_CSV>
     <Developer language="he">מפתח</Developer>
-    <Stack_Trace language="he">מעקב מחסנית</Stack_Trace>
   </Language>
 </root>

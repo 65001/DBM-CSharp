@@ -29,7 +29,6 @@
     <Failed language="ty">Aita i manuia</Failed>
     <Table language="ty">Amuraa maa</Table>
     <Index language="ty">Faahororaa</Index>
-    <View language="ty">Hioraa</View>
     <Master_Table language="ty">Te amuraa maa a te Fatu</Master_Table>
     <Sort language="ty">Apapa ia au</Sort>
     <Asc language="ty">Te rave</Asc>
@@ -93,6 +92,5 @@
     <Converter language="ty">Converter</Converter>
     <HTML_to_CSV language="ty">Te CSV HTML</HTML_to_CSV>
     <Developer language="ty">Developer</Developer>
-    <Stack_Trace language="ty">Papai i te puohu</Stack_Trace>
   </Language>
 </root>

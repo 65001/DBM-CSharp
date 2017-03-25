@@ -29,7 +29,6 @@
     <Failed language="sw">Imeshindwa</Failed>
     <Table language="sw">Jedwali</Table>
     <Index language="sw">Kielezo</Index>
-    <View language="sw">Mwoneko</View>
     <Master_Table language="sw">Meza ya Bwana</Master_Table>
     <Sort language="sw">Panga</Sort>
     <Asc language="sw">A-z</Asc>
@@ -93,6 +92,5 @@
     <Converter language="sw">Kigeuzi</Converter>
     <HTML_to_CSV language="sw">HTML ili CSV</HTML_to_CSV>
     <Developer language="sw">Mwendelezaji</Developer>
-    <Stack_Trace language="sw">Kuwaeleza mpororo</Stack_Trace>
   </Language>
 </root>

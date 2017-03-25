@@ -29,7 +29,6 @@
     <Failed language="id">Gagal</Failed>
     <Table language="id">Meja</Table>
     <Index language="id">Indeks</Index>
-    <View language="id">Pemandangan</View>
     <Master_Table language="id">Biliar Master</Master_Table>
     <Sort language="id">Urutkan</Sort>
     <Asc language="id">Naik</Asc>
@@ -93,6 +92,5 @@
     <Converter language="id">Converter</Converter>
     <HTML_to_CSV language="id">HTML ke CSV</HTML_to_CSV>
     <Developer language="id">Pengembang</Developer>
-    <Stack_Trace language="id">Pelacakan stack</Stack_Trace>
   </Language>
 </root>

@@ -29,7 +29,6 @@
     <Failed language="ar">فشل</Failed>
     <Table language="ar">الجدول</Table>
     <Index language="ar">فهرس</Index>
-    <View language="ar">طريقة العرض</View>
     <Master_Table language="ar">الجدول الرئيسي</Master_Table>
     <Sort language="ar">الفرز</Sort>
     <Asc language="ar">ترتيب تصاعدي</Asc>
@@ -93,6 +92,5 @@
     <Converter language="ar">محول</Converter>
     <HTML_to_CSV language="ar">إتش تي أم ال إلى CSV</HTML_to_CSV>
     <Developer language="ar">المطور</Developer>
-    <Stack_Trace language="ar">تتبع مكدس الذاكرة المؤقتة</Stack_Trace>
   </Language>
 </root>

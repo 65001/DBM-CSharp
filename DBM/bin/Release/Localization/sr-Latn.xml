@@ -29,7 +29,6 @@
     <Failed language="sr-Latn">Nije uspelo</Failed>
     <Table language="sr-Latn">Tabela</Table>
     <Index language="sr-Latn">Indeks</Index>
-    <View language="sr-Latn">Prikaz</View>
     <Master_Table language="sr-Latn">Gospodar tabele</Master_Table>
     <Sort language="sr-Latn">Sortiranje</Sort>
     <Asc language="sr-Latn">Rastućem</Asc>
@@ -93,6 +92,5 @@
     <Converter language="sr-Latn">Konvertor</Converter>
     <HTML_to_CSV language="sr-Latn">HTML za CSV</HTML_to_CSV>
     <Developer language="sr-Latn">Za programere</Developer>
-    <Stack_Trace language="sr-Latn">Praćenje steka</Stack_Trace>
   </Language>
 </root>

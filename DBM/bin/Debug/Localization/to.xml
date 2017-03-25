@@ -29,7 +29,6 @@
     <Failed language="to">Ne 'ikai lava</Failed>
     <Table language="to">Tepile</Table>
     <Index language="to">Fakahokohoko fakamotu'alea</Index>
-    <View language="to">Vakai</View>
     <Master_Table language="to">Tepile 'a e 'Eiki</Master_Table>
     <Sort language="to">Fakahokohoko</Sort>
     <Asc language="to">Ko e 'ohake 'o</Asc>
@@ -93,6 +92,5 @@
     <Converter language="to">'Ene fakaului</Converter>
     <HTML_to_CSV language="to">HTML ki he CSV</HTML_to_CSV>
     <Developer language="to">Tokotaha fa'u</Developer>
-    <Stack_Trace language="to">Ta 'o e fokotu'unga</Stack_Trace>
   </Language>
 </root>

@@ -29,7 +29,6 @@
     <Failed language="lv">Neizdevās</Failed>
     <Table language="lv">Tabula</Table>
     <Index language="lv">Indekss</Index>
-    <View language="lv">Skats</View>
     <Master_Table language="lv">Vispārējās tabulas</Master_Table>
     <Sort language="lv">Kārtot</Sort>
     <Asc language="lv">Augošā secībā</Asc>
@@ -93,6 +92,5 @@
     <Converter language="lv">Konvertors</Converter>
     <HTML_to_CSV language="lv">HTML, lai CSV</HTML_to_CSV>
     <Developer language="lv">Attīstītājs</Developer>
-    <Stack_Trace language="lv">Steka trase</Stack_Trace>
   </Language>
 </root>

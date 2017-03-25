@@ -29,7 +29,6 @@
     <Failed language="yua">Ma' u páajchaj</Failed>
     <Table language="yua">Tabla</Table>
     <Index language="yua">Índice</Index>
-    <View language="yua">Wil</View>
     <Master_Table language="yua">Tabla maestra</Master_Table>
     <Sort language="yua">Bin yano'ob</Sort>
     <Asc language="yua">Ascendente</Asc>
@@ -93,6 +92,5 @@
     <Converter language="yua">Convertidor</Converter>
     <HTML_to_CSV language="yua">HTML u CSV</HTML_to_CSV>
     <Developer language="yua">Desarrollador</Developer>
-    <Stack_Trace language="yua">Seguimiento le ich kastláan</Stack_Trace>
   </Language>
 </root>

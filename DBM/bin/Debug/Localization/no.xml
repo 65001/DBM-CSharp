@@ -29,7 +29,6 @@
     <Failed language="no">Mislyktes</Failed>
     <Table language="no">Tabell</Table>
     <Index language="no">Indeks</Index>
-    <View language="no">Vis</View>
     <Master_Table language="no">Master tabell</Master_Table>
     <Sort language="no">Sorter</Sort>
     <Asc language="no">Stigende</Asc>
@@ -93,6 +92,5 @@
     <Converter language="no">Omformer</Converter>
     <HTML_to_CSV language="no">HTML til CSV</HTML_to_CSV>
     <Developer language="no">Utvikler</Developer>
-    <Stack_Trace language="no">Stakksporingen</Stack_Trace>
   </Language>
 </root>

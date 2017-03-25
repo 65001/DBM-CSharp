@@ -29,7 +29,6 @@
     <Failed language="de">Fehler beim</Failed>
     <Table language="de">Tabelle</Table>
     <Index language="de">Index</Index>
-    <View language="de">Blick</View>
     <Master_Table language="de">Master-Tabelle</Master_Table>
     <Sort language="de">Art</Sort>
     <Asc language="de">Aufsteigend</Asc>
@@ -93,6 +92,5 @@
     <Converter language="de">Konverter</Converter>
     <HTML_to_CSV language="de">HTML, CSV</HTML_to_CSV>
     <Developer language="de">Entwickler</Developer>
-    <Stack_Trace language="de">Stack-Trace</Stack_Trace>
   </Language>
 </root>

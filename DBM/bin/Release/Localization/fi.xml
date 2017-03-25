@@ -29,7 +29,6 @@
     <Failed language="fi">Epäonnistui</Failed>
     <Table language="fi">Taulukko</Table>
     <Index language="fi">Indeksi</Index>
-    <View language="fi">Näkymä</View>
     <Master_Table language="fi">Päätaulukon</Master_Table>
     <Sort language="fi">Lajittele</Sort>
     <Asc language="fi">Nouseva</Asc>
@@ -93,6 +92,5 @@
     <Converter language="fi">Muunnin</Converter>
     <HTML_to_CSV language="fi">HTML CSV</HTML_to_CSV>
     <Developer language="fi">Kehittäjä</Developer>
-    <Stack_Trace language="fi">Pinon jäljitys</Stack_Trace>
   </Language>
 </root>

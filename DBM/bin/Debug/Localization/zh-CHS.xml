@@ -29,7 +29,6 @@
     <Failed language="zh-CHS">失败</Failed>
     <Table language="zh-CHS">表</Table>
     <Index language="zh-CHS">索引</Index>
-    <View language="zh-CHS">视图</View>
     <Master_Table language="zh-CHS">主表</Master_Table>
     <Sort language="zh-CHS">排序</Sort>
     <Asc language="zh-CHS">升序</Asc>
@@ -93,6 +92,5 @@
     <Converter language="zh-CHS">转换器</Converter>
     <HTML_to_CSV language="zh-CHS">HTML 到 CSV</HTML_to_CSV>
     <Developer language="zh-CHS">开发人员</Developer>
-    <Stack_Trace language="zh-CHS">堆栈跟踪</Stack_Trace>
   </Language>
 </root>

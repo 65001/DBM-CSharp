@@ -29,7 +29,6 @@
     <Failed language="vi">Thất bại</Failed>
     <Table language="vi">Bàn</Table>
     <Index language="vi">Chỉ số</Index>
-    <View language="vi">Xem</View>
     <Master_Table language="vi">Bảng Master</Master_Table>
     <Sort language="vi">Sắp xếp</Sort>
     <Asc language="vi">Tăng dần</Asc>
@@ -93,6 +92,5 @@
     <Converter language="vi">Chuyển đổi</Converter>
     <HTML_to_CSV language="vi">HTML để CSV</HTML_to_CSV>
     <Developer language="vi">Nhà phát triển</Developer>
-    <Stack_Trace language="vi">Theo dõi stack</Stack_Trace>
   </Language>
 </root>

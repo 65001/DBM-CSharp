@@ -29,7 +29,6 @@
     <Failed language="bs-Latn">Nije uspjelo</Failed>
     <Table language="bs-Latn">Tablica</Table>
     <Index language="bs-Latn">Indeks</Index>
-    <View language="bs-Latn">Prikaz</View>
     <Master_Table language="bs-Latn">Master tablice</Master_Table>
     <Sort language="bs-Latn">Sortiraj</Sort>
     <Asc language="bs-Latn">Uzlazno</Asc>
@@ -93,6 +92,5 @@
     <Converter language="bs-Latn">Pretvarač</Converter>
     <HTML_to_CSV language="bs-Latn">HTML u CSV</HTML_to_CSV>
     <Developer language="bs-Latn">Autor</Developer>
-    <Stack_Trace language="bs-Latn">Stog praćenje</Stack_Trace>
   </Language>
 </root>

@@ -29,7 +29,6 @@
     <Failed language="fr">A échoué</Failed>
     <Table language="fr">Tableau</Table>
     <Index language="fr">Index</Index>
-    <View language="fr">Vue</View>
     <Master_Table language="fr">Tableau de maître</Master_Table>
     <Sort language="fr">Tri</Sort>
     <Asc language="fr">Ordre croissant</Asc>
@@ -93,6 +92,5 @@
     <Converter language="fr">Convertisseur</Converter>
     <HTML_to_CSV language="fr">HTML au format CSV</HTML_to_CSV>
     <Developer language="fr">Développeur</Developer>
-    <Stack_Trace language="fr">Trace de la pile</Stack_Trace>
   </Language>
 </root>

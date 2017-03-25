@@ -29,7 +29,6 @@
     <Failed language="uk">Не вдалося</Failed>
     <Table language="uk">Таблиця</Table>
     <Index language="uk">Індекс</Index>
-    <View language="uk">Подання</View>
     <Master_Table language="uk">Майстри стіл</Master_Table>
     <Sort language="uk">Сортування</Sort>
     <Asc language="uk">За зростанням</Asc>
@@ -93,6 +92,5 @@
     <Converter language="uk">Конвертор валют</Converter>
     <HTML_to_CSV language="uk">HTML в CSV</HTML_to_CSV>
     <Developer language="uk">Розробник</Developer>
-    <Stack_Trace language="uk">Трасування стека</Stack_Trace>
   </Language>
 </root>

@@ -29,7 +29,6 @@
     <Failed language="et">Nurjus</Failed>
     <Table language="et">Tabel</Table>
     <Index language="et">Indeks</Index>
-    <View language="et">Vaade</View>
     <Master_Table language="et">Kapten tabel</Master_Table>
     <Sort language="et">Sortimine</Sort>
     <Asc language="et">Tõusvas järjestuses</Asc>
@@ -93,6 +92,5 @@
     <Converter language="et">Converter</Converter>
     <HTML_to_CSV language="et">HTML, CSV</HTML_to_CSV>
     <Developer language="et">Arendaja</Developer>
-    <Stack_Trace language="et">Stack Trace</Stack_Trace>
   </Language>
 </root>

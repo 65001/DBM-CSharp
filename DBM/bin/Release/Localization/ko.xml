@@ -29,7 +29,6 @@
     <Failed language="ko">실패</Failed>
     <Table language="ko">테이블</Table>
     <Index language="ko">인덱스</Index>
-    <View language="ko">보기</View>
     <Master_Table language="ko">마스터 테이블</Master_Table>
     <Sort language="ko">정렬</Sort>
     <Asc language="ko">오름차순</Asc>
@@ -93,6 +92,5 @@
     <Converter language="ko">컨버터</Converter>
     <HTML_to_CSV language="ko">CSV로 HTML</HTML_to_CSV>
     <Developer language="ko">개발자</Developer>
-    <Stack_Trace language="ko">스택 추적</Stack_Trace>
   </Language>
 </root>

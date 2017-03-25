@@ -29,7 +29,6 @@
     <Failed language="ca">Ha fallat</Failed>
     <Table language="ca">Taula</Table>
     <Index language="ca">Índex</Index>
-    <View language="ca">Veure</View>
     <Master_Table language="ca">Taula de Màster</Master_Table>
     <Sort language="ca">Mena</Sort>
     <Asc language="ca">Ascendent</Asc>
@@ -93,6 +92,5 @@
     <Converter language="ca">Convertidor</Converter>
     <HTML_to_CSV language="ca">HTML a CSV</HTML_to_CSV>
     <Developer language="ca">Desenvolupador</Developer>
-    <Stack_Trace language="ca">Rastreig de pila</Stack_Trace>
   </Language>
 </root>

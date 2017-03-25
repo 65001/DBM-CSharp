@@ -29,7 +29,6 @@
     <Failed language="pt">Falhou</Failed>
     <Table language="pt">Tabela</Table>
     <Index language="pt">Índice</Index>
-    <View language="pt">Modo de exibição</View>
     <Master_Table language="pt">Tabela mestre</Master_Table>
     <Sort language="pt">Tipo</Sort>
     <Asc language="pt">Ascendente</Asc>
@@ -93,6 +92,5 @@
     <Converter language="pt">Conversor</Converter>
     <HTML_to_CSV language="pt">HTML para CSV</HTML_to_CSV>
     <Developer language="pt">Desenvolvedor</Developer>
-    <Stack_Trace language="pt">Rastreamento de pilha</Stack_Trace>
   </Language>
 </root>

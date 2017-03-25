@@ -29,7 +29,6 @@
     <Failed language="lt">Nepavyko</Failed>
     <Table language="lt">Lentelė</Table>
     <Index language="lt">Indeksas</Index>
-    <View language="lt">Rodyti</View>
     <Master_Table language="lt">Pagrindinis stalas</Master_Table>
     <Sort language="lt">Rūšiuoti</Sort>
     <Asc language="lt">Didėjimo tvarka</Asc>
@@ -93,6 +92,5 @@
     <Converter language="lt">Konverteris</Converter>
     <HTML_to_CSV language="lt">HTML į CSV</HTML_to_CSV>
     <Developer language="lt">Kūrėjas</Developer>
-    <Stack_Trace language="lt">Dėklo stebėjimas</Stack_Trace>
   </Language>
 </root>

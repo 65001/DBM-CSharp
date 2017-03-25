@@ -29,7 +29,6 @@
     <Failed language="zh-CHT">失敗</Failed>
     <Table language="zh-CHT">表</Table>
     <Index language="zh-CHT">索引</Index>
-    <View language="zh-CHT">視圖</View>
     <Master_Table language="zh-CHT">主表</Master_Table>
     <Sort language="zh-CHT">排序</Sort>
     <Asc language="zh-CHT">昇冪</Asc>
@@ -93,6 +92,5 @@
     <Converter language="zh-CHT">轉換器</Converter>
     <HTML_to_CSV language="zh-CHT">HTML 到 CSV</HTML_to_CSV>
     <Developer language="zh-CHT">開發人員</Developer>
-    <Stack_Trace language="zh-CHT">堆疊追蹤</Stack_Trace>
   </Language>
 </root>

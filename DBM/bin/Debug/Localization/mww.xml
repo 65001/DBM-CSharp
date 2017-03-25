@@ -29,7 +29,6 @@
     <Failed language="mww">Ua tsis tau tejyam</Failed>
     <Table language="mww">Cov lus</Table>
     <Index language="mww">Index</Index>
-    <View language="mww">Saib</View>
     <Master_Table language="mww">Siv cov lus</Master_Table>
     <Sort language="mww">Tsi</Sort>
     <Asc language="mww">Ascending</Asc>
@@ -93,6 +92,5 @@
     <Converter language="mww">Converter</Converter>
     <HTML_to_CSV language="mww">HTML rau CSV</HTML_to_CSV>
     <Developer language="mww">Tsim tawm</Developer>
-    <Stack_Trace language="mww">Pawg ib txoj lw</Stack_Trace>
   </Language>
 </root>
