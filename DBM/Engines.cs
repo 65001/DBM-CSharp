@@ -29,7 +29,7 @@ namespace DBM
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
 			Console.WriteLine( _DB_ShortName.ToArray() );
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Command()");
+            Utilities.AddtoStackTrace( "Engines.Command()");
 			if (RunParser == false)
 			{
 				EnginesModes EngineMode = Engine_Type(Database);
@@ -49,13 +49,13 @@ namespace DBM
 
 		public static void Parser()  //TODO: Implement Parser
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Parser()");
+            Utilities.AddtoStackTrace( "Engines.Parser()");
 		}
 
 		public static Primitive Query(string DataBase, string SQL, string ListView, bool FetchRecords, string UserName, string Explanation) //Expand
 		{
 			Stopwatch QueryTime = Stopwatch.StartNew();
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Query()");
+            Utilities.AddtoStackTrace( "Engines.Query()");
 			TransactionRecord(UserName, DataBase, SQL, "Query", Explanation);
 			Primitive QueryResults = LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
 
@@ -67,20 +67,20 @@ namespace DBM
 
 		public static void Emulator() //TODO Implement Emulator atleast for sqlite for DBM
 		{
-			//Attempts to emulate some if not all commands of a database engine by aliasing it to SQL
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Emulator()");
+            //Attempts to emulate some if not all commands of a database engine by aliasing it to SQL
+            Utilities.AddtoStackTrace( "Engines.Emulator()");
 		}
 
 		public static void TransactionRecord(string UserName, string DataBase, string SQL, string Type, string Reason) //TODO Transactions 
 		{
-			//This method should only run when the correct global Paramters are rig//Current Storage only supports SQLite
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.TransactionRecord()");
+            //This method should only run when the correct global Paramters are rig//Current Storage only supports SQLite
+            Utilities.AddtoStackTrace( "Engines.TransactionRecord()");
 		}
 
 		public static string Load_DB(EnginesModes Mode, Primitive Data) //Tasked with connecting to a Database and adding the DB Connection Name to a list.
 		{
-			//MAKE SURE The CurrentMode is always currently changed.
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.Load_DB()");
+            //MAKE SURE The CurrentMode is always currently changed.
+            Utilities.AddtoStackTrace( "Engines.Load_DB()");
 			switch (Mode)
 			{
 				case EnginesModes.MySQL:  //TODO
@@ -121,7 +121,7 @@ namespace DBM
 
 		public static void GetSchema(string Database)
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.GetSchema()");
+            Utilities.AddtoStackTrace( "Engines.GetSchema()");
 			if (string.IsNullOrEmpty(Database))//Prevents Prevents Application from querying a nonexistent db 
 			{ 
 				return; 
@@ -150,7 +150,7 @@ namespace DBM
 
 		public static void GetColumnsofTable(string Database, string Table)
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.GetSchemaofTable()");
+            Utilities.AddtoStackTrace( "Engines.GetSchemaofTable()");
 
 			if (string.IsNullOrEmpty(Database) || string.IsNullOrEmpty(Table)) //Prevents calls to nonexistent tables or Databases
 			{
@@ -197,7 +197,7 @@ namespace DBM
 			{
 				GQ_CMD = null;
 				GQ_CMD = "SELECT * FROM " + CurrentTable + " ";
-				LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.GenerateQuery()");
+                Utilities.AddtoStackTrace( "Engines.GenerateQuery()");
 				if (Search)
 				{
 					GQ_CMD += GenerateSearch(SearchBy,SearchText,InvertSearch,StrictSearch);
@@ -257,7 +257,7 @@ namespace DBM
 
 		public static void CreateStatisticsPage(string Table) //TODO
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Engines.CreateStatisticsPage()");
+            Utilities.AddtoStackTrace( "Engines.CreateStatisticsPage()");
 		}
 
 		static EnginesModes Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database 

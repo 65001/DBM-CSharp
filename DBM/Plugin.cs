@@ -13,7 +13,7 @@ namespace DBM
 	{
 		public static void FindAll()
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Plugin.FindAll()");
+			AddtoStackTrace( "Plugin.FindAll()");
 			Primitive Plugin_Files = SBFile.GetFiles(GlobalStatic.PluginPath);
 			LDList.Clear(GlobalStatic.List_Mod_Path);LDList.Clear(GlobalStatic.List_Mod_Name);
 			for (int i = 1; i <= SBArray.GetItemCount(Plugin_Files); i++)
@@ -27,7 +27,7 @@ namespace DBM
 		}
 		public static string[] AutoRunFile(string URI) //IMPLEMENT 
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Plugin. AutoRunFile()");
+			AddtoStackTrace( "Plugin. AutoRunFile()");
 				return Utilities.ReadFile(URI);
 		}
 		public static void AutoRun(string[] ListOfPluginsToExecute) //Implement
@@ -37,13 +37,13 @@ namespace DBM
 				Console.WriteLine(ListOfPluginsToExecute[i]);
 			}
 		//	GraphicsWindow.ShowMessage("Currently not supported!", "");
-		LDList.Add(GlobalStatic.List_Stack_Trace, "Plugin.AutoRun()");
+		AddtoStackTrace( "Plugin.AutoRun()");
 		}
 
 
 		public static void Menu(string URI) //IMPLEMENT 
 		{
-		LDList.Add(GlobalStatic.List_Stack_Trace, "Plugin.Menu)");
+		AddtoStackTrace( "Plugin.Menu)");
 			Console.WriteLine("External Menu from {0} and it exists? {1}",URI,LDFile.Exists(URI));
 			if (LDFile.Exists(URI) == true) 
 			{

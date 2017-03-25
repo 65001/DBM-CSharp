@@ -15,8 +15,8 @@ namespace DBM
 	{
 		public static void LoadSettings(bool RestoreSettings)
 		{
-			//GlobalStatic.SettingsPath = "C:\\Users\\Abhishek\\Documents\\Proggraming\\SB\\Projects\\DB Manager\\Assets\\setting.txt"; //@Dev 
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Settings.LoadSettings()");
+            //GlobalStatic.SettingsPath = "C:\\Users\\Abhishek\\Documents\\Proggraming\\SB\\Projects\\DB Manager\\Assets\\setting.txt"; //@Dev 
+            Utilities.AddtoStackTrace( "Settings.LoadSettings()");
             if (RestoreSettings == false)
 			{
 				GlobalStatic.Settings = SBFile.ReadContents(GlobalStatic.SettingsPath);
@@ -90,7 +90,7 @@ namespace DBM
 
 		public static void SaveSettings()
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Settings.SaveSettings()");
+            Utilities.AddtoStackTrace( "Settings.SaveSettings()");
 			if (GlobalStatic.Settings.EqualTo(SBFile.ReadContents(GlobalStatic.SettingsPath)) == false)
 			{
 				string status = SBFile.WriteContents(GlobalStatic.SettingsPath, GlobalStatic.Settings);
@@ -103,8 +103,8 @@ namespace DBM
 		}
 
 		public static void Paths(string AssetPath,string PluginPath,string LocalizationFolder,string AutoRunPluginPath,string Localization_LanguageCodes_Path,string LogCSVPath,string AutoRunPluginMessage)
-		{ 
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Settings.Paths()");
+		{
+            Utilities.AddtoStackTrace( "Settings.Paths()");
 			if (LDFile.Exists(AssetPath) == false || LDFile.Exists(PluginPath) == false || LDFile.Exists(LocalizationFolder) == false) //Creates Folders if one is missing
 			{
 				Directory.CreateDirectory(AssetPath);
@@ -127,7 +127,7 @@ namespace DBM
 
 		public static void IniateDatabases()
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Settings.IniateDatabases()");
+            Utilities.AddtoStackTrace( "Settings.IniateDatabases()");
 			GlobalStatic.LogDB = LDDataBase.ConnectSQLite(GlobalStatic.LogDBpath);
 			GlobalStatic.TransactionDB = LDDataBase.ConnectSQLite(GlobalStatic.TransactionDBPath);
 

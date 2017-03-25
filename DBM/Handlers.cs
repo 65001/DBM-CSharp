@@ -13,8 +13,8 @@ namespace DBM
 
 		public static void Menu(string Item) //Handles Main Menu
 		{
-        
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Handlers.Menu(" + Item + ")");
+
+            Utilities.AddtoStackTrace( "Handlers.Menu(" + Item + ")");
 
 			//Switch and Enum cannot be used because values can change
 			//File Menu Items
@@ -168,7 +168,8 @@ namespace DBM
 			{
 				GlobalStatic.DebugMode = true;
 				Console.WriteLine("Debug Mode turned on due to current action.");
-				LDList.Print(GlobalStatic.List_Stack_Trace);
+                //TODO Print Utilities.StackTrace
+				//LDList.Print(GlobalStatic.List_Stack_Trace);
 			}
 			else if (Item == Utilities.Localization["Close TW"])
 			{

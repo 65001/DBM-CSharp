@@ -38,7 +38,8 @@ namespace DBM
 		public static void Main()
 		{
 			GlobalStatic.StackTrace.Add("UI.Main()");
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Main()");
+			Utilities.AddtoStackTrace( "UI.Main()");
+
 			Primitive[] Startime2 = new Primitive[10];
 			Startime2[0] = Clock.ElapsedMilliseconds;
 
@@ -72,7 +73,7 @@ namespace DBM
 
 		public static void Startup()
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Startup()");
+			Utilities.AddtoStackTrace( "UI.Startup()");
 			Settings.LoadSettings(GlobalStatic.RestoreSettings); //Load Application Settings from text file
 
 			Settings.Paths
@@ -120,7 +121,7 @@ namespace DBM
 
 		public static void StartupGUI()
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.StartupGUI()");
+            Utilities.AddtoStackTrace( "UI.StartupGUI()");
 			GraphicsWindow.Clear(); GraphicsWindow.Hide(); GraphicsWindow.Show();
 			LDScrollBars.Add(GlobalStatic.Listview_Width + 200, GlobalStatic.Listview_Height);
 			LDGraphicsWindow.State = 2;
@@ -130,7 +131,7 @@ namespace DBM
 
 		public static void PreMainMenu() //Defines Buttons
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.PreMainMenu()");
+			Utilities.AddtoStackTrace( "UI.PreMainMenu()");
 			GlobalStatic.DefaultFontSize = GraphicsWindow.FontSize;
             
 			//Main
@@ -189,8 +190,8 @@ namespace DBM
 
 		public static void MainMenu()
 		{
-	
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.MainMenu()");
+
+            Utilities.AddtoStackTrace( "UI.MainMenu()");
 			LDGraphicsWindow.ExitButtonMode(GraphicsWindow.Title, "Enabled");
 			GraphicsWindow.CanResize = true;
 			GlobalStatic.CheckList[Utilities.Localization["Toggle Debug"]] = GlobalStatic.DebugMode;
@@ -238,7 +239,7 @@ namespace DBM
 
 		public static string GetPath(int EngineMode)
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.GetPath()");
+            Utilities.AddtoStackTrace( "UI.GetPath()");
 			if (Program.ArgumentCount == 1 && GlobalStatic.LoadedFile == false)
 			{ GlobalStatic.LoadedFile = true; return Program.GetArgument(1); }
 			{
@@ -254,7 +255,7 @@ namespace DBM
 
 		public static void HideDisplayResults() 
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.HideDisplayResults()");
+            Utilities.AddtoStackTrace( "UI.HideDisplayResults()");
 			string Default_Brush = GraphicsWindow.BrushColor;
 			GraphicsWindow.BrushColor = "WHITE";
 			GraphicsWindow.FillRectangle(GlobalStatic.UIx - 5, 45, 320, 350);
@@ -267,7 +268,7 @@ namespace DBM
 
 		public static void ShowDisplayResults()
 		{
-		LDList.Add(GlobalStatic.List_Stack_Trace, "UI.ShowDisplayResults()");
+            Utilities.AddtoStackTrace( "UI.ShowDisplayResults()");
 			GraphicsWindow.DrawRectangle(GlobalStatic.UIx, 50, 310, 240);
 			GraphicsWindow.FontSize = 15;
 			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 52, Utilities.Localization["Display Settings"]);
@@ -284,8 +285,8 @@ namespace DBM
 		}
 
 		public static void DisplayResults()
-		{ 
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.DisplayResults()");
+		{
+            Utilities.AddtoStackTrace( "UI.DisplayResults()");
 			LDGraphicsWindow.Width = Desktop.Width;
 			LDGraphicsWindow.Height = Desktop.Height;
 			GraphicsWindow.Left = 0;
@@ -370,8 +371,8 @@ namespace DBM
 		}
 
 		public static void Title()
-		{ 
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Title()");
+		{
+            Utilities.AddtoStackTrace( "UI.Title()");
 			string TimeRef;
 			SetTitle = GlobalStatic.Title + " " + Engines.Database_Shortname + "(" + Engines.CurrentDatabase + ") :" + Handlers.TypeofSorts[GlobalStatic.SortBy] + ":" + Engines.CurrentTable;
 			TimeRef = LDList.GetAt(GlobalStatic.List_Time_Refer, LDList.Count(GlobalStatic.List_Time_Refer)); //Time of Last Query or Command
@@ -397,17 +398,17 @@ namespace DBM
 
 		public static void SettingsUI()//TODO: Make the Settings UI
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.SettingsUI()");
+            Utilities.AddtoStackTrace( "UI.SettingsUI()");
 		}
 
 		public static void CreateTableUI()//TODO: Create the "Create Table UI"
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.CreateTableUI()");
+            Utilities.AddtoStackTrace( "UI.CreateTableUI()");
 		}
 
 		public static void CreateTableHandler()//TODO Create the Create Table Handler
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.CreateTableHandler()");
+            Utilities.AddtoStackTrace( "UI.CreateTableHandler()");
 		}
 	}
 
@@ -416,7 +417,7 @@ namespace DBM
 		public static void LogEvents() //Error Handler
 		{
 			LogMessage(LDEvents.LastError, Utilities.Localization["System"]);
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogEvents()");
+            Utilities.AddtoStackTrace( "Events.LogEvents()");
 		}
 		public static void LogMessagePopUp(Primitive MessagePopUp,Primitive MessageLog, Primitive Title, Primitive Type)
 		{
@@ -426,8 +427,8 @@ namespace DBM
 
 		public static void LogMessage(Primitive Message, string Type) //Logs Message to all applicable locations
 		{
-            LogMessage(Message,Type, LDList.GetAt(GlobalStatic.List_Stack_Trace, LDList.Count(GlobalStatic.List_Stack_Trace)));
-            LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogMessage");
+            LogMessage(Message,Type, Utilities.StackTrace[Utilities.StackTrace.Count- 1] );
+            Utilities.AddtoStackTrace( "Events.LogMessage");
 		}
 
         static void LogMessage(Primitive Message, string Type, string Caller)
@@ -443,7 +444,7 @@ namespace DBM
             }
             else if (Type.Equals("PopUp") == true)
             {
-                GraphicsWindow.ShowMessage(Message, LDList.GetAt(GlobalStatic.List_Stack_Trace, LDList.Count(GlobalStatic.List_Stack_Trace) + "REVERT!"));
+                GraphicsWindow.ShowMessage(Message, Caller + "REVERT!");
             }
             else
             {
@@ -460,7 +461,7 @@ namespace DBM
                 }
             }
             GlobalStatic.LogNumber = GlobalStatic.LogNumber + 1;
-            LDList.Add(GlobalStatic.List_Stack_Trace, "Events.LogMessage()");
+            Utilities.AddtoStackTrace( "Events.LogMessage()");
 
             SBFile.AppendContents(GlobalStatic.LogCSVpath, GlobalStatic.LogNumber + "," + Clock.Date + "," + Clock.Time + "," + "\"" + LDText.Replace(GlobalStatic.Username, "\"", "\"" + "\"") + "\"" + "," + GlobalStatic.ProductID + "," + GlobalStatic.VersionID + "," + "\"" + LDText.Replace(Type, "\"", "\"" + "\"") + "\"" + "," + "\"" + LDText.Replace(Message, "\"", "\"" + "\"") + "\"");
             string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'";
@@ -471,7 +472,7 @@ namespace DBM
 
 		public static void Closing()
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.Closing()");
+            Utilities.AddtoStackTrace( "Events.Closing()");
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
 			{ LogMessage("Program Closing", Utilities.Localization["Application"]); } //Localize
 			else 
@@ -490,19 +491,19 @@ namespace DBM
 		public async static void BC()
 		{
 			await Task.Run(() => { Handlers.Buttons(Controls.LastClickedButton); });
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.BC()");
+            Utilities.AddtoStackTrace( "Events.BC()");
 		}
 
 		public async static void MC() //Menu Clicked Event Handler
 		{
 			await Task.Run(() => { Handlers.Menu(LDControls.LastMenuItem); });
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.MC()");
+            Utilities.AddtoStackTrace( "Events.MC()");
 		}
 
 		public async static void CB()
 		{
 			await Task.WhenAll(Task.Run(() => { Handlers.ComboBox(LDControls.LastComboBox, LDControls.LastComboBoxIndex); }));
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Events.CB()");
+            Utilities.AddtoStackTrace( "Events.CB()");
 		}
 
 	}

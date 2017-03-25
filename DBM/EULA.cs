@@ -9,7 +9,7 @@ namespace DBM
 
 		public static void UI(string URI,decimal Ping)
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "EULA.UI()");
+            Utilities.AddtoStackTrace( "EULA.UI()");
 			GraphicsWindow.Show();
 			GraphicsWindow.Left = Desktop.Width / 3;
 			GraphicsWindow.Top = Desktop.Height / 4;
@@ -42,7 +42,7 @@ namespace DBM
 
 		public static void Handler()
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "EULA.Handler()");
+            Utilities.AddtoStackTrace( "EULA.Handler()");
 			string lastButton = Controls.LastClickedButton;
 			GlobalStatic.Settings["EULA_By"] = GlobalStatic.UserName;
 			GlobalStatic.Settings["EULA_Version"] = GlobalStatic.EULA_Newest_Version;

@@ -69,7 +69,6 @@ namespace DBM
 			public const string List_UI_Name = "UI_Name";
 			public const string List_UI_Handler = "UI_Handler";
 			public const string List_UI_Action = "UI_Action";
-			public const string List_Stack_Trace = "Stack_Trace";
 			public const string List_Stack_Time = "Stack_Time";
 			public const string List_SCHEMA_Table = "SCHEMA_TABLE";
 			public const string List_SCHEMA_View = "SCHEMA_VIEW";

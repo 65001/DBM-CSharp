@@ -12,15 +12,21 @@ namespace DBM
 	public class Utilities
 	{
         static Dictionary<string, string> _Localization = new Dictionary<string, string>();
+        static List<string> _StackTrace = new List<string>();
         
         public static IReadOnlyDictionary<string, string> Localization
         {
             get { return _Localization; }
         }
 
+        public static IReadOnlyList<string> StackTrace
+        {
+            get { return _StackTrace.AsReadOnly(); }
+        }
+
         public static void LocalizationXML(string XMLPath)  // Loads localized text from XML File
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Utilities.LocalizationXML()");
+			AddtoStackTrace( "Utilities.LocalizationXML()");
 			string XMLDoc = LDxml.Open(XMLPath);
 			if (LDFile.Exists(XMLPath))
 			{
@@ -65,10 +71,16 @@ namespace DBM
 
 		static string XMLAttributes() { return "1=" + LDText.Replace(LDText.Replace(LDxml.Attributes, "=", "\\="), ";", "\\;") + ";2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
 
+        public static void AddtoStackTrace(string Data)
+        {
+            _StackTrace.Add(Data);
+        }
+
+
 		// Reads File and Parses it
 		public static string[] ReadFile(string URI) //Reads a file and ignores certain types of data
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Utilities.ReadFile()");
+			AddtoStackTrace( "Utilities.ReadFile()");
 			string List_File_Read = "File_Read";
 
 			if (System.IO.File.Exists(URI) == true)
@@ -102,7 +114,7 @@ namespace DBM
 
 		public static void Updater()  //TODO Update Functionality. Possibly make this a function?
 		{
-			LDList.Add(GlobalStatic.List_Stack_Trace, "Utilities.Updater()");
+			AddtoStackTrace( "Utilities.Updater()");
 		}
 
 		public static void AddMenuItem(string Caption,string Handler,string PreviousNode,string Action)
