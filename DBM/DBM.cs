@@ -8,6 +8,7 @@ using SBArray = Microsoft.SmallBasic.Library.Array;
 using SBFile = Microsoft.SmallBasic.Library.File;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.IO;
 /*
 	Completed Items:
 		Settings ; EULA; Logs ;Main;
@@ -39,7 +40,7 @@ namespace DBM
 		{
 			GlobalStatic.StackTrace.Add("UI.Main()");
 			LDList.Add(GlobalStatic.List_Stack_Trace, "UI.Main()");
-
+            Console.WriteLine(GlobalStatic.Localization_LanguageCodes_Path);
 			Primitive[] Startime2 = new Primitive[10];
 			Startime2[0] = Clock.ElapsedMilliseconds;
 
@@ -92,7 +93,7 @@ namespace DBM
 			GlobalStatic.DefaultWidth = GraphicsWindow.Width;
 			GlobalStatic.DefaultHeight = GraphicsWindow.Height;
 
-			Utilities.LocalizationXML(GlobalStatic.LocalizationFolder + GlobalStatic.LanguageCode + ".xml");
+			Utilities.LocalizationXML(Path.Combine( GlobalStatic.LocalizationFolder , GlobalStatic.LanguageCode + ".xml"));
 			Events.LogMessage(GlobalStatic.LangList["PRGM Start"], GlobalStatic.LangList["Application"]);
 
 			if (Program.ArgumentCount == 1)

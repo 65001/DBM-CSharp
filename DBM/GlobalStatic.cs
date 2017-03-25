@@ -4,6 +4,7 @@
 using LitDev;
 using Microsoft.SmallBasic.Library;
 using System.Collections.Generic;
+using System.IO;
 namespace DBM
 {
 		public class GlobalStatic //List of Variables shared across everything through this class
@@ -26,19 +27,20 @@ namespace DBM
 
 			public static string UserName = LDFile.UserName;
 			//URI
-			public static string AssetPath = ProgramDirectory + "\\Assets\\";
-			public static string LocalizationFolder = ProgramDirectory + "\\Localization\\";
-			public static string Localization_LanguageCodes_Path = LocalizationFolder + "Lang\\";
-			public static string PluginPath = ProgramDirectory + "Plugin\\";
-			public static Primitive LogCSVpath = AssetPath + "Log.csv";
-			public static Primitive LogDBpath = AssetPath + "Log.db";
-			public static string TransactionDBPath = AssetPath + "Transactions.db";
-			public static string EULA_Text_File = AssetPath + "EULA.txt";
-			public static string SettingsPath = AssetPath + "setting.txt";
-			public static string AutoRunPluginPath = AssetPath + "Auto Run Plugin.txt";
-			public static string HelpPath = AssetPath + "Help Table.html";
-			public static string External_Menu_Items_Path = AssetPath + "Menu.txt";
-
+  
+			public static string AssetPath = Path.Combine( ProgramDirectory , "Assets");
+			public static string LocalizationFolder = Path.Combine( ProgramDirectory , "Localization");
+			public static string Localization_LanguageCodes_Path = Path.Combine(LocalizationFolder, "Lang");
+			public static string PluginPath = Path.Combine( ProgramDirectory ,"Plugin");
+			public static Primitive LogCSVpath = Path.Combine( AssetPath , "Log.csv");
+			public static Primitive LogDBpath = Path.Combine(AssetPath , "Log.db");
+			public static string TransactionDBPath = Path.Combine(AssetPath , "Transactions.db");
+			public static string EULA_Text_File = Path.Combine(AssetPath , "EULA.txt");
+			public static string SettingsPath = Path.Combine(AssetPath ,"setting.txt");
+			public static string AutoRunPluginPath = Path.Combine(AssetPath , "Auto Run Plugin.txt");
+			public static string HelpPath = Path.Combine(AssetPath ,"Help Table.html");
+			public static string External_Menu_Items_Path = Path.Combine(AssetPath , "Menu.txt");
+       
 			public const string Online_EULA_URI = "https://drive.google.com/uc?export=download&id=0B2v4xbFnpKvRNTFKckFKLVNNUDg";
 			public const string OnlineDB_Refrence_Location = "https://docs.google.com/uc?id=0B2v4xbFnpKvRVmNVODZ4bnppd3c&export=download";
 			//Settings Data
@@ -76,6 +78,7 @@ namespace DBM
 			public const string List_Schema_Index = " SCHEMA_INDEX";
 
 			public const string List_DB_Tracker = "DB_Tracking";
+
 			public const string List_Query_Time = "Query_Time";
 			public const string List_CMD_Time = "CMD_Time";
 			public const string List_Time_Refer = "Time_Ref";
