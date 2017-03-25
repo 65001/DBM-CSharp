@@ -92,5 +92,6 @@
     <Converter language="fa">مبدل</Converter>
     <HTML_to_CSV language="fa">HTML به CSV</HTML_to_CSV>
     <Developer language="fa">توسعه دهنده</Developer>
+    <Search_Settings language="fa">تنظیمات جستجو</Search_Settings>
   </Language>
 </root>

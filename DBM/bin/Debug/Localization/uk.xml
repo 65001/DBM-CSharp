@@ -92,5 +92,6 @@
     <Converter language="uk">Конвертор валют</Converter>
     <HTML_to_CSV language="uk">HTML в CSV</HTML_to_CSV>
     <Developer language="uk">Розробник</Developer>
+    <Search_Settings language="uk">Параметри пошуку</Search_Settings>
   </Language>
 </root>

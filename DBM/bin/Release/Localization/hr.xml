@@ -92,5 +92,6 @@
     <Converter language="hr">Pretvarač</Converter>
     <HTML_to_CSV language="hr">HTML u CSV</HTML_to_CSV>
     <Developer language="hr">Autor</Developer>
+    <Search_Settings language="hr">Postavke pretraživanja</Search_Settings>
   </Language>
 </root>

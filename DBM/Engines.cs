@@ -135,7 +135,7 @@ namespace DBM
 						LDList.Clear(GlobalStatic.List_SCHEMA_View);
 						LDList.Clear(GlobalStatic.List_Schema_Index);
 
-						Primitive Master_Schema_List = Query(Database, "SELECT tbl_name,name,type FROM sqlite_master UNION Select tbl_name,name,type From SQLite_Temp_Master;", null, true, GlobalStatic.LangList["App"], "SCHEMA");
+						Primitive Master_Schema_List = Query(Database, "SELECT tbl_name,name,type FROM sqlite_master UNION Select tbl_name,name,type From SQLite_Temp_Master;", null, true, Utilities.Localization["App"], "SCHEMA");
 						Primitive Master_Schema_Lists = "table=" + GlobalStatic.List_SCHEMA_Table + ";view=" + GlobalStatic.List_SCHEMA_View + ";index=" + GlobalStatic.List_Schema_Index + ";";
 						for (int i = 1; i <= SBArray.GetItemCount(Master_Schema_List); i++)
 						{
@@ -162,7 +162,7 @@ namespace DBM
 			{
 				case EnginesModes.SQLITE:
 					LDList.Clear("SCHEMA");
-					Primitive LSchema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true, GlobalStatic.LangList["App"], GlobalStatic.LangList["SCHEMA-PRIVATE"]);
+					Primitive LSchema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA-PRIVATE"]);
 					for (int i = 1; i <= SBArray.GetItemCount(LSchema); i++)
 					{
 						LDList.Add("SCHEMA", LSchema[i]["name"]);
@@ -186,7 +186,7 @@ namespace DBM
 			}
 			else
 			{
-				Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", GlobalStatic.LangList["System"]);
+				Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
 			}
 		}
 

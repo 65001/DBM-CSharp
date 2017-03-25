@@ -92,5 +92,6 @@
     <Converter language="ko">컨버터</Converter>
     <HTML_to_CSV language="ko">CSV로 HTML</HTML_to_CSV>
     <Developer language="ko">개발자</Developer>
+    <Search_Settings language="ko">검색 설정</Search_Settings>
   </Language>
 </root>

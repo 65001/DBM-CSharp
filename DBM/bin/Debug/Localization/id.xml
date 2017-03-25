@@ -92,5 +92,6 @@
     <Converter language="id">Converter</Converter>
     <HTML_to_CSV language="id">HTML ke CSV</HTML_to_CSV>
     <Developer language="id">Pengembang</Developer>
+    <Search_Settings language="id">Setelan penelusuran</Search_Settings>
   </Language>
 </root>

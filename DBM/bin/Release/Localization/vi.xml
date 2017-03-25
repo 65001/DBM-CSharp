@@ -92,5 +92,6 @@
     <Converter language="vi">Chuyển đổi</Converter>
     <HTML_to_CSV language="vi">HTML để CSV</HTML_to_CSV>
     <Developer language="vi">Nhà phát triển</Developer>
+    <Search_Settings language="vi">Cài đặt tìm kiếm</Search_Settings>
   </Language>
 </root>

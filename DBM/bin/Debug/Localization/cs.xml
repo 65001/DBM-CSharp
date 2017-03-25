@@ -92,5 +92,6 @@
     <Converter language="cs">Převodník</Converter>
     <HTML_to_CSV language="cs">HTML a CSV</HTML_to_CSV>
     <Developer language="cs">Vývojář</Developer>
+    <Search_Settings language="cs">Nastavení hledání</Search_Settings>
   </Language>
 </root>

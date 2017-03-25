@@ -92,5 +92,6 @@
     <Converter language="sr-Cyrl">Конвертор</Converter>
     <HTML_to_CSV language="sr-Cyrl">ХТМЛ за ЦСВ</HTML_to_CSV>
     <Developer language="sr-Cyrl">За програмере</Developer>
+    <Search_Settings language="sr-Cyrl">Поставке за претраживање</Search_Settings>
   </Language>
 </root>

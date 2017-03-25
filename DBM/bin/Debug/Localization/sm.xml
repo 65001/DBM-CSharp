@@ -92,5 +92,6 @@
     <Converter language="sm">Ola</Converter>
     <HTML_to_CSV language="sm">HTML e CSV</HTML_to_CSV>
     <Developer language="sm">Fatu</Developer>
+    <Search_Settings language="sm">Faatulagaga o le sailiga</Search_Settings>
   </Language>
 </root>

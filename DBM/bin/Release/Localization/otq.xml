@@ -92,5 +92,6 @@
     <Converter language="otq">Convertidor</Converter>
     <HTML_to_CSV language="otq">HTML CSV</HTML_to_CSV>
     <Developer language="otq">Desarrollador</Developer>
+    <Search_Settings language="otq">Configuración nthoni</Search_Settings>
   </Language>
 </root>

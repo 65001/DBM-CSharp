@@ -92,5 +92,6 @@
     <Converter language="fr">Convertisseur</Converter>
     <HTML_to_CSV language="fr">HTML au format CSV</HTML_to_CSV>
     <Developer language="fr">Développeur</Developer>
+    <Search_Settings language="fr">Paramètres de recherche</Search_Settings>
   </Language>
 </root>

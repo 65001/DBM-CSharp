@@ -92,5 +92,6 @@
     <Converter language="ar">محول</Converter>
     <HTML_to_CSV language="ar">إتش تي أم ال إلى CSV</HTML_to_CSV>
     <Developer language="ar">المطور</Developer>
+    <Search_Settings language="ar">إعدادات البحث</Search_Settings>
   </Language>
 </root>

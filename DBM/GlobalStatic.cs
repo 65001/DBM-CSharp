@@ -56,7 +56,6 @@ namespace DBM
 			public static bool EULA_Acceptance;
 			public static string LanguageCode;
 			public static string EULA_Newest_Version;
-			public static Primitive LangList;
 
 			//Lists
 			public const string ExportT2 = "Export T2",ExportT1 = "Export T1";

@@ -92,5 +92,6 @@
     <Converter language="yua">Convertidor</Converter>
     <HTML_to_CSV language="yua">HTML u CSV</HTML_to_CSV>
     <Developer language="yua">Desarrollador</Developer>
+    <Search_Settings language="yua">Configuración xookilo'</Search_Settings>
   </Language>
 </root>

@@ -92,5 +92,6 @@
     <Converter language="mt">Konvertitur</Converter>
     <HTML_to_CSV language="mt">HTML biex CSV</HTML_to_CSV>
     <Developer language="mt">Iżviluppatur</Developer>
+    <Search_Settings language="mt">L-issettjar tat-tiftix</Search_Settings>
   </Language>
 </root>

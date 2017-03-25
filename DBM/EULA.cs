@@ -60,7 +60,7 @@ namespace DBM
 			{
 				GlobalStatic.Settings["EULA"] = false;
 				Settings.SaveSettings();
-				Events.LogMessage("EULA Declined", GlobalStatic.LangList["UI"]); //Localize
+				Events.LogMessage("EULA Declined", Utilities.Localization["UI"]); //Localize
 				Program.End();
 			}
 

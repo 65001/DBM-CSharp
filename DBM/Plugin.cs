@@ -62,14 +62,14 @@ namespace DBM
 				//CNTS.GetLength();
 				/*for (int i = 1; i <= SBArray.GetItemCount(CNTS); i++)
 				{
-					if ( (CNTS[i][6] == 1 || CNTS[i][6] == string.Empty) && GlobalStatic.LangList[CNTS[i][2]] != string.Empty )
+					if ( (CNTS[i][6] == 1 || CNTS[i][6] == string.Empty) && Utilities.Localization[CNTS[i][2]] != string.Empty )
 					{
-						Primitive Temp = CNTS[i]; Temp = GlobalStatic.LangList[GlobalStatic.LangList[i][2]];
+						Primitive Temp = CNTS[i]; Temp = Utilities.Localization[Utilities.Localization[i][2]];
 						CNTS[i] = Temp; 
 					}
-					if (!string.IsNullOrEmpty(GlobalStatic.LangList[CNTS[i][4]]))
+					if (!string.IsNullOrEmpty(Utilities.Localization[CNTS[i][4]]))
 					{
-						CNTS[i][4] = GlobalStatic.LangList[CNTS[i][4]];
+						CNTS[i][4] = Utilities.Localization[CNTS[i][4]];
 					}
 
 				}

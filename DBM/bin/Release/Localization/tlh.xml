@@ -92,5 +92,6 @@
     <Converter language="tlh">converter</Converter>
     <HTML_to_CSV language="tlh">HTML csv</HTML_to_CSV>
     <Developer language="tlh">developer</Developer>
+    <Search_Settings language="tlh">search Settings</Search_Settings>
   </Language>
 </root>

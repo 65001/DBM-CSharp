@@ -92,5 +92,6 @@
     <Converter language="et">Converter</Converter>
     <HTML_to_CSV language="et">HTML, CSV</HTML_to_CSV>
     <Developer language="et">Arendaja</Developer>
+    <Search_Settings language="et">Muuda keel</Search_Settings>
   </Language>
 </root>

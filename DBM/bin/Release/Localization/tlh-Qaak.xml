@@ -92,5 +92,6 @@
     <Converter language="tlh-Qaak"></Converter>
     <HTML_to_CSV language="tlh-Qaak"> </HTML_to_CSV>
     <Developer language="tlh-Qaak"></Developer>
+    <Search_Settings language="tlh-Qaak"> </Search_Settings>
   </Language>
 </root>

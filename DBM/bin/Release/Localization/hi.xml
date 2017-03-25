@@ -92,5 +92,6 @@
     <Converter language="hi">कनवर्टर</Converter>
     <HTML_to_CSV language="hi">CSV के लिए HTML</HTML_to_CSV>
     <Developer language="hi">डेवलपर</Developer>
+    <Search_Settings language="hi">खोज सेटिंग्स</Search_Settings>
   </Language>
 </root>

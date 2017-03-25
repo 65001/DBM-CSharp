@@ -92,5 +92,6 @@
     <Converter language="af">Converter</Converter>
     <HTML_to_CSV language="af">HTML na CSV</HTML_to_CSV>
     <Developer language="af">Ontwikkelaar</Developer>
+    <Search_Settings language="af">Soektog-instellings</Search_Settings>
   </Language>
 </root>

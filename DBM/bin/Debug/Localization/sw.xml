@@ -92,5 +92,6 @@
     <Converter language="sw">Kigeuzi</Converter>
     <HTML_to_CSV language="sw">HTML ili CSV</HTML_to_CSV>
     <Developer language="sw">Mwendelezaji</Developer>
+    <Search_Settings language="sw">Mipangilio ya utafutaji</Search_Settings>
   </Language>
 </root>

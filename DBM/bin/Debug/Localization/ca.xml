@@ -92,5 +92,6 @@
     <Converter language="ca">Convertidor</Converter>
     <HTML_to_CSV language="ca">HTML a CSV</HTML_to_CSV>
     <Developer language="ca">Desenvolupador</Developer>
+    <Search_Settings language="ca">Configuració de la cerca</Search_Settings>
   </Language>
 </root>

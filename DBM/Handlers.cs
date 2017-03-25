@@ -9,7 +9,7 @@ namespace DBM
 	public static class Handlers
 	{
 		public static Primitive CurrentSchema;static string CorrectList;
-		public static Primitive TypeofSorts ="1="+ GlobalStatic.LangList["Table"] +";2=" + GlobalStatic.LangList["View"] +"3="+ GlobalStatic.LangList["Index"] + "4="+ GlobalStatic.LangList["Master Table"]+";";
+		public static Primitive TypeofSorts ="1="+ Utilities.Localization["Table"] +";2=" + Utilities.Localization["View"] +"3="+ Utilities.Localization["Index"] + "4="+ Utilities.Localization["Master Table"]+";";
 
 		public static void Menu(string Item) //Handles Main Menu
 		{
@@ -18,7 +18,7 @@ namespace DBM
 
 			//Switch and Enum cannot be used because values can change
 			//File Menu Items
-			if (Item == GlobalStatic.LangList["New"])
+			if (Item == Utilities.Localization["New"])
 			{
 				string Path = LDDialogs.SaveFile(GlobalStatic.Extensions, GlobalStatic.LastFolder);
 				if (!string.IsNullOrWhiteSpace(Path))
@@ -31,13 +31,13 @@ namespace DBM
 					LDDataBase.ConnectSQLite(Path);
 					Engines.Load_DB(Engines.EnginesModes.SQLITE, Path);
 
-					Events.LogMessage("Created DB :" + Path, GlobalStatic.LangList["Application"]);
+					Events.LogMessage("Created DB :" + Path, Utilities.Localization["Application"]);
 					UI.PreMainMenu();
 					UI.MainMenu();
 					LDDataBase.Connection = null; 
 				}
 			}
-			else if (Item == GlobalStatic.LangList["Open"])
+			else if (Item == Utilities.Localization["Open"])
 			{
 				GlobalStatic.ListView = null; 
 				GlobalStatic.Dataview = null;
@@ -47,12 +47,12 @@ namespace DBM
 				UI.PreMainMenu();
 				UI.MainMenu();
 			}
-			else if (Item == GlobalStatic.LangList["Define New Table"]) //TODO
+			else if (Item == Utilities.Localization["Define New Table"]) //TODO
 			{
 
 			}
 			//Main
-			else if (Item == GlobalStatic.LangList["View"] || Item == GlobalStatic.LangList["View"] + " ")
+			else if (Item == Utilities.Localization["View"] || Item == Utilities.Localization["View"] + " ")
 			{
 				Controls.HideControl(GlobalStatic.Dataview);
 				if (GlobalStatic.ListView == null)
@@ -68,36 +68,36 @@ namespace DBM
 				}
 				if (!string.IsNullOrEmpty(Engines.CurrentTable))
 				{
-					Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Engines.CurrentTable + ";", GlobalStatic.ListView, false, GlobalStatic.LangList["App"], GlobalStatic.LangList["View Function"]);
+					Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Engines.CurrentTable + ";", GlobalStatic.ListView, false, Utilities.Localization["App"], Utilities.Localization["View Function"]);
 				}
 			}
-			else if (Item == GlobalStatic.LangList["Save"])
+			else if (Item == Utilities.Localization["Save"])
 			{
 				if (!string.IsNullOrEmpty(Engines.CurrentDatabase) && !string.IsNullOrEmpty(GlobalStatic.Dataview))
 				{
 					string SaveStatus = LDDataBase.SaveTable(Engines.CurrentDatabase, GlobalStatic.Dataview);
-					Events.LogMessage("The save was : " + SaveStatus, GlobalStatic.LangList["UI"]);
+					Events.LogMessage("The save was : " + SaveStatus, Utilities.Localization["UI"]);
 					GraphicsWindow.ShowMessage("The save was : " + SaveStatus, "Save Status");
 				}
 				else
 				{
-					Events.LogMessage(GlobalStatic.LangList["Dataview Error"], GlobalStatic.LangList["UI"]);
-					GraphicsWindow.ShowMessage(GlobalStatic.LangList["Error"] + ":" + GlobalStatic.LangList["Dataview Error"], "Save Error");
+					Events.LogMessage(Utilities.Localization["Dataview Error"], Utilities.Localization["UI"]);
+					GraphicsWindow.ShowMessage(Utilities.Localization["Error"] + ":" + Utilities.Localization["Dataview Error"], "Save Error");
 				}
 			}
-			else if (Item == GlobalStatic.LangList["Edit"])
+			else if (Item == Utilities.Localization["Edit"])
 			{
 				if (!string.IsNullOrEmpty(Engines.CurrentDatabase))
 				{
 					switch (GlobalStatic.SortBy)
 					{
 						case 2:
-							Events.LogMessage(GlobalStatic.LangList["Views Read Only"], GlobalStatic.LangList["UI"]);
-							GraphicsWindow.ShowMessage(GlobalStatic.LangList["Error"] + ":" + GlobalStatic.LangList["Views Read Only"], GlobalStatic.LangList["Access Denied"]);
+							Events.LogMessage(Utilities.Localization["Views Read Only"], Utilities.Localization["UI"]);
+							GraphicsWindow.ShowMessage(Utilities.Localization["Error"] + ":" + Utilities.Localization["Views Read Only"], Utilities.Localization["Access Denied"]);
 							break;
 						case 4:
-							Events.LogMessage(GlobalStatic.LangList["Master Table Protected"], GlobalStatic.LangList["UI"]);
-							GraphicsWindow.ShowMessage(GlobalStatic.LangList["Error"] + ":" + GlobalStatic.LangList["Master Table Protected"], GlobalStatic.LangList["Access Denied"]);
+							Events.LogMessage(Utilities.Localization["Master Table Protected"], Utilities.Localization["UI"]);
+							GraphicsWindow.ShowMessage(Utilities.Localization["Error"] + ":" + Utilities.Localization["Master Table Protected"], Utilities.Localization["Access Denied"]);
 							break;
 						default:
 							Controls.HideControl(GlobalStatic.ListView);
@@ -117,64 +117,64 @@ namespace DBM
 				}
 				else
 				{
-					Events.LogMessage(GlobalStatic.LangList["Error No DB"], GlobalStatic.LangList["UI"]);
-					GraphicsWindow.ShowMessage(GlobalStatic.LangList["Error No DB"], GlobalStatic.LangList["UI"]);
+					Events.LogMessage(Utilities.Localization["Error No DB"], Utilities.Localization["UI"]);
+					GraphicsWindow.ShowMessage(Utilities.Localization["Error No DB"], Utilities.Localization["UI"]);
 				}
 			}
 			//Import
-			else if (Item == GlobalStatic.LangList["CSV"]) //TODO
+			else if (Item == Utilities.Localization["CSV"]) //TODO
 			{ } 
-			else if (Item == GlobalStatic.LangList["SQL"]) //TODO
+			else if (Item == Utilities.Localization["SQL"]) //TODO
 			{ }
-			else if (Item == GlobalStatic.LangList["SQL"]) //TODO
+			else if (Item == Utilities.Localization["SQL"]) //TODO
 			{ }
-			else if (Item == GlobalStatic.LangList["HTML to CSV"]) //Plugin //TODO
+			else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
 			{ }
 			//Export
-			else if (Item == GlobalStatic.LangList["PXML"] + " ") //TODO
+			else if (Item == Utilities.Localization["PXML"] + " ") //TODO
 			{ }
-			else if (Item == GlobalStatic.LangList["HTML"] + " ") //TODO
+			else if (Item == Utilities.Localization["HTML"] + " ") //TODO
 			{ }
-			//else if (Item == GlobalStatic.LangList["Export UI"]) //TODO
+			//else if (Item == Utilities.Localization["Export UI"]) //TODO
 			//{ }
-			else if (Item == GlobalStatic.LangList["SQL"] + " ") //TODO
+			else if (Item == Utilities.Localization["SQL"] + " ") //TODO
 			{ } 
-			else if (Item == GlobalStatic.LangList["CSV"] + " ") //TODO
+			else if (Item == Utilities.Localization["CSV"] + " ") //TODO
 			{ }
 			//Settings
-			else if (Item == GlobalStatic.LangList["About"]) //TODO
+			else if (Item == Utilities.Localization["About"]) //TODO
 			{ }
-			else if (Item == GlobalStatic.LangList["Show Help"]) //TODO
+			else if (Item == Utilities.Localization["Show Help"]) //TODO
 			{ }
-			else if (Item == GlobalStatic.LangList["Settings Editor"]) //TODO
+			else if (Item == Utilities.Localization["Settings Editor"]) //TODO
 			{ }
-			else if (Item == GlobalStatic.LangList["Toggle Debug"])
+			else if (Item == Utilities.Localization["Toggle Debug"])
 			{
 				GlobalStatic.DebugMode = !GlobalStatic.DebugMode;
 			}
-			else if (Item == GlobalStatic.LangList["Toggle Transaction Log"]) 
+			else if (Item == Utilities.Localization["Toggle Transaction Log"]) 
 			{
 				GlobalStatic.Transactions = !GlobalStatic.Transactions;
 			}
-			else if (Item == GlobalStatic.LangList["Refresh Schema"]) //TODO
+			else if (Item == Utilities.Localization["Refresh Schema"]) //TODO
 			{
 				Engines.GetSchema(Engines.CurrentDatabase);
 				Engines.GetColumnsofTable(Engines.CurrentDatabase,Engines.CurrentTable);
 			}
-			else if (Item == GlobalStatic.LangList["Check for Updates"]) //TODO
+			else if (Item == Utilities.Localization["Check for Updates"]) //TODO
 			{ }
 			//Developer
-			else if (Item == GlobalStatic.LangList["Stack Trace"]) 
+			else if (Item == Utilities.Localization["Stack Trace"]) 
 			{
 				GlobalStatic.DebugMode = true;
 				Console.WriteLine("Debug Mode turned on due to current action.");
 				LDList.Print(GlobalStatic.List_Stack_Trace);
 			}
-			else if (Item == GlobalStatic.LangList["Close TW"])
+			else if (Item == Utilities.Localization["Close TW"])
 			{
 				TextWindow.Hide();
 			}
-			else if (Item == GlobalStatic.LangList["Create Statistics Page"]) //TODO
+			else if (Item == Utilities.Localization["Create Statistics Page"]) //TODO
 			{ }
 			//Plugins
 
@@ -214,11 +214,11 @@ namespace DBM
 			}
 			else if (LastButton == GlobalStatic.Buttons["CustomQuery"])
 			{
-				Engines.Query(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.Username, GlobalStatic.LangList["User Requested"]);
+				Engines.Query(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.Username, Utilities.Localization["User Requested"]);
 			}
 			else if (LastButton == GlobalStatic.Buttons["Command"]) //Custom Command
 			{
-				Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.UserName, GlobalStatic.LangList["User Requested"], false);
+				Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.UserName, Utilities.Localization["User Requested"], false);
 			}
 			else
 			{
@@ -271,7 +271,7 @@ namespace DBM
 			LDControls.ComboBoxContent(GlobalStatic.ComboBox["ColumnList"], Engines.Schema);
 			LDControls.ComboBoxContent(GlobalStatic.ComboBox["Search"], Engines.Schema);
 			UI.Title();
-			Menu(GlobalStatic.LangList["View"]); //Tasks
+			Menu(Utilities.Localization["View"]); //Tasks
 		}
 
 		static void TableComboBox(int Index)
@@ -316,8 +316,8 @@ namespace DBM
 			}
 			else
 			{
-				string Message = "In the current database no " + GlobalStatic.LangList[TypeofSorts[GlobalStatic.SortBy]] + "s can be found.";
-				Events.LogMessagePopUp(Message, Message,GlobalStatic.LangList["Error"], GlobalStatic.LangList["UI"]);
+				string Message = "In the current database no " + Utilities.Localization[TypeofSorts[GlobalStatic.SortBy]] + "s can be found.";
+				Events.LogMessagePopUp(Message, Message,Utilities.Localization["Error"], Utilities.Localization["UI"]);
 			}
 		
 		}

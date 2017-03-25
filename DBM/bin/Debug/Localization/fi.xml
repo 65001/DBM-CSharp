@@ -92,5 +92,6 @@
     <Converter language="fi">Muunnin</Converter>
     <HTML_to_CSV language="fi">HTML CSV</HTML_to_CSV>
     <Developer language="fi">Kehittäjä</Developer>
+    <Search_Settings language="fi">Haun asetukset</Search_Settings>
   </Language>
 </root>

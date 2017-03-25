@@ -92,5 +92,6 @@
     <Converter language="yue">轉換器</Converter>
     <HTML_to_CSV language="yue">HTML 到 CSV</HTML_to_CSV>
     <Developer language="yue">開發人員</Developer>
+    <Search_Settings language="yue">搜索設置</Search_Settings>
   </Language>
 </root>

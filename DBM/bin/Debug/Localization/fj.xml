@@ -92,5 +92,6 @@
     <Converter language="fj">Dauvuki</Converter>
     <HTML_to_CSV language="fj">HTML me CSV</HTML_to_CSV>
     <Developer language="fj">Developer</Developer>
+    <Search_Settings language="fj">Ituvaki ni vakasaqaqara</Search_Settings>
   </Language>
 </root>

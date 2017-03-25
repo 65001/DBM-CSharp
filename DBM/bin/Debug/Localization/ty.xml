@@ -92,5 +92,6 @@
     <Converter language="ty">Converter</Converter>
     <HTML_to_CSV language="ty">Te CSV HTML</HTML_to_CSV>
     <Developer language="ty">Developer</Developer>
+    <Search_Settings language="ty">A imi i te mau ohipa</Search_Settings>
   </Language>
 </root>

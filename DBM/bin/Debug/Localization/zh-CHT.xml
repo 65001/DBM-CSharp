@@ -92,5 +92,6 @@
     <Converter language="zh-CHT">轉換器</Converter>
     <HTML_to_CSV language="zh-CHT">HTML 到 CSV</HTML_to_CSV>
     <Developer language="zh-CHT">開發人員</Developer>
+    <Search_Settings language="zh-CHT">搜索設置</Search_Settings>
   </Language>
 </root>

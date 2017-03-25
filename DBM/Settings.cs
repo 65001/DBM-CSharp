@@ -96,8 +96,8 @@ namespace DBM
 				string status = SBFile.WriteContents(GlobalStatic.SettingsPath, GlobalStatic.Settings);
 				if (status == "FAILED") //Settings could not be saved for some reason!
 				{
-					Events.LogMessage(GlobalStatic.LangList["Failed Save Settings"], GlobalStatic.LangList["UI"]); 
-					GraphicsWindow.ShowMessage(GlobalStatic.LangList["Failed Save Settings"], GlobalStatic.LangList["Error"]);
+					Events.LogMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["UI"]); 
+					GraphicsWindow.ShowMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["Error"]);
 				}
 			}
 		}

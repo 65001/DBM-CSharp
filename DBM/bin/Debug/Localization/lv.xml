@@ -92,5 +92,6 @@
     <Converter language="lv">Konvertors</Converter>
     <HTML_to_CSV language="lv">HTML, lai CSV</HTML_to_CSV>
     <Developer language="lv">Attīstītājs</Developer>
+    <Search_Settings language="lv">Meklēšanas iestatījumus</Search_Settings>
   </Language>
 </root>

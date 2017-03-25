@@ -92,5 +92,6 @@
     <Converter language="fil">Ng conversion</Converter>
     <HTML_to_CSV language="fil">HTML na CSV</HTML_to_CSV>
     <Developer language="fil">Developer</Developer>
+    <Search_Settings language="fil">Mga setting sa paghahanap</Search_Settings>
   </Language>
 </root>

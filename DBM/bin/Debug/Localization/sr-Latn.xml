@@ -92,5 +92,6 @@
     <Converter language="sr-Latn">Konvertor</Converter>
     <HTML_to_CSV language="sr-Latn">HTML za CSV</HTML_to_CSV>
     <Developer language="sr-Latn">Za programere</Developer>
+    <Search_Settings language="sr-Latn">Postavke za pretraživanje</Search_Settings>
   </Language>
 </root>

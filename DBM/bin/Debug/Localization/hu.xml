@@ -92,5 +92,6 @@
     <Converter language="hu">Átalakító</Converter>
     <HTML_to_CSV language="hu">HTML, CSV</HTML_to_CSV>
     <Developer language="hu">Fejlesztő</Developer>
+    <Search_Settings language="hu">Keresési beállítások</Search_Settings>
   </Language>
 </root>

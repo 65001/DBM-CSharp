@@ -92,5 +92,6 @@
     <Converter language="ja">コンバーター</Converter>
     <HTML_to_CSV language="ja">Csv ファイルに HTML</HTML_to_CSV>
     <Developer language="ja">開発者</Developer>
+    <Search_Settings language="ja">検索の設定</Search_Settings>
   </Language>
 </root>

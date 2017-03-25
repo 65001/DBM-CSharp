@@ -92,5 +92,6 @@
     <Converter language="el">Μετατροπέας</Converter>
     <HTML_to_CSV language="el">HTML σε μορφή CSV</HTML_to_CSV>
     <Developer language="el">Προγραμματιστής</Developer>
+    <Search_Settings language="el">Ρυθμίσεις αναζήτησης</Search_Settings>
   </Language>
 </root>

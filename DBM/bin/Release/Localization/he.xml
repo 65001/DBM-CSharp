@@ -92,5 +92,6 @@
     <Converter language="he">ממיר</Converter>
     <HTML_to_CSV language="he">HTML כדי CSV</HTML_to_CSV>
     <Developer language="he">מפתח</Developer>
+    <Search_Settings language="he">הגדרות חיפוש</Search_Settings>
   </Language>
 </root>

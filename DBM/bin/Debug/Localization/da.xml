@@ -8,7 +8,7 @@
     <View language="da">Se</View>
     <Save language="da">Gem</Save>
     <Import language="da">Import</Import>
-    <CSV language="da">CSV</CSV>
+    <CSV language="da">NS;</CSV>
     <SQL language="da">SQL</SQL>
     <Export language="da">Eksportere</Export>
     <HTML language="da">HTML</HTML>
@@ -92,5 +92,6 @@
     <Converter language="da">Konverter</Converter>
     <HTML_to_CSV language="da">HTML til CSV</HTML_to_CSV>
     <Developer language="da">Udvikleren</Developer>
+    <Search_Settings language="da">Søgeindstillinger</Search_Settings>
   </Language>
 </root>

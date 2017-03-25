@@ -92,5 +92,6 @@
     <Converter language="mww">Converter</Converter>
     <HTML_to_CSV language="mww">HTML rau CSV</HTML_to_CSV>
     <Developer language="mww">Tsim tawm</Developer>
+    <Search_Settings language="mww">Chaw nrhiav</Search_Settings>
   </Language>
 </root>

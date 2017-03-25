@@ -92,5 +92,6 @@
     <Converter language="ms">Penukar</Converter>
     <HTML_to_CSV language="ms">HTML ke CSV</HTML_to_CSV>
     <Developer language="ms">Pemaju</Developer>
+    <Search_Settings language="ms">Seting Cari</Search_Settings>
   </Language>
 </root>

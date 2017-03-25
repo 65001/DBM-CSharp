@@ -92,5 +92,6 @@
     <Converter language="bs-Latn">Pretvarač</Converter>
     <HTML_to_CSV language="bs-Latn">HTML u CSV</HTML_to_CSV>
     <Developer language="bs-Latn">Autor</Developer>
+    <Search_Settings language="bs-Latn">Postavke pretraživanja</Search_Settings>
   </Language>
 </root>
