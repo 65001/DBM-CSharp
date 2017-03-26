@@ -2,6 +2,8 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 using SBArray = Microsoft.SmallBasic.Library.Array;
@@ -34,14 +36,12 @@ namespace DBM
 	{
 		private static string SetTitle;
 		private static Stopwatch StartUpStopWatch = Stopwatch.StartNew();
+        private static Dictionary<string, string> Buttons = new Dictionary<string, string>(); //TODO Implement this
+
 
 		public static void Main()
 		{
-			GlobalStatic.StackTrace.Add("UI.Main()");
 			Utilities.AddtoStackTrace( "UI.Main()");
-
-			Primitive[] Startime2 = new Primitive[10];
-			Startime2[0] = Clock.ElapsedMilliseconds;
 
 			LDUtilities.ShowErrors = false;
 			LDUtilities.ShowFileErrors = false;
@@ -53,9 +53,8 @@ namespace DBM
 			LDEvents.Error += Events.LogEvents;
 
 			GlobalStatic.Ping = LDNetwork.Ping(GlobalStatic.IP_Ping_Address, 500);
-			if (GlobalStatic.Ping != -1)
+			if (GlobalStatic.Ping != -1) //Represents Network Working
 			{
-				Startime2[1] = Clock.ElapsedMilliseconds;
 				LDNetwork.DownloadFile(GlobalStatic.EULA_Text_File, GlobalStatic.Online_EULA_URI);
 			}
 
@@ -67,7 +66,6 @@ namespace DBM
 					GlobalStatic.EULA_Newest_Version = GlobalStatic.EULA_Newest_Version + Text.GetSubText(EulaVersion, i, 1);
 				}
 			}
-
 			Startup();
 		}
 
@@ -296,7 +294,7 @@ namespace DBM
 			GraphicsWindow.DrawRectangle(GlobalStatic.UIx, 50, 310, 340);
 			GraphicsWindow.FontSize = 15;
 			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 52, Utilities.Localization["Display Settings"]);
-			GraphicsWindow.DrawText(GlobalStatic.UIx+ 20, 73, Utilities.Localization["Sort by"]);
+			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 73, Utilities.Localization["Sort by"]);
 			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 150, Utilities.Localization["Search Settings"]);
 			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 180, Utilities.Localization["Search in"]);
 			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210, Utilities.Localization["Search"] + ":");
@@ -460,23 +458,26 @@ namespace DBM
                     }
                 }
             }
-            GlobalStatic.LogNumber = GlobalStatic.LogNumber + 1;
+            GlobalStatic.LogNumber++;
             Utilities.AddtoStackTrace( "Events.LogMessage()");
 
             SBFile.AppendContents(GlobalStatic.LogCSVpath, GlobalStatic.LogNumber + "," + Clock.Date + "," + Clock.Time + "," + "\"" + LDText.Replace(GlobalStatic.Username, "\"", "\"" + "\"") + "\"" + "," + GlobalStatic.ProductID + "," + GlobalStatic.VersionID + "," + "\"" + LDText.Replace(Type, "\"", "\"" + "\"") + "\"" + "," + "\"" + LDText.Replace(Message, "\"", "\"" + "\"") + "\"");
             string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'";
             LogCMD = LogCMD + GlobalStatic.Username + "','" + GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');";
             Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"], false);
-
         }
 
 		public static void Closing()
 		{
             Utilities.AddtoStackTrace( "Events.Closing()");
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
-			{ LogMessage("Program Closing", Utilities.Localization["Application"]); } //Localize
+			{
+                LogMessage("Program Closing", Utilities.Localization["Application"]); //Localize
+            } 
 			else 
-			{ LogMessage("Program Closing - Closing : " + Engines.Database_Shortname , Utilities.Localization["Application"]); } //Localize
+			{
+                LogMessage("Program Closing - Closing : " + Engines.Database_Shortname , Utilities.Localization["Application"]); //Localize
+            }
 
 			if (LDWindows.CurrentID == 0)
 			{ Program.End(); }

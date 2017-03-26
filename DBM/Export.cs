@@ -3,18 +3,19 @@
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 // Created : 3/14/2017 5:55 PM 2017314 17:55:44
 using System;
+using Microsoft.SmallBasic.Library;
 namespace DBM
 {
 	public class Export
 	{
-		public static string[,] Generate2DArray(string Database, string SQL)
+		public static Primitive Generate2DArray(string Database, string SQL)
 		{
-			return null;
-		}
+			return Engines.Query(Database, SQL, null, true, GlobalStatic.UserName, ""); //TODO
+        }
 
-		public static string[,] Generate2DArrayFromTable(string Database, string Table)
+		public static Primitive Generate2DArrayFromTable(string Database, string Table)
 		{
-			return null;
+            return Generate2DArray(Database, "Select * From " + Table);
 		}
 
 		public static void CSV(string[,] Data) //TODO

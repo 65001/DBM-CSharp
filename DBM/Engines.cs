@@ -17,18 +17,18 @@ namespace DBM
 		public static string CurrentDatabase { get; private set; }
 		public static string CurrentTable { get; private set; }
 		public static string Database_Shortname { get; private set; }
-		public static Primitive Schema { get; private set; }
 		public static string GQ_CMD { get; private set; } //Auto Generated Query SQL Statements
 
 		static List<string> _DB_Path = new List<string>();
 		static List<string> _DB_Name = new List<string>();
 		static List<string> _DB_ShortName = new List<string>();
 		static List<EnginesModes> _DB_Engine = new List<EnginesModes>();
-		
 
+        public static Primitive Schema { get; private set; }
+        static List<string> _Schema = new List<string>();
+		
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
-			Console.WriteLine( _DB_ShortName.ToArray() );
             Utilities.AddtoStackTrace( "Engines.Command()");
 			if (RunParser == false)
 			{
@@ -42,7 +42,6 @@ namespace DBM
 						return 0;
 				}
 			}
-
 			Console.WriteLine("Database type currently not supported!");
 			return 0;
 		}
@@ -84,16 +83,16 @@ namespace DBM
 			switch (Mode)
 			{
 				case EnginesModes.MySQL:  //TODO
-					return null;
+					return LDDataBase.ConnectMySQL(Data["Server"],Data["User"],Data["Password"],Data["Database"]);
 				case EnginesModes.ODBC:  //TODO
-					return null;
+					return LDDataBase.ConnectOdbc(Data["Driver"],Data["Server"],Data["Port"],Data["User"],Data["Password"],Data["Option"],Data["Database"]);
 				case EnginesModes.OLEDB: //TODO
-					return null;
+                    return LDDataBase.ConnectOleDb(Data["Provider"], Data["Server"], Data["Database"]);
 				case EnginesModes.SQLITE: 
 					if (LDFile.Exists(Data) == true)
 					{
 						int Index = _DB_Path.IndexOf(Data);
-                        if (Index == 0) //New Database
+                        if (Index == -1) //New Database
 						{
 							string Database = LDDataBase.ConnectSQLite(Data);
 							AddToList(Data, Database, LDFile.GetFile(Data), EnginesModes.SQLITE);
@@ -113,7 +112,7 @@ namespace DBM
 					}
 					return null;
 				case EnginesModes.SQLSERVER: //SQLServer
-					return null;
+					return LDDataBase.ConnectSqlServer(Data["Server"],Data["Database"]);
 				default:
 					return "Incorrect Paramters";
 			}
@@ -154,20 +153,20 @@ namespace DBM
 
 			if (string.IsNullOrEmpty(Database) || string.IsNullOrEmpty(Table)) //Prevents calls to nonexistent tables or Databases
 			{
-				return;
+                throw new ArgumentException("The Database and Table Paramaters cannot be null or empty");
 			}
 
 			EnginesModes EngineMode = Engine_Type(Database);
 			switch (EngineMode)
 			{
 				case EnginesModes.SQLITE:
-					LDList.Clear("SCHEMA");
-					Primitive LSchema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
-					for (int i = 1; i <= SBArray.GetItemCount(LSchema); i++)
+                    _Schema.Clear();
+					Primitive QSchema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
+					for (int i = 1; i <= SBArray.GetItemCount(QSchema); i++)
 					{
-						LDList.Add("SCHEMA", LSchema[i]["name"]);
+                        _Schema.Add(QSchema[i]["name"]);
 					}
-					Schema = LDList.ToArray("SCHEMA");
+                    Schema = Utilities.toArray(_Schema);
 					break;
 			}
 		}
@@ -183,11 +182,9 @@ namespace DBM
 			{
 				CurrentTable = "\"" + Table + "\"";
 				LDList.Add(GlobalStatic.TrackDefaultTable, CurrentDatabase + "." + CurrentTable);
+                return;
 			}
-			else
-			{
-				Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
-			}
+			Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
 		}
 
 		public static void GenerateQuery(bool Search,bool Sort,bool Function,string SearchBy,string OrderBy,string SortOrder,bool StrictSearch,bool InvertSearch,string FunctionSelected,string FunctionColumn,string SearchText) 
@@ -195,7 +192,6 @@ namespace DBM
 			//Interface to private classes
 			if (!string.IsNullOrEmpty(CurrentTable))
 			{
-				GQ_CMD = null;
 				GQ_CMD = "SELECT * FROM " + CurrentTable + " ";
                 Utilities.AddtoStackTrace( "Engines.GenerateQuery()");
 				if (Search)
@@ -221,7 +217,9 @@ namespace DBM
 			string CMD;
 			CMD = "WHERE " + SearchColumn;
 			if (InvertSearch == true && StrictSearch == false)
-			{ CMD += " NOT"; }
+			{
+                CMD += " NOT";
+            }
 
 			if (StrictSearch == false)
 			{
@@ -244,15 +242,11 @@ namespace DBM
 
 		static string GenerateSort(string OrderBy,string ASCDESC) 
 		{
-			string CMD;
-			CMD = "ORDER BY \"" + OrderBy + "\" " + ASCDESC + ";";
-			return CMD;
+			return "ORDER BY \"" + OrderBy + "\" " + ASCDESC + ";";
 		}
 		static string GenerateFunction(string Function,string Column) 
 		{
-			string CMD;
-			CMD = "SELECT " + Function + "(\"" + Column + "\") FROM " + CurrentTable + " ";
-			return CMD;
+			return "SELECT " + Function + "(\"" + Column + "\") FROM " + CurrentTable + " ";
 		}
 
 		public static void CreateStatisticsPage(string Table) //TODO
@@ -263,7 +257,7 @@ namespace DBM
 		static EnginesModes Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database 
 		{
             int Index = _DB_Name.IndexOf(Database);
-			if (Index != 0)
+			if (Index != -1)
 			{
                 return _DB_Engine[Index];
 			}

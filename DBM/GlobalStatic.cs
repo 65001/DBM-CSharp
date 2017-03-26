@@ -83,7 +83,6 @@ namespace DBM
 			public const string List_ISO_Text = "ISO_Text";
 
             public static List<string> ISO_Text = new List<string>();
-            public static List<string> StackTrace = new List<string>();
             
 			public static string Dataview,ListView;
 			public static Primitive MenuList,CheckList,Buttons,ComboBox,TextBox,CheckBox,HideDisplayResults;
@@ -98,5 +97,4 @@ namespace DBM
 			public const string TransactionsSQL = "CREATE TABLE IF NOT EXISTS Transactions (ID INTEGER PRIMARY KEY,\"UTC DATE\" TEXT,\"UTC TIME\" TEXT,USER TEXT,PATH TEXT,DB TEXT,SNAME TEXT,SQL TEXT,Type TEXT,Reason TEXT);";
 			public const string LOGSQLVIEW = "CREATE VIEW IF NOT EXISTS \"LOCAL TIME\" AS SELECT ID,DATE,TIME,USER,PRODUCTID,PRODUCTVERSION,Type,Event From Log;CREATE VIEW IF NOT EXISTS \"UTC TIME\" AS Select ID,\"UTC DATE\",\"UTC TIME\",USER,ProductID,ProductVersion,Type,Event From Log;DROP VIEW IF EXISTS LOCAL_TIME;DROP VIEW IF EXISTS UTC_TIME;";
 	}
-
 }

@@ -19,6 +19,11 @@ namespace DBM
 		static string HeaderSQL;
 		static string HeaderWOType;
 
+        public static void CSV(string InputFilePath, string OutPutFilePath)
+        {
+            System.IO.File.WriteAllText(OutPutFilePath, CSV(InputFilePath));
+        }
+
 		public static string CSV(string FilePath) //TODO
 		{			
 			//TODO Make sure comment's are universal across SQL.Then use them to insert data such as how long it took to generate the SQL and how many rows were skipped if any
@@ -28,8 +33,7 @@ namespace DBM
                 return string.Empty;
 			}
 
-			Stopwatch Elappsed =	Stopwatch.StartNew();
-			Elappsed.Start();
+			Stopwatch Elappsed = Stopwatch.StartNew();
 			        
 			CSV_Length.Clear();
 			CSV_IsString.Clear();
@@ -58,6 +62,7 @@ namespace DBM
 				CSV_SQL = "BEGIN;\n" + HeaderSQL + CSV_SQL + "COMMIT;";
 				CSV_SQL = LDText.Replace(CSV_SQL, "'NULL'", "NULL");
 				CSV_SQL = LDText.Replace(CSV_SQL, "<<HEADERS>>", HeaderWOType);
+                LDFastArray.Remove(Data);
                 return CSV_SQL;
 			}
 			catch (Exception ex)
@@ -67,7 +72,8 @@ namespace DBM
 
 			//Drops The FastArray
 			LDFastArray.Remove(Data);
-            return string.Empty;            
+            return string.Empty;
+            
 		}
 
 		static string ArrayToSql(int Standard_Size,string TableName)

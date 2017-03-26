@@ -245,7 +245,7 @@ namespace DBM
 
 		static void DatabaseComboBox(int Index)
 		{
-			LDList.Add(GlobalStatic.List_DB_Tracker, Engines.DB_ShortName[Index]);
+			LDList.Add(GlobalStatic.List_DB_Tracker, Engines.DB_ShortName[Index-1]);
 			Engines.Load_DB(Engines.EnginesModes.SQLITE,Engines.DB_Path[Index-1]);
 			Engines.GetSchema(Engines.CurrentDatabase);
 			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
@@ -267,10 +267,12 @@ namespace DBM
 		}
 
 		static void SetComboBox()
-		{ 
-			LDControls.ComboBoxContent(GlobalStatic.ComboBox["Sort"], Engines.Schema);
-			LDControls.ComboBoxContent(GlobalStatic.ComboBox["ColumnList"], Engines.Schema);
-			LDControls.ComboBoxContent(GlobalStatic.ComboBox["Search"], Engines.Schema);
+		{
+            Primitive Schema = Engines.Schema;
+
+            LDControls.ComboBoxContent(GlobalStatic.ComboBox["Sort"], Schema);
+			LDControls.ComboBoxContent(GlobalStatic.ComboBox["ColumnList"], Schema);
+			LDControls.ComboBoxContent(GlobalStatic.ComboBox["Search"], Schema);
 			UI.Title();
 			Menu(Utilities.Localization["View"]); //Tasks
 		}
