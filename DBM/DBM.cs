@@ -217,7 +217,7 @@ namespace DBM
 			GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
 			GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox(LDList.ToArray(GlobalStatic.List_SCHEMA_Table), 100, 100);
 			GlobalStatic.ComboBox["Sorts"] = LDControls.AddComboBox(Sorts,100,100);
-			GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox(Utilities.toArray(Engines.DB_ShortName),100,100);
+			GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox(Utilities.ToArray(Engines.DB_ShortName),100,100);
 			Controls.Move(GlobalStatic.ComboBox["Sorts"], 970 + 185 + SortOffset, 5);
 			Controls.Move(GlobalStatic.ComboBox["Table"], 1075 + 185 + SortOffset,5);
 			Controls.Move(GlobalStatic.ComboBox["Database"], 1050 + SortOffset, 5);

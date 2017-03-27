@@ -34,8 +34,9 @@ namespace DBM
 					Events.LogMessage("Created DB :" + Path, Utilities.Localization["Application"]);
 					UI.PreMainMenu();
 					UI.MainMenu();
-					LDDataBase.Connection = null; 
+					LDDataBase.Connection = null;
 				}
+                return;
 			}
 			else if (Item == Utilities.Localization["Open"])
 			{
@@ -46,8 +47,9 @@ namespace DBM
 				Settings.SaveSettings();
 				UI.PreMainMenu();
 				UI.MainMenu();
+                return;
 			}
-			else if (Item == Utilities.Localization["Define New Table"]) //TODO
+			else if (Item == Utilities.Localization["Define New Table"]) //TODO ADD UI
 			{
 
 			}
@@ -70,6 +72,7 @@ namespace DBM
 				{
 					Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Engines.CurrentTable + ";", GlobalStatic.ListView, false, Utilities.Localization["App"], Utilities.Localization["View Function"]);
 				}
+                return;
 			}
 			else if (Item == Utilities.Localization["Save"])
 			{
@@ -84,6 +87,7 @@ namespace DBM
 					Events.LogMessage(Utilities.Localization["Dataview Error"], Utilities.Localization["UI"]);
 					GraphicsWindow.ShowMessage(Utilities.Localization["Error"] + ":" + Utilities.Localization["Dataview Error"], "Save Error");
 				}
+                return;
 			}
 			else if (Item == Utilities.Localization["Edit"])
 			{
@@ -120,10 +124,14 @@ namespace DBM
 					Events.LogMessage(Utilities.Localization["Error No DB"], Utilities.Localization["UI"]);
 					GraphicsWindow.ShowMessage(Utilities.Localization["Error No DB"], Utilities.Localization["UI"]);
 				}
+                return;
 			}
 			//Import
 			else if (Item == Utilities.Localization["CSV"]) //TODO
-			{ } 
+			{
+               string SQL = Import.CSV(LDDialogs.OpenFile("csv", null));
+               Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, "", false); //TODO
+            } 
 			else if (Item == Utilities.Localization["SQL"]) //TODO
 			{ }
 			else if (Item == Utilities.Localization["SQL"]) //TODO
@@ -160,6 +168,7 @@ namespace DBM
 			{
 				Engines.GetSchema(Engines.CurrentDatabase);
 				Engines.GetColumnsofTable(Engines.CurrentDatabase,Engines.CurrentTable);
+                return;
 			}
 			else if (Item == Utilities.Localization["Check for Updates"]) //TODO
 			{ }
@@ -176,7 +185,9 @@ namespace DBM
 				TextWindow.Hide();
 			}
 			else if (Item == Utilities.Localization["Create Statistics Page"]) //TODO
-			{ }
+			{
+
+            }
 			//Plugins
 
 			else

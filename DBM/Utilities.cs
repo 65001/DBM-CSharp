@@ -127,7 +127,7 @@ namespace DBM
 		
 		}
 
-		public static Primitive toArray(List<string> List)
+		public static Primitive ToArray(List<string> List)
 		{
             Primitive _return =null;
             for (int i = 0; i < List.Count; i++)
@@ -137,7 +137,7 @@ namespace DBM
             return _return;
 		}
 
-        public static Primitive toArray(ReadOnlyCollection<string> List)
+        public static Primitive ToArray(ReadOnlyCollection<string> List)
         {
             Primitive _return = null;
             for (int i = 0; i < List.Count; i++)

@@ -78,7 +78,6 @@ namespace DBM
 
 		static string ArrayToSql(int Standard_Size,string TableName)
 		{
-			double double2;
 			StringBuilder CSV_SQL = new StringBuilder();
 
 			for (int i = 2; i <= LDFastArray.Size1(Data); i++)
@@ -102,7 +101,7 @@ namespace DBM
 						//Console.WriteLine("List Index {0} of {1} @ {2}", ii, CSV_IsString.Count,i);
 						if (CSV_IsString[(ii - 1)] == true)
 						{
-							if (double.TryParse(Temp, out double2) == true) //Tests a String to see if its a number
+							if (double.TryParse(Temp, out double double2) == true) //Tests a String to see if its a number
 							{
 								CSV_IsString[ii] = false;
 							}

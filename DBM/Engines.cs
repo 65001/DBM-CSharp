@@ -61,7 +61,6 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_Time_Refer, "Query");
 			LDList.Add(GlobalStatic.List_Query_Time, QueryTime.ElapsedMilliseconds.ToString());
 			return QueryResults;
-
 		}
 
 		public static void Emulator() //TODO Implement Emulator atleast for sqlite for DBM
@@ -76,47 +75,95 @@ namespace DBM
             Utilities.AddtoStackTrace( "Engines.TransactionRecord()");
 		}
 
-		public static string Load_DB(EnginesModes Mode, Primitive Data) //Tasked with connecting to a Database and adding the DB Connection Name to a list.
-		{
+        public static string Load_DB(EnginesModes Mode, Primitive Data) //Tasked with connecting to a Database and adding the DB Connection Name to a list.
+        {
             //MAKE SURE The CurrentMode is always currently changed.
-            Utilities.AddtoStackTrace( "Engines.Load_DB()");
-			switch (Mode)
+            Utilities.AddtoStackTrace("Engines.Load_DB()");
+            int Index = _DB_Path.IndexOf(Data);
+
+            if (Index != -1) //Database already exists as a connection so set the primary connection to that
+            {
+                string Database = _DB_Name[Index];
+                Database_Shortname = _DB_ShortName[Index];
+                CurrentDatabase = Database;
+                return Database;
+            }
+
+            //New Database creation code
+            switch (Mode)
 			{
 				case EnginesModes.MySQL:  //TODO
-					return LDDataBase.ConnectMySQL(Data["Server"],Data["User"],Data["Password"],Data["Database"]);
+                    CurrentDatabase = LDDataBase.ConnectMySQL(Data["Server"], Data["User"], Data["Password"], Data["Database"]);
+                    return CurrentDatabase;
 				case EnginesModes.ODBC:  //TODO
-					return LDDataBase.ConnectOdbc(Data["Driver"],Data["Server"],Data["Port"],Data["User"],Data["Password"],Data["Option"],Data["Database"]);
+                    CurrentDatabase = LDDataBase.ConnectOdbc(Data["Driver"], Data["Server"], Data["Port"], Data["User"], Data["Password"], Data["Option"], Data["Database"]);
+                    return CurrentDatabase;
 				case EnginesModes.OLEDB: //TODO
-                    return LDDataBase.ConnectOleDb(Data["Provider"], Data["Server"], Data["Database"]);
-				case EnginesModes.SQLITE: 
-					if (LDFile.Exists(Data) == true)
-					{
-						int Index = _DB_Path.IndexOf(Data);
-                        if (Index == -1) //New Database
-						{
-							string Database = LDDataBase.ConnectSQLite(Data);
-							AddToList(Data, Database, LDFile.GetFile(Data), EnginesModes.SQLITE);
-							GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data);
-							Settings.SaveSettings();
-							CurrentDatabase = Database;
-							return Database;
-						}
-						else //Database already exists as a connection so set the primary connection to that
-						{
-							string Database =_DB_Name[Index];
-							Database_Shortname = _DB_ShortName[Index];
-                            _DB_ShortName.Add(Database_Shortname);
-							CurrentDatabase = Database;
-							return Database;
-						}
-					}
-					return null;
+                    CurrentDatabase = LDDataBase.ConnectOleDb(Data["Provider"], Data["Server"], Data["Database"]);
+                    return CurrentDatabase;
+				case EnginesModes.SQLITE:
+                    if (System.IO.Directory.Exists(LDFile.GetFolder(Data)))
+                    {
+                        string Database = LDDataBase.ConnectSQLite(Data);
+                        AddToList(Data, Database, LDFile.GetFile(Data), EnginesModes.SQLITE);
+                        GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data);
+                        Settings.SaveSettings();
+                        CurrentDatabase = Database;
+                        return Database;
+                    }
+                    return null;
 				case EnginesModes.SQLSERVER: //SQLServer
-					return LDDataBase.ConnectSqlServer(Data["Server"],Data["Database"]);
+                    CurrentDatabase = LDDataBase.ConnectSqlServer(Data["Server"], Data["Database"]);
+                    return CurrentDatabase;
 				default:
 					return "Incorrect Paramters";
 			}
 		}
+
+        public static string Load_DB_Sqlite(string FilePath)
+        {
+            return Load_DB(EnginesModes.SQLITE, FilePath);
+        }
+
+        public static string Load_DB_SQLServer(string Server, string Database)
+        {
+            Primitive Data = null;
+            Data["Server"] = Server;
+            Data["Database"] = Database;
+            return Load_DB(EnginesModes.SQLSERVER,Data);
+        }
+
+        public static string Load_DB_MySQL(string Server,string Database,string User,string Password)
+        {
+            Primitive Data = null;
+            Data["Server"] = Server;
+            Data["User"] = User;
+            Data["Password"] = Password;
+            Data["Database"] = Database;
+            return Load_DB(EnginesModes.MySQL,Data);
+        }
+
+        public static string Load_DB_OLEDB(string Server,string Database, string Provider)
+        {
+            Primitive Data = null;
+            Data["Provider"] = Provider;
+            Data["Server"] = Server;
+            Data["Database"] = Database;
+            return Load_DB(EnginesModes.OLEDB,Data);
+        }
+
+        public static string Load_DB_ODBC(string Server,string Database,string User,string Password,int Port,string Driver,string Option)
+        {
+            Primitive Data = null;
+            Data["Driver"] = Driver;
+            Data["Server"] = Server;
+            Data["Port"] = Port;
+            Data["User"] = User;
+            Data["Password"] = Password;
+            Data["Option"] = Option;
+            Data["Database"] = Database;
+            return Load_DB(EnginesModes.ODBC,Data);
+        }
 
 		public static void GetSchema(string Database)
 		{
@@ -166,7 +213,7 @@ namespace DBM
 					{
                         _Schema.Add(QSchema[i]["name"]);
 					}
-                    Schema = Utilities.toArray(_Schema);
+                    Schema = Utilities.ToArray(_Schema);
 					break;
 			}
 		}
@@ -239,7 +286,6 @@ namespace DBM
 			return CMD;
 		}
 
-
 		static string GenerateSort(string OrderBy,string ASCDESC) 
 		{
 			return "ORDER BY \"" + OrderBy + "\" " + ASCDESC + ";";
@@ -274,6 +320,7 @@ namespace DBM
 			_DB_Engine.Add(Engine);
 		}
 
+        //Read Only Collections of Private Data
 		public static ReadOnlyCollection<string> DB_Name 
 		{ 
 			get { return _DB_Name.AsReadOnly(); }

@@ -6,36 +6,41 @@ using System;
 using Microsoft.SmallBasic.Library;
 namespace DBM
 {
-	public class Export
-	{
-		public static Primitive Generate2DArray(string Database, string SQL)
-		{
-			return Engines.Query(Database, SQL, null, true, GlobalStatic.UserName, ""); //TODO
+    public class Export
+    {
+        public static Primitive Generate2DArray(string Database, string SQL)
+        {
+            return Engines.Query(Database, SQL, null, true, GlobalStatic.UserName, ""); //TODO
         }
 
-		public static Primitive Generate2DArrayFromTable(string Database, string Table)
-		{
+        public static Primitive Generate2DArrayFromTable(string Database, string Table)
+        {
             return Generate2DArray(Database, "Select * From " + Table);
-		}
+        }
 
-		public static void CSV(string[,] Data) //TODO
-		{ 
-		
-		}
+        public static Primitive Generate2DArrayFromCurrentTable()
+        {
+            return Generate2DArrayFromTable(Engines.CurrentDatabase, Engines.CurrentTable);
+        }
 
-		public static void SQL(string[,] Data) //TODO
-		{ 
-		
-		}
+        public static void CSV(Primitive[] Data,Primitive[] Schema) //TODO
+        {
 
-		public static void XML(string[,] Data) //TODO
-		{
-		
-		}
+        }
 
-		public static void HTML(string[,] Data) //TODO
-		{
-		
-		}
+        public static void SQL(Primitive[] Data,Primitive[] Schema) //TODO
+        {
+
+        }
+
+        public static void XML(Primitive[] Data,Primitive[] Schema) //TODO
+        {
+
+        }
+
+        public static void HTML(Primitive[] Data,Primitive[] Schema) //TODO
+        {
+
+        }
 	}
 }
