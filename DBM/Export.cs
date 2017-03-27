@@ -22,23 +22,23 @@ namespace DBM
         {
             return Generate2DArrayFromTable(Engines.CurrentDatabase, Engines.CurrentTable);
         }
-
-        public static void CSV(Primitive[] Data,Primitive[] Schema) //TODO
+    
+        public static void CSV(Primitive Data,Primitive Schema,string FilePath) //TODO
         {
 
         }
 
-        public static void SQL(Primitive[] Data,Primitive[] Schema) //TODO
+        public static void SQL(Primitive Data,Primitive Schema,string FilePath) //TODO
         {
 
         }
 
-        public static void XML(Primitive[] Data,Primitive[] Schema) //TODO
+        public static void XML(Primitive Data,Primitive Schema,string FilePath) //TODO
         {
 
         }
 
-        public static void HTML(Primitive[] Data,Primitive[] Schema) //TODO
+        public static void HTML(Primitive Data,Primitive Schema,string FilePath) //TODO
         {
 
         }
