@@ -200,7 +200,7 @@ namespace DBM
 
 		public static void Buttons(string LastButton)
 		{
-			if (LastButton == GlobalStatic.Buttons["Search"] || LastButton == GlobalStatic.Buttons["Sort"] || LastButton == GlobalStatic.Buttons["RunFunction"])
+			if (LastButton ==UI.Buttons["Search"] || LastButton == UI.Buttons["Sort"] || LastButton == UI.Buttons["RunFunction"])
 			{
 				Primitive ASCDESC_Sorts = "1=ASC;2=DESC;";
 				bool Search =false,Sort=true,Function=false;
@@ -215,22 +215,22 @@ namespace DBM
 				string SortBy = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Sort"])];
 				string ASCDESC = ASCDESC_Sorts[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ASCDESC"])];
 				//Console.WriteLine("{0} {1}", LDControls.CheckBoxGetState(GlobalStatic.ComboBox["Search"]),GlobalStatic.ComboBox);
-				if (LastButton == GlobalStatic.Buttons["Search"])
+				if (LastButton == UI.Buttons["Search"])
 				{
 					Search = true;
 				}
-				else if (LastButton == GlobalStatic.Buttons["RunFunction"])
+				else if (LastButton == UI.Buttons["RunFunction"])
 				{
 					Function = true;
 				}
 				//Console.WriteLine("Search :{0} Sort : {1} Function : {2}\n Search Text : {3} Function Column : {4} Sort Order : {5} Sorts : {6}", Search, Sort, Function, SearchText,FunctionIn,ASCDESC,SortBy);
 				Engines.GenerateQuery(Search, Sort, Function, SearchIn, SortBy, ASCDESC, StrictSearch, InvertSearch, FunctionCalled, FunctionIn, SearchText);
 			}
-			else if (LastButton == GlobalStatic.Buttons["CustomQuery"])
+			else if (LastButton == UI.Buttons["CustomQuery"])
 			{
 				Engines.Query(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.Username, Utilities.Localization["User Requested"]);
 			}
-			else if (LastButton == GlobalStatic.Buttons["Command"]) //Custom Command
+			else if (LastButton == UI.Buttons["Command"]) //Custom Command
 			{
 				Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.UserName, Utilities.Localization["User Requested"], false);
 			}

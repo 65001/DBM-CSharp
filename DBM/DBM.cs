@@ -36,8 +36,16 @@ namespace DBM
 	{
 		private static string SetTitle;
 		private static Stopwatch StartUpStopWatch = Stopwatch.StartNew();
-        private static Dictionary<string, string> Buttons = new Dictionary<string, string>(); //TODO Implement this
+        private static Dictionary<string, string> _Buttons = new Dictionary<string, string>(); //TODO Implement this
+        private static Dictionary<string, string> _TextBox = new Dictionary<string, string>();
+        private static Dictionary<string, string> _CheckBox = new Dictionary<string, string>();
+        private static Dictionary<string, string> _ComboBox = new Dictionary<string, string>();
+        private static Dictionary<string, string> _HideDisplay = new Dictionary<string, string>();
 
+        public static IReadOnlyDictionary<string,string> Buttons
+        {
+            get { return _Buttons; }
+        }
 
 		public static void Main()
 		{
@@ -127,7 +135,7 @@ namespace DBM
 			MainMenu();
 		}
 
-		public static void PreMainMenu() //Defines Buttons
+		public static void PreMainMenu()
 		{
 			Utilities.AddtoStackTrace( "UI.PreMainMenu()");
 			GlobalStatic.DefaultFontSize = GraphicsWindow.FontSize;
@@ -215,9 +223,9 @@ namespace DBM
 			int SortOffset = LDText.GetWidth(Utilities.Localization["Sort"] + ":") - LDText.GetWidth("Sort:"); //Offsets some controls when not using the default English encoding
 
 			GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
-			GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox(LDList.ToArray(GlobalStatic.List_SCHEMA_Table), 100, 100);
+			GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox( LDList.ToArray(GlobalStatic.List_SCHEMA_Table), 100, 100);
 			GlobalStatic.ComboBox["Sorts"] = LDControls.AddComboBox(Sorts,100,100);
-			GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox(Utilities.ToArray(Engines.DB_ShortName),100,100);
+			GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox(Engines.DB_ShortName.ToArray(),100,100);
 			Controls.Move(GlobalStatic.ComboBox["Sorts"], 970 + 185 + SortOffset, 5);
 			Controls.Move(GlobalStatic.ComboBox["Table"], 1075 + 185 + SortOffset,5);
 			Controls.Move(GlobalStatic.ComboBox["Database"], 1050 + SortOffset, 5);
@@ -284,6 +292,7 @@ namespace DBM
 
 		public static void DisplayResults()
 		{
+            _Buttons.Clear(); //Clears the Dictionary to prevent errors
             Utilities.AddtoStackTrace( "UI.DisplayResults()");
 			LDGraphicsWindow.Width = Desktop.Width;
 			LDGraphicsWindow.Height = Desktop.Height;
@@ -307,13 +316,15 @@ namespace DBM
 			string AscDesc = "1=" + Utilities.Localization["Asc"] + ";2=" + Utilities.Localization["Desc"] + ";";
 			GlobalStatic.ComboBox["Sort"] = LDControls.AddComboBox(Engines.Schema, 100, 100);
 			GlobalStatic.ComboBox["ASCDESC"] = LDControls.AddComboBox(AscDesc, 110, 100);
-            GlobalStatic.Buttons["Sort"] = Controls.AddButton(Utilities.Localization["Sort"], GlobalStatic.UIx + 10, 120);
+
+            _Buttons.Add("Sort", Controls.AddButton(Utilities.Localization["Sort"], GlobalStatic.UIx + 10, 120));
+           // GlobalStatic.Buttons["Sort"] = Controls.AddButton(Utilities.Localization["Sort"], GlobalStatic.UIx + 10, 120);
 
 			Controls.Move(GlobalStatic.ComboBox["Sort"], GlobalStatic.UIx + 80, 72);
 			Controls.Move(GlobalStatic.ComboBox["ASCDESC"], GlobalStatic.UIx+ 190, 72);
-			Controls.SetSize(GlobalStatic.Buttons["Sort"], 290, 25);
+			Controls.SetSize(_Buttons["Sort"], 290, 25);
 
-			LDDialogs.ToolTip(GlobalStatic.Buttons["Sort"], "Iniates a sort based on user set parameters"); //Localize
+			LDDialogs.ToolTip(_Buttons["Sort"], "Iniates a sort based on user set parameters"); //Localize
 			LDDialogs.ToolTip(GlobalStatic.ComboBox["ASCDESC"], "Sorts Ascending and Decending based on position"); //Localize
 
 			//Search
@@ -321,13 +332,14 @@ namespace DBM
 			GlobalStatic.TextBox["Search"] = Controls.AddTextBox(GlobalStatic.UIx + 100, 210);
 			GlobalStatic.CheckBox["StrictSearch"] = LDControls.AddCheckBox(Utilities.Localization["Strict Search"]);
 			GlobalStatic.CheckBox["InvertSearch"] = LDControls.AddCheckBox("Invert"); //Localize
-			GlobalStatic.Buttons["Search"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Search"]), GlobalStatic.UIx + 10, 260);
+            _Buttons.Add("Search", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Search"]), GlobalStatic.UIx + 10, 260));
+			//GlobalStatic.Buttons["Search"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Search"]), GlobalStatic.UIx + 10, 260);
 
 			Controls.Move(GlobalStatic.CheckBox["StrictSearch"], GlobalStatic.UIx + 20, 240);
 			Controls.Move(GlobalStatic.CheckBox["InvertSearch"], GlobalStatic.UIx + 150, 240);
 			Controls.Move(GlobalStatic.ComboBox["Search"], GlobalStatic.UIx + 100, 180);
 			Controls.SetSize(GlobalStatic.TextBox["Search"], 200, 25);
-			Controls.SetSize(GlobalStatic.Buttons["Search"], 290, 25);
+			Controls.SetSize(_Buttons["Search"], 290, 25);
 
 			//Functions
 			GlobalStatic.ComboBox["FunctionList"] = LDControls.AddComboBox(GlobalStatic.SQLFunctionsList, 130, 100);
@@ -335,37 +347,40 @@ namespace DBM
 			GlobalStatic.ComboBox["ColumnList"] = LDControls.AddComboBox(Engines.Schema, 135, 100);
 			Controls.Move(GlobalStatic.ComboBox["ColumnList"], GlobalStatic.UIx + 160, 310);
 
-			GlobalStatic.Buttons["RunFunction"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Run Function"]), GlobalStatic.UIx + 10, 340);
-			Controls.SetSize(GlobalStatic.Buttons["RunFunction"], 290, 25);
+            _Buttons.Add("RunFunction", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Run Function"]), GlobalStatic.UIx + 10, 340));
+			//GlobalStatic.Buttons["RunFunction"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Run Function"]), GlobalStatic.UIx + 10, 340);
+			Controls.SetSize(_Buttons["RunFunction"], 290, 25);
 
 			//Custom Query
 			GlobalStatic.TextBox["CustomQuery"] = Controls.AddMultiLineTextBox(GlobalStatic.UIx, 420);
 			Controls.SetSize(GlobalStatic.TextBox["CustomQuery"], 310, 150);
 
-  			GlobalStatic.Buttons["CustomQuery"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Query"]), GlobalStatic.UIx, 580);
-  			Controls.SetSize(GlobalStatic.Buttons["CustomQuery"], 310, 25);
-  			
-  			GlobalStatic.Buttons["Command"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Command"]), GlobalStatic.UIx, 580 + 35);
-			Controls.SetSize(GlobalStatic.Buttons["Command"], 310, 25);
-			LDDialogs.ToolTip(GlobalStatic.Buttons["Command"], "Executes customized SQL command statements onto the database"); //Localize
+            _Buttons.Add("CustomQuery", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Query"]), GlobalStatic.UIx, 580));
+  			//GlobalStatic.Buttons["CustomQuery"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Query"]), GlobalStatic.UIx, 580);
+  			Controls.SetSize(_Buttons["CustomQuery"], 310, 25);
+
+            _Buttons.Add("Command", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Command"]), GlobalStatic.UIx, 580 + 35));
+  			//GlobalStatic.Buttons["Command"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Command"]), GlobalStatic.UIx, 580 + 35);
+			Controls.SetSize(_Buttons["Command"] , 310, 25);
+			LDDialogs.ToolTip(_Buttons["Command"], "Executes customized SQL command statements onto the database"); //Localize
 			string CustomQueryData = "This Textbox allows you to use Custom\nSQL Queries. Remove this and type in an SQL \nstatement. \nYou also use it to export data";//Localize
 			Controls.SetTextBoxText(GlobalStatic.TextBox["CustomQuery"],CustomQueryData);
 
 			//Hide Display Results
 			GlobalStatic.HideDisplayResults[1] = GlobalStatic.ComboBox["Sort"];
 			GlobalStatic.HideDisplayResults[2] = GlobalStatic.ComboBox["ASCDESC"];
-			GlobalStatic.HideDisplayResults[3] = GlobalStatic.Buttons["Sort"];
+			GlobalStatic.HideDisplayResults[3] = _Buttons["Sort"];
 			GlobalStatic.HideDisplayResults[4] = GlobalStatic.ComboBox["Search"];
 			GlobalStatic.HideDisplayResults[5] = GlobalStatic.TextBox["Search"];
 			GlobalStatic.HideDisplayResults[6] = GlobalStatic.CheckBox["StrictSearch"];
 			GlobalStatic.HideDisplayResults[7] = GlobalStatic.CheckBox["InvertSearch"];
-			GlobalStatic.HideDisplayResults[8] = GlobalStatic.Buttons["Search"];
+			GlobalStatic.HideDisplayResults[8] = _Buttons["Search"];
 			GlobalStatic.HideDisplayResults[9] = GlobalStatic.ComboBox["FunctionList"];
 			GlobalStatic.HideDisplayResults[10] = GlobalStatic.ComboBox["ColumnList"];
-			GlobalStatic.HideDisplayResults[11] = GlobalStatic.Buttons["RunFunction"];
+			GlobalStatic.HideDisplayResults[11] = _Buttons["RunFunction"];
 			GlobalStatic.HideDisplayResults[12] = GlobalStatic.TextBox["CustomQuery"];
-			GlobalStatic.HideDisplayResults[13] = GlobalStatic.Buttons["CustomQuery"];
-			GlobalStatic.HideDisplayResults[14] = GlobalStatic.Buttons["Command"];
+			GlobalStatic.HideDisplayResults[13] = _Buttons["CustomQuery"];
+			GlobalStatic.HideDisplayResults[14] = _Buttons["Command"];
 		}
 
 		public static void Title()
@@ -392,7 +407,6 @@ namespace DBM
 			}
 			GraphicsWindow.Title = SetTitle;
 		}
-
 
 		public static void SettingsUI()//TODO: Make the Settings UI
 		{

@@ -213,7 +213,7 @@ namespace DBM
 					{
                         _Schema.Add(QSchema[i]["name"]);
 					}
-                    Schema = Utilities.ToArray(_Schema);
+                    Schema = _Schema.ToPrimitiveArray(); ;
 					break;
 			}
 		}

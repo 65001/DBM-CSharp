@@ -9,7 +9,7 @@ using LitDev;
 using Microsoft.SmallBasic.Library;
 namespace DBM
 {
-	public class Utilities
+	public static class Utilities
 	{
         static Dictionary<string, string> _Localization = new Dictionary<string, string>();
         static List<string> _StackTrace = new List<string>();
@@ -127,17 +127,27 @@ namespace DBM
 		
 		}
 
-		public static Primitive ToArray(List<string> List)
+        public static Primitive ToPrimitiveArray<T>(this List<T> List)
+        {
+            return ToArray(List);
+        }
+
+        public static Primitive ToPrimitiveArray(this ReadOnlyCollection<string> List)
+        {
+            return ToArray(List);
+        }
+
+		public static Primitive ToArray<T> (this List<T> List)
 		{
             Primitive _return =null;
             for (int i = 0; i < List.Count; i++)
             {
-                _return[i + 1] = List[i];
+                _return[i + 1] = List[i].ToString();
             }
             return _return;
 		}
 
-        public static Primitive ToArray(ReadOnlyCollection<string> List)
+        public static Primitive ToArray(this ReadOnlyCollection<string> List)
         {
             Primitive _return = null;
             for (int i = 0; i < List.Count; i++)
