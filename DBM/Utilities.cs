@@ -127,36 +127,6 @@ namespace DBM
 		
 		}
 
-        public static Primitive ToPrimitiveArray<T>(this List<T> List)
-        {
-            return ToArray(List);
-        }
-
-        public static Primitive ToPrimitiveArray(this ReadOnlyCollection<string> List)
-        {
-            return ToArray(List);
-        }
-
-		public static Primitive ToArray<T> (this List<T> List)
-		{
-            Primitive _return =null;
-            for (int i = 0; i < List.Count; i++)
-            {
-                _return[i + 1] = List[i].ToString();
-            }
-            return _return;
-		}
-
-        public static Primitive ToArray(this ReadOnlyCollection<string> List)
-        {
-            Primitive _return = null;
-            for (int i = 0; i < List.Count; i++)
-            {
-                _return[i + 1] = List[i];
-            }
-            return _return;
-        }
-
 		static void Add_UI_Controls(string Type, string Caption_OR_Name, string Handler, string PreviousNode_OR_ToolTip, string Action) 
 		{
 			int index = LDList.IndexOf(GlobalStatic.List_UI_Name, Caption_OR_Name);
@@ -204,4 +174,43 @@ namespace DBM
 		}
 
 	}
+
+    public static class Transform
+    {
+        public static Primitive ToPrimitiveArray<T>(this List<T> List)
+        {
+            Primitive _return = null;
+            for (int i = 0; i < List.Count; i++)
+            {
+                _return[i + 1] = List[i].ToString();
+            }
+            return _return;
+        }
+
+        public static Primitive ToPrimitiveArray(this ReadOnlyCollection<string> List)
+        {
+            Primitive _return = null;
+            for (int i = 0; i < List.Count; i++)
+            {
+                _return[i + 1] = List[i];
+            }
+            return _return;
+        }
+
+        public static void Print<T>(this List<T> List)
+        {
+            for (int i = 0; i < List.Count; i++)
+            {
+                Console.WriteLine("{0} : {1}", i, List[i]);
+            }
+        }
+
+        public static void Print<T>(this Dictionary<T, T> Dictionary)
+        {
+            foreach (KeyValuePair<T,T> entry in Dictionary)
+            {
+                Console.WriteLine("{0} : {1}", entry.Key, entry.Value);
+            }
+        }
+    }
 }

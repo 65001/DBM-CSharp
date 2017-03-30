@@ -114,8 +114,8 @@ namespace DBM
 							{
 								Controls.ShowControl(GlobalStatic.Dataview);
 							}
-							Engines.EditTable(Engines.CurrentTable, GlobalStatic.Dataview);
-							UI.HideDisplayResults();
+                            UI.HideDisplayResults();
+                            Engines.EditTable(Engines.CurrentTable, GlobalStatic.Dataview);
 							break;
 					}
 				}

@@ -34,18 +34,21 @@ namespace DBM
 	[SmallBasicType]
 	public static class UI 
 	{
-		private static string SetTitle;
 		private static Stopwatch StartUpStopWatch = Stopwatch.StartNew();
-        private static Dictionary<string, string> _Buttons = new Dictionary<string, string>(); //TODO Implement this
-        private static Dictionary<string, string> _TextBox = new Dictionary<string, string>();
-        private static Dictionary<string, string> _CheckBox = new Dictionary<string, string>();
-        private static Dictionary<string, string> _ComboBox = new Dictionary<string, string>();
-        private static Dictionary<string, string> _HideDisplay = new Dictionary<string, string>();
+        private static Dictionary<string, string> _Buttons = new Dictionary<string, string>(); 
+        private static Dictionary<string, string> _TextBox = new Dictionary<string, string>();  //TODO Implement this
+        private static Dictionary<string, string> _CheckBox = new Dictionary<string, string>(); //TODO Implement this
+        private static Dictionary<string, string> _ComboBox = new Dictionary<string, string>(); //TODO Implement this
+        private static List<string> _HideDisplay = new List<string>();
 
         public static IReadOnlyDictionary<string,string> Buttons
-        {
-            get { return _Buttons; }
-        }
+        {get { return _Buttons; } }
+
+        public static IReadOnlyDictionary<string,string> TextBox
+        { get { return _TextBox; } }
+
+        public static IReadOnlyDictionary<string,string> CheckBox
+        { get { return _CheckBox; } }
 
 		public static void Main()
 		{
@@ -225,7 +228,7 @@ namespace DBM
 			GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
 			GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox( LDList.ToArray(GlobalStatic.List_SCHEMA_Table), 100, 100);
 			GlobalStatic.ComboBox["Sorts"] = LDControls.AddComboBox(Sorts,100,100);
-			GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox(Engines.DB_ShortName.ToArray(),100,100);
+			GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox(Engines.DB_ShortName.ToPrimitiveArray(),100,100);
 			Controls.Move(GlobalStatic.ComboBox["Sorts"], 970 + 185 + SortOffset, 5);
 			Controls.Move(GlobalStatic.ComboBox["Table"], 1075 + 185 + SortOffset,5);
 			Controls.Move(GlobalStatic.ComboBox["Database"], 1050 + SortOffset, 5);
@@ -266,9 +269,9 @@ namespace DBM
 			GraphicsWindow.BrushColor = "WHITE";
 			GraphicsWindow.FillRectangle(GlobalStatic.UIx - 5, 45, 320, 350);
 			GraphicsWindow.BrushColor = Default_Brush;
-			for (int i = 1; i <= SBArray.GetItemCount(GlobalStatic.HideDisplayResults); i++)
+			for (int i = 0; i < _HideDisplay.Count; i++)
 			{
-				Controls.HideControl(GlobalStatic.HideDisplayResults[i]);
+				Controls.HideControl(_HideDisplay[i]);
 			}
 		}
 
@@ -284,9 +287,9 @@ namespace DBM
 			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210,Utilities.Localization["Search"] + ":");
 			GraphicsWindow.FontSize = 13;
 			GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
-			for (int i = 1; i <= SBArray.GetItemCount(GlobalStatic.HideDisplayResults);i++)
+			for (int i = 0; i < _HideDisplay.Count;i++)
 			{
-				Controls.ShowControl(GlobalStatic.HideDisplayResults[i]);
+				Controls.ShowControl(_HideDisplay[i]);
 			}
 		}
 
@@ -366,27 +369,28 @@ namespace DBM
 			string CustomQueryData = "This Textbox allows you to use Custom\nSQL Queries. Remove this and type in an SQL \nstatement. \nYou also use it to export data";//Localize
 			Controls.SetTextBoxText(GlobalStatic.TextBox["CustomQuery"],CustomQueryData);
 
-			//Hide Display Results
-			GlobalStatic.HideDisplayResults[1] = GlobalStatic.ComboBox["Sort"];
-			GlobalStatic.HideDisplayResults[2] = GlobalStatic.ComboBox["ASCDESC"];
-			GlobalStatic.HideDisplayResults[3] = _Buttons["Sort"];
-			GlobalStatic.HideDisplayResults[4] = GlobalStatic.ComboBox["Search"];
-			GlobalStatic.HideDisplayResults[5] = GlobalStatic.TextBox["Search"];
-			GlobalStatic.HideDisplayResults[6] = GlobalStatic.CheckBox["StrictSearch"];
-			GlobalStatic.HideDisplayResults[7] = GlobalStatic.CheckBox["InvertSearch"];
-			GlobalStatic.HideDisplayResults[8] = _Buttons["Search"];
-			GlobalStatic.HideDisplayResults[9] = GlobalStatic.ComboBox["FunctionList"];
-			GlobalStatic.HideDisplayResults[10] = GlobalStatic.ComboBox["ColumnList"];
-			GlobalStatic.HideDisplayResults[11] = _Buttons["RunFunction"];
-			GlobalStatic.HideDisplayResults[12] = GlobalStatic.TextBox["CustomQuery"];
-			GlobalStatic.HideDisplayResults[13] = _Buttons["CustomQuery"];
-			GlobalStatic.HideDisplayResults[14] = _Buttons["Command"];
+            //Hide Display Results
+            _HideDisplay.Clear();
+            _HideDisplay.Add(GlobalStatic.ComboBox["Sort"]);
+            _HideDisplay.Add(GlobalStatic.ComboBox["ASCDESC"]);
+            _HideDisplay.Add(_Buttons["Sort"]);
+            _HideDisplay.Add(GlobalStatic.ComboBox["Search"]);
+            _HideDisplay.Add(GlobalStatic.TextBox["Search"]);
+            _HideDisplay.Add(GlobalStatic.CheckBox["StrictSearch"]);
+            _HideDisplay.Add(GlobalStatic.CheckBox["InvertSearch"]);
+            _HideDisplay.Add(_Buttons["Search"]);
+            _HideDisplay.Add(GlobalStatic.ComboBox["FunctionList"]);
+            _HideDisplay.Add(GlobalStatic.ComboBox["ColumnList"]);
+            _HideDisplay.Add(_Buttons["RunFunction"]);
+            _HideDisplay.Add(GlobalStatic.TextBox["CustomQuery"]);
+            _HideDisplay.Add(_Buttons["CustomQuery"]);
+            _HideDisplay.Add(_Buttons["Command"]);
 		}
 
 		public static void Title()
 		{
             Utilities.AddtoStackTrace( "UI.Title()");
-			string TimeRef;
+			string TimeRef,SetTitle;
 			SetTitle = GlobalStatic.Title + " " + Engines.Database_Shortname + "(" + Engines.CurrentDatabase + ") :" + Handlers.TypeofSorts[GlobalStatic.SortBy] + ":" + Engines.CurrentTable;
 			TimeRef = LDList.GetAt(GlobalStatic.List_Time_Refer, LDList.Count(GlobalStatic.List_Time_Refer)); //Time of Last Query or Command
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))

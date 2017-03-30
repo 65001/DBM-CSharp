@@ -85,7 +85,7 @@ namespace DBM
             public static List<string> ISO_Text = new List<string>();
             
 			public static string Dataview,ListView;
-			public static Primitive MenuList,CheckList,ComboBox,TextBox,CheckBox,HideDisplayResults; //Change to a Dictionaries in the future and move to UI.
+			public static Primitive MenuList,CheckList,ComboBox,TextBox,CheckBox; //Change to a Dictionaries in the future and move to UI.
 			public static Primitive SQLFunctionsList = Text.ConvertToUpperCase("1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;");
 
 			public static string Title = "Database Manager (" + ProductID + ") v" + VersionID + " ";
