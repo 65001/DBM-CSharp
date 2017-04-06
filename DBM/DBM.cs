@@ -415,6 +415,31 @@ namespace DBM
 		public static void SettingsUI()//TODO: Make the Settings UI
 		{
             Utilities.AddtoStackTrace( "UI.SettingsUI()");
+            GraphicsWindow.Clear();
+            GraphicsWindow.Title = Utilities.Localization["Settings"];
+
+            GraphicsWindow.CanResize = false;
+            LDGraphicsWindow.CancelClose = true;
+            LDGraphicsWindow.ExitOnClose = false;
+            LDGraphicsWindow.Closing += Events.Closing;
+            LDGraphicsWindow.ExitButtonMode(Utilities.Localization["Settings"], "Disabled");
+
+            GraphicsWindow.FontSize = 20;
+
+            GraphicsWindow.DrawText(10, 30, Utilities.Localization["Listview Width"]);
+            GlobalStatic.TextBox["Settings_Width"] = Controls.AddTextBox(200, 25);
+
+            GraphicsWindow.DrawText(10, 65, Utilities.Localization["Listview Height"]);
+            GlobalStatic.TextBox["Settings_Heigth"] = Controls.AddTextBox(200, 60);
+
+            GraphicsWindow.DrawText(10, 100, Utilities.Localization["Extensions"]);
+            GlobalStatic.TextBox["Settings_Extensions"] = Controls.AddTextBox(200, 95);
+
+            GraphicsWindow.DrawText(10, 135, Utilities.Localization["Deliminator"]);
+            GlobalStatic.TextBox["Settings_Deliminator"] = Controls.AddTextBox(200, 130);
+
+            GraphicsWindow.DrawText(10, 165, Utilities.Localization["Language"]);
+            GlobalStatic.ComboBox["Language"] = LDControls.AddComboBox(LDList.ToArray("ISO_Text"), 200, 120);
 		}
 
 		public static void CreateTableUI()//TODO: Create the "Create Table UI"

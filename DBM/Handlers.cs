@@ -155,9 +155,13 @@ namespace DBM
 			else if (Item == Utilities.Localization["About"]) //TODO
 			{ }
 			else if (Item == Utilities.Localization["Show Help"]) //TODO
-			{ }
+			{
+                
+            }
 			else if (Item == Utilities.Localization["Settings Editor"]) //TODO
-			{ }
+			{
+                UI.SettingsUI();
+            }
 			else if (Item == Utilities.Localization["Toggle Debug"])
 			{
 				GlobalStatic.DebugMode = !GlobalStatic.DebugMode;
