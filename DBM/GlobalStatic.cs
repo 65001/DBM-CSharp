@@ -79,8 +79,6 @@ namespace DBM
 			public const string List_Query_Time = "Query_Time";
 			public const string List_CMD_Time = "CMD_Time";
 			public const string List_Time_Refer = "Time_Ref";
-			public const string List_ISO_Lang = "ISO_Lang";
-			public const string List_ISO_Text = "ISO_Text";
 
             public static List<string> ISO_Text = new List<string>();
             

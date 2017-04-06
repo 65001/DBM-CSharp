@@ -439,7 +439,7 @@ namespace DBM
             GlobalStatic.TextBox["Settings_Deliminator"] = Controls.AddTextBox(200, 130);
 
             GraphicsWindow.DrawText(10, 165, Utilities.Localization["Language"]);
-            GlobalStatic.ComboBox["Language"] = LDControls.AddComboBox(LDList.ToArray("ISO_Text"), 200, 120);
+            GlobalStatic.ComboBox["Language"] = LDControls.AddComboBox(Utilities.ISO_Text.ToPrimitiveArray(), 200, 120);
 		}
 
 		public static void CreateTableUI()//TODO: Create the "Create Table UI"

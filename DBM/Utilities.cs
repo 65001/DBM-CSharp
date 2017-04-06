@@ -4,6 +4,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using LitDev;
 using Microsoft.SmallBasic.Library;
@@ -13,6 +14,8 @@ namespace DBM
 	{
         static Dictionary<string, string> _Localization = new Dictionary<string, string>();
         static List<string> _StackTrace = new List<string>();
+        static List<string> _ISO_Text = new List<string>();
+        static List<string> _ISO_LangCode = new List<string>();
         
         public static IReadOnlyDictionary<string, string> Localization
         {
@@ -22,6 +25,16 @@ namespace DBM
         public static IReadOnlyList<string> StackTrace
         {
             get { return _StackTrace.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<string> ISO_Text
+        {
+            get { return _ISO_Text.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<string> ISO_LangCode
+        {
+            get { return _ISO_LangCode.AsReadOnly(); }
         }
 
         public static void LocalizationXML(string XMLPath)  // Loads localized text from XML File
@@ -40,6 +53,21 @@ namespace DBM
 				{
                     AddLocalization();
 				}
+                string DataPath =  Path.Combine( GlobalStatic.Localization_LanguageCodes_Path , GlobalStatic.LanguageCode + ".txt");
+                Console.WriteLine("{0} : {1}",DataPath,LDFile.Exists(DataPath));
+
+                Primitive Localization_Temp = System.IO.File.ReadAllText(DataPath);
+                string[] LocalizationFiles =  System.IO.Directory.GetFiles(LDFile.GetFolder(XMLPath));
+                Console.WriteLine("{0}",Localization_Temp);
+                _ISO_Text.Clear();
+                _ISO_LangCode.Clear();
+
+                foreach (string FilePath in LocalizationFiles)
+                {
+                    string LanguageFile = LDFile.GetFile(FilePath);
+                    _ISO_LangCode.Add(LanguageFile);
+                    _ISO_Text.Add(Localization_Temp[ LanguageFile ]);
+                }
 			}
 			else
 			{
@@ -69,7 +97,7 @@ namespace DBM
             }
         }
 
-		static string XMLAttributes() { return "1=" + LDText.Replace(LDText.Replace(LDxml.Attributes, "=", "\\="), ";", "\\;") + ";2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
+	    public static string XMLAttributes() { return "1=" + LDText.Replace(LDText.Replace(LDxml.Attributes, "=", "\\="), ";", "\\;") + ";2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
 
         public static void AddtoStackTrace(string Data)
         {
@@ -188,6 +216,16 @@ namespace DBM
         }
 
         public static Primitive ToPrimitiveArray(this ReadOnlyCollection<string> List)
+        {
+            Primitive _return = null;
+            for (int i = 0; i < List.Count; i++)
+            {
+                _return[i + 1] = List[i];
+            }
+            return _return;
+        }
+
+        public static Primitive ToPrimitiveArray(this IReadOnlyList<string> List)
         {
             Primitive _return = null;
             for (int i = 0; i < List.Count; i++)
