@@ -2,12 +2,14 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Diagnostics;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 using SBArray = Microsoft.SmallBasic.Library.Array;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
+
 namespace DBM
 {
 	[SmallBasicType]
@@ -23,6 +25,10 @@ namespace DBM
 		static List<string> _DB_Name = new List<string>();
 		static List<string> _DB_ShortName = new List<string>();
 		static List<EnginesModes> _DB_Engine = new List<EnginesModes>();
+
+        static List<string> _Tables = new List<string>();
+        static List<string> _Views = new List<string>();
+        static List<string> _Indexes = new List<string>();
 
         public static Primitive Schema { get; private set; }
         static List<string> _Schema = new List<string>();
@@ -176,18 +182,36 @@ namespace DBM
 			EnginesModes EngineMode = Engine_Type(Database);
 			switch (EngineMode)
 				{
-					case EnginesModes.SQLITE:	
-						LDList.Clear(GlobalStatic.List_SCHEMA_Table);
-						LDList.Clear(GlobalStatic.List_SCHEMA_View);
-						LDList.Clear(GlobalStatic.List_Schema_Index);
-
+					case EnginesModes.SQLITE:
+                        _Tables.Clear();
+                        _Views.Clear();
+                        _Indexes.Clear();
+                        
 						Primitive Master_Schema_List = Query(Database, "SELECT tbl_name,name,type FROM sqlite_master UNION Select tbl_name,name,type From SQLite_Temp_Master;", null, true, Utilities.Localization["App"], "SCHEMA");
-						Primitive Master_Schema_Lists = "table=" + GlobalStatic.List_SCHEMA_Table + ";view=" + GlobalStatic.List_SCHEMA_View + ";index=" + GlobalStatic.List_Schema_Index + ";";
 						for (int i = 1; i <= SBArray.GetItemCount(Master_Schema_List); i++)
 						{
-							LDList.Add(Master_Schema_Lists[Master_Schema_List[i]["type"]], Master_Schema_List[i]["tbl_name"]);
+                        string Name = Master_Schema_List[i]["tbl_name"];
+                             switch ((string)Master_Schema_List[i]["type"])
+                             {
+                                  case "table":
+                                     _Tables.Add(Name);
+                                     break;
+                                  case "view":
+                                    _Views.Add(Name);
+                                    break;
+                                  case "index":
+                                    _Indexes.Add(Name);
+                                    break;
+                        }
 						}
-						CurrentTable = LDList.GetAt(GlobalStatic.List_SCHEMA_Table, 1);
+                    try
+                    {
+                        CurrentTable = _Tables.FirstOrDefault();
+                    }
+                    catch(Exception ex)
+                    {
+                        Events.LogMessage(ex.ToString(), "System");
+                    }
 						LDList.Add(GlobalStatic.TrackDefaultTable, Database + "." + CurrentTable);
 						GetColumnsofTable(Database, CurrentTable);
 						break;
@@ -339,6 +363,21 @@ namespace DBM
         public static ReadOnlyCollection<EnginesModes> DB_Engine
         {
             get { return _DB_Engine.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<string> Tables
+        {
+            get { return _Tables.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<string> Views
+        {
+            get { return _Views.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<string> Indexes
+        {
+            get { return _Indexes.AsReadOnly(); }
         }
 	}
 }

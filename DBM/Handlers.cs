@@ -2,13 +2,16 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 namespace DBM
 {
 	public static class Handlers
 	{
-		public static Primitive CurrentSchema;static string CorrectList;
+		public static Primitive CurrentSchema;
+        static IReadOnlyList<string> CorrectList;
 		public static Primitive TypeofSorts ="1="+ Utilities.Localization["Table"] +";2=" + Utilities.Localization["View"] +"3="+ Utilities.Localization["Index"] + "4="+ Utilities.Localization["Master Table"]+";";
 
 		public static void Menu(string Item) //Handles Main Menu
@@ -296,7 +299,7 @@ namespace DBM
 
 		static void TableComboBox(int Index)
 		{ 
-			Engines.SetDefaultTable(LDList.GetAt(CorrectList, Index));
+			Engines.SetDefaultTable(CorrectList[Index - 1]);
 			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 			SetComboBox();
 		}
@@ -308,13 +311,13 @@ namespace DBM
 			switch (Index)
 			{
 				case 1:
-					CorrectList = GlobalStatic.List_SCHEMA_Table;
+					CorrectList = Engines.Tables;
 					break;
 				case 2:
-					CorrectList = GlobalStatic.List_SCHEMA_View;
+					CorrectList = Engines.Views;
 					break;
 				case 3:
-					CorrectList = GlobalStatic.List_Schema_Index;
+					CorrectList = Engines.Indexes;
 					break;
 				case 4:
 					Engines.SetDefaultTable("sqlite_master");
@@ -324,9 +327,12 @@ namespace DBM
 
 			if (Index != 4)
 			{
-				Engines.SetDefaultTable(LDList.GetAt(CorrectList, 1));
-				LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], LDList.ToArray(CorrectList));
-				Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+                if (CorrectList.Count > 0) //{revents OutofBound Errors
+                {
+                    Engines.SetDefaultTable(CorrectList[0]);
+                    LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], CorrectList.ToPrimitiveArray());
+                    Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+                }
 			}
 			if (!string.IsNullOrEmpty(Engines.CurrentTable))
 			{

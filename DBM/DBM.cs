@@ -224,7 +224,14 @@ namespace DBM
 			int SortOffset = LDText.GetWidth(Utilities.Localization["Sort"] + ":") - LDText.GetWidth("Sort:"); //Offsets some controls when not using the default English encoding
 
 			GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
-			GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox( LDList.ToArray(GlobalStatic.List_SCHEMA_Table), 100, 100);
+            try
+            {
+                GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox(Engines.Tables.ToPrimitiveArray(), 100, 100);
+            }
+            catch (Exception ex)
+            {
+                Events.LogMessage(ex.ToString(), "System");
+            }
 			GlobalStatic.ComboBox["Sorts"] = LDControls.AddComboBox(Sorts,100,100);
 			GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox(Engines.DB_ShortName.ToPrimitiveArray(),100,100);
 			Controls.Move(GlobalStatic.ComboBox["Sorts"], 970 + 185 + SortOffset, 5);
@@ -428,7 +435,7 @@ namespace DBM
             GlobalStatic.TextBox["Settings_Width"] = Controls.AddTextBox(200, 25);
 
             GraphicsWindow.DrawText(10, 65, Utilities.Localization["Listview Height"]);
-            GlobalStatic.TextBox["Settings_Heigth"] = Controls.AddTextBox(200, 60);
+            GlobalStatic.TextBox["Settings_Height"] = Controls.AddTextBox(200, 60);
 
             GraphicsWindow.DrawText(10, 100, Utilities.Localization["Extensions"]);
             GlobalStatic.TextBox["Settings_Extensions"] = Controls.AddTextBox(200, 95);
