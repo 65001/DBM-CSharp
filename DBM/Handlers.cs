@@ -43,7 +43,7 @@ namespace DBM
 				GlobalStatic.ListView = null; 
 				GlobalStatic.Dataview = null;
 				Settings.LoadSettings(GlobalStatic.RestoreSettings); //Reloads Settings
-				Engines.Load_DB(Engines.EnginesModes.SQLITE, UI.GetPath(4));
+				Engines.Load_DB(Engines.EnginesModes.SQLITE, UI.GetPath(Engines.EnginesModes.SQLITE));
 				Settings.SaveSettings();
 				UI.PreMainMenu();
 				UI.MainMenu();

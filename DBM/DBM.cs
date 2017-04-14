@@ -3,14 +3,13 @@
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.IO;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 using SBArray = Microsoft.SmallBasic.Library.Array;
 using SBFile = Microsoft.SmallBasic.Library.File;
-using System.Threading.Tasks;
-using System.Diagnostics;
-using System.IO;
 /*
 	Completed Items:
 		Settings ; EULA; Logs ;Main;
@@ -31,11 +30,10 @@ using System.IO;
 //Complete Implements and Localize
 namespace DBM
 {
-	[SmallBasicType]
 	public static class UI 
 	{
 		private static Stopwatch StartUpStopWatch = Stopwatch.StartNew();
-        private static Dictionary<string, string> _Buttons = new Dictionary<string, string>(); 
+        private static Dictionary<string, string > _Buttons = new Dictionary<string, string>(); 
         private static Dictionary<string, string> _TextBox = new Dictionary<string, string>();  //TODO Implement this
         private static Dictionary<string, string> _CheckBox = new Dictionary<string, string>(); //TODO Implement this
         private static Dictionary<string, string> _ComboBox = new Dictionary<string, string>(); //TODO Implement this
@@ -68,17 +66,18 @@ namespace DBM
 			{
 				LDNetwork.DownloadFile(GlobalStatic.EULA_Text_File, GlobalStatic.Online_EULA_URI);
 			}
+            string EulaVersion = SBFile.ReadLine(GlobalStatic.EULA_Text_File, 1);
+            EulaVersion.Replace(" ", "");
 
-			string EulaVersion = LDText.Replace(SBFile.ReadLine(GlobalStatic.EULA_Text_File, 1), " ", "");
-			for (int i = 1; i <= Text.GetLength(EulaVersion); i++)
+			for (int i = 0; i < EulaVersion.Length; i++)
 			{
-				if (Text.GetSubText(EulaVersion, i, 1) != "\t")
+                if (EulaVersion.Substring(i, 1) != "\t")
 				{
-					GlobalStatic.EULA_Newest_Version = GlobalStatic.EULA_Newest_Version + Text.GetSubText(EulaVersion, i, 1);
+					GlobalStatic.EULA_Newest_Version += EulaVersion.Substring(i, 1);
 				}
 			}
-			Startup();
-		}
+            Startup();
+        }
 
 		public static void Startup()
 		{
@@ -106,7 +105,7 @@ namespace DBM
 
 			if (Program.ArgumentCount == 1)
 			{
-				Engines.Load_DB( Engines.EnginesModes.SQLITE, GetPath(4) );
+				Engines.Load_DB( Engines.EnginesModes.SQLITE, GetPath(Engines.EnginesModes.SQLITE) );
 			}
 			if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_Username == LDFile.UserName && GlobalStatic.LastVersion == (int)LDText.Replace( GlobalStatic.VersionID.ToString(),".","") && GlobalStatic.EulaTest == false)
 			{ 
@@ -199,7 +198,6 @@ namespace DBM
 
 		public static void MainMenu()
 		{
-
             Utilities.AddtoStackTrace( "UI.MainMenu()");
 			LDGraphicsWindow.ExitButtonMode(GraphicsWindow.Title, "Enabled");
 			GraphicsWindow.CanResize = true;
@@ -246,7 +244,7 @@ namespace DBM
 			}
 		}
 
-		public static string GetPath(int EngineMode)
+		public static string GetPath(Engines.EnginesModes EngineMode)
 		{
             Utilities.AddtoStackTrace( "UI.GetPath()");
 			if (Program.ArgumentCount == 1 && GlobalStatic.LoadedFile == false)
@@ -254,7 +252,7 @@ namespace DBM
 			{
 				switch (EngineMode)
 				{ 
-					case (int)Engines.EnginesModes.SQLITE:
+					case Engines.EnginesModes.SQLITE:
 						return LDDialogs.OpenFile(GlobalStatic.Extensions, GlobalStatic.LastFolder + "\\");
 					default:
 						return "Currently not Supported";
@@ -440,7 +438,18 @@ namespace DBM
 
             GraphicsWindow.DrawText(10, 165, Utilities.Localization["Language"]);
             GlobalStatic.ComboBox["Language"] = LDControls.AddComboBox(Utilities.ISO_Text.ToPrimitiveArray(), 200, 120);
-		}
+            Controls.Move(GlobalStatic.ComboBox["Language"], 200, 165);
+
+            GraphicsWindow.DrawText(10, 280, Utilities.Localization["LOG CSV Path"]);
+            _Buttons.Add("Log_CSV",Controls.AddButton(Utilities.Localization["Browse"], 290, 280));
+
+            GraphicsWindow.DrawText(10, 320, Utilities.Localization["LOG DB PATH"]);
+            _Buttons.Add("Log_DB", Controls.AddButton(Utilities.Localization["Browse"], 290, 320));
+
+            GraphicsWindow.DrawText(10, 360, Utilities.Localization["Transaction DB Path"]);
+            _Buttons.Add("Transaction_DB", Controls.AddButton(Utilities.Localization["Browse"], 290, 360));
+
+        }
 
 		public static void CreateTableUI()//TODO: Create the "Create Table UI"
 		{
@@ -523,12 +532,11 @@ namespace DBM
             }
 
 			if (LDWindows.CurrentID == 0)
-			{ Program.End(); }
-			else
-			{ 
-				GraphicsWindow.Clear();
-				GraphicsWindow.Hide();
-			}
+			{
+                Program.End();
+            }
+			GraphicsWindow.Clear();
+			GraphicsWindow.Hide();
 		}
 
 		//The following async the Handlers class to make the code faster! Warning ! Can cause bugs!!!
