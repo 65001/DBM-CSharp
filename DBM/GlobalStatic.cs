@@ -25,8 +25,8 @@ namespace DBM
 			public static int DefaultWidth, DefaultHeight,DefaultFontSize,LogNumber;
 
 			public static string UserName = LDFile.UserName;
+
 			//URI
-  
 			public static string AssetPath = Path.Combine( ProgramDirectory , "Assets");
 			public static string LocalizationFolder = Path.Combine( ProgramDirectory , "Localization");
 			public static string Localization_LanguageCodes_Path = Path.Combine(LocalizationFolder, "Lang");

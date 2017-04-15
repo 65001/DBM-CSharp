@@ -1,5 +1,7 @@
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\DBM.exe.config
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\DBM.exe
+C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\DBM.exe.CodeAnalysisLog.xml
+C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\DBM.exe.lastcodeanalysissucceeded
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\LitDev.dll
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\nunit.framework.dll
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\SmallBasicLibrary.dll
@@ -7,4 +9,3 @@ C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\SmallBasicLibrary.xml
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\LitDev.xml
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\nunit.framework.xml
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\obj\x86\Release\DBM.exe
-C:\Users\Abhishek\Documents\Projects\DBM\DBM\obj\x86\Release\DBM.csprojResolveAssemblyReference.cache

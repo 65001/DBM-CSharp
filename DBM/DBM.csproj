@@ -73,8 +73,6 @@
     </Compile>
     <Compile Include="Utilities.cs">
     </Compile>
-    <Compile Include="UnitTests.cs">
-    </Compile>
     <Compile Include="Handlers.cs">
     </Compile>
     <Compile Include="Import.cs" />
