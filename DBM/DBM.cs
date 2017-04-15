@@ -121,7 +121,7 @@ namespace DBM
 					Console.WriteLine("Version ID : {0} \n Eula Test {1} \n ", GlobalStatic.VersionID,GlobalStatic.EulaTest);
 				}
 				Settings.SaveSettings();
-				EULA.UI(GlobalStatic.EULA_Text_File,GlobalStatic.Ping);
+				EULA.UI(GlobalStatic.EULA_Text_File,GlobalStatic.Ping,GlobalStatic.Title,GlobalStatic.Copyright);
 			}
 			StartUpStopWatch.Stop();
 			Events.LogMessage("Startup Time: " +StartUpStopWatch.ElapsedMilliseconds + " (ms)",Utilities.Localization["UI"]);

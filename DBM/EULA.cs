@@ -7,24 +7,25 @@ namespace DBM
 	{
 		static string CheckBox, Accept, Decline;
 
-		public static void UI(string URI,decimal Ping)
+		public static void UI(string URI,decimal Ping,string Title,string CopyrightDate)
 		{
             Utilities.AddtoStackTrace( "EULA.UI()");
 			GraphicsWindow.Show();
 			GraphicsWindow.Left = Desktop.Width / 3;
 			GraphicsWindow.Top = Desktop.Height / 4;
-			GraphicsWindow.Title = GlobalStatic.Title + "EULA";
+			GraphicsWindow.Title = Title + "EULA";
 
 			LDControls.RichTextBoxReadOnly = true;
 			string EulaTextBox = LDControls.AddRichTextBox(600, 350);
 			LDControls.RichTextBoxReadOnly = false;
 			Controls.Move(EulaTextBox, 10, 10);
-			string CNTS = LDText.Replace(SBFile.ReadContents(URI), "<date>", GlobalStatic.Copyright);
+			string CNTS = LDText.Replace(SBFile.ReadContents(URI), "<date>", CopyrightDate);
 
 			if (Ping == -1) // DEV //TODO
 			{
-
+                Events.LogMessage(Utilities.Localization["Failed Load Online EULA"], Utilities.Localization["Error"]);
 			}
+
 			if (string.IsNullOrWhiteSpace(CNTS)) //TODO
 			{
 				Program.End();

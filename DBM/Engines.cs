@@ -12,7 +12,6 @@ using SBArray = Microsoft.SmallBasic.Library.Array;
 
 namespace DBM
 {
-	[SmallBasicType]
 	public static class Engines
 	{
 		public enum EnginesModes { NONE, MySQL = 1, ODBC = 2, OLEDB = 3, SQLITE = 4, SQLSERVER = 5 }
@@ -32,10 +31,12 @@ namespace DBM
 
         public static Primitive Schema { get; private set; }
         static List<string> _Schema = new List<string>();
+
+        static List<string> _TrackingDefaultTable = new List<string>();
 		
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
-            Utilities.AddtoStackTrace( "Engines.Command()");
+            Utilities.AddtoStackTrace("Engines.Command()");
 			if (RunParser == false)
 			{
 				EnginesModes EngineMode = Engine_Type(Database);
@@ -54,7 +55,7 @@ namespace DBM
 
 		public static void Parser()  //TODO: Implement Parser
 		{
-            Utilities.AddtoStackTrace( "Engines.Parser()");
+            Utilities.AddtoStackTrace("Engines.Parser()");
 		}
 
 		public static Primitive Query(string DataBase, string SQL, string ListView, bool FetchRecords, string UserName, string Explanation) //Expand
@@ -212,7 +213,7 @@ namespace DBM
                     {
                         Events.LogMessage(ex.ToString(), "System");
                     }
-						LDList.Add(GlobalStatic.TrackDefaultTable, Database + "." + CurrentTable);
+                        _TrackingDefaultTable.Add(Database + "." + CurrentTable);
 						GetColumnsofTable(Database, CurrentTable);
 						break;
 				}
@@ -252,7 +253,7 @@ namespace DBM
 			if (!string.IsNullOrEmpty(Table))
 			{
 				CurrentTable = "\"" + Table + "\"";
-				LDList.Add(GlobalStatic.TrackDefaultTable, CurrentDatabase + "." + CurrentTable);
+                _TrackingDefaultTable.Add(CurrentDatabase + "." + CurrentTable);
                 return;
 			}
 			Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
@@ -321,7 +322,7 @@ namespace DBM
 
 		public static void CreateStatisticsPage(string Table) //TODO
 		{
-            Utilities.AddtoStackTrace( "Engines.CreateStatisticsPage()");
+            Utilities.AddtoStackTrace("Engines.CreateStatisticsPage()");
 		}
 
 		static EnginesModes Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database 
@@ -337,7 +338,6 @@ namespace DBM
 		public static void AddToList(string path, string Name, string ShortName, EnginesModes Engine)
 		{
 			Database_Shortname = ShortName;
-
 			_DB_Name.Add(Name);
 			_DB_Path.Add(path);
 			_DB_ShortName.Add(ShortName);
