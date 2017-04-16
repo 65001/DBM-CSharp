@@ -14,7 +14,7 @@ namespace DBM
 {
 	public static class Engines
 	{
-		public enum EnginesModes { NONE, MySQL = 1, ODBC = 2, OLEDB = 3, SQLITE = 4, SQLSERVER = 5 }
+		public enum EnginesModes { NONE, MySQL, ODBC, OLEDB, SQLITE, SQLSERVER}
 		public static string CurrentDatabase { get; private set; }
 		public static string CurrentTable { get; private set; }
 		public static string Database_Shortname { get; private set; }
@@ -99,13 +99,13 @@ namespace DBM
             //New Database creation code
             switch (Mode)
 			{
-				case EnginesModes.MySQL:  //TODO
+				case EnginesModes.MySQL: 
                     CurrentDatabase = LDDataBase.ConnectMySQL(Data["Server"], Data["User"], Data["Password"], Data["Database"]);
                     return CurrentDatabase;
-				case EnginesModes.ODBC:  //TODO
+				case EnginesModes.ODBC:  
                     CurrentDatabase = LDDataBase.ConnectOdbc(Data["Driver"], Data["Server"], Data["Port"], Data["User"], Data["Password"], Data["Option"], Data["Database"]);
                     return CurrentDatabase;
-				case EnginesModes.OLEDB: //TODO
+				case EnginesModes.OLEDB: 
                     CurrentDatabase = LDDataBase.ConnectOleDb(Data["Provider"], Data["Server"], Data["Database"]);
                     return CurrentDatabase;
 				case EnginesModes.SQLITE:
@@ -119,7 +119,7 @@ namespace DBM
                         return Database;
                     }
                     return null;
-				case EnginesModes.SQLSERVER: //SQLServer
+				case EnginesModes.SQLSERVER:
                     CurrentDatabase = LDDataBase.ConnectSqlServer(Data["Server"], Data["Database"]);
                     return CurrentDatabase;
 				default:
@@ -192,18 +192,19 @@ namespace DBM
 						for (int i = 1; i <= SBArray.GetItemCount(Master_Schema_List); i++)
 						{
                         string Name = Master_Schema_List[i]["tbl_name"];
-                             switch ((string)Master_Schema_List[i]["type"])
-                             {
-                                  case "table":
-                                     _Tables.Add(Name);
-                                     break;
-                                  case "view":
-                                    _Views.Add(Name);
-                                    break;
-                                  case "index":
-                                    _Indexes.Add(Name);
-                                    break;
-                        }
+                        string Type = Master_Schema_List[i]["type"];
+                            switch (Type)
+                            {
+                            case "table":
+                                _Tables.Add(Name);
+                                break;
+                            case "view":
+                                _Views.Add(Name);
+                                break;
+                            case "index":
+                                _Indexes.Add(Name);
+                                break;
+                            }
 						}
                     try
                     {
@@ -221,7 +222,7 @@ namespace DBM
 
 		public static void GetColumnsofTable(string Database, string Table)
 		{
-            Utilities.AddtoStackTrace( "Engines.GetSchemaofTable()");
+            Utilities.AddtoStackTrace("Engines.GetSchemaofTable()");
 
 			if (string.IsNullOrEmpty(Database) || string.IsNullOrEmpty(Table)) //Prevents calls to nonexistent tables or Databases
 			{
@@ -272,12 +273,11 @@ namespace DBM
 				}
 				if (Function) 
 				{
-					GQ_CMD = GenerateFunction(FunctionSelected, FunctionColumn);
+					GQ_CMD = GenerateFunction(FunctionSelected,FunctionColumn);
 				}
-
 				if (Sort)
 				{
-					GQ_CMD += GenerateSort(OrderBy,SortOrder );
+					GQ_CMD += GenerateSort(OrderBy,SortOrder);
 				}
 			}
 			Query(CurrentDatabase, GQ_CMD, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.Username);
