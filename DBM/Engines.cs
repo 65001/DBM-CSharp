@@ -220,7 +220,7 @@ namespace DBM
 
 			if (string.IsNullOrEmpty(Database) || string.IsNullOrEmpty(Table)) //Prevents calls to nonexistent tables or Databases
 			{
-                throw new ArgumentException("The Database and Table Paramaters cannot be null or empty");
+                throw new ArgumentException("The Database and Table Paramaters cannot be null or empty","Engines.GetColumnsofTable()");
 			}
 
 			EnginesModes EngineMode = Engine_Type(Database);

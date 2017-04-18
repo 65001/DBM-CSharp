@@ -146,9 +146,8 @@ namespace DBM
             { }
             else if (Item == Utilities.Localization["HTML"] + " ") //TODO
             {
-               // Export.HTML(Export.Generate2DArrayFromCurrentTable(), Engines.Schema,Engines.CurrentTable,LDDialogs.SaveFile("html",""), GlobalStatic.ProductID + " V" + GlobalStatic.VersionID);
-                Console.WriteLine("");
-                Console.WriteLine(Export.HTML(Export.Generate2DArrayFromCurrentTable(), Engines.Schema, "Test",GlobalStatic.ProductID +" V" + GlobalStatic.VersionID)); //TODO
+                Export.HTML(Export.Generate2DArrayFromCurrentTable(), Engines.Schema, Engines.CurrentTable.Replace("\"",""),LDDialogs.SaveFile("html",""), GlobalStatic.ProductID + " V" + GlobalStatic.VersionID);
+                GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
             }
             //else if (Item == Utilities.Localization["Export UI"]) //TODO
             //{ }
