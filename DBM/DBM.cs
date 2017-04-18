@@ -105,7 +105,7 @@ namespace DBM
 
 			if (Program.ArgumentCount == 1)
 			{
-				Engines.Load_DB( Engines.EnginesModes.SQLITE, GetPath(Engines.EnginesModes.SQLITE) );
+                Engines.Load_DB_Sqlite(GetPath(Engines.EnginesModes.SQLITE));
 			}
 			if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_Username == LDFile.UserName && GlobalStatic.LastVersion == (int)LDText.Replace( GlobalStatic.VersionID.ToString(),".","") && GlobalStatic.EulaTest == false)
 			{ 

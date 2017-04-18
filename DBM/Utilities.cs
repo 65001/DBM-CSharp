@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using LitDev;
 using Microsoft.SmallBasic.Library;
+using SBArray = Microsoft.SmallBasic.Library.Array;
 namespace DBM
 {
 	public static class Utilities

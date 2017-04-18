@@ -1,13 +1,15 @@
-﻿using LitDev;
+﻿using System;
+using System.IO;
+using LitDev;
 using Microsoft.SmallBasic.Library;
-using SBFile = Microsoft.SmallBasic.Library.File;
+//using SBFile = Microsoft.SmallBasic.Library.File;
 namespace DBM
 {
     public static class EULA
 	{
 		static string CheckBox, Accept, Decline;
 
-		public static void UI(string URI,decimal Ping,string Title,string CopyrightDate)
+		public static void UI(string FilePath,decimal Ping,string Title,string CopyrightDate)
 		{
             Utilities.AddtoStackTrace( "EULA.UI()");
 			GraphicsWindow.Show();
@@ -18,8 +20,8 @@ namespace DBM
 			LDControls.RichTextBoxReadOnly = true;
 			string EulaTextBox = LDControls.AddRichTextBox(600, 350);
 			LDControls.RichTextBoxReadOnly = false;
-			Controls.Move(EulaTextBox, 10, 10);
-			string CNTS = LDText.Replace(SBFile.ReadContents(URI), "<date>", CopyrightDate);
+            Controls.Move(EulaTextBox, 10, 10);
+			string CNTS = LDText.Replace(System.IO.File.ReadAllText(FilePath), "<date>", CopyrightDate);
 
 			if (Ping == -1) // DEV //TODO
 			{

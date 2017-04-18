@@ -5,6 +5,7 @@
 using System;
 using System.Text;
 using System.IO;
+using System.Diagnostics;
 using Microsoft.SmallBasic.Library;
 using SBArray = Microsoft.SmallBasic.Library.Array;
 using LitDev;
@@ -84,24 +85,83 @@ namespace DBM
             }
         }
         */
-        public static void HTML(Primitive Data,Primitive Schema,string Title,string FilePath) //TODO
+        public static void HTML(Primitive Data,Primitive Schema,string Title,string FilePath,string Generator) //TODO
         {
             Utilities.AddtoStackTrace("Export.HTML");
-            string Output =  HTML(Data, Schema, Title);
+            string Output =  HTML(Data, Schema, Title,Generator);
             Console.WriteLine(Output);
 
             System.IO.File.WriteAllText(FilePath, Output);
         }
 
-        public static string HTML(Primitive Data, Primitive Schema,string Title)
+        public static string HTML(Primitive Data, Primitive Schema,string Title,string Generator)
         {
             Utilities.AddtoStackTrace("Export.HTML");
+            if(string.IsNullOrWhiteSpace(Data) || string.IsNullOrWhiteSpace(Schema) || string.IsNullOrWhiteSpace(Title))
+            {
+                throw new ArgumentException("DBM.Export.HTML : Data , Schema , or Title are null or are composed of whitespace characters");
+            }
+
             StringBuilder HTML_Statement = new StringBuilder();
-            HTML_Statement.Append("<!DOCTYOE html>\n<html>\n\t<title>" + Title + "</title>\n");
-            HTML_Statement.Append("\t<meta name=\"viewport\" content=\" width=device-width, initial-scale=1\">)");
+            HTML_Statement.Append("<!DOCTYPE html>\n<html>\n\t<title>" + Title + "</title>\n\t");
 
-             return HTML_Statement.ToString();
+            HTML_Statement.Append("<head>\n\t\t");
+            HTML_Statement.Append("<meta charset = \"UTF=8\">\n\t\t");
+            HTML_Statement.Append("<meta name=\"viewport\" content=\" width=device-width, initial-scale=1\">\n\t\t");
+            HTML_Statement.Append("<meta name=\"generator\" content=\"" + Generator + "\">\n\t\t");
+            HTML_Statement.Append("<!-- DBM is develeoped by Abhishek Sathiabalan https://github.com/65001/DBM-CSharp -->\n\t\t");
 
+            //TODO Style needs to be corrected :(
+            HTML_Statement.Append("<style>\n\t\t\ttable, td, th {border: 1px solid #ddd; text-align: left;}\n\t\t\t");
+            HTML_Statement.Append("table {border-collapse: collapse; width: 100%;}\n\t\t\tth,td {padding: 5px;}\n\t\t\t");
+            HTML_Statement.Append("tr:hover{background-color:#f5f5f5}\n\t\t\tth,td#Main {background-color #4CAF50;color: white;font-size:120%;border:0px;text-align:center;}\n\t\t");
+            HTML_Statement.Append("</style>\n\t");
+            HTML_Statement.Append("</head>\n\n\t");
+            
+
+            HTML_Statement.Append("<body>\n\t\t");
+
+            HTML_Statement.Append("<div style=\"overflow-x:auto;\">\n\t\t\t");
+            HTML_Statement.Append("<table>\n\t\t\t\t");
+            HTML_Statement.Append("<tr>\n\t\t\t\t\t<td id=\"Main\" + colspan = \"");
+            HTML_Statement.Append(SBArray.GetItemCount(Schema).ToString());
+            HTML_Statement.Append("\">" + Title + "</td>\n\t\t\t\t");
+            HTML_Statement.Append("</tr>\n\t\t\t\t<tr>\n");
+
+            //Converts Primitive Data to FastArray
+            string FastArray = LDFastArray.Add();
+            for (int i = 1; i <= SBArray.GetItemCount(Data); i++)
+            {
+                Primitive Temp_HTML = Data[i];
+                for(int ii =1;ii <= SBArray.GetItemCount(Schema);ii++)
+                {
+                    LDFastArray.Set2D(FastArray, i, ii, Temp_HTML[Schema[ii]]);
+                }
+            }
+            //Header Data
+            for (int i = 1; i <= SBArray.GetItemCount(Schema); i++)
+            {
+                string Temp_Schema = LDText.Replace(Schema[i], "_", " ");
+                Temp_Schema = Text.ConvertToUpperCase(Text.GetSubText(Temp_Schema, 1, 1)) + Text.GetSubTextToEnd(Temp_Schema, 2);
+                HTML_Statement.Append("\t\t\t\t\t<th>" + Temp_Schema + "</th>\n");
+            }
+
+            HTML_Statement.Append("\t\t\t\t</tr>\n");
+
+            for (int i = 1; i <= SBArray.GetItemCount(Data); i++)
+            {
+                HTML_Statement.Append("\t\t\t\t<tr>\n");
+                for (int ii = 1; ii <= SBArray.GetItemCount(Schema); ii++)
+                {
+                    HTML_Statement.Append("\t\t\t\t\t<td>" + LDFastArray.Get2D(FastArray, i, ii).ToString() + "</td>\n");
+                }
+                HTML_Statement.Append("\t\t\t\t</tr>\n");
+            }
+
+            LDFastArray.Remove(FastArray);
+            HTML_Statement.Append("\t\t\t</table>\n\t\t</div>\n\t</body>\n</html>");
+
+            return HTML_Statement.ToString();
         }
 	}
 }

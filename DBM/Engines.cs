@@ -24,6 +24,7 @@ namespace DBM
 		static List<string> _DB_Name = new List<string>();
 		static List<string> _DB_ShortName = new List<string>();
 		static List<EnginesModes> _DB_Engine = new List<EnginesModes>();
+        static List<string> _TrackingDefaultTable = new List<string>();
 
         static List<string> _Tables = new List<string>();
         static List<string> _Views = new List<string>();
@@ -31,8 +32,6 @@ namespace DBM
 
         public static Primitive Schema { get; private set; }
         static List<string> _Schema = new List<string>();
-
-        static List<string> _TrackingDefaultTable = new List<string>();
 		
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
@@ -41,15 +40,10 @@ namespace DBM
 			{
 				EnginesModes EngineMode = Engine_Type(Database);
 				TransactionRecord(User, Database, SQL, "CMD", Explanation);
-				switch (EngineMode)
-				{
-					case EnginesModes.SQLITE:
-						return LDDataBase.Command(Database, SQL);
-					default:
-						return 0;
-				}
+                return LDDataBase.Command(Database, SQL);
 			}
 			Console.WriteLine("Database type currently not supported!");
+            //TODO Implement Parser Stuff 
 			return 0;
 		}
 
@@ -61,7 +55,7 @@ namespace DBM
 		public static Primitive Query(string DataBase, string SQL, string ListView, bool FetchRecords, string UserName, string Explanation) //Expand
 		{
 			Stopwatch QueryTime = Stopwatch.StartNew();
-            Utilities.AddtoStackTrace( "Engines.Query()");
+            Utilities.AddtoStackTrace("Engines.Query()");
 			TransactionRecord(UserName, DataBase, SQL, "Query", Explanation);
 			Primitive QueryResults = LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
 
