@@ -89,41 +89,43 @@ namespace DBM
         {
             Utilities.AddtoStackTrace("Export.HTML");
             string Output =  HTML(Data, Schema, Title,Generator);
-            Console.WriteLine(Output);
-
             System.IO.File.WriteAllText(FilePath, Output);
         }
 
         public static string HTML(Primitive Data, Primitive Schema,string Title,string Generator)
         {
             Utilities.AddtoStackTrace("Export.HTML");
+            Stopwatch HTML_Timer = new Stopwatch();
+            HTML_Timer.Start();
             if(string.IsNullOrWhiteSpace(Data) || string.IsNullOrWhiteSpace(Schema) || string.IsNullOrWhiteSpace(Title))
             {
                 throw new ArgumentException("DBM.Export.HTML : Data , Schema , or Title are null or are composed of whitespace characters");
             }
 
             StringBuilder HTML_Statement = new StringBuilder();
-            HTML_Statement.Append("<!DOCTYPE html>\n<html>\n\t<title>" + Title + "</title>\n\t");
+            HTML_Statement.Append("<!DOCTYPE html>\n<html>\n\t");
 
             HTML_Statement.Append("<head>\n\t\t");
-            HTML_Statement.Append("<meta charset = \"UTF=8\">\n\t\t");
-            HTML_Statement.Append("<meta name=\"viewport\" content=\" width=device-width, initial-scale=1\">\n\t\t");
+
+            HTML_Statement.Append("<title>" + Title + "</title>\n\t\t");
+            HTML_Statement.Append("<meta charset = \"UTF-8\">\n\t\t");
+            HTML_Statement.Append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\t\t");
             HTML_Statement.Append("<meta name=\"generator\" content=\"" + Generator + "\">\n\t\t");
             HTML_Statement.Append("<!-- DBM is develeoped by Abhishek Sathiabalan https://github.com/65001/DBM-CSharp -->\n\t\t");
 
-            //TODO Style needs to be corrected :(
-            HTML_Statement.Append("<style>\n\t\t\ttable, td, th {border: 1px solid #ddd; text-align: left;}\n\t\t\t");
+            HTML_Statement.Append("<style>\n\t\t\t");
+            HTML_Statement.Append("table, td, th {border: 1px solid #ddd; text-align: left;}\n\t\t\t");
             HTML_Statement.Append("table {border-collapse: collapse; width: 100%;}\n\t\t\tth,td {padding: 5px;}\n\t\t\t");
-            HTML_Statement.Append("tr:hover{background-color:#f5f5f5}\n\t\t\tth,td#Main {background-color #4CAF50;color: white;font-size:120%;border:0px;text-align:center;}\n\t\t");
+            HTML_Statement.Append("tr:hover{background-color:#f5f5f5}\n\t\t\tth,td#Main {background-color: #4CAF50;color: white;font-size:120%;border:0px;text-align:center;}\n\t\t");
             HTML_Statement.Append("</style>\n\t");
+
             HTML_Statement.Append("</head>\n\n\t");
             
-
             HTML_Statement.Append("<body>\n\t\t");
 
             HTML_Statement.Append("<div style=\"overflow-x:auto;\">\n\t\t\t");
             HTML_Statement.Append("<table>\n\t\t\t\t");
-            HTML_Statement.Append("<tr>\n\t\t\t\t\t<td id=\"Main\" + colspan = \"");
+            HTML_Statement.Append("<tr>\n\t\t\t\t\t<td id=\"Main\" colspan = \"");
             HTML_Statement.Append(SBArray.GetItemCount(Schema).ToString());
             HTML_Statement.Append("\">" + Title + "</td>\n\t\t\t\t");
             HTML_Statement.Append("</tr>\n\t\t\t\t<tr>\n");
@@ -161,6 +163,8 @@ namespace DBM
             LDFastArray.Remove(FastArray);
             HTML_Statement.Append("\t\t\t</table>\n\t\t</div>\n\t</body>\n</html>");
 
+            HTML_Timer.Stop();
+            Console.WriteLine("Export.HTML Run time {0} ms", HTML_Timer.ElapsedMilliseconds);
             return HTML_Statement.ToString();
         }
 	}
