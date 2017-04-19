@@ -107,7 +107,7 @@ namespace DBM
 			{
                 Engines.Load_DB_Sqlite(GetPath(Engines.EnginesModes.SQLITE));
 			}
-			if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_Username == LDFile.UserName && GlobalStatic.LastVersion == (int)LDText.Replace( GlobalStatic.VersionID.ToString(),".","") && GlobalStatic.EulaTest == false)
+			if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_Username == LDFile.UserName && GlobalStatic.LastVersion == int.Parse(GlobalStatic.VersionID.Replace(".","")) && GlobalStatic.EulaTest == false)
 			{ 
 				StartupGUI();
 			}
@@ -460,7 +460,32 @@ namespace DBM
 		public static void CreateTableUI()//TODO: Create the "Create Table UI"
 		{
             Utilities.AddtoStackTrace( "UI.CreateTableUI()");
-		}
+            Controls.HideControl(GlobalStatic.Dataview);
+            Controls.HideControl(GlobalStatic.ListView);
+
+            HideDisplayResults();
+            GraphicsWindow.Clear();
+            _Buttons.Clear();
+
+            LDGraphicsWindow.CancelClose = true;
+            LDGraphicsWindow.ExitOnClose = false;
+
+            GlobalStatic.Dataview = LDControls.AddDataView(1000, 900, "1=Field;2=Type;3=PK;4=AI;5=Unique;6=Not_Null;");
+            GraphicsWindow.DrawText(1, 4, "Name: ");
+            Controls.Move(GlobalStatic.Dataview, 1, 30);
+
+            GlobalStatic.TextBox["Table_Name"] = Controls.AddTextBox(50, 1);
+            Controls.SetTextBoxText(GlobalStatic.TextBox["Table_Name"], "Table1");
+
+            _Buttons.Add("Commit", Controls.AddButton("Commit", 250, 1));
+            _Buttons.Add("Exit", Controls.AddButton("Exit", 350, 1));
+
+            LDControls.DataViewSetColumnComboBox(GlobalStatic.Dataview, 2, "1=Integer;2=Text;3=Blob;4=Real;5=Numeric;");
+            for (int i = 3; i <= 6; i++)
+            {
+                LDControls.DataViewSetColumnCheckBox(GlobalStatic.Dataview, i);
+            }
+        }
 
 		public static void CreateTableHandler()//TODO Create the Create Table Handler
 		{
@@ -498,7 +523,8 @@ namespace DBM
             {
                 return;
             }
-            else if (Type.Equals("PopUp") == true)
+
+            if (Type.Equals("PopUp") == true)
             {
                 GraphicsWindow.ShowMessage(Message, Caller + "REVERT!");
             }
