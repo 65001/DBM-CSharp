@@ -395,22 +395,21 @@ namespace DBM
 		public static void Title()
 		{
             Utilities.AddtoStackTrace( "UI.Title()");
-			string TimeRef,SetTitle;
+			string SetTitle;
 			SetTitle = GlobalStatic.Title + " " + Engines.Database_Shortname + "(" + Engines.CurrentDatabase + ") :" + Handlers.TypeofSorts[GlobalStatic.SortBy] + ":" + Engines.CurrentTable;
-			TimeRef = LDList.GetAt(GlobalStatic.List_Time_Refer, LDList.Count(GlobalStatic.List_Time_Refer)); //Time of Last Query or Command
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
 			{
 				SetTitle = GlobalStatic.Title;
 			}
 			else 
 			{
-				switch (TimeRef)
+				switch (Engines.Type[Engines.Type.Count -1])
 				{
-					case "CMD":
-						SetTitle += "( CMD TIME : " + LDList.GetAt(GlobalStatic.List_CMD_Time, LDList.Count(GlobalStatic.List_CMD_Time)) + ")";
+					case Engines.Types.Command:
+						SetTitle += "( Command TIME : "  + Engines.Timer[Engines.Timer.Count - 1]  + ")";
 						break;
-					case "Query":
-						SetTitle += "( Query Time : " + LDList.GetAt(GlobalStatic.List_Query_Time, LDList.Count(GlobalStatic.List_Query_Time)) + ")";
+					case Engines.Types.Query:
+						SetTitle += "( Query Time : " + Engines.Timer[Engines.Timer.Count - 1] + ")";
 						break;
 				}
 			}
@@ -540,7 +539,7 @@ namespace DBM
 
 			if (LDWindows.CurrentID == 0)
 			{
-                Program.End();
+                Environment.Exit(0);
             }
 			GraphicsWindow.Clear();
 			GraphicsWindow.Hide();

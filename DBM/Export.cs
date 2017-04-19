@@ -27,6 +27,11 @@ namespace DBM
         {
             return Generate2DArrayFromTable(Engines.CurrentDatabase, Engines.CurrentTable);
         }
+
+        public static Primitive Generate2DArrayFromLastQuery()
+        {
+            return Generate2DArray(Engines.CurrentDatabase, Engines.LastQuery[Engines.LastQuery.Count - 1]);
+        }
     
         public static void CSV(Primitive Data,Primitive Schema,string FilePath,string deliminator) //TODO
         {

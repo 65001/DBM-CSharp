@@ -11,19 +11,18 @@ namespace DBM
 		{
 			public static string ProgramDirectory = Program.Directory;
 			public static string Username = LDFile.UserName;
-			public static int Ping;
 			public static bool DebugMode,DebugParser;
 			public static bool EulaTest = false,LoadedFile = false;
 
 			public const string IP_Ping_Address = "8.8.8.8";
+            public static int Ping;
 
-			//Self Aware Data
-			public const string Copyright = "2016 through 2017";
+            //Self Aware Data
+            public const string Copyright = "2016 through 2017";
 			public const string ProductID = "DBM C#";
 			public static string VersionID = LDText.Replace( typeof(GlobalStatic).Assembly.GetName().Version.ToString(),".","");
 
 			public static int DefaultWidth, DefaultHeight,DefaultFontSize,LogNumber;
-
 			public static string UserName = LDFile.UserName;
 
 			//URI
@@ -58,7 +57,7 @@ namespace DBM
 
 			//Lists
 			public const string ExportT2 = "Export T2",ExportT1 = "Export T1";
-
+            
 			//public const string TrackDefaultTable = "TrackDefaultTable";
 			public const string List_Mod_Name = "Mod_Name";
 			public const string List_Mod_Path = "Mod_Path";
@@ -73,12 +72,6 @@ namespace DBM
 
 			public const string List_DB_Tracker = "DB_Tracking";
 
-			public const string List_Query_Time = "Query_Time";
-			public const string List_CMD_Time = "CMD_Time";
-			public const string List_Time_Refer = "Time_Ref";
-
-            public static List<string> ISO_Text = new List<string>();
-            
 			public static string Dataview,ListView;
 			public static Primitive MenuList,CheckList,ComboBox,TextBox,CheckBox; //Change to a Dictionaries in the future and move to UI.
 			public static Primitive SQLFunctionsList = Text.ConvertToUpperCase("1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;");

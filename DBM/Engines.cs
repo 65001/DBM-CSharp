@@ -15,6 +15,8 @@ namespace DBM
 	public static class Engines
 	{
 		public enum EnginesModes { NONE, MySQL, ODBC, OLEDB, SQLITE, SQLSERVER}
+        public enum Types { Command,Query}
+
 		public static string CurrentDatabase { get; private set; }
 		public static string CurrentTable { get; private set; }
 		public static string Database_Shortname { get; private set; }
@@ -32,10 +34,15 @@ namespace DBM
 
         public static Primitive Schema { get; private set; }
         static List<string> _Schema = new List<string>();
+
+        static List<Types> _Type_Referer = new List<Types>();
+        static List<long> _Timer = new List<long>();
+        static List<string> _Last_Query = new List<string>();
 		
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
             Utilities.AddtoStackTrace("Engines.Command()");
+            Stopwatch CommandTime = Stopwatch.StartNew();
 			if (RunParser == false)
 			{
 				EnginesModes EngineMode = Engine_Type(Database);
@@ -43,6 +50,9 @@ namespace DBM
                 return LDDataBase.Command(Database, SQL);
 			}
 			Console.WriteLine("Database type currently not supported!");
+
+            _Type_Referer.Add(Types.Command);
+            _Timer.Add(CommandTime.ElapsedMilliseconds);
             //TODO Implement Parser Stuff 
 			return 0;
 		}
@@ -54,13 +64,15 @@ namespace DBM
 
 		public static Primitive Query(string DataBase, string SQL, string ListView, bool FetchRecords, string UserName, string Explanation) //Expand
 		{
-			Stopwatch QueryTime = Stopwatch.StartNew();
             Utilities.AddtoStackTrace("Engines.Query()");
+
+            Stopwatch QueryTime = Stopwatch.StartNew();
 			TransactionRecord(UserName, DataBase, SQL, "Query", Explanation);
 			Primitive QueryResults = LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
 
-			LDList.Add(GlobalStatic.List_Time_Refer, "Query");
-			LDList.Add(GlobalStatic.List_Query_Time, QueryTime.ElapsedMilliseconds.ToString());
+            _Type_Referer.Add(Types.Query);
+            _Last_Query.Add(SQL);
+            _Timer.Add(QueryTime.ElapsedMilliseconds);
 			return QueryResults;
 		}
 
@@ -372,6 +384,21 @@ namespace DBM
         public static IReadOnlyList<string> Indexes
         {
             get { return _Indexes.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<Types> Type
+        {
+            get { return _Type_Referer.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<long> Timer
+        {
+            get { return _Timer.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<string> LastQuery
+        {
+            get { return _Last_Query.AsReadOnly(); }
         }
 	}
 }

@@ -146,7 +146,7 @@ namespace DBM
             { }
             else if (Item == Utilities.Localization["HTML"] + " ") //TODO
             {
-                Export.HTML(Export.Generate2DArrayFromCurrentTable(), Engines.Schema, Engines.CurrentTable.Replace("\"",""),LDDialogs.SaveFile("html",""), GlobalStatic.ProductID + " V" + GlobalStatic.VersionID);
+                Export.HTML(Export.Generate2DArrayFromLastQuery(), Engines.Schema, Engines.CurrentTable.Replace("\"",""),LDDialogs.SaveFile("html",""), GlobalStatic.ProductID + " V" + GlobalStatic.VersionID);
                 GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
             }
             //else if (Item == Utilities.Localization["Export UI"]) //TODO
@@ -155,7 +155,7 @@ namespace DBM
             { }
             else if (Item == Utilities.Localization["CSV"] + " ") //TODO
             {
-                Export.CSV(Export.Generate2DArrayFromCurrentTable(), Engines.Schema, Engines.DB_Path[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)], GlobalStatic.Deliminator);
+                Export.CSV(Export.Generate2DArrayFromLastQuery(), Engines.Schema, Engines.DB_Path[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)], GlobalStatic.Deliminator);
             }
             //Settings
             else if (Item == Utilities.Localization["About"])
