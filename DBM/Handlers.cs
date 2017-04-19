@@ -54,7 +54,7 @@ namespace DBM
             }
             else if (Item == Utilities.Localization["Define New Table"]) //TODO ADD UI
             {
-
+                UI.CreateTableUI();
             }
             //Main
             else if (Item == Utilities.Localization["View"] || Item == Utilities.Localization["View"] + " ")

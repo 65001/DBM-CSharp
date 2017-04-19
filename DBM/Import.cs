@@ -34,7 +34,8 @@ namespace DBM
 			}
 
 			Stopwatch Elappsed = Stopwatch.StartNew();
-			        
+            Elappsed.Start();
+            
 			CSV_Length.Clear();
 			CSV_IsString.Clear();
 
@@ -72,6 +73,8 @@ namespace DBM
 
 			//Drops The FastArray
 			LDFastArray.Remove(Data);
+
+            Console.WriteLine("Import.CSV time {0} ms", Elappsed.ElapsedMilliseconds);
             return string.Empty;
             
 		}

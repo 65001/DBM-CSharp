@@ -7,12 +7,12 @@ using System.Collections.Generic;
 using System.IO;
 namespace DBM
 {
-		public class GlobalStatic //List of Variables shared across everything through this class
+		public static class GlobalStatic //List of Variables shared across everything through this class
 		{
 			public static string ProgramDirectory = Program.Directory;
 			public static string Username = LDFile.UserName;
 			public static bool DebugMode,DebugParser;
-			public static bool EulaTest = false,LoadedFile = false;
+			public static bool EulaTest,LoadedFile;
 
 			public const string IP_Ping_Address = "8.8.8.8";
             public static int Ping;
@@ -42,7 +42,7 @@ namespace DBM
 			public const string Online_EULA_URI = "https://drive.google.com/uc?export=download&id=0B2v4xbFnpKvRNTFKckFKLVNNUDg";
 			public const string OnlineDB_Refrence_Location = "https://docs.google.com/uc?id=0B2v4xbFnpKvRVmNVODZ4bnppd3c&export=download";
 			//Settings Data
-			public static bool RestoreSettings = false;
+			public static bool RestoreSettings;
 			public static Primitive Settings,Extensions;
 			public static int Listview_Width,Listview_Height,UIx,LastVersion,TimeOut,SortBy;
 

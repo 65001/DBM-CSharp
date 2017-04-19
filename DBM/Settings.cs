@@ -131,7 +131,6 @@ namespace DBM
 			GlobalStatic.LogDB = LDDataBase.ConnectSQLite(GlobalStatic.LogDBpath);
 			GlobalStatic.TransactionDB = LDDataBase.ConnectSQLite(GlobalStatic.TransactionDBPath);
 
-			Engines.AddToList("<none>", "<none>", "<none>",0);
 			Engines.AddToList(GlobalStatic.LogDBpath, GlobalStatic.LogDB, "Master Log",Engines.EnginesModes.SQLITE);
 			Engines.AddToList(GlobalStatic.TransactionDBPath, GlobalStatic.TransactionDB, "Transaction Log",Engines.EnginesModes.SQLITE);
 

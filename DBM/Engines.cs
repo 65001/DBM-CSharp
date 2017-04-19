@@ -45,7 +45,6 @@ namespace DBM
             Stopwatch CommandTime = Stopwatch.StartNew();
 			if (RunParser == false)
 			{
-				EnginesModes EngineMode = Engine_Type(Database);
 				TransactionRecord(User, Database, SQL, "CMD", Explanation);
                 return LDDataBase.Command(Database, SQL);
 			}
@@ -198,8 +197,7 @@ namespace DBM
 						for (int i = 1; i <= SBArray.GetItemCount(Master_Schema_List); i++)
 						{
                         string Name = Master_Schema_List[i]["tbl_name"];
-                        string Type = Master_Schema_List[i]["type"];
-                            switch (Type)
+						switch (Master_Schema_List[i]["type"].ToString())
                             {
                             case "table":
                                 _Tables.Add(Name);
