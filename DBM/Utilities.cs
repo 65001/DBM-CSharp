@@ -55,11 +55,9 @@ namespace DBM
                     AddLocalization();
 				}
                 string DataPath =  Path.Combine( GlobalStatic.Localization_LanguageCodes_Path , GlobalStatic.LanguageCode + ".txt");
-                Console.WriteLine("{0} : {1}",DataPath,LDFile.Exists(DataPath));
 
                 Primitive Localization_Temp = System.IO.File.ReadAllText(DataPath);
                 string[] LocalizationFiles =  System.IO.Directory.GetFiles(LDFile.GetFolder(XMLPath));
-                Console.WriteLine("{0}",Localization_Temp);
                 _ISO_Text.Clear();
                 _ISO_LangCode.Clear();
 
@@ -72,7 +70,7 @@ namespace DBM
 			}
 			else
 			{
-				Events.LogMessage("Localization XML Missing", "Application");
+				Events.LogMessage("Localization XML Missing", "Application"); //DO NOT LOCALIZE
 			}
 		}
 
@@ -237,6 +235,14 @@ namespace DBM
         }
 
         public static void Print<T>(this List<T> List)
+        {
+            for (int i = 0; i < List.Count; i++)
+            {
+                Console.WriteLine("{0} : {1}", i, List[i]);
+            }
+        }
+
+        public static void Print<T>(this IReadOnlyList<T> List)
         {
             for (int i = 0; i < List.Count; i++)
             {

@@ -130,15 +130,15 @@ namespace DBM
                 return;
             }
             //Import
-            else if (Item == Utilities.Localization["CSV"]) //TODO
+            else if (Item == Utilities.Localization["CSV"])
             {
-                string SQL = Import.CSV(LDDialogs.OpenFile("csv", null));
-                Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, "", false); //TODO
+                Engines.Command(Engines.CurrentDatabase, Import.CSV(LDDialogs.OpenFile("csv", null)), GlobalStatic.UserName, "", false);
             }
             else if (Item == Utilities.Localization["SQL"]) //TODO
-            { }
-            else if (Item == Utilities.Localization["SQL"]) //TODO
-            { }
+            {
+                string SQL = System.IO.File.ReadAllText(LDDialogs.OpenFile("sql",null));
+                Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, null, false);
+            }
             else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
             { }
             //Export
@@ -154,10 +154,17 @@ namespace DBM
             else if (Item == Utilities.Localization["SQL"] + " ") //TODO
             { }
             else if (Item == Utilities.Localization["CSV"] + " ") //TODO
-            { }
+            {
+                Export.CSV(Export.Generate2DArrayFromCurrentTable(), Engines.Schema, Engines.DB_Path[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)], GlobalStatic.Deliminator);
+            }
             //Settings
-            else if (Item == Utilities.Localization["About"]) //TODO
-            { }
+            else if (Item == Utilities.Localization["About"])
+            {
+                Primitive About_Data =  Engines.Query(Engines.CurrentDatabase, "SELECT SQLITE_VERSION(),sqlite_source_id();", null, true, GlobalStatic.UserName, Utilities.Localization["User Requested"] + ":" + Utilities.Localization["App"]);
+                string About_Msg = "DBM C# is a Database Mangement Program developed by Abhishek Sathiabalan. (C)" + GlobalStatic.Copyright + ". All rights reserved.\n\nYou are running : " +GlobalStatic.ProductID + " v" + GlobalStatic.VersionID + "\n\n";
+                About_Msg += "SQLite Version : " + About_Data[1]["SQLITE_VERSION()"] + "\n" + "SQLITE Source ID : " + About_Data[1]["sqlite_source_id()"];
+                GraphicsWindow.ShowMessage(About_Msg, "About"); //DO NOT LOCALIZE
+            }
             else if (Item == Utilities.Localization["Show Help"]) //TODO
             {
 
@@ -186,9 +193,8 @@ namespace DBM
             else if (Item == Utilities.Localization["Stack Trace"])
             {
                 GlobalStatic.DebugMode = true;
-                Console.WriteLine("Debug Mode turned on due to current action.");
-                //TODO Print Utilities.StackTrace
-                //LDList.Print(GlobalStatic.List_Stack_Trace);
+                Console.WriteLine("\nStack Trace:");
+                Utilities.StackTrace.Print();
             }
             else if (Item == Utilities.Localization["Close TW"])
             {
@@ -328,7 +334,7 @@ namespace DBM
 
 			if (Index != 4)
 			{
-                if (CorrectList.Count > 0) //{revents OutofBound Errors
+                if (CorrectList.Count > 0) //Prevents OutofBound Errors
                 {
                     Engines.SetDefaultTable(CorrectList[0]);
                     LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], CorrectList.ToPrimitiveArray());
@@ -346,7 +352,6 @@ namespace DBM
 				string Message = "In the current database no " + Utilities.Localization[TypeofSorts[GlobalStatic.SortBy]] + "s can be found.";
 				Events.LogMessagePopUp(Message, Message,Utilities.Localization["Error"], Utilities.Localization["UI"]);
 			}
-		
 		}
 	}
 }

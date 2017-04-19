@@ -28,7 +28,7 @@ namespace DBM
             return Generate2DArrayFromTable(Engines.CurrentDatabase, Engines.CurrentTable);
         }
     
-        public static void CSV(Primitive Data,Primitive Schema,string FilePath) //TODO
+        public static void CSV(Primitive Data,Primitive Schema,string FilePath,string deliminator) //TODO
         {
 
         }
