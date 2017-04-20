@@ -16,7 +16,6 @@ namespace DBM
 
 		public static void Menu(string Item) //Handles Main Menu
 		{
-
             Utilities.AddtoStackTrace( "Handlers.Menu(" + Item + ")");
 
             //Switch and Enum cannot be used because values can change
@@ -214,44 +213,46 @@ namespace DBM
 
 		public static void Buttons(string LastButton)
 		{
-			if (LastButton ==UI.Buttons["Search"] || LastButton == UI.Buttons["Sort"] || LastButton == UI.Buttons["RunFunction"])
-			{
-				Primitive ASCDESC_Sorts = "1=ASC;2=DESC;";
-				bool Search =false,Sort=true,Function=false;
-				bool StrictSearch = LDControls.CheckBoxGetState(GlobalStatic.CheckBox["StrictSearch"]);
-				bool InvertSearch = LDControls.CheckBoxGetState(GlobalStatic.CheckBox["InvertSearch"]);
+            try
+            {
+                if (LastButton == UI.Buttons["Search"] || LastButton == UI.Buttons["Sort"] || LastButton == UI.Buttons["RunFunction"])
+                {
+                    Primitive ASCDESC_Sorts = "1=ASC;2=DESC;";
+                    bool Search = false, Sort = true, Function = false;
+                    bool StrictSearch = LDControls.CheckBoxGetState(GlobalStatic.CheckBox["StrictSearch"]);
+                    bool InvertSearch = LDControls.CheckBoxGetState(GlobalStatic.CheckBox["InvertSearch"]);
 
-				string SearchIn = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Search"])];
-				string SearchText =LDText.Replace( Controls.GetTextBoxText(GlobalStatic.TextBox["Search"]),"'","''");
-				string FunctionIn = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ColumnList"])];
-				string FunctionCalled = GlobalStatic.SQLFunctionsList[ LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["FunctionList"]) ];
+                    string SearchIn = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Search"])];
+                    string SearchText = LDText.Replace(Controls.GetTextBoxText(GlobalStatic.TextBox["Search"]), "'", "''");
+                    string FunctionIn = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ColumnList"])];
+                    string FunctionCalled = GlobalStatic.SQLFunctionsList[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["FunctionList"])];
 
-				string SortBy = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Sort"])];
-				string ASCDESC = ASCDESC_Sorts[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ASCDESC"])];
-				//Console.WriteLine("{0} {1}", LDControls.CheckBoxGetState(GlobalStatic.ComboBox["Search"]),GlobalStatic.ComboBox);
-				if (LastButton == UI.Buttons["Search"])
-				{
-					Search = true;
-				}
-				else if (LastButton == UI.Buttons["RunFunction"])
-				{
-					Function = true;
-				}
-				//Console.WriteLine("Search :{0} Sort : {1} Function : {2}\n Search Text : {3} Function Column : {4} Sort Order : {5} Sorts : {6}", Search, Sort, Function, SearchText,FunctionIn,ASCDESC,SortBy);
-				Engines.GenerateQuery(Search, Sort, Function, SearchIn, SortBy, ASCDESC, StrictSearch, InvertSearch, FunctionCalled, FunctionIn, SearchText);
-			}
-			else if (LastButton == UI.Buttons["CustomQuery"])
-			{
-				Engines.Query(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.Username, Utilities.Localization["User Requested"]);
-			}
-			else if (LastButton == UI.Buttons["Command"]) //Custom Command
-			{
-				Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.UserName, Utilities.Localization["User Requested"], false);
-			}
-			else
-			{
-				GraphicsWindow.ShowMessage(Controls.GetButtonCaption(LastButton) + " does not exist in context or is not yet implemented", "Error Handlers.Buttons");
-			}
+                    string SortBy = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Sort"])];
+                    string ASCDESC = ASCDESC_Sorts[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ASCDESC"])];
+                    //Console.WriteLine("{0} {1}", LDControls.CheckBoxGetState(GlobalStatic.ComboBox["Search"]),GlobalStatic.ComboBox);
+                    if (LastButton == UI.Buttons["Search"])
+                    {
+                        Search = true;
+                    }
+                    else if (LastButton == UI.Buttons["RunFunction"])
+                    {
+                        Function = true;
+                    }
+                    Engines.GenerateQuery(Search, Sort, Function, SearchIn, SortBy, ASCDESC, StrictSearch, InvertSearch, FunctionCalled, FunctionIn, SearchText);
+                }
+                else if (LastButton == UI.Buttons["CustomQuery"])
+                {
+                    Engines.Query(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.Username, Utilities.Localization["User Requested"]);
+                }
+                else if (LastButton == UI.Buttons["Command"]) //Custom Command
+                {
+                    Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.UserName, Utilities.Localization["User Requested"], false);
+                }
+            }
+            catch(KeyNotFoundException)
+            {
+                GraphicsWindow.ShowMessage(Controls.GetButtonCaption(LastButton) + " does not exist in context or has not yet implemented", "Error Handlers.Buttons");
+            }
 		}
 
 		public static void ComboBox(string ComboBox, int Index)

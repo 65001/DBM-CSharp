@@ -9,3 +9,4 @@ C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Debug\LitDev.xml
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Debug\nunit.framework.xml
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\obj\x86\Debug\DBM.exe
 C:\Users\Abhishek\Documents\Projects\DBM\DBM\obj\x86\Debug\DBM.pdb
+C:\Users\Abhishek\Documents\Projects\DBM\DBM\obj\x86\Debug\DBM.csprojResolveAssemblyReference.cache

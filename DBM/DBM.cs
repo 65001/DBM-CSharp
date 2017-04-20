@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Text;
 using System.IO;
 using LitDev;
 using Microsoft.SmallBasic.Library;
@@ -24,7 +25,6 @@ using SBFile = Microsoft.SmallBasic.Library.File;
 		StrackGetLast or somethign as a function
 		Replace all instances of GlobalStatic.List_DB_* ASAP.
 		Start to use System.Version instead of an int and replace instances of GlobablStatic.VersionID to it as well
-		
  */
 
 //Complete Implements and Localize
@@ -326,7 +326,6 @@ namespace DBM
 			GlobalStatic.ComboBox["ASCDESC"] = LDControls.AddComboBox(AscDesc, 110, 100);
 
             _Buttons.Add("Sort", Controls.AddButton(Utilities.Localization["Sort"], GlobalStatic.UIx + 10, 120));
-           // GlobalStatic.Buttons["Sort"] = Controls.AddButton(Utilities.Localization["Sort"], GlobalStatic.UIx + 10, 120);
 
 			Controls.Move(GlobalStatic.ComboBox["Sort"], GlobalStatic.UIx + 80, 72);
 			Controls.Move(GlobalStatic.ComboBox["ASCDESC"], GlobalStatic.UIx+ 190, 72);
@@ -341,7 +340,6 @@ namespace DBM
 			GlobalStatic.CheckBox["StrictSearch"] = LDControls.AddCheckBox(Utilities.Localization["Strict Search"]);
 			GlobalStatic.CheckBox["InvertSearch"] = LDControls.AddCheckBox("Invert"); //Localize
             _Buttons.Add("Search", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Search"]), GlobalStatic.UIx + 10, 260));
-			//GlobalStatic.Buttons["Search"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Search"]), GlobalStatic.UIx + 10, 260);
 
 			Controls.Move(GlobalStatic.CheckBox["StrictSearch"], GlobalStatic.UIx + 20, 240);
 			Controls.Move(GlobalStatic.CheckBox["InvertSearch"], GlobalStatic.UIx + 150, 240);
@@ -356,7 +354,6 @@ namespace DBM
 			Controls.Move(GlobalStatic.ComboBox["ColumnList"], GlobalStatic.UIx + 160, 310);
 
             _Buttons.Add("RunFunction", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Run Function"]), GlobalStatic.UIx + 10, 340));
-			//GlobalStatic.Buttons["RunFunction"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Run Function"]), GlobalStatic.UIx + 10, 340);
 			Controls.SetSize(_Buttons["RunFunction"], 290, 25);
 
 			//Custom Query
@@ -364,11 +361,10 @@ namespace DBM
 			Controls.SetSize(GlobalStatic.TextBox["CustomQuery"], 310, 150);
 
             _Buttons.Add("CustomQuery", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Query"]), GlobalStatic.UIx, 580));
-  			//GlobalStatic.Buttons["CustomQuery"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Query"]), GlobalStatic.UIx, 580);
   			Controls.SetSize(_Buttons["CustomQuery"], 310, 25);
 
             _Buttons.Add("Command", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Command"]), GlobalStatic.UIx, 580 + 35));
-  			//GlobalStatic.Buttons["Command"] = Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Command"]), GlobalStatic.UIx, 580 + 35);
+
 			Controls.SetSize(_Buttons["Command"] , 310, 25);
 			LDDialogs.ToolTip(_Buttons["Command"], "Executes customized SQL command statements onto the database"); //Localize
 			string CustomQueryData = "This Textbox allows you to use Custom\nSQL Queries. Remove this and type in an SQL \nstatement. \nYou also use it to export data";//Localize
@@ -462,6 +458,7 @@ namespace DBM
             Utilities.AddtoStackTrace( "UI.CreateTableUI()");
             Controls.HideControl(GlobalStatic.Dataview);
             Controls.HideControl(GlobalStatic.ListView);
+            GlobalStatic.ListView = null;
 
             HideDisplayResults();
             GraphicsWindow.Clear();
@@ -485,11 +482,50 @@ namespace DBM
             {
                 LDControls.DataViewSetColumnCheckBox(GlobalStatic.Dataview, i);
             }
+
+            Controls.ButtonClicked -= Events.BC;
+            Controls.ButtonClicked += CreateTableHandler;
         }
 
 		public static void CreateTableHandler()//TODO Create the Create Table Handler
 		{
             Utilities.AddtoStackTrace( "UI.CreateTableHandler()");
+            string LastButton = Controls.LastClickedButton;
+            string Name = Controls.GetTextBoxText(_TextBox["Table_Name"]);
+            if (LastButton == _Buttons["Commit"])
+            {
+                if (string.IsNullOrWhiteSpace(Name)) 
+                {
+                    Name.Replace("[", "").Replace("]", "").Replace("\"", "");
+                    int Max = LDControls.DataViewRowCount(GlobalStatic.Dataview);
+                    StringBuilder Define_SQL = new StringBuilder();
+                    Define_SQL.Append("CREATE TABLE \"" + Name + "\"(");
+                    for(int i =1;i <= Max; i++)
+                    {
+                        Primitive Data = LDControls.DataViewGetRow(GlobalStatic.Dataview, i);
+                        Primitive _Data = Data[i];
+                        //TODO
+                    }
+                }
+                else
+                {
+                    GraphicsWindow.ShowMessage("Table Name is not empty, please fill it!", "NAME");
+                }
+                return;
+            }
+
+            if (LastButton == _Buttons["Exit"])
+            {
+                Controls.ButtonClicked -= CreateTableHandler;
+                Controls.ButtonClicked += Events.BC;
+                GraphicsWindow.Clear();
+                _Buttons.Clear();
+                DisplayResults();
+                ShowDisplayResults();
+                MainMenu();
+                Handlers.Buttons("View");
+                return;
+            } 
 		}
 	}
 
@@ -589,6 +625,5 @@ namespace DBM
 			await Task.WhenAll(Task.Run(() => { Handlers.ComboBox(LDControls.LastComboBox, LDControls.LastComboBoxIndex); }));
             Utilities.AddtoStackTrace( "Events.CB()");
 		}
-
 	}
 }

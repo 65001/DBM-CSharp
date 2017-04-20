@@ -9,8 +9,8 @@ namespace DBM
 {
 		public static class GlobalStatic //List of Variables shared across everything through this class
 		{
-			public static string ProgramDirectory = Program.Directory;
-			public static string Username = LDFile.UserName;
+			public static readonly string ProgramDirectory = Program.Directory;
+			public static readonly string Username = LDFile.UserName;
 			public static bool DebugMode,DebugParser;
 			public static bool EulaTest,LoadedFile;
 
@@ -20,10 +20,10 @@ namespace DBM
             //Self Aware Data
             public const string Copyright = "2016 through 2017";
 			public const string ProductID = "DBM C#";
-			public static string VersionID = LDText.Replace( typeof(GlobalStatic).Assembly.GetName().Version.ToString(),".","");
+			public static readonly string VersionID = LDText.Replace( typeof(GlobalStatic).Assembly.GetName().Version.ToString(),".","");
 
 			public static int DefaultWidth, DefaultHeight,DefaultFontSize,LogNumber;
-			public static string UserName = LDFile.UserName;
+			public static readonly string UserName = LDFile.UserName;
 
 			//URI
 			public static string AssetPath = Path.Combine( ProgramDirectory , "Assets");

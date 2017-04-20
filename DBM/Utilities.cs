@@ -199,7 +199,6 @@ namespace DBM
 			LDList.Add(GlobalStatic.List_UI_Handler, Handler);
 			LDList.Add(GlobalStatic.List_UI_Action, Action);
 		}
-
 	}
 
     public static class Transform
