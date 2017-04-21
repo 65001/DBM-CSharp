@@ -38,6 +38,7 @@ namespace DBM
         static List<Types> _Type_Referer = new List<Types>();
         static List<long> _Timer = new List<long>();
         static List<string> _Last_Query = new List<string>();
+        static List<string> _Last_NonSchema_Query = new List<string>();
 		
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
@@ -68,8 +69,20 @@ namespace DBM
             Stopwatch QueryTime = Stopwatch.StartNew();
 			TransactionRecord(UserName, DataBase, SQL, "Query", Explanation);
 			Primitive QueryResults = LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
+            Console.WriteLine(Explanation);
 
             _Type_Referer.Add(Types.Query);
+
+            switch (Explanation)
+            {
+                case "SCHEMA-PRIVATE":
+                case "SCHEMA":
+                    break;
+                default:
+                    _Last_NonSchema_Query.Add(SQL);
+                    break;
+            }
+
             _Last_Query.Add(SQL);
             _Timer.Add(QueryTime.ElapsedMilliseconds);
 			return QueryResults;
@@ -397,6 +410,11 @@ namespace DBM
         public static IReadOnlyList<string> LastQuery
         {
             get { return _Last_Query.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<string> LastNonSchemaQuery
+        {
+            get { return _Last_NonSchema_Query.AsReadOnly(); }
         }
 	}
 }

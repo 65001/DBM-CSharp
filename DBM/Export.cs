@@ -28,14 +28,17 @@ namespace DBM
             return Generate2DArrayFromTable(Engines.CurrentDatabase, Engines.CurrentTable);
         }
 
+        /// <summary>
+        /// Generates a 2D Primitive Array from the Last nonschema Query
+        /// </summary>
         public static Primitive Generate2DArrayFromLastQuery()
         {
-            return Generate2DArray(Engines.CurrentDatabase, Engines.LastQuery[Engines.LastQuery.Count - 1]);
+            return Generate2DArray(Engines.CurrentDatabase, Engines.LastNonSchemaQuery[Engines.LastNonSchemaQuery.Count -1]);
         }
     
         public static void CSV(Primitive Data,Primitive Schema,string FilePath,string deliminator) //TODO
         {
-
+            
         }
 
         public static void SQL(Primitive Data,Primitive Schema,string FilePath) //TODO

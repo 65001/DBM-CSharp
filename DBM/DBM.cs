@@ -491,7 +491,7 @@ namespace DBM
 		{
             Utilities.AddtoStackTrace( "UI.CreateTableHandler()");
             string LastButton = Controls.LastClickedButton;
-            string Name = Controls.GetTextBoxText(_TextBox["Table_Name"]);
+            string Name = Controls.GetTextBoxText(GlobalStatic.TextBox["Table_Name"]);
             if (LastButton == _Buttons["Commit"])
             {
                 if (string.IsNullOrWhiteSpace(Name)) 
@@ -599,13 +599,10 @@ namespace DBM
                 LogMessage("Program Closing - Closing : " + Engines.Database_Shortname , Utilities.Localization["Application"]); //Localize
             }
 
-			if (LDWindows.CurrentID == 0)
-			{
-                Environment.Exit(0);
-            }
 			GraphicsWindow.Clear();
 			GraphicsWindow.Hide();
-		}
+            Environment.Exit(0);
+            }
 
 		//The following async the Handlers class to make the code faster! Warning ! Can cause bugs!!!
 		public async static void BC()
