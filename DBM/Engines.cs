@@ -69,7 +69,6 @@ namespace DBM
             Stopwatch QueryTime = Stopwatch.StartNew();
 			TransactionRecord(UserName, DataBase, SQL, "Query", Explanation);
 			Primitive QueryResults = LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
-            Console.WriteLine(Explanation);
 
             _Type_Referer.Add(Types.Query);
 

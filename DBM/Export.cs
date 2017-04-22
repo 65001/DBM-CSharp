@@ -35,10 +35,27 @@ namespace DBM
         {
             return Generate2DArray(Engines.CurrentDatabase, Engines.LastNonSchemaQuery[Engines.LastNonSchemaQuery.Count -1]);
         }
-    
-        public static void CSV(Primitive Data,Primitive Schema,string FilePath,string deliminator) //TODO
+
+        public static Primitive GenerateSchemaFromQueryData(Primitive Data)
         {
-            
+            return SBArray.GetAllIndices(Data[1]);
+        }
+    
+        public static void CSV(Primitive Data,Primitive Schema,string FilePath,string deliminator)
+        {
+            Primitive _Data = null;
+            Data[0] = Schema;
+
+            for (int i = 0; i <= SBArray.GetItemCount(Data) + 1; i++)
+            {
+               _Data[(i + 1)] = Data[i];
+            }
+
+            if (!string.IsNullOrWhiteSpace(deliminator))
+            {
+                LDUtilities.CSVDeliminator = deliminator;
+            }
+            LDFile.WriteCSV(FilePath, _Data);
         }
 
         public static void SQL(Primitive Data,Primitive Schema,string FilePath) //TODO

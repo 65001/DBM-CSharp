@@ -133,28 +133,43 @@ namespace DBM
             {
                 Engines.Command(Engines.CurrentDatabase, Import.CSV(LDDialogs.OpenFile("csv", null)), GlobalStatic.UserName, "", false);
             }
-            else if (Item == Utilities.Localization["SQL"]) //TODO
+            else if (Item == Utilities.Localization["SQL"])
             {
-                string SQL = System.IO.File.ReadAllText(LDDialogs.OpenFile("sql",null));
+                string SQL = System.IO.File.ReadAllText(LDDialogs.OpenFile("sql", null));
                 Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, null, false);
             }
             else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
             { }
             //Export
-            else if (Item == Utilities.Localization["PXML"] + " ") //TODO
+            else if (Item == Utilities.Localization["PXML"] + " ") //TODO XML
             { }
-            else if (Item == Utilities.Localization["HTML"] + " ") //TODO
+            else if (Item == Utilities.Localization["HTML"] + " ")
             {
-                Export.HTML(Export.Generate2DArrayFromLastQuery(), Engines.Schema, Engines.CurrentTable.Replace("\"",""),LDDialogs.SaveFile("html",""), GlobalStatic.ProductID + " V" + GlobalStatic.VersionID);
-                GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
+                string Path = LDDialogs.SaveFile("html", "");
+                if (!string.IsNullOrWhiteSpace(Path))
+                {
+                    Primitive Data = Export.Generate2DArrayFromLastQuery();
+                    Export.HTML(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.Replace("\"", ""), Path, GlobalStatic.ProductID + " V" + GlobalStatic.VersionID);
+                    GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
+                    return;
+                }
+                GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
             }
             //else if (Item == Utilities.Localization["Export UI"]) //TODO
             //{ }
             else if (Item == Utilities.Localization["SQL"] + " ") //TODO
             { }
-            else if (Item == Utilities.Localization["CSV"] + " ") //TODO
+            else if (Item == Utilities.Localization["CSV"] + " ")
             {
-                Export.CSV(Export.Generate2DArrayFromLastQuery(), Engines.Schema, Engines.DB_Path[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)], GlobalStatic.Deliminator);
+                string Path = LDDialogs.SaveFile("csv", null);
+                if (!string.IsNullOrWhiteSpace(Path))
+                {
+                    Primitive Data = Export.Generate2DArrayFromLastQuery();
+                    Export.CSV(Data, Export.GenerateSchemaFromQueryData(Data), Path, GlobalStatic.Deliminator);
+                    GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
+                    return;
+                }
+                GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
             }
             //Settings
             else if (Item == Utilities.Localization["About"])
