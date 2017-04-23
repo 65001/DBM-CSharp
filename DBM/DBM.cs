@@ -21,10 +21,10 @@ using SBFile = Microsoft.SmallBasic.Library.File;
 		
 	//TODO
 		Replace all instances of LDLIST with an actual List?
-		StackTrace implemented across everything. (implemented as a method)
-		StrackGetLast or somethign as a function
 		Replace all instances of GlobalStatic.List_DB_* ASAP.
 		Start to use System.Version instead of an int and replace instances of GlobablStatic.VersionID to it as well
+
+        Settings UI
  */
 
 //Complete Implements and Localize
@@ -450,7 +450,6 @@ namespace DBM
 
             GraphicsWindow.DrawText(10, 360, Utilities.Localization["Transaction DB Path"]);
             _Buttons.Add("Transaction_DB", Controls.AddButton(Utilities.Localization["Browse"], 290, 360));
-
         }
 
 		public static void CreateTableUI()//TODO: Create the "Create Table UI"
@@ -467,7 +466,7 @@ namespace DBM
             LDGraphicsWindow.CancelClose = true;
             LDGraphicsWindow.ExitOnClose = false;
 
-            GlobalStatic.Dataview = LDControls.AddDataView(1000, 900, "1=Field;2=Type;3=PK;4=AI;5=Unique;6=Not_Null;");
+            GlobalStatic.Dataview = LDControls.AddDataView(1000, 800, "1=Field;2=Type;3=PK;4=AI;5=Unique;6=Not_Null;");
             GraphicsWindow.DrawText(1, 4, "Name: ");
             Controls.Move(GlobalStatic.Dataview, 1, 30);
 
@@ -494,7 +493,7 @@ namespace DBM
             string Name = Controls.GetTextBoxText(GlobalStatic.TextBox["Table_Name"]);
             if (LastButton == _Buttons["Commit"])
             {
-                if (string.IsNullOrWhiteSpace(Name)) 
+                if (!string.IsNullOrWhiteSpace(Name)) 
                 {
                     Name.Replace("[", "").Replace("]", "").Replace("\"", "");
                     int Max = LDControls.DataViewRowCount(GlobalStatic.Dataview);
@@ -502,9 +501,51 @@ namespace DBM
                     Define_SQL.Append("CREATE TABLE \"" + Name + "\"(");
                     for(int i =1;i <= Max; i++)
                     {
-                        Primitive Data = LDControls.DataViewGetRow(GlobalStatic.Dataview, i);
-                        Primitive _Data = Data[i];
-                        //TODO
+                        Primitive _Data = LDControls.DataViewGetRow(GlobalStatic.Dataview, i);
+                        if (!string.IsNullOrWhiteSpace(_Data[1]))
+                        {
+                            if(_Data[4] == true)
+                            {
+                                _Data[3] = true;
+                            }
+                            string Field = _Data[1];
+                            Field.Replace("[", "").Replace("]", "").Replace("\"", "");
+                            Define_SQL.Append("\"" + Field + "\" " + (string)_Data[2]);
+                            if (_Data[6] == true)
+                            {
+                                Define_SQL.Append(" NOT NULL");
+                            }
+                            if (_Data[3] == true)
+                            {
+                                Define_SQL.Append(" PRIMARY KEY");
+                            }
+                            if (_Data[4] == true)
+                            {
+                                Define_SQL.Append(" AUTOINCREMENT");
+                            }
+                            if (_Data[5] == true)
+                            {
+                                Define_SQL.Append(" UNIQUE");
+                            }
+                            if (i != Max)
+                            {
+                                Define_SQL.Append(",");
+                            }
+                            else
+                            {
+                                Define_SQL.Append(");");
+                            }
+                        }
+                    }
+                    GraphicsWindow.ShowMessage(Define_SQL.ToString(), Engines.CurrentDatabase);
+                    //TODO Auto insert code into current database
+                    if(!string.IsNullOrWhiteSpace(Engines.CurrentDatabase))
+                    {
+                        string Confirmation =   LDDialogs.Confirm("Do you wish to commit the following SQL:\n" + Define_SQL.ToString() + "\n to " + Engines.DB_ShortName[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)], "Commit SQL");
+                        if (Confirmation == "Yes")
+                        {
+                            Engines.Command(Engines.CurrentDatabase, Define_SQL.ToString(), GlobalStatic.UserName, "User Defining a Table", false); //Localize
+                        }
                     }
                 }
                 else
@@ -555,6 +596,11 @@ namespace DBM
                 Console.WriteLine("Log : Caller was {0}; Type {1}; Message {2} ", Caller, Type, Message);
             }
 
+            if (string.IsNullOrEmpty(Type))
+            {
+                Type = "Unknown";
+            }
+
             if (Type.Equals("Debug") == true && GlobalStatic.DebugMode == false)
             {
                 return;
@@ -566,10 +612,6 @@ namespace DBM
             }
             else
             {
-                if (string.IsNullOrEmpty(Type))
-                {
-                    Type = "Unknown";
-                }
                 if (GlobalStatic.DebugMode == true)
                 {
                     if (Text.IsSubText(Message, "LDDataBase.Query") == true || Text.IsSubText(Message, "LDDataBase.Command") == true)
@@ -578,12 +620,12 @@ namespace DBM
                     }
                 }
             }
-            GlobalStatic.LogNumber++;
-            Utilities.AddtoStackTrace( "Events.LogMessage()");
 
-            SBFile.AppendContents(GlobalStatic.LogCSVpath, GlobalStatic.LogNumber + "," + Clock.Date + "," + Clock.Time + "," + "\"" + LDText.Replace(GlobalStatic.Username, "\"", "\"" + "\"") + "\"" + "," + GlobalStatic.ProductID + "," + GlobalStatic.VersionID + "," + "\"" + LDText.Replace(Type, "\"", "\"" + "\"") + "\"" + "," + "\"" + LDText.Replace(Message, "\"", "\"" + "\"") + "\"");
+            GlobalStatic.LogNumber++;
+            Utilities.AddtoStackTrace("Events.LogMessage()");
+            System.IO.File.AppendAllText(GlobalStatic.LogCSVpath, GlobalStatic.LogNumber + "," + Clock.Date + "," + Clock.Time + "," + "\"" + GlobalStatic.UserName.Replace("\"","\"\"") + "\"" + "," + GlobalStatic.ProductID + "," + GlobalStatic.VersionID + "," + "\"" + LDText.Replace(Type, "\"", "\"" + "\"") + "\"" + "," + "\"" + LDText.Replace(Message, "\"", "\"" + "\"") + "\"");
             string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'";
-            LogCMD = LogCMD + GlobalStatic.Username + "','" + GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');";
+            LogCMD += GlobalStatic.Username + "','" + GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');";
             Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"], false);
         }
 
@@ -605,18 +647,28 @@ namespace DBM
             }
 
 		//The following async the Handlers class to make the code faster! Warning ! Can cause bugs!!!
+
+        /// <summary>
+        /// Buttom Clicked Event Handler
+        /// </summary>
 		public async static void BC()
 		{
 			await Task.Run(() => { Handlers.Buttons(Controls.LastClickedButton); });
             Utilities.AddtoStackTrace( "Events.BC()");
 		}
 
-		public async static void MC() //Menu Clicked Event Handler
+        /// <summary>
+        /// Menu Clicked Event Handler
+        /// </summary>
+
+        public async static void MC()
 		{
 			await Task.Run(() => { Handlers.Menu(LDControls.LastMenuItem); });
             Utilities.AddtoStackTrace( "Events.MC()");
 		}
-
+        /// <summary>
+        /// ComboBox Changed Event Hanlder
+        /// </summary>
 		public async static void CB()
 		{
 			await Task.WhenAll(Task.Run(() => { Handlers.ComboBox(LDControls.LastComboBox, LDControls.LastComboBoxIndex); }));

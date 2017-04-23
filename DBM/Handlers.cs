@@ -155,8 +155,6 @@ namespace DBM
                 }
                 GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
             }
-            //else if (Item == Utilities.Localization["Export UI"]) //TODO
-            //{ }
             else if (Item == Utilities.Localization["SQL"] + " ") //TODO
             { }
             else if (Item == Utilities.Localization["CSV"] + " ")
