@@ -4,6 +4,7 @@
 // Created : 3/14/2017 5:55 PM 2017314 17:55:44
 using System;
 using System.Text;
+using System.Collections.Generic;
 using System.IO;
 using System.Diagnostics;
 using Microsoft.SmallBasic.Library;
@@ -46,7 +47,7 @@ namespace DBM
             Primitive _Data = null;
             Data[0] = Schema;
 
-            for (int i = 0; i <= SBArray.GetItemCount(Data) + 1; i++)
+            for (int i = 0; i <= Data.GetItemCount() + 1; i++)
             {
                _Data[(i + 1)] = Data[i];
             }
@@ -58,20 +59,138 @@ namespace DBM
             LDFile.WriteCSV(FilePath, _Data);
         }
 
-        public static void SQL(Primitive Data,Primitive Schema,string FilePath) //TODO
+        public static void SQL(Primitive Data, Primitive Schema, Dictionary<string, bool> PK, Dictionary<string, string> Types,string TableName,string FilePath)
         {
-
+            Stopwatch SQL_Time = new Stopwatch();
+            SQL_Time.Start();
+            string _SQL = SQL(Data, Schema, PK, Types, Engines.CurrentTable);
+            System.IO.File.WriteAllText(FilePath, _SQL);
+            Console.WriteLine("SQL void time {0} ms", SQL_Time.ElapsedMilliseconds);
+            return;
         }
 
+        public static string SQL(Primitive Data,Primitive Schema,Dictionary<string,bool> PK,Dictionary<string,string> Types,string TableName) //TODO
+        {
+            Utilities.AddtoStackTrace("Export.SQL()");
+            Stopwatch SQL_Time = new Stopwatch();
+            SQL_Time.Start();
+
+            if (string.IsNullOrWhiteSpace(Data))
+            {
+                throw new ArgumentNullException(Data);
+            }
+
+            if (string.IsNullOrWhiteSpace(Schema))
+            {
+                throw new ArgumentNullException(Schema);
+            }
+
+            if (string.IsNullOrWhiteSpace(TableName))
+            {
+                throw new ArgumentNullException(TableName);
+            }
+
+            StringBuilder SQL = new StringBuilder();
+            SQL.Append("CREATE TABLE " + TableName + "(");
+            //Header Stuff
+            for (int i = 1; i <= Schema.GetItemCount(); i++)
+            {
+                SQL.Append("\"" + (string)Schema[i] + "\" " + Types[Schema[i]]);
+                if (PK[Schema[i]])
+                {
+                    SQL.Append("  PRIMARY KEY");
+                }
+                if (i < Schema.GetItemCount())
+                {
+                    SQL.Append(",");
+                }
+            }
+            SQL.Append(");\n");
+            //Data Extraction
+            for (int i = 1; i <= Data.GetItemCount(); i++)
+            {
+                SQL.Append("INSERT INTO " + TableName + " VALUES ('");
+                for (int ii = 1; ii <= Data[i].GetItemCount(); ii++)
+                {
+                    SQL.Append(Data[i][Schema[ii]].ToString().Replace("'", "''"));
+                    if (ii < Data[i].GetItemCount())
+                    {
+                        SQL.Append("','");
+                    }
+                }
+                SQL.Append("');\n");
+            }
+            SQL.Replace("' '", "NULL").Replace("''","NULL");
+            Console.WriteLine("SQL string time {0} ms", SQL_Time.ElapsedMilliseconds);
+            return SQL.ToString();
+        }
+
+
+        /// <summary>
+        ///  Fetches the Primary Key Information on everything
+        /// </summary>
+        public static Dictionary<string,bool> SQL_Fetch_PK(Primitive SchemaQuery,Primitive Schema, Engines.EnginesModes CurrentEngine)
+        {
+            Dictionary<string, bool> _Dictionary = new Dictionary<string, bool>();
+            switch (CurrentEngine)
+            {
+                case Engines.EnginesModes.SQLITE:
+                    for(int i =1;i <= SchemaQuery.GetItemCount();i++)
+                    {
+                        for (int ii = 1; ii <= Schema.GetItemCount(); ii++)
+                        {
+                            if (Schema[ii] == SchemaQuery[i]["name"])
+                            {
+                                if (SchemaQuery[i]["pk"] == 1)
+                                {
+                                    _Dictionary.Add(SchemaQuery[i]["name"], true);
+                                }
+                                else
+                                {
+                                    _Dictionary.Add(SchemaQuery[i]["name"], false);
+                                }
+                            }
+                        }
+                    }
+                    return _Dictionary;
+                default:
+                    throw new Exception("Current Engine is not supported");
+            }
+        }
+
+        public static Dictionary<string,string> SQL_Fetch_Type(Primitive SchemaQuery,Primitive Schema,Engines.EnginesModes CurrentEngine)
+        {
+            Dictionary<string, string> _Dictionary = new Dictionary<string, string>();
+            switch (CurrentEngine)
+            {
+                case Engines.EnginesModes.SQLITE:
+                    for (int i = 1; i <= SchemaQuery.GetItemCount(); i++)
+                    {
+                        for (int ii = 1; ii <= Schema.GetItemCount(); ii++)
+                        {
+                            if (Schema[ii] == SchemaQuery[i]["name"])
+                            {
+                                _Dictionary.Add(SchemaQuery[i]["name"], SchemaQuery[i]["type"]);
+                            }
+                        }
+                    }
+                    return _Dictionary;
+                default:
+                    throw new Exception("Current Engine is not supported");
+            }
+        }
+        /*
+         * //Fix XML
         public static void XML(Primitive Data,Primitive Schema,string FilePath) //TODO
         {
-            /*
             Utilities.AddtoStackTrace("Export.XML");
+
             const string XML_Creation_Statement = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><root></root>";
             System.IO.File.WriteAllText(FilePath, XML_Creation_Statement);
-            string Document = LDxml.Open(FilePath);
 
+            string Document = LDxml.Open(FilePath);
             string Parent = LDxml.Parent();
+            LDxml.FirstChild();
             bool Continue = true;
 
             Primitive DataArray = Utilities.XMLAttributes();
@@ -89,27 +208,35 @@ namespace DBM
                         break;
                     default:
                         DataArray = Utilities.XMLAttributes();
-                        XML_Write(Data);
+                        XML_Write(Data,Schema);
                         LDxml.Save(FilePath);
                         Continue = false;
                         break;
                 }
             }
-            */
         }
-        /*
-        static void XML_Write(Primitive Data)
+        
+        static void XML_Write(Primitive Data,Primitive Schema)
         {
             Utilities.AddtoStackTrace("Export.XML_Write");
-         //   Primitive ExportData = null;
-            for (int i = 1; SBArray.GetItemCount(Data); i++)
+            for (int i = 1;i <= SBArray.GetItemCount(Data); i++)
             {
-               // ExportData["id"] = i;
-                LDxml.AddNode("record", i, null, "Append");
+                Primitive _Attribute = null;
+                _Attribute["id"] = i;
+                LDxml.AddNode("record",_Attribute, null, "Append");
                 string Child = LDxml.LastChild();
+                Primitive DataArray = Utilities.XMLAttributes();
+                for(int ii=1;ii <= SBArray.GetItemCount(Data[i]);ii++)
+                {
+                    string _Schema = Schema[ii];
+                    Primitive _Data = Data[i];
+                    LDxml.AddNode(_Schema.Replace(" ", "_"), null, _Data[_Schema], "Append");
+                }
+                LDxml.Parent();
             }
         }
         */
+        
         public static void HTML(Primitive Data,Primitive Schema,string Title,string FilePath,string Generator) //TODO
         {
             Utilities.AddtoStackTrace("Export.HTML");
@@ -151,22 +278,22 @@ namespace DBM
             HTML_Statement.Append("<div style=\"overflow-x:auto;\">\n\t\t\t");
             HTML_Statement.Append("<table>\n\t\t\t\t");
             HTML_Statement.Append("<tr>\n\t\t\t\t\t<td id=\"Main\" colspan = \"");
-            HTML_Statement.Append(SBArray.GetItemCount(Schema).ToString());
+            HTML_Statement.Append(Schema.GetItemCount().ToString());
             HTML_Statement.Append("\">" + Title + "</td>\n\t\t\t\t");
             HTML_Statement.Append("</tr>\n\t\t\t\t<tr>\n");
 
             //Converts Primitive Data to FastArray
             string FastArray = LDFastArray.Add();
-            for (int i = 1; i <= SBArray.GetItemCount(Data); i++)
+            for (int i = 1; i <= Data.GetItemCount(); i++)
             {
                 Primitive Temp_HTML = Data[i];
-                for(int ii =1;ii <= SBArray.GetItemCount(Schema);ii++)
+                for(int ii =1;ii <= Schema.GetItemCount();ii++)
                 {
                     LDFastArray.Set2D(FastArray, i, ii, Temp_HTML[Schema[ii]]);
                 }
             }
             //Header Data
-            for (int i = 1; i <= SBArray.GetItemCount(Schema); i++)
+            for (int i = 1; i <= Schema.GetItemCount(); i++)
             {
                 string Temp_Schema = LDText.Replace(Schema[i], "_", " ");
                 Temp_Schema = Text.ConvertToUpperCase(Text.GetSubText(Temp_Schema, 1, 1)) + Text.GetSubTextToEnd(Temp_Schema, 2);
@@ -175,10 +302,10 @@ namespace DBM
 
             HTML_Statement.Append("\t\t\t\t</tr>\n");
 
-            for (int i = 1; i <= SBArray.GetItemCount(Data); i++)
+            for (int i = 1; i <= Data.GetItemCount(); i++)
             {
                 HTML_Statement.Append("\t\t\t\t<tr>\n");
-                for (int ii = 1; ii <= SBArray.GetItemCount(Schema); ii++)
+                for (int ii = 1; ii <= Schema.GetItemCount(); ii++)
                 {
                     HTML_Statement.Append("\t\t\t\t\t<td>" + LDFastArray.Get2D(FastArray, i, ii).ToString() + "</td>\n");
                 }

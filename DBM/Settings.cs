@@ -56,7 +56,7 @@ namespace DBM
 			Setting_Default[18] = Setting_Default[15] + "Transactions.db";
 			Primitive Setting_Files = "15=1;16=1;17=1;18=1;";
 
-			for (int i = 1; i <= SBArray.GetItemCount(NullSettings); i++) //Sets Default Settings for files if they do not yet exist!!
+			for (int i = 1; i <= NullSettings.GetItemCount(); i++) //Sets Default Settings for files if they do not yet exist!!
 			{
 				if (GlobalStatic.Settings[NullSettings[i]] == null || GlobalStatic.Settings[NullSettings[i]] == "")
 				{

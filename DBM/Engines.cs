@@ -20,7 +20,9 @@ namespace DBM
 		public static string CurrentDatabase { get; private set; }
 		public static string CurrentTable { get; private set; }
 		public static string Database_Shortname { get; private set; }
-		public static string GQ_CMD { get; private set; } //Auto Generated Query SQL Statements
+        public static EnginesModes CurrentEngine { get { return Engines.DB_Engine[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)]; } }
+
+		public static string GQ_CMD { get; private set; } //Auto Generated Query SQL Statements 
 
 		static List<string> _DB_Path = new List<string>();
 		static List<string> _DB_Name = new List<string>();
@@ -206,7 +208,7 @@ namespace DBM
                         _Indexes.Clear();
                         
 						Primitive Master_Schema_List = Query(Database, "SELECT tbl_name,name,type FROM sqlite_master UNION Select tbl_name,name,type From SQLite_Temp_Master;", null, true, Utilities.Localization["App"], "SCHEMA");
-						for (int i = 1; i <= SBArray.GetItemCount(Master_Schema_List); i++)
+						for (int i = 1; i <= Master_Schema_List.GetItemCount(); i++)
 						{
                         string Name = Master_Schema_List[i]["tbl_name"];
 						switch (Master_Schema_List[i]["type"].ToString())
@@ -251,7 +253,7 @@ namespace DBM
 				case EnginesModes.SQLITE:
                     _Schema.Clear();
 					Primitive QSchema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
-					for (int i = 1; i <= SBArray.GetItemCount(QSchema); i++)
+					for (int i = 1; i <= QSchema.GetItemCount(); i++)
 					{
                         _Schema.Add(QSchema[i]["name"]);
 					}

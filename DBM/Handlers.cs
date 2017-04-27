@@ -142,10 +142,20 @@ namespace DBM
             { }
             //Export
             else if (Item == Utilities.Localization["PXML"] + " ") //TODO XML
-            { }
+            {
+                string Path = LDDialogs.SaveFile("xml", null);
+                if (!string.IsNullOrWhiteSpace(Path))
+                {
+                    Primitive Data = Export.Generate2DArrayFromLastQuery();
+                    //Export.XML(Data,Export.GenerateSchemaFromQueryData(Data),Path);
+                    GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
+                    return;
+                }
+                GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error"); //TODO Localize
+            }
             else if (Item == Utilities.Localization["HTML"] + " ")
             {
-                string Path = LDDialogs.SaveFile("html", "");
+                string Path = LDDialogs.SaveFile("html",null);
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
@@ -156,7 +166,30 @@ namespace DBM
                 GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
             }
             else if (Item == Utilities.Localization["SQL"] + " ") //TODO
-            { }
+            {
+                string Path = LDDialogs.SaveFile("sql",null);
+                if (!string.IsNullOrWhiteSpace(Path))
+                {
+                    Primitive Data = Export.Generate2DArrayFromLastQuery();
+                    Primitive Schema = Export.GenerateSchemaFromQueryData(Data);
+                    Primitive SchemaQuery;
+                    switch (Engines.CurrentEngine)
+                    {
+                        case Engines.EnginesModes.SQLITE:
+                            SchemaQuery = Engines.Query(Engines.CurrentDatabase, "PRAGMA table_info(" + Engines.CurrentTable + ");", null, true, GlobalStatic.UserName, "SCHEMA");
+                            break;
+                        default:
+                            throw new Exception("Currently database is not supported");
+                    }
+                    Dictionary<string, bool> PK = Export.SQL_Fetch_PK(SchemaQuery, Schema, Engines.CurrentEngine);
+                    Dictionary<string, string> Types = Export.SQL_Fetch_Type(SchemaQuery, Schema, Engines.CurrentEngine);
+                    Export.SQL(Data, Schema, PK, Types, Engines.CurrentTable, Path);
+                    LDProcess.Start(Path, null);
+                    GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
+                    return;
+                }
+                GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
+            }
             else if (Item == Utilities.Localization["CSV"] + " ")
             {
                 string Path = LDDialogs.SaveFile("csv", null);
