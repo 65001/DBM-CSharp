@@ -165,7 +165,7 @@ namespace DBM
                 }
                 GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
             }
-            else if (Item == Utilities.Localization["SQL"] + " ") //TODO
+            else if (Item == Utilities.Localization["SQL"] + " ")
             {
                 string Path = LDDialogs.SaveFile("sql",null);
                 if (!string.IsNullOrWhiteSpace(Path))
@@ -226,7 +226,7 @@ namespace DBM
             {
                 GlobalStatic.Transactions = !GlobalStatic.Transactions;
             }
-            else if (Item == Utilities.Localization["Refresh Schema"]) //TODO
+            else if (Item == Utilities.Localization["Refresh Schema"])
             {
                 Engines.GetSchema(Engines.CurrentDatabase);
                 Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
@@ -275,7 +275,6 @@ namespace DBM
 
                     string SortBy = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Sort"])];
                     string ASCDESC = ASCDESC_Sorts[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ASCDESC"])];
-                    //Console.WriteLine("{0} {1}", LDControls.CheckBoxGetState(GlobalStatic.ComboBox["Search"]),GlobalStatic.ComboBox);
                     if (LastButton == UI.Buttons["Search"])
                     {
                         Search = true;

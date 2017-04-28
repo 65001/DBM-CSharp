@@ -66,7 +66,6 @@ namespace DBM
             string _SQL = SQL(Data, Schema, PK, Types, Engines.CurrentTable);
             System.IO.File.WriteAllText(FilePath, _SQL);
             Console.WriteLine("SQL void time {0} ms", SQL_Time.ElapsedMilliseconds);
-            return;
         }
 
         public static string SQL(Primitive Data,Primitive Schema,Dictionary<string,bool> PK,Dictionary<string,string> Types,string TableName) //TODO
@@ -88,6 +87,15 @@ namespace DBM
             if (string.IsNullOrWhiteSpace(TableName))
             {
                 throw new ArgumentNullException(TableName);
+            }
+
+            if (PK == null)
+            {
+                throw new ArgumentNullException("PK");
+            }
+            if (Types == null)
+            {
+                throw new ArgumentNullException("Types");
             }
 
             StringBuilder SQL = new StringBuilder();
