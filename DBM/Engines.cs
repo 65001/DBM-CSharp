@@ -269,13 +269,13 @@ namespace DBM
 
 		public static void SetDefaultTable(string Table)
 		{
-			if (!string.IsNullOrEmpty(Table))
-			{
-				CurrentTable = "\"" + Table + "\"";
-                _TrackingDefaultTable.Add(CurrentDatabase + "." + CurrentTable);
-                return;
-			}
-			Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
+                if (!string.IsNullOrEmpty(Table))
+                {
+                    CurrentTable = "\"" + Table + "\"";
+                    _TrackingDefaultTable.Add(CurrentDatabase + "." + CurrentTable);
+                    return;
+                }
+                Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
 		}
 
 		public static void GenerateQuery(bool Search,bool Sort,bool Function,string SearchBy,string OrderBy,string SortOrder,bool StrictSearch,bool InvertSearch,string FunctionSelected,string FunctionColumn,string SearchText) 

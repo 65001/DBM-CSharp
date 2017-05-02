@@ -467,7 +467,7 @@ namespace DBM
             LDGraphicsWindow.CancelClose = true;
             LDGraphicsWindow.ExitOnClose = false;
 
-            GlobalStatic.Dataview = LDControls.AddDataView(1000, 800, "1=Field;2=Type;3=PK;4=AI;5=Unique;6=Not_Null;");
+            GlobalStatic.Dataview = LDControls.AddDataView((Desktop.Width-10),(Desktop.Height-100), "1=Field;2=Type;3=PK;4=AI;5=Unique;6=Not_Null;");
             GraphicsWindow.DrawText(1, 4, "Name: ");
             Controls.Move(GlobalStatic.Dataview, 1, 30);
 
@@ -592,11 +592,7 @@ namespace DBM
 
         static void LogMessage(Primitive Message, string Type, string Caller)
         {
-            if (GlobalStatic.DebugMode == true && Type != Utilities.Localization["System"]) //Writes Log Message to TextWindow
-            {
-                Console.WriteLine("Log : Caller was {0}; Type {1}; Message {2} ", Caller, Type, Message);
-            }
-
+            Console.WriteLine("Log : Caller was : {0}; Type: {1}; Message: {2} ;", Caller, Type, Message);
             if (string.IsNullOrEmpty(Type))
             {
                 Type = "Unknown";
@@ -668,7 +664,7 @@ namespace DBM
             Utilities.AddtoStackTrace( "Events.MC()");
 		}
         /// <summary>
-        /// ComboBox Changed Event Hanlder
+        /// ComboBox Changed Event Handler
         /// </summary>
 		public async static void CB()
 		{

@@ -49,6 +49,11 @@ namespace DBM
                 Settings.SaveSettings();
                 UI.PreMainMenu();
                 UI.MainMenu();
+
+
+                int Index = Engines.DB_Name.IndexOf(Engines.CurrentDatabase)+ 1;
+                Handlers.ComboBox(GlobalStatic.ComboBox["Database"], Index);
+                LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Database"], Index);
                 return;
             }
             else if (Item == Utilities.Localization["Define New Table"]) //TODO ADD UI
@@ -334,7 +339,8 @@ namespace DBM
 			else
 			{
 				LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], CurrentSchema);
-				SortsComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
+				SortsComboBox(1);
+                LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
 				Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 			}
 		}
