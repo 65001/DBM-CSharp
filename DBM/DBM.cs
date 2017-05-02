@@ -161,33 +161,33 @@ namespace DBM
 			//Import
 			GlobalStatic.MenuList[Utilities.Localization["CSV"]] = Utilities.Localization["Import"];
 			GlobalStatic.MenuList[Utilities.Localization["SQL"]] = Utilities.Localization["Import"];
-			GlobalStatic.MenuList["Converter"] = Utilities.Localization["Import"]; //Localize
+			//GlobalStatic.MenuList["Converter"] = Utilities.Localization["Import"]; //Localize
 			GlobalStatic.MenuList["HTML to CSV"] = "Converter"; //Localize
 			GlobalStatic.MenuList["-"] = "Converter";
 			GlobalStatic.MenuList["-"] = "Import";
 			//Export
 			GlobalStatic.MenuList[Utilities.Localization["CSV"]+" "] = Utilities.Localization["Export"];
 			GlobalStatic.MenuList[Utilities.Localization["SQL"] + " "]= Utilities.Localization["Export"];
-			GlobalStatic.MenuList[Utilities.Localization["PXML"] + " "]= Utilities.Localization["Export"];
+			//GlobalStatic.MenuList[Utilities.Localization["PXML"] + " "]= Utilities.Localization["Export"];
 			GlobalStatic.MenuList[Utilities.Localization["HTML"] + " "]= Utilities.Localization["Export"];
 			//GlobalStatic.MenuList[Utilities.Localization["Export UI"]]= Utilities.Localization["Export"];
 			GlobalStatic.MenuList["-"] = Utilities.Localization["Export"];
 			//Settings
 			GlobalStatic.MenuList[Utilities.Localization["Help"]] = Utilities.Localization["Settings"];
 			GlobalStatic.MenuList[Utilities.Localization["About"]] = Utilities.Localization["Help"];
-			GlobalStatic.MenuList[Utilities.Localization["Show Help"]] = Utilities.Localization["Help"];
+			//GlobalStatic.MenuList[Utilities.Localization["Show Help"]] = Utilities.Localization["Help"];
 			GlobalStatic.MenuList["-"] = Utilities.Localization["Help"];
-			GlobalStatic.MenuList[Utilities.Localization["Settings Editor"]] = Utilities.Localization["Settings"];
-			GlobalStatic.MenuList[Utilities.Localization["Toggle Debug"]] = Utilities.Localization["Settings"];
-			GlobalStatic.MenuList[Utilities.Localization["Toggle Transaction Log"]] = Utilities.Localization["Settings"];
-			GlobalStatic.MenuList["-"] = Utilities.Localization["Toggle Transaction Log"];
+			//GlobalStatic.MenuList[Utilities.Localization["Settings Editor"]] = Utilities.Localization["Settings"];
+			//GlobalStatic.MenuList[Utilities.Localization["Toggle Debug"]] = Utilities.Localization["Settings"];
+			//GlobalStatic.MenuList[Utilities.Localization["Toggle Transaction Log"]] = Utilities.Localization["Settings"];
+			//GlobalStatic.MenuList["-"] = Utilities.Localization["Toggle Transaction Log"];
 			GlobalStatic.MenuList[Utilities.Localization["Refresh Schema"]] = Utilities.Localization["Settings"];
-			GlobalStatic.MenuList[Utilities.Localization["Check for Updates"]] = Utilities.Localization["Settings"];
+			//GlobalStatic.MenuList[Utilities.Localization["Check for Updates"]] = Utilities.Localization["Settings"];
 			GlobalStatic.MenuList["-"] = Utilities.Localization["Settings"];
 
 			//Developer
 			GlobalStatic.MenuList[Utilities.Localization["Stack Trace"]] = Utilities.Localization["Developer"];
-			GlobalStatic.MenuList[Utilities.Localization["Close TW"]] = Utilities.Localization["Developer"];
+			//GlobalStatic.MenuList[Utilities.Localization["Close TW"]] = Utilities.Localization["Developer"];
 			GlobalStatic.MenuList[Utilities.Localization["Create Statistics Page"]] = Utilities.Localization["Developer"];
 
 			//Plugin Section

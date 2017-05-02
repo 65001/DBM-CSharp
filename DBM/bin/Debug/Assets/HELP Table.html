@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<title>HELP Exported</title>
+
+	<meta name="viewport"content="width=device-width, initial-scale=1">	<head>
+		<style>
+			table, td, th {border: 1px solid #ddd;text-align: left;}
+			table {border-collapse: collapse; width: 100%;}
+			th,td {padding: 5px;}
+			tr:hover{background-color:#f5f5f5}
+			th,td#Main {background-color: #4CAF50;color: white;font-size:120%;border:0px;text-align:center}
+		</style>
+		<meta charset = "UTF-8">
+		<meta name="generator" content="DBM v1121">
+		<!-- DMB is developed by Abhishek Sathiabalan. LINK: https://github.com/65001/DBM -->
+	</head>
+
+	<body>
+		<div style="overflow-x:auto;">
+			<table>
+				<tr> 
+					<td id = "Main" + colspan = "4">HELP</td>
+				</tr>
+				<tr>
+					<th>ID</th>
+					<th>Button</th>
+					<th>Description</th>
+					<th>Safe</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>File</td>
+					<td>Containts all File Related Operations such as New and Open</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>New</td>
+					<td>Creates a new database. Asks for save path and using the Textwindow asks for a sql creation statement </td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Open</td>
+					<td>Opens a prexisting database and loads the first table found. </td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Edit</td>
+					<td>Edits the current Table , View, or Index and pushes it to the editing screen. <br> <b> WARNING : A very large table can cause the program to crash </b></td>
+					<td>✕</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>View</td>
+					<td>Views the current Table , View , Index, or Master Table and allows you to sort and search it using the GUI</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Save</td>
+					<td>Saves any edited Table</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Import</td>
+					<td>Imports data from a variety of file formats including SQL and CSV . (Buggy)</td>
+					<td>✕</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Export</td>
+					<td>Exports data from the current table into a variety of file formats including SQL , CSV , XML . HTML . It is recommened to create a custom view and then export that view instead of the whole table for operations such as XML and HTML</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>CSV</td>
+					<td>Export related : No known limitations</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>SQL</td>
+					<td>Export related: Current Table Only ! Joins not supported.</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>XML</td>
+					<td>Export related : Exports all data in the table</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>HTML</td>
+					<td>Export related : Exports all data in the table</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>Help</td>
+					<td>Containts the options Toggle Debug , About , Version , and Show Help</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>Toggle Debug</td>
+					<td>Toggles Debug Mode from the GUI</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>About</td>
+					<td>Copyright Information</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>Version</td>
+					<td>Version Information</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>Show Help</td>
+					<td>Shows this html web page</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<td>Settings</td>
+					<td>Edit and control the settings including the width and height and extensions supported by the applications . Extensions can be shown in an array format</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>19</td>
+					<td>Sort (Display Settings)</td>
+					<td>Sorts the DB based on any column in assceding or desscedning order in numeric and alphabetical sorts.</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>20</td>
+					<td>Search</td>
+					<td>Search for a serach criteria in a particular column</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>21</td>
+					<td>Strict Search</td>
+					<td>Forces the search criteria to match 100% for any results to be shown to the user</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>22</td>
+					<td>Run Function</td>
+					<td>Runs a function such as AVG , SUM , Total , MIN, MAX , and COUNT </td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>23</td>
+					<td>Query </td>
+					<td>Runs Custom SQL Code . Cannot edit the table using this method. (Buggy)</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>24</td>
+					<td>Command</td>
+					<td>Runs Custom SQL Code . Cannot use a SELECT statement using this method. (Buggy)</td>
+					<td>✓</td>
+				</tr>
+				<tr>
+					<td>25</td>
+					<td>Developer Tab</td>
+					<td>Debugging Tools</td>
+					<td>✓</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

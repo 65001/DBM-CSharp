@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DBM.exe" size="68528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DBM.exe" size="68016">
       <assemblyIdentity name="DBM" version="1.1.2.2" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>73tcfUsxzZLo9QiF1kZoVEckkih+ddR7aVoQ0Iz7xjc=</dsig:DigestValue>
+        <dsig:DigestValue>90E2spQU2IPgtPdUnzk2LlyGPFxqn9LGP9Hi6wIuctw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
