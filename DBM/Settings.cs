@@ -15,7 +15,6 @@ namespace DBM
 	{
 		public static void LoadSettings(bool RestoreSettings)
 		{
-            //GlobalStatic.SettingsPath = "C:\\Users\\Abhishek\\Documents\\Proggraming\\SB\\Projects\\DB Manager\\Assets\\setting.txt"; //@Dev 
             Utilities.AddtoStackTrace( "Settings.LoadSettings()");
             if (RestoreSettings == false)
 			{

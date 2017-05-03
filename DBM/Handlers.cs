@@ -217,7 +217,8 @@ namespace DBM
             }
             else if (Item == Utilities.Localization["Show Help"]) //TODO
             {
-
+                string Path = System.IO.Path.Combine(GlobalStatic.AssetPath, "HELP Table.html");
+                LDProcess.Start(Path, null);
             }
             else if (Item == Utilities.Localization["Settings Editor"]) //TODO
             {
@@ -238,7 +239,9 @@ namespace DBM
                 return;
             }
             else if (Item == Utilities.Localization["Check for Updates"]) //TODO
-            { }
+            {
+
+            }
             //Developer
             else if (Item == Utilities.Localization["Stack Trace"])
             {
@@ -254,8 +257,6 @@ namespace DBM
             {
 
             }
-            //Plugins
-
             else
             {
                 GraphicsWindow.ShowMessage(Item + " does not exist in context or is not yet implemented", "Error Handlers.Menu");

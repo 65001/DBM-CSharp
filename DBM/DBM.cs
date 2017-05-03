@@ -24,7 +24,6 @@ using SBFile = Microsoft.SmallBasic.Library.File;
 		Replace all instances of GlobalStatic.List_DB_* ASAP.
 		Start to use System.Version instead of an int and replace instances of GlobablStatic.VersionID to it as well
 
-        Settings UI
         Export
  */
 
@@ -142,7 +141,6 @@ namespace DBM
 		{
 			Utilities.AddtoStackTrace( "UI.PreMainMenu()");
 			GlobalStatic.DefaultFontSize = GraphicsWindow.FontSize;
-            
 			//Main
 			GlobalStatic.MenuList[Utilities.Localization["File"]] = "Main";
 			GlobalStatic.MenuList[Utilities.Localization["Edit"]] = "Main";
@@ -153,17 +151,19 @@ namespace DBM
 			GlobalStatic.MenuList[Utilities.Localization["Settings"]] = "Main";
 			GlobalStatic.MenuList[Utilities.Localization["Developer"]] = "Main"; 
 			//GlobalStatic.MenuList["Plugin"] = "Main"; //Localize
+
 			//File
 			GlobalStatic.MenuList[Utilities.Localization["New"]] = Utilities.Localization["File"];
 			GlobalStatic.MenuList[Utilities.Localization["Open"]] = Utilities.Localization["File"];
 			GlobalStatic.MenuList[Utilities.Localization["Define New Table"]] = Utilities.Localization["File"];
 			GlobalStatic.MenuList["-"] = Utilities.Localization["File"];
+
 			//Import
 			GlobalStatic.MenuList[Utilities.Localization["CSV"]] = Utilities.Localization["Import"];
 			GlobalStatic.MenuList[Utilities.Localization["SQL"]] = Utilities.Localization["Import"];
 			//GlobalStatic.MenuList["Converter"] = Utilities.Localization["Import"]; //Localize
-			GlobalStatic.MenuList["HTML to CSV"] = "Converter"; //Localize
-			GlobalStatic.MenuList["-"] = "Converter";
+			//GlobalStatic.MenuList["HTML to CSV"] = "Converter"; //Localize
+			//GlobalStatic.MenuList["-"] = "Converter";
 			GlobalStatic.MenuList["-"] = "Import";
 			//Export
 			GlobalStatic.MenuList[Utilities.Localization["CSV"]+" "] = Utilities.Localization["Export"];
@@ -175,10 +175,10 @@ namespace DBM
 			//Settings
 			GlobalStatic.MenuList[Utilities.Localization["Help"]] = Utilities.Localization["Settings"];
 			GlobalStatic.MenuList[Utilities.Localization["About"]] = Utilities.Localization["Help"];
-			//GlobalStatic.MenuList[Utilities.Localization["Show Help"]] = Utilities.Localization["Help"];
+			GlobalStatic.MenuList[Utilities.Localization["Show Help"]] = Utilities.Localization["Help"];
 			GlobalStatic.MenuList["-"] = Utilities.Localization["Help"];
-			//GlobalStatic.MenuList[Utilities.Localization["Settings Editor"]] = Utilities.Localization["Settings"];
-			//GlobalStatic.MenuList[Utilities.Localization["Toggle Debug"]] = Utilities.Localization["Settings"];
+			GlobalStatic.MenuList[Utilities.Localization["Settings Editor"]] = Utilities.Localization["Settings"];
+			GlobalStatic.MenuList[Utilities.Localization["Toggle Debug"]] = Utilities.Localization["Settings"];
 			//GlobalStatic.MenuList[Utilities.Localization["Toggle Transaction Log"]] = Utilities.Localization["Settings"];
 			//GlobalStatic.MenuList["-"] = Utilities.Localization["Toggle Transaction Log"];
 			GlobalStatic.MenuList[Utilities.Localization["Refresh Schema"]] = Utilities.Localization["Settings"];
@@ -187,14 +187,16 @@ namespace DBM
 
 			//Developer
 			GlobalStatic.MenuList[Utilities.Localization["Stack Trace"]] = Utilities.Localization["Developer"];
-			//GlobalStatic.MenuList[Utilities.Localization["Close TW"]] = Utilities.Localization["Developer"];
-			GlobalStatic.MenuList[Utilities.Localization["Create Statistics Page"]] = Utilities.Localization["Developer"];
+			GlobalStatic.MenuList[Utilities.Localization["Close TW"]] = Utilities.Localization["Developer"];
+			//GlobalStatic.MenuList[Utilities.Localization["Create Statistics Page"]] = Utilities.Localization["Developer"];
 
 			//Plugin Section
+            /*
 			GlobalStatic.MenuList["SB Backup Script"] = Utilities.Localization["Plugin"];
 			GlobalStatic.MenuList["Scan"] = "SB Backup Script";
 			GlobalStatic.MenuList["View"] = "SB Backup Script";
 			GlobalStatic.MenuList["ICF"] = Utilities.Localization["Plugin"];
+            */
 		}
 
 		public static void MainMenu()
@@ -291,7 +293,6 @@ namespace DBM
 			GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 150, Utilities.Localization["Search Settings"]);
 			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 180, Utilities.Localization["Search in"]);
 			GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210,Utilities.Localization["Search"] + ":");
-			GraphicsWindow.FontSize = 13;
 			GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
 			for (int i = 0; i < _HideDisplay.Count;i++)
 			{
@@ -339,7 +340,7 @@ namespace DBM
 			GlobalStatic.ComboBox["Search"] = LDControls.AddComboBox(Engines.Schema, 200, 120);
 			GlobalStatic.TextBox["Search"] = Controls.AddTextBox(GlobalStatic.UIx + 100, 210);
 			GlobalStatic.CheckBox["StrictSearch"] = LDControls.AddCheckBox(Utilities.Localization["Strict Search"]);
-			GlobalStatic.CheckBox["InvertSearch"] = LDControls.AddCheckBox("Invert"); //Localize
+			GlobalStatic.CheckBox["InvertSearch"] = LDControls.AddCheckBox(Utilities.Localization["Invert"]);
             _Buttons.Add("Search", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Search"]), GlobalStatic.UIx + 10, 260));
 
 			Controls.Move(GlobalStatic.CheckBox["StrictSearch"], GlobalStatic.UIx + 20, 240);
@@ -415,6 +416,7 @@ namespace DBM
 
 		public static void SettingsUI()//TODO: Make the Settings UI
 		{
+            _Buttons.Clear();
             Utilities.AddtoStackTrace( "UI.SettingsUI()");
             GraphicsWindow.Clear();
             GraphicsWindow.Title = Utilities.Localization["Settings"];
@@ -451,9 +453,87 @@ namespace DBM
 
             GraphicsWindow.DrawText(10, 360, Utilities.Localization["Transaction DB Path"]);
             _Buttons.Add("Transaction_DB", Controls.AddButton(Utilities.Localization["Browse"], 290, 360));
+
+            for (int i = 0; i < Utilities.ISO_LangCode.Count; i++)
+            {
+                if (Utilities.ISO_LangCode[i] == GlobalStatic.LanguageCode)
+                {
+                    int Index = i + 1;
+                    LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Language"], Index );
+                }
+            }
+
+            _Buttons.Add("Debug_Parser", LDControls.AddCheckBox("Debug Parser"));
+            Controls.Move(_Buttons["Debug_Parser"], 10, 220);
+
+            _Buttons.Add("Debug_Mode", LDControls.AddCheckBox("Debug Mode"));
+            Controls.Move(_Buttons["Debug_Mode"], 10, 250);
+
+            _Buttons.Add("Settings Save", Controls.AddButton(Utilities.Localization["Save and Close"], 50, 420));
+            _Buttons.Add("Settings Close", Controls.AddButton(Utilities.Localization["Close wo saving"], 50, 470));
+
+            Controls.SetSize(_Buttons["Settings Save"], 280, 35);
+            Controls.SetSize(_Buttons["Settings Close"], 280, 35);
+
+            Controls.SetTextBoxText(GlobalStatic.TextBox["Settings_Width"], GlobalStatic.Listview_Width);
+            Controls.SetTextBoxText(GlobalStatic.TextBox["Settings_Height"], GlobalStatic.Listview_Height);
+            Controls.SetTextBoxText(GlobalStatic.TextBox["Settings_Extensions"], GlobalStatic.Extensions);
+            Controls.SetTextBoxText(GlobalStatic.TextBox["Settings_Deliminator"], GlobalStatic.Deliminator);
+            LDControls.CheckBoxState(_Buttons["Debug_Parser"], GlobalStatic.DebugParser);
+            LDControls.CheckBoxState(_Buttons["Debug_Mode"], GlobalStatic.DebugMode);
+
+            GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
+
+            Controls.ButtonClicked -= Events.BC;
+            Controls.ButtonClicked += SettingsUIHandler;
         }
 
-		public static void CreateTableUI()//TODO: Create the "Create Table UI"
+        static void SettingsUIHandler()
+        {
+            SettingsUIButton(Controls.LastClickedButton);
+        }
+
+        static void SettingsUIButton(string LastClickedButton)
+        {
+            if (LastClickedButton == _Buttons["Settings Save"])
+            {
+                GlobalStatic.Settings["Listview_Width"] = Controls.GetTextBoxText(GlobalStatic.TextBox["Settings_Width"]);
+                GlobalStatic.Settings["Listview_Height"] = Controls.GetTextBoxText(GlobalStatic.TextBox["Settings_Height"]);
+                GlobalStatic.Settings["Extensions"] = Controls.GetTextBoxText(GlobalStatic.TextBox["Settings_Extensions"]);
+                GlobalStatic.Settings["Deliminator"] = Controls.GetTextBoxText(GlobalStatic.TextBox["Settings_Deliminator"]);
+                GlobalStatic.Settings["Language"] = Utilities.ISO_LangCode[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Language"]) - 1];
+                GlobalStatic.Settings["debug_mode"] = LDControls.CheckBoxGetState(_Buttons["Debug_Mode"]);
+                GlobalStatic.Settings["debug_parser"] = LDControls.CheckBoxGetState(_Buttons["Debug_Parser"]);
+                GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
+                Settings.SaveSettings();
+                Settings.LoadSettings(GlobalStatic.RestoreSettings);
+                Utilities.LocalizationXML(Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"));
+                SettingsUIButton(_Buttons["Settings Close"]);
+                Console.WriteLine(GlobalStatic.LanguageCode);
+                return;
+            }
+            else if (LastClickedButton == _Buttons["Settings Close"])
+            {
+                GlobalStatic.ListView = null;
+                GlobalStatic.Dataview = null;
+                GlobalStatic.MenuList = null;
+
+                Controls.ButtonClicked -= SettingsUIHandler;
+                Controls.ButtonClicked += Events.BC;
+                GraphicsWindow.Clear();
+                _Buttons.Clear();
+                PreMainMenu();
+                DisplayResults();
+                ShowDisplayResults();
+                MainMenu();
+                Handlers.Buttons("View");
+                return;
+            }
+        }
+
+
+
+		public static void CreateTableUI()
 		{
             Utilities.AddtoStackTrace( "UI.CreateTableUI()");
             Controls.HideControl(GlobalStatic.Dataview);
@@ -487,7 +567,7 @@ namespace DBM
             Controls.ButtonClicked += CreateTableHandler;
         }
 
-		public static void CreateTableHandler()//TODO Create the Create Table Handler
+		public static void CreateTableHandler()
 		{
             Utilities.AddtoStackTrace( "UI.CreateTableHandler()");
             string LastButton = Controls.LastClickedButton;
