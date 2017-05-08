@@ -253,6 +253,16 @@ namespace DBM
                 GlobalStatic.DebugMode = true;
                 Console.WriteLine("\nStack Trace:");
                 Utilities.StackTrace.Print();
+                Console.WriteLine("");
+
+                for (int i = 0; i < Engines.LastQuery.Count; i++)
+                {
+                    if (Engines.Type[i] == Engines.Types.Query)
+                    {
+                        Console.Write("{0}", Engines.LastQuery[i]);
+                        Console.WriteLine("|{0}",Engines.Timer[i]);
+                    }
+                }
             }
             else if (Item == Utilities.Localization["Close TW"])
             {
