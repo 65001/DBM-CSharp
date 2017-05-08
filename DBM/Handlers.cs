@@ -66,9 +66,14 @@ namespace DBM
                 Controls.HideControl(GlobalStatic.Dataview);
                 if (GlobalStatic.ListView == null)
                 {
-                    GlobalStatic.ListView = LDDataBase.AddListView(GlobalStatic.Listview_Width, GlobalStatic.Listview_Height);
+                    bool Bold = GraphicsWindow.FontBold;
+                    GraphicsWindow.FontBold = false;
+                    GlobalStatic.ListView = LDControls.AddListView(GlobalStatic.Listview_Width, GlobalStatic.Listview_Height, null);
+
+                    LDControls.AddContextMenu(GlobalStatic.ListView, "1=Ascend;2=Descend;", null);
                     Controls.Move(GlobalStatic.ListView, 10, 35);
                     UI.DisplayResults();
+                    GraphicsWindow.FontBold = Bold;
                 }
                 else
                 {
@@ -263,7 +268,21 @@ namespace DBM
             }
 		}
 
-		public static void Buttons(string LastButton)
+        public static void ContextMenu(string Control,int Index)
+        {
+            if (Control == GlobalStatic.ListView)
+            {
+                if (Index <= 2)
+                {
+                    Primitive Schema = Export.GenerateSchemaFromQueryData(Export.Generate2DArrayFromLastQuery());
+                    LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sort"], LDControls.LastListViewColumn);
+                    LDControls.ComboBoxSelect(GlobalStatic.ComboBox["ASCDESC"], Index);
+                    Buttons(UI.Buttons["Sort"]);
+                }
+            }
+        }
+
+        public static void Buttons(string LastButton)
 		{
             try
             {
