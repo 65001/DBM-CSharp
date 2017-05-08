@@ -14,7 +14,11 @@ namespace DBM
         static IReadOnlyList<string> CorrectList;
 		public static Primitive TypeofSorts ="1="+ Utilities.Localization["Table"] +";2=" + Utilities.Localization["View"] +"3="+ Utilities.Localization["Index"] + "4="+ Utilities.Localization["Master Table"]+";";
 
-		public static void Menu(string Item) //Handles Main Menu
+        /// <summary>
+        /// Handles Main Menu
+        /// </summary>
+        /// <param name="Item">Localized Menu Item</param>
+		public static void Menu(string Item)
 		{
             Utilities.AddtoStackTrace( "Handlers.Menu(" + Item + ")");
 
@@ -45,7 +49,7 @@ namespace DBM
                 GlobalStatic.ListView = null;
                 GlobalStatic.Dataview = null;
                 Settings.LoadSettings(GlobalStatic.RestoreSettings); //Reloads Settings
-                Engines.Load_DB(Engines.EnginesModes.SQLITE, UI.GetPath(Engines.EnginesModes.SQLITE));
+                Engines.Load_DB_Sqlite(UI.GetPath(Engines.EnginesModes.SQLITE));
                 Settings.SaveSettings();
                 UI.PreMainMenu();
                 UI.MainMenu();

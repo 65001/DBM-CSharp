@@ -81,7 +81,6 @@ namespace DBM
         {
             Utilities.AddtoStackTrace("UI.Startup()");
             Settings.LoadSettings(GlobalStatic.RestoreSettings); //Load Application Settings from text file
-
             Settings.Paths
                     (
                 GlobalStatic.AssetPath,
@@ -396,7 +395,7 @@ namespace DBM
 		{
             Utilities.AddtoStackTrace( "UI.Title()");
 			string SetTitle;
-			SetTitle = GlobalStatic.Title + " " + Engines.Database_Shortname + "(" + Engines.CurrentDatabase + ") :" + Handlers.TypeofSorts[GlobalStatic.SortBy] + ":" + Engines.CurrentTable;
+			SetTitle = GlobalStatic.Title + " " + Engines.DatabaseShortname + "(" + Engines.CurrentDatabase + ") :" + Handlers.TypeofSorts[GlobalStatic.SortBy] + ":" + Engines.CurrentTable;
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
 			{
 				SetTitle = GlobalStatic.Title;
@@ -713,7 +712,7 @@ namespace DBM
             } 
 			else 
 			{
-                LogMessage("Program Closing - Closing : " + Engines.Database_Shortname , Utilities.Localization["Application"]); //Localize
+                LogMessage("Program Closing - Closing : " + Engines.DatabaseShortname , Utilities.Localization["Application"]); //Localize
             }
 
 			GraphicsWindow.Clear();

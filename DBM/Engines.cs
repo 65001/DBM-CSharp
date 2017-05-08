@@ -20,21 +20,20 @@ namespace DBM
 
 		public static string CurrentDatabase { get; private set; }
 		public static string CurrentTable { get; private set; }
-		public static string Database_Shortname { get; private set; }
+		public static string DatabaseShortname { get; private set; }
 
         /// <summary>
         /// Returns the current EngineMode or EngineModes.NONE if no data is currently in the List
         /// </summary>
         public static EnginesModes CurrentEngine
         {
-            
             get
             {
                 try
                 {
-                    return Engines.DB_Engine[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)];
+                    return DB_Engine[DB_Name.IndexOf(CurrentDatabase)];
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     return EnginesModes.NONE;
                 }
@@ -55,25 +54,40 @@ namespace DBM
 
         public static Primitive Schema { get; private set; }
         static List<string> _Schema = new List<string>();
-
+        
         static List<Types> _Type_Referer = new List<Types>();
         static List<long> _Timer = new List<long>();
         static List<string> _Last_Query = new List<string>();
         static List<string> _Last_NonSchema_Query = new List<string>();
 
-		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
+        public static int Command(string Database, string SQL,string Explanation)
+        {
+            return Command(Database, SQL, LDFile.UserName, Explanation, false);
+        }
+
+        /// <summary>
+        /// Executes a Command against a database.
+        /// </summary>
+        /// <param name="Database">Database. Use the Database name you recieve from LoadDB</param>
+        /// <param name="SQL"></param>
+        /// <param name="User">Username of the requested username</param>
+        /// <param name="Explanation">Any notes for transactions</param>
+        /// <param name="RunParser">Run Custom Parser... Yet to be implemented</param>
+        /// <returns></returns>
+        public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
             Utilities.AddtoStackTrace("Engines.Command()");
             Stopwatch CommandTime = Stopwatch.StartNew();
 			if (RunParser == false)
 			{
-				TransactionRecord(User, Database, SQL, "CMD", Explanation);
+				TransactionRecord(User, Database, SQL, Types.Command, Explanation);
                 return LDDataBase.Command(Database, SQL);
 			}
 			Console.WriteLine("Database type currently not supported!");
 
             _Type_Referer.Add(Types.Command);
             _Timer.Add(CommandTime.ElapsedMilliseconds);
+
             //TODO Implement Parser Stuff 
 			return 0;
 		}
@@ -88,7 +102,7 @@ namespace DBM
             Utilities.AddtoStackTrace("Engines.Query()");
 
             Stopwatch QueryTime = Stopwatch.StartNew();
-			TransactionRecord(UserName, DataBase, SQL, "Query", Explanation);
+			TransactionRecord(UserName, DataBase, SQL, Types.Query, Explanation);
 			Primitive QueryResults = LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
 
             _Type_Referer.Add(Types.Query);
@@ -114,13 +128,37 @@ namespace DBM
             Utilities.AddtoStackTrace( "Engines.Emulator()");
 		}
 
-		public static void TransactionRecord(string UserName, string DataBase, string SQL, string Type, string Reason) //TODO Transactions 
+        /// <summary>
+        /// This method should only run when the correct global Paramters are set.
+        /// //Current Storage only supports SQLite db file.
+        /// </summary>
+		public static void TransactionRecord(string UserName, string DataBase, string SQL, Types Type, string Reason) //TODO Transactions 
 		{
-            //This method should only run when the correct global Paramters are rig//Current Storage only supports SQLite
             Utilities.AddtoStackTrace( "Engines.TransactionRecord()");
+            //Escapes function when conditions are correct
+            if (GlobalStatic.Transactions == false || DataBase == GlobalStatic.TransactionDB )
+            {
+                return;
+            }
+
+            if (GlobalStatic.Transaction_Commands == true && Type == Types.Command)
+            {
+
+            }
+
+            if (GlobalStatic.Transaction_Query == true && Type == Types.Query)
+            {
+                int Index = _DB_Name.IndexOf(CurrentDatabase);
+                if (Index >= 0) //Prevents Out of bound errors
+                {
+                        string URI = _DB_Path[Index];
+                        string _SQL = "INSERT INTO Transactions (USER,DB,SQL,TYPE,Reason,\"UTC DATE\",\"UTC TIME\",PATH,SNAME) VALUES('" + UserName + "','" + DataBase + "','" + SQL.Replace("'", "''") + "','Query','" + Reason.Replace("'", "''") + "',Date(),TIME(),'" + URI + "','" + LDFile.GetFolder(URI) + "');";
+                        LDDataBase.Command(GlobalStatic.TransactionDB, _SQL);
+                }
+            }
 		}
         
-
+        
         public static string Load_DB(EnginesModes Mode, Primitive Data)
         {
             Dictionary<string, string> _Data = new Dictionary<string, string>();
@@ -128,7 +166,6 @@ namespace DBM
             return Load_DB(Mode, _Data);
         }
         
-
         public static string Load_DB(EnginesModes Mode, Dictionary<string, string> Data) //Tasked with connecting to a Database and adding the DB Connection Name to a list.
         {
             //MAKE SURE The CurrentMode is always currently changed.
@@ -386,9 +423,9 @@ namespace DBM
 			return EnginesModes.NONE; 
 		}
 
-		public static void AddToList(string path, string Name, string ShortName, EnginesModes Engine)
+		 public static void AddToList(string path, string Name, string ShortName, EnginesModes Engine)
 		{
-			Database_Shortname = ShortName;
+			DatabaseShortname = ShortName;
 			_DB_Name.Add(Name);
 			_DB_Path.Add(path);
 			_DB_ShortName.Add(ShortName);
