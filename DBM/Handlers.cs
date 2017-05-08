@@ -306,7 +306,7 @@ namespace DBM
                     string SearchIn = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Search"])];
                     string SearchText = LDText.Replace(Controls.GetTextBoxText(GlobalStatic.TextBox["Search"]), "'", "''");
                     string FunctionIn = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ColumnList"])];
-                    string FunctionCalled = GlobalStatic.SQLFunctionsList[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["FunctionList"])];
+                    string FunctionCalled = Engines.Functions(Engines.CurrentEngine)[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["FunctionList"])];
 
                     string SortBy = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Sort"])];
                     string ASCDESC = ASCDESC_Sorts[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ASCDESC"])];
@@ -357,6 +357,8 @@ namespace DBM
 			Engines.Load_DB(Engines.EnginesModes.SQLITE,Engines.DB_Path[Index-1]);
 			Engines.GetSchema(Engines.CurrentDatabase);
 			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+
+            LDControls.ComboBoxContent(GlobalStatic.ComboBox["FunctionList"],Engines.Functions(Engines.EnginesModes.SQLITE));
 
 			SortsComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
 			TableComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], 1);

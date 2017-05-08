@@ -43,42 +43,35 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="nunit.framework" version="3.6.1.0" publicKeyToken="2638CD05610744EB" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="SlimDX" version="4.0.13.43" publicKeyToken="B1B0C32FD1FFE4F9" language="neutral" processorArchitecture="amd64" />
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DBM.exe" size="68528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DBM.exe" size="71088">
       <assemblyIdentity name="DBM" version="1.1.2.2" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>73tcfUsxzZLo9QiF1kZoVEckkih+ddR7aVoQ0Iz7xjc=</dsig:DigestValue>
+        <dsig:DigestValue>q6dNvfrPRZBievDaWz57OHesuSoa4orRlT//lCoSKqI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LitDev.dll" size="8506880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LitDev.dll" size="8515584">
       <assemblyIdentity name="LitDev" version="1.2.16.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wLE3HqOJtfYFYfxzVk66vmlx0Edf+Nro4w8HtMHZca8=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="nunit.framework.dll" size="315392">
-      <assemblyIdentity name="nunit.framework" version="3.6.1.0" publicKeyToken="2638CD05610744EB" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AXBExhN/9Npc1nLPYz2kK9tsBVjLRz5x2fdbWR8ANCA=</dsig:DigestValue>
+        <dsig:DigestValue>4yRFBH537Eeo2d5qaZZePzcQNoFXg3mPafPWdXZA5BY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

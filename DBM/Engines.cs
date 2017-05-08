@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Diagnostics;
+using System.Data.SqlClient;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 using SBArray = Microsoft.SmallBasic.Library.Array;
@@ -20,7 +21,25 @@ namespace DBM
 		public static string CurrentDatabase { get; private set; }
 		public static string CurrentTable { get; private set; }
 		public static string Database_Shortname { get; private set; }
-        public static EnginesModes CurrentEngine { get { return Engines.DB_Engine[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)]; } }
+
+        /// <summary>
+        /// Returns the current EngineMode or EngineModes.NONE if no data is currently in the List
+        /// </summary>
+        public static EnginesModes CurrentEngine
+        {
+            
+            get
+            {
+                try
+                {
+                    return Engines.DB_Engine[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)];
+                }
+                catch (Exception ex)
+                {
+                    return EnginesModes.NONE;
+                }
+            }
+        }
 
 		public static string GQ_CMD { get; private set; } //Auto Generated Query SQL Statements 
 
@@ -41,7 +60,7 @@ namespace DBM
         static List<long> _Timer = new List<long>();
         static List<string> _Last_Query = new List<string>();
         static List<string> _Last_NonSchema_Query = new List<string>();
-		
+
 		public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
             Utilities.AddtoStackTrace("Engines.Command()");
@@ -100,20 +119,20 @@ namespace DBM
             //This method should only run when the correct global Paramters are rig//Current Storage only supports SQLite
             Utilities.AddtoStackTrace( "Engines.TransactionRecord()");
 		}
+        
 
-        public static string Load_DB(EnginesModes Mode, Primitive Data) //Tasked with connecting to a Database and adding the DB Connection Name to a list.
+        public static string Load_DB(EnginesModes Mode, Primitive Data)
+        {
+            Dictionary<string, string> _Data = new Dictionary<string, string>();
+            _Data["URI"] = Data;
+            return Load_DB(Mode, _Data);
+        }
+        
+
+        public static string Load_DB(EnginesModes Mode, Dictionary<string, string> Data) //Tasked with connecting to a Database and adding the DB Connection Name to a list.
         {
             //MAKE SURE The CurrentMode is always currently changed.
             Utilities.AddtoStackTrace("Engines.Load_DB()");
-            int Index = _DB_Path.IndexOf(Data);
-
-            if (Index != -1) //Database already exists as a connection so set the primary connection to that
-            {
-                string Database = _DB_Name[Index];
-                Database_Shortname = _DB_ShortName[Index];
-                CurrentDatabase = Database;
-                return Database;
-            }
 
             //New Database creation code
             switch (Mode)
@@ -128,11 +147,11 @@ namespace DBM
                     CurrentDatabase = LDDataBase.ConnectOleDb(Data["Provider"], Data["Server"], Data["Database"]);
                     return CurrentDatabase;
 				case EnginesModes.SQLITE:
-                    if (System.IO.Directory.Exists(LDFile.GetFolder(Data)))
+                    if (System.IO.Directory.Exists(LDFile.GetFolder(Data["URI"])))
                     {
-                        string Database = LDDataBase.ConnectSQLite(Data);
-                        AddToList(Data, Database, LDFile.GetFile(Data), EnginesModes.SQLITE);
-                        GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data);
+                        string Database = LDDataBase.ConnectSQLite(Data["URI"]);
+                        AddToList(Data["URI"], Database, LDFile.GetFile(Data["URI"]), EnginesModes.SQLITE);
+                        GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data["URI"]);
                         Settings.SaveSettings();
                         CurrentDatabase = Database;
                         return Database;
@@ -148,12 +167,14 @@ namespace DBM
 
         public static string Load_DB_Sqlite(string FilePath)
         {
-            return Load_DB(EnginesModes.SQLITE, FilePath);
+            Dictionary<string, string> _Data = new Dictionary<string, string>();
+            _Data["URI"] = FilePath;
+            return Load_DB(EnginesModes.SQLITE, _Data);
         }
 
         public static string Load_DB_SQLServer(string Server, string Database)
         {
-            Primitive Data = null;
+            Dictionary<string, string> Data = new Dictionary<string, string>();
             Data["Server"] = Server;
             Data["Database"] = Database;
             return Load_DB(EnginesModes.SQLSERVER,Data);
@@ -161,7 +182,7 @@ namespace DBM
 
         public static string Load_DB_MySQL(string Server,string Database,string User,string Password)
         {
-            Primitive Data = null;
+            Dictionary<string, string> Data = new Dictionary<string, string>();
             Data["Server"] = Server;
             Data["User"] = User;
             Data["Password"] = Password;
@@ -171,7 +192,7 @@ namespace DBM
 
         public static string Load_DB_OLEDB(string Server,string Database, string Provider)
         {
-            Primitive Data = null;
+            Dictionary<string, string> Data = new Dictionary<string, string>();
             Data["Provider"] = Provider;
             Data["Server"] = Server;
             Data["Database"] = Database;
@@ -180,10 +201,10 @@ namespace DBM
 
         public static string Load_DB_ODBC(string Server,string Database,string User,string Password,int Port,string Driver,string Option)
         {
-            Primitive Data = null;
+            Dictionary<string, string> Data = new Dictionary<string, string>();
             Data["Driver"] = Driver;
             Data["Server"] = Server;
-            Data["Port"] = Port;
+            Data["Port"] = Port.ToString();
             Data["User"] = User;
             Data["Password"] = Password;
             Data["Option"] = Option;
@@ -206,7 +227,7 @@ namespace DBM
                         _Tables.Clear();
                         _Views.Clear();
                         _Indexes.Clear();
-                        
+                    
 						Primitive Master_Schema_List = Query(Database, "SELECT tbl_name,name,type FROM sqlite_master UNION Select tbl_name,name,type From SQLite_Temp_Master;", null, true, Utilities.Localization["App"], "SCHEMA");
 						for (int i = 1; i <= Master_Schema_List.GetItemCount(); i++)
 						{
@@ -252,7 +273,8 @@ namespace DBM
 			{
 				case EnginesModes.SQLITE:
                     _Schema.Clear();
-					Primitive QSchema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
+
+                    Primitive QSchema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
 					for (int i = 1; i <= QSchema.GetItemCount(); i++)
 					{
                         _Schema.Add(QSchema[i]["name"]);
@@ -337,6 +359,17 @@ namespace DBM
 		{
 			return "SELECT " + Function + "(\"" + Column + "\") FROM " + CurrentTable + " ";
 		}
+
+        public static Primitive Functions(EnginesModes Mode)
+        {
+            switch (Mode)
+            {
+                case EnginesModes.SQLITE:
+                    return "1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;";
+                default:
+                    return "1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;";
+            }
+        }
 
 		public static void CreateStatisticsPage(string Table) //TODO
 		{

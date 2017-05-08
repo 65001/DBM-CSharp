@@ -26,7 +26,6 @@ using SBFile = Microsoft.SmallBasic.Library.File;
 
         Export
  */
-
 //Complete Implements and Localize
 namespace DBM
 {
@@ -157,6 +156,8 @@ namespace DBM
             GlobalStatic.MenuList[Utilities.Localization["New"]] = Utilities.Localization["File"];
             GlobalStatic.MenuList[Utilities.Localization["Open"]] = Utilities.Localization["File"];
             GlobalStatic.MenuList[Utilities.Localization["Define New Table"]] = Utilities.Localization["File"];
+            //GlobalStatic.MenuList[Utilities.Localization["New in Memory Db"]] = Utilities.Localization["File"];
+            //GlobalStatic.MenuList[Utilities.Localization["Statistics Page"]] = Utilities.Localization["File"];
             GlobalStatic.MenuList["-"] = Utilities.Localization["File"];
 
             //Import
@@ -166,6 +167,7 @@ namespace DBM
             //GlobalStatic.MenuList["HTML to CSV"] = "Converter"; //Localize
             //GlobalStatic.MenuList["-"] = "Converter";
             GlobalStatic.MenuList["-"] = "Import";
+
             //Export
             GlobalStatic.MenuList[Utilities.Localization["CSV"] + " "] = Utilities.Localization["Export"];
             GlobalStatic.MenuList[Utilities.Localization["SQL"] + " "] = Utilities.Localization["Export"];
@@ -173,6 +175,7 @@ namespace DBM
             GlobalStatic.MenuList[Utilities.Localization["HTML"] + " "] = Utilities.Localization["Export"];
             //GlobalStatic.MenuList[Utilities.Localization["Export UI"]]= Utilities.Localization["Export"];
             GlobalStatic.MenuList["-"] = Utilities.Localization["Export"];
+
             //Settings
             GlobalStatic.MenuList[Utilities.Localization["Help"]] = Utilities.Localization["Settings"];
             GlobalStatic.MenuList[Utilities.Localization["About"]] = Utilities.Localization["Help"];
@@ -349,7 +352,7 @@ namespace DBM
 			Controls.SetSize(_Buttons["Search"], 290, 25);
 
 			//Functions
-			GlobalStatic.ComboBox["FunctionList"] = LDControls.AddComboBox(GlobalStatic.SQLFunctionsList, 130, 100);
+			GlobalStatic.ComboBox["FunctionList"] = LDControls.AddComboBox(Engines.Functions(Engines.CurrentEngine), 130, 100);
 			Controls.Move(GlobalStatic.ComboBox["FunctionList"], GlobalStatic.UIx + 10, 310);
 			GlobalStatic.ComboBox["ColumnList"] = LDControls.AddComboBox(Engines.Schema, 135, 100);
 			Controls.Move(GlobalStatic.ComboBox["ColumnList"], GlobalStatic.UIx + 160, 310);

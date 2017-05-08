@@ -2,6 +2,7 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
+using System.Text;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.IO;
@@ -231,6 +232,16 @@ namespace DBM
                 _return[i + 1] = List[i];
             }
             return _return;
+        }
+
+        public static Primitive ToPrimitiveArray<T>(this Dictionary<T, T> Dictionary)
+        {
+            StringBuilder Exporter = new StringBuilder();
+            foreach (KeyValuePair<T, T> entry in Dictionary)
+            {
+                Exporter.Append(entry.Key + "=" + entry.Value + ";");
+            }
+            return Exporter.ToString();
         }
 
         public static void Print<T>(this List<T> List)

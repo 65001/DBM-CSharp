@@ -58,7 +58,7 @@ namespace DBM
 			//Lists
 			public const string ExportT2 = "Export T2",ExportT1 = "Export T1";
             
-			//public const string TrackDefaultTable = "TrackDefaultTable";
+			public const string TrackDefaultTable = "TrackDefaultTable";
 			public const string List_Mod_Name = "Mod_Name";
 			public const string List_Mod_Path = "Mod_Path";
 			public const string List_Command_Parser = "Command_SQL_Parser";
@@ -69,12 +69,11 @@ namespace DBM
 			public const string List_UI_Handler = "UI_Handler";
 			public const string List_UI_Action = "UI_Action";
 			public const string List_Stack_Time = "Stack_Time";
-
 			public const string List_DB_Tracker = "DB_Tracking";
+            
 
 			public static string Dataview,ListView;
 			public static Primitive MenuList,CheckList,ComboBox,TextBox,CheckBox; //Change to a Dictionaries in the future and move to UI.
-			public static Primitive SQLFunctionsList = Text.ConvertToUpperCase("1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;");
 
 			public static string Title = "Database Manager (" + ProductID + ") v" + VersionID + " ";
 			public const string AutoRunPluginMessage = "# This file designates the Mod and the subroutine the main program should call on the start of the program.\n# Use this to run your program at start up.\n# The Program accepts any of the following:\n#\tMod Name.Sub Name\n#\t1=Mod Name;2=Sub Name;\n# The character # marks the line as commented.\n# To add UI Elements without starting up your program (Please do this if you can) alter the MENU.txt file.";
