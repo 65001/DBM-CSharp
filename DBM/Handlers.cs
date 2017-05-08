@@ -224,12 +224,12 @@ namespace DBM
                 About_Msg += "SQLite Version : " + About_Data[1]["SQLITE_VERSION()"] + "\n" + "SQLITE Source ID : " + About_Data[1]["sqlite_source_id()"];
                 GraphicsWindow.ShowMessage(About_Msg, "About"); //DO NOT LOCALIZE
             }
-            else if (Item == Utilities.Localization["Show Help"]) //TODO
+            else if (Item == Utilities.Localization["Show Help"])
             {
                 string Path = System.IO.Path.Combine(GlobalStatic.AssetPath, "HELP Table.html");
                 LDProcess.Start(Path, null);
             }
-            else if (Item == Utilities.Localization["Settings Editor"]) //TODO
+            else if (Item == Utilities.Localization["Settings Editor"])
             {
                 UI.SettingsUI();
             }

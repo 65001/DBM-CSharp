@@ -24,10 +24,9 @@ namespace DBM
             System.IO.File.WriteAllText(OutPutFilePath, CSV(InputFilePath));
         }
 
-		public static string CSV(string FilePath) //TODO
+		public static string CSV(string FilePath)
 		{			
-			//TODO Make sure comment's are universal across SQL.Then use them to insert data such as how long it took to generate the SQL and how many rows were skipped if any
-
+			//TODO Make sure comment's are universal across SQL.Then use them to insert data such as how long it took to generate the SQL and how many rows were skipped if any?
 			if (LDFile.Exists(FilePath) == false)
 			{
                 return string.Empty;

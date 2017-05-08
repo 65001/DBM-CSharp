@@ -9,11 +9,9 @@ using System.Text;
 using System.IO;
 using LitDev;
 using Microsoft.SmallBasic.Library;
-using SBArray = Microsoft.SmallBasic.Library.Array;
 using SBFile = Microsoft.SmallBasic.Library.File;
+
 /*
-	Completed Items:
-		Settings ; EULA; Logs ;Main;
 	Todo :
 		Emulators 
 		SQLITE setup
@@ -23,8 +21,6 @@ using SBFile = Microsoft.SmallBasic.Library.File;
 		Replace all instances of LDLIST with an actual List?
 		Replace all instances of GlobalStatic.List_DB_* ASAP.
 		Start to use System.Version instead of an int and replace instances of GlobablStatic.VersionID to it as well
-
-        Export
  */
 //Complete Implements and Localize
 namespace DBM
@@ -82,7 +78,7 @@ namespace DBM
             Utilities.AddtoStackTrace("UI.Startup()");
             Settings.LoadSettings(GlobalStatic.RestoreSettings); //Load Application Settings from text file
             Settings.Paths
-                    (
+                (
                 GlobalStatic.AssetPath,
                 GlobalStatic.PluginPath,
                 GlobalStatic.LocalizationFolder,
@@ -90,7 +86,7 @@ namespace DBM
                 GlobalStatic.Localization_LanguageCodes_Path,
                 GlobalStatic.LogCSVpath,
                 GlobalStatic.AutoRunPluginMessage
-                    ); //Makes sure passed paths are valid and creates them if they are not
+                ); //Makes sure passed paths are valid and creates them if they are not
 
             Settings.IniateDatabases();
             //Plugin.FindAll();
