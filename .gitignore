@@ -7,3 +7,7 @@ DBM/bin/Debug/Assets/Log.csv
 DBM/bin/Debug/Assets/Log.db
 *.suo
 DBM/bin/Debug/DBM.pdb
+DBM/bin/Debug/app.publish/DBM.exe
+DBM/bin/Debug/DBM.application
+DBM/bin/Release/app.publish/DBM.exe
+DBM/bin/Release/DBM.exe.manifest
