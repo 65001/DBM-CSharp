@@ -31,7 +31,7 @@ namespace DBM
             {
                 try
                 {
-                    return DB_Engine[DB_Name.IndexOf(CurrentDatabase)];
+                    return Data.DB_Engine[Data.DB_Name.IndexOf(CurrentDatabase)];
                 }
                 catch (Exception)
                 {
@@ -46,6 +46,7 @@ namespace DBM
 		static List<string> _DB_Name = new List<string>();
 		static List<string> _DB_ShortName = new List<string>();
 		static List<EnginesModes> _DB_Engine = new List<EnginesModes>();
+        static Dictionary<string, string> _DB_Hash = new Dictionary<string, string>();
         static List<string> _TrackingDefaultTable = new List<string>();
 
         static List<string> _Tables = new List<string>();
@@ -92,11 +93,6 @@ namespace DBM
 			return 0;
 		}
 
-		public static void Parser()  //TODO: Implement Parser
-		{
-            Utilities.AddtoStackTrace("Engines.Parser()");
-		}
-
 		public static Primitive Query(string DataBase, string SQL, string ListView, bool FetchRecords, string UserName, string Explanation) //Expand
 		{
             Utilities.AddtoStackTrace("Engines.Query()");
@@ -120,12 +116,6 @@ namespace DBM
             _Last_Query.Add(SQL);
             _Timer.Add(QueryTime.ElapsedMilliseconds);
 			return QueryResults;
-		}
-
-		public static void Emulator() //TODO Implement Emulator atleast for sqlite for DBM
-		{
-            //Attempts to emulate some if not all commands of a database engine by aliasing it to SQL
-            Utilities.AddtoStackTrace( "Engines.Emulator()");
 		}
 
         /// <summary>
@@ -157,120 +147,40 @@ namespace DBM
                 }
             }
 		}
-        
-        
-        public static string Load_DB(EnginesModes Mode, Primitive Data)
-        {
-            Dictionary<string, string> _Data = new Dictionary<string, string>();
-            _Data["URI"] = Data;
-            return Load_DB(Mode, _Data);
-        }
-        
-        public static string Load_DB(EnginesModes Mode, Dictionary<string, string> Data) //Tasked with connecting to a Database and adding the DB Connection Name to a list.
-        {
-            //MAKE SURE The CurrentMode is always currently changed.
-            Utilities.AddtoStackTrace("Engines.Load_DB()");
 
-            //New Database creation code
-            switch (Mode)
-			{
-				case EnginesModes.MySQL: 
-                    CurrentDatabase = LDDataBase.ConnectMySQL(Data["Server"], Data["User"], Data["Password"], Data["Database"]);
-                    return CurrentDatabase;
-				case EnginesModes.ODBC:  
-                    CurrentDatabase = LDDataBase.ConnectOdbc(Data["Driver"], Data["Server"], Data["Port"], Data["User"], Data["Password"], Data["Option"], Data["Database"]);
-                    return CurrentDatabase;
-				case EnginesModes.OLEDB: 
-                    CurrentDatabase = LDDataBase.ConnectOleDb(Data["Provider"], Data["Server"], Data["Database"]);
-                    return CurrentDatabase;
-				case EnginesModes.SQLITE:
-                    if (System.IO.Directory.Exists(LDFile.GetFolder(Data["URI"])))
+        public static void Emulator() //TODO Implement Emulator atleast for sqlite for DBM
+        {
+            //Attempts to emulate some if not all commands of a database engine by aliasing it to SQL
+            Utilities.AddtoStackTrace("Engines.Emulator()");
+        }
+
+        public static void Parser()  //TODO: Implement Parser
+        {
+            Utilities.AddtoStackTrace("Engines.Parser()");
+        }
+
+        public static void GetSchema(string Database)
+        {
+            Utilities.AddtoStackTrace("Engines.GetSchema()");
+            if (string.IsNullOrEmpty(Database))//Prevents Prevents Application from querying a nonexistent db 
+            {
+                return;
+            }
+
+            EnginesModes EngineMode = Engine_Type(Database);
+            switch (EngineMode)
+            {
+                case EnginesModes.SQLITE:
+                    _Tables.Clear();
+                    _Views.Clear();
+                    _Indexes.Clear();
+
+                    Primitive Master_Schema_List = Query(Database, "SELECT tbl_name,name,type FROM sqlite_master UNION Select tbl_name,name,type From SQLite_Temp_Master;", null, true, Utilities.Localization["App"], "SCHEMA");
+                    for (int i = 1; i <= Master_Schema_List.GetItemCount(); i++)
                     {
-                        string Database = LDDataBase.ConnectSQLite(Data["URI"]);
-                        AddToList(Data["URI"], Database, LDFile.GetFile(Data["URI"]), EnginesModes.SQLITE);
-                        GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data["URI"]);
-                        Settings.SaveSettings();
-                        CurrentDatabase = Database;
-                        return Database;
-                    }
-                    return null;
-				case EnginesModes.SQLSERVER:
-                    CurrentDatabase = LDDataBase.ConnectSqlServer(Data["Server"], Data["Database"]);
-                    return CurrentDatabase;
-				default:
-					return "Incorrect Paramters";
-			}
-		}
-
-        public static string Load_DB_Sqlite(string FilePath)
-        {
-            Dictionary<string, string> _Data = new Dictionary<string, string>();
-            _Data["URI"] = FilePath;
-            return Load_DB(EnginesModes.SQLITE, _Data);
-        }
-
-        public static string Load_DB_SQLServer(string Server, string Database)
-        {
-            Dictionary<string, string> Data = new Dictionary<string, string>();
-            Data["Server"] = Server;
-            Data["Database"] = Database;
-            return Load_DB(EnginesModes.SQLSERVER,Data);
-        }
-
-        public static string Load_DB_MySQL(string Server,string Database,string User,string Password)
-        {
-            Dictionary<string, string> Data = new Dictionary<string, string>();
-            Data["Server"] = Server;
-            Data["User"] = User;
-            Data["Password"] = Password;
-            Data["Database"] = Database;
-            return Load_DB(EnginesModes.MySQL,Data);
-        }
-
-        public static string Load_DB_OLEDB(string Server,string Database, string Provider)
-        {
-            Dictionary<string, string> Data = new Dictionary<string, string>();
-            Data["Provider"] = Provider;
-            Data["Server"] = Server;
-            Data["Database"] = Database;
-            return Load_DB(EnginesModes.OLEDB,Data);
-        }
-
-        public static string Load_DB_ODBC(string Server,string Database,string User,string Password,int Port,string Driver,string Option)
-        {
-            Dictionary<string, string> Data = new Dictionary<string, string>();
-            Data["Driver"] = Driver;
-            Data["Server"] = Server;
-            Data["Port"] = Port.ToString();
-            Data["User"] = User;
-            Data["Password"] = Password;
-            Data["Option"] = Option;
-            Data["Database"] = Database;
-            return Load_DB(EnginesModes.ODBC,Data);
-        }
-
-		public static void GetSchema(string Database)
-		{
-            Utilities.AddtoStackTrace( "Engines.GetSchema()");
-			if (string.IsNullOrEmpty(Database))//Prevents Prevents Application from querying a nonexistent db 
-			{ 
-				return; 
-			}
-
-			EnginesModes EngineMode = Engine_Type(Database);
-			switch (EngineMode)
-				{
-					case EnginesModes.SQLITE:
-                        _Tables.Clear();
-                        _Views.Clear();
-                        _Indexes.Clear();
-                    
-						Primitive Master_Schema_List = Query(Database, "SELECT tbl_name,name,type FROM sqlite_master UNION Select tbl_name,name,type From SQLite_Temp_Master;", null, true, Utilities.Localization["App"], "SCHEMA");
-						for (int i = 1; i <= Master_Schema_List.GetItemCount(); i++)
-						{
                         string Name = Master_Schema_List[i]["tbl_name"];
-						switch (Master_Schema_List[i]["type"].ToString())
-                            {
+                        switch (Master_Schema_List[i]["type"].ToString())
+                        {
                             case "table":
                                 _Tables.Add(Name);
                                 break;
@@ -280,122 +190,125 @@ namespace DBM
                             case "index":
                                 _Indexes.Add(Name);
                                 break;
-                            }
-						}
+                        }
+                    }
                     try
                     {
                         CurrentTable = _Tables.FirstOrDefault();
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         Events.LogMessage(ex.ToString(), "System");
                     }
-                        _TrackingDefaultTable.Add(Database + "." + CurrentTable);
-						GetColumnsofTable(Database, CurrentTable);
-						break;
-				}
-		}
+                    _TrackingDefaultTable.Add(Database + "." + CurrentTable);
+                    if (Database != null && CurrentTable != null)
+                    {
+                        GetColumnsofTable(Database, CurrentTable);
+                    }
+                    break;
+            }
+        }
 
-		public static void GetColumnsofTable(string Database, string Table)
-		{
+        public static void GetColumnsofTable(string Database, string Table)
+        {
             Utilities.AddtoStackTrace("Engines.GetSchemaofTable()");
 
-			if (string.IsNullOrEmpty(Database) || string.IsNullOrEmpty(Table)) //Prevents calls to nonexistent tables or Databases
-			{
-                throw new ArgumentException("The Database and Table Paramaters cannot be null or empty","Engines.GetColumnsofTable()");
-			}
+            if (string.IsNullOrEmpty(Database)) //Prevents calls to nonexistent Databases
+            {
+                throw new ArgumentException("The Database Paramater cannot be null or empty", Database);
+            }
 
-			EnginesModes EngineMode = Engine_Type(Database);
-			switch (EngineMode)
-			{
-				case EnginesModes.SQLITE:
+            EnginesModes EngineMode = Engine_Type(Database);
+            switch (EngineMode)
+            {
+                case EnginesModes.SQLITE:
                     _Schema.Clear();
 
                     Primitive QSchema = Query(Database, "PRAGMA table_info(" + Table + ");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
-					for (int i = 1; i <= QSchema.GetItemCount(); i++)
-					{
+                    for (int i = 1; i <= QSchema.GetItemCount(); i++)
+                    {
                         _Schema.Add(QSchema[i]["name"]);
-					}
+                    }
                     Schema = _Schema.ToPrimitiveArray(); ;
-					break;
-			}
-		}
+                    break;
+            }
+        }
 
-		public static void EditTable(string Table,string Control)
-		{
-			LDDataBase.EditTable(CurrentDatabase,Table, Control);
-		}
+        public static void EditTable(string Table, string Control)
+        {
+            LDDataBase.EditTable(CurrentDatabase, Table, Control);
+        }
 
-		public static void SetDefaultTable(string Table)
-		{
-                if (!string.IsNullOrEmpty(Table))
+        public static void SetDefaultTable(string Table)
+        {
+            if (!string.IsNullOrEmpty(Table))
+            {
+                CurrentTable = "\"" + Table + "\"";
+                _TrackingDefaultTable.Add(CurrentDatabase + "." + CurrentTable);
+                return;
+            }
+            Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
+        }
+
+        public static void GenerateQuery(bool Search, bool Sort, bool Function, string SearchBy, string OrderBy, string SortOrder, bool StrictSearch, bool InvertSearch, string FunctionSelected, string FunctionColumn, string SearchText)
+        {
+            //Interface to private classes
+            if (!string.IsNullOrEmpty(CurrentTable))
+            {
+                GQ_CMD = "SELECT * FROM " + CurrentTable + " ";
+                Utilities.AddtoStackTrace("Engines.GenerateQuery()");
+                if (Search)
                 {
-                    CurrentTable = "\"" + Table + "\"";
-                    _TrackingDefaultTable.Add(CurrentDatabase + "." + CurrentTable);
-                    return;
+                    GQ_CMD += GenerateSearch(SearchBy, SearchText, InvertSearch, StrictSearch);
                 }
-                Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
-		}
+                if (Function)
+                {
+                    GQ_CMD = GenerateFunction(FunctionSelected, FunctionColumn);
+                }
+                if (Sort)
+                {
+                    GQ_CMD += GenerateSort(OrderBy, SortOrder);
+                }
+            }
+            Query(CurrentDatabase, GQ_CMD, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.Username);
+            GQ_CMD = null;
+        }
 
-		public static void GenerateQuery(bool Search,bool Sort,bool Function,string SearchBy,string OrderBy,string SortOrder,bool StrictSearch,bool InvertSearch,string FunctionSelected,string FunctionColumn,string SearchText) 
-		{
-			//Interface to private classes
-			if (!string.IsNullOrEmpty(CurrentTable))
-			{
-				GQ_CMD = "SELECT * FROM " + CurrentTable + " ";
-                Utilities.AddtoStackTrace( "Engines.GenerateQuery()");
-				if (Search)
-				{
-					GQ_CMD += GenerateSearch(SearchBy,SearchText,InvertSearch,StrictSearch);
-				}
-				if (Function) 
-				{
-					GQ_CMD = GenerateFunction(FunctionSelected,FunctionColumn);
-				}
-				if (Sort)
-				{
-					GQ_CMD += GenerateSort(OrderBy,SortOrder);
-				}
-			}
-			Query(CurrentDatabase, GQ_CMD, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.Username);
-			GQ_CMD = null;
-		}
-
-		static string GenerateSearch(string SearchColumn,string SearchText,bool InvertSearch,bool StrictSearch)
-		{
-			string CMD;
-			CMD = "WHERE " + SearchColumn;
-			if (InvertSearch == true && StrictSearch == false)
-			{
+        static string GenerateSearch(string SearchColumn, string SearchText, bool InvertSearch, bool StrictSearch)
+        {
+            string CMD;
+            CMD = "WHERE " + SearchColumn;
+            if (InvertSearch == true && StrictSearch == false)
+            {
                 CMD += " NOT";
             }
 
-			if (StrictSearch == false)
-			{
-				CMD += " LIKE '%" + SearchText + "%' ";
-			}
-			else
-			{
-				if (InvertSearch) 
-				{
-					CMD += "!='" + SearchText + "' ";
-				}
-				else 
-				{
-					CMD += "='" + SearchText + "' ";
-				}
-			}
-			return CMD;
-		}
+            if (StrictSearch == false)
+            {
+                CMD += " LIKE '%" + SearchText + "%' ";
+            }
+            else
+            {
+                if (InvertSearch)
+                {
+                    CMD += "!='" + SearchText + "' ";
+                }
+                else
+                {
+                    CMD += "='" + SearchText + "' ";
+                }
+            }
+            return CMD;
+        }
 
-		static string GenerateSort(string OrderBy,string ASCDESC) 
-		{
-			return "ORDER BY \"" + OrderBy + "\" " + ASCDESC + ";";
-		}
-		static string GenerateFunction(string Function,string Column) 
-		{
-			return "SELECT " + Function + "(\"" + Column + "\") FROM " + CurrentTable + " ";
-		}
+        static string GenerateSort(string OrderBy, string ASCDESC)
+        {
+            return "ORDER BY \"" + OrderBy + "\" " + ASCDESC + ";";
+        }
+        static string GenerateFunction(string Function, string Column)
+        {
+            return "SELECT " + Function + "(\"" + Column + "\") FROM " + CurrentTable + " ";
+        }
 
         public static Primitive Functions(EnginesModes Mode)
         {
@@ -408,84 +321,224 @@ namespace DBM
             }
         }
 
-		public static void CreateStatisticsPage(string Table) //TODO
-		{
+        public static void CreateStatisticsPage(string Table) //TODO
+        {
             Utilities.AddtoStackTrace("Engines.CreateStatisticsPage()");
-		}
+        }
 
-		static EnginesModes Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database 
-		{
+        static EnginesModes Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database 
+        {
             int Index = _DB_Name.IndexOf(Database);
-			if (Index != -1)
-			{
+            if (Index != -1)
+            {
                 return _DB_Engine[Index];
-			}
-			return EnginesModes.NONE; 
-		}
+            }
+            return EnginesModes.NONE;
+        }
 
-		 public static void AddToList(string path, string Name, string ShortName, EnginesModes Engine)
-		{
-			DatabaseShortname = ShortName;
-			_DB_Name.Add(Name);
-			_DB_Path.Add(path);
-			_DB_ShortName.Add(ShortName);
-			_DB_Engine.Add(Engine);
-		}
+        static void AddToList(string path, string Name, string ShortName, EnginesModes Engine)
+        {
+            DatabaseShortname = ShortName;
+            _DB_Name.Add(Name);
+            _DB_Path.Add(path);
+            _DB_ShortName.Add(ShortName);
+            _DB_Engine.Add(Engine);
+        }
+
+        public static class Load
+        {
+            /// <summary>
+            /// Old Method. Kept in for backwards compatability.
+            /// </summary>
+            /// <param name="compatability"></param>
+            /// <returns></returns>
+            public static string DB(EnginesModes Mode, Primitive Data)
+            {
+                Dictionary<string, string> _Data = new Dictionary<string, string>();
+                _Data["URI"] = Data;
+                return DB(Mode, _Data);
+            }
+
+            public static string DB(EnginesModes Mode, Dictionary<string, string> Data) //Tasked with connecting to a Database and adding the DB Connection Name to a list.
+            {
+                switch (Mode)
+                {
+                    case EnginesModes.SQLITE:
+                        return DB(Mode, Data, LDFile.GetFile(Data["URI"]));
+                    default:
+                        throw new PlatformNotSupportedException();
+                }
+            }
+
+            public static string DB(EnginesModes Mode, Dictionary<string, string> Data, string ShortName)
+            {
+                //MAKE SURE The CurrentMode is always currently changed.
+                Utilities.AddtoStackTrace("Engines.Load.DB()");
+                string HashCode = LDEncryption.SHA512Hash(Data.ToPrimitiveArray());
+                //If DB is already in the list...
+                if (_DB_Hash.ContainsKey(HashCode))
+                {
+                    switch (Mode)
+                    {
+                        case EnginesModes.SQLITE:
+                            GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data["URI"]);
+                            Settings.SaveSettings();
+                            CurrentDatabase = _DB_Hash[HashCode];
+                            return CurrentDatabase;
+                        default:
+                            CurrentDatabase = _DB_Hash[HashCode];
+                            return CurrentDatabase;
+                    }
+                }
+
+                //New Database creation code
+                switch (Mode)
+                {
+                    case EnginesModes.MySQL:
+                        CurrentDatabase = LDDataBase.ConnectMySQL(Data["Server"], Data["User"], Data["Password"], Data["Database"]);
+                        _DB_Hash.Add(HashCode, CurrentDatabase);
+                        return CurrentDatabase;
+                    case EnginesModes.ODBC:
+                        CurrentDatabase = LDDataBase.ConnectOdbc(Data["Driver"], Data["Server"], Data["Port"], Data["User"], Data["Password"], Data["Option"], Data["Database"]);
+                        _DB_Hash.Add(HashCode, CurrentDatabase);
+                        return CurrentDatabase;
+                    case EnginesModes.OLEDB:
+                        CurrentDatabase = LDDataBase.ConnectOleDb(Data["Provider"], Data["Server"], Data["Database"]);
+                        _DB_Hash.Add(HashCode, CurrentDatabase);
+                        return CurrentDatabase;
+                    case EnginesModes.SQLITE:
+                        if (System.IO.Directory.Exists(LDFile.GetFolder(Data["URI"])))
+                        {
+                            string Database = LDDataBase.ConnectSQLite(Data["URI"]);
+                            AddToList(Data["URI"], Database, ShortName, EnginesModes.SQLITE);
+                            GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Data["URI"]);
+                            Settings.SaveSettings();
+                            CurrentDatabase = Database;
+                            _DB_Hash.Add(HashCode, CurrentDatabase);
+                            return Database;
+                        }
+                        return null;
+                    case EnginesModes.SQLSERVER:
+                        CurrentDatabase = LDDataBase.ConnectSqlServer(Data["Server"], Data["Database"]);
+                        _DB_Hash.Add(HashCode, CurrentDatabase);
+                        return CurrentDatabase;
+                    default:
+                        return "Incorrect Paramters";
+                }
+            }
+
+            public static string Sqlite(string FilePath)
+            {
+                Dictionary<string, string> _Data = new Dictionary<string, string>();
+                _Data["URI"] = FilePath;
+                return DB(EnginesModes.SQLITE, _Data);
+            }
+
+            public static string Sqlite(string FilePath, string ShortName)
+            {
+                Dictionary<string, string> _Data = new Dictionary<string, string>();
+                _Data["URI"] = FilePath;
+                return DB(EnginesModes.SQLITE, _Data, ShortName);
+            }
+
+            public static string SQLServer(string Server, string Database)
+            {
+                Dictionary<string, string> Data = new Dictionary<string, string>();
+                Data["Server"] = Server;
+                Data["Database"] = Database;
+                return DB(EnginesModes.SQLSERVER, Data);
+            }
+
+            public static string MySQL(string Server, string Database, string User, string Password)
+            {
+                Dictionary<string, string> Data = new Dictionary<string, string>();
+                Data["Server"] = Server;
+                Data["User"] = User;
+                Data["Password"] = Password;
+                Data["Database"] = Database;
+                return DB(EnginesModes.MySQL, Data);
+            }
+
+            public static string OLEDB(string Server, string Database, string Provider)
+            {
+                Dictionary<string, string> Data = new Dictionary<string, string>();
+                Data["Provider"] = Provider;
+                Data["Server"] = Server;
+                Data["Database"] = Database;
+                return DB(EnginesModes.OLEDB, Data);
+            }
+
+            public static string ODBC(string Server, string Database, string User, string Password, int Port, string Driver, string Option)
+            {
+                Dictionary<string, string> Data = new Dictionary<string, string>();
+                Data["Driver"] = Driver;
+                Data["Server"] = Server;
+                Data["Port"] = Port.ToString();
+                Data["User"] = User;
+                Data["Password"] = Password;
+                Data["Option"] = Option;
+                Data["Database"] = Database;
+                return DB(EnginesModes.ODBC, Data);
+            }  
+        }
 
         //Read Only Collections of Private Data
-		public static ReadOnlyCollection<string> DB_Name 
-		{ 
-			get { return _DB_Name.AsReadOnly(); }
-		}
-
-        public static ReadOnlyCollection<string> DB_Path
+        public struct Data
         {
-            get { return _DB_Path.AsReadOnly(); }
-        }
+            public static ReadOnlyCollection<string> DB_Name
+            {
+                get { return _DB_Name.AsReadOnly(); }
+            }
 
-        public static ReadOnlyCollection<string> DB_ShortName
-        {
-            get { return _DB_ShortName.AsReadOnly(); }
-        }
+            public static ReadOnlyCollection<string> DB_Path
+            {
+                get { return _DB_Path.AsReadOnly(); }
+            }
 
-        public static ReadOnlyCollection<EnginesModes> DB_Engine
-        {
-            get { return _DB_Engine.AsReadOnly(); }
-        }
+            public static ReadOnlyCollection<string> DB_ShortName
+            {
+                get { return _DB_ShortName.AsReadOnly(); }
+            }
 
-        public static IReadOnlyList<string> Tables
-        {
-            get { return _Tables.AsReadOnly(); }
-        }
+            public static ReadOnlyCollection<EnginesModes> DB_Engine
+            {
+                get { return _DB_Engine.AsReadOnly(); }
+            }
 
-        public static IReadOnlyList<string> Views
-        {
-            get { return _Views.AsReadOnly(); }
-        }
+            public static IReadOnlyList<string> Tables
+            {
+                get { return _Tables.AsReadOnly(); }
+            }
 
-        public static IReadOnlyList<string> Indexes
-        {
-            get { return _Indexes.AsReadOnly(); }
-        }
+            public static IReadOnlyList<string> Views
+            {
+                get { return _Views.AsReadOnly(); }
+            }
 
-        public static IReadOnlyList<Types> Type
-        {
-            get { return _Type_Referer.AsReadOnly(); }
-        }
+            public static IReadOnlyList<string> Indexes
+            {
+                get { return _Indexes.AsReadOnly(); }
+            }
 
-        public static IReadOnlyList<long> Timer
-        {
-            get { return _Timer.AsReadOnly(); }
-        }
+            public static IReadOnlyList<Types> Type
+            {
+                get { return _Type_Referer.AsReadOnly(); }
+            }
 
-        public static IReadOnlyList<string> LastQuery
-        {
-            get { return _Last_Query.AsReadOnly(); }
-        }
+            public static IReadOnlyList<long> Timer
+            {
+                get { return _Timer.AsReadOnly(); }
+            }
 
-        public static IReadOnlyList<string> LastNonSchemaQuery
-        {
-            get { return _Last_NonSchema_Query.AsReadOnly(); }
+            public static IReadOnlyList<string> LastQuery
+            {
+                get { return _Last_Query.AsReadOnly(); }
+            }
+
+            public static IReadOnlyList<string> LastNonSchemaQuery
+            {
+                get { return _Last_NonSchema_Query.AsReadOnly(); }
+            }
         }
 	}
 }

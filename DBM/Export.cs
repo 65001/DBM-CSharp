@@ -34,7 +34,7 @@ namespace DBM
         /// </summary>
         public static Primitive Generate2DArrayFromLastQuery()
         {
-            return Generate2DArray(Engines.CurrentDatabase, Engines.LastNonSchemaQuery[Engines.LastNonSchemaQuery.Count -1]);
+            return Generate2DArray(Engines.CurrentDatabase, Engines.Data.LastNonSchemaQuery[Engines.Data.LastNonSchemaQuery.Count -1]);
         }
 
         public static Primitive GenerateSchemaFromQueryData(Primitive Data)

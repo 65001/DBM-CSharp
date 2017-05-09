@@ -104,10 +104,9 @@ namespace DBM
 		public static void Paths(string AssetPath,string PluginPath,string LocalizationFolder,string AutoRunPluginPath,string Localization_LanguageCodes_Path,string LogCSVPath,string AutoRunPluginMessage)
 		{
             Utilities.AddtoStackTrace( "Settings.Paths()");
-			if (LDFile.Exists(AssetPath) == false || LDFile.Exists(PluginPath) == false || LDFile.Exists(LocalizationFolder) == false) //Creates Folders if one is missing
+			if (LDFile.Exists(AssetPath) == false || LDFile.Exists(LocalizationFolder) == false) //Creates Folders if one is missing
 			{
 				Directory.CreateDirectory(AssetPath);
-				Directory.CreateDirectory(PluginPath);
 				Directory.CreateDirectory(LocalizationFolder);
 				Directory.CreateDirectory(Localization_LanguageCodes_Path);
 			}
@@ -130,8 +129,8 @@ namespace DBM
 			GlobalStatic.LogDB = LDDataBase.ConnectSQLite(GlobalStatic.LogDBpath);
 			GlobalStatic.TransactionDB = LDDataBase.ConnectSQLite(GlobalStatic.TransactionDBPath);
 
-			Engines.AddToList(GlobalStatic.LogDBpath, GlobalStatic.LogDB, "Master Log",Engines.EnginesModes.SQLITE);
-			Engines.AddToList(GlobalStatic.TransactionDBPath, GlobalStatic.TransactionDB, "Transaction Log",Engines.EnginesModes.SQLITE);
+            Engines.Load.Sqlite(GlobalStatic.TransactionDBPath,"Transaction Log");
+            Engines.Load.Sqlite(GlobalStatic.LogDBpath, "Master Log");
 
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQL, GlobalStatic.UserName, "Auto Creation Statements", false);
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQLVIEW , GlobalStatic.UserName, "Auto Creation Statements", false);

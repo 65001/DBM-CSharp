@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 using System.Diagnostics;
 using System.Text;
 using System.IO;
@@ -98,7 +99,7 @@ namespace DBM
 
             if (Program.ArgumentCount == 1)
             {
-                Engines.Load_DB_Sqlite(GetPath(Engines.EnginesModes.SQLITE));
+                Engines.Load.Sqlite(GetPath(Engines.EnginesModes.SQLITE));
             }
             if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_Username == LDFile.UserName && GlobalStatic.LastVersion == int.Parse(GlobalStatic.VersionID.Replace(".", "")) && GlobalStatic.EulaTest == false)
             {
@@ -228,14 +229,14 @@ namespace DBM
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
             try
             {
-                GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox(Engines.Tables.ToPrimitiveArray(), 100, 100);
+                GlobalStatic.ComboBox["Table"] = LDControls.AddComboBox(Engines.Data.Tables.ToPrimitiveArray(), 100, 100);
             }
             catch (Exception ex)
             {
                 Events.LogMessage(ex.ToString(), "System");
             }
             GlobalStatic.ComboBox["Sorts"] = LDControls.AddComboBox(Sorts, 100, 100);
-            GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox(Engines.DB_ShortName.ToPrimitiveArray(), 100, 100);
+            GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox(Engines.Data.DB_ShortName.ToPrimitiveArray(), 100, 100);
             Controls.Move(GlobalStatic.ComboBox["Sorts"], 970 + 185 + SortOffset, 5);
             Controls.Move(GlobalStatic.ComboBox["Table"], 1075 + 185 + SortOffset, 5);
             Controls.Move(GlobalStatic.ComboBox["Database"], 1050 + SortOffset, 5);
@@ -398,13 +399,13 @@ namespace DBM
 			}
 			else 
 			{
-				switch (Engines.Type[Engines.Type.Count -1])
+				switch (Engines.Data.Type.Last())
 				{
 					case Engines.Types.Command:
-						SetTitle += "( Command TIME : "  + Engines.Timer[Engines.Timer.Count - 1]  + ")";
+						SetTitle += "( Command TIME : "  + Engines.Data.Timer.Last()  + ")";
 						break;
 					case Engines.Types.Query:
-						SetTitle += "( Query Time : " + Engines.Timer[Engines.Timer.Count - 1] + ")";
+						SetTitle += "( Query Time : " + Engines.Data.Timer.Last() + ")";
 						break;
 				}
 			}
@@ -615,7 +616,7 @@ namespace DBM
                     //TODO Auto insert code into current database
                     if(!string.IsNullOrWhiteSpace(Engines.CurrentDatabase))
                     {
-                        string Confirmation =   LDDialogs.Confirm("Do you wish to commit the following SQL:\n" + Define_SQL.ToString() + "\n to " + Engines.DB_ShortName[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)], "Commit SQL");
+                        string Confirmation =   LDDialogs.Confirm("Do you wish to commit the following SQL:\n" + Define_SQL.ToString() + "\n to " + Engines.Data.DB_ShortName[Engines.Data.DB_Name.IndexOf(Engines.CurrentDatabase)], "Commit SQL");
                         if (Confirmation == "Yes")
                         {
                             Engines.Command(Engines.CurrentDatabase, Define_SQL.ToString(), GlobalStatic.UserName, "User Defining a Table", false); //Localize
@@ -714,7 +715,7 @@ namespace DBM
 			GraphicsWindow.Clear();
 			GraphicsWindow.Hide();
             Environment.Exit(0);
-            }
+        }
 
 		//The following async the Handlers class to make the code faster! Warning ! Can cause bugs!!!
 
@@ -735,6 +736,7 @@ namespace DBM
 			await Task.Run(() => { Handlers.Menu(LDControls.LastMenuItem); });
             Utilities.AddtoStackTrace( "Events.MC()");
 		}
+
         /// <summary>
         /// ComboBox Changed Event Handler
         /// </summary>

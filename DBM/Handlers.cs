@@ -35,7 +35,7 @@ namespace DBM
                     Settings.LoadSettings(GlobalStatic.RestoreSettings);
                     Settings.SaveSettings();
                     LDDataBase.ConnectSQLite(Path);
-                    Engines.Load_DB(Engines.EnginesModes.SQLITE, Path);
+                    Engines.Load.Sqlite(Path);
 
                     Events.LogMessage("Created DB :" + Path, Utilities.Localization["Application"]);
                     UI.PreMainMenu();
@@ -49,15 +49,19 @@ namespace DBM
                 GlobalStatic.ListView = null;
                 GlobalStatic.Dataview = null;
                 Settings.LoadSettings(GlobalStatic.RestoreSettings); //Reloads Settings
-                Engines.Load_DB_Sqlite(UI.GetPath(Engines.EnginesModes.SQLITE));
-                Settings.SaveSettings();
-                UI.PreMainMenu();
-                UI.MainMenu();
+                string Path = UI.GetPath(Engines.EnginesModes.SQLITE);
 
+                if (!string.IsNullOrWhiteSpace(Path))
+                {
+                    Engines.Load.Sqlite(Path);
+                    Settings.SaveSettings();
+                    UI.PreMainMenu();
+                    UI.MainMenu();
 
-                int Index = Engines.DB_Name.IndexOf(Engines.CurrentDatabase)+ 1;
-                Handlers.ComboBox(GlobalStatic.ComboBox["Database"], Index);
-                LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Database"], Index);
+                    int Index = Engines.Data.DB_Name.IndexOf(Engines.CurrentDatabase) + 1;
+                    Handlers.ComboBox(GlobalStatic.ComboBox["Database"], Index);
+                    LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Database"], Index);
+                }
                 return;
             }
             else if (Item == Utilities.Localization["Define New Table"]) //TODO ADD UI
@@ -146,11 +150,13 @@ namespace DBM
             else if (Item == Utilities.Localization["CSV"])
             {
                 Engines.Command(Engines.CurrentDatabase, Import.CSV(LDDialogs.OpenFile("csv", null)), GlobalStatic.UserName, "", false);
+                GraphicsWindow.ShowMessage("CSV Import Completed","Importer"); //Localize //TODO
             }
             else if (Item == Utilities.Localization["SQL"])
             {
                 string SQL = System.IO.File.ReadAllText(LDDialogs.OpenFile("sql", null));
                 Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, null, false);
+                GraphicsWindow.ShowMessage("SQL Import Completed", "Importer"); //Localize //TODO
             }
             else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
             { }
@@ -259,12 +265,12 @@ namespace DBM
                 Utilities.StackTrace.Print();
                 Console.WriteLine("");
 
-                for (int i = 0; i < Engines.LastQuery.Count; i++)
+                for (int i = 0; i < Engines.Data.LastQuery.Count; i++)
                 {
-                    if (Engines.Type[i] == Engines.Types.Query)
+                    if (Engines.Data.Type[i] == Engines.Types.Query)
                     {
-                        Console.Write("{0}", Engines.LastQuery[i]);
-                        Console.WriteLine("|{0}",Engines.Timer[i]);
+                        Console.Write("{0}", Engines.Data.LastQuery[i]);
+                        Console.WriteLine("|{0}", Engines.Data.Timer[i]);
                     }
                 }
             }
@@ -357,8 +363,9 @@ namespace DBM
 
 		static void DatabaseComboBox(int Index)
 		{
-			LDList.Add(GlobalStatic.List_DB_Tracker, Engines.DB_ShortName[Index-1]);
-			Engines.Load_DB(Engines.EnginesModes.SQLITE,Engines.DB_Path[Index-1]);
+			LDList.Add(GlobalStatic.List_DB_Tracker, Engines.Data.DB_ShortName[Index-1]);
+            Engines.Load.Sqlite(Engines.Data.DB_Path[Index - 1]);
+
 			Engines.GetSchema(Engines.CurrentDatabase);
 			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 
@@ -393,10 +400,15 @@ namespace DBM
 		}
 
 		static void TableComboBox(int Index)
-		{ 
-			Engines.SetDefaultTable(CorrectList[Index - 1]);
-			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
-			SetComboBox();
+		{
+            //Prevents OutofBound Exceptions
+            if (CorrectList.Count >= Index)
+            {
+                Engines.SetDefaultTable(CorrectList[Index - 1]);
+                Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+                SetComboBox();
+                return;
+            }
 		}
 
 		static void SortsComboBox(int Index)
@@ -406,13 +418,13 @@ namespace DBM
 			switch (Index)
 			{
 				case 1:
-					CorrectList = Engines.Tables;
+					CorrectList = Engines.Data.Tables;
 					break;
 				case 2:
-					CorrectList = Engines.Views;
+					CorrectList = Engines.Data.Views;
 					break;
 				case 3:
-					CorrectList = Engines.Indexes;
+					CorrectList = Engines.Data.Indexes;
 					break;
 				case 4:
 					Engines.SetDefaultTable("sqlite_master");
@@ -422,7 +434,8 @@ namespace DBM
 
 			if (Index != 4)
 			{
-                if (CorrectList.Count > 0) //Prevents OutofBound Errors
+                //Prevents OutofBound Exceptions
+                if (CorrectList.Count > 0) 
                 {
                     Engines.SetDefaultTable(CorrectList[0]);
                     LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], CorrectList.ToPrimitiveArray());
@@ -434,12 +447,9 @@ namespace DBM
 				UI.HideDisplayResults();
 				SetComboBox();
 				UI.Title();
+                return;
 			}
-			else
-			{
-				string Message = "In the current database no " + Utilities.Localization[TypeofSorts[GlobalStatic.SortBy]] + "s can be found.";
-				Events.LogMessagePopUp(Message, Message,Utilities.Localization["Error"], Utilities.Localization["UI"]);
-			}
+			Events.LogMessage("In the current database no " + Utilities.Localization[TypeofSorts[GlobalStatic.SortBy]] + "s can be found.", Utilities.Localization["UI"]);
 		}
 	}
 }
