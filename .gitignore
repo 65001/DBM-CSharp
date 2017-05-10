@@ -14,3 +14,5 @@ DBM/bin/Release/DBM.exe.manifest
 DBM/bin/Debug/Assets/setting.txt
 *.manifest
 DBM/bin/Release/app.publish/DBM.exe
+DBM/bin/Release/Assets/setting.txt
+DBM/obj/x86/Debug/DBM.application
