@@ -30,7 +30,7 @@ namespace DBM
 			GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
 
 			GlobalStatic.EULA_Acceptance = GlobalStatic.Settings["EULA"];
-			GlobalStatic.EULA_Username = GlobalStatic.Settings["EULA_By"];
+			GlobalStatic.EULA_UserName = GlobalStatic.Settings["EULA_By"];
 			GlobalStatic.EULA_Accepted_Version = GlobalStatic.Settings["EULA_Version"];
 
 			GlobalStatic.DebugMode = GlobalStatic.Settings["debug_mode"];
@@ -75,7 +75,7 @@ namespace DBM
 				GlobalStatic.Listview_Width = GlobalStatic.Settings["Listview_Width"]; GlobalStatic.Listview_Height = GlobalStatic.Settings["Listview_Height"]; GlobalStatic.LastVersion = GlobalStatic.Settings["VersionID"]; GlobalStatic.LastFolder = GlobalStatic.Settings["LastFolder"]; GlobalStatic.Extensions = GlobalStatic.Settings["Extensions"];
 				GlobalStatic.Deliminator = GlobalStatic.Settings["Deliminator"]; GlobalStatic.Transactions = GlobalStatic.Settings["Transactions"]; GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
 
-				GlobalStatic.EULA_Acceptance = GlobalStatic.Settings["EULA"]; GlobalStatic.EULA_Username = GlobalStatic.Settings["EULA_By"]; GlobalStatic.EULA_Accepted_Version = GlobalStatic.Settings["EULA_Version"];
+				GlobalStatic.EULA_Acceptance = GlobalStatic.Settings["EULA"]; GlobalStatic.EULA_UserName = GlobalStatic.Settings["EULA_By"]; GlobalStatic.EULA_Accepted_Version = GlobalStatic.Settings["EULA_Version"];
 
 				GlobalStatic.DebugMode = GlobalStatic.Settings["debug_mode"]; GlobalStatic.DebugParser = GlobalStatic.Settings["debug_parser"];
 
@@ -118,7 +118,7 @@ namespace DBM
 
 			if (LDFile.Exists(LogCSVPath) == false)
 			{
-				System.IO.File.WriteAllText(LogCSVPath, "id,Local Date,Local Time,Username,Product ID,Version,Type,Event");
+				System.IO.File.WriteAllText(LogCSVPath, "id,Local Date,Local Time,UserName,Product ID,Version,Type,Event");
 			}
 		}
 
@@ -126,12 +126,15 @@ namespace DBM
 		public static void IniateDatabases()
 		{
             Utilities.AddtoStackTrace( "Settings.IniateDatabases()");
+            /*
 			GlobalStatic.LogDB = LDDataBase.ConnectSQLite(GlobalStatic.LogDBpath);
 			GlobalStatic.TransactionDB = LDDataBase.ConnectSQLite(GlobalStatic.TransactionDBPath);
+            */
 
-            Engines.Load.Sqlite(GlobalStatic.TransactionDBPath,"Transaction Log");
-            Engines.Load.Sqlite(GlobalStatic.LogDBpath, "Master Log");
-
+            GlobalStatic.TransactionDB =Engines.Load.Sqlite(GlobalStatic.TransactionDBPath,"Transaction Log");
+            GlobalStatic.LogDB = Engines.Load.Sqlite(GlobalStatic.LogDBpath, "Master Log");
+            
+           
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQL, GlobalStatic.UserName, "Auto Creation Statements", false);
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQLVIEW , GlobalStatic.UserName, "Auto Creation Statements", false);
 			Engines.Command(GlobalStatic.TransactionDB, GlobalStatic.TransactionsSQL , GlobalStatic.UserName, "Auto Creation Statements", false);

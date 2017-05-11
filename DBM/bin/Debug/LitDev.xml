@@ -303,6 +303,93 @@
       <param name="arrayName">The array name.</param>
       <returns>A copy of the array.</returns>
     </member>
+    <member name="T:LitDev.LDVector">
+      <summary>
+            3D vector algebra methods, useful for LD3DView manipulations.
+            All vectors or points are a 3 element array indexed by 1,2,3.
+            </summary>
+    </member>
+    <member name="M:LitDev.LDVector.Rotate(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Rotate one vector about a direction defined by a second vector.
+            </summary>
+      <param name="vector">The vector to rotate.</param>
+      <param name="about">The vector axis direction to rotate about.</param>
+      <param name="angle">The angle (in degrees) to rotate the vector by.</param>
+      <returns>The rotated vector or "" on failure.</returns>
+    </member>
+    <member name="M:LitDev.LDVector.RotatePoint(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Rotate a point about a specified center point and direction.
+            </summary>
+      <param name="point">The point to rotate.</param>
+      <param name="center">The point to rotate about.</param>
+      <param name="about">The vector axis direction to rotate about.</param>
+      <param name="angle">The angle (in degrees) to rotate the point by.</param>
+      <returns>The rotated point or "" on failure.</returns>
+    </member>
+    <member name="M:LitDev.LDVector.DotProduct(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Get the dot product of 2 vectors.
+            </summary>
+      <param name="vector1">The first vector.</param>
+      <param name="vector2">The second vector.</param>
+      <returns>The dot product or "" on failure.</returns>
+    </member>
+    <member name="M:LitDev.LDVector.CrossProduct(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Get the vector cross product of 2 vectors.
+            </summary>
+      <param name="vector1">The first vector.</param>
+      <param name="vector2">The second vector.</param>
+      <returns>The vector cross product or "" on failure.</returns>
+    </member>
+    <member name="M:LitDev.LDVector.AngleBetween(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Get the angle between 2 vectors.
+            </summary>
+      <param name="vector1">The first vector.</param>
+      <param name="vector2">The second vector.</param>
+      <returns>The angle (in degrees) between the vectors or "" on failure.</returns>
+    </member>
+    <member name="M:LitDev.LDVector.Normalise(Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Normalise a vector to unit length.
+            </summary>
+      <param name="vector">The vector.</param>
+      <returns>A rescaled vetor of unit length or "" on failure.</returns>
+    </member>
+    <member name="M:LitDev.LDVector.Length(Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Get the length of a vector.
+            </summary>
+      <param name="vector">The vector.</param>
+      <returns>The vector length or "" on failure.</returns>
+    </member>
+    <member name="M:LitDev.LDVector.Multiply(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Multiply a vector by a scalar.
+            </summary>
+      <param name="vector">The vector.</param>
+      <param name="scalar">A scalar number to resize the vector.</param>
+      <returns>The rescaled vector or "" on failure.</returns>
+    </member>
+    <member name="M:LitDev.LDVector.Add(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Add 2 vectors.
+            </summary>
+      <param name="vector1">The first vector.</param>
+      <param name="vector2">The second vector.</param>
+      <returns>The resulting vector or "" on failure.</returns>
+    </member>
+    <member name="M:LitDev.LDVector.Subtract(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Subtract one vector from another.
+            </summary>
+      <param name="vector1">The first vector.</param>
+      <param name="vector2">The second vector (to subtract from the first).</param>
+      <returns>The resulting vector or "" on failure.</returns>
+    </member>
     <member name="T:LitDev.LDTimer">
       <summary>
             Additional timers.
@@ -3054,6 +3141,11 @@
             The last listview selected row number.
             </summary>
     </member>
+    <member name="P:LitDev.LDControls.LastListViewColumn">
+      <summary>
+            The last listview selected column number.
+            </summary>
+    </member>
     <member name="P:LitDev.LDControls.LastDataView">
       <summary>
             The last dataview where a selection changed.
@@ -3302,6 +3394,8 @@
             
             For more details on the underlying methods see http://msdn.microsoft.com/en-us/library/ms747437%28v=vs.90%29.aspx
             Several of the AddShape methods use HelixToolkit (recompiled and slightly modified for SmallBasic) http://helixToolkit.codeplex.com
+            
+            Also see LDVector for vector algebra methods.
             </summary>
     </member>
     <member name="M:LitDev.LD3DView.AddView(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
@@ -3318,12 +3412,13 @@
     </member>
     <member name="M:LitDev.LD3DView.AutoControl(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
       <summary>
-            Set auto Control of the camera.
+            Set auto control of the camera.
+            This mode is a general purpose camera control, mainly for moving within a scene (a flyby mode).
             Move forwards and backwards with mouse wheel (faster with Shift down, slower with Control down).
             Yaw and Pitch camera moving with left mouse button.
             Yaw with A,D or Left,Right keys, move forwards and backwards with W,S or Up,Down keys.
             Roll camera moving with right mouse button.
-            Double left click an object to center it.
+            Double left click an object to center it (Centre of rotation 1).
             Double right click to reset the up direction to Y.
             Yaw and Pitch scene moving with Shift and left mouse button after selecting an object to rotate scene about.
             X, Y, Z keys change the view direction and up direction to face in these directions towards (0,0,0), with Shift then the negative direction.
@@ -3331,6 +3426,21 @@
       <param name="pitchRoll">Allow pitch and roll movement, "True" or "False".</param>
       <param name="shift">Allow the Shift/Control key modifiers for mouse control, "True" or "False".</param>
       <param name="keyDistance">The distance to view the scene from using keys, (0 prevents the X,Y,Z key shortcuts, -1 also prevents the A,D,W,S and arrow keys).</param>
+      <param name="speed">Forwards and backwards speed multiplier (default 1).</param>
+    </member>
+    <member name="M:LitDev.LD3DView.AutoControl2(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Set auto control of the camera.
+            This mode is mainly to rotate and view a 3D scene rather than move through the scene (an inspection mode).
+            Zoom in or out with mouse wheel (faster with Shift down, slower with Control down).
+            Pan left/right with A,D or Left,Right keys, pan up/down with W,S or Up,Down keys.
+            Double left click an object to center it (Centre of rotation 1).
+            Double right click to reset the up direction to Y.
+            Yaw and Pitch scene moving with left mouse button after selecting an object to rotate scene about.
+            Roll scene moving with right mouse button.
+            X, Y, Z keys change the view direction and up direction to face in these directions towards selected center, with Shift then the negative direction.
+            </summary>
+      <param name="keyDistance">The distance to view the scene from using keys, (0 prevents the X,Y,Z key shortcuts).</param>
       <param name="speed">Forwards and backwards speed multiplier (default 1).</param>
     </member>
     <member name="M:LitDev.LD3DView.AddGeometry(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
@@ -3864,6 +3974,14 @@
             array[2] = Y (Ycen)
             array[3] = Z (Zcen)
             </returns>
+    </member>
+    <member name="M:LitDev.LD3DView.SwapUpDirection(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+      <summary>
+            Rotate (swap) the Y and Z direction of a geometry.
+            This can be useful for geometries created with a Z up convention, coverting it to a Y up direction used by this extension.
+            </summary>
+      <param name="shapeName">The 3DView object.</param>
+      <param name="geometryName">The geometry object.</param>
     </member>
     <member name="P:LitDev.LD3DView.SpecularExponent">
       <summary>
@@ -4862,7 +4980,7 @@
             Send a message to all clients.
             </summary>
       <param name="message">The message may be any variable including an array.</param>
-      <returns>A array of values "SUCCESS", "NOT_CONNECTED", "NO_CLIENT" or "FAILED" with the Client Name being the index</returns>
+      <returns>A array of values "SUCCESS", "NOT_CONNECTED", "NO_CLIENT" or "FAILED" with the Client Name being the index.</returns>
     </member>
     <member name="M:LitDev.LDServer.Start(Microsoft.SmallBasic.Library.Primitive)">
       <summary>

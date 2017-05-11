@@ -10,7 +10,7 @@ namespace DBM
 		public static class GlobalStatic //List of Variables shared across everything through this class
 		{
 			public static readonly string ProgramDirectory = Program.Directory;
-			public static readonly string Username = LDFile.UserName;
+			public static readonly string UserName = LDFile.UserName;
 			public static bool DebugMode,DebugParser;
 			public static bool EulaTest,LoadedFile;
 
@@ -22,8 +22,7 @@ namespace DBM
 			public const string ProductID = "DBM C#";
 			public static readonly string VersionID = LDText.Replace( typeof(GlobalStatic).Assembly.GetName().Version.ToString(),".","");
 
-			public static int DefaultWidth, DefaultHeight,DefaultFontSize,LogNumber;
-			public static readonly string UserName = LDFile.UserName;
+			public static int DefaultFontSize,LogNumber;
 
 			//URI
 			public static string AssetPath = Path.Combine( ProgramDirectory , "Assets");
@@ -44,12 +43,12 @@ namespace DBM
 			//Settings Data
 			public static bool RestoreSettings;
 			public static Primitive Settings,Extensions;
-			public static int Listview_Width,Listview_Height,UIx,LastVersion,TimeOut,SortBy;
+			public static int Listview_Width,Listview_Height,UIx,LastVersion,Timeout,SortBy;
 
 			public static bool Transactions,Transaction_Query,Transaction_Commands;
 			public static string Deliminator;
 			public static string LastFolder;
-			public static string EULA_Username;
+			public static string EULA_UserName;
 			public static string EULA_Accepted_Version;
 			public static bool EULA_Acceptance;
 			public static string LanguageCode;

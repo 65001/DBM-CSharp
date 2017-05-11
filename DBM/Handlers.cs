@@ -49,24 +49,38 @@ namespace DBM
                 GlobalStatic.ListView = null;
                 GlobalStatic.Dataview = null;
                 Settings.LoadSettings(GlobalStatic.RestoreSettings); //Reloads Settings
-                string Path = UI.GetPath(Engines.EnginesModes.SQLITE);
+                string Path = UI.GetPath(Engines.EnginesMode.SQLITE);
 
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Engines.Load.Sqlite(Path);
+                    GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Path);
                     Settings.SaveSettings();
                     UI.PreMainMenu();
                     UI.MainMenu();
 
-                    int Index = Engines.Data.DB_Name.IndexOf(Engines.CurrentDatabase) + 1;
+                    int Index = Engines.DB_Name.IndexOf(Engines.CurrentDatabase) + 1;
                     Handlers.ComboBox(GlobalStatic.ComboBox["Database"], Index);
                     LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Database"], Index);
                 }
                 return;
             }
-            else if (Item == Utilities.Localization["Define New Table"]) //TODO ADD UI
+            else if (Item == Utilities.Localization["Define New Table"])
             {
                 UI.CreateTableUI();
+            }
+            else if (Item == Utilities.Localization["New in Memory Db"])
+            {
+                LDDataBase.Connection = "Data Source=:memory:;Version=3;New=True;";
+                Engines.Load.MemoryDB(Engines.EnginesMode.SQLITE);
+                UI.PreMainMenu();
+                UI.MainMenu();
+            }
+            else if (Item == Utilities.Localization["Create Statistics Page"])
+            {
+                string Name = "\"Statistics of " + Engines.CurrentTable.Replace("\"","") + "\"";
+                Engines.Transform.CreateStatisticsTable(Engines.CurrentDatabase,Engines.CurrentTable ,Name,Export.GenerateSchemaFromQueryData(Export.Generate2DArrayFromLastQuery()));
+                Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Name, GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["Statistics Page"]);
             }
             //Main
             else if (Item == Utilities.Localization["View"] || Item == Utilities.Localization["View"] + " ")
@@ -150,7 +164,7 @@ namespace DBM
             else if (Item == Utilities.Localization["CSV"])
             {
                 Engines.Command(Engines.CurrentDatabase, Import.CSV(LDDialogs.OpenFile("csv", null)), GlobalStatic.UserName, "", false);
-                GraphicsWindow.ShowMessage("CSV Import Completed","Importer"); //Localize //TODO
+                GraphicsWindow.ShowMessage("CSV Import Completed", "Importer"); //Localize //TODO
             }
             else if (Item == Utilities.Localization["SQL"])
             {
@@ -175,7 +189,7 @@ namespace DBM
             }
             else if (Item == Utilities.Localization["HTML"] + " ")
             {
-                string Path = LDDialogs.SaveFile("html",null);
+                string Path = LDDialogs.SaveFile("html", null);
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
@@ -187,7 +201,7 @@ namespace DBM
             }
             else if (Item == Utilities.Localization["SQL"] + " ")
             {
-                string Path = LDDialogs.SaveFile("sql",null);
+                string Path = LDDialogs.SaveFile("sql", null);
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
@@ -195,11 +209,11 @@ namespace DBM
                     Primitive SchemaQuery;
                     switch (Engines.CurrentEngine)
                     {
-                        case Engines.EnginesModes.SQLITE:
+                        case Engines.EnginesMode.SQLITE:
                             SchemaQuery = Engines.Query(Engines.CurrentDatabase, "PRAGMA table_info(" + Engines.CurrentTable + ");", null, true, GlobalStatic.UserName, "SCHEMA");
                             break;
                         default:
-                            throw new Exception("Currently database is not supported");
+                            throw new PlatformNotSupportedException("Currently database is not supported");
                     }
                     Dictionary<string, bool> PK = Export.SQL_Fetch_PK(SchemaQuery, Schema, Engines.CurrentEngine);
                     Dictionary<string, string> Types = Export.SQL_Fetch_Type(SchemaQuery, Schema, Engines.CurrentEngine);
@@ -225,8 +239,8 @@ namespace DBM
             //Settings
             else if (Item == Utilities.Localization["About"])
             {
-                Primitive About_Data =  Engines.Query(Engines.CurrentDatabase, "SELECT SQLITE_VERSION(),sqlite_source_id();", null, true, GlobalStatic.UserName, Utilities.Localization["User Requested"] + ":" + Utilities.Localization["App"]);
-                string About_Msg = "DBM C# is a Database Mangement Program developed by Abhishek Sathiabalan. (C)" + GlobalStatic.Copyright + ". All rights reserved.\n\nYou are running : " +GlobalStatic.ProductID + " v" + GlobalStatic.VersionID + "\n\n";
+                Primitive About_Data = Engines.Query(Engines.CurrentDatabase, "SELECT SQLITE_VERSION(),sqlite_source_id();", null, true, GlobalStatic.UserName, Utilities.Localization["User Requested"] + ":" + Utilities.Localization["App"]);
+                string About_Msg = "DBM C# is a Database Mangement Program developed by Abhishek Sathiabalan. (C)" + GlobalStatic.Copyright + ". All rights reserved.\n\nYou are running : " + GlobalStatic.ProductID + " v" + GlobalStatic.VersionID + "\n\n";
                 About_Msg += "SQLite Version : " + About_Data[1]["SQLITE_VERSION()"] + "\n" + "SQLITE Source ID : " + About_Data[1]["sqlite_source_id()"];
                 GraphicsWindow.ShowMessage(About_Msg, "About"); //DO NOT LOCALIZE
             }
@@ -265,12 +279,12 @@ namespace DBM
                 Utilities.StackTrace.Print();
                 Console.WriteLine("");
 
-                for (int i = 0; i < Engines.Data.LastQuery.Count; i++)
+                for (int i = 0; i < Engines.LastQuery.Count; i++)
                 {
-                    if (Engines.Data.Type[i] == Engines.Types.Query)
+                    if (Engines.Types[i] == Engines.Type.Query)
                     {
-                        Console.Write("{0}", Engines.Data.LastQuery[i]);
-                        Console.WriteLine("|{0}", Engines.Data.Timer[i]);
+                        Console.Write("{0}", Engines.LastQuery[i]);
+                        Console.WriteLine("|{0}", Engines.Timer[i]);
                     }
                 }
             }
@@ -332,7 +346,7 @@ namespace DBM
                 }
                 else if (LastButton == UI.Buttons["CustomQuery"])
                 {
-                    Engines.Query(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.Username, Utilities.Localization["User Requested"]);
+                    Engines.Query(Engines.CurrentDatabase, Controls.GetTextBoxText(GlobalStatic.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["User Requested"]);
                 }
                 else if (LastButton == UI.Buttons["Command"]) //Custom Command
                 {
@@ -363,13 +377,13 @@ namespace DBM
 
 		static void DatabaseComboBox(int Index)
 		{
-			LDList.Add(GlobalStatic.List_DB_Tracker, Engines.Data.DB_ShortName[Index-1]);
-            Engines.Load.Sqlite(Engines.Data.DB_Path[Index - 1]);
+			LDList.Add(GlobalStatic.List_DB_Tracker, Engines.DB_ShortName[Index-1]);
+            Engines.Load.Sqlite(Engines.DB_Path[Index - 1]);
 
 			Engines.GetSchema(Engines.CurrentDatabase);
 			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 
-            LDControls.ComboBoxContent(GlobalStatic.ComboBox["FunctionList"],Engines.Functions(Engines.EnginesModes.SQLITE));
+            LDControls.ComboBoxContent(GlobalStatic.ComboBox["FunctionList"],Engines.Functions(Engines.EnginesMode.SQLITE));
 
 			SortsComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
 			TableComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], 1);
@@ -378,14 +392,13 @@ namespace DBM
 				Engines.SetDefaultTable("sqlite_master");
 				Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 				LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], "1=" + Engines.CurrentTable + ";2=sqlite_temp_master;");
+                return;
 			}
-			else
-			{
-				LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], CurrentSchema);
-				SortsComboBox(1);
-                LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
-				Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
-			}
+			LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], CurrentSchema);
+			SortsComboBox(1);
+            LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
+			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+            return;
 		}
 
 		static void SetComboBox()
@@ -407,7 +420,6 @@ namespace DBM
                 Engines.SetDefaultTable(CorrectList[Index - 1]);
                 Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
                 SetComboBox();
-                return;
             }
 		}
 
@@ -418,13 +430,13 @@ namespace DBM
 			switch (Index)
 			{
 				case 1:
-					CorrectList = Engines.Data.Tables;
+					CorrectList = Engines.Tables;
 					break;
 				case 2:
-					CorrectList = Engines.Data.Views;
+					CorrectList = Engines.Views;
 					break;
 				case 3:
-					CorrectList = Engines.Data.Indexes;
+					CorrectList = Engines.Indexes;
 					break;
 				case 4:
 					Engines.SetDefaultTable("sqlite_master");
@@ -432,17 +444,15 @@ namespace DBM
 					break;
 			}
 
-			if (Index != 4)
+            //Prevents OutofBound Exceptions
+            if (Index != 4 && CorrectList.Count > 0)
 			{
-                //Prevents OutofBound Exceptions
-                if (CorrectList.Count > 0) 
-                {
-                    Engines.SetDefaultTable(CorrectList[0]);
-                    LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], CorrectList.ToPrimitiveArray());
-                    Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
-                }
+                Engines.SetDefaultTable(CorrectList[0]);
+                LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], CorrectList.ToPrimitiveArray());
+                Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 			}
-			if (!string.IsNullOrEmpty(Engines.CurrentTable))
+
+			if (!string.IsNullOrWhiteSpace(Engines.CurrentTable))
 			{
 				UI.HideDisplayResults();
 				SetComboBox();

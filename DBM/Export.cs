@@ -5,6 +5,7 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Linq;
 using System.IO;
 using System.Diagnostics;
 using Microsoft.SmallBasic.Library;
@@ -12,7 +13,7 @@ using SBArray = Microsoft.SmallBasic.Library.Array;
 using LitDev;
 namespace DBM
 {
-    public class Export
+    public static class Export
     {
         public static Primitive Generate2DArray(string Database, string SQL)
         {
@@ -34,7 +35,7 @@ namespace DBM
         /// </summary>
         public static Primitive Generate2DArrayFromLastQuery()
         {
-            return Generate2DArray(Engines.CurrentDatabase, Engines.Data.LastNonSchemaQuery[Engines.Data.LastNonSchemaQuery.Count -1]);
+            return Generate2DArray(Engines.CurrentDatabase, Engines.LastNonSchemaQuery.Last());
         }
 
         public static Primitive GenerateSchemaFromQueryData(Primitive Data)
@@ -137,12 +138,12 @@ namespace DBM
         /// <summary>
         ///  Fetches the Primary Key Information on everything
         /// </summary>
-        public static Dictionary<string,bool> SQL_Fetch_PK(Primitive SchemaQuery,Primitive Schema, Engines.EnginesModes CurrentEngine)
+        public static Dictionary<string,bool> SQL_Fetch_PK(Primitive SchemaQuery,Primitive Schema, Engines.EnginesMode CurrentEngine)
         {
             Dictionary<string, bool> _Dictionary = new Dictionary<string, bool>();
             switch (CurrentEngine)
             {
-                case Engines.EnginesModes.SQLITE:
+                case Engines.EnginesMode.SQLITE:
                     for(int i =1;i <= SchemaQuery.GetItemCount();i++)
                     {
                         for (int ii = 1; ii <= Schema.GetItemCount(); ii++)
@@ -162,16 +163,16 @@ namespace DBM
                     }
                     return _Dictionary;
                 default:
-                    throw new Exception("Current Engine is not supported");
+                    throw new NotImplementedException("Current Engine is not supported");
             }
         }
 
-        public static Dictionary<string,string> SQL_Fetch_Type(Primitive SchemaQuery,Primitive Schema,Engines.EnginesModes CurrentEngine)
+        public static Dictionary<string,string> SQL_Fetch_Type(Primitive SchemaQuery,Primitive Schema,Engines.EnginesMode CurrentEngine)
         {
             Dictionary<string, string> _Dictionary = new Dictionary<string, string>();
             switch (CurrentEngine)
             {
-                case Engines.EnginesModes.SQLITE:
+                case Engines.EnginesMode.SQLITE:
                     for (int i = 1; i <= SchemaQuery.GetItemCount(); i++)
                     {
                         for (int ii = 1; ii <= Schema.GetItemCount(); ii++)
@@ -184,7 +185,7 @@ namespace DBM
                     }
                     return _Dictionary;
                 default:
-                    throw new Exception("Current Engine is not supported");
+                    throw new PlatformNotSupportedException("Current Engine is not supported");
             }
         }
         /*
