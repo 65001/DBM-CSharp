@@ -70,12 +70,8 @@
   <ItemGroup>
     <Compile Include="DBM.cs">
     </Compile>
+    <Compile Include="Engine.Misc.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
     <Compile Include="Engines.cs">
     </Compile>
     <Compile Include="Settings.cs">
