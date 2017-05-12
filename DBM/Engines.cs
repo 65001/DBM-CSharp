@@ -176,7 +176,7 @@ namespace DBM
                             Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('.index','Lists all the indexes in the current database.');", EmulatorTable);
                             break;
                         case ".databases":
-                            EmulatorTable = "Databases";
+                            EmulatorTable = "DBM_SQLITE_Databases";
                             Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,NAME TEXT,\"DBM NAME\" TEXT,FILE TEXT);", EmulatorTable);
                             for (int i = 0; i < DB_Name.Count; i++)
                             {
@@ -184,19 +184,19 @@ namespace DBM
                             }
                             break;
                         case ".tables":
-                            EmulatorTable = "Tables";
+                            EmulatorTable = "DBM_SQLITE_Tables";
                             Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,NAME TEXT,Type TEXT);",EmulatorTable);
                             for (int i=0;i < Tables.Count;i++)
                             {
                                 Emulator_Sql.AppendFormat("INSERT INTO {0} (Name,Type) VALUES ('{1}','table');", EmulatorTable, Tables[i]);
                             }
-                            for(int i=0;i <Views.Count;i++)
+                            for(int i=0;i < Views.Count;i++)
                             {
                                 Emulator_Sql.AppendFormat("INSERT INTO {0} (Name,Type) VALUES ('{1}','view');", EmulatorTable, Views[i]);
                             }
                             break;
                         case ".index":
-                            EmulatorTable = "Index";
+                            EmulatorTable = "DBM_SQLITE_Index";
                             Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,NAME TEXT,Type TEXT);", EmulatorTable);
                             for (int i = 0; i < Indexes.Count; i++)
                             {

@@ -301,7 +301,7 @@ namespace DBM
                 GraphicsWindow.ShowMessage(Item + " does not exist in context or is not yet implemented", "Error Handlers.Menu");
             }
 		}
-
+        
         public static void ContextMenu(string Control,int Index)
         {
             if (Control == GlobalStatic.ListView)
@@ -309,6 +309,10 @@ namespace DBM
                 if (Index <= 2)
                 {
                     Primitive Schema = Export.GenerateSchemaFromQueryData(Export.Generate2DArrayFromLastQuery());
+                    //Keeps ComboBoxes upto date.
+                    Engines.GetSchema(Engines.CurrentDatabase);
+                    SetComboBox();
+
                     LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sort"], LDControls.LastListViewColumn);
                     LDControls.ComboBoxSelect(GlobalStatic.ComboBox["ASCDESC"], Index);
                     Buttons(UI.Buttons["Sort"]);
