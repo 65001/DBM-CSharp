@@ -22,6 +22,7 @@ using SBFile = Microsoft.SmallBasic.Library.File;
 		Replace all instances of LDLIST with an actual List?
 		Replace all instances of GlobalStatic.List_DB_* ASAP.
 		Start to use System.Version instead of an int and replace instances of GlobablStatic.VersionID to it as well
+        Emulator stuff?
  */
 //Complete Implements and Localize
 namespace DBM
@@ -662,7 +663,9 @@ namespace DBM
 
         static void LogMessage(Primitive Message, string Type, string Caller)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Log : Caller was : {0}; Type: {1}; Message: {2} ;", Caller, Type, Message);
+            Console.ForegroundColor = ConsoleColor.White;
             if (string.IsNullOrEmpty(Type))
             {
                 Type = "Unknown";

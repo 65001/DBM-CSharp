@@ -81,6 +81,9 @@ namespace DBM
                 string Name = "\"Statistics of " + Engines.CurrentTable.Replace("\"","") + "\"";
                 Engines.Transform.CreateStatisticsTable(Engines.CurrentDatabase,Engines.CurrentTable ,Name,Export.GenerateSchemaFromQueryData(Export.Generate2DArrayFromLastQuery()));
                 Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Name, GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["Statistics Page"]);
+                Engines.SetDefaultTable(Name);
+                Engines.GetColumnsofTable(Engines.CurrentDatabase, Name);
+                SetComboBox();
             }
             //Main
             else if (Item == Utilities.Localization["View"] || Item == Utilities.Localization["View"] + " ")
@@ -309,9 +312,6 @@ namespace DBM
                 if (Index <= 2)
                 {
                     Primitive Schema = Export.GenerateSchemaFromQueryData(Export.Generate2DArrayFromLastQuery());
-                    //Keeps ComboBoxes upto date.
-                    Engines.GetSchema(Engines.CurrentDatabase);
-                    SetComboBox();
 
                     LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sort"], LDControls.LastListViewColumn);
                     LDControls.ComboBoxSelect(GlobalStatic.ComboBox["ASCDESC"], Index);

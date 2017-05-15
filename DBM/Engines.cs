@@ -213,6 +213,8 @@ namespace DBM
                 string _SQL = Emulator_Sql.ToString();
                 Command(Database, "DROP TABLE IF EXISTS " + EmulatorTable + ";" + _SQL, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
                 Query(Database, "SELECT * FROM " + EmulatorTable + ";", Listview, false, Username, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
+                Engines.SetDefaultTable(EmulatorTable);
+                Engines.GetColumnsofTable(Database, EmulatorTable);
             }
 
         }
@@ -306,12 +308,15 @@ namespace DBM
         {
             if (!string.IsNullOrEmpty(table))
             {
-                CurrentTable = "\"" + table + "\"";
+                CurrentTable = "\"" + table.Replace("\"","").Replace("[","").Replace("]","") + "\"";
                 _TrackingDefaultTable.Add(CurrentDatabase + "." + CurrentTable);
                 return;
             }
             Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
         }
+
+        public static void OnDefaultTableChanged(EventArgs e) { }
+
 
         public static void GenerateQuery(bool Search, bool Sort, bool Function, string SearchBy, string OrderBy, string SortOrder, bool StrictSearch, bool InvertSearch, string FunctionSelected, string FunctionColumn, string SearchText)
         {
@@ -333,6 +338,7 @@ namespace DBM
                     GQ_CMD += GenerateSort(OrderBy, SortOrder);
                 }
             }
+
             Query(CurrentDatabase, GQ_CMD, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.UserName);
             GQ_CMD = null;
         }
