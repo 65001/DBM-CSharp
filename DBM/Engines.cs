@@ -305,14 +305,20 @@ namespace DBM
         }
 
         public static void SetDefaultTable(string table)
-        {
-            if (!string.IsNullOrEmpty(table))
-            {
-                CurrentTable = "\"" + table.Replace("\"","").Replace("[","").Replace("]","") + "\"";
-                _TrackingDefaultTable.Add(CurrentDatabase + "." + CurrentTable);
-                return;
-            }
-            Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
+        { 
+                string Characters = "\"[]";
+
+                if (!string.IsNullOrEmpty(table))
+                {
+                    if (table.IndexOfAny(Characters.ToCharArray()) >= 0)
+                    {
+                        Events.LogMessage("The presence of the one of the following characters has been detected : \"[] in Engines.SetDefaultTable(" + table + "). This may cause unexpected behaviour.", "Warning");
+                    }
+                    CurrentTable = "\"" + table.Replace("\"", "").Replace("[", "").Replace("]", "") + "\"";
+                    _TrackingDefaultTable.Add(CurrentDatabase + "." + CurrentTable);
+                    return;
+                }
+                Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
         }
 
         public static void OnDefaultTableChanged(EventArgs e) { }
