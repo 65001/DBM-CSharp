@@ -1,7 +1,0 @@
-# This file designates the Mod and the subroutine the main program should call on the start of the program.
-# Use this to run your program at start up.
-# The Program accepts any of the following:
-#	Mod Name.Sub Name
-#	1=Mod Name;2=Sub Name;
-# The character # marks the line as commented.
-# To add UI Elements without starting up your program (Please do this if you can) alter the MENU.txt file.

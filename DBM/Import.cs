@@ -5,6 +5,7 @@
 using System;
 using System.Text;
 using System.Linq;
+using System.IO;
 using System.Collections.Generic;
 using LitDev;
 using System.Diagnostics;
@@ -38,7 +39,7 @@ namespace DBM
 			CSV_Length.Clear();
 			CSV_IsString.Clear();
 
-			string Name = LDText.Trim(LDFile.GetFile(FilePath));
+			string Name =Path.GetFileNameWithoutExtension(FilePath).Trim();
 			Data = LDFastArray.ReadCSV(FilePath); 
 
 			//Calculate Lengths of Data
@@ -59,9 +60,7 @@ namespace DBM
 				string CSV_SQL = ArrayToSql(Standard_Size,Name);
                 CSVHeaders(Standard_Size,Name);
 				//Appending
-				CSV_SQL = "BEGIN;\n" + HeaderSQL + CSV_SQL + "COMMIT;";
-				CSV_SQL = LDText.Replace(CSV_SQL, "'NULL'", "NULL");
-				CSV_SQL = LDText.Replace(CSV_SQL, "<<HEADERS>>", HeaderWOType);
+				CSV_SQL = "BEGIN;\n" + HeaderSQL + CSV_SQL + "COMMIT;".Replace("'NULL'","NULL").Replace("<<HEADERS>>", HeaderWOType);
                 LDFastArray.Remove(Data);
                 return CSV_SQL;
 			}

@@ -2,6 +2,7 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
+using System.Xml;
 using System.Text;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
@@ -18,6 +19,9 @@ namespace DBM
         static List<string> _StackTrace = new List<string>();
         static List<string> _ISO_Text = new List<string>();
         static List<string> _ISO_LangCode = new List<string>();
+        static List<string> _UI_Name = new List<string>();
+        static List<string> _UI_Action = new List<string>();
+        static List<string> _UI_Handler = new List<string>();
         
         public static IReadOnlyDictionary<string, string> Localization
         {
@@ -46,6 +50,7 @@ namespace DBM
 			if (LDFile.Exists(XMLPath))
 			{
                 _Localization.Clear();
+
                 LDxml.FirstNode();
                 LDxml.FirstChild();
                 LDxml.LastChild();
@@ -157,7 +162,7 @@ namespace DBM
 
 		static void Add_UI_Controls(string Type, string Caption_OR_Name, string Handler, string PreviousNode_OR_ToolTip, string Action) 
 		{
-			int index = LDList.IndexOf(GlobalStatic.List_UI_Name, Caption_OR_Name);
+			int index = _UI_Name.IndexOf(Caption_OR_Name);
 			if (Type == "Menu")
 			{
 				GlobalStatic.MenuList[Caption_OR_Name] = PreviousNode_OR_ToolTip;
@@ -167,8 +172,8 @@ namespace DBM
 				}
 				else
 				{
-					LDList.SetAt(GlobalStatic.List_UI_Handler, index, Handler);
-					LDList.SetAt(GlobalStatic.List_UI_Action, index, Action);
+                    _UI_Handler[index] = Handler;
+                    _UI_Action[index] = Action;
 				}
 			}
 			else if (Type == "Register")
@@ -179,8 +184,8 @@ namespace DBM
 				}
 				else
 				{
-					LDList.SetAt(GlobalStatic.List_UI_Handler, index, Handler);
-					LDList.SetAt(GlobalStatic.List_UI_Action, index, Action);
+                    _UI_Handler[index] = Handler;
+                    _UI_Action[index] = Action;
 				}
 
 				if (!string.IsNullOrWhiteSpace(PreviousNode_OR_ToolTip))
@@ -196,9 +201,9 @@ namespace DBM
 
 		static void AddToList(string Name, string Handler, string Action)
 		{
-			LDList.Add(GlobalStatic.List_UI_Name, Name);
-			LDList.Add(GlobalStatic.List_UI_Handler, Handler);
-			LDList.Add(GlobalStatic.List_UI_Action, Action);
+            _UI_Name.Add(Name);
+            _UI_Action.Add(Action);
+            _UI_Handler.Add(Handler);
 		}
 	}
 

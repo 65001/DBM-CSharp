@@ -2,12 +2,14 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
-using System.Diagnostics;
-using System.Text;
-using System.IO;
+using System.Net;
+using System.Net.NetworkInformation;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 using SBFile = Microsoft.SmallBasic.Library.File;
@@ -23,6 +25,7 @@ using SBFile = Microsoft.SmallBasic.Library.File;
 		Replace all instances of GlobalStatic.List_DB_* ASAP.
 		Start to use System.Version instead of an int and replace instances of GlobablStatic.VersionID to it as well
         Emulator stuff?
+        //Primitive GlobalStatics to Dictionaries in the future and move to UI.
  */
 //Complete Implements and Localize
 namespace DBM
@@ -36,6 +39,9 @@ namespace DBM
         private static Dictionary<string, string> _ComboBox = new Dictionary<string, string>(); //TODO Implement this
         private static List<string> _HideDisplay = new List<string>();
 
+        static readonly string IP_Address = "8.8.8.8";
+        static int Ping;
+
         public static IReadOnlyDictionary<string, string> Buttons
         { get { return _Buttons; } }
 
@@ -45,6 +51,7 @@ namespace DBM
         public static IReadOnlyDictionary<string, string> CheckBox
         { get { return _CheckBox; } }
 
+        [STAThread]
         public static void Main()
         {
             Utilities.AddtoStackTrace("UI.Main()");
@@ -53,24 +60,34 @@ namespace DBM
             LDUtilities.ShowNoShapeErrors = false;
             LDGraphicsWindow.ExitOnClose = false;
             LDGraphicsWindow.CancelClose = true;
+            /*
+            try
+            {
+                using (Ping PingSender = new Ping())
+                {
+                    PingReply PingReply = PingSender.Send(IP_Address, 100);
+                    Ping = (int)PingReply.RoundtripTime;
+
+                    if (PingReply.Status == IPStatus.Success) //Represents Network Working
+                    {
+                        /*
+                        using (WebClient Client = new WebClient())
+                        {
+                            Client.DownloadFile(GlobalStatic.Online_EULA_URI, @GlobalStatic.EULA_Text_File);
+                        }
+                        
+                    }
+                }
+               // GlobalStatic.EULA_Newest_Version = ((string)SBFile.ReadLine(GlobalStatic.EULA_Text_File, 1)).Trim();
+            }
+            catch (Exception ex)
+            {
+                Events.LogMessage(ex.ToString(), "System");
+            }
+            */
 
             LDGraphicsWindow.Closing += Events.Closing;
             LDEvents.Error += Events.LogEvents;
-
-            GlobalStatic.Ping = LDNetwork.Ping(GlobalStatic.IP_Ping_Address, 100);
-            if (GlobalStatic.Ping != -1) //Represents Network Working
-            {
-                 LDNetwork.DownloadFile(GlobalStatic.EULA_Text_File, GlobalStatic.Online_EULA_URI);
-            }
-           string EulaVersion = ((string)SBFile.ReadLine(GlobalStatic.EULA_Text_File, 1)).Replace(" ", "");
-
-            for (int i = 0; i < EulaVersion.Length; i++)
-            {
-                if (EulaVersion.Substring(i, 1) != "\t")
-                {
-                    GlobalStatic.EULA_Newest_Version += EulaVersion.Substring(i, 1);
-                }
-            }
             Startup();
         }
 
@@ -109,11 +126,11 @@ namespace DBM
                 if (GlobalStatic.DebugMode == true)
                 {
                     Console.WriteLine("EULA Acceptance: {0} \n EULA UserName: {1}\n ", GlobalStatic.EULA_Acceptance, GlobalStatic.EULA_UserName);
-                    Console.WriteLine(GlobalStatic.EULA_Newest_Version + "v" + GlobalStatic.EULA_Accepted_Version);
+                    //Console.WriteLine(GlobalStatic.EULA_Newest_Version + "v" + GlobalStatic.EULA_Accepted_Version);
                     Console.WriteLine("Version ID : {0} \n Eula Test {1} \n ", GlobalStatic.VersionID, GlobalStatic.EulaTest);
                 }
                 Settings.SaveSettings();
-                EULA.UI(GlobalStatic.EULA_Text_File, GlobalStatic.Ping, GlobalStatic.Title, GlobalStatic.Copyright);
+                EULA.UI(GlobalStatic.EULA_Text_File, Ping, GlobalStatic.Title, GlobalStatic.Copyright,GlobalStatic.ProductID);
             }
             StartUpStopWatch.Stop();
             Events.LogMessage("Startup Time: " + StartUpStopWatch.ElapsedMilliseconds + " (ms)", Utilities.Localization["UI"]);
@@ -583,7 +600,8 @@ namespace DBM
                                 _Data[3] = true;
                             }
                             string Field = ((string)_Data[1]).Replace("[", "").Replace("]", "").Replace("\"", "");
-                            Define_SQL.Append("\"" + Field + "\" " + (string)_Data[2]);
+                            Define_SQL.AppendFormat("\"{0}\" {1}",Field,(string)_Data[2]);
+
                             if (_Data[6] == true)
                             {
                                 Define_SQL.Append(" NOT NULL");
@@ -691,9 +709,21 @@ namespace DBM
                 }
             }
 
-            GlobalStatic.LogNumber++;
             Utilities.AddtoStackTrace("Events.LogMessage()");
-            System.IO.File.AppendAllText(GlobalStatic.LogCSVpath, GlobalStatic.LogNumber + "," + Clock.Date + "," + Clock.Time + "," + "\"" + GlobalStatic.UserName.Replace("\"","\"\"") + "\"" + "," + GlobalStatic.ProductID + "," + GlobalStatic.VersionID + "," + "\"" + LDText.Replace(Type, "\"", "\"" + "\"") + "\"" + "," + "\"" + LDText.Replace(Message, "\"", "\"" + "\"") + "\"");
+            GlobalStatic.LogNumber++;
+            string Contents = GlobalStatic.LogNumber + "," + Clock.Date + "," + Clock.Time + "," + "\"" + GlobalStatic.UserName.Replace("\"", "\"\"") + "\"" + "," + GlobalStatic.ProductID + "," + GlobalStatic.VersionID + "," + "\"" + LDText.Replace(Type, "\"", "\"" + "\"") + "\"" + "," + "\"" + LDText.Replace(Message, "\"", "\"" + "\"") + "\"";
+            try
+            {
+                System.IO.File.AppendAllText(GlobalStatic.LogCSVpath, Contents);
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Message + ex.Source);
+            }
+            catch (Exception ex)
+            {
+               LogMessagePopUp(ex.Message, ex.Message, ex.Message, "System");
+            }
             string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'";
             LogCMD += GlobalStatic.UserName + "','" + GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');";
             Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"], false);

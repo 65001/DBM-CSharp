@@ -31,7 +31,7 @@ namespace DBM
 
 			GlobalStatic.EULA_Acceptance = GlobalStatic.Settings["EULA"];
 			GlobalStatic.EULA_UserName = GlobalStatic.Settings["EULA_By"];
-			GlobalStatic.EULA_Accepted_Version = GlobalStatic.Settings["EULA_Version"];
+			//GlobalStatic.EULA_Accepted_Version = GlobalStatic.Settings["EULA_Version"];
 
 			GlobalStatic.DebugMode = GlobalStatic.Settings["debug_mode"];
 			GlobalStatic.DebugParser = GlobalStatic.Settings["debug_parser"];
@@ -75,7 +75,7 @@ namespace DBM
 				GlobalStatic.Listview_Width = GlobalStatic.Settings["Listview_Width"]; GlobalStatic.Listview_Height = GlobalStatic.Settings["Listview_Height"]; GlobalStatic.LastVersion = GlobalStatic.Settings["VersionID"]; GlobalStatic.LastFolder = GlobalStatic.Settings["LastFolder"]; GlobalStatic.Extensions = GlobalStatic.Settings["Extensions"];
 				GlobalStatic.Deliminator = GlobalStatic.Settings["Deliminator"]; GlobalStatic.Transactions = GlobalStatic.Settings["Transactions"]; GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
 
-				GlobalStatic.EULA_Acceptance = GlobalStatic.Settings["EULA"]; GlobalStatic.EULA_UserName = GlobalStatic.Settings["EULA_By"]; GlobalStatic.EULA_Accepted_Version = GlobalStatic.Settings["EULA_Version"];
+				GlobalStatic.EULA_Acceptance = GlobalStatic.Settings["EULA"]; GlobalStatic.EULA_UserName = GlobalStatic.Settings["EULA_By"];
 
 				GlobalStatic.DebugMode = GlobalStatic.Settings["debug_mode"]; GlobalStatic.DebugParser = GlobalStatic.Settings["debug_parser"];
 

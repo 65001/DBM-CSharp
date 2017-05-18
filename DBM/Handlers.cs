@@ -12,6 +12,7 @@ namespace DBM
 	{
 		public static Primitive CurrentSchema;
         static IReadOnlyList<string> CorrectList;
+        static List<string> Tracker = new List<string>();
 		public static Primitive TypeofSorts ="1="+ Utilities.Localization["Table"] +";2=" + Utilities.Localization["View"] +"3="+ Utilities.Localization["Index"] + "4="+ Utilities.Localization["Master Table"]+";";
 
         /// <summary>
@@ -381,7 +382,8 @@ namespace DBM
 
 		static void DatabaseComboBox(int Index)
 		{
-			LDList.Add(GlobalStatic.List_DB_Tracker, Engines.DB_ShortName[Index-1]);
+            Tracker.Add(Engines.DB_ShortName[Index - 1]);
+
             Engines.Load.Sqlite(Engines.DB_Path[Index - 1]);
 
 			Engines.GetSchema(Engines.CurrentDatabase);

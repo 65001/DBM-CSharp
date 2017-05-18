@@ -9,7 +9,7 @@ namespace DBM
 	{
 		static string CheckBox, Accept, Decline;
 
-		public static void UI(string FilePath,decimal Ping,string Title,string CopyrightDate)
+		public static void UI(string FilePath,decimal Ping,string Title,string CopyrightDate,string ProductID)
 		{
             Utilities.AddtoStackTrace( "EULA.UI()");
 			GraphicsWindow.Show();
@@ -21,7 +21,7 @@ namespace DBM
 			string EulaTextBox = LDControls.AddRichTextBox(600, 350);
 			LDControls.RichTextBoxReadOnly = false;
             Controls.Move(EulaTextBox, 10, 10);
-			string CNTS = LDText.Replace(System.IO.File.ReadAllText(FilePath), "<date>", CopyrightDate);
+            string CNTS = System.IO.File.ReadAllText(FilePath).Replace("<date>", CopyrightDate).Replace("<product>",ProductID);
 
 			if (Ping == -1) // DEV //TODO
 			{
@@ -48,7 +48,7 @@ namespace DBM
             Utilities.AddtoStackTrace( "EULA.Handler()");
 			string lastButton = Controls.LastClickedButton;
 			GlobalStatic.Settings["EULA_By"] = GlobalStatic.UserName;
-			GlobalStatic.Settings["EULA_Version"] = GlobalStatic.EULA_Newest_Version;
+			//GlobalStatic.Settings["EULA_Version"] = GlobalStatic.EULA_Newest_Version;
 			GlobalStatic.Settings["VersionID"] = GlobalStatic.VersionID.Replace(".","");
 
             Controls.ButtonClicked -= Handler; //Unsubcribes the event Handler from the event
