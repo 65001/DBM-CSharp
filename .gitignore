@@ -10,9 +10,11 @@ x86/
 [Dd]ebug/
 app.publish/
 
-Assets/setting.txt
-Assets/Log.csv
-Assets/Log.db
+/Assets/setting.txt
+/Assets/Log.csv
+/Assets/Log.db
+LitDev.xml
+SmallBasicLibrary.xml
 
 # User-specific files
 *.suo
