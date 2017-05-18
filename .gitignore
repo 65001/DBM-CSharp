@@ -7,14 +7,19 @@
 
 x64/
 x86/
+#Intentionally ignored [Rr]elease (Sort of a way to get an alpha build)
 [Dd]ebug/
-app.publish/
 
-/Assets/setting.txt
-/Assets/Log.csv
-/Assets/Log.db
+#Custom Specified
+**/Assets/setting.txt
+**/Assets/Log.csv
+**/Assets/Log.db
+*[Cc]ode[Aa]nalysis[Ll]og.xml
+*.exe.lastcodeanalysissucceeded
 LitDev.xml
 SmallBasicLibrary.xml
+app.publish/
+DBM.exe.config
 
 # User-specific files
 *.suo
