@@ -85,7 +85,7 @@ namespace DBM
                 Events.LogMessage(ex.ToString(), "System");
             }
             */
-
+            
             LDGraphicsWindow.Closing += Events.Closing;
             LDEvents.Error += Events.LogEvents;
             Startup();
@@ -264,11 +264,6 @@ namespace DBM
             LDControls.MenuClicked += Events.MC;
             LDControls.ComboBoxItemChanged += Events.CB;
             LDControls.ContextMenuClicked += Events.MI;
-
-            if (GlobalStatic.DebugMode == false && GlobalStatic.DebugParser == false)
-            {
-                TextWindow.Hide();
-            }
         }
 
         public static string GetPath(Engines.EnginesMode EngineMode)
