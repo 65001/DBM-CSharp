@@ -40,11 +40,15 @@ namespace DBM
             get { return _ISO_LangCode.AsReadOnly(); }
         }
 
-        public static void LocalizationXML(string XMLPath)  // Loads localized text from XML File
+        /// <summary>
+        /// Loads localized text from XML File
+        /// </summary>
+        /// <param name="XMLPath"></param>
+        public static void LocalizationXML(string XMLPath)
 		{
 			AddtoStackTrace( "Utilities.LocalizationXML()");
 			string XMLDoc = LDxml.Open(XMLPath);
-			if (LDFile.Exists(XMLPath))
+			if (System.IO.File.Exists(XMLPath))
 			{
                 _Localization.Clear();
 
@@ -60,13 +64,14 @@ namespace DBM
                 string DataPath =  Path.Combine( GlobalStatic.Localization_LanguageCodes_Path , GlobalStatic.LanguageCode + ".txt");
 
                 Primitive Localization_Temp = System.IO.File.ReadAllText(DataPath);
-                string[] LocalizationFiles =  System.IO.Directory.GetFiles(LDFile.GetFolder(XMLPath));
+                string[] LocalizationFiles  = Directory.GetFiles(Path.GetDirectoryName(XMLPath));
+
                 _ISO_Text.Clear();
                 _ISO_LangCode.Clear();
 
                 foreach (string FilePath in LocalizationFiles)
                 {
-                    string LanguageFile = LDFile.GetFile(FilePath);
+                    string LanguageFile = Path.GetFileNameWithoutExtension(FilePath);
                     _ISO_LangCode.Add(LanguageFile);
                     _ISO_Text.Add(Localization_Temp[ LanguageFile ]);
                 }

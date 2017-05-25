@@ -89,7 +89,7 @@ namespace DBM
             {
                 Engines.Load.Sqlite(GetPath(Engines.EnginesMode.SQLITE));
             }
-            if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_UserName == LDFile.UserName && GlobalStatic.LastVersion == int.Parse(GlobalStatic.VersionID.Replace(".", "")) && GlobalStatic.EulaTest == false)
+            if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_UserName == GlobalStatic.UserName && GlobalStatic.LastVersion == int.Parse(GlobalStatic.VersionID.Replace(".", "")) && GlobalStatic.EulaTest == false)
             {
                 StartupGUI();
             }

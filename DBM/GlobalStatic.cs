@@ -1,21 +1,22 @@
 ﻿// asathiabalan@gmail.com
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
-using LitDev;
+//using LitDev;
 using Microsoft.SmallBasic.Library;
+using System;
 using System.IO;
 namespace DBM
 {
 		public static class GlobalStatic //List of Variables shared across everything through this class
 		{
 			public static readonly string ProgramDirectory = Program.Directory;
-			public static readonly string UserName = LDFile.UserName;
+			public static readonly string UserName =  Environment.UserName;
 			public static bool DebugMode,DebugParser, EulaTest, LoadedFile;
 
             //Self Aware Data
             public const string Copyright = "2016 through 2017";
 			public const string ProductID = "DBM C#";
-			public static readonly string VersionID = LDText.Replace( typeof(GlobalStatic).Assembly.GetName().Version.ToString(),".","");
+			public static readonly string VersionID = typeof(GlobalStatic).Assembly.GetName().Version.ToString().Replace(".","");
 			public static int DefaultFontSize,LogNumber;
 
 			//URI

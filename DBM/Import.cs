@@ -28,9 +28,9 @@ namespace DBM
 		public static string CSV(string FilePath)
 		{			
 			//TODO Make sure comment's are universal across SQL.Then use them to insert data such as how long it took to generate the SQL and how many rows were skipped if any?
-			if (LDFile.Exists(FilePath) == false)
+			if (Directory.Exists(FilePath) == false)
 			{
-                return string.Empty;
+                throw new ArgumentNullException("FilePath");
 			}
 
 			Stopwatch Elappsed = Stopwatch.StartNew();

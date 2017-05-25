@@ -47,7 +47,8 @@ namespace DBM
 
 			Primitive Setting_Default = "1=" + (Desktop.Width - 400) + ";2=" + (Desktop.Height - 150) + ";3=" + GlobalStatic.VersionID + ";5=en;6=0;7=0;8=0;9=0;10=0;11=,;12=10000;";
 			Setting_Default[4] = "1=db;2=sqlite;3=sqlite3;4=db3;5=*;";
-			Setting_Default[13] = LDFile.DocumentsFolder; Setting_Default[14] = Environment.SystemDirectory;
+			Setting_Default[13] = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            Setting_Default[14] = Environment.SystemDirectory;
 			Setting_Default[15] = Program.Directory + "\\Assets\\";
 			Setting_Default[16] = Setting_Default[15] + "Log.csv";
 			Setting_Default[17] = Setting_Default[15] + "Log.db";
@@ -61,7 +62,7 @@ namespace DBM
 					GlobalStatic.Settings[NullSettings[i]] = Setting_Default[i];
                     GlobalStatic.RestoreSettings = true; RestoreSettings = true;
 				}
-				if (Setting_Files[i] == 1 && LDFile.Exists(GlobalStatic.Settings[NullSettings[i]]) == false)
+				if (Setting_Files[i] == 1 && Directory.Exists(GlobalStatic.Settings[NullSettings[i]]) == false)
 				{
 					GlobalStatic.Settings[NullSettings[i]] = Setting_Default[i];
 					GlobalStatic.RestoreSettings = true;RestoreSettings = true;
@@ -103,14 +104,14 @@ namespace DBM
 		public static void Paths(string AssetPath,string PluginPath,string LocalizationFolder,string AutoRunPluginPath,string Localization_LanguageCodes_Path,string AutoRunPluginMessage)
 		{
             Utilities.AddtoStackTrace( "Settings.Paths()");
-			if (LDFile.Exists(AssetPath) == false || LDFile.Exists(LocalizationFolder) == false) //Creates Folders if one is missing
+			if (Directory.Exists(AssetPath) == false || Directory.Exists(LocalizationFolder) == false) //Creates Folders if one is missing
 			{
 				Directory.CreateDirectory(AssetPath);
 				Directory.CreateDirectory(LocalizationFolder);
 				Directory.CreateDirectory(Localization_LanguageCodes_Path);
 			}
 
-			if (LDFile.Exists(AutoRunPluginPath) == false)
+			if (System.IO.File.Exists(AutoRunPluginPath) == false)
 			{
 				System.IO.File.WriteAllText(AutoRunPluginPath, AutoRunPluginMessage);
 			}

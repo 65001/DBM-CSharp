@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Globalization;
-using LitDev;
-using Microsoft.SmallBasic.Library;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Text;
+using Microsoft.SmallBasic.Library;
+using LitDev;
 
 namespace DBM
 {
@@ -65,7 +66,8 @@ namespace DBM
                         _DB_Hash.Add(HashCode, CurrentDatabase);
                         return CurrentDatabase;
                     case EnginesMode.SQLITE:
-                        if (System.IO.Directory.Exists(LDFile.GetFolder(Data["URI"])))
+
+                        if (System.IO.Directory.Exists( Path.GetDirectoryName(Data["URI"])))
                         {
                             string Database = LDDataBase.ConnectSQLite(Data["URI"]);
                             AddToList(Data["URI"], Database, ShortName, EnginesMode.SQLITE);

@@ -32,7 +32,7 @@ namespace DBM
                 {
                     GlobalStatic.ListView = null;
                     GlobalStatic.Dataview = null;
-                    GlobalStatic.LastFolder = LDFile.GetFolder(Path);
+                    GlobalStatic.LastFolder = System.IO.Path.GetDirectoryName(Path);
                     Settings.LoadSettings(GlobalStatic.RestoreSettings);
                     Settings.SaveSettings();
                     LDDataBase.ConnectSQLite(Path);
@@ -55,7 +55,7 @@ namespace DBM
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Engines.Load.Sqlite(Path);
-                    GlobalStatic.Settings["LastFolder"] = LDFile.GetFolder(Path);
+                    GlobalStatic.Settings["LastFolder"] = System.IO.Path.GetDirectoryName(Path);
                     Settings.SaveSettings();
                     UI.PreMainMenu();
                     UI.MainMenu();

@@ -2,15 +2,13 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
+using System.IO;
 using System.Text;
-//using System.Globalization;
 using System.Collections.Generic;
-//using System.Collections.ObjectModel;
 using System.Linq;
 using System.Diagnostics;
 using LitDev;
 using Microsoft.SmallBasic.Library;
-//using SBArray = Microsoft.SmallBasic.Library.Array;
 
 namespace DBM
 {
@@ -149,7 +147,7 @@ namespace DBM
                 if (Index >= 0) //Prevents Out of bound errors
                 {
                     string URI = _DB_Path[Index];
-                    string _SQL = "INSERT INTO Transactions (USER,DB,SQL,TYPE,Reason,\"UTC DATE\",\"UTC TIME\",PATH,SNAME) VALUES('" + UserName + "','" + DataBase + "','" + SQL.Replace("'", "''") + "','Query','" + Reason.Replace("'", "''") + "',Date(),TIME(),'" + URI + "','" + LDFile.GetFolder(URI) + "');";
+                    string _SQL = "INSERT INTO Transactions (USER,DB,SQL,TYPE,Reason,\"UTC DATE\",\"UTC TIME\",PATH,SNAME) VALUES('" + UserName + "','" + DataBase + "','" + SQL.Replace("'", "''") + "','Query','" + Reason.Replace("'", "''") + "',Date(),TIME(),'" + URI + "','" + Path.GetDirectoryName(URI) + "');";
                     LDDataBase.Command(GlobalStatic.TransactionDB, _SQL);
                 }
             }
