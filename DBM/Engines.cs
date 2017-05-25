@@ -127,7 +127,7 @@ namespace DBM
         /// This method should only run when the correct global Paramters are set.
         /// //Current Storage only supports SQLite db file.
         /// </summary>
-		public static void TransactionRecord(string UserName, string DataBase, string SQL, Type Type, string Reason) //TODO Transactions 
+		public static void TransactionRecord(string UserName, string DataBase, string SQL, Type Type, string Reason) 
 		{
             Utilities.AddtoStackTrace( "Engines.TransactionRecord()");
             //Escapes function when conditions are correct
@@ -138,7 +138,7 @@ namespace DBM
 
             if (GlobalStatic.Transaction_Commands == true && Type == Type.Command)
             {
-
+                //TODO Transactions Command
             }
 
             if (GlobalStatic.Transaction_Query == true && Type == Type.Query)

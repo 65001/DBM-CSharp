@@ -87,11 +87,11 @@ namespace DBM
             Primitive XML_Array = XMLAttributes();
             if (XML_Array[1]["language"] == GlobalStatic.LanguageCode)
             {
-                string key = LDText.Replace(XML_Array[4], "_", " ");
+                string key = XML_Array[4].ToString().Replace("_"," ");
                 string value = XML_Array[6];
                 if (_Localization.ContainsKey(key) == false)
                 {
-                    _Localization.Add(LDText.Replace(XML_Array[4], "_", " "), XML_Array[6]);
+                    _Localization.Add(key, value);
                 }
                 else
                 {
@@ -104,7 +104,7 @@ namespace DBM
             }
         }
 
-	    public static string XMLAttributes() { return "1=" + LDText.Replace(LDText.Replace(LDxml.Attributes, "=", "\\="), ";", "\\;") + ";2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
+	    public static string XMLAttributes() { return "1=" + LDxml.Attributes.ToString().Replace("=", "\\=").Replace(";", "\\;") + ";2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
 
         public static void AddtoStackTrace(string Data)
         {

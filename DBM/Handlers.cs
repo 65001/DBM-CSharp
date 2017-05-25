@@ -333,7 +333,7 @@ namespace DBM
                     bool InvertSearch = LDControls.CheckBoxGetState(GlobalStatic.CheckBox["InvertSearch"]);
 
                     string SearchIn = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Search"])];
-                    string SearchText = LDText.Replace(Controls.GetTextBoxText(GlobalStatic.TextBox["Search"]), "'", "''");
+                    string SearchText = Controls.GetTextBoxText(GlobalStatic.TextBox["Search"]).ToString().Replace("'", "''");
                     string FunctionIn = Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ColumnList"])];
                     string FunctionCalled = Engines.Functions(Engines.CurrentEngine)[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["FunctionList"])];
 

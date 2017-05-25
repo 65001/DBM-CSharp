@@ -91,8 +91,8 @@ namespace DBM
                     CSV_SQL.Append("INSERT INTO \"" + TableName + "\" <<HEADERS>> VALUES('");
 					for (int ii = 1; ii <= LDFastArray.Size2(Data, i); ii++)
 					{
-						string Temp = LDText.Replace(LDFastArray.Get2D(Data, i, ii), "'", "''");
-						if (string.IsNullOrWhiteSpace(Temp))
+                        string Temp = LDFastArray.Get2D(Data, i, ii).ToString().Replace("'", "''");
+                        if (string.IsNullOrWhiteSpace(Temp))
 						{
 							Temp = "NULL";
 						}
@@ -110,7 +110,7 @@ namespace DBM
 
 						if (ii < Standard_Size)
 						{
-							CSV_SQL.Append("','");
+                            CSV_SQL.Append("','");
 						}
 					}
 				}
@@ -128,14 +128,16 @@ namespace DBM
 			{
 				HeaderSQL += "\"" + LDFastArray.Get2D(Data, 1, i) + "\" ";
 				HeaderWOType += "\"" + LDFastArray.Get2D(Data, 1, i) + "\"";
-				if (CSV_IsString[(i-1)])
-				{
-					HeaderSQL += "TEXT";
-				}
-				else
-				{
-					HeaderSQL += "INTEGER";
-				}
+
+                switch (CSV_IsString[(i - 1)])
+                {
+                    case true:
+                        HeaderSQL += "TEXT";
+                        break;
+                    case false:
+                        HeaderSQL += "INTEGER";
+                        break;
+                }
 
 				if (i < Standard_Size)
 				{
@@ -145,11 +147,6 @@ namespace DBM
 			}
 			HeaderSQL += ");\n";
 			HeaderWOType += ")";
-		}
-
-		public static void SQL(string FilePath) //TODO Import.SQL
-		{ 
-		
 		}
 	}
 }

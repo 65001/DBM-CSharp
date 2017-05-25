@@ -13,7 +13,7 @@ using Microsoft.SmallBasic.Library;
 //using SBFile = Microsoft.SmallBasic.Library.File;
 
 /*
-	Todo :
+	TODO :
 		Emulators 
 		SQLITE setup
 		Set it up so that if no table exists in a database then revert to sqlite_master or equivalent
@@ -37,9 +37,9 @@ namespace DBM
     {
         private static Stopwatch StartUpStopWatch = Stopwatch.StartNew();
         private static Dictionary<string, string> _Buttons = new Dictionary<string, string>();
-        private static Dictionary<string, string> _TextBox = new Dictionary<string, string>();  //TODO Implement this
-        private static Dictionary<string, string> _CheckBox = new Dictionary<string, string>(); //TODO Implement this
-        private static Dictionary<string, string> _ComboBox = new Dictionary<string, string>(); //TODO Implement this
+        private static Dictionary<string, string> _TextBox = new Dictionary<string, string>();  //TODO Implement _TextBox
+        private static Dictionary<string, string> _CheckBox = new Dictionary<string, string>(); //TODO Implement _CheckBox
+        private static Dictionary<string, string> _ComboBox = new Dictionary<string, string>(); //TODO Implement _ComboBox
         private static List<string> _HideDisplay = new List<string>();
         
         public static IReadOnlyDictionary<string, string> Buttons
@@ -295,7 +295,7 @@ namespace DBM
 			GraphicsWindow.Top = 0;
 			GlobalStatic.UIx = GlobalStatic.Listview_Width + 50;
             DisplayHelper();
-            //TODO implement LOG CB?
+            //TODO Implement LOG CB?
 
             //Sort
             GraphicsWindow.FontSize = 13;
@@ -390,7 +390,7 @@ namespace DBM
 			GraphicsWindow.Title = SetTitle;
 		}
 
-		public static void SettingsUI()//TODO: Make the Settings UI
+		public static void SettingsUI()
 		{
             _Buttons.Clear();
             Utilities.AddtoStackTrace( "UI.SettingsUI()");
@@ -591,7 +591,7 @@ namespace DBM
                             }
                         }
                     }
-                    //TODO Auto insert code into current database
+                    
                     if(!string.IsNullOrWhiteSpace(Engines.CurrentDatabase))
                     {
                         string Confirmation =   LDDialogs.Confirm("Do you wish to commit the following SQL:\n" + Define_SQL.ToString() + "\n to " + Engines.DB_ShortName[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)], "Commit SQL");

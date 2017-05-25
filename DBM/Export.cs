@@ -304,7 +304,7 @@ namespace DBM
             //Header Data
             for (int i = 1; i <= Schema.GetItemCount(); i++)
             {
-                string Temp_Schema = LDText.Replace(Schema[i], "_", " ");
+                string Temp_Schema = Schema[i].ToString().Replace("_"," ");
                 Temp_Schema = Text.ConvertToUpperCase(Text.GetSubText(Temp_Schema, 1, 1)) + Text.GetSubTextToEnd(Temp_Schema, 2);
                 HTML_Statement.Append("\t\t\t\t\t<th>" + Temp_Schema + "</th>\n");
             }
