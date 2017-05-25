@@ -3,7 +3,7 @@
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+//using System.Collections.ObjectModel;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 namespace DBM
@@ -79,8 +79,8 @@ namespace DBM
             }
             else if (Item == Utilities.Localization["Create Statistics Page"])
             {
-                string Name = "\"Statistics of " + Engines.CurrentTable.Replace("\"","") + "\"";
-                Engines.Transform.CreateStatisticsTable(Engines.CurrentDatabase,Engines.CurrentTable ,Name,Export.GenerateSchemaFromQueryData(Export.Generate2DArrayFromLastQuery()));
+                string Name = "\"Statistics of " + Engines.CurrentTable.Replace("\"", "") + "\"";
+                Engines.Transform.CreateStatisticsTable(Engines.CurrentDatabase, Engines.CurrentTable, Name, Export.GenerateSchemaFromQueryData(Export.Generate2DArrayFromLastQuery()));
                 Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Name, GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["Statistics Page"]);
                 Engines.SetDefaultTable(Name);
                 Engines.GetColumnsofTable(Engines.CurrentDatabase, Name);
@@ -296,7 +296,7 @@ namespace DBM
             {
                 TextWindow.Hide();
             }
-            else if (Item == Utilities.Localization["Create Statistics Page"]) //TODO
+            else if (Item == "DB Settings")
             {
 
             }
@@ -369,14 +369,17 @@ namespace DBM
 			if (ComboBox == GlobalStatic.ComboBox["Table"])
 			{
 				TableComboBox(Index);
+                return;
 			}
 			else if (ComboBox == GlobalStatic.ComboBox["Sorts"])
 			{
 				SortsComboBox(Index);
+                return;
 			}
 			else if (ComboBox == GlobalStatic.ComboBox["Database"])
 			{
 				DatabaseComboBox(Index);
+                return;
 			}
 		}
 
@@ -391,8 +394,11 @@ namespace DBM
 
             LDControls.ComboBoxContent(GlobalStatic.ComboBox["FunctionList"],Engines.Functions(Engines.EnginesMode.SQLITE));
 
-			SortsComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
-			TableComboBox(1); LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], 1);
+			SortsComboBox(1);
+            TableComboBox(1);
+            LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
+			LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], 1);
+
 			if (GlobalStatic.SortBy == 4)
 			{
 				Engines.SetDefaultTable("sqlite_master");
@@ -400,20 +406,20 @@ namespace DBM
 				LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], "1=" + Engines.CurrentTable + ";2=sqlite_temp_master;");
                 return;
 			}
+            /*
 			LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], CurrentSchema);
 			SortsComboBox(1);
             LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
+            */
 			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
             return;
 		}
 
 		static void SetComboBox()
 		{
-            Primitive Schema = Engines.Schema;
-
-            LDControls.ComboBoxContent(GlobalStatic.ComboBox["Sort"], Schema);
-			LDControls.ComboBoxContent(GlobalStatic.ComboBox["ColumnList"], Schema);
-			LDControls.ComboBoxContent(GlobalStatic.ComboBox["Search"], Schema);
+            LDControls.ComboBoxContent(GlobalStatic.ComboBox["Sort"], Engines.Schema);
+			LDControls.ComboBoxContent(GlobalStatic.ComboBox["ColumnList"], Engines.Schema);
+			LDControls.ComboBoxContent(GlobalStatic.ComboBox["Search"], Engines.Schema);
 			UI.Title();
 			Menu(Utilities.Localization["View"]); //Tasks
 		}

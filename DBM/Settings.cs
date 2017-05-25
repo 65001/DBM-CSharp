@@ -4,7 +4,7 @@
 using System;
 using LitDev;
 using Microsoft.SmallBasic.Library;
-using SBArray = Microsoft.SmallBasic.Library.Array;
+//using SBArray = Microsoft.SmallBasic.Library.Array;
 using SBFile = Microsoft.SmallBasic.Library.File;
 using System.IO;
 
@@ -37,7 +37,6 @@ namespace DBM
 			GlobalStatic.DebugParser = GlobalStatic.Settings["debug_parser"];
 
 			GlobalStatic.AssetPath = GlobalStatic.Settings["Asset_Dir"];
-			GlobalStatic.LogCSVpath = GlobalStatic.Settings["Log_Path"];
 			GlobalStatic.LogDBpath = GlobalStatic.Settings["Log_DB_Path"];
 			GlobalStatic.TransactionDBPath = GlobalStatic.Settings["Transaction_DB"];
 			GlobalStatic.Transaction_Query = GlobalStatic.Settings["Transaction_Query"];
@@ -79,7 +78,7 @@ namespace DBM
 
 				GlobalStatic.DebugMode = GlobalStatic.Settings["debug_mode"]; GlobalStatic.DebugParser = GlobalStatic.Settings["debug_parser"];
 
-				GlobalStatic.AssetPath = GlobalStatic.Settings["Asset_Dir"]; GlobalStatic.LogCSVpath = GlobalStatic.Settings["Log_Path"]; GlobalStatic.LogDBpath = GlobalStatic.Settings["Log_DB_Path"];
+				GlobalStatic.AssetPath = GlobalStatic.Settings["Asset_Dir"]; GlobalStatic.LogDBpath = GlobalStatic.Settings["Log_DB_Path"];
 				GlobalStatic.TransactionDBPath = GlobalStatic.Settings["Transaction_DB"];
 				GlobalStatic.Transaction_Query = GlobalStatic.Settings["Transaction_Query"]; 
 				GlobalStatic.Transaction_Commands = GlobalStatic.Settings["Transaction_Commands"];
@@ -101,7 +100,7 @@ namespace DBM
 			}
 		}
 
-		public static void Paths(string AssetPath,string PluginPath,string LocalizationFolder,string AutoRunPluginPath,string Localization_LanguageCodes_Path,string LogCSVPath,string AutoRunPluginMessage)
+		public static void Paths(string AssetPath,string PluginPath,string LocalizationFolder,string AutoRunPluginPath,string Localization_LanguageCodes_Path,string AutoRunPluginMessage)
 		{
             Utilities.AddtoStackTrace( "Settings.Paths()");
 			if (LDFile.Exists(AssetPath) == false || LDFile.Exists(LocalizationFolder) == false) //Creates Folders if one is missing
@@ -114,11 +113,6 @@ namespace DBM
 			if (LDFile.Exists(AutoRunPluginPath) == false)
 			{
 				System.IO.File.WriteAllText(AutoRunPluginPath, AutoRunPluginMessage);
-			}
-
-			if (LDFile.Exists(LogCSVPath) == false)
-			{
-				System.IO.File.WriteAllText(LogCSVPath, "id,Local Date,Local Time,UserName,Product ID,Version,Type,Event");
 			}
 		}
 

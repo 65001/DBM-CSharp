@@ -2,15 +2,12 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
-using System.Xml;
 using System.Text;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using LitDev;
 using Microsoft.SmallBasic.Library;
-using SBArray = Microsoft.SmallBasic.Library.Array;
 namespace DBM
 {
 	public static class Utilities

@@ -3,7 +3,6 @@
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using LitDev;
 using Microsoft.SmallBasic.Library;
-using System.Collections.Generic;
 using System.IO;
 namespace DBM
 {
@@ -24,7 +23,7 @@ namespace DBM
 			public static string LocalizationFolder = Path.Combine( ProgramDirectory , "Localization");
 			public static string Localization_LanguageCodes_Path = Path.Combine(LocalizationFolder, "Lang");
 			public static string PluginPath = Path.Combine( ProgramDirectory ,"Plugin");
-			public static string LogCSVpath = Path.Combine( AssetPath , "Log.csv");
+			//public static string LogCSVpath = Path.Combine( AssetPath , "Log.csv");
 			public static string LogDBpath = Path.Combine(AssetPath , "Log.db");
 			public static string TransactionDBPath = Path.Combine(AssetPath , "Transactions.db");
 			public static string EULA_Text_File = Path.Combine(AssetPath , "EULA.txt");

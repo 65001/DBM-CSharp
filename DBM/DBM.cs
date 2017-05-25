@@ -8,11 +8,9 @@ using System.Text;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Net;
-using System.Net.NetworkInformation;
 using LitDev;
 using Microsoft.SmallBasic.Library;
-using SBFile = Microsoft.SmallBasic.Library.File;
+//using SBFile = Microsoft.SmallBasic.Library.File;
 
 /*
 	Todo :
@@ -23,11 +21,16 @@ using SBFile = Microsoft.SmallBasic.Library.File;
 	//TODO
 		Replace all instances of LDLIST with an actual List?
 		Replace all instances of GlobalStatic.List_DB_* ASAP.
+        Remove dependecey on LitDev?
 		Start to use System.Version instead of an int and replace instances of GlobablStatic.VersionID to it as well
         Emulator stuff?
+            Make Emulator use 
+            Add entry for PRAGMA for sqlite3
+        Dataview for PRAGMA
         //Primitive GlobalStatics to Dictionaries in the future and move to UI.
  */
 //Complete Implements and Localize
+
 namespace DBM
 {
     public static class UI
@@ -38,10 +41,7 @@ namespace DBM
         private static Dictionary<string, string> _CheckBox = new Dictionary<string, string>(); //TODO Implement this
         private static Dictionary<string, string> _ComboBox = new Dictionary<string, string>(); //TODO Implement this
         private static List<string> _HideDisplay = new List<string>();
-
-        static readonly string IP_Address = "8.8.8.8";
-        static int Ping;
-
+        
         public static IReadOnlyDictionary<string, string> Buttons
         { get { return _Buttons; } }
 
@@ -51,7 +51,6 @@ namespace DBM
         public static IReadOnlyDictionary<string, string> CheckBox
         { get { return _CheckBox; } }
 
-        [STAThread]
         public static void Main()
         {
             Utilities.AddtoStackTrace("UI.Main()");
@@ -60,31 +59,6 @@ namespace DBM
             LDUtilities.ShowNoShapeErrors = false;
             LDGraphicsWindow.ExitOnClose = false;
             LDGraphicsWindow.CancelClose = true;
-            /*
-            try
-            {
-                using (Ping PingSender = new Ping())
-                {
-                    PingReply PingReply = PingSender.Send(IP_Address, 100);
-                    Ping = (int)PingReply.RoundtripTime;
-
-                    if (PingReply.Status == IPStatus.Success) //Represents Network Working
-                    {
-                        /*
-                        using (WebClient Client = new WebClient())
-                        {
-                            Client.DownloadFile(GlobalStatic.Online_EULA_URI, @GlobalStatic.EULA_Text_File);
-                        }
-                        
-                    }
-                }
-               // GlobalStatic.EULA_Newest_Version = ((string)SBFile.ReadLine(GlobalStatic.EULA_Text_File, 1)).Trim();
-            }
-            catch (Exception ex)
-            {
-                Events.LogMessage(ex.ToString(), "System");
-            }
-            */
             
             LDGraphicsWindow.Closing += Events.Closing;
             LDEvents.Error += Events.LogEvents;
@@ -102,7 +76,6 @@ namespace DBM
                 GlobalStatic.LocalizationFolder,
                 GlobalStatic.AutoRunPluginPath,
                 GlobalStatic.Localization_LanguageCodes_Path,
-                GlobalStatic.LogCSVpath,
                 GlobalStatic.AutoRunPluginMessage
                 ); //Makes sure passed paths are valid and creates them if they are not
 
@@ -111,7 +84,7 @@ namespace DBM
 
             Utilities.LocalizationXML(Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"));
             Events.LogMessage(Utilities.Localization["PRGM Start"], Utilities.Localization["Application"]);
-
+            
             if (Program.ArgumentCount == 1)
             {
                 Engines.Load.Sqlite(GetPath(Engines.EnginesMode.SQLITE));
@@ -122,15 +95,8 @@ namespace DBM
             }
             else
             {
-                Events.LogMessage("Run EULA", "Debug");
-                if (GlobalStatic.DebugMode == true)
-                {
-                    Console.WriteLine("EULA Acceptance: {0} \n EULA UserName: {1}\n ", GlobalStatic.EULA_Acceptance, GlobalStatic.EULA_UserName);
-                    //Console.WriteLine(GlobalStatic.EULA_Newest_Version + "v" + GlobalStatic.EULA_Accepted_Version);
-                    Console.WriteLine("Version ID : {0} \n Eula Test {1} \n ", GlobalStatic.VersionID, GlobalStatic.EulaTest);
-                }
                 Settings.SaveSettings();
-                EULA.UI(GlobalStatic.EULA_Text_File, Ping, GlobalStatic.Title, GlobalStatic.Copyright,GlobalStatic.ProductID);
+                EULA.UI(GlobalStatic.EULA_Text_File, 0, GlobalStatic.Title, GlobalStatic.Copyright,GlobalStatic.ProductID);
             }
             StartUpStopWatch.Stop();
             Events.LogMessage("Startup Time: " + StartUpStopWatch.ElapsedMilliseconds + " (ms)", Utilities.Localization["UI"]);
@@ -139,7 +105,7 @@ namespace DBM
         public static void StartupGUI()
         {
             Utilities.AddtoStackTrace("UI.StartupGUI()");
-            GraphicsWindow.Show();
+            //GraphicsWindow.Show();
             GraphicsWindow.Clear();
             LDScrollBars.Add(GlobalStatic.Listview_Width + 200, GlobalStatic.Listview_Height);
             LDGraphicsWindow.State = 2;
@@ -194,6 +160,7 @@ namespace DBM
             MenuList[Utilities.Localization["Show Help"]] = Utilities.Localization["Help"];
             MenuList["-"] = Utilities.Localization["Help"];
             MenuList[Utilities.Localization["Settings Editor"]] = Utilities.Localization["Settings"];
+            MenuList["DB Settings"] = Utilities.Localization["Settings"]; //TODO LOCALIZE
             MenuList[Utilities.Localization["Toggle Debug"]] = Utilities.Localization["Settings"];
             //MenuList[Utilities.Localization["Toggle Transaction Log"]] = Utilities.Localization["Settings"];
             //MenuList["-"] = Utilities.Localization["Toggle Transaction Log"];
@@ -277,7 +244,7 @@ namespace DBM
                     case Engines.EnginesMode.SQLITE:
                         return LDDialogs.OpenFile(GlobalStatic.Extensions, GlobalStatic.LastFolder + "\\");
                     default:
-                        return "Currently not Supported";
+                        throw new NotImplementedException();
                 }
             }
         }
@@ -583,6 +550,7 @@ namespace DBM
                 {
                     Name = Name.Replace("[", "").Replace("]", "").Replace("\"", "");
                     int Max = LDControls.DataViewRowCount(GlobalStatic.Dataview);
+
                     StringBuilder Define_SQL = new StringBuilder();
                     Define_SQL.Append("CREATE TABLE \"" + Name + "\"(");
                     for(int i =1;i <= Max; i++)
@@ -657,10 +625,10 @@ namespace DBM
 
 	public static class Events
 	{
-		public static void LogEvents() //Error Handler
+        public static void LogEvents() //Error Handler
 		{
 			LogMessage(LDEvents.LastError, Utilities.Localization["System"]);
-            Utilities.AddtoStackTrace( "Events.LogEvents()");
+            Utilities.AddtoStackTrace("Events.LogEvents()");
 		}
 		public static void LogMessagePopUp(Primitive MessagePopup,Primitive MessageLog, Primitive Title, Primitive Type)
 		{
@@ -668,60 +636,40 @@ namespace DBM
 			LogMessage(MessageLog, Type);
 		}
 
-		public static void LogMessage(Primitive Message, string Type) //Logs Message to all applicable locations
+		public static void LogMessage(string Message, string Type) //Logs Message to all applicable locations
 		{
             LogMessage(Message,Type, Utilities.StackTrace[Utilities.StackTrace.Count- 1] );
-            Utilities.AddtoStackTrace( "Events.LogMessage");
+            Utilities.AddtoStackTrace("Events.LogMessage");
 		}
 
-        static void LogMessage(Primitive Message, string Type, string Caller)
+        static void LogMessage(string Message, string Type, string Caller)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Log : Caller was : {0}; Type: {1}; Message: {2} ;", Caller, Type, Message);
-            Console.ForegroundColor = ConsoleColor.White;
+
             if (string.IsNullOrEmpty(Type))
             {
                 Type = "Unknown";
             }
 
-            if (Type.Equals("Debug") == true && GlobalStatic.DebugMode == false)
+            if (Type == "Debug" && GlobalStatic.DebugMode == false)
             {
                 return;
             }
 
-            if (Type.Equals("PopUp") == true)
+            if (Type == "PopUp")
             {
-                GraphicsWindow.ShowMessage(Message, Caller + "REVERT!");
+                GraphicsWindow.ShowMessage(Message, Caller);
             }
-            else
+            else if(Message.Contains("LDDataBase.Query") == true || Message.Contains("LDDataBase.Command") == true)
             {
-                if (GlobalStatic.DebugMode == true)
-                {
-                    if (Text.IsSubText(Message, "LDDataBase.Query") == true || Text.IsSubText(Message, "LDDataBase.Command") == true)
-                    {
-                        Console.WriteLine("{0}",Engines.CurrentDatabase + "\n" + Message);
-                    }
-                }
+                Console.WriteLine("Event Logger: {0}:{1}",Engines.CurrentDatabase, Message);
             }
 
             Utilities.AddtoStackTrace("Events.LogMessage()");
-            GlobalStatic.LogNumber++;
-            string Contents = GlobalStatic.LogNumber + "," + Clock.Date + "," + Clock.Time + "," + "\"" + GlobalStatic.UserName.Replace("\"", "\"\"") + "\"" + "," + GlobalStatic.ProductID + "," + GlobalStatic.VersionID + "," + "\"" + LDText.Replace(Type, "\"", "\"" + "\"") + "\"" + "," + "\"" + LDText.Replace(Message, "\"", "\"" + "\"") + "\"";
-            try
-            {
-                System.IO.File.AppendAllText(GlobalStatic.LogCSVpath, Contents);
-            }
-            catch (IOException ex)
-            {
-                Console.WriteLine(ex.Message + ex.Source);
-            }
-            catch (Exception ex)
-            {
-               LogMessagePopUp(ex.Message, ex.Message, ex.Message, "System");
-            }
-            string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'";
-            LogCMD += GlobalStatic.UserName + "','" + GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');";
-            Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"], false);
+
+            string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'" + GlobalStatic.UserName + "','"+ GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');"; ;
+
+            Task.Run( ()=> { Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"], false); } );
         }
 
 		public static void Closing()
@@ -735,6 +683,8 @@ namespace DBM
 			{
                 LogMessage("Program Closing - Closing : " + Engines.DatabaseShortname , Utilities.Localization["Application"]); //Localize
             }
+            GraphicsWindow.Clear();
+            GraphicsWindow.Hide();
             Environment.Exit(0);
         }
 
@@ -766,6 +716,12 @@ namespace DBM
 			await Task.Run(() => { Handlers.ComboBox(LDControls.LastComboBox, LDControls.LastComboBoxIndex); });
             Utilities.AddtoStackTrace("Events.CB()");
 		}
+
+        public async static void CB(string LastComboBox,int ComboBoxIndex)
+        {
+            await Task.Run(() => { Handlers.ComboBox(LastComboBox, ComboBoxIndex); });
+            Utilities.AddtoStackTrace("Events.CB()");
+        }
 
         /// <summary>
         /// Context Menu

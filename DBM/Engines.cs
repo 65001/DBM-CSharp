@@ -3,14 +3,14 @@
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
 using System.Text;
-using System.Globalization;
+//using System.Globalization;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+//using System.Collections.ObjectModel;
 using System.Linq;
 using System.Diagnostics;
 using LitDev;
 using Microsoft.SmallBasic.Library;
-using SBArray = Microsoft.SmallBasic.Library.Array;
+//using SBArray = Microsoft.SmallBasic.Library.Array;
 
 namespace DBM
 {
@@ -64,7 +64,7 @@ namespace DBM
 
         public static int Command(string Database, string SQL,string Explanation)
         {
-            return Command(Database, SQL, LDFile.UserName, Explanation, false);
+            return Command(Database, SQL, GlobalStatic.UserName, Explanation, false);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace DBM
             Utilities.AddtoStackTrace("Engines.Query()");
 
             Stopwatch QueryTime = Stopwatch.StartNew();
-
+            
             if (SQL.StartsWith("."))
             {
                 Emulator(DB_Engine[DB_Name.IndexOf(DataBase)],DataBase, SQL,UserName,ListView);
@@ -148,9 +148,9 @@ namespace DBM
                 int Index = _DB_Name.IndexOf(CurrentDatabase);
                 if (Index >= 0) //Prevents Out of bound errors
                 {
-                        string URI = _DB_Path[Index];
-                        string _SQL = "INSERT INTO Transactions (USER,DB,SQL,TYPE,Reason,\"UTC DATE\",\"UTC TIME\",PATH,SNAME) VALUES('" + UserName + "','" + DataBase + "','" + SQL.Replace("'", "''") + "','Query','" + Reason.Replace("'", "''") + "',Date(),TIME(),'" + URI + "','" + LDFile.GetFolder(URI) + "');";
-                        LDDataBase.Command(GlobalStatic.TransactionDB, _SQL);
+                    string URI = _DB_Path[Index];
+                    string _SQL = "INSERT INTO Transactions (USER,DB,SQL,TYPE,Reason,\"UTC DATE\",\"UTC TIME\",PATH,SNAME) VALUES('" + UserName + "','" + DataBase + "','" + SQL.Replace("'", "''") + "','Query','" + Reason.Replace("'", "''") + "',Date(),TIME(),'" + URI + "','" + LDFile.GetFolder(URI) + "');";
+                    LDDataBase.Command(GlobalStatic.TransactionDB, _SQL);
                 }
             }
 		}
@@ -159,55 +159,83 @@ namespace DBM
         {
             //Attempts to emulate some if not all commands of a database engine by aliasing it to SQL
             Utilities.AddtoStackTrace("Engines.Emulator()");
-            SQL = SQL.ToLower();
             StringBuilder Emulator_Sql = new StringBuilder();
             string EmulatorTable = null;
+
+            StringComparison Comparison = StringComparison.InvariantCultureIgnoreCase;
+            
             switch (Mode)
             {
                 case EnginesMode.SQLITE:
-                    switch (SQL)
+                    if (SQL.StartsWith(".help",Comparison))
                     {
-                        case ".help":
-                            EmulatorTable = "DBM_SQLITE_Help";
-                            Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Arguments TEXT,Description TEXT);", EmulatorTable);
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.help','displays this table. Note: The following commands are being interpreted by the DBM CLI Parser not the SQLITE CLI.');", EmulatorTable);
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.databases','Displays a list of connected databases.');", EmulatorTable);
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.tables','Lists all tables and views in the current database.');", EmulatorTable);
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('.index','Lists all the indexes in the current database.');", EmulatorTable);
-                            break;
-                        case ".databases":
-                            EmulatorTable = "DBM_SQLITE_Databases";
-                            Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,NAME TEXT,\"DBM NAME\" TEXT,FILE TEXT);", EmulatorTable);
-                            for (int i = 0; i < DB_Name.Count; i++)
-                            {
-                                Emulator_Sql.AppendFormat("INSERT INTO {0} (NAME,\"DBM NAME\",FILE) VALUES ('{1}','{2}','{3}');", EmulatorTable, DB_Name[i], DB_ShortName[i], DB_Path[i]);
-                            }
-                            break;
-                        case ".tables":
-                            EmulatorTable = "DBM_SQLITE_Tables";
-                            Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,NAME TEXT,Type TEXT);",EmulatorTable);
-                            for (int i=0;i < Tables.Count;i++)
-                            {
-                                Emulator_Sql.AppendFormat("INSERT INTO {0} (Name,Type) VALUES ('{1}','table');", EmulatorTable, Tables[i]);
-                            }
-                            for(int i=0;i < Views.Count;i++)
-                            {
-                                Emulator_Sql.AppendFormat("INSERT INTO {0} (Name,Type) VALUES ('{1}','view');", EmulatorTable, Views[i]);
-                            }
-                            break;
-                        case ".index":
-                            EmulatorTable = "DBM_SQLITE_Index";
-                            Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,NAME TEXT,Type TEXT);", EmulatorTable);
-                            for (int i = 0; i < Indexes.Count; i++)
-                            {
-                                Emulator_Sql.AppendFormat("INSERT INTO {0} (Name,Type) VALUES ('{1}','index');", EmulatorTable, Indexes[i]);
-                            }
-                            break;
+                        EmulatorTable = "DBM_SQLITE_Help";
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Arguments TEXT,Description TEXT);", EmulatorTable);
+                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.help','displays this table. Note: The following commands are being interpreted by the DBM CLI Parser not the SQLITE CLI.');", EmulatorTable);
+                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.databases','Displays a list of connected databases.');", EmulatorTable);
+                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.tables','Lists all tables and views in the current database.');", EmulatorTable);
+                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('.index','Lists all the indexes in the current database.');", EmulatorTable);
+                        break;
+                    }
+                    else if (SQL.StartsWith(".databases",Comparison))
+                    {
+                        EmulatorTable = "DBM_SQLITE_Databases";
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,NAME TEXT,\"DBM NAME\" TEXT,FILE TEXT);", EmulatorTable);
+                        for (int i = 0; i < DB_Name.Count; i++)
+                        {
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} (NAME,\"DBM NAME\",FILE) VALUES ('{1}','{2}','{3}');", EmulatorTable, DB_Name[i].Replace("'","''"), DB_ShortName[i].Replace("'", "''"), DB_Path[i].Replace("'", "''"));
+                        }
+                    }
+                    else if (SQL.StartsWith(".tables",Comparison))
+                    {
+                        EmulatorTable = "DBM_SQLITE_Tables";
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,NAME TEXT,Type TEXT);", EmulatorTable);
+                        for (int i = 0; i < Tables.Count; i++)
+                        {
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} (Name,Type) VALUES ('{1}','table');", EmulatorTable, Tables[i].Replace("'", "''"));
+                        }
+                        for (int i = 0; i < Views.Count; i++)
+                        {
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} (Name,Type) VALUES ('{1}','view');", EmulatorTable, Views[i].Replace("'", "''"));
+                        }
+                    }
+                    else if (SQL.StartsWith(".index",Comparison))
+                    {
+                        EmulatorTable = "DBM_SQLITE_Index";
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,NAME TEXT,Type TEXT);", EmulatorTable);
+                        for (int i = 0; i < Indexes.Count; i++)
+                        {
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} (Name,Type) VALUES ('{1}','index');", EmulatorTable, Indexes[i].Replace("'", "''"));
+                        }
+                    }
+                    else if (SQL.StartsWith(".pragma",Comparison))
+                    {
+                        EmulatorTable = "DBM_SQLITE_PRAGMA";
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (\"PRAGMA\" TEXT,VALUE TEXT);", EmulatorTable);
+                        List<string> PRAGMA = new List<string>()
+                        {
+                            "Application_ID","Auto_Vacuum","Automatic_Index","Busy_TimeOut","Cache_Size","Cache_Spill","Case_Sensitive_Like","Cell_Size_Check","Checkpoint_fullfsync","data_version","defer_foreign_keys","Encoding","Foreign_Keys","Freelist_count","fullfsync","ignore_check_constraints",
+                            "incremental_vacuum","integrity_check","journal_mode","journal_size_limit","legacy_file_format","locking_mode","max_page_count","mmap_size","page_count","page_size","query_only","read_uncommitted","recursive_triggers","reverse_unordered_selects","secure_delete","soft_heap_limit","synchronous","temp_store","threads","user_version",
+                            "wal_autocheckpoint","writable_schema"
+                        };
+                        /*The following were removed due to them displaying 1+ rows of data
+                         * Collation_List
+                         * Compile_Options
+                         * database_list
+                         * wal_checkpoint
+                         * Foreign_Key_Check
+                         */
+
+                        for (int i = 0; i < PRAGMA.Count; i++)
+                        {
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}');", EmulatorTable, PRAGMA[i].Replace("_"," "), Query(Engines.CurrentDatabase, "PRAGMA " + PRAGMA[i] +";", null, true, Username, "Emulator")[1][PRAGMA[i]]);
+                        }
                     }
                     break;
                 default:
                     throw new NotImplementedException();
             }
+
             if (EmulatorTable != null)
             {
                 string _SQL = Emulator_Sql.ToString();
