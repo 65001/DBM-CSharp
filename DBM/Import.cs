@@ -85,7 +85,7 @@ namespace DBM
 			{
 				if (CSV_Length[(i-1)] == Standard_Size) 
 					//To Prevent out of bound eras
-					//The Minus one is for the difference in data sets. One Counts from Zero and the other from one
+					//The Minus one is for the difference in data sets. C# counts from Zero and the LD from one
 					//The pain of mixing these systems.
 				{
                     CSV_SQL.Append("INSERT INTO \"" + TableName + "\" <<HEADERS>> VALUES('");
@@ -99,7 +99,6 @@ namespace DBM
 						CSV_SQL.Append(Temp); //Adds the value of Temp to the Current SB
 						Temp = null;
 
-						//Console.WriteLine("List Index {0} of {1} @ {2}", ii, CSV_IsString.Count,i);
 						if (CSV_IsString[(ii - 1)] == true)
 						{
 							if (double.TryParse(Temp, out double double2) == true) //Tests a String to see if its a number

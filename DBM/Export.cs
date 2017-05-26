@@ -42,6 +42,11 @@ namespace DBM
         {
             return SBArray.GetAllIndices(Data[1]);
         }
+
+        public static Primitive GenerateSchemaFromLastQuery()
+        {
+            return GenerateSchemaFromQueryData(Generate2DArrayFromLastQuery());
+        }
     
         public static void CSV(Primitive Data,Primitive Schema,string FilePath,string deliminator)
         {

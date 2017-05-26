@@ -171,7 +171,6 @@
     </MonoDevelop>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>call C:\Users\Abhishek\Documents\Projects\DBM\DBM\bin\Release\CleanUp.bat</PostBuildEvent>
   </PropertyGroup>
 </Project>

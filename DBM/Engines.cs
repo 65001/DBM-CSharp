@@ -138,20 +138,27 @@ namespace DBM
 
             if (GlobalStatic.Transaction_Commands == true && Type == Type.Command)
             {
-                //TODO Transactions Command
+                string _Type = "Command";
+                _TransactionRecord(UserName, DataBase, SQL, _Type, Reason);
             }
 
             if (GlobalStatic.Transaction_Query == true && Type == Type.Query)
             {
-                int Index = _DB_Name.IndexOf(CurrentDatabase);
-                if (Index >= 0) //Prevents Out of bound errors
-                {
-                    string URI = _DB_Path[Index];
-                    string _SQL = "INSERT INTO Transactions (USER,DB,SQL,TYPE,Reason,\"UTC DATE\",\"UTC TIME\",PATH,SNAME) VALUES('" + UserName + "','" + DataBase + "','" + SQL.Replace("'", "''") + "','Query','" + Reason.Replace("'", "''") + "',Date(),TIME(),'" + URI + "','" + Path.GetDirectoryName(URI) + "');";
-                    LDDataBase.Command(GlobalStatic.TransactionDB, _SQL);
-                }
+                string _Type = "Query";
+                _TransactionRecord(UserName, DataBase, SQL, _Type, Reason);
             }
 		}
+
+        static void _TransactionRecord(string UserName, string DataBase, string SQL, string Type, string Reason)
+        {
+            int Index = _DB_Name.IndexOf(DataBase);
+            if (Index >= 0) //Prevents Out of bound errors
+            {
+                string URI = _DB_Path[Index];
+                string _SQL = "INSERT INTO Transactions (USER,DB,SQL,TYPE,Reason,\"UTC DATE\",\"UTC TIME\",PATH,SNAME) VALUES('" + UserName + "','" + DataBase + "','" + SQL.Replace("'", "''") + "','" +Type+ "','" + Reason.Replace("'", "''") + "',Date(),TIME(),'" + URI + "','" + Path.GetDirectoryName(URI) + "');";
+                LDDataBase.Command(GlobalStatic.TransactionDB, _SQL);
+            }
+        }
 
         public static void Emulator(EnginesMode Mode,string Database,string SQL,string Username,string Listview) //TODO Implement Emulator atleast for sqlite for DBM
         {
@@ -169,10 +176,11 @@ namespace DBM
                     {
                         EmulatorTable = "DBM_SQLITE_Help";
                         Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Arguments TEXT,Description TEXT);", EmulatorTable);
-                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.help','displays this table. Note: The following commands are being interpreted by the DBM CLI Parser not the SQLITE CLI.');", EmulatorTable);
+                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.help','displays this table. Note: The following commands are being interpreted by the DBM CLI Emulator not the SQLITE CLI.');", EmulatorTable);
                         Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.databases','Displays a list of connected databases.');", EmulatorTable);
                         Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.tables','Lists all tables and views in the current database.');", EmulatorTable);
-                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('.index','Lists all the indexes in the current database.');", EmulatorTable);
+                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.index','Lists all the indexes in the current database.');", EmulatorTable);
+                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.pragma','Lists most pragma settings for sqlite db.');", EmulatorTable);
                         break;
                     }
                     else if (SQL.StartsWith(".databases",Comparison))
@@ -223,7 +231,6 @@ namespace DBM
                          * wal_checkpoint
                          * Foreign_Key_Check
                          */
-
                         for (int i = 0; i < PRAGMA.Count; i++)
                         {
                             Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}');", EmulatorTable, PRAGMA[i].Replace("_"," "), Query(Engines.CurrentDatabase, "PRAGMA " + PRAGMA[i] +";", null, true, Username, "Emulator")[1][PRAGMA[i]]);
@@ -411,14 +418,14 @@ namespace DBM
             return "SELECT " + Function + "(\"" + Column + "\") FROM " + CurrentTable + " ";
         }
 
-        public static Primitive Functions(EnginesMode Mode)
+        public static List<string> Functions(EnginesMode Mode)
         {
             switch (Mode)
             {
                 case EnginesMode.SQLITE:
-                    return "1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;";
+                    return new List<string> {"Avg","Count","Max","Min","Sum","Total","Hex","Length","Lower","Round","Trim","Upper" };
                 default:
-                    return "1=Avg;2=Count;3=Max;4=Min;5=Sum;6=Total;7=Hex;8=Length;9=Lower;10=round;11=Trim;12=Upper;";
+                    throw new NotImplementedException();
             }
         }
 

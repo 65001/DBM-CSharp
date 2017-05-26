@@ -80,7 +80,7 @@ namespace DBM
             else if (Item == Utilities.Localization["Create Statistics Page"])
             {
                 string Name = "\"Statistics of " + Engines.CurrentTable.Replace("\"", "") + "\"";
-                Engines.Transform.CreateStatisticsTable(Engines.CurrentDatabase, Engines.CurrentTable, Name, Export.GenerateSchemaFromQueryData(Export.Generate2DArrayFromLastQuery()));
+                Engines.Transform.CreateStatisticsTable(Engines.CurrentDatabase, Engines.CurrentTable, Name, Export.GenerateSchemaFromLastQuery());
                 Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Name, GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["Statistics Page"]);
                 Engines.SetDefaultTable(Name);
                 Engines.GetColumnsofTable(Engines.CurrentDatabase, Name);
@@ -312,7 +312,7 @@ namespace DBM
             {
                 if (Index <= 2)
                 {
-                    Primitive Schema = Export.GenerateSchemaFromQueryData(Export.Generate2DArrayFromLastQuery());
+                    Primitive Schema = Export.GenerateSchemaFromLastQuery();
 
                     LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sort"], LDControls.LastListViewColumn);
                     LDControls.ComboBoxSelect(GlobalStatic.ComboBox["ASCDESC"], Index);
@@ -392,7 +392,7 @@ namespace DBM
 			Engines.GetSchema(Engines.CurrentDatabase);
 			Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
 
-            LDControls.ComboBoxContent(GlobalStatic.ComboBox["FunctionList"],Engines.Functions(Engines.EnginesMode.SQLITE));
+            LDControls.ComboBoxContent(GlobalStatic.ComboBox["FunctionList"],Engines.Functions(Engines.EnginesMode.SQLITE).ToPrimitiveArray());
 
 			SortsComboBox(1);
             TableComboBox(1);

@@ -326,7 +326,7 @@ namespace DBM
 			Controls.SetSize(_Buttons["Search"], 290, 25);
 
 			//Functions
-			GlobalStatic.ComboBox["FunctionList"] = LDControls.AddComboBox(Engines.Functions(Engines.CurrentEngine), 130, 100);
+			GlobalStatic.ComboBox["FunctionList"] = LDControls.AddComboBox(Engines.Functions(Engines.CurrentEngine).ToPrimitiveArray(), 130, 100);
 			Controls.Move(GlobalStatic.ComboBox["FunctionList"], GlobalStatic.UIx + 10, 310);
 			GlobalStatic.ComboBox["ColumnList"] = LDControls.AddComboBox(Engines.Schema, 135, 100);
 			Controls.Move(GlobalStatic.ComboBox["ColumnList"], GlobalStatic.UIx + 160, 310);
