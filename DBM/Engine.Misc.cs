@@ -32,7 +32,7 @@ namespace DBM
                 switch (Mode)
                 {
                     case EnginesMode.SQLITE:
-                        return DB(Mode, Data, System.IO.Path.GetFileNameWithoutExtension( Data["URI"]));
+                        return DB(Mode, Data, Path.GetFileNameWithoutExtension( Data["URI"]));
                     default:
                         throw new NotImplementedException();
                 }
@@ -185,6 +185,7 @@ namespace DBM
                         break;
                 }
             }
+            
         }
 
         //Read Only Collections of Private Data

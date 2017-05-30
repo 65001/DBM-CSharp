@@ -90,6 +90,7 @@ namespace DBM
             else if (Item == Utilities.Localization["View"] || Item == Utilities.Localization["View"] + " ")
             {
                 Controls.HideControl(GlobalStatic.Dataview);
+                GlobalStatic.Dataview = null;
                 if (GlobalStatic.ListView == null)
                 {
                     bool Bold = GraphicsWindow.FontBold;
