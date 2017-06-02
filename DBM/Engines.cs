@@ -377,7 +377,7 @@ namespace DBM
                     GQ_CMD += GenerateSort(OrderBy, SortOrder);
                 }
             }
-
+            Console.WriteLine(GQ_CMD);
             Query(CurrentDatabase, GQ_CMD, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.UserName);
             GQ_CMD = null;
         }
@@ -411,11 +411,11 @@ namespace DBM
 
         static string GenerateSort(string OrderBy, string ASCDESC)
         {
-            return "ORDER BY \"" + OrderBy + "\" " + ASCDESC + ";";
+            return "ORDER BY \"" + OrderBy.Replace("\"","") + "\" " + ASCDESC + ";";
         }
         static string GenerateFunction(string Function, string Column)
         {
-            return "SELECT " + Function + "(\"" + Column + "\") FROM " + CurrentTable + " ";
+            return "SELECT " + Function + "(\"" + Column.Replace("\"","") + "\") FROM " + CurrentTable + " ";
         }
 
         public static List<string> Functions(EnginesMode Mode)

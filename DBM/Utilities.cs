@@ -152,53 +152,10 @@ namespace DBM
 			AddtoStackTrace( "Utilities.Updater()");
 		}
 
-		public static void AddMenuItem(string Caption,string Handler,string PreviousNode,string Action)
-		{
-			Add_UI_Controls("Menu", Caption,Handler, PreviousNode, Action);
-		}
 
 		public static void AddControl() 
 		{ 
 		
-		}
-
-		static void Add_UI_Controls(string Type, string Caption_OR_Name, string Handler, string PreviousNode_OR_ToolTip, string Action) 
-		{
-			int index = _UI_Name.IndexOf(Caption_OR_Name);
-			if (Type == "Menu")
-			{
-				GlobalStatic.MenuList[Caption_OR_Name] = PreviousNode_OR_ToolTip;
-				if (index == 0 || Caption_OR_Name == "-")
-				{
-					AddToList(Caption_OR_Name, Handler, Action);
-				}
-				else
-				{
-                    _UI_Handler[index] = Handler;
-                    _UI_Action[index] = Action;
-				}
-			}
-			else if (Type == "Register")
-			{
-				if (index == 0)
-				{
-					AddToList(Caption_OR_Name, Handler, Action);
-				}
-				else
-				{
-                    _UI_Handler[index] = Handler;
-                    _UI_Action[index] = Action;
-				}
-
-				if (!string.IsNullOrWhiteSpace(PreviousNode_OR_ToolTip))
-				{
-					LDDialogs.ToolTip(Caption_OR_Name, PreviousNode_OR_ToolTip);
-				}
-			}
-			else 
-				{
-				Events.LogMessage("Invalid Arguments",Utilities.Localization["App"]);
-				}
 		}
 
 		static void AddToList(string Name, string Handler, string Action)
@@ -251,6 +208,16 @@ namespace DBM
             return Exporter.ToString();
         }
 
+        public static void AddOrReplace(this Dictionary<string,string> Dictionary,string Key,string Value)
+        {
+            if (Dictionary.ContainsKey(Key)==true)
+            {
+                Dictionary[Key] = Value;
+                return;
+            }
+            Dictionary.Add(Key, Value);
+        }
+
         public static void Print<T>(this List<T> List)
         {
             for (int i = 0; i < List.Count; i++)
@@ -274,5 +241,6 @@ namespace DBM
                 Console.WriteLine("{0} : {1}", entry.Key, entry.Value);
             }
         }
+
     }
 }

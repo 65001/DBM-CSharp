@@ -24,7 +24,6 @@ namespace DBM
 			public static string LocalizationFolder = Path.Combine( ProgramDirectory , "Localization");
 			public static string Localization_LanguageCodes_Path = Path.Combine(LocalizationFolder, "Lang");
 			public static string PluginPath = Path.Combine( ProgramDirectory ,"Plugin");
-			//public static string LogCSVpath = Path.Combine( AssetPath , "Log.csv");
 			public static string LogDBpath = Path.Combine(AssetPath , "Log.db");
 			public static string TransactionDBPath = Path.Combine(AssetPath , "Transactions.db");
 			public static string EULA_Text_File = Path.Combine(AssetPath , "EULA.txt");
@@ -46,8 +45,8 @@ namespace DBM
 			public static string LastFolder;
 			public static string EULA_UserName;
 			public static string LanguageCode;
-            //public static string EULA_Newest_Version;
-            //public static string EULA_Accepted_Version;
+        //public static string EULA_Newest_Version;
+        //public static string EULA_Accepted_Version;
 
         //Lists
         /*
@@ -61,7 +60,7 @@ namespace DBM
         public const string List_Command_Parser_OnFail_Index = "Command_SQL_Parser_Fail_Index";
         */
 
-            public static Primitive MenuList,CheckList,ComboBox,TextBox,CheckBox; //Change to a Dictionaries in the future and move to UI.
+            public static Primitive TextBox,CheckBox,ComboBox; //Change to a Dictionaries in the future and move to UI.
 
 			public static readonly string Title = "Database Manager (" + ProductID + ") v" + VersionID + " ";
 
