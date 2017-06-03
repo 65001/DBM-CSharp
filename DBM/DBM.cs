@@ -10,7 +10,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using LitDev;
 using Microsoft.SmallBasic.Library;
-//using SBFile = Microsoft.SmallBasic.Library.File;
 
 /*
 	TODO : 
@@ -27,7 +26,12 @@ using Microsoft.SmallBasic.Library;
             Add entry for PRAGMA for sqlite3
             .timings
             .filesystem $Path
-        Dataview for PRAGMA
+        Dataview for PRAGMA (ie Change Settings?)
+        
+        Bug Fixes:
+        //TODO Investigate Export.SQL for errors?
+        //TODO Investigate switiching from View to edit multiple times and crashes and the like
+
         //Primitive GlobalStatics to Dictionaries in the future and move to UI.
  */
 //Complete Implements and Localize

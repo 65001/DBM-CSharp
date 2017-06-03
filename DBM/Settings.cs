@@ -129,12 +129,9 @@ namespace DBM
             GlobalStatic.TransactionDB =Engines.Load.Sqlite(GlobalStatic.TransactionDBPath,"Transaction Log");
             GlobalStatic.LogDB = Engines.Load.Sqlite(GlobalStatic.LogDBpath, "Master Log");
             
-           
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQL, GlobalStatic.UserName, "Auto Creation Statements", false);
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQLVIEW , GlobalStatic.UserName, "Auto Creation Statements", false);
 			Engines.Command(GlobalStatic.TransactionDB, GlobalStatic.TransactionsSQL , GlobalStatic.UserName, "Auto Creation Statements", false);
-
-			GlobalStatic.LogNumber = Engines.Query(GlobalStatic.LogDB,"SELECT COUNT(ID) FROM LOG;",null,true,GlobalStatic.UserName,"Fetch Log")[1]["COUNT(ID)"];
 		}
 	}
 }

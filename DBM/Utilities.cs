@@ -242,5 +242,10 @@ namespace DBM
             }
         }
 
+        public static string SanitizeFieldName(this string String)
+        {
+            return String.Replace("\"", "").Replace("[", "").Replace("]", "");
+        }
+
     }
 }

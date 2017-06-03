@@ -90,9 +90,10 @@
   <ItemGroup>
     <Compile Include="DBM.cs">
     </Compile>
-    <Compile Include="Engine.Misc.cs" />
+    <Compile Include="Engines\Emulator.cs" />
+    <Compile Include="Engines\Engine.Misc.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Engines.cs">
+    <Compile Include="Engines\Engines.cs">
     </Compile>
     <Compile Include="Settings.cs">
     </Compile>
