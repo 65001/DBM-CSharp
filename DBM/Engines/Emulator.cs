@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using LitDev;
 
 namespace DBM
 {
@@ -30,7 +31,8 @@ namespace DBM
                         Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.tables','Lists all tables and views in the current database.');", EmulatorTable);
                         Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.index','Lists all the indexes in the current database.');", EmulatorTable);
                         Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.pragma','Lists most pragma settings for sqlite db.');", EmulatorTable);
-                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.querytimes','Lists all querys executed by the program and the time needed for a response.');", EmulatorTable);
+                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.querytimes','Lists all queries executed by the program and the time needed for a response.');", EmulatorTable);
+                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.filesystem','Lists all the folders and files in the argumented path. Defaults to MyDocuments if no argument is given.');", EmulatorTable);
                         break;
                     }
                     else if (SQL.StartsWith(".databases", Comparison))
@@ -88,24 +90,31 @@ namespace DBM
                     }
                     else if (SQL.StartsWith(".filesystem", Comparison))
                     {
-                       /*
-                        string Path = SQL.Substring(".filesystem".Length);
-                        List<string> DirectoryList = System.IO.Directory.EnumerateDirectories(Path).ToList();
-                        List<string> FileList = System.IO.Directory.EnumerateFiles(Path).ToList();
- 
-                        EmulatorTable = "DBM_SQLITE_Filesystem";
-                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Name TEXT,\"Date Modified\" DATETIME,TYPE TEXT,SIZE INT);");
-
-                        for(int i=0;i < DirectoryList.Count();i++)
+                        
+                        string _Path = SQL.Substring(".filesystem".Length);
+                        if (string.IsNullOrWhiteSpace(_Path))
                         {
-                                string Directory = DirectoryList[i];
-                                Console.WriteLine(Directory);
-                                DirectoryInfo DI = new DirectoryInfo(Directory);
-                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','File Folder',NULL);", EmulatorTable, Directory, DI.LastWriteTime);
+                            _Path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                         }
-                        DirectoryList.ToList().Print();
-                        FileList.ToList().Print();
-                        */
+                        List<string> DirectoryList = new List<string>( System.IO.Directory.EnumerateDirectories(_Path));
+                        List<string> FileList = new List<string>(System.IO.Directory.EnumerateFiles(_Path));
+ 
+                       EmulatorTable = "DBM_SQLITE_Filesystem";
+                       Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Name TEXT,\"Date Modified\" TEXT,TYPE TEXT,SIZE INT);",EmulatorTable);
+
+                        for (int i = 0; i < DirectoryList.Count; i++)
+                        {
+                            string Directory = DirectoryList[i];
+                            DirectoryInfo DI = new DirectoryInfo(Directory);
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','File Folder',NULL);", EmulatorTable, Directory, DI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"));
+                        }
+
+                        for (int i = 0; i < FileList.Count; i++)
+                        {
+                            string File = FileList[i];
+                            FileInfo FI = new FileInfo(File);
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','{3}','{4}');", EmulatorTable, File, FI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"),FI.Extension,FI.Length);
+                        }
                     }
                     else if (SQL.StartsWith(".querytimes", Comparison))
                     {
