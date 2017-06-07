@@ -47,6 +47,7 @@ namespace DBM
         public static void LocalizationXML(string XMLPath)
 		{
 			AddtoStackTrace( "Utilities.LocalizationXML()");
+
 			string XMLDoc = LDxml.Open(XMLPath);
 			if (System.IO.File.Exists(XMLPath))
 			{
@@ -116,27 +117,25 @@ namespace DBM
 		public static string[] ReadFile(string URI) //Reads a file and ignores certain types of data
 		{
 			AddtoStackTrace( "Utilities.ReadFile()");
-			string List_File_Read = "File_Read";
+            List<string> File_Read = new List<string>();
 
 			if (System.IO.File.Exists(URI) == true)
 			{
-				LDList.Clear(List_File_Read);
 				string[] CNTS = System.IO.File.ReadAllLines(URI);
 				int itemCount = CNTS.Length;
 				for (int i = 0; i < itemCount; i++)
 				{
 					if (Text.StartsWith(CNTS[i], "#") == false && !string.IsNullOrWhiteSpace( CNTS[i] ) )
 					{
-						LDList.Add(List_File_Read, CNTS[i]);
+                        File_Read.Add(CNTS[i]);
 					}
 						CNTS[i] = null;
 				}
-				string[] CNTS2 = new string[LDList.Count(List_File_Read)];
-				for (int i = 1; i < LDList.Count(List_File_Read); i++)
+				string[] CNTS2 = new string[File_Read.Count];
+				for (int i = 1; i < File_Read.Count; i++)
 				{
-					CNTS2[i] = LDList.GetAt(List_File_Read, i);
+					CNTS2[i] = File_Read[i];
 				}
-				LDList.Clear(List_File_Read);
 				return CNTS2;
 			}
 			else 
@@ -178,22 +177,22 @@ namespace DBM
             return _return;
         }
 
-        public static Primitive ToPrimitiveArray(this ReadOnlyCollection<string> List)
+        public static Primitive ToPrimitiveArray<T>(this ReadOnlyCollection<T> List)
         {
             Primitive _return = null;
             for (int i = 0; i < List.Count; i++)
             {
-                _return[i + 1] = List[i];
+                _return[i + 1] = List[i].ToString();
             }
             return _return;
         }
 
-        public static Primitive ToPrimitiveArray(this IReadOnlyList<string> List)
+        public static Primitive ToPrimitiveArray<T>(this IReadOnlyList<T> List)
         {
             Primitive _return = null;
             for (int i = 0; i < List.Count; i++)
             {
-                _return[i + 1] = List[i];
+                _return[i + 1] = List[i].ToString();
             }
             return _return;
         }
@@ -208,7 +207,7 @@ namespace DBM
             return Exporter.ToString();
         }
 
-        public static void AddOrReplace(this Dictionary<string,string> Dictionary,string Key,string Value)
+        public static void AddOrReplace<T>(this Dictionary<T,T> Dictionary,T Key,T Value)
         {
             if (Dictionary.ContainsKey(Key)==true)
             {
@@ -246,6 +245,5 @@ namespace DBM
         {
             return String.Replace("\"", "").Replace("[", "").Replace("]", "");
         }
-
     }
 }

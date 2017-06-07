@@ -74,7 +74,6 @@ namespace DBM
 
             Console.WriteLine("Import.CSV time {0} ms", Elappsed.ElapsedMilliseconds);
             return string.Empty;
-            
 		}
 
 		static string ArrayToSql(int Standard_Size,string TableName)

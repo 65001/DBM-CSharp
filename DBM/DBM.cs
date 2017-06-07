@@ -24,8 +24,6 @@ using Microsoft.SmallBasic.Library;
         Emulator stuff?
             Make Emulator use 
             Add entry for PRAGMA for sqlite3
-            .timings
-            .filesystem $Path
         Dataview for PRAGMA (ie Change Settings?)
         
         Bug Fixes:
@@ -684,7 +682,7 @@ namespace DBM
         {
             Console.WriteLine("Log : Caller was : {0}; Type: {1}; Message: {2} ;", Caller, Type, Message);
 
-            if (string.IsNullOrEmpty(Type))
+            if (string.IsNullOrWhiteSpace(Type))
             {
                 Type = "Unknown";
             }

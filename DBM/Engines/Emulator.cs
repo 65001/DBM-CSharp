@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
 using System.Text;
-using System.Threading.Tasks;
-using LitDev;
 
 namespace DBM
 {
@@ -113,13 +110,14 @@ namespace DBM
                         {
                             string File = FileList[i];
                             FileInfo FI = new FileInfo(File);
+                            
                             Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','{3}','{4}');", EmulatorTable, File, FI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"),FI.Extension,FI.Length);
                         }
                     }
                     else if (SQL.StartsWith(".querytimes", Comparison))
                     {
                         EmulatorTable = "DBM_SQLITE_QueryTimes";
-                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,SQL TEXT,\"Execution Time (ms)\" INT);", EmulatorTable);
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,SQL TEXT,\"Execution Time (ms)\" INTEGER);", EmulatorTable);
 
                         int ii = 0;
                         for (int i = 0; i < _Type_Referer.Count; i++)

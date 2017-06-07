@@ -1,6 +1,5 @@
 ﻿using LitDev;
 using Microsoft.SmallBasic.Library;
-//using SBFile = Microsoft.SmallBasic.Library.File;
 namespace DBM
 {
     public static class EULA
@@ -9,7 +8,7 @@ namespace DBM
 
 		public static void UI(string FilePath,decimal Ping,string Title,string CopyrightDate,string ProductID)
 		{
-            Utilities.AddtoStackTrace( "EULA.UI()");
+            Utilities.AddtoStackTrace("EULA.UI()");
 			GraphicsWindow.Show();
 			GraphicsWindow.Left = Desktop.Width / 3;
 			GraphicsWindow.Top = Desktop.Height / 4;
@@ -43,7 +42,7 @@ namespace DBM
 
 		public static void Handler()
 		{
-            Utilities.AddtoStackTrace( "EULA.Handler()");
+            Utilities.AddtoStackTrace("EULA.Handler()");
 			string lastButton = Controls.LastClickedButton;
 			GlobalStatic.Settings["EULA_By"] = GlobalStatic.UserName;
 			//GlobalStatic.Settings["EULA_Version"] = GlobalStatic.EULA_Newest_Version;

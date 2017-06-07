@@ -2,9 +2,7 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
-using LitDev;
 using Microsoft.SmallBasic.Library;
-//using SBArray = Microsoft.SmallBasic.Library.Array;
 using SBFile = Microsoft.SmallBasic.Library.File;
 using System.IO;
 
@@ -89,7 +87,7 @@ namespace DBM
 
 		public static void SaveSettings()
 		{
-            Utilities.AddtoStackTrace( "Settings.SaveSettings()");
+            Utilities.AddtoStackTrace("Settings.SaveSettings()");
 			if (GlobalStatic.Settings.EqualTo(SBFile.ReadContents(GlobalStatic.SettingsPath)) == false)
 			{
 				string status = SBFile.WriteContents(GlobalStatic.SettingsPath, GlobalStatic.Settings);
@@ -103,7 +101,7 @@ namespace DBM
 
 		public static void Paths(string AssetPath,string PluginPath,string LocalizationFolder,string AutoRunPluginPath,string Localization_LanguageCodes_Path,string AutoRunPluginMessage)
 		{
-            Utilities.AddtoStackTrace( "Settings.Paths()");
+            Utilities.AddtoStackTrace("Settings.Paths()");
 			if (Directory.Exists(AssetPath) == false || Directory.Exists(LocalizationFolder) == false) //Creates Folders if one is missing
 			{
 				Directory.CreateDirectory(AssetPath);
