@@ -10,7 +10,7 @@ namespace DBM
         public static void Emulator(EnginesMode Mode, string Database, string SQL, string Username, string Listview) //TODO Implement Emulator atleast for sqlite for DBM
         {
             //Attempts to emulate some if not all commands of a database engine by aliasing it to SQL
-            Utilities.AddtoStackTrace("Engines.Emulator()");
+            Utilities.AddtoStackTrace("Engines.Emulator("+Mode+","+Database+","+SQL+")");
             StringBuilder Emulator_Sql = new StringBuilder();
             string EmulatorTable = null;
 
@@ -30,6 +30,7 @@ namespace DBM
                         Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.pragma','Lists most pragma settings for sqlite db.');", EmulatorTable);
                         Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.querytimes','Lists all queries executed by the program and the time needed for a response.');", EmulatorTable);
                         Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.filesystem','Lists all the folders and files in the argumented path. Defaults to MyDocuments if no argument is given.');", EmulatorTable);
+                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.stacktrace','Lists the functions and methods and the like and the order they were called in.');", EmulatorTable);
                         break;
                     }
                     else if (SQL.StartsWith(".databases", Comparison))
@@ -87,17 +88,17 @@ namespace DBM
                     }
                     else if (SQL.StartsWith(".filesystem", Comparison))
                     {
-                        
+
                         string _Path = SQL.Substring(".filesystem".Length);
                         if (string.IsNullOrWhiteSpace(_Path))
                         {
                             _Path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                         }
-                        List<string> DirectoryList = new List<string>( System.IO.Directory.EnumerateDirectories(_Path));
+                        List<string> DirectoryList = new List<string>(System.IO.Directory.EnumerateDirectories(_Path));
                         List<string> FileList = new List<string>(System.IO.Directory.EnumerateFiles(_Path));
- 
-                       EmulatorTable = "DBM_SQLITE_Filesystem";
-                       Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Name TEXT,\"Date Modified\" TEXT,TYPE TEXT,SIZE INT);",EmulatorTable);
+
+                        EmulatorTable = "DBM_SQLITE_Filesystem";
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Name TEXT,\"Date Modified\" TEXT,TYPE TEXT,SIZE INT);", EmulatorTable);
 
                         for (int i = 0; i < DirectoryList.Count; i++)
                         {
@@ -110,8 +111,8 @@ namespace DBM
                         {
                             string File = FileList[i];
                             FileInfo FI = new FileInfo(File);
-                            
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','{3}','{4}');", EmulatorTable, File, FI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"),FI.Extension,FI.Length);
+
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','{3}','{4}');", EmulatorTable, File, FI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"), FI.Extension, FI.Length);
                         }
                     }
                     else if (SQL.StartsWith(".querytimes", Comparison))
@@ -131,6 +132,15 @@ namespace DBM
                             {
                                 //Console.WriteLine("#{0} is a {1} with a time of {2}(ms)", i, _Type_Referer[i], _Timer[i]);
                             }
+                        }
+                    }
+                    else if (SQL.StartsWith(".stacktrace", Comparison))
+                    {
+                        EmulatorTable = "DBM_SQLITE_StackTrace";
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,Item TEXT);",EmulatorTable);
+                        for (int i = 0; i < Utilities.StackTrace.Count; i++)
+                        {
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}');", EmulatorTable, i, Utilities.StackTrace[i]);
                         }
                     }
                     break;

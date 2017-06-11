@@ -13,7 +13,7 @@ namespace DBM
 	{
 		public static void LoadSettings(bool RestoreSettings)
 		{
-            Utilities.AddtoStackTrace( "Settings.LoadSettings()");
+            Utilities.AddtoStackTrace( "Settings.LoadSettings(" + RestoreSettings+ ")");
             if (RestoreSettings == false)
 			{
 				GlobalStatic.Settings = SBFile.ReadContents(GlobalStatic.SettingsPath);

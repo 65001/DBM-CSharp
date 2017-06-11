@@ -137,7 +137,6 @@ namespace DBM
             MenuList[Utilities.Localization["Import"]] = "Main";
             MenuList[Utilities.Localization["Export"]] = "Main";
             MenuList[Utilities.Localization["Settings"]] = "Main";
-            MenuList[Utilities.Localization["Developer"]] = "Main";
             //GlobalStatic.MenuList["Plugin"] = "Main"; //Localize
 
             //File
@@ -176,10 +175,6 @@ namespace DBM
             MenuList[Utilities.Localization["Refresh Schema"]] = Utilities.Localization["Settings"];
             //GlobalStatic.MenuList[Utilities.Localization["Check for Updates"]] = Utilities.Localization["Settings"];
             MenuList["-"] = Utilities.Localization["Settings"];
-
-            //Developer
-            MenuList[Utilities.Localization["Stack Trace"]] = Utilities.Localization["Developer"];
-            MenuList[Utilities.Localization["Close TW"]] = Utilities.Localization["Developer"];
 
             //Plugin Section
             /*
@@ -247,7 +242,7 @@ namespace DBM
 
         public static string GetPath(Engines.EnginesMode EngineMode)
         {
-            Utilities.AddtoStackTrace("UI.GetPath()");
+            Utilities.AddtoStackTrace("UI.GetPath(" + EngineMode + ")");
             if (Program.ArgumentCount == 1 && GlobalStatic.LoadedFile == false)
             { GlobalStatic.LoadedFile = true; return Program.GetArgument(1); }
             {
@@ -675,7 +670,7 @@ namespace DBM
 		public static void LogMessage(string Message, string Type) //Logs Message to all applicable locations
 		{
             LogMessage(Message,Type, Utilities.StackTrace[Utilities.StackTrace.Count- 1] );
-            Utilities.AddtoStackTrace("Events.LogMessage");
+            Utilities.AddtoStackTrace("Events.LogMessage()");
 		}
 
         static void LogMessage(string Message, string Type, string Caller)
@@ -701,7 +696,7 @@ namespace DBM
                 Console.WriteLine("Event Logger: {0}:{1}",Engines.CurrentDatabase, Message);
             }
 
-            Utilities.AddtoStackTrace("Events.LogMessage()");
+            Utilities.AddtoStackTrace("Events.LogMessage(" + Message +","+ Type +"," + Caller +")");
 
             string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'" + GlobalStatic.UserName + "','"+ GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');"; ;
 

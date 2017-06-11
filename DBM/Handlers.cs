@@ -282,15 +282,6 @@ namespace DBM
                 Console.WriteLine("\nStack Trace:");
                 Utilities.StackTrace.Print();
                 Console.WriteLine("");
-
-                for (int i = 0; i < Engines.LastQuery.Count; i++)
-                {
-                    if (Engines.Types[i] == Engines.Type.Query)
-                    {
-                        Console.Write("{0}", Engines.LastQuery[i]);
-                        Console.WriteLine("|{0}", Engines.Timer[i]);
-                    }
-                }
             }
             else if (Item == Utilities.Localization["Close TW"])
             {
@@ -373,7 +364,7 @@ namespace DBM
 
 		public static void ComboBox(string ComboBox, int Index)
 		{
-            Utilities.AddtoStackTrace("Handlers.ComboBox()");
+            Utilities.AddtoStackTrace("Handlers.ComboBox("+ComboBox+","+Index+")");
             try
             {
                 if (ComboBox == GlobalStatic.ComboBox["Table"])

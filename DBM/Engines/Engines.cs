@@ -76,7 +76,7 @@ namespace DBM
         /// <returns></returns>
         public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
-            Utilities.AddtoStackTrace("Engines.Command()");
+            Utilities.AddtoStackTrace("Engines.Command("+Database+")");
             Stopwatch CommandTime = Stopwatch.StartNew();
 			if (RunParser == false)
 			{
@@ -129,7 +129,7 @@ namespace DBM
         /// </summary>
 		public static void TransactionRecord(string UserName, string DataBase, string SQL, Type Type, string Reason) 
 		{
-            Utilities.AddtoStackTrace( "Engines.TransactionRecord()");
+            Utilities.AddtoStackTrace( "Engines.TransactionRecord("+DataBase+")");
             //Escapes function when conditions are correct
             if (GlobalStatic.Transactions == false || DataBase == GlobalStatic.TransactionDB )
             {
@@ -167,7 +167,7 @@ namespace DBM
 
         public static void GetSchema(string Database)
         {
-            Utilities.AddtoStackTrace("Engines.GetSchema()");
+            Utilities.AddtoStackTrace("Engines.GetSchema("+Database+")");
             if (string.IsNullOrEmpty(Database))//Prevents Prevents Application from querying a nonexistent db 
             {
                 return;
@@ -217,7 +217,7 @@ namespace DBM
 
         public static void GetColumnsofTable(string database, string table)
         {
-            Utilities.AddtoStackTrace("Engines.GetSchemaofTable()");
+            Utilities.AddtoStackTrace("Engines.GetSchemaofTable("+database+","+table+")");
 
             if (string.IsNullOrEmpty(database)) //Prevents calls to nonexistent Databases
             {
