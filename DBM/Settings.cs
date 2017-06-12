@@ -3,7 +3,6 @@
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
 using Microsoft.SmallBasic.Library;
-using SBFile = Microsoft.SmallBasic.Library.File;
 using System.IO;
 
 namespace DBM
@@ -16,20 +15,19 @@ namespace DBM
             Utilities.AddtoStackTrace( "Settings.LoadSettings(" + RestoreSettings+ ")");
             if (RestoreSettings == false)
 			{
-				GlobalStatic.Settings = SBFile.ReadContents(GlobalStatic.SettingsPath);
+				GlobalStatic.Settings = System.IO.File.ReadAllText(GlobalStatic.SettingsPath);
 			}
+
 			GlobalStatic.Listview_Width = GlobalStatic.Settings["Listview_Width"];
 			GlobalStatic.Listview_Height = GlobalStatic.Settings["Listview_Height"];
 			GlobalStatic.LastVersion = GlobalStatic.Settings["VersionID"];
 			GlobalStatic.LastFolder = GlobalStatic.Settings["LastFolder"];
 			GlobalStatic.Extensions = GlobalStatic.Settings["Extensions"];
 			GlobalStatic.Deliminator = GlobalStatic.Settings["Deliminator"];
-			GlobalStatic.Transactions = GlobalStatic.Settings["Transactions"];
 			GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
 
 			GlobalStatic.EULA_Acceptance = GlobalStatic.Settings["EULA"];
 			GlobalStatic.EULA_UserName = GlobalStatic.Settings["EULA_By"];
-			//GlobalStatic.EULA_Accepted_Version = GlobalStatic.Settings["EULA_Version"];
 
 			GlobalStatic.DebugMode = GlobalStatic.Settings["debug_mode"];
 			GlobalStatic.DebugParser = GlobalStatic.Settings["debug_parser"];
@@ -55,7 +53,7 @@ namespace DBM
 
 			for (int i = 1; i <= NullSettings.GetItemCount(); i++) //Sets Default Settings for files if they do not yet exist!!
 			{
-				if (GlobalStatic.Settings[NullSettings[i]] == null || GlobalStatic.Settings[NullSettings[i]] == "")
+				if (string.IsNullOrWhiteSpace( GlobalStatic.Settings[NullSettings[i]] ) )
 				{
 					GlobalStatic.Settings[NullSettings[i]] = Setting_Default[i];
                     GlobalStatic.RestoreSettings = true; RestoreSettings = true;
@@ -71,7 +69,7 @@ namespace DBM
             if (RestoreSettings == true)
 			{
 				GlobalStatic.Listview_Width = GlobalStatic.Settings["Listview_Width"]; GlobalStatic.Listview_Height = GlobalStatic.Settings["Listview_Height"]; GlobalStatic.LastVersion = GlobalStatic.Settings["VersionID"]; GlobalStatic.LastFolder = GlobalStatic.Settings["LastFolder"]; GlobalStatic.Extensions = GlobalStatic.Settings["Extensions"];
-				GlobalStatic.Deliminator = GlobalStatic.Settings["Deliminator"]; GlobalStatic.Transactions = GlobalStatic.Settings["Transactions"]; GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
+				GlobalStatic.Deliminator = GlobalStatic.Settings["Deliminator"];GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
 
 				GlobalStatic.EULA_Acceptance = GlobalStatic.Settings["EULA"]; GlobalStatic.EULA_UserName = GlobalStatic.Settings["EULA_By"];
 
@@ -88,14 +86,17 @@ namespace DBM
 		public static void SaveSettings()
 		{
             Utilities.AddtoStackTrace("Settings.SaveSettings()");
-			if (GlobalStatic.Settings.EqualTo(SBFile.ReadContents(GlobalStatic.SettingsPath)) == false)
+			if (GlobalStatic.Settings.EqualTo(System.IO.File.ReadAllText(GlobalStatic.SettingsPath)) == false)
 			{
-				string status = SBFile.WriteContents(GlobalStatic.SettingsPath, GlobalStatic.Settings);
-				if (status == "FAILED") //Settings could not be saved for some reason!
-				{
-					Events.LogMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["UI"]); 
-					GraphicsWindow.ShowMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["Error"]);
-				}
+                try
+                {
+                    System.IO.File.WriteAllText(GlobalStatic.SettingsPath, GlobalStatic.Settings);
+                }
+                catch (Exception) //Settings could not be saved for some reason!
+                {
+                    Events.LogMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["UI"]);
+                    GraphicsWindow.ShowMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["Error"]);
+                }
 			}
 		}
 

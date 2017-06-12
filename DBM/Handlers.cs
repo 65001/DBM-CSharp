@@ -5,15 +5,15 @@ using System;
 using System.Collections.Generic;
 using LitDev;
 using Microsoft.SmallBasic.Library;
+
 namespace DBM
 {
 	public static class Handlers
 	{
-		public static Primitive CurrentSchema;
         static IReadOnlyList<string> CorrectList;
         static List<string> Tracker = new List<string>();
-		public static Primitive TypeofSorts ="1="+ Utilities.Localization["Table"] +";2=" + Utilities.Localization["View"] +"3="+ Utilities.Localization["Index"] + "4="+ Utilities.Localization["Master Table"]+";";
-
+		public static Primitive TypeofSorts ="1="+ Utilities.Localization["Table"] +";2=" + Utilities.Localization["View"] +";3="+ Utilities.Localization["Index"] + ";4="+ Utilities.Localization["Master Table"]+";";
+        //public static string[] TypeOfSorts = new string[4] { Utilities.Localization["Table"], Utilities.Localization["View"] , Utilities.Localization["Index"] , Utilities.Localization["Master Table"] };
         /// <summary>
         /// Handles Main Menu
         /// </summary>
@@ -261,10 +261,6 @@ namespace DBM
             {
                 GlobalStatic.DebugMode = !GlobalStatic.DebugMode;
             }
-            else if (Item == Utilities.Localization["Toggle Transaction Log"])
-            {
-                GlobalStatic.Transactions = !GlobalStatic.Transactions;
-            }
             else if (Item == Utilities.Localization["Refresh Schema"])
             {
                 Engines.GetSchema(Engines.CurrentDatabase);
@@ -444,7 +440,7 @@ namespace DBM
 
 		static void SortsComboBox(int Index)
 		{ 
-		GlobalStatic.SortBy = Index; //Sets GlobalStatic.SortBy
+		    GlobalStatic.SortBy = Index; //Sets GlobalStatic.SortBy. Count by 1 instead of zero
 
 			switch (Index)
 			{

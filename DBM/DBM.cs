@@ -193,7 +193,6 @@ namespace DBM
 
             Primitive Checklist = new Primitive();
             Checklist[Utilities.Localization["Toggle Debug"]] = GlobalStatic.DebugMode;
-            Checklist[Utilities.Localization["Toggle Transaction Log"]] = GlobalStatic.Transactions;
 
             LDGraphicsWindow.State = 2;
             GraphicsWindow.Title = GlobalStatic.Title + " ";
@@ -385,7 +384,7 @@ namespace DBM
 		{
             Utilities.AddtoStackTrace( "UI.Title()");
 			string SetTitle;
-			SetTitle = GlobalStatic.Title + " " + Engines.DatabaseShortname + "(" + Engines.CurrentDatabase + ") :" + Handlers.TypeofSorts[GlobalStatic.SortBy] + ":" + Engines.CurrentTable;
+			SetTitle = GlobalStatic.Title + " " + Engines.DatabaseShortname + "(" + Engines.CurrentDatabase + ") :" + Handlers.TypeofSorts[(GlobalStatic.SortBy)] + ":" + Engines.CurrentTable;
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
 			{
 				SetTitle = GlobalStatic.Title;

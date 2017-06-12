@@ -9,7 +9,6 @@ using System.Linq;
 using System.IO;
 using System.Diagnostics;
 using Microsoft.SmallBasic.Library;
-using SBArray = Microsoft.SmallBasic.Library.Array;
 using LitDev;
 namespace DBM
 {
@@ -40,7 +39,7 @@ namespace DBM
 
         public static Primitive GenerateSchemaFromQueryData(Primitive Data)
         {
-            return SBArray.GetAllIndices(Data[1]);
+            return Data[1].GetAllIndices();
         }
 
         public static Primitive GenerateSchemaFromLastQuery()

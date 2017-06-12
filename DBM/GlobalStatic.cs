@@ -39,7 +39,7 @@ namespace DBM
 			public static Primitive Settings,Extensions;
 			public static int Listview_Width,Listview_Height,UIx,LastVersion,Timeout,SortBy;
 
-			public static bool Transactions,Transaction_Query,Transaction_Commands, EULA_Acceptance;
+			public static bool Transaction_Query,Transaction_Commands, EULA_Acceptance;
 			public static string Deliminator;
 			public static string LastFolder;
 			public static string EULA_UserName;

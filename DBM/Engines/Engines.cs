@@ -80,7 +80,10 @@ namespace DBM
             Stopwatch CommandTime = Stopwatch.StartNew();
 			if (RunParser == false)
 			{
-				TransactionRecord(User, Database, SQL, Type.Command, Explanation);
+                if (GlobalStatic.Transaction_Commands == true)
+                {
+                    TransactionRecord(User, Database, SQL, Type.Command, Explanation);
+                 }
                 return LDDataBase.Command(Database, SQL);
 			}
 
@@ -103,7 +106,10 @@ namespace DBM
                 return null;
             }
 
-			TransactionRecord(UserName, DataBase, SQL, Type.Query, Explanation);
+            if (GlobalStatic.Transaction_Query == true)
+            {
+                TransactionRecord(UserName, DataBase, SQL, Type.Query, Explanation);
+            }
 			Primitive QueryResults = LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
 
             _Type_Referer.Add(Type.Query);
@@ -131,7 +137,7 @@ namespace DBM
 		{
             Utilities.AddtoStackTrace( "Engines.TransactionRecord("+DataBase+")");
             //Escapes function when conditions are correct
-            if (GlobalStatic.Transactions == false || DataBase == GlobalStatic.TransactionDB )
+            if (DataBase == GlobalStatic.TransactionDB )
             {
                 return;
             }
