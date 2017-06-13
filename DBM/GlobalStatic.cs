@@ -10,14 +10,20 @@ namespace DBM
 		{
 			public static readonly string ProgramDirectory = Program.Directory;
 			public static readonly string UserName =  Environment.UserName;
-			public static bool DebugMode,DebugParser, EulaTest, LoadedFile;
+			public static bool  EulaTest, LoadedFile;
 
-            //Self Aware Data
-            public const string Copyright = "2016 through 2017";
+        #if DEBUG
+           public static bool DebugMode = true;
+        #else
+        public static bool DebugMode;
+        #endif
+
+        //Self Aware Data
+        public const string Copyright = "2016 through 2017";
 			public const string ProductID = "DBM C#";
 			public static readonly string VersionID = typeof(GlobalStatic).Assembly.GetName().Version.ToString().Replace(".","");
 			public static int DefaultFontSize;
-
+        
 			//URI
 			public static string AssetPath = Path.Combine( ProgramDirectory , "Assets");
 			public static string LocalizationFolder = Path.Combine( ProgramDirectory , "Localization");

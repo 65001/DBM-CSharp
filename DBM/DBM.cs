@@ -125,9 +125,7 @@ namespace DBM
         public static void PreMainMenu()
         {
             Utilities.AddtoStackTrace("UI.PreMainMenu()");
-            GlobalStatic.DefaultFontSize = GraphicsWindow.FontSize;
             GraphicsWindow.FontName = "Segoe UI";
-            //Primitive MenuList = new Primitive();
 
             //Main
             MenuList[Utilities.Localization["File"]] = "Main";
@@ -137,7 +135,6 @@ namespace DBM
             MenuList[Utilities.Localization["Import"]] = "Main";
             MenuList[Utilities.Localization["Export"]] = "Main";
             MenuList[Utilities.Localization["Settings"]] = "Main";
-            //GlobalStatic.MenuList["Plugin"] = "Main"; //Localize
 
             //File
             MenuList[Utilities.Localization["New"]] = Utilities.Localization["File"];
@@ -168,10 +165,7 @@ namespace DBM
             MenuList[Utilities.Localization["Show Help"]] = Utilities.Localization["Help"];
             MenuList["-"] = Utilities.Localization["Help"];
             MenuList[Utilities.Localization["Settings Editor"]] = Utilities.Localization["Settings"];
-            MenuList["DB Settings"] = Utilities.Localization["Settings"]; //TODO LOCALIZE
-            MenuList[Utilities.Localization["Toggle Debug"]] = Utilities.Localization["Settings"];
-            //MenuList[Utilities.Localization["Toggle Transaction Log"]] = Utilities.Localization["Settings"];
-            //MenuList["-"] = Utilities.Localization["Toggle Transaction Log"];
+            //MenuList["DB Settings"] = Utilities.Localization["Settings"]; //TODO LOCALIZE //TODO Implement
             MenuList[Utilities.Localization["Refresh Schema"]] = Utilities.Localization["Settings"];
             //GlobalStatic.MenuList[Utilities.Localization["Check for Updates"]] = Utilities.Localization["Settings"];
             MenuList["-"] = Utilities.Localization["Settings"];
@@ -191,23 +185,16 @@ namespace DBM
             LDGraphicsWindow.ExitButtonMode(GraphicsWindow.Title, "Enabled");
             GraphicsWindow.CanResize = true;
 
-            Primitive Checklist = new Primitive();
-            Checklist[Utilities.Localization["Toggle Debug"]] = GlobalStatic.DebugMode;
 
             LDGraphicsWindow.State = 2;
             GraphicsWindow.Title = GlobalStatic.Title + " ";
-            GlobalStatic.DefaultFontSize = GraphicsWindow.FontSize;
-            if (GlobalStatic.DebugMode == true) //Implement 
-            {
-                Events.LogMessage("Debug Mode is ON", "UI"); //Localize
-            }
             Primitive Sorts = "1=" + Utilities.Localization["Table"] + ";2=" + Utilities.Localization["View"] + ";3=" + Utilities.Localization["Index"] + ";4=" + Utilities.Localization["Master Table"] + ";";
             if (Engines.CurrentDatabase != null && Engines.CurrentDatabase != null)
             {
                 Engines.GetSchema(Engines.CurrentDatabase);
             }
-            GraphicsWindow.FontSize = 20;
-            string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, MenuList, null, Checklist);
+            GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 8;
+            string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, MenuList, null, null);
             Shapes.Move(Shapes.AddText(Utilities.Localization["Sort"] + ":"), 990, 1);
 
             int SortOffset = LDText.GetWidth(Utilities.Localization["Sort"] + ":") - LDText.GetWidth("Sort:"); //Offsets some controls when not using the default English encoding
@@ -281,10 +268,16 @@ namespace DBM
 
         static void DisplayHelper()
         {
+            string Default_Brush = GraphicsWindow.BrushColor;
+            GraphicsWindow.BrushColor = "WHITE";
+            GraphicsWindow.FillRectangle(GlobalStatic.UIx - 5, 45, 320, 350);
+            GraphicsWindow.BrushColor = Default_Brush;
+
+
             GraphicsWindow.DrawRectangle(GlobalStatic.UIx, 50, 310, 340);
-            GraphicsWindow.FontSize = 15;
+            GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 3;
             GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 52, Utilities.Localization["Display Settings"]);
-            GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 73, Utilities.Localization["Sort by"]);
+            GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 78, Utilities.Localization["Sort by"]);
             GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 150, Utilities.Localization["Search Settings"]);
             GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 180, Utilities.Localization["Search in"]);
             GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210, Utilities.Localization["Search"] + ":");
@@ -311,16 +304,16 @@ namespace DBM
             //TODO Implement LOG CB?
 
             //Sort
-            GraphicsWindow.FontSize = 13;
+            GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 1;
 			string AscDesc = "1=" + Utilities.Localization["Asc"] + ";2=" + Utilities.Localization["Desc"] + ";";
             GlobalStatic.ComboBox["Sort"]= LDControls.AddComboBox(Engines.Schema, 100, 100);
             GlobalStatic.ComboBox["ASCDESC"]= LDControls.AddComboBox(AscDesc, 110, 100);
 
             _Buttons.AddOrReplace("Sort", Controls.AddButton(Utilities.Localization["Sort"], GlobalStatic.UIx + 10, 120));
 
-			Controls.Move(GlobalStatic.ComboBox["Sort"], GlobalStatic.UIx + 80, 72);
-			Controls.Move(GlobalStatic.ComboBox["ASCDESC"], GlobalStatic.UIx+ 190, 72);
-			Controls.SetSize(_Buttons["Sort"], 290, 25);
+			Controls.Move(GlobalStatic.ComboBox["Sort"], GlobalStatic.UIx + 80, 77);
+			Controls.Move(GlobalStatic.ComboBox["ASCDESC"], GlobalStatic.UIx+ 190, 77);
+			Controls.SetSize(_Buttons["Sort"], 290, 30);
 
 			LDDialogs.ToolTip(_Buttons["Sort"], "Iniates a sort based on user set parameters"); //Localize
 			LDDialogs.ToolTip(GlobalStatic.ComboBox["ASCDESC"], "Sorts Ascending and Decending based on position"); //Localize
@@ -335,29 +328,30 @@ namespace DBM
 			Controls.Move(GlobalStatic.CheckBox["StrictSearch"], GlobalStatic.UIx + 20, 240);
 			Controls.Move(GlobalStatic.CheckBox["InvertSearch"], GlobalStatic.UIx + 150, 240);
 			Controls.Move(GlobalStatic.ComboBox["Search"], GlobalStatic.UIx + 100, 180);
+
 			Controls.SetSize(_TextBox["Search"], 200, 25);
-			Controls.SetSize(_Buttons["Search"], 290, 25);
+			Controls.SetSize(_Buttons["Search"], 290, 30);
 
             //Functions
             GlobalStatic.ComboBox["FunctionList"]= LDControls.AddComboBox(Engines.Functions(Engines.CurrentEngine).ToPrimitiveArray(), 130, 100);
             GlobalStatic.ComboBox["ColumnList"] = LDControls.AddComboBox(Engines.Schema, 135, 100);
 
-            Controls.Move(GlobalStatic.ComboBox["FunctionList"], GlobalStatic.UIx + 10, 310);
-			Controls.Move(GlobalStatic.ComboBox["ColumnList"], GlobalStatic.UIx + 160, 310);
+            Controls.Move(GlobalStatic.ComboBox["FunctionList"], GlobalStatic.UIx + 10, 315);
+			Controls.Move(GlobalStatic.ComboBox["ColumnList"], GlobalStatic.UIx + 160, 315);
 
-            _Buttons.AddOrReplace("RunFunction", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Run Function"]), GlobalStatic.UIx + 10, 340));
-			Controls.SetSize(_Buttons["RunFunction"], 290, 25);
+            _Buttons.AddOrReplace("RunFunction", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Run Function"]), GlobalStatic.UIx + 10, 345));
+			Controls.SetSize(_Buttons["RunFunction"], 290, 30);
 
 			//Custom Query
 			_TextBox["CustomQuery"] = Controls.AddMultiLineTextBox(GlobalStatic.UIx, 420);
 			Controls.SetSize(_TextBox["CustomQuery"], 310, 150);
 
             _Buttons.AddOrReplace("CustomQuery", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Query"]), GlobalStatic.UIx, 580));
-  			Controls.SetSize(_Buttons["CustomQuery"], 310, 25);
+  			Controls.SetSize(_Buttons["CustomQuery"], 310, 30);
 
-            _Buttons.AddOrReplace("Command", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Command"]), GlobalStatic.UIx, 580 + 35));
+            _Buttons.AddOrReplace("Command", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Command"]), GlobalStatic.UIx, 615));
 
-			Controls.SetSize(_Buttons["Command"] , 310, 25);
+			Controls.SetSize(_Buttons["Command"] , 310, 30);
 			LDDialogs.ToolTip(_Buttons["Command"], "Executes customized SQL command statements onto the database"); //Localize
 			string CustomQueryData = "This Textbox allows you to use Custom\nSQL Queries. Remove this and type in an SQL \nstatement. \nYou also use it to export data";//Localize
 			Controls.SetTextBoxText(_TextBox["CustomQuery"],CustomQueryData);
@@ -416,33 +410,33 @@ namespace DBM
             LDGraphicsWindow.Closing += Events.Closing;
             LDGraphicsWindow.ExitButtonMode(Utilities.Localization["Settings"], "Disabled");
 
-            GraphicsWindow.FontSize = 20;
+            GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 8;
 
-            GraphicsWindow.DrawText(10, 30, Utilities.Localization["Listview Width"]);
-            _TextBox["Settings_Width"] = Controls.AddTextBox(200, 25);
+            GraphicsWindow.DrawText(10, 10, Utilities.Localization["Listview Width"]);
+            _TextBox["Settings_Width"] = Controls.AddTextBox(200, 10);
 
-            GraphicsWindow.DrawText(10, 65, Utilities.Localization["Listview Height"]);
-            _TextBox["Settings_Height"] = Controls.AddTextBox(200, 60);
+            GraphicsWindow.DrawText(10, 50, Utilities.Localization["Listview Height"]);
+            _TextBox["Settings_Height"] = Controls.AddTextBox(200, 50);
 
-            GraphicsWindow.DrawText(10, 100, Utilities.Localization["Extensions"]);
-            _TextBox["Settings_Extensions"] = Controls.AddTextBox(200, 95);
+            GraphicsWindow.DrawText(10, 90, Utilities.Localization["Extensions"]);
+            _TextBox["Settings_Extensions"] = Controls.AddTextBox(200, 90);
 
-            GraphicsWindow.DrawText(10, 135, Utilities.Localization["Deliminator"]);
+            GraphicsWindow.DrawText(10, 130, Utilities.Localization["Deliminator"]);
             _TextBox["Settings_Deliminator"] = Controls.AddTextBox(200, 130);
 
-            GraphicsWindow.DrawText(10, 165, Utilities.Localization["Language"]);
+            GraphicsWindow.DrawText(10, 175, Utilities.Localization["Language"]);
 
             GlobalStatic.ComboBox["Language"]= LDControls.AddComboBox(Utilities.ISO_Text.ToPrimitiveArray(), 200, 120);
-            Controls.Move(GlobalStatic.ComboBox["Language"], 200, 165);
+            Controls.Move(GlobalStatic.ComboBox["Language"], 200, 175);
 
             GraphicsWindow.DrawText(10, 280, Utilities.Localization["LOG CSV Path"]);
-            _Buttons.AddOrReplace("Log_CSV",Controls.AddButton(Utilities.Localization["Browse"], 290, 280));
+            _Buttons.AddOrReplace("Log_CSV",Controls.AddButton(Utilities.Localization["Browse"], 320, 280));
 
-            GraphicsWindow.DrawText(10, 320, Utilities.Localization["LOG DB PATH"]);
-            _Buttons.AddOrReplace("Log_DB", Controls.AddButton(Utilities.Localization["Browse"], 290, 320));
+            GraphicsWindow.DrawText(10, 330, Utilities.Localization["LOG DB PATH"]);
+            _Buttons.AddOrReplace("Log_DB", Controls.AddButton(Utilities.Localization["Browse"], 320, 330));
 
-            GraphicsWindow.DrawText(10, 360, Utilities.Localization["Transaction DB Path"]);
-            _Buttons.AddOrReplace("Transaction_DB", Controls.AddButton(Utilities.Localization["Browse"], 290, 360));
+            GraphicsWindow.DrawText(10, 380, Utilities.Localization["Transaction DB Path"]);
+            _Buttons.AddOrReplace("Transaction_DB", Controls.AddButton(Utilities.Localization["Browse"], 320, 380));
 
             for (int i = 0; i < Utilities.ISO_LangCode.Count; i++)
             {
@@ -453,24 +447,16 @@ namespace DBM
                 }
             }
 
-            _Buttons.AddOrReplace("Debug_Parser", LDControls.AddCheckBox("Debug Parser"));
-            Controls.Move(_Buttons["Debug_Parser"], 10, 220);
+            _Buttons.AddOrReplace("Settings Save", Controls.AddButton(Utilities.Localization["Save and Close"], 50, 450));
+            _Buttons.AddOrReplace("Settings Close", Controls.AddButton(Utilities.Localization["Close wo saving"], 50, 500));
 
-            _Buttons.AddOrReplace("Debug_Mode", LDControls.AddCheckBox("Debug Mode"));
-            Controls.Move(_Buttons["Debug_Mode"], 10, 250);
-
-            _Buttons.AddOrReplace("Settings Save", Controls.AddButton(Utilities.Localization["Save and Close"], 50, 420));
-            _Buttons.AddOrReplace("Settings Close", Controls.AddButton(Utilities.Localization["Close wo saving"], 50, 470));
-
-            Controls.SetSize(_Buttons["Settings Save"], 280, 35);
-            Controls.SetSize(_Buttons["Settings Close"], 280, 35);
+            Controls.SetSize(_Buttons["Settings Save"], 280, 40);
+            Controls.SetSize(_Buttons["Settings Close"], 280, 40);
 
             Controls.SetTextBoxText(_TextBox["Settings_Width"], GlobalStatic.Listview_Width);
             Controls.SetTextBoxText(_TextBox["Settings_Height"], GlobalStatic.Listview_Height);
             Controls.SetTextBoxText(_TextBox["Settings_Extensions"], GlobalStatic.Extensions);
             Controls.SetTextBoxText(_TextBox["Settings_Deliminator"], GlobalStatic.Deliminator);
-            LDControls.CheckBoxState(_Buttons["Debug_Parser"], GlobalStatic.DebugParser);
-            LDControls.CheckBoxState(_Buttons["Debug_Mode"], GlobalStatic.DebugMode);
 
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
 

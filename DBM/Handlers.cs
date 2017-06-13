@@ -257,10 +257,6 @@ namespace DBM
             {
                 UI.SettingsUI();
             }
-            else if (Item == Utilities.Localization["Toggle Debug"])
-            {
-                GlobalStatic.DebugMode = !GlobalStatic.DebugMode;
-            }
             else if (Item == Utilities.Localization["Refresh Schema"])
             {
                 Engines.GetSchema(Engines.CurrentDatabase);
@@ -274,18 +270,9 @@ namespace DBM
             //Developer
             else if (Item == Utilities.Localization["Stack Trace"])
             {
-                GlobalStatic.DebugMode = true;
                 Console.WriteLine("\nStack Trace:");
                 Utilities.StackTrace.Print();
                 Console.WriteLine("");
-            }
-            else if (Item == Utilities.Localization["Close TW"])
-            {
-                TextWindow.Hide();
-            }
-            else if (Item == "DB Settings")
-            {
-
             }
             else
             {
