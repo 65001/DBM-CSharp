@@ -137,7 +137,8 @@ namespace DBM
 		{
             Utilities.AddtoStackTrace( "Engines.TransactionRecord("+DataBase+")");
             //Escapes function when conditions are correct
-            if (DataBase == GlobalStatic.TransactionDB )
+            
+            if (DataBase == GlobalStatic.TransactionDB ) //This is done to prevent a stackoverflow. 
             {
                 return;
             }
