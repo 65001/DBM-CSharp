@@ -137,10 +137,10 @@ namespace DBM
                     else if (SQL.StartsWith(".stacktrace", Comparison))
                     {
                         EmulatorTable = "DBM_SQLITE_StackTrace";
-                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,Item TEXT);",EmulatorTable);
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,Item TEXT,\"Start Time (UTC)\" TEXT);",EmulatorTable);
                         for (int i = 0; i < Utilities.StackTrace.Count; i++)
                         {
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}');", EmulatorTable, i, Utilities.StackTrace[i]);
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}');", EmulatorTable, i, Utilities.StackTrace[i],Utilities.StackIniationTime[i]);
                         }
                     }
                     break;

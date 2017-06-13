@@ -14,6 +14,7 @@ namespace DBM
 	{
         static Dictionary<string, string> _Localization = new Dictionary<string, string>();
         static List<string> _StackTrace = new List<string>();
+        static List<string> _StackIniationTime = new List<string>();
         static List<string> _ISO_Text = new List<string>();
         static List<string> _ISO_LangCode = new List<string>();
         static List<string> _UI_Name = new List<string>();
@@ -28,6 +29,11 @@ namespace DBM
         public static IReadOnlyList<string> StackTrace
         {
             get { return _StackTrace.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<string> StackIniationTime
+        {
+            get { return _StackIniationTime.AsReadOnly(); }
         }
 
         public static IReadOnlyList<string> ISO_Text
@@ -110,13 +116,13 @@ namespace DBM
         public static void AddtoStackTrace(string Data)
         {
             _StackTrace.Add(Data);
+            _StackIniationTime.Add(DateTime.UtcNow.ToString("hh:mm:ss ffffff"));
         }
-
 
 		// Reads File and Parses it
 		public static string[] ReadFile(string URI) //Reads a file and ignores certain types of data
 		{
-			AddtoStackTrace( "Utilities.ReadFile()");
+			AddtoStackTrace("Utilities.ReadFile()");
             List<string> File_Read = new List<string>();
 
 			if (System.IO.File.Exists(URI) == true)
