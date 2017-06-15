@@ -240,6 +240,18 @@ namespace DBM
                 }
                 GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
             }
+            else if (Item == "JSON")
+            {
+                string Path = LDDialogs.SaveFile("json", null);
+                if (!string.IsNullOrWhiteSpace(Path))
+                {
+                    Primitive Data = Export.Generate2DArrayFromLastQuery();
+                    Export.JSON(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.Replace("\"", ""),Path);
+                    GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
+                    return;
+                }
+                GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
+            }
             //Settings
             else if (Item == Utilities.Localization["About"])
             {

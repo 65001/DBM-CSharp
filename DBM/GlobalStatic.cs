@@ -18,8 +18,8 @@ namespace DBM
         public static bool DebugMode;
         #endif
 
-        //Self Aware Data
-        public const string Copyright = "2016 through 2017";
+            //Self Aware Data
+            public const string Copyright = "2016 through 2017";
 			public const string ProductID = "DBM C#";
 			public static readonly string VersionID = typeof(GlobalStatic).Assembly.GetName().Version.ToString().Replace(".","");
 			public static int DefaultFontSize;
