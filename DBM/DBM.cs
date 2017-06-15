@@ -97,7 +97,7 @@ namespace DBM
             {
                 Engines.Load.Sqlite(GetPath(Engines.EnginesMode.SQLITE));
             }
-            if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_UserName == GlobalStatic.UserName && GlobalStatic.LastVersion == int.Parse(GlobalStatic.VersionID.Replace(".", "")) && GlobalStatic.EulaTest == false)
+            if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_UserName == GlobalStatic.UserName && GlobalStatic.EulaTest == false)
             {
                 StartupGUI();
             }
@@ -155,6 +155,7 @@ namespace DBM
             MenuList[Utilities.Localization["SQL"] + " "] = Utilities.Localization["Export"];
             //MenuList[Utilities.Localization["PXML"] + " "]= Utilities.Localization["Export"];
             MenuList[Utilities.Localization["HTML"] + " "] = Utilities.Localization["Export"];
+            MenuList["JSON"] = Utilities.Localization["Export"]; //TODO Localize
             MenuList["-"] = Utilities.Localization["Export"];
 
             //Settings
