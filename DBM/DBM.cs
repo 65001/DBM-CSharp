@@ -46,7 +46,9 @@ namespace DBM
         static Primitive MenuList;
         
         public static IReadOnlyDictionary<string, string> Buttons
-        { get { return _Buttons; } }
+        {
+            get { return _Buttons; }
+        }
 
         public static IReadOnlyDictionary<string, string> TextBox
         { get { return _TextBox; } }
@@ -70,11 +72,37 @@ namespace DBM
             
             LDGraphicsWindow.Closing += Events.Closing;
             LDEvents.Error += Events.LogEvents;
+            Engines.OnGetColumnsofTable += ColumnsChanged;
+            Engines.OnSchemaChange += SchemaChanged;
             Startup();
         }
 
-        public static void Startup()
+        static void ColumnsChanged(object sender, EventArgs e)
         {
+            LDControls.ComboBoxContent(GlobalStatic.ComboBox["Sort"], Engines.Schema);
+            LDControls.ComboBoxContent(GlobalStatic.ComboBox["Search"], Engines.Schema);
+            LDControls.ComboBoxContent(GlobalStatic.ComboBox["ColumnList"], Engines.Schema);
+        }
+
+        static void SchemaChanged(object sender, EventArgs e)
+        {
+            switch (GlobalStatic.SortBy)
+            {
+                case 1:
+                    LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], Engines.Tables.ToPrimitiveArray() );
+                    break;
+                case 2:
+                    LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], Engines.Views.ToPrimitiveArray());
+                    break;
+                case 3:
+                    LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], Engines.Indexes.ToPrimitiveArray());
+                    break;
+            }
+            Title();
+        }
+
+            public static void Startup()
+            {
             Utilities.AddtoStackTrace("UI.Startup()");
             Settings.LoadSettings(GlobalStatic.RestoreSettings); //Load Application Settings from text file
             Settings.Paths
@@ -137,9 +165,10 @@ namespace DBM
             //File
             MenuList[Utilities.Localization["New"]] = Utilities.Localization["File"];
             MenuList[Utilities.Localization["Open"]] = Utilities.Localization["File"];
-            MenuList[Utilities.Localization["Define New Table"]] = Utilities.Localization["File"];
-            MenuList[Utilities.Localization["New in Memory Db"]] = Utilities.Localization["File"];
-            MenuList[Utilities.Localization["Create Statistics Page"]] = Utilities.Localization["File"];
+            MenuList["Other"] = Utilities.Localization["File"]; // TODO Localize
+            MenuList[Utilities.Localization["Define New Table"]] = "Other";
+            MenuList[Utilities.Localization["New in Memory Db"]] = "Other";
+            MenuList[Utilities.Localization["Create Statistics Page"]] = "Other";
             MenuList["-"] = Utilities.Localization["File"];
 
             //Import
@@ -152,10 +181,10 @@ namespace DBM
 
             //Export
             MenuList[Utilities.Localization["CSV"] + " "] = Utilities.Localization["Export"];
-            MenuList[Utilities.Localization["SQL"] + " "] = Utilities.Localization["Export"];
-            //MenuList[Utilities.Localization["PXML"] + " "]= Utilities.Localization["Export"];
             MenuList[Utilities.Localization["HTML"] + " "] = Utilities.Localization["Export"];
             MenuList["JSON"] = Utilities.Localization["Export"]; //TODO Localize
+            MenuList[Utilities.Localization["SQL"] + " "] = Utilities.Localization["Export"];
+            MenuList[Utilities.Localization["PXML"] + " "]= Utilities.Localization["Export"];
             MenuList["-"] = Utilities.Localization["Export"];
 
             //Settings
@@ -322,7 +351,7 @@ namespace DBM
 			_TextBox.AddOrReplace("Search",  Controls.AddTextBox(GlobalStatic.UIx + 100, 210));
             GlobalStatic.CheckBox["StrictSearch"]= LDControls.AddCheckBox(Utilities.Localization["Strict Search"]);
             GlobalStatic.CheckBox["InvertSearch"]=LDControls.AddCheckBox(Utilities.Localization["Invert"]);
-            _Buttons.AddOrReplace("Search", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Search"]), GlobalStatic.UIx + 10, 260));
+            _Buttons.AddOrReplace("Search", Controls.AddButton(Utilities.Localization["Search"].ToUpper(), GlobalStatic.UIx + 10, 260));
 
 			Controls.Move(GlobalStatic.CheckBox["StrictSearch"], GlobalStatic.UIx + 20, 240);
 			Controls.Move(GlobalStatic.CheckBox["InvertSearch"], GlobalStatic.UIx + 150, 240);
@@ -338,17 +367,17 @@ namespace DBM
             Controls.Move(GlobalStatic.ComboBox["FunctionList"], GlobalStatic.UIx + 10, 315);
 			Controls.Move(GlobalStatic.ComboBox["ColumnList"], GlobalStatic.UIx + 160, 315);
 
-            _Buttons.AddOrReplace("RunFunction", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Run Function"]), GlobalStatic.UIx + 10, 345));
+            _Buttons.AddOrReplace("RunFunction", Controls.AddButton(Utilities.Localization["Run Function"].ToUpper(), GlobalStatic.UIx + 10, 345));
 			Controls.SetSize(_Buttons["RunFunction"], 290, 30);
 
 			//Custom Query
 			_TextBox["CustomQuery"] = Controls.AddMultiLineTextBox(GlobalStatic.UIx, 420);
 			Controls.SetSize(_TextBox["CustomQuery"], 310, 150);
 
-            _Buttons.AddOrReplace("CustomQuery", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Query"]), GlobalStatic.UIx, 580));
-  			Controls.SetSize(_Buttons["CustomQuery"], 310, 30);
+            _Buttons.AddOrReplace("Query", Controls.AddButton(Utilities.Localization["Query"].ToUpper(), GlobalStatic.UIx, 580) );
+  			Controls.SetSize(_Buttons["Query"], 310, 30);
 
-            _Buttons.AddOrReplace("Command", Controls.AddButton(Text.ConvertToUpperCase(Utilities.Localization["Command"]), GlobalStatic.UIx, 615));
+            _Buttons.AddOrReplace("Command", Controls.AddButton(Utilities.Localization["Command"].ToUpper(), GlobalStatic.UIx, 615));
 
 			Controls.SetSize(_Buttons["Command"] , 310, 30);
 			LDDialogs.ToolTip(_Buttons["Command"], "Executes customized SQL command statements onto the database"); //Localize
@@ -359,25 +388,25 @@ namespace DBM
             _HideDisplay.Clear();
             _HideDisplay.Add(GlobalStatic.ComboBox["Sort"]);
             _HideDisplay.Add(GlobalStatic.ComboBox["ASCDESC"]);
-            _HideDisplay.Add(_Buttons["Sort"]);
+            _HideDisplay.Add(Buttons["Sort"]);
             _HideDisplay.Add(GlobalStatic.ComboBox["Search"]);
             _HideDisplay.Add(_TextBox["Search"]);
             _HideDisplay.Add(GlobalStatic.CheckBox["StrictSearch"]);
             _HideDisplay.Add(GlobalStatic.CheckBox["InvertSearch"]);
-            _HideDisplay.Add(_Buttons["Search"]);
+            _HideDisplay.Add(Buttons["Search"]);
             _HideDisplay.Add(GlobalStatic.ComboBox["FunctionList"]);
             _HideDisplay.Add(GlobalStatic.ComboBox["ColumnList"]);
-            _HideDisplay.Add(_Buttons["RunFunction"]);
+            _HideDisplay.Add(Buttons["RunFunction"]);
             _HideDisplay.Add(_TextBox["CustomQuery"]);
-            _HideDisplay.Add(_Buttons["CustomQuery"]);
-            _HideDisplay.Add(_Buttons["Command"]);
+            _HideDisplay.Add(Buttons["Query"]);
+            _HideDisplay.Add(Buttons["Command"]);
 		}
 
 		public static void Title()
 		{
             Utilities.AddtoStackTrace( "UI.Title()");
 			string SetTitle;
-			SetTitle = GlobalStatic.Title + " " + Engines.DatabaseShortname + "(" + Engines.CurrentDatabase + ") :" + Handlers.TypeofSorts[(GlobalStatic.SortBy)] + ":" + Engines.CurrentTable;
+			SetTitle = GlobalStatic.Title + " " + Engines.DatabaseShortname + "(" + Engines.CurrentDatabase + ") : " + Handlers.TypeofSorts[(GlobalStatic.SortBy)] + " : " + Engines.CurrentTable;
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
 			{
 				SetTitle = GlobalStatic.Title;
@@ -678,11 +707,12 @@ namespace DBM
             else if(Message.Contains("LDDataBase.Query") == true || Message.Contains("LDDataBase.Command") == true)
             {
                 Console.WriteLine("Event Logger: {0}:{1}",Engines.CurrentDatabase, Message);
+                return;
             }
 
             Utilities.AddtoStackTrace("Events.LogMessage(" + Message +","+ Type +"," + Caller +")");
 
-            string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'" + GlobalStatic.UserName + "','"+ GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message + "','" + Type + "');"; ;
+            string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'" + GlobalStatic.UserName + "','"+ GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message.Replace("\n","") + "','" + Type + "');"; ;
 
             Task.Run( ()=> { Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"], false); } );
         }
