@@ -37,7 +37,6 @@ namespace DBM
 			public static string HelpPath = Path.Combine(AssetPath ,"Help Table.html");
 			public static string External_Menu_Items_Path = Path.Combine(AssetPath , "Menu.txt");
        
-			//public const string Online_EULA_URI = "https://drive.google.com/uc?export=download&id=0B2v4xbFnpKvRNTFKckFKLVNNUDg";
 			public const string OnlineDB_Refrence_Location = "https://docs.google.com/uc?id=0B2v4xbFnpKvRVmNVODZ4bnppd3c&export=download";
 
 			//Settings Data
@@ -50,8 +49,6 @@ namespace DBM
 			public static string LastFolder;
 			public static string EULA_UserName;
 			public static string LanguageCode;
-        //public static string EULA_Newest_Version;
-        //public static string EULA_Accepted_Version;
 
         //Lists
         /*

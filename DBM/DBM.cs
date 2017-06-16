@@ -43,7 +43,7 @@ namespace DBM
         //private static Dictionary<string, string> _ComboBox = new Dictionary<string, string>(); //TODO Implement _ComboBox
         private static List<string> _HideDisplay = new List<string>();
 
-        static Primitive MenuList;
+        static Primitive MenuList,IconList;
         
         public static IReadOnlyDictionary<string, string> Buttons
         {
@@ -101,8 +101,8 @@ namespace DBM
             Title();
         }
 
-            public static void Startup()
-            {
+        public static void Startup()
+        {
             Utilities.AddtoStackTrace("UI.Startup()");
             Settings.LoadSettings(GlobalStatic.RestoreSettings); //Load Application Settings from text file
             Settings.Paths
@@ -135,7 +135,7 @@ namespace DBM
                 EULA.UI(GlobalStatic.EULA_Text_File, 0, GlobalStatic.Title, GlobalStatic.Copyright,GlobalStatic.ProductID);
             }
             StartUpStopWatch.Stop();
-            Events.LogMessage("Startup Time: " + StartUpStopWatch.ElapsedMilliseconds + " (ms)", Utilities.Localization["UI"]);
+            Events.LogMessage("Startup Time : " + StartUpStopWatch.ElapsedMilliseconds + " (ms)", Utilities.Localization["UI"]);
         }
 
         public static void StartupGUI()
@@ -195,8 +195,10 @@ namespace DBM
             MenuList[Utilities.Localization["Settings Editor"]] = Utilities.Localization["Settings"];
             //MenuList["DB Settings"] = Utilities.Localization["Settings"]; //TODO LOCALIZE //TODO Implement
             MenuList[Utilities.Localization["Refresh Schema"]] = Utilities.Localization["Settings"];
-            //GlobalStatic.MenuList[Utilities.Localization["Check for Updates"]] = Utilities.Localization["Settings"];
+            MenuList[Utilities.Localization["Check for Updates"]] = Utilities.Localization["Settings"];
             MenuList["-"] = Utilities.Localization["Settings"];
+
+            //IconList[Utilities.Localization["Settings Editor"]] = LDImage.LoadSVG( GlobalStatic.AssetPath + "\\Images\\settings.svg");
 
             //Plugin Section
             /*
@@ -205,6 +207,8 @@ namespace DBM
 			GlobalStatic.MenuList["View"] = "SB Backup Script";
 			GlobalStatic.MenuList["ICF"] = Utilities.Localization["Plugin"];
             */
+
+
         }
 
         public static void MainMenu()
@@ -222,7 +226,7 @@ namespace DBM
                 Engines.GetSchema(Engines.CurrentDatabase);
             }
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 8;
-            string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, MenuList, null, null);
+            string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, MenuList, IconList, null);
             Shapes.Move(Shapes.AddText(Utilities.Localization["Sort"] + ":"), 990, 1);
 
             int SortOffset = LDText.GetWidth(Utilities.Localization["Sort"] + ":") - LDText.GetWidth("Sort:"); //Offsets some controls when not using the default English encoding

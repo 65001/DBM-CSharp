@@ -2,8 +2,10 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 using Microsoft.SmallBasic.Library;
+using LitDev;
 using System.IO;
 
 namespace DBM
@@ -44,8 +46,24 @@ namespace DBM
                 { "Transaction_DB", Program.Directory + "\\Assets\\Transactions.db" },
                 { "Font_Size", 12 }
             };
-            Primitive Setting_Files = "13=1;14=1;";
+            //Attempts to convert your language automatically if needed.
+            if (string.IsNullOrWhiteSpace(GlobalStatic.Settings["Language"]))
+            {
+                CultureInfo CI = CultureInfo.CurrentUICulture;
+                for (int i = 0; i < Utilities.ISO_LangCode.Count; i++)
+                {
+                    if (Utilities.ISO_LangCode[i] != Defaults["Language"] && CI.TwoLetterISOLanguageName == Utilities.ISO_LangCode[i])
+                    {
+                        if (LitDev.LDDialogs.Confirm("Do you wish to change your language from en to " + CI.TwoLetterISOLanguageName, "") == "Yes")
+                        {
+                            Defaults["Language"] = CI.TwoLetterISOLanguageName;
+                        }
+                    }
+                }
+            }
+
             Primitive Settings_Directories = "10=1;11=1;12=1;";
+            Primitive Setting_Files = "13=1;14=1;";
 
             if(NullSettings.Count != Defaults.Count) { throw new ApplicationException("Disparity between NullSettings Values and Default Values. Could indicate Settings Corruption."); }
 

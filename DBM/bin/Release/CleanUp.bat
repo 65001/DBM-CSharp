@@ -14,4 +14,6 @@ del DBM.exe.config
 del DBM.exe.manifest
 del DBM.exe.lastcodeanalysissucceeded
 del DBM.exe.CodeAnalysisLog.xml
-ECHO Complete
+
+ECHO Complete
+exit 0

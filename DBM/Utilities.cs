@@ -53,7 +53,7 @@ namespace DBM
         public static void LocalizationXML(string XMLPath)
 		{
 			AddtoStackTrace( "Utilities.LocalizationXML()");
-
+           
 			string XMLDoc = LDxml.Open(XMLPath);
 			if (System.IO.File.Exists(XMLPath))
 			{
@@ -155,6 +155,7 @@ namespace DBM
 		public static void Updater()  //TODO Update Functionality. Possibly make this a function?
 		{
 			AddtoStackTrace( "Utilities.Updater()");
+
 		}
 
 

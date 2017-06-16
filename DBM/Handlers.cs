@@ -277,7 +277,7 @@ namespace DBM
             }
             else if (Item == Utilities.Localization["Check for Updates"]) //TODO
             {
-
+                Utilities.Updater();
             }
             //Developer
             else if (Item == Utilities.Localization["Stack Trace"])
