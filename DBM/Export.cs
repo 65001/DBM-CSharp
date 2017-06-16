@@ -192,63 +192,35 @@ namespace DBM
                     throw new PlatformNotSupportedException("Current Engine is not supported");
             }
         }
-        /*
-         * // TODO Fix XML
-        public static void XML(Primitive Data,Primitive Schema,string FilePath) //TODO
+        
+         // TODO Fix XML
+        public static void XML(Primitive Data,Primitive Schema,string Title,string FilePath) //TODO
         {
             Utilities.AddtoStackTrace("Export.XML");
 
-            const string XML_Creation_Statement = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><root></root>";
-            System.IO.File.WriteAllText(FilePath, XML_Creation_Statement);
+            const string XML_Creation_Statement = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n";
 
-            string Document = LDxml.Open(FilePath);
-            string Parent = LDxml.Parent();
-            LDxml.FirstChild();
-            bool Continue = true;
+            Title = Title.Replace(" ", "_").Replace("\"", "").Replace("&", "").Replace("<", "").Replace(">", "").Replace("'","");
+            StringBuilder _XML = new StringBuilder();
+            _XML.Append(XML_Creation_Statement);
+            _XML.Append("<root>\n");
+            _XML.AppendFormat("\t<{0}>\n", Title);
 
-            Primitive DataArray = Utilities.XMLAttributes();
-
-            while (Continue)
+            for (int i = 1; i <= Data.GetItemCount(); i++)
             {
-                string Switcher = DataArray[5];
-                switch (Switcher)
+                _XML.Append("\t\t<row>\n");
+                for (int ii = 1; ii <= Schema.GetItemCount(); ii++)
                 {
-                    //Ignore Root and XMLDeclaration
-                    case "XmlDeclaration":
-                    case "root":
-                        LDxml.NextSibling();
-                        DataArray = Utilities.XMLAttributes();
-                        break;
-                    default:
-                        DataArray = Utilities.XMLAttributes();
-                        XML_Write(Data,Schema);
-                        LDxml.Save(FilePath);
-                        Continue = false;
-                        break;
+                    string Node = ((string)Schema[ii]).Replace(" ", "_").Replace("\"", "").Replace("&","").Replace("<", "").Replace(">", "").Replace("'", "");
+                    string Item = ((string)Data[i][Schema[ii]]).Replace("&", "&amp;").Replace("<", "&lt;");
+                    _XML.AppendFormat("\t\t\t<{0}>{1}</{0}>\n", Node, Item);
                 }
+                _XML.Append("\t\t</row>\n");
             }
+            _XML.AppendFormat("\t</{0}>\n", Title);
+            _XML.Append("</root>");
+            System.IO.File.WriteAllText(FilePath, _XML.ToString());
         }
-        
-        static void XML_Write(Primitive Data,Primitive Schema)
-        {
-            Utilities.AddtoStackTrace("Export.XML_Write");
-            for (int i = 1;i <= SBArray.GetItemCount(Data); i++)
-            {
-                Primitive _Attribute = null;
-                _Attribute["id"] = i;
-                LDxml.AddNode("record",_Attribute, null, "Append");
-                string Child = LDxml.LastChild();
-                Primitive DataArray = Utilities.XMLAttributes();
-                for(int ii=1;ii <= SBArray.GetItemCount(Data[i]);ii++)
-                {
-                    string _Schema = Schema[ii];
-                    Primitive _Data = Data[i];
-                    LDxml.AddNode(_Schema.Replace(" ", "_"), null, _Data[_Schema], "Append");
-                }
-                LDxml.Parent();
-            }
-        }
-        */
 
         public static void HTML(Primitive Data, Primitive Schema, string Title, string FilePath, string Generator) //TODO
         {

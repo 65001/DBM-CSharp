@@ -60,6 +60,9 @@ namespace DBM
         static List<string> _Last_Query = new List<string>();
         static List<string> _Last_NonSchema_Query = new List<string>();
 
+        public static event EventHandler OnGetColumnsofTable;
+        public static event EventHandler OnSchemaChange;
+
         public static int Command(string Database, string SQL,string Explanation)
         {
             return Command(Database, SQL, GlobalStatic.UserName, Explanation, false);
@@ -218,6 +221,7 @@ namespace DBM
                     {
                         GetColumnsofTable(Database, CurrentTable);
                     }
+                    OnSchemaChange(null,EventArgs.Empty);
                     break;
             }
         }
@@ -243,6 +247,7 @@ namespace DBM
                         _Schema.Add(QSchema[i]["name"]);
                     }
                     Schema = _Schema.ToPrimitiveArray(); ;
+                    OnGetColumnsofTable(null,EventArgs.Empty);
                     break;
             }
         }
@@ -268,9 +273,6 @@ namespace DBM
                 }
                 Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
         }
-
-        public static void OnDefaultTableChanged(EventArgs e) { }
-
 
         public static void GenerateQuery(bool Search, bool Sort, bool Function, string SearchBy, string OrderBy, string SortOrder, bool StrictSearch, bool InvertSearch, string FunctionSelected, string FunctionColumn, string SearchText)
         {

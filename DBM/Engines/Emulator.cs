@@ -22,15 +22,28 @@ namespace DBM
                     if (SQL.StartsWith(".help", Comparison))
                     {
                         EmulatorTable = "DBM_SQLITE_Help";
+                        List<string> Arguments = new List<string>()
+                        {
+                            ".help",".databases",".tables",".index",".pragma",".querytimes",".filesystem $Path",".stacktrace"
+                        };
+                        Dictionary<string, string> Description = new Dictionary<string, string>
+                        {
+                            { ".help", "Displays this table.Note: The following commands are being interpreted by the DBM CLI Emulator not the SQLITE CLI." },
+                            { ".databases", "Displays a list of connected databases." },
+                            { ".tables","Lists all tables and views in the current database."},
+                            { ".index","Lists all the indexes in the current database."},
+                            { ".pragma","Lists most pragma settings for sqlite db."},
+                            { ".querytimes","Lists all queries executed by the program and the time in miliseconds"},
+                            { ".filesystem $Path","Lists all the folders and files in the argumented path. Defaults to MyDocuments if no argument is given." },
+                            { ".stacktrace","Lists the functions and methods and the like and the order they were called in." }
+                        };
+                        Arguments.Sort();
                         Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Arguments TEXT,Description TEXT);", EmulatorTable);
-                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.help','displays this table. Note: The following commands are being interpreted by the DBM CLI Emulator not the SQLITE CLI.');", EmulatorTable);
-                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.databases','Displays a list of connected databases.');", EmulatorTable);
-                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.tables','Lists all tables and views in the current database.');", EmulatorTable);
-                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.index','Lists all the indexes in the current database.');", EmulatorTable);
-                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.pragma','Lists most pragma settings for sqlite db.');", EmulatorTable);
-                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.querytimes','Lists all queries executed by the program and the time needed for a response.');", EmulatorTable);
-                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.filesystem','Lists all the folders and files in the argumented path. Defaults to MyDocuments if no argument is given.');", EmulatorTable);
-                        Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('.stacktrace','Lists the functions and methods and the like and the order they were called in.');", EmulatorTable);
+
+                        for (int i = 0; i < Arguments.Count; i++)
+                        {
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}');", EmulatorTable, Arguments[i], Description[Arguments[i]]);
+                        }
                         break;
                     }
                     else if (SQL.StartsWith(".databases", Comparison))
@@ -42,7 +55,7 @@ namespace DBM
                             Emulator_Sql.AppendFormat("INSERT INTO {0} (NAME,\"DBM NAME\",FILE) VALUES ('{1}','{2}','{3}');", EmulatorTable, DB_Name[i].Replace("'", "''"), DB_ShortName[i].Replace("'", "''"), DB_Path[i].Replace("'", "''"));
                         }
                     }
-                    else if (SQL.StartsWith(".tables", Comparison))
+                    else if (SQL.StartsWith(".tables", Comparison) || SQL.StartsWith(".views", Comparison))
                     {
                         EmulatorTable = "DBM_SQLITE_Tables";
                         Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,NAME TEXT,Type TEXT);", EmulatorTable);
@@ -74,6 +87,8 @@ namespace DBM
                             "incremental_vacuum","integrity_check","journal_mode","journal_size_limit","legacy_file_format","locking_mode","max_page_count","mmap_size","page_count","page_size","query_only","read_uncommitted","recursive_triggers","reverse_unordered_selects","secure_delete","soft_heap_limit","synchronous","temp_store","threads","user_version",
                             "wal_autocheckpoint","writable_schema"
                         };
+
+                        PRAGMA.Sort();
                         /*The following were removed due to them displaying 1+ rows of data
                          * Collation_List
                          * Compile_Options
@@ -153,6 +168,8 @@ namespace DBM
                 string _SQL = Emulator_Sql.ToString();
                 Command(Database, "DROP TABLE IF EXISTS " + EmulatorTable + ";" + _SQL, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
                 Query(Database, "SELECT * FROM " + EmulatorTable + ";", Listview, false, Username, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
+
+                Engines.GetSchema(Database);
                 Engines.SetDefaultTable(EmulatorTable);
                 Engines.GetColumnsofTable(Database, EmulatorTable);
             }

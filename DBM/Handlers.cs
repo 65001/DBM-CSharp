@@ -185,7 +185,7 @@ namespace DBM
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
-                    //Export.XML(Data,Export.GenerateSchemaFromQueryData(Data),Path);
+                    Export.XML(Data,Export.GenerateSchemaFromQueryData(Data),Engines.CurrentTable,Path);
                     GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
                     return;
                 }
@@ -316,15 +316,15 @@ namespace DBM
                     Primitive ASCDESC_Sorts = "1=ASC;2=DESC;";
                     bool Search = false, Sort = true, Function = false;
 
-                    bool.TryParse(LDControls.CheckBoxGetState(GlobalStatic.CheckBox["StrictSearch"]),out bool StrictSearch );
+                    bool.TryParse(LDControls.CheckBoxGetState(GlobalStatic.CheckBox["StrictSearch"]), out bool StrictSearch);
                     bool.TryParse(LDControls.CheckBoxGetState(GlobalStatic.CheckBox["InvertSearch"]), out bool InvertSearch);
 
-                    string SearchIn = "\"" + Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Search"])] +"\"";
+                    string SearchIn = "\"" + Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Search"])] + "\"";
                     string SearchText = Controls.GetTextBoxText(UI.TextBox["Search"]).ToString().Replace("'", "''");
-                    string FunctionIn = "\""+ Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ColumnList"])]+"\"";
-                    string FunctionCalled = Engines.Functions(Engines.CurrentEngine) [LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["FunctionList"])-1];
+                    string FunctionIn = "\"" + Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ColumnList"])] + "\"";
+                    string FunctionCalled = Engines.Functions(Engines.CurrentEngine)[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["FunctionList"]) - 1];
 
-                    string SortBy = "\""+ Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Sort"])]+"\"";
+                    string SortBy = "\"" + Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Sort"])] + "\"";
                     string ASCDESC = ASCDESC_Sorts[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ASCDESC"])];
                     if (LastButton == UI.Buttons["Search"])
                     {
@@ -336,12 +336,12 @@ namespace DBM
                     }
 
                     Console.WriteLine("");
-                    Console.WriteLine("Search: {0} Sort : {1} Function :{2}",Search,Sort,Function);
+                    Console.WriteLine("Search: {0} Sort : {1} Function :{2}", Search, Sort, Function);
                     Console.WriteLine("Strict Search : {0} Invert Search : {1}", StrictSearch, InvertSearch);
-                    Console.WriteLine("SearchIn : {0} Search Text : {1} FunctionIn : {2} FunctionCalled : {3} SortBy : {4} ASCDESC : {5} LastButton : {6}", SearchIn, SearchText, FunctionIn, FunctionCalled, SortBy, ASCDESC,Controls.GetButtonCaption( LastButton));
+                    Console.WriteLine("SearchIn : {0} Search Text : {1} FunctionIn : {2} FunctionCalled : {3} SortBy : {4} ASCDESC : {5} LastButton : {6}", SearchIn, SearchText, FunctionIn, FunctionCalled, SortBy, ASCDESC, Controls.GetButtonCaption(LastButton));
                     Engines.GenerateQuery(Search, Sort, Function, SearchIn, SortBy, ASCDESC, StrictSearch, InvertSearch, FunctionCalled, FunctionIn, SearchText);
                 }
-                else if (LastButton == UI.Buttons["CustomQuery"])
+                else if (LastButton == UI.Buttons["Query"])
                 {
                     Engines.Query(Engines.CurrentDatabase, Controls.GetTextBoxText(UI.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["User Requested"]);
                 }
@@ -350,11 +350,12 @@ namespace DBM
                     Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(UI.TextBox["CustomQuery"]), GlobalStatic.UserName, Utilities.Localization["User Requested"], false);
                 }
             }
-            catch(KeyNotFoundException)
+            catch (KeyNotFoundException)
             {
-                string Message = Controls.GetButtonCaption(LastButton) + " does not exist in context or has not yet implemented";
+                string Message = Controls.GetButtonCaption(LastButton) + "(" + LastButton + ") |" + UI.Buttons.ContainsKey(LastButton) + "|" + Controls.GetButtonCaption(LastButton) == Utilities.Localization["Query"].ToUpper() + "| does not exist in context or has not yet implemented.";
                 Events.LogMessagePopUp(Message, Message, "Error: Handlers.Buttons", "System");
             }
+            
 		}
 
 		public static void ComboBox(string ComboBox, int Index)
@@ -396,10 +397,12 @@ namespace DBM
 
             LDControls.ComboBoxContent(GlobalStatic.ComboBox["FunctionList"],Engines.Functions(Engines.EnginesMode.SQLITE).ToPrimitiveArray());
 
+            
 			SortsComboBox(1);
             TableComboBox(1);
             LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sorts"], 1);
 			LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Table"], 1);
+            
 
 			if (GlobalStatic.SortBy == 4)
 			{
