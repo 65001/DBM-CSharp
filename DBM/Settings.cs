@@ -16,7 +16,7 @@ namespace DBM
         static List<string> NullSettings = new List<string>()
         {
             "Listview_Width","Listview_Height","VersionID","Extensions","Language","Transaction_Query","Transaction_Commands","Deliminator","TimeOut","LastFolder"
-            ,"OS_Dir","Asset_Dir","Log_DB_Path","Transaction_DB","Font_Size"
+            ,"OS_Dir","Asset_Dir","Log_DB_Path","Transaction_DB","Font_Size","LastUpdateCheck","AutoUpdate"
         };
 
 		public static void LoadSettings(bool RestoreSettings)
@@ -44,9 +44,12 @@ namespace DBM
                 { "Asset_Dir", Program.Directory + "\\Assets\\" },
                 { "Log_DB_Path", Program.Directory + "\\Assets\\Log.db" },
                 { "Transaction_DB", Program.Directory + "\\Assets\\Transactions.db" },
-                { "Font_Size", 12 }
+                { "Font_Size", 12 },
+                { "LastUpdateCheck",DateTime.Now.AddDays(-14).ToString("yyyy-MM-dd") },
+                { "AutoUpdate",true }
             };
             //Attempts to convert your language automatically if needed.
+            //Untested
             if (string.IsNullOrWhiteSpace(GlobalStatic.Settings["Language"]))
             {
                 CultureInfo CI = CultureInfo.CurrentUICulture;
@@ -112,6 +115,11 @@ namespace DBM
             GlobalStatic.Transaction_Query = GlobalStatic.Settings["Transaction_Query"];
             GlobalStatic.Transaction_Commands = GlobalStatic.Settings["Transaction_Commands"];
             GlobalStatic.DefaultFontSize = GlobalStatic.Settings["Font_Size"];
+            GlobalStatic.AutoUpdate = GlobalStatic.Settings["AutoUpdate"];
+            int.TryParse(GlobalStatic.Settings["LastUpdateCheck"].ToString().Replace("-", ""), out int LastAutoUpdate);
+            GlobalStatic.LastUpdateCheck = LastAutoUpdate;
+            int.TryParse(DateTime.Now.ToString("yyyyMMdd"), out int Today);
+            GlobalStatic.ISO_Today = Today;
         }
 
 		public static void SaveSettings()

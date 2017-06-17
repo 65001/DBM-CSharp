@@ -20,7 +20,9 @@ namespace DBM
         static List<string> _UI_Name = new List<string>();
         static List<string> _UI_Action = new List<string>();
         static List<string> _UI_Handler = new List<string>();
-        
+        static string UpdaterDB = null;
+
+
         public static IReadOnlyDictionary<string, string> Localization
         {
             get { return _Localization; }
@@ -155,9 +157,12 @@ namespace DBM
 		public static void Updater(bool UI = true)  //TODO Update Functionality. Possibly make this a function?
 		{
 			AddtoStackTrace( "Utilities.Updater()");
-            if (LDNetwork.DownloadFile(GlobalStatic.UpdaterDBpath, GlobalStatic.OnlineDB_Refrence_Location) != -1)
+            if (string.IsNullOrWhiteSpace(UpdaterDB) == false || LDNetwork.DownloadFile(GlobalStatic.UpdaterDBpath, GlobalStatic.OnlineDB_Refrence_Location) != -1)
             {
-                string UpdaterDB = LDDataBase.ConnectSQLite(GlobalStatic.UpdaterDBpath);
+                if (string.IsNullOrWhiteSpace(UpdaterDB))
+                {
+                    UpdaterDB = LDDataBase.ConnectSQLite(GlobalStatic.UpdaterDBpath);
+                }
                 Primitive QueryItems = LDDataBase.Query(UpdaterDB, "SELECT * FROM updates WHERE PRODUCTID =" + "'" + GlobalStatic.ProductID + "';", null, true);
                 int.TryParse(QueryItems[1]["VERSION"], out int LatestVersion);
                 int.TryParse(GlobalStatic.VersionID, out int CurrentVersion);
@@ -165,41 +170,25 @@ namespace DBM
                 string DownloadLocation = QueryItems[1]["URL"];
                 string DownloadLocation2 = QueryItems[1]["URL2"];
 
-                if (UI == true)
+                if (CurrentVersion == LatestVersion && UI == true)
                 {
-                    if (CurrentVersion == LatestVersion)
+                    GraphicsWindow.ShowMessage("There are no updates available", "No Updates");
+                }
+                else if (CurrentVersion > LatestVersion && UI == true)
+                {
+                    GraphicsWindow.ShowMessage("You have a more recent edition of the program than that offered to the public.\nYou have version " + CurrentVersion + " while the most recent public release is version " + LatestVersion, "No Updates");
+                }
+                else if (CurrentVersion < LatestVersion) //Possible use case for automatic updatechecking after X days
+                {
+                    if (LDDialogs.Confirm("Do you wish to download Version " + LatestVersion + "? You have Version " + CurrentVersion, "Download Update") == "Yes")
                     {
-                        GraphicsWindow.ShowMessage("There are no updates available", "No Updates");
-                    }
-                    else if (CurrentVersion > LatestVersion)
-                    {
-                        GraphicsWindow.ShowMessage("You have a more recent edition of the program than that offered to the public.\n You have version " + CurrentVersion + " while the most recent public release is version " + LatestVersion, "No Updates");
-                    }
-                    else if (CurrentVersion < LatestVersion)
-                    {
-                        if (LDDialogs.Confirm("Do you wish to download Version " + LatestVersion + "? You have Version " + CurrentVersion, "Download Update") == "Yes")
-                        {
-                            DownloadUpdate(DownloadLocation);
-                        }
-                    }
-                    else if (CurrentVersion < LatestVersion)
-                    {
-                        if (LDDialogs.Confirm("Do you wish to download Version " + LatestVersion + "? You have Version " + CurrentVersion, "Download Update") == "Yes")
-                        {
-                            DownloadUpdate(DownloadLocation);
-                        }
+                         DownloadUpdate(DownloadLocation);
                     }
                 }
-                else //Possible use case for automatic updatechecking after X days
-                {
-                    if (CurrentVersion < LatestVersion)
-                    {
-                        if (LDDialogs.Confirm("Do you wish to update to version " + LatestVersion + "? You have Version " + CurrentVersion, "Download Update") == "Yes")
-                        {
-                            DownloadUpdate(DownloadLocation);
-                        }
-                    }
-                }
+                //IMPORTANT. Updates LastUpdateCheck
+                GlobalStatic.Settings["LastUpdateCheck"] = DateTime.Now.ToString("yyyy-MM-dd");
+                Settings.SaveSettings();
+                Settings.LoadSettings(GlobalStatic.RestoreSettings);
             }
             else
             {

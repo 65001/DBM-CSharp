@@ -42,9 +42,9 @@ namespace DBM
 			public const string OnlineDB_Refrence_Location = "https://github.com/65001/DBM-CSharp/raw/master/DBM/bin/Release/Assets/Updater.db";
 
 			//Settings Data
-			public static bool RestoreSettings;
+			public static bool RestoreSettings,AutoUpdate;
 			public static Primitive Settings,Extensions;
-			public static int Listview_Width,Listview_Height,UIx,Timeout,SortBy;
+			public static int Listview_Width,Listview_Height,UIx,Timeout,SortBy,LastUpdateCheck,ISO_Today;
 
 			public static bool Transaction_Query,Transaction_Commands, EULA_Acceptance;
 			public static string Deliminator;

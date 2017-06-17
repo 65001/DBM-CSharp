@@ -153,6 +153,11 @@ namespace DBM
             LDGraphicsWindow.State = 2;
             PreMainMenu();
             MainMenu();
+            if (GlobalStatic.AutoUpdate == true && GlobalStatic.LastUpdateCheck + 14 <= GlobalStatic.ISO_Today)
+            {
+                Events.LogMessage("Autoupdate Check", "Updater");
+                Utilities.Updater(false);
+            }
         }
 
         public static void PreMainMenu()
@@ -718,7 +723,7 @@ namespace DBM
             else if(Message.Contains("LDDataBase.Query") == true || Message.Contains("LDDataBase.Command") == true)
             {
                 Console.WriteLine("Event Logger: {0}:{1}",Engines.CurrentDatabase, Message);
-                return;
+                //return;
             }
 
             Utilities.AddtoStackTrace("Events.LogMessage(" + Message +","+ Type +"," + Caller +")");
