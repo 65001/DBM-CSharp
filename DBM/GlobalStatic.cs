@@ -21,6 +21,7 @@ namespace DBM
             //Self Aware Data
             public const string Copyright = "2016 through 2017";
 			public const string ProductID = "DBM C#";
+
 			public static readonly string VersionID = typeof(GlobalStatic).Assembly.GetName().Version.ToString().Replace(".","");
 			public static int DefaultFontSize;
         
@@ -30,6 +31,7 @@ namespace DBM
 			public static string Localization_LanguageCodes_Path = Path.Combine(LocalizationFolder, "Lang");
 			public static string PluginPath = Path.Combine( ProgramDirectory ,"Plugin");
 			public static string LogDBpath = Path.Combine(AssetPath , "Log.db");
+            public static string UpdaterDBpath = Path.Combine(AssetPath, "Updater.db");
 			public static string TransactionDBPath = Path.Combine(AssetPath , "Transactions.db");
 			public static string EULA_Text_File = Path.Combine(AssetPath , "EULA.txt");
 			public static string SettingsPath = Path.Combine(AssetPath ,"setting.txt");
@@ -37,12 +39,12 @@ namespace DBM
 			public static string HelpPath = Path.Combine(AssetPath ,"Help Table.html");
 			public static string External_Menu_Items_Path = Path.Combine(AssetPath , "Menu.txt");
        
-			public const string OnlineDB_Refrence_Location = "https://docs.google.com/uc?id=0B2v4xbFnpKvRVmNVODZ4bnppd3c&export=download";
+			public const string OnlineDB_Refrence_Location = "https://github.com/65001/DBM-CSharp/raw/master/DBM/bin/Release/Assets/Updater.db";
 
 			//Settings Data
 			public static bool RestoreSettings;
 			public static Primitive Settings,Extensions;
-			public static int Listview_Width,Listview_Height,UIx,LastVersion,Timeout,SortBy;
+			public static int Listview_Width,Listview_Height,UIx,Timeout,SortBy;
 
 			public static bool Transaction_Query,Transaction_Commands, EULA_Acceptance;
 			public static string Deliminator;

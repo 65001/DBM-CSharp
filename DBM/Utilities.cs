@@ -152,11 +152,80 @@ namespace DBM
 			return null;
 		}
 
-		public static void Updater()  //TODO Update Functionality. Possibly make this a function?
+		public static void Updater(bool UI = true)  //TODO Update Functionality. Possibly make this a function?
 		{
 			AddtoStackTrace( "Utilities.Updater()");
+            if (LDNetwork.DownloadFile(GlobalStatic.UpdaterDBpath, GlobalStatic.OnlineDB_Refrence_Location) != -1)
+            {
+                string UpdaterDB = LDDataBase.ConnectSQLite(GlobalStatic.UpdaterDBpath);
+                Primitive QueryItems = LDDataBase.Query(UpdaterDB, "SELECT * FROM updates WHERE PRODUCTID =" + "'" + GlobalStatic.ProductID + "';", null, true);
+                int.TryParse(QueryItems[1]["VERSION"], out int LatestVersion);
+                int.TryParse(GlobalStatic.VersionID, out int CurrentVersion);
 
-		}
+                string DownloadLocation = QueryItems[1]["URL"];
+                string DownloadLocation2 = QueryItems[1]["URL2"];
+
+                if (UI == true)
+                {
+                    if (CurrentVersion == LatestVersion)
+                    {
+                        GraphicsWindow.ShowMessage("There are no updates available", "No Updates");
+                    }
+                    else if (CurrentVersion > LatestVersion)
+                    {
+                        GraphicsWindow.ShowMessage("You have a more recent edition of the program than that offered to the public.\n You have version " + CurrentVersion + " while the most recent public release is version " + LatestVersion, "No Updates");
+                    }
+                    else if (CurrentVersion < LatestVersion)
+                    {
+                        if (LDDialogs.Confirm("Do you wish to download Version " + LatestVersion + "? You have Version " + CurrentVersion, "Download Update") == "Yes")
+                        {
+                            DownloadUpdate(DownloadLocation);
+                        }
+                    }
+                    else if (CurrentVersion < LatestVersion)
+                    {
+                        if (LDDialogs.Confirm("Do you wish to download Version " + LatestVersion + "? You have Version " + CurrentVersion, "Download Update") == "Yes")
+                        {
+                            DownloadUpdate(DownloadLocation);
+                        }
+                    }
+                }
+                else //Possible use case for automatic updatechecking after X days
+                {
+                    if (CurrentVersion < LatestVersion)
+                    {
+                        if (LDDialogs.Confirm("Do you wish to update to version " + LatestVersion + "? You have Version " + CurrentVersion, "Download Update") == "Yes")
+                        {
+                            DownloadUpdate(DownloadLocation);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
+            }
+        }
+
+        static void DownloadUpdate(string DownloadLink)
+        {
+            string DownloadFolder = string.Empty;
+            while (string.IsNullOrWhiteSpace( DownloadFolder ) || string.IsNullOrWhiteSpace( LDFile.GetExtension(DownloadFolder) ))
+            {
+                GraphicsWindow.ShowMessage("You will be prompted to select the download location.", "Download Location");
+                DownloadFolder = LDDialogs.SaveFile("1=zip;2=*", "C:\\Users\\" + LDFile.UserName);
+            }
+            int UpdaterSize = LDNetwork.DownloadFile(DownloadFolder, DownloadLink);
+            switch (UpdaterSize)
+            {
+                case -1:
+                    GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
+                    break;
+                default:
+                    GraphicsWindow.ShowMessage("SUCCESS", "Update Downloaded");
+                    break;
+            }
+        }
 
 
 		public static void AddControl() 

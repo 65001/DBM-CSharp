@@ -98,7 +98,6 @@ namespace DBM
         {
             GlobalStatic.Listview_Width = GlobalStatic.Settings["Listview_Width"];
             GlobalStatic.Listview_Height = GlobalStatic.Settings["Listview_Height"];
-            GlobalStatic.LastVersion = GlobalStatic.Settings["VersionID"];
             GlobalStatic.LastFolder = GlobalStatic.Settings["LastFolder"];
             GlobalStatic.Extensions = GlobalStatic.Settings["Extensions"];
             GlobalStatic.Deliminator = GlobalStatic.Settings["Deliminator"];

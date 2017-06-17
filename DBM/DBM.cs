@@ -12,6 +12,8 @@ using LitDev;
 using Microsoft.SmallBasic.Library;
 
 /*
+ *  TODO : Automatic updatechecking after 14 days
+ 
 	TODO : SQLITE setup
 	TODO : Set it up so that if no table exists in a database then revert to sqlite_master or equivalent
 		

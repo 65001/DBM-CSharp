@@ -275,7 +275,7 @@ namespace DBM
                 Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
                 return;
             }
-            else if (Item == Utilities.Localization["Check for Updates"]) //TODO
+            else if (Item == Utilities.Localization["Check for Updates"])
             {
                 Utilities.Updater();
             }
