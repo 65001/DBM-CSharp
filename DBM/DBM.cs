@@ -81,13 +81,18 @@ namespace DBM
 
         static void ColumnsChanged(object sender, EventArgs e)
         {
-            LDControls.ComboBoxContent(GlobalStatic.ComboBox["Sort"], Engines.Schema);
-            LDControls.ComboBoxContent(GlobalStatic.ComboBox["Search"], Engines.Schema);
-            LDControls.ComboBoxContent(GlobalStatic.ComboBox["ColumnList"], Engines.Schema);
+            Utilities.AddtoStackTrace("ColumnsChanged");
+            if (GlobalStatic.SortBy != 0)
+            {
+                LDControls.ComboBoxContent(GlobalStatic.ComboBox["Sort"], Engines.Schema);
+                LDControls.ComboBoxContent(GlobalStatic.ComboBox["Search"], Engines.Schema);
+                LDControls.ComboBoxContent(GlobalStatic.ComboBox["ColumnList"], Engines.Schema);
+            }
         }
 
         static void SchemaChanged(object sender, EventArgs e)
         {
+            Utilities.AddtoStackTrace("SchemaChanged");
             switch (GlobalStatic.SortBy)
             {
                 case 1:
@@ -720,7 +725,7 @@ namespace DBM
 
             string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'" + GlobalStatic.UserName + "','"+ GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message.Replace("\n","") + "','" + Type + "');"; ;
 
-            Task.Run( ()=> { Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"], false); } );
+            Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"], false);
         }
 
 		public static void Closing()
