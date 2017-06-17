@@ -209,11 +209,12 @@ namespace DBM
 
         static void DownloadUpdate(string DownloadLink)
         {
+            AddtoStackTrace("Utilities.DownloadUpdate(" + DownloadLink + ")");
             string DownloadFolder = string.Empty;
             while (string.IsNullOrWhiteSpace( DownloadFolder ) || string.IsNullOrWhiteSpace( LDFile.GetExtension(DownloadFolder) ))
             {
                 GraphicsWindow.ShowMessage("You will be prompted to select the download location.", "Download Location");
-                DownloadFolder = LDDialogs.SaveFile("1=zip;2=*", "C:\\Users\\" + LDFile.UserName);
+                DownloadFolder = LDDialogs.SaveFile("1=zip;", Program.Directory);
             }
             int UpdaterSize = LDNetwork.DownloadFile(DownloadFolder, DownloadLink);
             switch (UpdaterSize)
