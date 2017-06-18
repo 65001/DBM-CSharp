@@ -136,16 +136,19 @@ namespace DBM
                         Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,SQL TEXT,\"Execution Time (ms)\" INTEGER);", EmulatorTable);
 
                         int ii = 0;
+                        LastQuery.Print();
                         for (int i = 0; i < _Type_Referer.Count; i++)
                         {
                             if (_Type_Referer[i] == Type.Query)
                             {
-                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}');", EmulatorTable, ii, LastQuery[ii], _Timer[i]);
+                                Console.WriteLine("#{0} is a {1} with a time of {2}(ms) {3} : {4}", i, _Type_Referer[i], _Timer[i],ii,LastQuery[ii]);
+                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}');", EmulatorTable, ii, LastQuery[ii].Replace("'", "''"), _Timer[i]);
+
                                 ii++;
                             }
                             else
                             {
-                                //Console.WriteLine("#{0} is a {1} with a time of {2}(ms)", i, _Type_Referer[i], _Timer[i]);
+                                Console.WriteLine("#{0} is a {1} with a time of {2}(ms)", i, _Type_Referer[i], _Timer[i]);
                             }
                         }
                     }

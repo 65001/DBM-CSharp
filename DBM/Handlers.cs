@@ -188,7 +188,7 @@ namespace DBM
             else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
             { }
             //Export
-            else if (Item == Utilities.Localization["PXML"] + " ") //TODO XML
+            else if (Item == Utilities.Localization["PXML"] + " ") 
             {
                 string Path = LDDialogs.SaveFile("xml", null);
                 if (!string.IsNullOrWhiteSpace(Path))
@@ -296,6 +296,7 @@ namespace DBM
         
         public static void ContextMenu(string Control,int Index)
         {
+            Utilities.AddtoStackTrace("Handlers.ContextMenu(" + Control + "," + Index + ")");
             if (Control == GlobalStatic.ListView)
             {
                 if (Index <= 3)
@@ -310,11 +311,12 @@ namespace DBM
 
         public static void Buttons(string LastButton)
 		{
+            Utilities.AddtoStackTrace("Handlers.Buttons(" + LastButton + ")");
             try
             {
                 if (LastButton == UI.Buttons["Search"] || LastButton == UI.Buttons["Sort"] || LastButton == UI.Buttons["RunFunction"])
                 {
-                    Primitive ASCDESC_Sorts = "1=ASC;2=DESC;3=RANDOM()";
+                    Primitive ASCDESC_Sorts = "1=ASC;2=DESC;3=RANDOM();";
                     bool Search = false, Sort = true, Function = false;
 
                     bool.TryParse(LDControls.CheckBoxGetState(GlobalStatic.CheckBox["StrictSearch"]), out bool StrictSearch);
@@ -337,15 +339,16 @@ namespace DBM
                         Function = true;
                     }
 
-                    Console.WriteLine("");
-                    Console.WriteLine("Search: {0} Sort : {1} Function :{2}", Search, Sort, Function);
-                    Console.WriteLine("Strict Search : {0} Invert Search : {1}", StrictSearch, InvertSearch);
-                    Console.WriteLine("SearchIn : {0} Search Text : {1} FunctionIn : {2} FunctionCalled : {3} SortBy : {4} ASCDESC : {5} LastButton : {6}", SearchIn, SearchText, FunctionIn, FunctionCalled, SortBy, ASCDESC, Controls.GetButtonCaption(LastButton));
-
                     if (ASCDESC == "RANDOM()")
                     {
                         SortBy = string.Empty;
                     }
+
+                    Console.WriteLine();
+                    Console.WriteLine("Search: {0} Sort : {1} Function :{2}", Search, Sort, Function);
+                    Console.WriteLine("Strict Search : {0} Invert Search : {1}", StrictSearch, InvertSearch);
+                    Console.WriteLine("SearchIn : {0} Search Text : {1} FunctionIn : {2} FunctionCalled : {3} SortBy : {4} ASCDESC : {5} LastButton : {6}", SearchIn, SearchText, FunctionIn, FunctionCalled, SortBy, ASCDESC, Controls.GetButtonCaption(LastButton));
+
                     Engines.GenerateQuery(Search, Sort, Function, SearchIn, SortBy, ASCDESC, StrictSearch, InvertSearch, FunctionCalled, FunctionIn, SearchText);
                 }
                 else if (LastButton == UI.Buttons["Query"])

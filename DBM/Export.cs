@@ -16,7 +16,7 @@ namespace DBM
     {
         public static Primitive Generate2DArray(string Database, string SQL)
         {
-            return Engines.Query(Database, SQL, null, true, GlobalStatic.UserName, ""); //TODO
+            return Engines.Query(Database, SQL, null, true, GlobalStatic.UserName, ""); 
         }
 
         public static Primitive Generate2DArrayFromTable(string Database, string Table)
@@ -73,7 +73,7 @@ namespace DBM
             Console.WriteLine("SQL void time {0} ms", SQL_Time.ElapsedMilliseconds);
         }
 
-        public static string SQL(Primitive Data, Primitive Schema, Dictionary<string, bool> PK, Dictionary<string, string> Types, string TableName) //TODO
+        public static string SQL(Primitive Data, Primitive Schema, Dictionary<string, bool> PK, Dictionary<string, string> Types, string TableName)
         {
             Utilities.AddtoStackTrace("Export.SQL()");
             Stopwatch SQL_Time = new Stopwatch();
@@ -193,8 +193,7 @@ namespace DBM
             }
         }
         
-         // TODO Fix XML
-        public static void XML(Primitive Data,Primitive Schema,string Title,string FilePath) //TODO
+        public static void XML(Primitive Data,Primitive Schema,string Title,string FilePath)
         {
             Utilities.AddtoStackTrace("Export.XML");
 
@@ -222,7 +221,7 @@ namespace DBM
             System.IO.File.WriteAllText(FilePath, _XML.ToString());
         }
 
-        public static void HTML(Primitive Data, Primitive Schema, string Title, string FilePath, string Generator) //TODO
+        public static void HTML(Primitive Data, Primitive Schema, string Title, string FilePath, string Generator) 
         {
             Utilities.AddtoStackTrace("Export.HTML");
             string Output = HTML(Data, Schema, Title, Generator);
