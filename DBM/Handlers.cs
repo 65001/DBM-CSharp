@@ -13,6 +13,7 @@ namespace DBM
         static IReadOnlyList<string> CorrectList;
         static List<string> Tracker = new List<string>();
 		public static Primitive TypeofSorts ="1="+ Utilities.Localization["Table"] +";2=" + Utilities.Localization["View"] +";3="+ Utilities.Localization["Index"] + ";4="+ Utilities.Localization["Master Table"]+";";
+
         //public static string[] TypeOfSorts = new string[4] { Utilities.Localization["Table"], Utilities.Localization["View"] , Utilities.Localization["Index"] , Utilities.Localization["Master Table"] };
         /// <summary>
         /// Handles Main Menu
@@ -20,7 +21,7 @@ namespace DBM
         /// <param name="Item">Localized Menu Item</param>
 		public static void Menu(string Item)
 		{
-            Utilities.AddtoStackTrace( "Handlers.Menu(" + Item + ")");
+            Utilities.AddtoStackTrace("Handlers.Menu(" + Item + ")");
 
             //Switch and Enum cannot be used because values can change
             //File Menu Items
@@ -78,9 +79,11 @@ namespace DBM
             }
             else if (Item == Utilities.Localization["Create Statistics Page"])
             {
-                string Name = "\"Statistics of " + Engines.CurrentTable.Replace("\"", "") + "\"";
+                string Name = string.Format("\"Statistics of {0}\"", Engines.CurrentTable.SanitizeFieldName());
                 Engines.Transform.CreateStatisticsTable(Engines.CurrentDatabase, Engines.CurrentTable, Name, Export.GenerateSchemaFromLastQuery());
                 Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Name, GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["Statistics Page"]);
+
+                Engines.GetSchema(Engines.CurrentDatabase);
                 Engines.SetDefaultTable(Name);
                 Engines.GetColumnsofTable(Engines.CurrentDatabase, Name);
                 SetComboBox();
@@ -88,7 +91,7 @@ namespace DBM
             //Main
             else if (Item == Utilities.Localization["View"] || Item == Utilities.Localization["View"] + " ")
             {
-                Controls.HideControl(GlobalStatic.Dataview);
+               Controls.HideControl(GlobalStatic.Dataview);
                 GlobalStatic.Dataview = null;
                 if (GlobalStatic.ListView == null)
                 {
@@ -96,7 +99,7 @@ namespace DBM
                     GraphicsWindow.FontBold = false;
                     GlobalStatic.ListView = LDControls.AddListView(GlobalStatic.Listview_Width, GlobalStatic.Listview_Height, null);
 
-                    LDControls.AddContextMenu(GlobalStatic.ListView, "1=Ascend;2=Descend;", null);
+                    LDControls.AddContextMenu(GlobalStatic.ListView, "1=Ascend;2=Descend;3=Random();", null);
                     Controls.Move(GlobalStatic.ListView, 10, 35);
                     UI.DisplayResults();
                     GraphicsWindow.FontBold = Bold;
@@ -117,13 +120,11 @@ namespace DBM
                 if (!string.IsNullOrEmpty(Engines.CurrentDatabase) && !string.IsNullOrEmpty(GlobalStatic.Dataview))
                 {
                     string SaveStatus = LDDataBase.SaveTable(Engines.CurrentDatabase, GlobalStatic.Dataview);
-                    Events.LogMessage("The save was : " + SaveStatus, Utilities.Localization["UI"]);
-                    GraphicsWindow.ShowMessage("The save was : " + SaveStatus, "Save Status");
+                    Events.LogMessagePopUp("The save was : " + SaveStatus, Utilities.Localization["UI"], "Save Status");
                 }
                 else
                 {
-                    Events.LogMessage(Utilities.Localization["Dataview Error"], Utilities.Localization["UI"]);
-                    GraphicsWindow.ShowMessage(Utilities.Localization["Error"] + ":" + Utilities.Localization["Dataview Error"], "Save Error");
+                    Events.LogMessagePopUp(Utilities.Localization["Dataview Error"], Utilities.Localization["UI"], "Save Error");
                 }
                 return;
             }
@@ -134,12 +135,10 @@ namespace DBM
                     switch (GlobalStatic.SortBy)
                     {
                         case 2:
-                            Events.LogMessage(Utilities.Localization["Views Read Only"], Utilities.Localization["UI"]);
-                            GraphicsWindow.ShowMessage(Utilities.Localization["Error"] + ":" + Utilities.Localization["Views Read Only"], Utilities.Localization["Access Denied"]);
+                            Events.LogMessagePopUp(Utilities.Localization["Views Read Only"], Utilities.Localization["UI"], Utilities.Localization["Access Denied"]);
                             break;
                         case 4:
-                            Events.LogMessage(Utilities.Localization["Master Table Protected"], Utilities.Localization["UI"]);
-                            GraphicsWindow.ShowMessage(Utilities.Localization["Error"] + ":" + Utilities.Localization["Master Table Protected"], Utilities.Localization["Access Denied"]);
+                            Events.LogMessagePopUp(Utilities.Localization["Master Table Protected"], Utilities.Localization["UI"], Utilities.Localization["Access Denied"]);
                             break;
                         default:
                             Controls.HideControl(GlobalStatic.ListView);
@@ -159,22 +158,32 @@ namespace DBM
                 }
                 else
                 {
-                    Events.LogMessage(Utilities.Localization["Error No DB"], Utilities.Localization["UI"]);
-                    GraphicsWindow.ShowMessage(Utilities.Localization["Error No DB"], Utilities.Localization["UI"]);
+                    Events.LogMessagePopUp(Utilities.Localization["Error No DB"], Utilities.Localization["UI"],"Edit");
                 }
                 return;
             }
             //Import
             else if (Item == Utilities.Localization["CSV"])
             {
-                Engines.Command(Engines.CurrentDatabase, Import.CSV(LDDialogs.OpenFile("csv", null)), GlobalStatic.UserName, "", false);
-                GraphicsWindow.ShowMessage("CSV Import Completed", "Importer"); //Localize //TODO
+                string Path = LDDialogs.OpenFile("csv", null);
+                if (!string.IsNullOrWhiteSpace(Path))
+                {
+                    Engines.Command(Engines.CurrentDatabase, Import.CSV(Path), GlobalStatic.UserName, "", false);
+                    Events.LogMessagePopUp("CSV Import Completed", Utilities.Localization["UI"], "Importer"); //TODO Localize 
+                    return;
+                }
+                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Import.CSV");//TODO Localize
             }
             else if (Item == Utilities.Localization["SQL"])
             {
-                string SQL = System.IO.File.ReadAllText(LDDialogs.OpenFile("sql", null));
-                Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, null, false);
-                GraphicsWindow.ShowMessage("SQL Import Completed", "Importer"); //Localize //TODO
+                string Path = LDDialogs.OpenFile("sql", null);
+                if (!string.IsNullOrWhiteSpace(Path))
+                {
+                    string SQL = System.IO.File.ReadAllText(Path);
+                    Events.LogMessagePopUp("SQL Import Completed", Utilities.Localization["UI"], "Importer"); //TODO Localize
+                    return;
+                }
+                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Import.SQL");//TODO Localize
             }
             else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
             { }
@@ -186,10 +195,10 @@ namespace DBM
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.XML(Data,Export.GenerateSchemaFromQueryData(Data),Engines.CurrentTable,Path);
-                    GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
+                    Events.LogMessagePopUp("XML export of " + Engines.CurrentTable + " completed!", "Export", "Success");
                     return;
                 }
-                GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error"); //TODO Localize
+                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.XML");//TODO Localize
             }
             else if (Item == Utilities.Localization["HTML"] + " ")
             {
@@ -197,11 +206,11 @@ namespace DBM
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
-                    Export.HTML(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.Replace("\"", ""), Path, GlobalStatic.ProductID + " V" + GlobalStatic.VersionID);
-                    GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
+                    Export.HTML(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.SanitizeFieldName(), Path, GlobalStatic.ProductID + " V" + GlobalStatic.VersionID);
+                    Events.LogMessagePopUp("HTML export of " + Engines.CurrentTable + " completed!", "Export", "Success");
                     return;
                 }
-                GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
+                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.HTML");//TODO Localize
             }
             else if (Item == Utilities.Localization["SQL"] + " ")
             {
@@ -223,10 +232,10 @@ namespace DBM
                     Dictionary<string, string> Types = Export.SQL_Fetch_Type(SchemaQuery, Schema, Engines.CurrentEngine);
                     Export.SQL(Data, Schema, PK, Types, Engines.CurrentTable, Path);
                     LDProcess.Start(Path, null);
-                    GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
+                    Events.LogMessagePopUp("SQL export of " + Engines.CurrentTable + " completed!", "Export", "Success"); //TODO Localize
                     return;
                 }
-                GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
+                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.SQL");//TODO Localize
             }
             else if (Item == Utilities.Localization["CSV"] + " ")
             {
@@ -235,10 +244,10 @@ namespace DBM
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.CSV(Data, Export.GenerateSchemaFromQueryData(Data), Path, GlobalStatic.Deliminator);
-                    GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
+                    Events.LogMessagePopUp("CSV export of " + Engines.CurrentTable + " completed!", "Export", "Success"); //TODO Localize
                     return;
                 }
-                GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
+                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.CSV");//TODO Localize
             }
             else if (Item == "JSON")
             {
@@ -246,19 +255,19 @@ namespace DBM
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
-                    Export.JSON(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.Replace("\"", ""),Path);
-                    GraphicsWindow.ShowMessage("Export Completed!", "Success");//TODO Localize
+                    Export.JSON(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.SanitizeFieldName(),Path);
+                    Events.LogMessagePopUp("JSON export of " + Engines.CurrentTable + " completed!", "Export", "Success"); //TODO Localize
                     return;
                 }
-                GraphicsWindow.ShowMessage("Oh no something went wrong :(", "Error");
+                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.JSON");//TODO Localize
             }
             //Settings
             else if (Item == Utilities.Localization["About"])
             {
                 Primitive About_Data = Engines.Query(Engines.CurrentDatabase, "SELECT SQLITE_VERSION(),sqlite_source_id();", null, true, GlobalStatic.UserName, Utilities.Localization["User Requested"] + ":" + Utilities.Localization["App"]);
-                string About_Msg = "DBM C# is a Database Mangement Program developed by Abhishek Sathiabalan. (C)" + GlobalStatic.Copyright + ". All rights reserved.\n\nYou are running : " + GlobalStatic.ProductID + " v" + GlobalStatic.VersionID + "\n\n";
-                About_Msg += "SQLite Version : " + About_Data[1]["SQLITE_VERSION()"] + "\n" + "SQLITE Source ID : " + About_Data[1]["sqlite_source_id()"];
-                GraphicsWindow.ShowMessage(About_Msg, "About"); //DO NOT LOCALIZE
+                string About_Msg = string.Format( "DBM C# is a Database Mangement Program developed by Abhishek Sathiabalan. (C){0}. All rights reserved.\n\nYou are running : {1} v{2}\n\n", GlobalStatic.Copyright, GlobalStatic.ProductID, GlobalStatic.VersionID);
+                About_Msg += string.Format( "SQLite Version : {0}\nSQLITE Source ID : {1}", About_Data[1]["SQLITE_VERSION()"], About_Data[1]["sqlite_source_id()"]);
+                Events.LogMessagePopUp(About_Msg,"Debug", "About");//DO NOT LOCALIZE
             }
             else if (Item == Utilities.Localization["Show Help"])
             {
@@ -279,16 +288,9 @@ namespace DBM
             {
                 Utilities.Updater();
             }
-            //Developer
-            else if (Item == Utilities.Localization["Stack Trace"])
+            else if(Item != null)
             {
-                Console.WriteLine("\nStack Trace:");
-                Utilities.StackTrace.Print();
-                Console.WriteLine("");
-            }
-            else
-            {
-                GraphicsWindow.ShowMessage(Item + " does not exist in context or is not yet implemented", "Error Handlers.Menu");
+                Events.LogMessage(Item + " does not exist in context or is not yet implemented", "UI");
             }
 		}
         
@@ -296,10 +298,9 @@ namespace DBM
         {
             if (Control == GlobalStatic.ListView)
             {
-                if (Index <= 2)
+                if (Index <= 3)
                 {
                     Primitive Schema = Export.GenerateSchemaFromLastQuery();
-
                     LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Sort"], LDControls.LastListViewColumn);
                     LDControls.ComboBoxSelect(GlobalStatic.ComboBox["ASCDESC"], Index);
                     Buttons(UI.Buttons["Sort"]);
@@ -313,7 +314,7 @@ namespace DBM
             {
                 if (LastButton == UI.Buttons["Search"] || LastButton == UI.Buttons["Sort"] || LastButton == UI.Buttons["RunFunction"])
                 {
-                    Primitive ASCDESC_Sorts = "1=ASC;2=DESC;";
+                    Primitive ASCDESC_Sorts = "1=ASC;2=DESC;3=RANDOM()";
                     bool Search = false, Sort = true, Function = false;
 
                     bool.TryParse(LDControls.CheckBoxGetState(GlobalStatic.CheckBox["StrictSearch"]), out bool StrictSearch);
@@ -326,6 +327,7 @@ namespace DBM
 
                     string SortBy = "\"" + Engines.Schema[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Sort"])] + "\"";
                     string ASCDESC = ASCDESC_Sorts[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["ASCDESC"])];
+
                     if (LastButton == UI.Buttons["Search"])
                     {
                         Search = true;
@@ -339,6 +341,11 @@ namespace DBM
                     Console.WriteLine("Search: {0} Sort : {1} Function :{2}", Search, Sort, Function);
                     Console.WriteLine("Strict Search : {0} Invert Search : {1}", StrictSearch, InvertSearch);
                     Console.WriteLine("SearchIn : {0} Search Text : {1} FunctionIn : {2} FunctionCalled : {3} SortBy : {4} ASCDESC : {5} LastButton : {6}", SearchIn, SearchText, FunctionIn, FunctionCalled, SortBy, ASCDESC, Controls.GetButtonCaption(LastButton));
+
+                    if (ASCDESC == "RANDOM()")
+                    {
+                        SortBy = string.Empty;
+                    }
                     Engines.GenerateQuery(Search, Sort, Function, SearchIn, SortBy, ASCDESC, StrictSearch, InvertSearch, FunctionCalled, FunctionIn, SearchText);
                 }
                 else if (LastButton == UI.Buttons["Query"])
@@ -353,7 +360,7 @@ namespace DBM
             catch (KeyNotFoundException)
             {
                 string Message = Controls.GetButtonCaption(LastButton) + "(" + LastButton + ") |" + UI.Buttons.ContainsKey(LastButton) + "|" + Controls.GetButtonCaption(LastButton) == Utilities.Localization["Query"].ToUpper() + "| does not exist in context or has not yet implemented.";
-                Events.LogMessagePopUp(Message, Message, "Error: Handlers.Buttons", "System");
+                Events.LogMessage(Message, "System");
             }
             
 		}
@@ -381,8 +388,8 @@ namespace DBM
             }
             catch (KeyNotFoundException)
             {
-                string Message = ComboBox + "at " + Index +" does not exist in context or has not yet implemented";
-               // Events.LogMessage(Message, "System");
+                string Message = string.Format("{0} at {1} does not exist in context or has not yet implemented.", ComboBox, Index);
+                Events.LogMessage(Message, "System");
             }
 		}
 

@@ -22,7 +22,6 @@ namespace DBM
         static List<string> _UI_Handler = new List<string>();
         static string UpdaterDB = null;
 
-
         public static IReadOnlyDictionary<string, string> Localization
         {
             get { return _Localization; }

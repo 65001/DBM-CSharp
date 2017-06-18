@@ -74,8 +74,10 @@ namespace DBM
             
             LDGraphicsWindow.Closing += Events.Closing;
             LDEvents.Error += Events.LogEvents;
+
             Engines.OnGetColumnsofTable += ColumnsChanged;
             Engines.OnSchemaChange += SchemaChanged;
+
             Startup();
         }
 
@@ -349,7 +351,7 @@ namespace DBM
 
             //Sort
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 1;
-			string AscDesc = "1=" + Utilities.Localization["Asc"] + ";2=" + Utilities.Localization["Desc"] + ";";
+			string AscDesc = "1=" + Utilities.Localization["Asc"] + ";2=" + Utilities.Localization["Desc"] + ";3=RANDOM();";
             GlobalStatic.ComboBox["Sort"]= LDControls.AddComboBox(Engines.Schema, 100, 100);
             GlobalStatic.ComboBox["ASCDESC"]= LDControls.AddComboBox(AscDesc, 110, 100);
 
@@ -696,7 +698,14 @@ namespace DBM
 			LogMessage(Message, Type);
 		}
 
-		public static void LogMessage(string Message, string Type) //Logs Message to all applicable locations
+        public static void LogMessagePopUp(string Message, string Type, string Title)
+        {
+            GraphicsWindow.ShowMessage(Message, Title);
+            LogMessage(Message, Type);
+        }
+
+
+        public static void LogMessage(string Message, string Type) //Logs Message to all applicable locations
 		{
             LogMessage(Message,Type, Utilities.StackTrace[Utilities.StackTrace.Count- 1] );
             Utilities.AddtoStackTrace("Events.LogMessage()");
@@ -722,7 +731,7 @@ namespace DBM
             }
             else if(Message.Contains("LDDataBase.Query") == true || Message.Contains("LDDataBase.Command") == true)
             {
-                Console.WriteLine("Event Logger: {0}:{1}",Engines.CurrentDatabase, Message);
+                Console.WriteLine("Event silent Logger: {0}:{1}",Engines.CurrentDatabase, Message);
                 //return;
             }
 

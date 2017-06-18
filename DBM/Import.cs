@@ -9,7 +9,6 @@ using System.IO;
 using System.Collections.Generic;
 using LitDev;
 using System.Diagnostics;
-using Microsoft.SmallBasic.Library;
 namespace DBM
 {
 	public static class Import
@@ -22,15 +21,15 @@ namespace DBM
 
         public static void CSV(string InputFilePath, string OutPutFilePath)
         {
-            System.IO.File.WriteAllText(OutPutFilePath, CSV(InputFilePath));
+            File.WriteAllText(OutPutFilePath, CSV(InputFilePath));
         }
 
 		public static string CSV(string FilePath)
 		{			
 			//TODO Make sure comment's are universal across SQL.Then use them to insert data such as how long it took to generate the SQL and how many rows were skipped if any?
-			if (Directory.Exists(FilePath) == false)
+			if (File.Exists(FilePath) == false)
 			{
-                throw new ArgumentNullException("FilePath");
+                throw new FileNotFoundException();
 			}
 
 			Stopwatch Elappsed = Stopwatch.StartNew();
@@ -60,13 +59,13 @@ namespace DBM
 				string CSV_SQL = ArrayToSql(Standard_Size,Name);
                 CSVHeaders(Standard_Size,Name);
 				//Appending
-				CSV_SQL = "BEGIN;\n" + HeaderSQL + CSV_SQL + "COMMIT;".Replace("'NULL'","NULL").Replace("<<HEADERS>>", HeaderWOType);
+				CSV_SQL = ("BEGIN;\n" + HeaderSQL + CSV_SQL + "COMMIT;").Replace("'NULL'","NULL").Replace("<<HEADERS>>", HeaderWOType);
                 LDFastArray.Remove(Data);
                 return CSV_SQL;
 			}
 			catch (Exception ex)
 			{
-				GraphicsWindow.ShowMessage(ex.StackTrace, ex.Message);
+                Events.LogMessage(ex.Message, "System");
 			}
 
 			//Drops The FastArray

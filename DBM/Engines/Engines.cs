@@ -60,8 +60,8 @@ namespace DBM
         static List<string> _Last_Query = new List<string>();
         static List<string> _Last_NonSchema_Query = new List<string>();
 
-        public static event EventHandler OnGetColumnsofTable;
         public static event EventHandler OnSchemaChange;
+        public static event EventHandler OnGetColumnsofTable;
 
         public static int Command(string Database, string SQL,string Explanation)
         {
@@ -221,7 +221,8 @@ namespace DBM
                     {
                         GetColumnsofTable(Database, CurrentTable);
                     }
-                    OnSchemaChange(null,EventArgs.Empty);
+
+                    OnSchemaChange?.Invoke(null,EventArgs.Empty);
                     break;
             }
         }
@@ -247,7 +248,7 @@ namespace DBM
                         _Schema.Add(QSchema[i]["name"]);
                     }
                     Schema = _Schema.ToPrimitiveArray(); ;
-                    OnGetColumnsofTable(null,EventArgs.Empty);
+                    OnGetColumnsofTable?.Invoke(null,EventArgs.Empty);
                     break;
             }
         }
@@ -328,11 +329,15 @@ namespace DBM
 
         static string GenerateSort(string OrderBy, string ASCDESC)
         {
-            return "ORDER BY \"" + OrderBy.SanitizeFieldName() + "\" " + ASCDESC + ";";
+            if (string.IsNullOrWhiteSpace(OrderBy) == false)
+            {
+                OrderBy = "\"" + OrderBy.SanitizeFieldName() + "\"";
+            }
+            return string.Format("ORDER BY {0} {1};",OrderBy,ASCDESC);
         }
         static string GenerateFunction(string Function, string Column)
         {
-            return "SELECT " + Function + "(\"" + Column.SanitizeFieldName() + "\") FROM " + CurrentTable + " ";
+            return string.Format( "SELECT {0} (\"{1}\") FROM {2} ",Function, Column.SanitizeFieldName(), CurrentTable);
         }
 
         public static List<string> Functions(EnginesMode Mode)
