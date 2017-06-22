@@ -15,6 +15,7 @@ namespace DBM
 		public static Primitive TypeofSorts ="1="+ Utilities.Localization["Table"] +";2=" + Utilities.Localization["View"] +";3="+ Utilities.Localization["Index"] + ";4="+ Utilities.Localization["Master Table"]+";";
 
         //public static string[] TypeOfSorts = new string[4] { Utilities.Localization["Table"], Utilities.Localization["View"] , Utilities.Localization["Index"] , Utilities.Localization["Master Table"] };
+
         /// <summary>
         /// Handles Main Menu
         /// </summary>

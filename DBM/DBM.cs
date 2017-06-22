@@ -31,6 +31,10 @@ using Microsoft.SmallBasic.Library;
         //TODO Investigate switiching from View to edit multiple times and crashes and the like
 
         //Primitive GlobalStatics to Dictionaries in the future and move to UI.
+
+        //TODO Improve Query times
+        //TODO Implement Plugin System
+        //TODO Implement Graphing?
  */
 //Complete Implements and Localize
 
@@ -65,20 +69,29 @@ namespace DBM
 
         public static void Main()
         {
-            Utilities.AddtoStackTrace("UI.Main()");
-            LDUtilities.ShowErrors = false;
-            LDUtilities.ShowFileErrors = false;
-            LDUtilities.ShowNoShapeErrors = false;
-            LDGraphicsWindow.ExitOnClose = false;
-            LDGraphicsWindow.CancelClose = true;
-            
-            LDGraphicsWindow.Closing += Events.Closing;
-            LDEvents.Error += Events.LogEvents;
+            try
+            {
+                Utilities.AddtoStackTrace("UI.Main()");
+                LDUtilities.ShowErrors = false;
+                LDUtilities.ShowFileErrors = false;
+                LDUtilities.ShowNoShapeErrors = false;
+                LDGraphicsWindow.ExitOnClose = false;
+                LDGraphicsWindow.CancelClose = true;
 
-            Engines.OnGetColumnsofTable += ColumnsChanged;
-            Engines.OnSchemaChange += SchemaChanged;
+                LDGraphicsWindow.Closing += Events.Closing;
+                LDEvents.Error += Events.LogEvents;
 
-            Startup();
+                Engines.OnGetColumnsofTable += ColumnsChanged;
+                Engines.OnSchemaChange += SchemaChanged;
+
+                Startup();
+            }
+            catch (Exception ex)
+            {
+                Events.LogMessage(ex.Message, "System");
+                Utilities.StackTrace.Print();
+                Program.End();
+            }
         }
 
         static void ColumnsChanged(object sender, EventArgs e)
@@ -221,8 +234,6 @@ namespace DBM
 			GlobalStatic.MenuList["View"] = "SB Backup Script";
 			GlobalStatic.MenuList["ICF"] = Utilities.Localization["Plugin"];
             */
-
-
         }
 
         public static void MainMenu()
@@ -262,7 +273,8 @@ namespace DBM
             Controls.Move(GlobalStatic.ComboBox["Table"], 1260 + SortOffset, 5);
             Controls.Move(GlobalStatic.ComboBox["Database"], 1050 + SortOffset, 5);
 
-            Task.Run(()=>  Handlers.Menu(Utilities.Localization["View"])); //Virtual Call to Handler
+            //Virtual Call to Handler
+            Events.MC(Utilities.Localization["View"]);
 
             Title();
 
@@ -506,6 +518,7 @@ namespace DBM
 
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
 
+            LDControls.ComboBoxItemChanged -= Events.CB;
             Controls.ButtonClicked -= Events.BC;
             Controls.ButtonClicked += SettingsUIHandler;
         }
@@ -523,10 +536,6 @@ namespace DBM
             GraphicsWindow.Clear();
             _Buttons.Clear();
             _TextBox.Clear();
-            /*
-            _CheckBox.Clear();
-            _ComboBox.Clear();
-            */
         }
 
         static void SettingsUIButton(string LastClickedButton)
@@ -538,8 +547,6 @@ namespace DBM
                 GlobalStatic.Settings["Extensions"] = Controls.GetTextBoxText(_TextBox["Settings_Extensions"]);
                 GlobalStatic.Settings["Deliminator"] = Controls.GetTextBoxText(_TextBox["Settings_Deliminator"]);
                 GlobalStatic.Settings["Language"] = Utilities.ISO_LangCode[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Language"]) - 1];
-                GlobalStatic.Settings["debug_mode"] = LDControls.CheckBoxGetState(_Buttons["Debug_Mode"]);
-                GlobalStatic.Settings["debug_parser"] = LDControls.CheckBoxGetState(_Buttons["Debug_Parser"]);
                 GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
                 Settings.SaveSettings();
                 Settings.LoadSettings(GlobalStatic.RestoreSettings);
@@ -558,8 +565,9 @@ namespace DBM
                 ClearWindow();
                 PreMainMenu();
                 HideDisplayResults();
+                LDControls.ComboBoxItemChanged += Events.CB;
                 MainMenu();
-                Handlers.Buttons("View");
+                //Events.MC(Utilities.Localization["View"]);
                 return;
             }
         }
@@ -674,7 +682,7 @@ namespace DBM
                 DisplayResults();
                 ShowDisplayResults();
                 MainMenu();
-                Handlers.Buttons("View");
+                //Events.MC("View");
                 return;
             } 
 		}
@@ -759,24 +767,36 @@ namespace DBM
         }
 
 		//The following async the Handlers class to make the code faster! Warning ! Can cause bugs!!!
-
+        
         /// <summary>
         /// Buttom Clicked Event Handler
         /// </summary>
-		public async static void BC()
+		public static void BC()
 		{
-			await Task.Run(() => { Handlers.Buttons(Controls.LastClickedButton); });
-            Utilities.AddtoStackTrace( "Events.BC()");
+            BC(Controls.LastClickedButton);
+            Utilities.AddtoStackTrace("Events.BC()");
 		}
+
+        public async static void BC(string LastClickedButton)
+        {
+            await Task.Run(() => { Handlers.Buttons(LastClickedButton); });
+            Utilities.AddtoStackTrace(string.Format("Events.BC({0})",LastClickedButton));
+        }
 
         /// <summary>
         /// Menu Clicked Event Handler
         /// </summary>
-        public async static void MC()
+        public static void MC()
 		{
-			await Task.Run(() => { Handlers.Menu(LDControls.LastMenuItem); });
-            Utilities.AddtoStackTrace( "Events.MC()");
+            MC(LDControls.LastMenuItem);
+            Utilities.AddtoStackTrace("Events.MC()");
 		}
+
+        public async static void MC(string LastMenuItem)
+        {
+            await Task.Run(() => { Handlers.Menu(LastMenuItem); });
+            Utilities.AddtoStackTrace(string.Format("Events.MC({0})",LastMenuItem));
+        }
 
         /// <summary>
         /// ComboBox Changed Event Handler

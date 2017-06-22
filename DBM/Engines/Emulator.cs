@@ -141,9 +141,7 @@ namespace DBM
                         {
                             if (_Type_Referer[i] == Type.Query)
                             {
-                                Console.WriteLine("#{0} is a {1} with a time of {2}(ms) {3} : {4}", i, _Type_Referer[i], _Timer[i],ii,LastQuery[ii]);
                                 Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}');", EmulatorTable, ii, LastQuery[ii].Replace("'", "''"), _Timer[i]);
-
                                 ii++;
                             }
                             else
