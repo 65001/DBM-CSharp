@@ -46,7 +46,7 @@ namespace DBM
 			string lastButton = Controls.LastClickedButton;
 			GlobalStatic.Settings["EULA_By"] = GlobalStatic.UserName;
 			//GlobalStatic.Settings["EULA_Version"] = GlobalStatic.EULA_Newest_Version;
-			GlobalStatic.Settings["VersionID"] = GlobalStatic.VersionID.Replace(".","");
+			GlobalStatic.Settings["VersionID"] = GlobalStatic.VersionID;
 
             Controls.ButtonClicked -= Handler; //Unsubcribes the event Handler from the event
 

@@ -12,17 +12,22 @@ namespace DBM
 			public static readonly string UserName =  Environment.UserName;
 			public static bool  EulaTest, LoadedFile;
 
-        #if DEBUG
-           public static bool DebugMode = true;
-        #else
-        public static bool DebugMode;
-        #endif
+            #if DEBUG
+                public static bool DebugMode = true;
+            #else
+                public static bool DebugMode;
+            #endif
 
             //Self Aware Data
             public const string Copyright = "2016 through 2017";
 			public const string ProductID = "DBM C#";
 
-			public static readonly string VersionID = typeof(GlobalStatic).Assembly.GetName().Version.ToString().Replace(".","");
+            public static readonly Version VersionIDS = typeof(GlobalStatic).Assembly.GetName().Version;
+
+            /// <summary>
+            /// String form of VersionIDS with all the periods being stripped.
+             /// </summary>
+            public static readonly string VersionID = VersionIDS.ToString().Replace(".","");
 			public static int DefaultFontSize;
         
 			//URI
@@ -66,7 +71,7 @@ namespace DBM
 
             public static Primitive TextBox,CheckBox,ComboBox; //Change to a Dictionaries in the future and move to UI.
 
-			public static readonly string Title = "Database Manager (" + ProductID + ") v" + VersionID + " ";
+			public static readonly string Title = string.Format("Database Manager ({0}) v {1} ", ProductID, VersionIDS.ToString());
 
 			public static string LogDB, TransactionDB, Dataview, ListView;
 

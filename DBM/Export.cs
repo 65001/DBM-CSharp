@@ -247,7 +247,7 @@ namespace DBM
             HTML_Statement.Append("<meta charset = \"UTF-8\">\n\t\t");
             HTML_Statement.Append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\t\t");
             HTML_Statement.Append("<meta name=\"generator\" content=\"" + Generator + "\">\n\t\t");
-            HTML_Statement.Append("<!-- DBM is develeoped by Abhishek Sathiabalan https://github.com/65001/DBM-CSharp -->\n\t\t");
+            HTML_Statement.Append("<!-- DBM is developed by Abhishek Sathiabalan https://github.com/65001/DBM-CSharp -->\n\t\t");
 
             HTML_Statement.Append("<style>\n\t\t\t");
             HTML_Statement.Append("table, td, th {border: 1px solid #ddd; text-align: left;}\n\t\t\t");

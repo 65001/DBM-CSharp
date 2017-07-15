@@ -47,6 +47,7 @@ namespace DBM
                 if (_DB_Hash.ContainsKey(HashCode))
                 {
                     CurrentDatabase = _DB_Hash[HashCode];
+                    DatabaseShortname = ShortName;
                     return CurrentDatabase;
                 }
 

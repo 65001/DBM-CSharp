@@ -17,8 +17,6 @@ using Microsoft.SmallBasic.Library;
 	TODO : SQLITE setup
 	TODO : Set it up so that if no table exists in a database then revert to sqlite_master or equivalent
 		
-	//TODO Replace all instances of LDLIST with an actual List?
-	  TODO Replace all instances of GlobalStatic.List_DB_* ASAP.
       TODO Remove dependecey on LitDev?
 	  TODO Start to use System.Version instead of an int and replace instances of GlobablStatic.VersionID to it as well
         Emulator stuff?
@@ -241,7 +239,6 @@ namespace DBM
             Utilities.AddtoStackTrace("UI.MainMenu()");
             LDGraphicsWindow.ExitButtonMode(GraphicsWindow.Title, "Enabled");
             GraphicsWindow.CanResize = true;
-
 
             LDGraphicsWindow.State = 2;
             GraphicsWindow.Title = GlobalStatic.Title + " ";
