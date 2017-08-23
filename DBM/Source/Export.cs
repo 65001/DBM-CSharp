@@ -193,7 +193,7 @@ namespace DBM
                     throw new PlatformNotSupportedException("Current Engine is not supported");
             }
         }
-        
+
         /// <summary>
         /// StringBuilder based XML document creator.
         /// </summary>
@@ -234,15 +234,57 @@ namespace DBM
         /// </summary>
         public static void MarkUp(Primitive Data, Primitive Schema, string FilePath)
         {
-
+            Utilities.AddtoStackTrace("Export.MarkUp");
+            System.IO.File.WriteAllText(FilePath, MarkUp(Data, Schema) );
         }
 
         /// <summary>
-        /// For Wikipedia Tables
+        /// For Wikipedia Tables. Currently does not deal with Pipe characters.
         /// </summary>
-        public static void MarkUp(Primitive Data, Primitive Schema)
+        public static string MarkUp(Primitive Data, Primitive Schema)
         {
+            Utilities.AddtoStackTrace("Export.MarkUp");
+            Primitive Index = Schema.GetAllIndices();
 
+            StringBuilder SB = new StringBuilder();
+            SB.AppendLine("{| class=\"wikitable sortable\"");
+            SB.AppendLine("|-");
+            SB.Append("! ");
+            //Headers
+            for (int i = 1; i < Schema.GetItemCount(); i++)
+            {
+                if (i != 1)
+                {
+                    SB.AppendFormat("!! {0}", ((string)Schema[Index[i]]));
+                }
+                else
+                {
+                    SB.AppendFormat("{0}", ((string)Schema[Index[i]]));
+                }
+            }
+            SB.AppendLine();
+            int DataCount = Data.GetItemCount();
+            int SchemaCount = Schema.GetItemCount();
+
+            for(int i = 1; i < DataCount; i++)
+            {
+                SB.Append("|-\n|");
+                for (int ii = 1; ii < SchemaCount; ii++)
+                {
+                    if (ii < (SchemaCount - 1) )
+                    {
+                        SB.AppendFormat("{0} ||",Data[i][Schema[ii]]);
+                    }
+                    else
+                    {
+                        SB.Append((string)Data[i][Schema[ii]]);
+                    }
+                }
+                SB.AppendLine();
+            }
+
+            SB.AppendLine("|}");
+            return SB.ToString();
         }
 
         /// <summary>
@@ -250,15 +292,47 @@ namespace DBM
         /// </summary>
         public static void MarkDown(Primitive Data, Primitive Schema, string FilePath)
         {
-
+            Utilities.AddtoStackTrace("Export.MarkDown");
+            string Output = MarkDown(Data, Schema);
+            System.IO.File.WriteAllText(FilePath, Output);
         }
 
         /// <summary>
         /// Support for Github and Reddit Markdown
         /// </summary>
-        public static void MarkDown(Primitive Data, Primitive Schema)
+        public static string MarkDown(Primitive Data, Primitive Schema)
         {
+            Utilities.AddtoStackTrace("Export.MarkDown");
+            Primitive Index = Schema.GetAllIndices();
 
+            StringBuilder SB = new StringBuilder();
+            //Create Header stuff
+            SB.Append("|");
+            for(int i = 1; i < Schema.GetItemCount(); i++)
+            {
+                SB.AppendFormat("{0}|", ((string)Schema[Index[i]]).Replace("|","`|") );
+            }
+            SB.AppendLine();
+
+            //Cell allignment
+            SB.Append("|");
+            for (int i = 1; i < Schema.GetItemCount(); i++)
+            {
+                SB.Append(":---|");
+            }
+            SB.AppendLine();
+
+            for(int i = 1; i < Data.GetItemCount(); i++)
+            {
+                SB.Append("|");
+                for (int ii = 1; ii < Schema.GetItemCount(); ii++)
+                {
+                    SB.AppendFormat("{0}|", Data[i][Schema[ii]]);
+                }
+                SB.AppendLine();
+            }
+
+            return SB.ToString();
         }
 
         public static void HTML(Primitive Data, Primitive Schema, string Title, string FilePath, string Generator) 

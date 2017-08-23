@@ -92,7 +92,7 @@ namespace DBM
             //Main
             else if (Item == Utilities.Localization["View"] || Item == Utilities.Localization["View"] + " ")
             {
-               Controls.HideControl(GlobalStatic.Dataview);
+                Controls.HideControl(GlobalStatic.Dataview);
                 GlobalStatic.Dataview = null;
                 if (GlobalStatic.ListView == null)
                 {
@@ -159,7 +159,7 @@ namespace DBM
                 }
                 else
                 {
-                    Events.LogMessagePopUp(Utilities.Localization["Error No DB"], Utilities.Localization["UI"],"Edit");
+                    Events.LogMessagePopUp(Utilities.Localization["Error No DB"], Utilities.Localization["UI"], "Edit");
                 }
                 return;
             }
@@ -189,13 +189,13 @@ namespace DBM
             else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
             { }
             //Export
-            else if (Item == Utilities.Localization["PXML"] + " ") 
+            else if (Item == Utilities.Localization["PXML"] + " ")
             {
                 string Path = LDDialogs.SaveFile("xml", null);
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
-                    Export.XML(Data,Export.GenerateSchemaFromQueryData(Data),Engines.CurrentTable,Path);
+                    Export.XML(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable, Path);
                     Events.LogMessagePopUp("XML export of " + Engines.CurrentTable + " completed!", "Export", "Success");
                     return;
                 }
@@ -256,19 +256,43 @@ namespace DBM
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
-                    Export.JSON(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.SanitizeFieldName(),Path);
+                    Export.JSON(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.SanitizeFieldName(), Path);
                     Events.LogMessagePopUp("JSON export of " + Engines.CurrentTable + " completed!", "Export", "Success"); //TODO Localize
                     return;
                 }
                 Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.JSON");//TODO Localize
             }
+            else if (Item == "MarkDown") //TODO Localize
+            {
+                string Path = LDDialogs.SaveFile("md", null);
+                if (!string.IsNullOrWhiteSpace(Path))
+                {
+                    Primitive Data = Export.Generate2DArrayFromLastQuery();
+                    Export.MarkDown(Data, Export.GenerateSchemaFromQueryData(Data), Path);
+                    Events.LogMessagePopUp("MarkDown export is now complete", "Export", "Success"); //TODO Localize
+                    return;
+                }
+                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.MarkDown");//TODO Localize
+            }
+            else if (Item == "Wiki MarkUp") //TODO Localize
+            {
+                string Path = LDDialogs.SaveFile("markup", null);
+                if (!string.IsNullOrWhiteSpace(Path))
+                {
+                    Primitive Data = Export.Generate2DArrayFromLastQuery();
+                    Export.MarkUp(Data, Export.GenerateSchemaFromQueryData(Data), Path);
+                    Events.LogMessagePopUp("Wiki Markup export is now complete", "Export", "Success"); //TODO Localize
+                    return;
+                }
+                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.Wiki Markup");//TODO Localize
+            }
             //Settings
             else if (Item == Utilities.Localization["About"])
             {
                 Primitive About_Data = Engines.Query(Engines.CurrentDatabase, "SELECT SQLITE_VERSION(),sqlite_source_id();", null, true, GlobalStatic.UserName, Utilities.Localization["User Requested"] + ":" + Utilities.Localization["App"]);
-                string About_Msg = string.Format( "DBM C# is a Database Mangement Program developed by Abhishek Sathiabalan. (C){0}. All rights reserved.\n\nYou are running : {1} v{2}\n\n", GlobalStatic.Copyright, GlobalStatic.ProductID, GlobalStatic.VersionID);
-                About_Msg += string.Format( "SQLite Version : {0}\nSQLITE Source ID : {1}", About_Data[1]["SQLITE_VERSION()"], About_Data[1]["sqlite_source_id()"]);
-                Events.LogMessagePopUp(About_Msg,"Debug", "About");//DO NOT LOCALIZE
+                string About_Msg = string.Format("DBM C# is a Database Mangement Program developed by Abhishek Sathiabalan. (C){0}. All rights reserved.\n\nYou are running : {1} v{2}\n\n", GlobalStatic.Copyright, GlobalStatic.ProductID, GlobalStatic.VersionID);
+                About_Msg += string.Format("SQLite Version : {0}\nSQLITE Source ID : {1}", About_Data[1]["SQLITE_VERSION()"], About_Data[1]["sqlite_source_id()"]);
+                Events.LogMessagePopUp(About_Msg, "Debug", "About");//DO NOT LOCALIZE
             }
             else if (Item == Utilities.Localization["Show Help"])
             {
@@ -289,7 +313,7 @@ namespace DBM
             {
                 Utilities.Updater();
             }
-            else if(Item != null)
+            else if (Item != null)
             {
                 Events.LogMessage(Item + " does not exist in context or is not yet implemented", "UI");
             }

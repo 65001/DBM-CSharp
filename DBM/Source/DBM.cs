@@ -210,6 +210,8 @@ namespace DBM
             MenuList["JSON"] = Utilities.Localization["Export"]; //TODO Localize
             MenuList[Utilities.Localization["SQL"] + " "] = Utilities.Localization["Export"];
             MenuList[Utilities.Localization["PXML"] + " "]= Utilities.Localization["Export"];
+            MenuList["MarkDown"] = Utilities.Localization["Export"]; //TODO Localize
+            MenuList["Wiki MarkUp"] = Utilities.Localization["Export"]; //TODO Localize
             MenuList["-"] = Utilities.Localization["Export"];
 
             //Settings
