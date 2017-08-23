@@ -30,7 +30,7 @@ namespace DBM
         }
 
         /// <summary>
-        /// Generates a 2D Primitive Array from the Last nonschema Query
+        /// Generates a 2D Small Basic Primitive Array from the Last nonschema Query.
         /// </summary>
         public static Primitive Generate2DArrayFromLastQuery()
         {
@@ -50,8 +50,9 @@ namespace DBM
         public static void CSV(Primitive Data, Primitive Schema, string FilePath, string deliminator)
         {
             Primitive _Data = null;
-            Data[0] = Schema;
 
+            Data[0] = Schema; //Sets the Schema at Indicie zero
+            //Shift all indicies by one to meet implicit expectations of the Primitive[] Datatype from SmallBasic
             for (int i = 0; i <= Data.GetItemCount() + 1; i++)
             {
                 _Data[(i + 1)] = Data[i];
@@ -193,6 +194,13 @@ namespace DBM
             }
         }
         
+        /// <summary>
+        /// StringBuilder based XML document creator.
+        /// </summary>
+        /// <param name="Data"></param>
+        /// <param name="Schema"></param>
+        /// <param name="Title"></param>
+        /// <param name="FilePath"></param>
         public static void XML(Primitive Data,Primitive Schema,string Title,string FilePath)
         {
             Utilities.AddtoStackTrace("Export.XML");
@@ -221,6 +229,38 @@ namespace DBM
             System.IO.File.WriteAllText(FilePath, _XML.ToString());
         }
 
+        /// <summary>
+        /// For Wikipedia Tables
+        /// </summary>
+        public static void MarkUp(Primitive Data, Primitive Schema, string FilePath)
+        {
+
+        }
+
+        /// <summary>
+        /// For Wikipedia Tables
+        /// </summary>
+        public static void MarkUp(Primitive Data, Primitive Schema)
+        {
+
+        }
+
+        /// <summary>
+        /// Support for Github and Reddit Markdown
+        /// </summary>
+        public static void MarkDown(Primitive Data, Primitive Schema, string FilePath)
+        {
+
+        }
+
+        /// <summary>
+        /// Support for Github and Reddit Markdown
+        /// </summary>
+        public static void MarkDown(Primitive Data, Primitive Schema)
+        {
+
+        }
+
         public static void HTML(Primitive Data, Primitive Schema, string Title, string FilePath, string Generator) 
         {
             Utilities.AddtoStackTrace("Export.HTML");
@@ -235,7 +275,7 @@ namespace DBM
             HTML_Timer.Start();
             if (string.IsNullOrWhiteSpace(Data) || string.IsNullOrWhiteSpace(Schema) || string.IsNullOrWhiteSpace(Title))
             {
-                throw new ArgumentException("DBM.Export.HTML : Data , Schema , or Title are null or are composed of whitespace characters");
+                throw new ArgumentException("DBM.Export.HTML : Data, Schema, or Title are null or are composed of whitespace characters");
             }
 
             StringBuilder HTML_Statement = new StringBuilder();
@@ -266,7 +306,7 @@ namespace DBM
             HTML_Statement.Append("\">" + Title + "</td>\n\t\t\t\t");
             HTML_Statement.Append("</tr>\n\t\t\t\t<tr>\n");
 
-            //Converts Primitive Data to FastArray
+            //Converts Primitive Data Type to FastArray.
             string FastArray = LDFastArray.Add();
             for (int i = 1; i <= Data.GetItemCount(); i++)
             {
@@ -276,7 +316,8 @@ namespace DBM
                     LDFastArray.Set2D(FastArray, i, ii, Temp_HTML[Schema[ii]]);
                 }
             }
-            //Header Data
+
+            //Converts Column Names in the database to Columns in a html document
             for (int i = 1; i <= Schema.GetItemCount(); i++)
             {
                 string Temp_Schema = Schema[i].ToString().Replace("_", " ");
@@ -285,7 +326,7 @@ namespace DBM
             }
 
             HTML_Statement.Append("\t\t\t\t</tr>\n");
-
+            //Convert Table Data into HTML table rows.
             for (int i = 1; i <= Data.GetItemCount(); i++)
             {
                 HTML_Statement.Append("\t\t\t\t<tr>\n");
@@ -310,6 +351,13 @@ namespace DBM
             System.IO.File.WriteAllText(Path, JSON(Data, Schema, Title) );
         }
 
+        /// <summary>
+        /// StringBuilder based JSON writer.
+        /// </summary>
+        /// <param name="Data"></param>
+        /// <param name="Schema"></param>
+        /// <param name="Title"></param>
+        /// <returns></returns>
         public static string JSON(Primitive Data, Primitive Schema, string Title)
         {
             Utilities.AddtoStackTrace("Export.JSON");

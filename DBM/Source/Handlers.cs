@@ -250,7 +250,7 @@ namespace DBM
                 }
                 Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.CSV");//TODO Localize
             }
-            else if (Item == "JSON")
+            else if (Item == "JSON") //TODO Localize
             {
                 string Path = LDDialogs.SaveFile("json", null);
                 if (!string.IsNullOrWhiteSpace(Path))

@@ -93,22 +93,15 @@ namespace DBM
         static void AddLocalization()
         {
             Primitive XML_Array = XMLAttributes();
-            if (XML_Array[1]["language"] == GlobalStatic.LanguageCode)
+            string key = XML_Array[4].ToString().Replace("_"," ");
+            string value = XML_Array[6];
+            if (_Localization.ContainsKey(key) == false)
             {
-                string key = XML_Array[4].ToString().Replace("_"," ");
-                string value = XML_Array[6];
-                if (_Localization.ContainsKey(key) == false)
-                {
                     _Localization.Add(key, value);
-                }
-                else
-                {
-                    throw new Exception("The key : " + key +" already exists in the Localization Dictionary.");
-                }
             }
-            else if (GlobalStatic.DebugMode == true)
+            else
             {
-                Console.WriteLine("Rejected: {0}", XML_Array);
+                throw new Exception("The key : " + key +" already exists in the Localization Dictionary.");
             }
         }
 

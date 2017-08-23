@@ -34,7 +34,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisRuleSet>DBM.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Source\DBM.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <Optimize>true</Optimize>
@@ -43,7 +43,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>DBM.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Source\DBM.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
@@ -75,7 +75,7 @@
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>DBM.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Source\DBM.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
@@ -85,31 +85,31 @@
     <PlatformTarget>x64</PlatformTarget>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>DBM.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Source\DBM.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DBM.cs">
+    <Compile Include="Source\DBM.cs">
     </Compile>
-    <Compile Include="Engines\Emulator.cs" />
-    <Compile Include="Engines\Engine.Misc.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Engines\Engines.cs">
+    <Compile Include="Source\Engines\Emulator.cs" />
+    <Compile Include="Source\Engines\Engine.Misc.cs" />
+    <Compile Include="Source\GlobalSuppressions.cs" />
+    <Compile Include="Source\Engines\Engines.cs">
     </Compile>
-    <Compile Include="Settings.cs">
+    <Compile Include="Source\Settings.cs">
     </Compile>
-    <Compile Include="Plugin.cs">
+    <Compile Include="Source\Plugin.cs">
     </Compile>
-    <Compile Include="GlobalStatic.cs">
+    <Compile Include="Source\GlobalStatic.cs">
     </Compile>
-    <Compile Include="EULA.cs">
+    <Compile Include="Source\EULA.cs">
     </Compile>
-    <Compile Include="Utilities.cs">
+    <Compile Include="Source\Utilities.cs">
     </Compile>
-    <Compile Include="Handlers.cs">
+    <Compile Include="Source\Handlers.cs">
     </Compile>
-    <Compile Include="Import.cs" />
-    <Compile Include="Export.cs" />
+    <Compile Include="Source\Import.cs" />
+    <Compile Include="Source\Export.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,8 +124,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DBM.ruleset" />
-    <None Include="packages.config" />
+    <None Include="Source\DBM.ruleset" />
+    <None Include="Source\packages.config" />
     <None Include="Properties\app.manifest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
