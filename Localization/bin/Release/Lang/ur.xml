@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>زبان</Language>
+		<File>فائل</File>
+		<New>نئ?</New>
+		<Open>کھول?ں</Open>
+		<Edit>ترم?م کر?ں</Edit>
+		<View>د?کھ?ں</View>
+		<Save>محفوظ کر?ں</Save>
+		<Import>درآمد کر?ں</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>برآمد کر?ں</Export>
+		<HTML>ا?چ ٹ? ا?م ا?ل</HTML>
+		<Settings>ترت?بات</Settings>
+		<Help>مدد</Help>
+		<About>کے بارے م?ں</About>
+		<Show_Help>مدد دکھائ?ں</Show_Help>
+		<Settings_Editor>ترت?بات ا?ڈ?ٹر</Settings_Editor>
+		<Toggle_Debug>ڈ?گگل ٹوگل کر?ں</Toggle_Debug>
+		<Toggle_Transaction_Log>ٹرانز?کشن لاگ ٹول</Toggle_Transaction_Log>
+		<Refresh_Schema>سک?م تازہ کر?ں</Refresh_Schema>
+		<Check_for_Updates>اپ ڈ?ٹ کے ل?ے چ?ک کر?ں</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>پروگرام شروع ہوا</PRGM_Start>
+		<App>درخواست</App>
+		<Failed_Save_Settings>ترت?بات کو محفوظ کرنے م?ں ناکام</Failed_Save_Settings>
+		<Error>خراب?</Error>
+		<Failed>ناکام</Failed>
+		<Table>م?ز</Table>
+		<Index>انڈ?کس</Index>
+		<Master_Table>ماسٹر ٹ?بل</Master_Table>
+		<Sort>ترت?ب د?ں</Sort>
+		<Asc>سنبھالنے</Asc>
+		<Desc>در?افت</Desc>
+		<Display_Settings>ترت?بات دکھائ?ں</Display_Settings>
+		<Sort_by>ک? طرف سے ترت?ب د?ں</Sort_by>
+		<Search_in>تلاش کر?ں</Search_in>
+		<Search>تلاش کر?ں</Search>
+		<Functions>افعال</Functions>
+		<Strict_Search>سخت تلاش</Strict_Search>
+		<Run_Function>چلائ?ں فنکشن</Run_Function>
+		<Query>سوال</Query>
+		<Command>کمانڈ</Command>
+		<Error_No_DB>خراب?: کوئ? ڈ?ٹا ب?س لوڈ نہ?ں ک?ا گ?ا ہے</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable ?ا 'ماسٹر ٹ?بل' ا?ک محفوظ م?ز ہے. ڈ? ب? کے صداقت ک? حفاظت کے لئے آپ اس م?ز م?ں ترم?م نہ?ں کرسکتے</Master_Table_Protected>
+		<Access_Denied>رسائ? سے انکار</Access_Denied>
+		<Application>اپل? ک?شن</Application>
+		<View_Function>فنکشن د?کھ?ں</View_Function>
+		<User_Requested>صارف ک? درخواست</User_Requested>
+		<Listview_Width>فہرست ک? چوڑائ?</Listview_Width>
+		<Listview_Height>فہرست ک? اونچائ?</Listview_Height>
+		<Extensions>توس?ع</Extensions>
+		<Deliminator>ڈ?ل?م?ٹر</Deliminator>
+		<Save_and_Close>محفوظ کر?ں اور بند کر?ں</Save_and_Close>
+		<Close_wo_saving>بغ?ر بچت بند</Close_wo_saving>
+		<Failed_Load_Online_EULA>آن لائن EULA لوڈ کرنے م?ں ناکام</Failed_Load_Online_EULA>
+		<Auto_Log>آٹو لاگ ان</Auto_Log>
+		<Export_HTML_Schema>ا?چ ٹ? ا?م ا?ل SCHEMA ک? طرف سے برآمد کر?ں</Export_HTML_Schema>
+		<Export_HTML_Data>ا?چ ٹ? ا?م ا?ل ڈ?ٹا ک? طرف سے برآمد کر?ں</Export_HTML_Data>
+		<Check_Log>غلط?: براہ کرم تفص?لات کے لئے لاگ ان ک? جانچ پڑتال کر?ں</Check_Log>
+		<Query_Error>سوال ک? خراب?</Query_Error>
+		<Export_CSV>ب?ورو پر برآمد برآمد</Export_CSV>
+		<Export_SQL_SCHEMA>SQL برآمد کر?ں - شما - ک? جانب سے</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>SQL برآمد کر?ں - SQL - ک? جانب سے</Export_SQL_SQL>
+		<Export_XML>ا?کسچ?نج پر ا?کس ا?کس ا?کس ا?کس</Export_XML>
+		<System>نظام</System>
+		<Views_Read_Only>مناظر پڑھنے والے ہ?ں اور ترم?م نہ?ں ک?ا جاسکتا ہے</Views_Read_Only>
+		<Dataview_Error>ڈ?ٹا ب?س ?ا ڈ?ٹ?ٹو? موجود نہ?ں ہے ?ا ابھ? تک لوڈ نہ?ں ک?ا گ?ا ہے</Dataview_Error>
+		<Browse>براؤز کر?ں</Browse>
+		<Statistics_Page>اعداد و شمار پ?ج</Statistics_Page>
+		<Invert>تبد?ل کر?ں</Invert>
+		<Not_Supported>سہولت مہ?ا نہ?ں</Not_Supported>
+		<CMD_Tooltip>ڈ?ٹا ب?س پر اپن? مرض? کے مطابق SQL کمان کے ب?انات کو چلاتا ہے</CMD_Tooltip>
+		<LOG_CSV_Path>CSV راستہ لاگ ان کر?ں</LOG_CSV_Path>
+		<LOG_DB_PATH>لاگ ڈ?ٹا ڈ?ٹا ب?س</LOG_DB_PATH>
+		<Transaction_DB_Path>ٹرانز?کشن ڈ?ٹا ب?س کا راستہ</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>ش?ما - ذات?</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>خطرناک غلط? ک? خراب?</Critical_Fault_Error>
+		<Stack_Trace>اسٹ?ک ٹر?س</Stack_Trace>
+		<Close_TW>TW بند کر?ں</Close_TW>
+		<Export_UI>برآمد UI</Export_UI>
+		<Define_New_Table>نئ? م?ز ک? وضاحت کر?ں</Define_New_Table>
+		<Create_Statistics_Page>اعداد و شمار کے صفحے بنائ?ں</Create_Statistics_Page>
+		<Debug>ڈ?بگ</Debug>
+		<New_in_Memory_Db>?اد داشت ڈ?ٹا ب?س م?ں ن?ا</New_in_Memory_Db>
+		<Import_SQL>SQL درآمد کر?ں</Import_SQL>
+		<Plugin>رابطہ بحال کرو</Plugin>
+		<Opened>کھول د?ا</Opened>
+		<Converter>کنورٹر</Converter>
+		<HTML_to_CSV>CSV م?ں ا?چ ٹ? ا?م ا?ل</HTML_to_CSV>
+		<Developer>ڈو?لپر</Developer>
+	</Language>
+</root>

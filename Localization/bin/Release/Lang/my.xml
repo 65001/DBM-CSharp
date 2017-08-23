@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>ဘာသာစကား</Language>
+		<File>ဖိုင်မှတ်တမ်း</File>
+		<New>နယူး</New>
+		<Open>ဖွင့်လှစ်</Open>
+		<Edit>Edit ကို</Edit>
+		<View>ကြည့်ရှုခြင်း</View>
+		<Save>ကြော်ငြာကို Save လုပ်ရန်</Save>
+		<Import>တင်သွင်း</Import>
+		<CSV>CSV ဖိုင်</CSV>
+		<SQL>SQL</SQL>
+		<Export>ထုတ်ကုန်</Export>
+		<HTML>HTML ကို</HTML>
+		<Settings>Settings များ</Settings>
+		<Help>ကူညီပါ</Help>
+		<About>အကွောငျး</About>
+		<Show_Help>Show ကိုအကူအညီ</Show_Help>
+		<Settings_Editor>Settings များ Editor ကို</Settings_Editor>
+		<Toggle_Debug>toggle ဘာဂ်</Toggle_Debug>
+		<Toggle_Transaction_Log>toggle ငွေသွင်းငွေထုတ် Log in ဝင်ရန်</Toggle_Transaction_Log>
+		<Refresh_Schema>Refresh Schema</Refresh_Schema>
+		<Check_for_Updates>အပ်ဒိတ်များအဘို့ Check</Check_for_Updates>
+		<PXML>XML ကို</PXML>
+		<PRGM_Start>Program ကိုစတင်ခဲ့သည်</PRGM_Start>
+		<App>လြှောကျလှာ</App>
+		<Failed_Save_Settings>Settings များ Save ရန်မအောင်မြင်ခဲ့ပါ</Failed_Save_Settings>
+		<Error>အမှား</Error>
+		<Failed>Failed</Failed>
+		<Table>စားပှဲ</Table>
+		<Index>အညွှန်းကိန်း</Index>
+		<Master_Table>မာစတာဇယား</Master_Table>
+		<Sort>စီ</Sort>
+		<Asc>Ascending</Asc>
+		<Desc>ဆင်း</Desc>
+		<Display_Settings>display Settings</Display_Settings>
+		<Sort_by>အလိုက်စဥ်သည်</Sort_by>
+		<Search_in>ရှာရန်ခုနှစ်တွင်</Search_in>
+		<Search>ရှာဖှေ</Search>
+		<Functions>functions များ</Functions>
+		<Strict_Search>တင်းကျပ်သောရှာရန်</Strict_Search>
+		<Run_Function>run ရာထူးအမည်</Run_Function>
+		<Query>မေးခွန်း</Query>
+		<Command>အမိန့်</Command>
+		<Error_No_DB>အမှား: အဘယ်သူမျှမဒေတာဘေ့စတင်ဆောင်ထားပြီး</Error_No_DB>
+		<UI>UI ကို</UI>
+		<Master_Table_Protected>Sqlite_mastertable သို့မဟုတ် 'မာစတာစားပွဲတင်' 'တစ်ဦးကိုကာကွယ်စောင့်ရှောက်စားပွဲပေါ်မှာဖြစ်ပါတယ်။ အဆိုပါ DB ၏သမာဓိကိုကာကွယ်ရန်သင်ဤစားပွဲပေါ်မှာတည်းဖြတ်မရနိုင်ပါ</Master_Table_Protected>
+		<Access_Denied>ဝင်ရောက်ချိတ်ဆက်ရန်ငြင်းဆိုခြင်း</Access_Denied>
+		<Application>App ကို</Application>
+		<View_Function>ကြည့်ရန်ရာထူးအမည်</View_Function>
+		<User_Requested>အသုံးပြုသူတောင်းဆိုထားသော</User_Requested>
+		<Listview_Width>Listview အကျယ်</Listview_Width>
+		<Listview_Height>Listview အမြင့်</Listview_Height>
+		<Extensions>extensions</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>ပိတ် Save နှင့်</Save_and_Close>
+		<Close_wo_saving>သိမ်းဆည်းခြင်းမရှိဘဲအနီးကပ်</Close_wo_saving>
+		<Failed_Load_Online_EULA>အွန်လိုင်း EULA load ရန်မအောင်မြင်ခဲ့ပါ</Failed_Load_Online_EULA>
+		<Auto_Log>အော်တို Log in ဝင်ရန်</Auto_Log>
+		<Export_HTML_Schema>ကိုယ်စားပို့ကုန်က HTML schemas</Export_HTML_Schema>
+		<Export_HTML_Data>ကိုယ်စားပို့ကုန်က HTML အချက်အလက်</Export_HTML_Data>
+		<Check_Log>အမှား: အသေးစိတ်မှတ်တမ်းစစ်ဆေးပါ</Check_Log>
+		<Query_Error>query မှားယွင်းနေသည်</Query_Error>
+		<Export_CSV>ကိုယ်စားပို့ကုန် CSV ဖိုင်</Export_CSV>
+		<Export_SQL_SCHEMA>ပို့ကုန် SQL - schemas - ၏ကိုယ်စားတွင်</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>ပို့ကုန် SQL - SQL - ၏ကိုယ်စားတွင်</Export_SQL_SQL>
+		<Export_XML>ကိုယ်စားပို့ကုန် XML ကို</Export_XML>
+		<System>စံနစ်</System>
+		<Views_Read_Only>views မှာဖတ်ရန်အတွက်ဖြစ်ကြပြီးတည်းဖြတ်မရနိုင်ပါ</Views_Read_Only>
+		<Dataview_Error>အဆိုပါဒေတာဘေ့စသို့မဟုတ် Dataview မတည်ရှိပါဘူးသို့မဟုတ်သေး loaded ရသေး</Dataview_Error>
+		<Browse>Browse ကို</Browse>
+		<Statistics_Page>စာရင်းအင်းများ 's Page</Statistics_Page>
+		<Invert>ပြောင်းပြန်လှန်</Invert>
+		<Not_Supported>Supported မဟုတ်</Not_Supported>
+		<CMD_Tooltip>အဆိုပါဒေတာဘေ့စပေါ်သို့စိတ်ကြိုက် SQL command ကိုထုတ်ပြန်ချက်များကွပ်မျက်ခံရ</CMD_Tooltip>
+		<LOG_CSV_Path>CSV ကို Path ကို Log</LOG_CSV_Path>
+		<LOG_DB_PATH>log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>ငွေသွင်းငွေထုတ် Database ဟာ Path ကို</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>schemas-Private</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>အရေးပါသောပြတ်ရွေ့မှုမှားယွင်းနေ</Critical_Fault_Error>
+		<Stack_Trace>stack Trace</Stack_Trace>
+		<Close_TW>အနီးကပ် TW</Close_TW>
+		<Export_UI>ပို့ကုန် UI ကို</Export_UI>
+		<Define_New_Table>နယူးဇယားသတ်မှတ်</Define_New_Table>
+		<Create_Statistics_Page>စာရင်းအင်းစာမျက်နှာကိုဖန်တီး</Create_Statistics_Page>
+		<Debug>ဒီဘာဂ်</Debug>
+		<New_in_Memory_Db>မှတ်ဉာဏ် Database ကိုအသစ်</New_in_Memory_Db>
+		<Import_SQL>သွင်းကုန် SQL</Import_SQL>
+		<Plugin>plugin</Plugin>
+		<Opened>ဖွင့်လှစ်</Opened>
+		<Converter>converter</Converter>
+		<HTML_to_CSV>CSV ဖိုင်မှ HTML ကို</HTML_to_CSV>
+		<Developer>developer</Developer>
+	</Language>
+</root>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Språk</Language>
+		<File>Fil</File>
+		<New>Ny</New>
+		<Open>Öppen</Open>
+		<Edit>Redigera</Edit>
+		<View>Se</View>
+		<Save>Spara</Save>
+		<Import>Importera</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Exportera</Export>
+		<HTML>html</HTML>
+		<Settings>inställningar</Settings>
+		<Help>Hjälpa</Help>
+		<About>Handla om</About>
+		<Show_Help>Visa hjälp</Show_Help>
+		<Settings_Editor>Inställningsredigerare</Settings_Editor>
+		<Toggle_Debug>Byt felsökning</Toggle_Debug>
+		<Toggle_Transaction_Log>Växla Transaktionslogg</Toggle_Transaction_Log>
+		<Refresh_Schema>Uppdatera schema</Refresh_Schema>
+		<Check_for_Updates>Sök efter uppdateringar</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Program startat</PRGM_Start>
+		<App>Ansökan</App>
+		<Failed_Save_Settings>Misslyckades med att spara inställningar</Failed_Save_Settings>
+		<Error>Fel</Error>
+		<Failed>misslyckades</Failed>
+		<Table>Tabell</Table>
+		<Index>Index</Index>
+		<Master_Table>Masterbord</Master_Table>
+		<Sort>Sortera</Sort>
+		<Asc>Stigande</Asc>
+		<Desc>Nedåtgående</Desc>
+		<Display_Settings>Bildskärmsinställningar</Display_Settings>
+		<Sort_by>Sortera efter</Sort_by>
+		<Search_in>Sök i</Search_in>
+		<Search>Sök</Search>
+		<Functions>funktioner</Functions>
+		<Strict_Search>Strikt sökning</Strict_Search>
+		<Run_Function>Kör Funktion</Run_Function>
+		<Query>Fråga</Query>
+		<Command>Kommando</Command>
+		<Error_No_DB>Fel: Ingen databas har laddats</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable eller 'Master Table' är ett skyddat bord. För att skydda integriteten hos db kan du inte redigera den här tabellen</Master_Table_Protected>
+		<Access_Denied>Tillträde beviljas ej</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Visa funktion</View_Function>
+		<User_Requested>Användaren begärt</User_Requested>
+		<Listview_Width>Listvy bredd</Listview_Width>
+		<Listview_Height>Listvy Höjd</Listview_Height>
+		<Extensions>Extensions</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Spara och stäng</Save_and_Close>
+		<Close_wo_saving>Stäng utan att spara</Close_wo_saving>
+		<Failed_Load_Online_EULA>Misslyckades med att ladda online EULA</Failed_Load_Online_EULA>
+		<Auto_Log>Automatisk logg</Auto_Log>
+		<Export_HTML_Schema>Exportera HTML SCHEMA på uppdrag av</Export_HTML_Schema>
+		<Export_HTML_Data>Exportera HTML DATA på uppdrag av</Export_HTML_Data>
+		<Check_Log>Fel: Kontrollera loggen för detaljer</Check_Log>
+		<Query_Error>Frågefel</Query_Error>
+		<Export_CSV>EXPORT CSV PÅ HÄLSA AV</Export_CSV>
+		<Export_SQL_SCHEMA>Exportera SQL - SCHEMA - på uppdrag av</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Exportera SQL - SQL - På uppdrag av</Export_SQL_SQL>
+		<Export_XML>EXPORT XML PÅ HÄLSA AV</Export_XML>
+		<System>Systemet</System>
+		<Views_Read_Only>Visningar är readonly och kan inte redigeras</Views_Read_Only>
+		<Dataview_Error>Databasen eller Dataview finns inte eller har inte laddats än</Dataview_Error>
+		<Browse>Bläddra</Browse>
+		<Statistics_Page>Statistik sida</Statistics_Page>
+		<Invert>Invertera</Invert>
+		<Not_Supported>Stöds inte</Not_Supported>
+		<CMD_Tooltip>Exekverar anpassade SQL-kommandotillstånd i databasen</CMD_Tooltip>
+		<LOG_CSV_Path>Logg CSV-sökväg</LOG_CSV_Path>
+		<LOG_DB_PATH>Logga databas</LOG_DB_PATH>
+		<Transaction_DB_Path>Transaktionsdatabasväg</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Kritiskt felfel</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Stäng TW</Close_TW>
+		<Export_UI>Exportera användargränssnitt</Export_UI>
+		<Define_New_Table>Definiera ny tabell</Define_New_Table>
+		<Create_Statistics_Page>Skapa statistik sida</Create_Statistics_Page>
+		<Debug>debug</Debug>
+		<New_in_Memory_Db>Nytt i minnesdatabasen</New_in_Memory_Db>
+		<Import_SQL>Importera SQL</Import_SQL>
+		<Plugin>plugin</Plugin>
+		<Opened>Öppnad</Opened>
+		<Converter>Omvandlare</Converter>
+		<HTML_to_CSV>HTML till CSV</HTML_to_CSV>
+		<Developer>Utvecklare</Developer>
+	</Language>
+</root>

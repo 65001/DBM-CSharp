@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>мова</Language>
+		<File>файл</File>
+		<New>новы</New>
+		<Open>адкрыты</Open>
+		<Edit>рэдагаваць</Edit>
+		<View>выгляд</View>
+		<Save>захаваць</Save>
+		<Import>імпарт</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>экспарт</Export>
+		<HTML>HTML</HTML>
+		<Settings>налады</Settings>
+		<Help>дапамогу</Help>
+		<About>аб</About>
+		<Show_Help>паказаць дапамогу</Show_Help>
+		<Settings_Editor>налады Рэдактара</Settings_Editor>
+		<Toggle_Debug>пераключыць Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Пераключэнне часопіса транзакцый</Toggle_Transaction_Log>
+		<Refresh_Schema>абнавіць схемы</Refresh_Schema>
+		<Check_for_Updates>Праверыць наяўнасць абнаўленняў</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>праграма працы</PRGM_Start>
+		<App>дадатак</App>
+		<Failed_Save_Settings>Не атрымалася захаваць налады</Failed_Save_Settings>
+		<Error>памылка</Error>
+		<Failed>Не атрымалася</Failed>
+		<Table>табліца</Table>
+		<Index>індэкс</Index>
+		<Master_Table>майстар Табліца</Master_Table>
+		<Sort>сартаваць</Sort>
+		<Asc>узыходзячая</Asc>
+		<Desc>сыходны</Desc>
+		<Display_Settings>налады адлюстравання</Display_Settings>
+		<Sort_by>сартаваць па</Sort_by>
+		<Search_in>шукаць у</Search_in>
+		<Search>пошук</Search>
+		<Functions>функцыі</Functions>
+		<Strict_Search>строгі пошук</Strict_Search>
+		<Run_Function>запуск функцыі</Run_Function>
+		<Query>запыт</Query>
+		<Command>каманда</Command>
+		<Error_No_DB>Памылка: база дадзеных не была загружана</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable або «Master Табліца» ўяўляе сабой абароненую табліцу. Для абароны цэласнасці БД вы не можаце рэдагаваць гэтую табліцу</Master_Table_Protected>
+		<Access_Denied>Доступ забаронены</Access_Denied>
+		<Application>дадатак</Application>
+		<View_Function>выгляд функцыі</View_Function>
+		<User_Requested>Карыстальнік прасіў</User_Requested>
+		<Listview_Width>ListView Шырыня</Listview_Width>
+		<Listview_Height>ListView Вышыня</Listview_Height>
+		<Extensions>пашырэння</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Захаваць і зачыніць</Save_and_Close>
+		<Close_wo_saving>Зачыніць без захавання</Close_wo_saving>
+		<Failed_Load_Online_EULA>Не атрымалася загрузіць онлайн EULA</Failed_Load_Online_EULA>
+		<Auto_Log>Auto Log</Auto_Log>
+		<Export_HTML_Schema>Экспарт HTML SCHEMA ад імя</Export_HTML_Schema>
+		<Export_HTML_Data>Экспарт HTML DATA ад імя</Export_HTML_Data>
+		<Check_Log>Памылка: Калі ласка, праверце часопіс для дэталяў</Check_Log>
+		<Query_Error>памылка запыту</Query_Error>
+		<Export_CSV>Экспарт CSV ПА ІМЯ</Export_CSV>
+		<Export_SQL_SCHEMA>Экспарт SQL - SCHEMA - Ад імя</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Экспарт SQL - SQL - Ад імя</Export_SQL_SQL>
+		<Export_XML>Экспарт XML ПА ІМЯ</Export_XML>
+		<System>сістэма</System>
+		<Views_Read_Only>Прадстаўлення і чытання не могуць быць зменены</Views_Read_Only>
+		<Dataview_Error>База дадзеных або DataView не існуе ці не загружаны</Dataview_Error>
+		<Browse>прагартаць</Browse>
+		<Statistics_Page>старонка статыстыкі</Statistics_Page>
+		<Invert>інвертаваць</Invert>
+		<Not_Supported>Не падтрымліваецца</Not_Supported>
+		<CMD_Tooltip>Выконвае індывідуальныя заявы каманды SQL ў базе дадзеных</CMD_Tooltip>
+		<LOG_CSV_Path>Уваход CSV Шлях</LOG_CSV_Path>
+		<LOG_DB_PATH>Уваход DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Шлях базы дадзеных транзакцый</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Крытычная памылка Памылка</Critical_Fault_Error>
+		<Stack_Trace>трасіроўка стэка</Stack_Trace>
+		<Close_TW>зачыніць TW</Close_TW>
+		<Export_UI>экспарт UI</Export_UI>
+		<Define_New_Table>Вызначыць новую табліцу</Define_New_Table>
+		<Create_Statistics_Page>Стварэнне статыстыкі Старонка</Create_Statistics_Page>
+		<Debug>адладжваць</Debug>
+		<New_in_Memory_Db>Новае ў базе дадзеных памяці</New_in_Memory_Db>
+		<Import_SQL>імпарт SQL</Import_SQL>
+		<Plugin>Plugin</Plugin>
+		<Opened>адкрыты</Opened>
+		<Converter>канвэртар</Converter>
+		<HTML_to_CSV>HTML у CSV</HTML_to_CSV>
+		<Developer>распрацоўшчык</Developer>
+	</Language>
+</root>

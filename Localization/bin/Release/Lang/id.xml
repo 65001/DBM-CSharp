@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Bahasa</Language>
+		<File>Mengajukan</File>
+		<New>Baru</New>
+		<Open>Buka</Open>
+		<Edit>Edit</Edit>
+		<View>Melihat</View>
+		<Save>Menyimpan</Save>
+		<Import>Impor</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Ekspor</Export>
+		<HTML>HTML</HTML>
+		<Settings>Pengaturan</Settings>
+		<Help>Membantu</Help>
+		<About>Tentang</About>
+		<Show_Help>Tampilkan Bantuan</Show_Help>
+		<Settings_Editor>Pengaturan Editor</Settings_Editor>
+		<Toggle_Debug>Toggle Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Toggle Transaction Log</Toggle_Transaction_Log>
+		<Refresh_Schema>Refresh Skema</Refresh_Schema>
+		<Check_for_Updates>Periksa Pembaharuan</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Program dimulai</PRGM_Start>
+		<App>Aplikasi</App>
+		<Failed_Save_Settings>Gagal Menyimpan Setelan</Failed_Save_Settings>
+		<Error>Kesalahan</Error>
+		<Failed>Gagal</Failed>
+		<Table>Meja</Table>
+		<Index>Indeks</Index>
+		<Master_Table>Meja master</Master_Table>
+		<Sort>Menyortir</Sort>
+		<Asc>Naik</Asc>
+		<Desc>Descending</Desc>
+		<Display_Settings>Pengaturan tampilan</Display_Settings>
+		<Sort_by>Sortir dengan</Sort_by>
+		<Search_in>Mencari</Search_in>
+		<Search>Pencarian</Search>
+		<Functions>Fungsi</Functions>
+		<Strict_Search>Pencarian yang ketat</Strict_Search>
+		<Run_Function>Jalankan Fungsi</Run_Function>
+		<Query>Pertanyaan</Query>
+		<Command>Perintah</Command>
+		<Error_No_DB>Kesalahan: Tidak ada Database yang dimuat</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable atau 'Master Table' adalah tabel yang dilindungi. Untuk melindungi integritas db Anda tidak dapat mengedit tabel ini</Master_Table_Protected>
+		<Access_Denied>Akses ditolak</Access_Denied>
+		<Application>Aplikasi</Application>
+		<View_Function>Lihat Fungsi</View_Function>
+		<User_Requested>Permintaan pengguna</User_Requested>
+		<Listview_Width>Lebar Listview</Listview_Width>
+		<Listview_Height>Listview Tinggi</Listview_Height>
+		<Extensions>Ekstensi</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Simpan dan tutup</Save_and_Close>
+		<Close_wo_saving>Tutup tanpa Menyimpan</Close_wo_saving>
+		<Failed_Load_Online_EULA>Gagal memuat EULA online</Failed_Load_Online_EULA>
+		<Auto_Log>Log Otomatis</Auto_Log>
+		<Export_HTML_Schema>Ekspor HTML SCHEMA atas nama</Export_HTML_Schema>
+		<Export_HTML_Data>Ekspor DATA HTML atas nama</Export_HTML_Data>
+		<Check_Log>Kesalahan: Harap periksa log untuk rinciannya</Check_Log>
+		<Query_Error>Kesalahan kueri</Query_Error>
+		<Export_CSV>EKSPOR CSV PADA BEHALF OF</Export_CSV>
+		<Export_SQL_SCHEMA>Ekspor SQL - SCHEMA - Atas nama</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Ekspor SQL - SQL - Atas nama</Export_SQL_SQL>
+		<Export_XML>EKSPOR XML PADA BEHALF OF</Export_XML>
+		<System>Sistem</System>
+		<Views_Read_Only>Tampilan hanya bisa dibaca dan tidak bisa diedit</Views_Read_Only>
+		<Dataview_Error>Database atau Dataview tidak ada atau belum dimuat</Dataview_Error>
+		<Browse>Jelajahi</Browse>
+		<Statistics_Page>Statistik</Statistics_Page>
+		<Invert>Membalikkan</Invert>
+		<Not_Supported>Tidak didukung</Not_Supported>
+		<CMD_Tooltip>Jalankan perintah perintah SQL yang disesuaikan ke database</CMD_Tooltip>
+		<LOG_CSV_Path>Jalur CSV Masuk</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Jalur Database Transaksi</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>Skema PRIBADI</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Kesalahan Kritis Kesalahan</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Tutup TW</Close_TW>
+		<Export_UI>Ekspor UI</Export_UI>
+		<Define_New_Table>Tentukan Tabel Baru</Define_New_Table>
+		<Create_Statistics_Page>Buat Halaman Statistik</Create_Statistics_Page>
+		<Debug>Debug</Debug>
+		<New_in_Memory_Db>Baru di Memory Database</New_in_Memory_Db>
+		<Import_SQL>Impor SQL</Import_SQL>
+		<Plugin>Plugin</Plugin>
+		<Opened>Dibuka</Opened>
+		<Converter>Konverter</Converter>
+		<HTML_to_CSV>HTML ke CSV</HTML_to_CSV>
+		<Developer>Pengembang</Developer>
+	</Language>
+</root>

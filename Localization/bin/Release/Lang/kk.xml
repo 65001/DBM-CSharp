@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Тіл</Language>
+		<File>Файл</File>
+		<New>Жаңа</New>
+		<Open>Ашық</Open>
+		<Edit>Өңдеу</Edit>
+		<View>Қарау</View>
+		<Save>Сақтау</Save>
+		<Import>Импорт</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Экспорттау</Export>
+		<HTML>HTML</HTML>
+		<Settings>Параметрлер</Settings>
+		<Help>Көмектесіңдер</Help>
+		<About>Біз туралы</About>
+		<Show_Help>Көмек көрсету</Show_Help>
+		<Settings_Editor>Параметрлер өңдеушісі</Settings_Editor>
+		<Toggle_Debug>Өшіруді ажырату</Toggle_Debug>
+		<Toggle_Transaction_Log>Транзакция журналы</Toggle_Transaction_Log>
+		<Refresh_Schema>Жаңарту схемасы</Refresh_Schema>
+		<Check_for_Updates>Жаңартуларды тексеру</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Бағдарлама басталды</PRGM_Start>
+		<App>Қолданба</App>
+		<Failed_Save_Settings>Параметрлерді сақтау сәтсіз аяқталды</Failed_Save_Settings>
+		<Error>Қате</Error>
+		<Failed>Аяқталмады</Failed>
+		<Table>Кесте</Table>
+		<Index>Индекс</Index>
+		<Master_Table>Мастер-кесте</Master_Table>
+		<Sort>Сұрыптау</Sort>
+		<Asc>Өсуі</Asc>
+		<Desc>Кему бойынша</Desc>
+		<Display_Settings>Дисплей параметрлері</Display_Settings>
+		<Sort_by>Бойынша сұрыптау</Sort_by>
+		<Search_in>Іздеу</Search_in>
+		<Search>Іздеу</Search>
+		<Functions>Функциялар</Functions>
+		<Strict_Search>Қатаң іздеу</Strict_Search>
+		<Run_Function>Функцияны іске қосу</Run_Function>
+		<Query>Сұрау</Query>
+		<Command>Команда</Command>
+		<Error_No_DB>Қате: Деректер базасы жүктелмеді</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable немесе 'Master Table' - қорғалған кесте. Db файлының тұтастығын қорғау үшін сіз бұл кестені өңдей алмайсыз</Master_Table_Protected>
+		<Access_Denied>� ұқсат жоқ</Access_Denied>
+		<Application>Қолданба</Application>
+		<View_Function>Функцияны көру</View_Function>
+		<User_Requested>Пайдаланушы сұраған</User_Requested>
+		<Listview_Width>Listview ені</Listview_Width>
+		<Listview_Height>Биіктігі Listview</Listview_Height>
+		<Extensions>Кеңейтімдер</Extensions>
+		<Deliminator>Делиматор</Deliminator>
+		<Save_and_Close>Сақтау және жабу</Save_and_Close>
+		<Close_wo_saving>Сақтаусыз жабу</Close_wo_saving>
+		<Failed_Load_Online_EULA>Онлайн EULA жүктеу сәтсіз аяқталды</Failed_Load_Online_EULA>
+		<Auto_Log>Автоматты журнал</Auto_Log>
+		<Export_HTML_Schema>Атынан HTML SCHEMA экспорттаңыз</Export_HTML_Schema>
+		<Export_HTML_Data>HTML DATA атынан экспорттау</Export_HTML_Data>
+		<Check_Log>Қате: Мәліметтер үшін журналды тексеріңіз</Check_Log>
+		<Query_Error>Сұрау қатесі</Query_Error>
+		<Export_CSV>Экспорттаушы CSV</Export_CSV>
+		<Export_SQL_SCHEMA>SQL экспорттау - SCHEMA - атынан</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>SQL экспорттау - SQL - атынан</Export_SQL_SQL>
+		<Export_XML>ЭКСПО� Т КОМПАНИЯСЫНЫҢ КЕЗДЕСУІ</Export_XML>
+		<System>Жүйе</System>
+		<Views_Read_Only>Көрулер оқылымда және редакциялау мүмкін емес</Views_Read_Only>
+		<Dataview_Error>Дерекқор немесе Деректер көрінісі әлі жоқ немесе жүктелмеді</Dataview_Error>
+		<Browse>Шолу</Browse>
+		<Statistics_Page>Статистика беті</Statistics_Page>
+		<Invert>Төңкеріңіз</Invert>
+		<Not_Supported>Қолдау көрсетілмейді</Not_Supported>
+		<CMD_Tooltip>Дерекқорға реттелген SQL пәрмендерінің мәлімдемесін орындайды</CMD_Tooltip>
+		<LOG_CSV_Path>CSV жолын тіркеу</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Транзакция деректер базасының жолы</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Қате қатесі</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Жабу TW</Close_TW>
+		<Export_UI>UI экспорттау</Export_UI>
+		<Define_New_Table>Жаңа кестені анықтаңыз</Define_New_Table>
+		<Create_Statistics_Page>Статистика бетін жасау</Create_Statistics_Page>
+		<Debug>Debug</Debug>
+		<New_in_Memory_Db>Жад деректер базасында жаңа</New_in_Memory_Db>
+		<Import_SQL>SQL импорттау</Import_SQL>
+		<Plugin>Плагин</Plugin>
+		<Opened>Ашылды</Opened>
+		<Converter>Конвертер</Converter>
+		<HTML_to_CSV>HTML - CSV</HTML_to_CSV>
+		<Developer>Әзірлеуші</Developer>
+	</Language>
+</root>

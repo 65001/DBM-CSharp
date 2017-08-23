@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Lingwa</Language>
+		<File>Fajl</File>
+		<New>Gdid</New>
+		<Open>Miftuha</Open>
+		<Edit>Edit</Edit>
+		<View>Ara</View>
+		<Save>Hlief</Save>
+		<Import>Importazzjoni</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Esportazzjoni</Export>
+		<HTML>HTML</HTML>
+		<Settings>Settings</Settings>
+		<Help>Ghajnuna</Help>
+		<About>Dwar</About>
+		<Show_Help>Uri l-Ghajnuna</Show_Help>
+		<Settings_Editor>Editur tal-Settings</Settings_Editor>
+		<Toggle_Debug>Toggle Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Toggle Log ta 'Tranzazzjoni</Toggle_Transaction_Log>
+		<Refresh_Schema>Aggorna l-Iskema</Refresh_Schema>
+		<Check_for_Updates>Iccekkja ghal Aggornamenti</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Il-Programm Beda</PRGM_Start>
+		<App>Applikazzjoni</App>
+		<Failed_Save_Settings>Falla li Hlief Settings</Failed_Save_Settings>
+		<Error>Zball</Error>
+		<Failed>Falla</Failed>
+		<Table>Tabella</Table>
+		<Index>Indici</Index>
+		<Master_Table>Tabella tal-Kaptan</Master_Table>
+		<Sort>Sort</Sort>
+		<Asc>Nimxu</Asc>
+		<Desc>Baxxa</Desc>
+		<Display_Settings>Settings tal-Wiri</Display_Settings>
+		<Sort_by>Irranga skond</Sort_by>
+		<Search_in>Fittex fi</Search_in>
+		<Search>Fittex</Search>
+		<Functions>Funzjonijiet</Functions>
+		<Strict_Search>Tiftix strett</Strict_Search>
+		<Run_Function>Run Function</Run_Function>
+		<Query>Mistoqsija</Query>
+		<Command>Kmand</Command>
+		<Error_No_DB>Zball: Ma giet mghobbija l-ebda Database</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable jew "Master Table" hija tabella protetta. Biex tipprotegi l-integrità tad-db ma tistax torganizza din it-tabella</Master_Table_Protected>
+		<Access_Denied>Access michud</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Funzjoni tal-Veduta</View_Function>
+		<User_Requested>Utent Mitlub</User_Requested>
+		<Listview_Width>Wisa 'tal-Listview</Listview_Width>
+		<Listview_Height>L-Gholi tal-Listview</Listview_Height>
+		<Extensions>Estensjonijiet</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Hlief u Aghlaq</Save_and_Close>
+		<Close_wo_saving>Aghlaq minghajr Saving</Close_wo_saving>
+		<Failed_Load_Online_EULA>Naqset milli taghbija EULA onlajn</Failed_Load_Online_EULA>
+		<Auto_Log>Log Auto</Auto_Log>
+		<Export_HTML_Schema>Esportazzjoni SCHEMA HTML f'isem</Export_HTML_Schema>
+		<Export_HTML_Data>Esporta HTML DATA f'isem</Export_HTML_Data>
+		<Check_Log>Zball: Jekk joghgbok iccekkja l-log ghad-dettalji</Check_Log>
+		<Query_Error>Zball ta 'Mistoqsija</Query_Error>
+		<Export_CSV>ESPORTAZZJONI CSV F'ISEMA TA '</Export_CSV>
+		<Export_SQL_SCHEMA>Esportazzjoni SQL - SKEMA - f'isem</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Esportazzjoni SQL - SQL - f'isem</Export_SQL_SQL>
+		<Export_XML>ESPORTAZZJONI XML FIS-SOMMA TA '</Export_XML>
+		<System>Sistema</System>
+		<Views_Read_Only>Il-fehmiet huma rikonnoxxuti u ma jistghux jigu editjati</Views_Read_Only>
+		<Dataview_Error>Id-Database jew Dataview ma tezistix jew ghadha ma gietx mghobbija</Dataview_Error>
+		<Browse>Fittex</Browse>
+		<Statistics_Page>Statistics Page</Statistics_Page>
+		<Invert>Invert</Invert>
+		<Not_Supported>Mhux Sostnuti</Not_Supported>
+		<CMD_Tooltip>Tesegwixxi dikjarazzjonijiet personalizzati ta 'kmand SQL fuq id-database</CMD_Tooltip>
+		<LOG_CSV_Path>Log CSV Path</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Binarju tad-Database tat-Tranzazzjonijiet</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SKEMA-PRIVAT</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Zball ta 'hsara kritika</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Aghlaq TW</Close_TW>
+		<Export_UI>UI ta 'esportazzjoni</Export_UI>
+		<Define_New_Table>Iddefinixxi Tabella Gdida</Define_New_Table>
+		<Create_Statistics_Page>Ohloq Statistika Pagna</Create_Statistics_Page>
+		<Debug>Debug</Debug>
+		<New_in_Memory_Db>Gdid fil-Database tal-Memorja</New_in_Memory_Db>
+		<Import_SQL>Importa SQL</Import_SQL>
+		<Plugin>Plugin</Plugin>
+		<Opened>Miftuha</Opened>
+		<Converter>Konvertitur</Converter>
+		<HTML_to_CSV>HTML ghal CSV</HTML_to_CSV>
+		<Developer>Developer</Developer>
+	</Language>
+</root>

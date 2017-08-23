@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Lingua</Language>
+		<File>Arquivo</File>
+		<New>Novo</New>
+		<Open>Aberto</Open>
+		<Edit>Editar</Edit>
+		<View>Ver</View>
+		<Save>Gardar</Save>
+		<Import>Importar</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Exportar</Export>
+		<HTML>HTML</HTML>
+		<Settings>Configuración</Settings>
+		<Help>Axuda</Help>
+		<About>Acerca de</About>
+		<Show_Help>Mostrar Axuda</Show_Help>
+		<Settings_Editor>Editor de configuracións</Settings_Editor>
+		<Toggle_Debug>Activar a depuración</Toggle_Debug>
+		<Toggle_Transaction_Log>Activar o rexistro de transaccións</Toggle_Transaction_Log>
+		<Refresh_Schema>Actualizar esquema</Refresh_Schema>
+		<Check_for_Updates>Comprobe se hai actualizacións</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Comezou o programa</PRGM_Start>
+		<App>Solicitude</App>
+		<Failed_Save_Settings>Non se puido gardar a configuración</Failed_Save_Settings>
+		<Error>Erro</Error>
+		<Failed>Fallo</Failed>
+		<Table>Táboa</Table>
+		<Index>Índice</Index>
+		<Master_Table>Mesa mestra</Master_Table>
+		<Sort>Ordenar</Sort>
+		<Asc>Ascendente</Asc>
+		<Desc>Descendente</Desc>
+		<Display_Settings>Configuración da pantalla</Display_Settings>
+		<Sort_by>Ordenar por</Sort_by>
+		<Search_in>Buscar en</Search_in>
+		<Search>Busca</Search>
+		<Functions>Funcións</Functions>
+		<Strict_Search>Busca estrita</Strict_Search>
+		<Run_Function>Función de execución</Run_Function>
+		<Query>Consulta</Query>
+		<Command>Comando</Command>
+		<Error_No_DB>Erro: Non se cargou ningunha base de datos</Error_No_DB>
+		<UI>IU</UI>
+		<Master_Table_Protected>Sqlite_mastertable ou 'Master Table' é unha táboa protexida. Para protexer a integridade do db non podes editar esta táboa</Master_Table_Protected>
+		<Access_Denied>Acceso denegado</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Función de vista</View_Function>
+		<User_Requested>Usuario solicitado</User_Requested>
+		<Listview_Width>Ancho da lista</Listview_Width>
+		<Listview_Height>Altura da lista</Listview_Height>
+		<Extensions>Extensións</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Gardar e pechar</Save_and_Close>
+		<Close_wo_saving>Pechar sen aforrar</Close_wo_saving>
+		<Failed_Load_Online_EULA>Non se puido cargar o EULA en liña</Failed_Load_Online_EULA>
+		<Auto_Log>Rexistro automático</Auto_Log>
+		<Export_HTML_Schema>Exportar SCHEMA HTML en nome de</Export_HTML_Schema>
+		<Export_HTML_Data>Exportar DATOS HTML en nome de</Export_HTML_Data>
+		<Check_Log>Erro: comprobe o rexistro para obter máis detalles</Check_Log>
+		<Query_Error>Erro de consulta</Query_Error>
+		<Export_CSV>EXPORT CSV EN NOME DE</Export_CSV>
+		<Export_SQL_SCHEMA>Exportar SQL - SCHEMA - En nome de</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Exportar SQL - SQL - en nome de</Export_SQL_SQL>
+		<Export_XML>EXPORT XML EN NOME DE</Export_XML>
+		<System>Sistema</System>
+		<Views_Read_Only>As imaxes son de lectura e non se poden editar</Views_Read_Only>
+		<Dataview_Error>A base de datos ou Dataview non existe ou aínda non se cargou</Dataview_Error>
+		<Browse>Navegar</Browse>
+		<Statistics_Page>Páxina de estatísticas</Statistics_Page>
+		<Invert>Invertir</Invert>
+		<Not_Supported>Non admitido</Not_Supported>
+		<CMD_Tooltip>Executa instrucións de comando SQL personalizadas na base de datos</CMD_Tooltip>
+		<LOG_CSV_Path>Rexistrar o camiño CSV</LOG_CSV_Path>
+		<LOG_DB_PATH>Base de datos de rexistro</LOG_DB_PATH>
+		<Transaction_DB_Path>Camiño da base de datos de transaccións</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Erro crítico de falla</Critical_Fault_Error>
+		<Stack_Trace>Seguimento de pila</Stack_Trace>
+		<Close_TW>Pechar TW</Close_TW>
+		<Export_UI>Exportar a interface de usuario</Export_UI>
+		<Define_New_Table>Definir nova táboa</Define_New_Table>
+		<Create_Statistics_Page>Crear páxina de estatísticas</Create_Statistics_Page>
+		<Debug>Depuración</Debug>
+		<New_in_Memory_Db>Nova na base de datos da memoria</New_in_Memory_Db>
+		<Import_SQL>Importar SQL</Import_SQL>
+		<Plugin>Enchufar</Plugin>
+		<Opened>Apertura</Opened>
+		<Converter>Conversor</Converter>
+		<HTML_to_CSV>HTML para CSV</HTML_to_CSV>
+		<Developer>Desenvolvedor</Developer>
+	</Language>
+</root>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Kalba</Language>
+		<File>Failas</File>
+		<New>Naujas</New>
+		<Open>Atviras</Open>
+		<Edit>Redaguoti</Edit>
+		<View>Vaizdas</View>
+		<Save>Sutaupyti</Save>
+		<Import>Importuoti</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Eksportas</Export>
+		<HTML>HTML</HTML>
+		<Settings>Nustatymai</Settings>
+		<Help>Pagalba</Help>
+		<About>Apie</About>
+		<Show_Help>Rodyti pagalbą</Show_Help>
+		<Settings_Editor>Nustatymų redaktorius</Settings_Editor>
+		<Toggle_Debug>Toggle Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Įjunkite operacijų žurnalą</Toggle_Transaction_Log>
+		<Refresh_Schema>Atnaujinti schemą</Refresh_Schema>
+		<Check_for_Updates>Tikrinti, ar yra atnaujinimų</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Programa pradėta</PRGM_Start>
+		<App>Paraiška</App>
+		<Failed_Save_Settings>Nepavyko išsaugoti nustatymų</Failed_Save_Settings>
+		<Error>Klaida</Error>
+		<Failed>Nepavyko</Failed>
+		<Table>Lentelė</Table>
+		<Index>Indeksas</Index>
+		<Master_Table>Pagrindinė lentelė</Master_Table>
+		<Sort>Rūšiuoti</Sort>
+		<Asc>Ascending</Asc>
+		<Desc>Mažėja</Desc>
+		<Display_Settings>Ekrano nustatymai</Display_Settings>
+		<Sort_by>Rūšiuoti pagal</Sort_by>
+		<Search_in>Ieškoti</Search_in>
+		<Search>Paieška</Search>
+		<Functions>Funkcijos</Functions>
+		<Strict_Search>Griežta paieška</Strict_Search>
+		<Run_Function>Paleisti funkciją</Run_Function>
+		<Query>Užklausa</Query>
+		<Command>Valdymas</Command>
+		<Error_No_DB>Klaida: duomenų bazė nebuvo įkelta</Error_No_DB>
+		<UI>Vartotojo sąsaja</UI>
+		<Master_Table_Protected>Sqlite_mastertable arba "Master Table" yra saugoma lentelė. Kad apsaugotumėte db vientisumą, negalėsite redaguoti šios lentelės</Master_Table_Protected>
+		<Access_Denied>Prieiga uždrausta</Access_Denied>
+		<Application>Programa</Application>
+		<View_Function>Peržiūrėti funkciją</View_Function>
+		<User_Requested>Prašomas naudotojas</User_Requested>
+		<Listview_Width>Listview Plotis</Listview_Width>
+		<Listview_Height>Listview Height</Listview_Height>
+		<Extensions>Plėtiniai</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Išsaugoti ir uždaryti</Save_and_Close>
+		<Close_wo_saving>Uždaryti be taupymo</Close_wo_saving>
+		<Failed_Load_Online_EULA>Nepavyko įkelti EULA internete</Failed_Load_Online_EULA>
+		<Auto_Log>Automatinis prisijungimas</Auto_Log>
+		<Export_HTML_Schema>Eksporto HTML SCHEMA vardu</Export_HTML_Schema>
+		<Export_HTML_Data>Eksportuoti HTML DATA vardu</Export_HTML_Data>
+		<Check_Log>Klaida. Prašome patikrinti žurnalą</Check_Log>
+		<Query_Error>Užklausos klaida</Query_Error>
+		<Export_CSV>EKSPORTO CSV</Export_CSV>
+		<Export_SQL_SCHEMA>Eksportas SQL - SCHEMA - vardu</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Eksportuoti SQL - SQL vardu</Export_SQL_SQL>
+		<Export_XML>Eksportuoti XML po</Export_XML>
+		<System>Sistema</System>
+		<Views_Read_Only>Vaizdai yra skaitomi, jų negalima redaguoti</Views_Read_Only>
+		<Dataview_Error>Duomenų bazė arba "Dataview" neegzistuoja arba dar nebuvo įkelta</Dataview_Error>
+		<Browse>Naršyti</Browse>
+		<Statistics_Page>Statistika puslapis</Statistics_Page>
+		<Invert>Apversti</Invert>
+		<Not_Supported>Nepalaikomas</Not_Supported>
+		<CMD_Tooltip>Vykdo pritaikytus SQL komandų teiginius į duomenų bazę</CMD_Tooltip>
+		<LOG_CSV_Path>Prisijungti CSV kelias</LOG_CSV_Path>
+		<LOG_DB_PATH>Prisijungti DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Transakcijos duomenų bazės kelias</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Kritinė gedimo klaida</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Uždaryti TW</Close_TW>
+		<Export_UI>Eksportuoti vartotojo sąsają</Export_UI>
+		<Define_New_Table>Nurodykite naują lentelę</Define_New_Table>
+		<Create_Statistics_Page>Sukurti statistikos puslapį</Create_Statistics_Page>
+		<Debug>Derinti</Debug>
+		<New_in_Memory_Db>Nauja atminties bazėje</New_in_Memory_Db>
+		<Import_SQL>Importuoti SQL</Import_SQL>
+		<Plugin>Prijungti</Plugin>
+		<Opened>Atidaryta</Opened>
+		<Converter>Konverteris</Converter>
+		<HTML_to_CSV>HTML į CSV</HTML_to_CSV>
+		<Developer>Programuotojas</Developer>
+	</Language>
+</root>

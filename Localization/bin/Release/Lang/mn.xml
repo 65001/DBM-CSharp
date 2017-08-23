@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Хэл</Language>
+		<File>Файл</File>
+		<New>Шинэ</New>
+		<Open>Нээлттэй байна</Open>
+		<Edit>Засварлах</Edit>
+		<View>Харах</View>
+		<Save>Хадгалах</Save>
+		<Import>Импорт</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Экспорт</Export>
+		<HTML>HTML</HTML>
+		<Settings>Тохиргоо</Settings>
+		<Help>Туслаач</Help>
+		<About>Тухай</About>
+		<Show_Help>Тусламж харуулах</Show_Help>
+		<Settings_Editor>Редакторын тохиргоо</Settings_Editor>
+		<Toggle_Debug>Дебаг сольно уу</Toggle_Debug>
+		<Toggle_Transaction_Log>Г?йлгэх логийг соль</Toggle_Transaction_Log>
+		<Refresh_Schema>Скрайн сэргээх</Refresh_Schema>
+		<Check_for_Updates>Шинэчлэлт??дийг шалгах</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Х?т?лб?р эхэлсэн</PRGM_Start>
+		<App>Програм</App>
+		<Failed_Save_Settings>Тохиргоог хадгалахг?й байна</Failed_Save_Settings>
+		<Error>Алдаа</Error>
+		<Failed>Амжилтг?й болсон</Failed>
+		<Table>Х?снэгт</Table>
+		<Index>Индекс</Index>
+		<Master_Table>Мастер х?снэгт</Master_Table>
+		<Sort>Эрэмбэлэх</Sort>
+		<Asc>Доошоо</Asc>
+		<Desc>Удахг?й</Desc>
+		<Display_Settings>Дэлгэцийн тохиргоо</Display_Settings>
+		<Sort_by>Sort By</Sort_by>
+		<Search_in>Хайлт</Search_in>
+		<Search>Хайлт</Search>
+		<Functions>Чиг ??рэг</Functions>
+		<Strict_Search>Х?чтэй хайлт</Strict_Search>
+		<Run_Function>Ажиллах функц</Run_Function>
+		<Query>Хайлт</Query>
+		<Command>Тушаал</Command>
+		<Error_No_DB>Алдаа: ?г?й мэдээллийн сан ачаалагдсан байна</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable буюу 'Мастер х?снэгт' нь хамгаалагдсан х?снэгт юм. Db-ийн б?рэн б?тэн байдлыг хамгаалахын тулд та энэ х?снэгтийг засаж чадахг?й</Master_Table_Protected>
+		<Access_Denied>Нэвтрэлт цуцлагдлаа</Access_Denied>
+		<Application>Апп</Application>
+		<View_Function>Функцийг харах</View_Function>
+		<User_Requested>Хэрэглэгч х?ссэн</User_Requested>
+		<Listview_Width>Listview Width</Listview_Width>
+		<Listview_Height>Listview ?нд?р</Listview_Height>
+		<Extensions>?рг?тг?л??д</Extensions>
+		<Deliminator>Дебютатор</Deliminator>
+		<Save_and_Close>Хадгалах ба хаах</Save_and_Close>
+		<Close_wo_saving>Хадгалахг?йгээр хаах</Close_wo_saving>
+		<Failed_Load_Online_EULA>Онлайн EULA ачаалж чадсанг?й</Failed_Load_Online_EULA>
+		<Auto_Log>Авто лог</Auto_Log>
+		<Export_HTML_Schema>Экспортын HTML SCHEMA нэрийн ?мн??с</Export_HTML_Schema>
+		<Export_HTML_Data>Экспортын HTML DATA нэрийн ?мн??с Экспортын HTML DATA</Export_HTML_Data>
+		<Check_Log>Алдаа: дэлгэрэнг?й мэдээллийг б?ртгэж авна уу</Check_Log>
+		<Query_Error>Хайлтын алдаа</Query_Error>
+		<Export_CSV>EXPORT CSV-ийн талаархи мэдээлэл</Export_CSV>
+		<Export_SQL_SCHEMA>Экспортын SQL - SCHEMA - нэрийн ?мн??с</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Экспорт SQL - SQL - нэрийн ?мн??с</Export_SQL_SQL>
+		<Export_XML>EXPORT XML ON BEHALF OF</Export_XML>
+		<System>Систем</System>
+		<Views_Read_Only>Харах нь уншигдах б?г??д засварлах боломжг?й</Views_Read_Only>
+		<Dataview_Error>?г?гдлийн сан эсвэл Dataview байхг?й эсвэл байхг?й байна</Dataview_Error>
+		<Browse>Browse</Browse>
+		<Statistics_Page>Статистик хуудас</Statistics_Page>
+		<Invert>Урвуу</Invert>
+		<Not_Supported>Дэмжихг?й байна</Not_Supported>
+		<CMD_Tooltip>SQL коммандын тохиргоог мэдээллийн сан руу шилж??лэх</CMD_Tooltip>
+		<LOG_CSV_Path>CSV замыг б?ртгэх</LOG_CSV_Path>
+		<LOG_DB_PATH>Б?ртгэлийн файлын пат</LOG_DB_PATH>
+		<Transaction_DB_Path>Transaction мэдээллийн сангийн зам</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Чухал алдааны алдаа</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>TW-н Close</Close_TW>
+		<Export_UI>Экспортын UI</Export_UI>
+		<Define_New_Table>Шинэ х?снэгтийг тодорхойл</Define_New_Table>
+		<Create_Statistics_Page>Статистик хуудас ??сгэх</Create_Statistics_Page>
+		<Debug>Дебаг хийх</Debug>
+		<New_in_Memory_Db>Санах ойн мэдээллийн санд шинэ</New_in_Memory_Db>
+		<Import_SQL>SQL импорт</Import_SQL>
+		<Plugin>Залгах</Plugin>
+		<Opened>Нээгдсэн</Opened>
+		<Converter>Х?рв??лэгч</Converter>
+		<HTML_to_CSV>HTML р?? CSV</HTML_to_CSV>
+		<Developer>Х?гж??лэгч</Developer>
+	</Language>
+</root>

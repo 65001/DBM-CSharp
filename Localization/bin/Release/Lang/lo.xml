@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>ພາສາ</Language>
+		<File>File</File>
+		<New>ໃຫມ່</New>
+		<Open>ເປີດ</Open>
+		<Edit>ແກ້ໄຂ</Edit>
+		<View>ເບິ່ງ</View>
+		<Save>ບັນທຶກ</Save>
+		<Import>ນໍາເຂົ້າ</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>ສົ່ງອອກ</Export>
+		<HTML>HTML</HTML>
+		<Settings>Settings</Settings>
+		<Help>ຊ່ວຍເຫຼືອ</Help>
+		<About>ກ່ຽວກັບ</About>
+		<Show_Help>ສະແດງຄວາມຊ່ວຍເຫຼືອ</Show_Help>
+		<Settings_Editor>Edit Settings</Settings_Editor>
+		<Toggle_Debug>Toggle Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Toggle Transaction Log</Toggle_Transaction_Log>
+		<Refresh_Schema>Refresh Schema</Refresh_Schema>
+		<Check_for_Updates>ກວດສອບການອັບເດດ</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Program Started</PRGM_Start>
+		<App>Application</App>
+		<Failed_Save_Settings>ບໍ່ສາມາດບັນທຶກການຕັ້ງຄ່າໄດ້</Failed_Save_Settings>
+		<Error>ຂໍ້ຜິດພາດ</Error>
+		<Failed>ລົ້ມເຫລວ</Failed>
+		<Table>ຕາຕະລາງ</Table>
+		<Index>ດັດນີ</Index>
+		<Master_Table>Master Table</Master_Table>
+		<Sort>ຈັດຮຽງ</Sort>
+		<Asc>Ascending</Asc>
+		<Desc>Descending</Desc>
+		<Display_Settings>Display Settings</Display_Settings>
+		<Sort_by>ຄັດໂດຍ</Sort_by>
+		<Search_in>ຄົ້ນຫາໃນ</Search_in>
+		<Search>ຄົ້ນຫາ</Search>
+		<Functions>ຟັງຊັນ</Functions>
+		<Strict_Search>Strict Search</Strict_Search>
+		<Run_Function>Run Function</Run_Function>
+		<Query>ສອບຖາມ</Query>
+		<Command>ຄໍາສັ່ງ</Command>
+		<Error_No_DB>ຂໍ້ຜິດພາດ: ບໍ່ມີຖານຂໍ້ມູນທີ່ຖືກໂຫລດ</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable ຫຼື 'Table Master Table' ແມ່ນຕາຕະລາງປ້ອງກັນ. ເພື່ອປົກປ້ອງຄວາມສົມບູນຂອງ db ທ່ານບໍ່ສາມາດແກ້ຕາລາງນີ້</Master_Table_Protected>
+		<Access_Denied>ປະ​ຕິ​ເສດ​ການ​ເຂົ້າ​ເຖິງ</Access_Denied>
+		<Application>App</Application>
+		<View_Function>ເບິ່ງຫນ້າທີ່</View_Function>
+		<User_Requested>User Requested</User_Requested>
+		<Listview_Width>Listview Width</Listview_Width>
+		<Listview_Height>Listview Height</Listview_Height>
+		<Extensions>Extensions</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>ບັນທຶກແລະປິດ</Save_and_Close>
+		<Close_wo_saving>Close without Saving</Close_wo_saving>
+		<Failed_Load_Online_EULA>ບໍ່ສາມາດໂຫລດ EULA ອອນໄລນ໌ໄດ້</Failed_Load_Online_EULA>
+		<Auto_Log>Auto Log</Auto_Log>
+		<Export_HTML_Schema>ສົ່ງ HTML SCHEMA ໃນນາມຂອງ</Export_HTML_Schema>
+		<Export_HTML_Data>ສົ່ງ HTML DATA ແທນ</Export_HTML_Data>
+		<Check_Log>ຂໍ້ຜິດພາດ: ກະລຸນາກວດເບິ່ງບັນທຶກສໍາລັບລາຍລະອຽດ</Check_Log>
+		<Query_Error>Query Error</Query_Error>
+		<Export_CSV>EXPORT CSV ON BEHALF OF</Export_CSV>
+		<Export_SQL_SCHEMA>Export SQL - SCHEMA - ໃນນາມຂອງ</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Export SQL-SQL - ໃນນາມຂອງ</Export_SQL_SQL>
+		<Export_XML>ນໍາໃຊ້ XML ກ່ຽວກັບ BEHALF OF</Export_XML>
+		<System>ລະບົບ</System>
+		<Views_Read_Only>ການເບິ່ງແມ່ນອ່ານພຽງແຕ່ບໍ່ສາມາດແກ້ໄຂ</Views_Read_Only>
+		<Dataview_Error>ຖານຂໍ້ມູນຫຼື Dataview ບໍ່ມີຢູ່ຫຼືຍັງບໍ່ທັນໄດ້ຮັບການໂຫຼດເທື່ອ</Dataview_Error>
+		<Browse>ຄົ້ນຫາ</Browse>
+		<Statistics_Page>ຫນ້າສະຖິຕິ</Statistics_Page>
+		<Invert>Invert</Invert>
+		<Not_Supported>ບໍ່​ສະ​ຫນັບ​ສະ​ຫນຸນ</Not_Supported>
+		<CMD_Tooltip>ປະຕິບັດຄໍາສັ່ງຄໍາສັ່ງ SQL customized ໃສ່ຖານຂໍ້ມູນ</CMD_Tooltip>
+		<LOG_CSV_Path>ເສັ້ນທາງເສັ້ນທາງ CSV</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Path Transaction Database</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Critical Fault Error</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>ປິດ TW</Close_TW>
+		<Export_UI>ສົ່ງອອກ UI</Export_UI>
+		<Define_New_Table>ກໍານົດຕາຕະລາງໃຫມ່</Define_New_Table>
+		<Create_Statistics_Page>ສ້າງຫນ້າສະຖິຕິ</Create_Statistics_Page>
+		<Debug>Debug</Debug>
+		<New_in_Memory_Db>ໃຫມ່ໃນຖານຂໍ້ມູນຫນ່ວຍຄວາມຈໍາ</New_in_Memory_Db>
+		<Import_SQL>ນໍາເຂົ້າ SQL</Import_SQL>
+		<Plugin>Plugin</Plugin>
+		<Opened>ໄດ້ເປີດ</Opened>
+		<Converter>ການປ່ຽນແປງ</Converter>
+		<HTML_to_CSV>HTML ເພື່ອ CSV</HTML_to_CSV>
+		<Developer>ຜູ້ພັດທະນາ</Developer>
+	</Language>
+</root>

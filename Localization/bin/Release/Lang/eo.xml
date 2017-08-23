@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Lingvo</Language>
+		<File>Dosiero</File>
+		<New>Nova</New>
+		<Open>Malfermita</Open>
+		<Edit>Redakti</Edit>
+		<View>Vido</View>
+		<Save>Savi</Save>
+		<Import>Importi</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Eksporti</Export>
+		<HTML>HTML</HTML>
+		<Settings>Agordoj</Settings>
+		<Help>Helpo</Help>
+		<About>Pri</About>
+		<Show_Help>Montri helpon</Show_Help>
+		<Settings_Editor>Agordoj Redaktoro</Settings_Editor>
+		<Toggle_Debug>Baskuligi Sangon</Toggle_Debug>
+		<Toggle_Transaction_Log>Baskuligi Transaction-Log</Toggle_Transaction_Log>
+		<Refresh_Schema>Refresigi Schema</Refresh_Schema>
+		<Check_for_Updates>Kontrolu gisdatigojn</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Programo Komencita</PRGM_Start>
+		<App>Apliko</App>
+		<Failed_Save_Settings>Malsukcesis Konservi Agordojn</Failed_Save_Settings>
+		<Error>Eraro</Error>
+		<Failed>Malsukcesis</Failed>
+		<Table>Tablo</Table>
+		<Index>Indekso</Index>
+		<Master_Table>Majstro Tablo</Master_Table>
+		<Sort>Varo</Sort>
+		<Asc>Suprenirante</Asc>
+		<Desc>Posteulo</Desc>
+		<Display_Settings>Montri agordojn</Display_Settings>
+		<Sort_by>Ordigi lau</Sort_by>
+		<Search_in>Sercado</Search_in>
+		<Search>Serci</Search>
+		<Functions>Funkcioj</Functions>
+		<Strict_Search>Strikta Serco</Strict_Search>
+		<Run_Function>Kuri Funkcion</Run_Function>
+		<Query>Query</Query>
+		<Command>Komando</Command>
+		<Error_No_DB>Eraro: Neniu Datumbazo sargis</Error_No_DB>
+		<UI>IU</UI>
+		<Master_Table_Protected>Sqlite_mastertable au 'Master Table' estas protektita tablo. Por protekti la integrecon de la db vi ne povas redakti ci tiun tablon</Master_Table_Protected>
+		<Access_Denied>Aliro neita</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Vidi Funkcion</View_Function>
+		<User_Requested>Uzanto Petita</User_Requested>
+		<Listview_Width>Lerta Vidlinio</Listview_Width>
+		<Listview_Height>Lerta Alteco</Listview_Height>
+		<Extensions>Etendoj</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Konservi kaj Fermi</Save_and_Close>
+		<Close_wo_saving>Fermi sen Savi</Close_wo_saving>
+		<Failed_Load_Online_EULA>Malsukcesis sargi en linio EULA</Failed_Load_Online_EULA>
+		<Auto_Log>Automata Ensaluto</Auto_Log>
+		<Export_HTML_Schema>Eksporti HTML SCHEMA en nomo de</Export_HTML_Schema>
+		<Export_HTML_Data>Eksporti HTML-datumojn en nome de</Export_HTML_Data>
+		<Check_Log>Eraro: Bonvolu kontroli la protokolon por detaloj</Check_Log>
+		<Query_Error>Query Eraro</Query_Error>
+		<Export_CSV>Eksportado de CSV</Export_CSV>
+		<Export_SQL_SCHEMA>Eksportado SQL - SCHEMA - En la nomo de</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Eksporti SQL - SQL - Nome de</Export_SQL_SQL>
+		<Export_XML>Eksporta XML SINGLETE</Export_XML>
+		<System>Sistemo</System>
+		<Views_Read_Only>Vidoj estas lege kaj ne povas esti redaktataj</Views_Read_Only>
+		<Dataview_Error>La Datumaro au Dataview ne ekzistas au ankorau ne estis sargita</Dataview_Error>
+		<Browse>Foliumi</Browse>
+		<Statistics_Page>Statistiko Pago</Statistics_Page>
+		<Invert>Renversi</Invert>
+		<Not_Supported>Ne subtenata</Not_Supported>
+		<CMD_Tooltip>Ekzekutas personecajn SQL-komandajn deklarojn al la datumbazo</CMD_Tooltip>
+		<LOG_CSV_Path>Ensalutu CSV-vojon</LOG_CSV_Path>
+		<LOG_DB_PATH>Ensaluti DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Transaction Database Path</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Kritika Eraro Eraro</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Fermi TW</Close_TW>
+		<Export_UI>Eksporti UI</Export_UI>
+		<Define_New_Table>Difini Novan Tablon</Define_New_Table>
+		<Create_Statistics_Page>Krei Statistiko Pago</Create_Statistics_Page>
+		<Debug>Depuso</Debug>
+		<New_in_Memory_Db>Nova en Memoria Datumbazo</New_in_Memory_Db>
+		<Import_SQL>Importi SQL</Import_SQL>
+		<Plugin>Konekti</Plugin>
+		<Opened>Malfermita</Opened>
+		<Converter>Konvertilo</Converter>
+		<HTML_to_CSV>HTML al CSV</HTML_to_CSV>
+		<Developer>Programisto</Developer>
+	</Language>
+</root>

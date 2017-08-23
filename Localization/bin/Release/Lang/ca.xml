@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Llenguatge</Language>
+		<File>Dossier</File>
+		<New>Nou</New>
+		<Open>Obert</Open>
+		<Edit>Edita</Edit>
+		<View>Veure</View>
+		<Save>Desa</Save>
+		<Import>Importació</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Exportació</Export>
+		<HTML>HTML</HTML>
+		<Settings>Configuració</Settings>
+		<Help>Ajuda</Help>
+		<About>Quant a</About>
+		<Show_Help>Mostra l'ajuda</Show_Help>
+		<Settings_Editor>Editor de configuració</Settings_Editor>
+		<Toggle_Debug>Canvia la depuració</Toggle_Debug>
+		<Toggle_Transaction_Log>Commuta el registre de transaccions</Toggle_Transaction_Log>
+		<Refresh_Schema>Refresca l'esquema</Refresh_Schema>
+		<Check_for_Updates>Buscar actualitzacions</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>S'ha iniciat el programa</PRGM_Start>
+		<App>Sol·licitud</App>
+		<Failed_Save_Settings>No s'ha pogut desar la configuració</Failed_Save_Settings>
+		<Error>Error</Error>
+		<Failed>Fracassat</Failed>
+		<Table>Taula</Table>
+		<Index>Índex</Index>
+		<Master_Table>Taula mestra</Master_Table>
+		<Sort>Ordena</Sort>
+		<Asc>Ascendent</Asc>
+		<Desc>Descendent</Desc>
+		<Display_Settings>Configuració de la pantalla</Display_Settings>
+		<Sort_by>Ordenar per</Sort_by>
+		<Search_in>Cerca a</Search_in>
+		<Search>Cerca</Search>
+		<Functions>Funcions</Functions>
+		<Strict_Search>Cerca estricta</Strict_Search>
+		<Run_Function>Executa la funció</Run_Function>
+		<Query>Consulta</Query>
+		<Command>Comandament</Command>
+		<Error_No_DB>Error: no s'ha carregat cap base de dades</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' és una taula protegida. Per protegir la integritat del db no podeu editar aquesta taula</Master_Table_Protected>
+		<Access_Denied>Accés denegat</Access_Denied>
+		<Application>Aplicació</Application>
+		<View_Function>Veure funció</View_Function>
+		<User_Requested>Usuari sol·licitat</User_Requested>
+		<Listview_Width>Amplada de llista de publicacions</Listview_Width>
+		<Listview_Height>Alt de llista de publicacions</Listview_Height>
+		<Extensions>Extensions</Extensions>
+		<Deliminator>Deliminador</Deliminator>
+		<Save_and_Close>Desa i tanca</Save_and_Close>
+		<Close_wo_saving>Tanca sense desar</Close_wo_saving>
+		<Failed_Load_Online_EULA>No s'ha pogut carregar l'EULA en línia</Failed_Load_Online_EULA>
+		<Auto_Log>Registre automàtic</Auto_Log>
+		<Export_HTML_Schema>Exporta HTML SCHEMA en nom de</Export_HTML_Schema>
+		<Export_HTML_Data>Exporta HTML DATA en nom de</Export_HTML_Data>
+		<Check_Log>Error: comproveu el registre per obtenir més informació</Check_Log>
+		<Query_Error>Error de consulta</Query_Error>
+		<Export_CSV>EXPORTAR CSV EN NOM DEL</Export_CSV>
+		<Export_SQL_SCHEMA>Exporta SQL - SCHEMA - en nom de</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Exporta SQL - SQL - en nom de</Export_SQL_SQL>
+		<Export_XML>EXPORT XML EN NOM DEL</Export_XML>
+		<System>Sistema</System>
+		<Views_Read_Only>Les vistes són llegibles i no es poden editar</Views_Read_Only>
+		<Dataview_Error>La base de dades o Dataview encara no existeix o encara no s'ha carregat</Dataview_Error>
+		<Browse>Navega</Browse>
+		<Statistics_Page>Pàgina d'estadístiques</Statistics_Page>
+		<Invert>Invertir</Invert>
+		<Not_Supported>No compatible</Not_Supported>
+		<CMD_Tooltip>Executa instruccions personalitzades d'ordre SQL a la base de dades</CMD_Tooltip>
+		<LOG_CSV_Path>Inicieu la ruta del CSV</LOG_CSV_Path>
+		<LOG_DB_PATH>Base de dades de registre</LOG_DB_PATH>
+		<Transaction_DB_Path>Camí de la base de dades de transaccions</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVAT</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Error crític de fallada</Critical_Fault_Error>
+		<Stack_Trace>Pila de seguiment</Stack_Trace>
+		<Close_TW>Tanca TW</Close_TW>
+		<Export_UI>Exporta la UI</Export_UI>
+		<Define_New_Table>Defineix una taula nova</Define_New_Table>
+		<Create_Statistics_Page>Crea una pàgina d'estadístiques</Create_Statistics_Page>
+		<Debug>Depuració</Debug>
+		<New_in_Memory_Db>Nou a la base de dades de memòria</New_in_Memory_Db>
+		<Import_SQL>Importar SQL</Import_SQL>
+		<Plugin>Connectar</Plugin>
+		<Opened>Obert</Opened>
+		<Converter>Convertidor</Converter>
+		<HTML_to_CSV>HTML a CSV</HTML_to_CSV>
+		<Developer>Desenvolupador</Developer>
+	</Language>
+</root>

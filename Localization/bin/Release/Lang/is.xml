@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Tungumál</Language>
+		<File>Skrá</File>
+		<New>Nýtt</New>
+		<Open>Opna</Open>
+		<Edit>Breyta</Edit>
+		<View>Útsýni</View>
+		<Save>Vista</Save>
+		<Import>Flytja inn</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Útflutningur</Export>
+		<HTML>HTML</HTML>
+		<Settings>Stillingar</Settings>
+		<Help>Hjálp</Help>
+		<About>Um</About>
+		<Show_Help>Sýna hjálp</Show_Help>
+		<Settings_Editor>Stillingar ritstjóri</Settings_Editor>
+		<Toggle_Debug>Skipta um villuleit</Toggle_Debug>
+		<Toggle_Transaction_Log>Skiptu um viðskiptaskrá</Toggle_Transaction_Log>
+		<Refresh_Schema>Uppfæra áætlun</Refresh_Schema>
+		<Check_for_Updates>Athugaðu með uppfærslur</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Program byrjað</PRGM_Start>
+		<App>Umsókn</App>
+		<Failed_Save_Settings>Mistókst að vista stillingarnar</Failed_Save_Settings>
+		<Error>Villa</Error>
+		<Failed>Mistókst</Failed>
+		<Table>Tafla</Table>
+		<Index>Vísitala</Index>
+		<Master_Table>Master borð</Master_Table>
+		<Sort>Raða</Sort>
+		<Asc>Hækkandi</Asc>
+		<Desc>Descending</Desc>
+		<Display_Settings>Sýna stillingar</Display_Settings>
+		<Sort_by>Raða eftir</Sort_by>
+		<Search_in>Leita í</Search_in>
+		<Search>Leita</Search>
+		<Functions>Aðgerðir</Functions>
+		<Strict_Search>Strangt leit</Strict_Search>
+		<Run_Function>Hlaupa virka</Run_Function>
+		<Query>Fyrirspurn</Query>
+		<Command>Stjórn</Command>
+		<Error_No_DB>Villa: Engin gagnasafn hefur verið hlaðið inn</Error_No_DB>
+		<UI>HÍ</UI>
+		<Master_Table_Protected>Sqlite_mastertable eða 'Master Table' er verndað borð. Til að vernda heilleika dbsins geturðu ekki breytt þessari töflu</Master_Table_Protected>
+		<Access_Denied>Aðgangur hafnað</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Skoða virka</View_Function>
+		<User_Requested>Notandi óskað</User_Requested>
+		<Listview_Width>Listview Breidd</Listview_Width>
+		<Listview_Height>Listview Hæð</Listview_Height>
+		<Extensions>Eftirnafn</Extensions>
+		<Deliminator>Takmarka</Deliminator>
+		<Save_and_Close>Vista og loka</Save_and_Close>
+		<Close_wo_saving>Lokaðu án þess að vista</Close_wo_saving>
+		<Failed_Load_Online_EULA>Mistókst að hlaða á netinu ESB</Failed_Load_Online_EULA>
+		<Auto_Log>Sjálfvirk skrá</Auto_Log>
+		<Export_HTML_Schema>Flytja HTML SCHEMA fyrir hönd</Export_HTML_Schema>
+		<Export_HTML_Data>Flytja HTML DATA fyrir hönd</Export_HTML_Data>
+		<Check_Log>Villa: Vinsamlegast athugaðu skráðu þig inn til að fá nánari upplýsingar</Check_Log>
+		<Query_Error>Fyrirspurnar Villa</Query_Error>
+		<Export_CSV>Útflutningur</Export_CSV>
+		<Export_SQL_SCHEMA>Flytja út SQL - SCHEMA - Fyrir hönd</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Flytja út SQL - SQL - Fyrir hönd</Export_SQL_SQL>
+		<Export_XML>ÚTFLUTA XML Á VINNUM</Export_XML>
+		<System>Kerfi</System>
+		<Views_Read_Only>Skoðanir eru readonly og ekki hægt að breyta</Views_Read_Only>
+		<Dataview_Error>Gagnagrunnurinn eða Dataview er ekki til eða hefur ekki verið hlaðið inn ennþá</Dataview_Error>
+		<Browse>Skoða</Browse>
+		<Statistics_Page>Tölfræði Síða</Statistics_Page>
+		<Invert>Snúa sér inn</Invert>
+		<Not_Supported>Ekki stutt</Not_Supported>
+		<CMD_Tooltip>Framkvæmir sérsniðnar SQL stjórn yfirlýsingar í gagnagrunninum</CMD_Tooltip>
+		<LOG_CSV_Path>Skráðu CSV slóðina</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Gagnasafnsleiðsla</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Critical Fault Villa</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Lokaðu TW</Close_TW>
+		<Export_UI>Flytja út UI</Export_UI>
+		<Define_New_Table>Skilgreina nýja töflu</Define_New_Table>
+		<Create_Statistics_Page>Búðu til tölfræðissíðu</Create_Statistics_Page>
+		<Debug>Kemba</Debug>
+		<New_in_Memory_Db>Nýtt í Memory Database</New_in_Memory_Db>
+		<Import_SQL>Flytja inn SQL</Import_SQL>
+		<Plugin>Stinga inn</Plugin>
+		<Opened>Opnað</Opened>
+		<Converter>Breytir</Converter>
+		<HTML_to_CSV>HTML til CSV</HTML_to_CSV>
+		<Developer>Hönnuður</Developer>
+	</Language>
+</root>

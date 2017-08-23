@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Valoda</Language>
+		<File>Fails</File>
+		<New>Jauns</New>
+		<Open>Atvērt</Open>
+		<Edit>Rediģēt</Edit>
+		<View>Skats</View>
+		<Save>Saglabājiet</Save>
+		<Import>Importēt</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Eksports</Export>
+		<HTML>HTML</HTML>
+		<Settings>Iestatījumi</Settings>
+		<Help>Palīdzība</Help>
+		<About>Par</About>
+		<Show_Help>Parādīt palīdzību</Show_Help>
+		<Settings_Editor>Iestatījumu redaktors</Settings_Editor>
+		<Toggle_Debug>Pārslēgt atkļūdošanu</Toggle_Debug>
+		<Toggle_Transaction_Log>Pārslēgt darījumu žurnālu</Toggle_Transaction_Log>
+		<Refresh_Schema>Atsvaidzināt shēmu</Refresh_Schema>
+		<Check_for_Updates>Meklēt atjauninājumus</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Uzsākta programma</PRGM_Start>
+		<App>Pieteikums</App>
+		<Failed_Save_Settings>Neizdevās saglabāt iestatījumus</Failed_Save_Settings>
+		<Error>Kļūda</Error>
+		<Failed>Neizdevās</Failed>
+		<Table>Tabula</Table>
+		<Index>Indekss</Index>
+		<Master_Table>Galvenā tabula</Master_Table>
+		<Sort>Kārtot</Sort>
+		<Asc>Augošā secībā</Asc>
+		<Desc>Dilstošā secībā</Desc>
+		<Display_Settings>Displeja iestatījumi</Display_Settings>
+		<Sort_by>Kārtot pēc</Sort_by>
+		<Search_in>Meklēt iekšā</Search_in>
+		<Search>Meklēt</Search>
+		<Functions>Funkcijas</Functions>
+		<Strict_Search>Stingra meklēšana</Strict_Search>
+		<Run_Function>Palaist funkciju</Run_Function>
+		<Query>Vaicājums</Query>
+		<Command>Pavēlniecība</Command>
+		<Error_No_DB>Kļūda: neviena datubāze nav ielādēta</Error_No_DB>
+		<UI>Lietotāja interfeiss</UI>
+		<Master_Table_Protected>Sqlite_mastertable vai "Master Table" ir aizsargāts tabula. Lai aizsargātu db integritāti, jūs nevarat rediģēt šo tabulu</Master_Table_Protected>
+		<Access_Denied>Pieeja noliegta</Access_Denied>
+		<Application>Lietotne</Application>
+		<View_Function>Skatīt funkciju</View_Function>
+		<User_Requested>Pieprasīts lietotājs</User_Requested>
+		<Listview_Width>Listview Width</Listview_Width>
+		<Listview_Height>Saraksta augstums</Listview_Height>
+		<Extensions>Paplašinājumi</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Saglabāt un aizvērt</Save_and_Close>
+		<Close_wo_saving>Aizvērt, nesaglabājot</Close_wo_saving>
+		<Failed_Load_Online_EULA>Neizdevās ielādēt tiešsaistes EULA</Failed_Load_Online_EULA>
+		<Auto_Log>Auto žurnāls</Auto_Log>
+		<Export_HTML_Schema>Eksportēt HTML SCHEMA vārdā</Export_HTML_Schema>
+		<Export_HTML_Data>Eksportēt HTML DATA vārdā</Export_HTML_Data>
+		<Check_Log>Kļūda: lūdzu, pārbaudiet žurnālu</Check_Log>
+		<Query_Error>Vaicājuma kļūda</Query_Error>
+		<Export_CSV>EKSPORTA CSV PĀRBAUDE</Export_CSV>
+		<Export_SQL_SCHEMA>Eksportēt SQL - SCHEMA - vārdā</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Eksportēt SQL - SQL - vārdā</Export_SQL_SQL>
+		<Export_XML>Eksportēt XML par</Export_XML>
+		<System>Sistēma</System>
+		<Views_Read_Only>Skatījumi ir tikai lasāmi un tos nevar rediģēt</Views_Read_Only>
+		<Dataview_Error>Datu bāze vai Dataview nepastāv vai vēl nav ielādēta</Dataview_Error>
+		<Browse>Pārlūkot</Browse>
+		<Statistics_Page>Statistikas lapa</Statistics_Page>
+		<Invert>Mainīt</Invert>
+		<Not_Supported>Nav atbalstīts</Not_Supported>
+		<CMD_Tooltip>Izpilda pielāgotus SQL komandu paziņojumus datu bāzē</CMD_Tooltip>
+		<LOG_CSV_Path>Log CSV ceļš</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Darījumu datubāzes ceļš</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Kritiskās kļūmes kļūda</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Aizveriet TW</Close_TW>
+		<Export_UI>Eksporta lietotāja saskarne</Export_UI>
+		<Define_New_Table>Definēt jaunu tabulu</Define_New_Table>
+		<Create_Statistics_Page>Izveidot statistikas lapu</Create_Statistics_Page>
+		<Debug>Atkļūdošana</Debug>
+		<New_in_Memory_Db>Jauns atmiņas datu bāzē</New_in_Memory_Db>
+		<Import_SQL>Importēt SQL</Import_SQL>
+		<Plugin>Iespraust</Plugin>
+		<Opened>Atvērts</Opened>
+		<Converter>Pārveidotājs</Converter>
+		<HTML_to_CSV>HTML CSV formātā</HTML_to_CSV>
+		<Developer>Izstrādātājs</Developer>
+	</Language>
+</root>

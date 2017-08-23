@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>لغة</Language>
+		<File>ملف</File>
+		<New>الجديد</New>
+		<Open>فتح</Open>
+		<Edit>تصحيح</Edit>
+		<View>رأي</View>
+		<Save>حفظ</Save>
+		<Import>استيراد</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>تصدير</Export>
+		<HTML>HTML</HTML>
+		<Settings>إعدادات</Settings>
+		<Help>مساعدة</Help>
+		<About>حول</About>
+		<Show_Help>عرض المساعدة</Show_Help>
+		<Settings_Editor>محرر الإعدادات</Settings_Editor>
+		<Toggle_Debug>تبديل التصحيح</Toggle_Debug>
+		<Toggle_Transaction_Log>تبديل سجل المعاملات</Toggle_Transaction_Log>
+		<Refresh_Schema>تحديث المخطط</Refresh_Schema>
+		<Check_for_Updates>تحقق من التحديثات</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>بدأ البرنامج</PRGM_Start>
+		<App>الوضعية</App>
+		<Failed_Save_Settings>أخفق حفظ الإعدادات</Failed_Save_Settings>
+		<Error>خطأ</Error>
+		<Failed>فشل</Failed>
+		<Table>الطاولة</Table>
+		<Index>فهرس</Index>
+		<Master_Table>جدول رئيسي</Master_Table>
+		<Sort>فرز</Sort>
+		<Asc>تصاعدي</Asc>
+		<Desc>تنازلي</Desc>
+		<Display_Settings>اعدادات العرض</Display_Settings>
+		<Sort_by>ترتيب حسب</Sort_by>
+		<Search_in>بحث في</Search_in>
+		<Search>بحث</Search>
+		<Functions>المهام</Functions>
+		<Strict_Search>بحث صارم</Strict_Search>
+		<Run_Function>تشغيل وظيفة</Run_Function>
+		<Query>سؤال</Query>
+		<Command>أمر</Command>
+		<Error_No_DB>خطأ: لم يتم تحميل قاعدة بيانات</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable أو 'الجدول الرئيسي' هو جدول المحمية. لحماية سلامة ديسيبل لا يمكنك تحرير هذا الجدول</Master_Table_Protected>
+		<Access_Denied>تم الرفض</Access_Denied>
+		<Application>التطبيق</Application>
+		<View_Function>عرض الوظيفة</View_Function>
+		<User_Requested>المستخدم المطلوب</User_Requested>
+		<Listview_Width>عرض ليستفيو</Listview_Width>
+		<Listview_Height>ليستفيو الارتفاع</Listview_Height>
+		<Extensions>ملحقات</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>حفظ وإغلاق</Save_and_Close>
+		<Close_wo_saving>إغلاق بدون حفظ</Close_wo_saving>
+		<Failed_Load_Online_EULA>أخفق تحميل اتفاقية ترخيص المستخدم (يولا) عبر الإنترنت</Failed_Load_Online_EULA>
+		<Auto_Log>سجل السيارات</Auto_Log>
+		<Export_HTML_Schema>تصدير هتمل ششيما نيابة عن</Export_HTML_Schema>
+		<Export_HTML_Data>تصدير هتمل البيانات نيابة عن</Export_HTML_Data>
+		<Check_Log>خطأ: يرجى التحقق من السجل للحصول على التفاصيل</Check_Log>
+		<Query_Error>خطأ في طلب البحث</Query_Error>
+		<Export_CSV>تصدير كسف على بيهالف من</Export_CSV>
+		<Export_SQL_SCHEMA>تصدير سكل - ششيما - نيابة عن</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>تصدير سكل - سكل - نيابة عن</Export_SQL_SQL>
+		<Export_XML>تصدير شمل على بيهالف من</Export_XML>
+		<System>النظام</System>
+		<Views_Read_Only>المشاهدات قابلة للقراءة فقط ولا يمكن تعديلها</Views_Read_Only>
+		<Dataview_Error>قاعدة البيانات أو داتافيو غير موجودة أو لم يتم تحميلها حتى الآن</Dataview_Error>
+		<Browse>تصفح</Browse>
+		<Statistics_Page>صفحة الإحصاءات</Statistics_Page>
+		<Invert>عكس</Invert>
+		<Not_Supported>غير معتمد</Not_Supported>
+		<CMD_Tooltip>ينفذ أوامر الأمر سكل مخصصة على قاعدة البيانات</CMD_Tooltip>
+		<LOG_CSV_Path>سجل مسار كسف</LOG_CSV_Path>
+		<LOG_DB_PATH>سجل داتاباسيباث</LOG_DB_PATH>
+		<Transaction_DB_Path>مسار قاعدة بيانات المعاملات</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>مخطط الخاص</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>خطأ خطأ حرج</Critical_Fault_Error>
+		<Stack_Trace>تتبع المكدس</Stack_Trace>
+		<Close_TW>أ تواصل معنا:</Close_TW>
+		<Export_UI>واجهة المستخدم للتصدير</Export_UI>
+		<Define_New_Table>تحديد جدول جديد</Define_New_Table>
+		<Create_Statistics_Page>إنشاء صفحة الإحصاءات</Create_Statistics_Page>
+		<Debug>التصحيح</Debug>
+		<New_in_Memory_Db>جديد في قاعدة بيانات الذاكرة</New_in_Memory_Db>
+		<Import_SQL>استيراد سكل</Import_SQL>
+		<Plugin>توصيل في</Plugin>
+		<Opened>افتتح</Opened>
+		<Converter>محول</Converter>
+		<HTML_to_CSV>هتمل إلى كسف</HTML_to_CSV>
+		<Developer>مطور</Developer>
+	</Language>
+</root>

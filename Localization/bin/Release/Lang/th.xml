@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>ภาษา</Language>
+		<File>ไฟล์</File>
+		<New>ใหม่</New>
+		<Open>เปิด</Open>
+		<Edit>แก้ไข</Edit>
+		<View>ดู</View>
+		<Save>บันทึก</Save>
+		<Import>นำเข้า</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>ส่งออก</Export>
+		<HTML>HTML</HTML>
+		<Settings>การตั้งค่า</Settings>
+		<Help>ช่วยด้วย</Help>
+		<About>เกี่ยวกับ</About>
+		<Show_Help>แสดงวิธีใช้</Show_Help>
+		<Settings_Editor>ตัวแก้ไขการตั้งค่า</Settings_Editor>
+		<Toggle_Debug>สลับการตรวจแก้จุดบกพร่อง</Toggle_Debug>
+		<Toggle_Transaction_Log>สลับล็อกธุรกรรม</Toggle_Transaction_Log>
+		<Refresh_Schema>รีเฟรช Schema</Refresh_Schema>
+		<Check_for_Updates>ตรวจสอบสำหรับการอัพเดต</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>เริ่มโปรแกรมแล้ว</PRGM_Start>
+		<App>ใบสมัคร</App>
+		<Failed_Save_Settings>ไม่สามารถบันทึกการตั้งค่า</Failed_Save_Settings>
+		<Error>ความผิดพลาด</Error>
+		<Failed>ล้มเหลว</Failed>
+		<Table>ตาราง</Table>
+		<Index>ดัชนี</Index>
+		<Master_Table>ตารางต้นแบบ</Master_Table>
+		<Sort>ประเภท</Sort>
+		<Asc>จากน้อยไปมาก</Asc>
+		<Desc>จากมากไปน้อย</Desc>
+		<Display_Settings>การตั้งค่าดิสเพลย์</Display_Settings>
+		<Sort_by>เรียงตาม</Sort_by>
+		<Search_in>ค้นหาใน</Search_in>
+		<Search>ค้นหา</Search>
+		<Functions>ฟังก์ชั่น</Functions>
+		<Strict_Search>การค้นหาอย่างเข้มงวด</Strict_Search>
+		<Run_Function>เรียกใช้ฟังก์ชัน</Run_Function>
+		<Query>สอบถาม</Query>
+		<Command>คำสั่ง</Command>
+		<Error_No_DB>ข้อผิดพลาด: ไม่ได้โหลดฐานข้อมูล</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable หรือ 'Master Table' เป็นตารางที่มีการป้องกัน เพื่อป้องกันความสมบูรณ์ของฐานข้อมูลคุณไม่สามารถแก้ไขตารางนี้ได้</Master_Table_Protected>
+		<Access_Denied>ปฏิเสธการเข้าใช้</Access_Denied>
+		<Application>App</Application>
+		<View_Function>ดูฟังก์ชัน</View_Function>
+		<User_Requested>ขอผู้ใช้</User_Requested>
+		<Listview_Width>Width Width</Listview_Width>
+		<Listview_Height>ความสูงของรายการ</Listview_Height>
+		<Extensions>ส่วนขยาย</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>บันทึกและปิด</Save_and_Close>
+		<Close_wo_saving>ปิดโดยไม่บันทึก</Close_wo_saving>
+		<Failed_Load_Online_EULA>ไม่สามารถโหลด EULA ออนไลน์ได้</Failed_Load_Online_EULA>
+		<Auto_Log>บันทึกอัตโนมัติ</Auto_Log>
+		<Export_HTML_Schema>ส่งออก HTML SCHEMA ในนามของ</Export_HTML_Schema>
+		<Export_HTML_Data>ส่งออกข้อมูล HTML ในนามของ</Export_HTML_Data>
+		<Check_Log>ข้อผิดพลาด: โปรดตรวจสอบบันทึกเพื่อดูรายละเอียด</Check_Log>
+		<Query_Error>Query Error</Query_Error>
+		<Export_CSV>ส่งออก CSV ในนามของ</Export_CSV>
+		<Export_SQL_SCHEMA>ส่งออก SQL - SCHEMA - ในนามของ</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>ส่งออก SQL - SQL - ในนามของ</Export_SQL_SQL>
+		<Export_XML>ส่งออก XML ในนามของ</Export_XML>
+		<System>ระบบ</System>
+		<Views_Read_Only>จำนวนการดูเป็นแบบอ่านอย่างเดียวและไม่สามารถแก้ไขได้</Views_Read_Only>
+		<Dataview_Error>ฐานข้อมูลหรือ Dataview ไม่มีหรือยังไม่ได้โหลด</Dataview_Error>
+		<Browse>หมวด</Browse>
+		<Statistics_Page>หน้าสถิติ</Statistics_Page>
+		<Invert>กลับหัวกลับหาง</Invert>
+		<Not_Supported>ไม่สนับสนุน</Not_Supported>
+		<CMD_Tooltip>ดำเนินการคำสั่ง SQL ที่กำหนดเองลงในฐานข้อมูล</CMD_Tooltip>
+		<LOG_CSV_Path>เข้าสู่ระบบ CSV Path</LOG_CSV_Path>
+		<LOG_DB_PATH>เข้าสู่ระบบ DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>เส้นทางฐานข้อมูลการทำธุรกรรม</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA เอกชน</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>ข้อผิดพลาดที่สำคัญผิดพลาด</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>ปิด TW</Close_TW>
+		<Export_UI>เอ็กซ์พอร์ต UI</Export_UI>
+		<Define_New_Table>กำหนดตารางใหม่</Define_New_Table>
+		<Create_Statistics_Page>สร้างหน้าสถิติ</Create_Statistics_Page>
+		<Debug>ตรวจแก้จุดบกพร่อง</Debug>
+		<New_in_Memory_Db>ใหม่ในฐานข้อมูลหน่วยความจำ</New_in_Memory_Db>
+		<Import_SQL>นำเข้า SQL</Import_SQL>
+		<Plugin>เสียบเข้าไป</Plugin>
+		<Opened>เปิด</Opened>
+		<Converter>แปลง</Converter>
+		<HTML_to_CSV>HTML เป็น CSV</HTML_to_CSV>
+		<Developer>ผู้พัฒนา</Developer>
+	</Language>
+</root>

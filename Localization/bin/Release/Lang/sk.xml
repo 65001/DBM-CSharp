@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Jazyk</Language>
+		<File>súbor</File>
+		<New>Nový</New>
+		<Open>Otvorený</Open>
+		<Edit>editovať</Edit>
+		<View>vyhliadka</View>
+		<Save>Uložiť</Save>
+		<Import>import</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Export</Export>
+		<HTML>HTML</HTML>
+		<Settings>nastavenie</Settings>
+		<Help>Pomoc</Help>
+		<About>o</About>
+		<Show_Help>Zobraziť pomoc</Show_Help>
+		<Settings_Editor>Editor nastavení</Settings_Editor>
+		<Toggle_Debug>Prepnúť ladenie</Toggle_Debug>
+		<Toggle_Transaction_Log>Prepnúť protokol transakcií</Toggle_Transaction_Log>
+		<Refresh_Schema>Refresh Schema</Refresh_Schema>
+		<Check_for_Updates>Skontroluj aktualizácie</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Program začal</PRGM_Start>
+		<App>prihláška</App>
+		<Failed_Save_Settings>Nepodarilo sa uložiť nastavenia</Failed_Save_Settings>
+		<Error>Chyba</Error>
+		<Failed>neúspešný</Failed>
+		<Table>stôl</Table>
+		<Index>index</Index>
+		<Master_Table>Master Table</Master_Table>
+		<Sort>druh</Sort>
+		<Asc>stúpajúca</Asc>
+		<Desc>klesajúci</Desc>
+		<Display_Settings>Nastavenia zobrazenia</Display_Settings>
+		<Sort_by>Triediť podľa</Sort_by>
+		<Search_in>Vyhľadávanie v</Search_in>
+		<Search>Vyhľadávanie</Search>
+		<Functions>funkcie</Functions>
+		<Strict_Search>Prísne vyhľadávanie</Strict_Search>
+		<Run_Function>Spustiť funkciu</Run_Function>
+		<Query>Dopyt</Query>
+		<Command>Príkaz</Command>
+		<Error_No_DB>Chyba: Nenašla sa žiadna databáza</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable alebo "Master Table" je chránená tabuľka. Na ochranu integrity db nemôžete túto tabuľku upraviť</Master_Table_Protected>
+		<Access_Denied>Prístup zamietnutý</Access_Denied>
+		<Application>app</Application>
+		<View_Function>Funkcia zobrazenia</View_Function>
+		<User_Requested>Požadovaný používateľ</User_Requested>
+		<Listview_Width>Šírka zoznamu</Listview_Width>
+		<Listview_Height>Výška zoznamu</Listview_Height>
+		<Extensions>rozšírenie</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Uložiť a zatvoriť</Save_and_Close>
+		<Close_wo_saving>Zatvoriť bez uloženia</Close_wo_saving>
+		<Failed_Load_Online_EULA>Nepodarilo sa načítať online zmluvu EULA</Failed_Load_Online_EULA>
+		<Auto_Log>Automatický protokol</Auto_Log>
+		<Export_HTML_Schema>Export HTML SCHEMA v mene spoločnosti</Export_HTML_Schema>
+		<Export_HTML_Data>Exportovať HTML DATA v mene</Export_HTML_Data>
+		<Check_Log>Chyba: Prečítajte si podrobnosti o protokole</Check_Log>
+		<Query_Error>Chyba dopytu</Query_Error>
+		<Export_CSV>EXPORT CSV ZA VOĽNU</Export_CSV>
+		<Export_SQL_SCHEMA>Export SQL - SCHEMA - V mene spoločnosti</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Export SQL - SQL - V mene spoločnosti</Export_SQL_SQL>
+		<Export_XML>EXPORT XML VO VECE</Export_XML>
+		<System>systém</System>
+		<Views_Read_Only>Zobrazenia sú readonly a nemožno ich upraviť</Views_Read_Only>
+		<Dataview_Error>Databáza alebo Dataview neexistuje alebo nebola zatiaľ načítaná</Dataview_Error>
+		<Browse>prezerať</Browse>
+		<Statistics_Page>Štatistika</Statistics_Page>
+		<Invert>invertný</Invert>
+		<Not_Supported>Nie je podporované</Not_Supported>
+		<CMD_Tooltip>Spravuje prispôsobené príkazy SQL príkazu do databázy</CMD_Tooltip>
+		<LOG_CSV_Path>Cesta k CSV protokolom</LOG_CSV_Path>
+		<LOG_DB_PATH>Záznam databázy log</LOG_DB_PATH>
+		<Transaction_DB_Path>Cesta databázy transakcií</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-SÚKROMNÉ</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Chyba kritickej chyby</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Zatvorte TW</Close_TW>
+		<Export_UI>UI exportu</Export_UI>
+		<Define_New_Table>Definujte novú tabuľku</Define_New_Table>
+		<Create_Statistics_Page>Vytvorte stránku štatistiky</Create_Statistics_Page>
+		<Debug>ladiť</Debug>
+		<New_in_Memory_Db>Nové v databáze pamäte</New_in_Memory_Db>
+		<Import_SQL>Importovať SQL</Import_SQL>
+		<Plugin>Zapojiť</Plugin>
+		<Opened>otvoril</Opened>
+		<Converter>konvertor</Converter>
+		<HTML_to_CSV>HTML do formátu CSV</HTML_to_CSV>
+		<Developer>vývojka</Developer>
+	</Language>
+</root>

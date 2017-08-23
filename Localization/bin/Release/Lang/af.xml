@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Taal</Language>
+		<File>lêer</File>
+		<New>nuwe</New>
+		<Open>oop</Open>
+		<Edit>wysig</Edit>
+		<View>Beskou</View>
+		<Save>Save</Save>
+		<Import>invoer</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>uitvoer</Export>
+		<HTML>HTML</HTML>
+		<Settings>instellings</Settings>
+		<Help>help</Help>
+		<About>oor</About>
+		<Show_Help>Wys hulp</Show_Help>
+		<Settings_Editor>Instellings Editor</Settings_Editor>
+		<Toggle_Debug>Skakel Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Wissel transaksielog</Toggle_Transaction_Log>
+		<Refresh_Schema>Herlaai Skema</Refresh_Schema>
+		<Check_for_Updates>Kyk vir opdaterings</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Program begin</PRGM_Start>
+		<App>aansoek</App>
+		<Failed_Save_Settings>Kon nie instellings stoor nie</Failed_Save_Settings>
+		<Error>fout</Error>
+		<Failed>misluk</Failed>
+		<Table>tafel</Table>
+		<Index>indeks</Index>
+		<Master_Table>Meestertafel</Master_Table>
+		<Sort>soort</Sort>
+		<Asc>stygende</Asc>
+		<Desc>Neerdaal</Desc>
+		<Display_Settings>Vertoon opsies</Display_Settings>
+		<Sort_by>Sorteer Volgens</Sort_by>
+		<Search_in>Soek in</Search_in>
+		<Search>Soek</Search>
+		<Functions>funksies</Functions>
+		<Strict_Search>Streng soek</Strict_Search>
+		<Run_Function>Begin funksie</Run_Function>
+		<Query>navraag</Query>
+		<Command>Bevel</Command>
+		<Error_No_DB>Fout: Geen databasis is gelaai nie</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable of 'Master Table' is 'n beskermde tafel. Om die integriteit van die db te beskerm, kan u hierdie tabel nie wysig nie</Master_Table_Protected>
+		<Access_Denied>Toegang verbied</Access_Denied>
+		<Application>app</Application>
+		<View_Function>Kyk funksie</View_Function>
+		<User_Requested>Gebruiker versoek</User_Requested>
+		<Listview_Width>Lys oorsig Breedte</Listview_Width>
+		<Listview_Height>Listview Hoogte</Listview_Height>
+		<Extensions>uitbreidings</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Stoor en sluit</Save_and_Close>
+		<Close_wo_saving>Maak sonder om te spaar</Close_wo_saving>
+		<Failed_Load_Online_EULA>Kon nie aanlyn-toestemming verkry nie</Failed_Load_Online_EULA>
+		<Auto_Log>Outo-log</Auto_Log>
+		<Export_HTML_Schema>HTML skedule uitvoer namens</Export_HTML_Schema>
+		<Export_HTML_Data>HTML DATA uitvoer namens</Export_HTML_Data>
+		<Check_Log>Fout: Kyk asseblief die log vir besonderhede</Check_Log>
+		<Query_Error>Navraag fout</Query_Error>
+		<Export_CSV>UITVOER CSV TEEN HANG VAN</Export_CSV>
+		<Export_SQL_SCHEMA>Uitvoer SQL - SKEMA - Namens</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Uitvoer SQL - SQL - Namens</Export_SQL_SQL>
+		<Export_XML>UITVOER XML OP HANG VAN</Export_XML>
+		<System>stelsel</System>
+		<Views_Read_Only>Uitsigte is leesbaar en kan nie geredigeer word nie</Views_Read_Only>
+		<Dataview_Error>Die databasis of dataview bestaan nie of is nog nie gelaai nie</Dataview_Error>
+		<Browse>Snuffel</Browse>
+		<Statistics_Page>Statistiek Bladsy</Statistics_Page>
+		<Invert>Keer</Invert>
+		<Not_Supported>Nie ondersteun nie</Not_Supported>
+		<CMD_Tooltip>Voer persoonlike SQL-opdragstate uit op die databasis</CMD_Tooltip>
+		<LOG_CSV_Path>Log CSV-pad</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Transaksie Databasis Pad</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>Skema-private</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Kritieke foutfout</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Maak TW toe</Close_TW>
+		<Export_UI>Uitvoer UI</Export_UI>
+		<Define_New_Table>Definieer nuwe tabel</Define_New_Table>
+		<Create_Statistics_Page>Skep Statistieke</Create_Statistics_Page>
+		<Debug>debug</Debug>
+		<New_in_Memory_Db>Nuut in geheue databasis</New_in_Memory_Db>
+		<Import_SQL>Voer SQL in</Import_SQL>
+		<Plugin>plugin</Plugin>
+		<Opened>geopen</Opened>
+		<Converter>Converter</Converter>
+		<HTML_to_CSV>HTML na CSV</HTML_to_CSV>
+		<Developer>Ontwikkelaar</Developer>
+	</Language>
+</root>

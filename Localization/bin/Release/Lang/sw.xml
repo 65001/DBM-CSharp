@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Lugha</Language>
+		<File>Funga</File>
+		<New>Mpya</New>
+		<Open>Fungua</Open>
+		<Edit>Badilisha</Edit>
+		<View>Angalia</View>
+		<Save>Hifadhi</Save>
+		<Import>Ingiza</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Tuma nje</Export>
+		<HTML>HTML</HTML>
+		<Settings>Mipangilio</Settings>
+		<Help>Msaada</Help>
+		<About>Kuhusu</About>
+		<Show_Help>Onyesha Msaada</Show_Help>
+		<Settings_Editor>Mhariri wa Mipangilio</Settings_Editor>
+		<Toggle_Debug>Badilisha kubadilisha</Toggle_Debug>
+		<Toggle_Transaction_Log>Badilisha Ingia ya Ushirikiano</Toggle_Transaction_Log>
+		<Refresh_Schema>Refresh Schema</Refresh_Schema>
+		<Check_for_Updates>Angalia kwa Sasisho</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Mpango ulianza</PRGM_Start>
+		<App>Maombi</App>
+		<Failed_Save_Settings>Imeshindwa Kuokoa Mipangilio</Failed_Save_Settings>
+		<Error>Hitilafu</Error>
+		<Failed>Imeshindwa</Failed>
+		<Table>Jedwali</Table>
+		<Index>Nambari</Index>
+		<Master_Table>Jedwali la Mwalimu</Master_Table>
+		<Sort>Panga</Sort>
+		<Asc>Inapanda</Asc>
+		<Desc>Inashuka</Desc>
+		<Display_Settings>Mipangilio ya kuonyesha</Display_Settings>
+		<Sort_by>Panga kwa</Sort_by>
+		<Search_in>Tafuta ndani</Search_in>
+		<Search>Tafuta</Search>
+		<Functions>Kazi</Functions>
+		<Strict_Search>Utafutaji mkali</Strict_Search>
+		<Run_Function>Kazi Kazi</Run_Function>
+		<Query>Swala</Query>
+		<Command>Amri</Command>
+		<Error_No_DB>Hitilafu: Hakuna Hifadhi imefakia</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable au 'Master Table' ni meza iliyohifadhiwa. Ili kulinda uaminifu wa db huwezi kuhariri meza hii</Master_Table_Protected>
+		<Access_Denied>Ufikiaji umekataliwa</Access_Denied>
+		<Application>Programu</Application>
+		<View_Function>Angalia Kazi</View_Function>
+		<User_Requested>Mtumiaji aliombwa</User_Requested>
+		<Listview_Width>Orodha ya Upanaji wa Orodha</Listview_Width>
+		<Listview_Height>Orodha ya Orodha ya Urefu</Listview_Height>
+		<Extensions>Upanuzi</Extensions>
+		<Deliminator>Mtoaji</Deliminator>
+		<Save_and_Close>Hifadhi na Funga</Save_and_Close>
+		<Close_wo_saving>Funga bila Kuokoa</Close_wo_saving>
+		<Failed_Load_Online_EULA>Imeshindwa kupakia EULA mtandaoni</Failed_Load_Online_EULA>
+		<Auto_Log>Ingia ya Hifadhi</Auto_Log>
+		<Export_HTML_Schema>Toka HTML SCHEMA kwa niaba ya</Export_HTML_Schema>
+		<Export_HTML_Data>Export HTML DATA kwa niaba ya</Export_HTML_Data>
+		<Check_Log>Hitilafu: Tafadhali angalia logi kwa maelezo</Check_Log>
+		<Query_Error>Hitilafu ya Swala</Query_Error>
+		<Export_CSV>SHUTA YA KUFUTA KATIKA MAHALI YA</Export_CSV>
+		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Kwa niaba ya</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Sport SQL - SQL - Kwa niaba ya</Export_SQL_SQL>
+		<Export_XML>UFUNYAJI WA XML KATIKA MAHALI YA</Export_XML>
+		<System>Mfumo</System>
+		<Views_Read_Only>Maoni ni ya wasomaji na hauwezi kuhaririwa</Views_Read_Only>
+		<Dataview_Error>Hifadhi au Dataview haipo au haijawahi kubeba</Dataview_Error>
+		<Browse>Vinjari</Browse>
+		<Statistics_Page>Takwimu Ukurasa</Statistics_Page>
+		<Invert>Pindua</Invert>
+		<Not_Supported>Si Kusaidiwa</Not_Supported>
+		<CMD_Tooltip>Inafanya taarifa za amri za SQL iliyoboreshwa kwenye database</CMD_Tooltip>
+		<LOG_CSV_Path>Ingia Njia ya CSV</LOG_CSV_Path>
+		<LOG_DB_PATH>Ingia Mtazamo wa Hifadhi</LOG_DB_PATH>
+		<Transaction_DB_Path>Njia ya Kusambaza Dhamana</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Hitilafu mbaya ya Fault</Critical_Fault_Error>
+		<Stack_Trace>Piga Ufuatiliaji</Stack_Trace>
+		<Close_TW>Funga TW</Close_TW>
+		<Export_UI>Tuma UI</Export_UI>
+		<Define_New_Table>Eleza Jedwali Jipya</Define_New_Table>
+		<Create_Statistics_Page>Unda Ukurasa wa Takwimu</Create_Statistics_Page>
+		<Debug>Dhibiti</Debug>
+		<New_in_Memory_Db>Mpya kwenye Kumbukumbu ya Kumbukumbu</New_in_Memory_Db>
+		<Import_SQL>Ingiza SQL</Import_SQL>
+		<Plugin>Chomeka</Plugin>
+		<Opened>Ilifunguliwa</Opened>
+		<Converter>Kubadilisha</Converter>
+		<HTML_to_CSV>HTML kwa CSV</HTML_to_CSV>
+		<Developer>Msanidi programu</Developer>
+	</Language>
+</root>

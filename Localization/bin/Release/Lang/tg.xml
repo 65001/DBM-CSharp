@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Забон</Language>
+		<File>Файл</File>
+		<New>Нав</New>
+		<Open>Кушодан</Open>
+		<Edit>Таҳрири</Edit>
+		<View>Намоиш</View>
+		<Save>Save</Save>
+		<Import>Воридот</Import>
+		<CSV>CSV</CSV>
+		<SQL>Система</SQL>
+		<Export>Содирот</Export>
+		<HTML>HTML</HTML>
+		<Settings>Танзимотҳо</Settings>
+		<Help>Кӯмак</Help>
+		<About>Дар бораи</About>
+		<Show_Help>Кӯмак нишон диҳед</Show_Help>
+		<Settings_Editor>Таҳрири Таҳрир</Settings_Editor>
+		<Toggle_Debug>Debug Toggle</Toggle_Debug>
+		<Toggle_Transaction_Log>Log Log In</Toggle_Transaction_Log>
+		<Refresh_Schema>Шахси нав</Refresh_Schema>
+		<Check_for_Updates>Навигариҳо тафтиш кунед</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Барнома оғоз ёфт</PRGM_Start>
+		<App>Ариза</App>
+		<Failed_Save_Settings>Нигоҳ доштани танзимоти танзимот</Failed_Save_Settings>
+		<Error>Хато</Error>
+		<Failed>Ҳалокат</Failed>
+		<Table>Ҷадвали</Table>
+		<Index>Индекси</Index>
+		<Master_Table>Ҷадвали Master</Master_Table>
+		<Sort>Сирри</Sort>
+		<Asc>Афсӯс</Asc>
+		<Desc>Камбизоатӣ</Desc>
+		<Display_Settings>Танзимоти намоиш</Display_Settings>
+		<Sort_by>Ҷудо кардан ба</Sort_by>
+		<Search_in>Ҷустуҷӯ дар</Search_in>
+		<Search>Ҷустуҷӯ</Search>
+		<Functions>Функсияҳо</Functions>
+		<Strict_Search>Ҷустуҷӯҳои сахт</Strict_Search>
+		<Run_Function>Функсияро идора кунед</Run_Function>
+		<Query>Савол</Query>
+		<Command>Фармон</Command>
+		<Error_No_DB>Хато: Бе маълумот дода нашудааст</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable ё 'Master Table' як мизи муҳофизатшуда аст. Барои ҳифзи виҷдонатон шумо ин табақро таҳрир карда наметавонед</Master_Table_Protected>
+		<Access_Denied>Дастраси манъ аст</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Намоиши функсия</View_Function>
+		<User_Requested>Истифодабарандаи дархостшуда</User_Requested>
+		<Listview_Width>� оҳхати номҳо</Listview_Width>
+		<Listview_Height>� ӯйхати назарҳо</Listview_Height>
+		<Extensions>Extensions</Extensions>
+		<Deliminator>Димитроватсия</Deliminator>
+		<Save_and_Close>Нигоҳ кунед ва пӯшед</Save_and_Close>
+		<Close_wo_saving>Бе бидуни захира</Close_wo_saving>
+		<Failed_Load_Online_EULA>Ба EULA вебсайт нарасидааст</Failed_Load_Online_EULA>
+		<Auto_Log>Log Log</Auto_Log>
+		<Export_HTML_Schema>Истифодаи HTML SCHEMA аз номи</Export_HTML_Schema>
+		<Export_HTML_Data>HTML аз DATA содир кунед</Export_HTML_Data>
+		<Check_Log>Хато: Лутфан сабтро барои тафсилот тафтиш кунед</Check_Log>
+		<Query_Error>Хатогиро пурсед</Query_Error>
+		<Export_CSV>ШАҲ� И ҚӮ� ҒОНТЕППА</Export_CSV>
+		<Export_SQL_SCHEMA>Содироти SQL - SCHEMA - аз номи</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Содироти SQL - СМС - Аз номи</Export_SQL_SQL>
+		<Export_XML>XML аз фахрии EXE</Export_XML>
+		<System>Система</System>
+		<Views_Read_Only>Назоратҳо сабт карда шудаанд ва таҳрир карда намешаванд</Views_Read_Only>
+		<Dataview_Error>Database ё Dataview вуҷуд надорад ё ҳанӯз бор карда нашудааст</Dataview_Error>
+		<Browse>Ҷустуҷӯ</Browse>
+		<Statistics_Page>Садо Ояндасоз</Statistics_Page>
+		<Invert>Invert</Invert>
+		<Not_Supported>Дастгирӣ нашуда истодааст</Not_Supported>
+		<CMD_Tooltip>Гузаронидани ҳисобҳои фармоишии SQL-ро ба пойгоҳи додашударо иҷро кунед</CMD_Tooltip>
+		<LOG_CSV_Path>� оҳ ба CSV нависед</LOG_CSV_Path>
+		<LOG_DB_PATH>Департаменти Депозит</LOG_DB_PATH>
+		<Transaction_DB_Path>� оҳи маълумотҳои интиқол</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>ШАҲ� И ҚӮ� ҒОНТЕППА</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Хатогиҳои ҷиддии хато</Critical_Fault_Error>
+		<Stack_Trace>Трактори истгоҳ</Stack_Trace>
+		<Close_TW>TW</Close_TW>
+		<Export_UI>UI содир кунед</Export_UI>
+		<Define_New_Table>Ҷадвали ҷадвал</Define_New_Table>
+		<Create_Statistics_Page>Сохтани Саҳифаҳо</Create_Statistics_Page>
+		<Debug>Debug</Debug>
+		<New_in_Memory_Db>Нав дар базаи Memory</New_in_Memory_Db>
+		<Import_SQL>Воридоти SQL</Import_SQL>
+		<Plugin>Plugin</Plugin>
+		<Opened>Кушодан</Opened>
+		<Converter>Конверт</Converter>
+		<HTML_to_CSV>HTML ба CSV</HTML_to_CSV>
+		<Developer>Таҳиякунанда</Developer>
+	</Language>
+</root>

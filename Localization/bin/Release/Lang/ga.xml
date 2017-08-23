@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Teanga</Language>
+		<File>Comhad</File>
+		<New>Nua</New>
+		<Open>Oscail</Open>
+		<Edit>Athraigh</Edit>
+		<View>Amharc</View>
+		<Save>Sábháil</Save>
+		<Import>Iompórtáil</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Easpórtáil</Export>
+		<HTML>HTML</HTML>
+		<Settings>Socruithe</Settings>
+		<Help>Cabhrú</Help>
+		<About>Faoi</About>
+		<Show_Help>Taispeáin Cabhair</Show_Help>
+		<Settings_Editor>Eagarthóir Socruithe</Settings_Editor>
+		<Toggle_Debug>Diúltaigh Toggle</Toggle_Debug>
+		<Toggle_Transaction_Log>Laghdaigh Logáil Idirbhearta</Toggle_Transaction_Log>
+		<Refresh_Schema>Athnuachan ar Scéim</Refresh_Schema>
+		<Check_for_Updates>Seiceáil le haghaidh Nuashonruithe</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Clár Tosaithe</PRGM_Start>
+		<App>Iarratas</App>
+		<Failed_Save_Settings>Theip ar Shocruithe Sábháil</Failed_Save_Settings>
+		<Error>Earráid</Error>
+		<Failed>Theip ar</Failed>
+		<Table>Tábla</Table>
+		<Index>Innéacs</Index>
+		<Master_Table>Tábla Máistir</Master_Table>
+		<Sort>Sórtáil</Sort>
+		<Asc>Ag dul suas</Asc>
+		<Desc>Ag titim</Desc>
+		<Display_Settings>Taispeáin Socruithe</Display_Settings>
+		<Sort_by>Sórtáil de réir</Sort_by>
+		<Search_in>Cuardaigh i</Search_in>
+		<Search>Cuardaigh</Search>
+		<Functions>Feidhmeanna</Functions>
+		<Strict_Search>Cuardaigh Dian</Strict_Search>
+		<Run_Function>Feidhm Rith</Run_Function>
+		<Query>Cheist</Query>
+		<Command>Ordú</Command>
+		<Error_No_DB>Earráid: Níl aon Bunachar Sonraí luchtaithe</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Is sqlite_mastertable nó 'Máistir Tábla' tábla cosanta. Chun ionracas an db a chosaint ní féidir leat an tábla seo a eagrú</Master_Table_Protected>
+		<Access_Denied>Diúltaíodh rochtain</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Feidhm View</View_Function>
+		<User_Requested>Úsáideoir Iarrtha</User_Requested>
+		<Listview_Width>Leithead Radhairc</Listview_Width>
+		<Listview_Height>Ardeaglais an Liosta</Listview_Height>
+		<Extensions>Eisínteachtaí</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Sábháil agus Dún</Save_and_Close>
+		<Close_wo_saving>Dún gan Shábháil</Close_wo_saving>
+		<Failed_Load_Online_EULA>Níorbh fhéidir EULA a lódáil ar líne</Failed_Load_Online_EULA>
+		<Auto_Log>Logáil Uathoibríoch</Auto_Log>
+		<Export_HTML_Schema>Export SCHEMA HTML thar ceann</Export_HTML_Schema>
+		<Export_HTML_Data>Onnmhairigh SONRAÍ HTML ar son</Export_HTML_Data>
+		<Check_Log>Earráid: Seiceáil an logáil isteach le haghaidh sonraí</Check_Log>
+		<Query_Error>Earráid Iarratas</Query_Error>
+		<Export_CSV>ONNMHAIRIÚ CSV MAIDIR LE</Export_CSV>
+		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Ar son na</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Export SQL - SQL - Thar ceann</Export_SQL_SQL>
+		<Export_XML>ONNMHAIRIÚ XML MAIDIR LE</Export_XML>
+		<System>Córas</System>
+		<Views_Read_Only>Tá radhairc léitheoireachta agus ní féidir iad a chur in eagar</Views_Read_Only>
+		<Dataview_Error>Níl an Bunachar Sonraí nó Dataview ann nó níor luchtaíodh go fóill</Dataview_Error>
+		<Browse>Brabhsáil</Browse>
+		<Statistics_Page>Leathanach Staitisticí</Statistics_Page>
+		<Invert>Invert</Invert>
+		<Not_Supported>Gan tacaíocht</Not_Supported>
+		<CMD_Tooltip>Ráitis ordaithe saincheaptha SQL a fheidhmiú ar an mbunachar sonraí</CMD_Tooltip>
+		<LOG_CSV_Path>Logáil CSV Path</LOG_CSV_Path>
+		<LOG_DB_PATH>Log Logáil isteach DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Cosán Bunachar Sonraí Idirbhearta</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Earráid Ealaíne Criticiúil</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Dún TW</Close_TW>
+		<Export_UI>UI Easpórtála</Export_UI>
+		<Define_New_Table>Sainmhínigh Tábla Nua</Define_New_Table>
+		<Create_Statistics_Page>Cruthaigh Leathanach Staitisticí</Create_Statistics_Page>
+		<Debug>Debug</Debug>
+		<New_in_Memory_Db>Bunachar Nua Cuimhne</New_in_Memory_Db>
+		<Import_SQL>Iompórtáil SQL</Import_SQL>
+		<Plugin>Plugáil isteach</Plugin>
+		<Opened>Oscailte</Opened>
+		<Converter>Tiontaire</Converter>
+		<HTML_to_CSV>HTML go CSV</HTML_to_CSV>
+		<Developer>Forbróir</Developer>
+	</Language>
+</root>

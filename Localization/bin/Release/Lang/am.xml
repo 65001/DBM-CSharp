@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>ቋንቋ</Language>
+		<File>ፋይል</File>
+		<New>� ዲስ</New>
+		<Open>ክፈት</Open>
+		<Edit>� ርትእ</Edit>
+		<View>ዕይ</View>
+		<Save>� ስቀምጥ</Save>
+		<Import>� ስመጣ</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>ወደውጪ ላክ</Export>
+		<HTML>HTML</HTML>
+		<Settings>ቅንብሮች</Settings>
+		<Help>እገዛ</Help>
+		<About>ስለ</About>
+		<Show_Help>እገዛ � ሳይ</Show_Help>
+		<Settings_Editor>የቅንብሮች � ርታዒ</Settings_Editor>
+		<Toggle_Debug>ስህተትን ይቀያይሩ</Toggle_Debug>
+		<Toggle_Transaction_Log>የግብይት ምዝግብ ማስታወሻን ቀይር</Toggle_Transaction_Log>
+		<Refresh_Schema>ዕቅድ � ድስ</Refresh_Schema>
+		<Check_for_Updates>ዝማኔዎችን ይመልከቱ</Check_for_Updates>
+		<PXML>ኤክስኤምኤል</PXML>
+		<PRGM_Start>ፕሮግራም ጀምሯል</PRGM_Start>
+		<App>ትግ� ራ</App>
+		<Failed_Save_Settings>ቅንብሮችን ማስቀመጥ � ልተሳካም</Failed_Save_Settings>
+		<Error>ስህተት</Error>
+		<Failed>� ልተሳካም</Failed>
+		<Table>ሰን� ረዥ</Table>
+		<Index>ማውጫ</Index>
+		<Master_Table>ዋና ሰን� ረዥ</Master_Table>
+		<Sort>ደርድር</Sort>
+		<Asc>ወደ ላይ</Asc>
+		<Desc>� መጥፋት ላይ</Desc>
+		<Display_Settings>ቅንብሮችን � ሳይ</Display_Settings>
+		<Sort_by>ቅደምተከተሉ የተስተካከለው</Sort_by>
+		<Search_in>ፈልግ</Search_in>
+		<Search>ፈልግ</Search>
+		<Functions>ተግባሮች</Functions>
+		<Strict_Search>ጥብቅ ፍለጋ</Strict_Search>
+		<Run_Function>ተግባር ጀምር</Run_Function>
+		<Query>ጥያቄ</Query>
+		<Command>ትዕዛዝ</Command>
+		<Error_No_DB>ስህተት: ምንም የውሂብ ጎታ � ልተጫነም</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable ወይም 'Master Table' የሚ� � ቀው � ረጴር ነው. የዲቢስን ጽኑ ለመ� � ቅ ይህን ሰን� ረዥ ማርትዕ � ይችሉም</Master_Table_Protected>
+		<Access_Denied>መዳረሻ ተከልክሏል</Access_Denied>
+		<Application>መተግ� ሪያ</Application>
+		<View_Function>ተግባር ይመልከቱ</View_Function>
+		<User_Requested>ተ� ቃሚ ተ� ይቋል</User_Requested>
+		<Listview_Width>የዝርዝር እይታ ስፋት</Listview_Width>
+		<Listview_Height>የዝርዝር እይታ ቁመት</Listview_Height>
+		<Extensions>ቅጥያዎች</Extensions>
+		<Deliminator>ማስተላለፊያ</Deliminator>
+		<Save_and_Close>� ስቀምጥ እና ዝጋ</Save_and_Close>
+		<Close_wo_saving>ሳያስቀምጥ ዝጋ</Close_wo_saving>
+		<Failed_Load_Online_EULA>የመስመር ላይ EULA መጫን � ልተሳካም</Failed_Load_Online_EULA>
+		<Auto_Log>ራስ መዝግብ</Auto_Log>
+		<Export_HTML_Schema>ወክሎ ኤች ቲ ኤም ኤል SCHEMA ይላኩ</Export_HTML_Schema>
+		<Export_HTML_Data>የኤችቲኤምኤል DATA ወደውጪ ላክ</Export_HTML_Data>
+		<Check_Log>ስህተት: እባክዎን ለዝርዝሮች ምዝግብ ማስታወሻውን ይመልከቱ</Check_Log>
+		<Query_Error>የመ� ይቅ ስህተት</Query_Error>
+		<Export_CSV>� ሲው ኤክ</Export_CSV>
+		<Export_SQL_SCHEMA>ወደ SQL ላክ - SCHEMA - ፈንታ</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>ወደ SQL ላክ - SQL - � </Export_SQL_SQL>
+		<Export_XML>ኤክስኤምኤል ወደ ውጭ የተላኩ</Export_XML>
+		<System>ስርዓት</System>
+		<Views_Read_Only>እይታዎች ተነባቢ ብቻ ናቸው እና � ርትዖት ሊደረግባቸው � ይችልም</Views_Read_Only>
+		<Dataview_Error>የውሂብ ጎታ ወይም የውሂብ ጎታ � ይገኝም ወይም ገና � ልተጫነም</Dataview_Error>
+		<Browse>ያስሱ</Browse>
+		<Statistics_Page>ስታቲስቲክስ ገጽ</Statistics_Page>
+		<Invert>� ስተላልፍ</Invert>
+		<Not_Supported>� ይደገፍም</Not_Supported>
+		<CMD_Tooltip>የተ� ጁ የ SQL ቁጥር ትዕዛዞችን � ውሂብ ጎታ ላይ ያስፈጽማል</CMD_Tooltip>
+		<LOG_CSV_Path>CSV ዱካ ምዝገባ</LOG_CSV_Path>
+		<LOG_DB_PATH>የምዝግብመጃ ውሂብ ጎታ</LOG_DB_PATH>
+		<Transaction_DB_Path>የግብይት ውሂብ ጎታ ትራንስ</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>ዋነኛ ስህተቶች ስህተት</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>TW ፊደላት</Close_TW>
+		<Export_UI>UI ላክ</Export_UI>
+		<Define_New_Table>� ዲስ ሰን� ረዥን ግለፅ</Define_New_Table>
+		<Create_Statistics_Page>ስታስቲክስ ገጽ ይፍ� ሩ</Create_Statistics_Page>
+		<Debug>ስህተት � ርም</Debug>
+		<New_in_Memory_Db>� ማስታወሻ ውሂብ ጎታ ውስጥ � ዲስ</New_in_Memory_Db>
+		<Import_SQL>SQL ያስመጡ</Import_SQL>
+		<Plugin>ሰካው</Plugin>
+		<Opened>ተከፍቷል</Opened>
+		<Converter>ቀያሪ</Converter>
+		<HTML_to_CSV>HTML ወደ CSV</HTML_to_CSV>
+		<Developer>ገንቢ</Developer>
+	</Language>
+</root>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Мова</Language>
+		<File>Файл</File>
+		<New>Новий</New>
+		<Open>ВІДЧИНЕНО</Open>
+		<Edit>Редагувати</Edit>
+		<View>Вид</View>
+		<Save>Зберегти</Save>
+		<Import>Імпортувати</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Експортувати</Export>
+		<HTML>HTML</HTML>
+		<Settings>Налаштування</Settings>
+		<Help>Допомога</Help>
+		<About>Про</About>
+		<Show_Help>Показати довідку</Show_Help>
+		<Settings_Editor>Редактор налаштувань</Settings_Editor>
+		<Toggle_Debug>Переключити налагодження</Toggle_Debug>
+		<Toggle_Transaction_Log>Переключити журнал транзакцій</Toggle_Transaction_Log>
+		<Refresh_Schema>Оновити схему</Refresh_Schema>
+		<Check_for_Updates>Перевірити наявність оновлень</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Програма запущена</PRGM_Start>
+		<App>Застосування</App>
+		<Failed_Save_Settings>Не вдалося зберегти налаштування</Failed_Save_Settings>
+		<Error>Помилка</Error>
+		<Failed>Помилка</Failed>
+		<Table>Таблиця</Table>
+		<Index>Індекс</Index>
+		<Master_Table>Майстер-таблиця</Master_Table>
+		<Sort>Сортувати</Sort>
+		<Asc>Висхідний</Asc>
+		<Desc>Спускається</Desc>
+		<Display_Settings>Налаштування дисплею</Display_Settings>
+		<Sort_by>Сортувати за</Sort_by>
+		<Search_in>Пошук в</Search_in>
+		<Search>Пошук</Search>
+		<Functions>Функції</Functions>
+		<Strict_Search>Строгий пошук</Strict_Search>
+		<Run_Function>Запустити функцію</Run_Function>
+		<Query>Запит</Query>
+		<Command>Команда</Command>
+		<Error_No_DB>Помилка: ніяка база даних не завантажена</Error_No_DB>
+		<UI>Інтерфейс користувача</UI>
+		<Master_Table_Protected>Sqlite_mastertable або 'Master Table' є захищеною таблицею. Щоб захистити цілісність дБ, ви не можете редагувати цю таблицю</Master_Table_Protected>
+		<Access_Denied>Доступ заборонено</Access_Denied>
+		<Application>Додаток</Application>
+		<View_Function>Переглянути функцію</View_Function>
+		<User_Requested>Запит користувача</User_Requested>
+		<Listview_Width>Ширина списку</Listview_Width>
+		<Listview_Height>Висота списку</Listview_Height>
+		<Extensions>Розширення</Extensions>
+		<Deliminator>Делімітатор</Deliminator>
+		<Save_and_Close>Зберегти та закрити</Save_and_Close>
+		<Close_wo_saving>Закрити без збереження</Close_wo_saving>
+		<Failed_Load_Online_EULA>Не вдалося завантажити ліцензійну ліцензію EULA</Failed_Load_Online_EULA>
+		<Auto_Log>Автоматичний журнал</Auto_Log>
+		<Export_HTML_Schema>Експорт HTML SCHEMA від імені</Export_HTML_Schema>
+		<Export_HTML_Data>Експорт HTML DATA від імені</Export_HTML_Data>
+		<Check_Log>Помилка. Будь ласка, перевірте журнал для деталей</Check_Log>
+		<Query_Error>Помилка запиту</Query_Error>
+		<Export_CSV>ЕКСПОРТ CSV ЗА БЕЗКОШТОВНОСТІ</Export_CSV>
+		<Export_SQL_SCHEMA>Експорт SQL - SCHEMA - Від імені</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Експорт SQL - SQL - Від імені</Export_SQL_SQL>
+		<Export_XML>Експортувати XML на будь-який з</Export_XML>
+		<System>Система</System>
+		<Views_Read_Only>Перегляди доступні лише для читання та їх не можна редагувати</Views_Read_Only>
+		<Dataview_Error>База даних або Dataview не існує або ще не завантажено</Dataview_Error>
+		<Browse>Перегляньте</Browse>
+		<Statistics_Page>Статистика сторінок</Statistics_Page>
+		<Invert>Інвертувати</Invert>
+		<Not_Supported>Не підтримується</Not_Supported>
+		<CMD_Tooltip>Виконає індивідуальні операції команди SQL у базі даних</CMD_Tooltip>
+		<LOG_CSV_Path>Журнал шляху журналу CSV</LOG_CSV_Path>
+		<LOG_DB_PATH>Увійти DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Шлях бази даних транзакції</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Критична помилка несправності</Critical_Fault_Error>
+		<Stack_Trace>Стек Trace</Stack_Trace>
+		<Close_TW>Закрити TW</Close_TW>
+		<Export_UI>Експорт інтерфейсу</Export_UI>
+		<Define_New_Table>Визначте нову таблицю</Define_New_Table>
+		<Create_Statistics_Page>Створити сторінку статистики</Create_Statistics_Page>
+		<Debug>Відлагоджувати</Debug>
+		<New_in_Memory_Db>Нове в базі даних пам'яті</New_in_Memory_Db>
+		<Import_SQL>Імпортувати SQL</Import_SQL>
+		<Plugin>Підключати</Plugin>
+		<Opened>Відкрито</Opened>
+		<Converter>Конвертер</Converter>
+		<HTML_to_CSV>HTML у форматі CSV</HTML_to_CSV>
+		<Developer>Розробник</Developer>
+	</Language>
+</root>

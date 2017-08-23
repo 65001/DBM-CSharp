@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Język</Language>
+		<File>Plik</File>
+		<New>Nowy</New>
+		<Open>otwarty</Open>
+		<Edit>Edytować</Edit>
+		<View>Widok</View>
+		<Save>Zapisać</Save>
+		<Import>Import</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Eksport</Export>
+		<HTML>HTML</HTML>
+		<Settings>Ustawienia</Settings>
+		<Help>Wsparcie</Help>
+		<About>O</About>
+		<Show_Help>Pokaż pomoc</Show_Help>
+		<Settings_Editor>Edytor ustawień</Settings_Editor>
+		<Toggle_Debug>Przełącz debugowanie</Toggle_Debug>
+		<Toggle_Transaction_Log>Przełącz dziennik transakcji</Toggle_Transaction_Log>
+		<Refresh_Schema>Odśwież schemat</Refresh_Schema>
+		<Check_for_Updates>Sprawdź aktualizacje</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Uruchomienie programu</PRGM_Start>
+		<App>Podanie</App>
+		<Failed_Save_Settings>Nie udało się zapisać ustawień</Failed_Save_Settings>
+		<Error>Błąd</Error>
+		<Failed>Niepowodzenie</Failed>
+		<Table>Stół</Table>
+		<Index>Indeks</Index>
+		<Master_Table>Master Table</Master_Table>
+		<Sort>Sortować</Sort>
+		<Asc>Rosnąco</Asc>
+		<Desc>Malejąco</Desc>
+		<Display_Settings>Ustawienia wyświetlania</Display_Settings>
+		<Sort_by>Sortuj według</Sort_by>
+		<Search_in>Szukać w</Search_in>
+		<Search>Szukanie</Search>
+		<Functions>Funkcje</Functions>
+		<Strict_Search>Ścisłe wyszukiwanie</Strict_Search>
+		<Run_Function>Uruchom funkcję</Run_Function>
+		<Query>Pytanie</Query>
+		<Command>Rozkaz</Command>
+		<Error_No_DB>Błąd: nie została załadowana baza danych</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable lub 'Master Table' jest chronioną tabelą. Aby chronić integralność db, nie można edytować tej tabeli</Master_Table_Protected>
+		<Access_Denied>Brak dostępu</Access_Denied>
+		<Application>Aplikacja</Application>
+		<View_Function>Wyświetl funkcję</View_Function>
+		<User_Requested>Użytkownik został poproszony</User_Requested>
+		<Listview_Width>Width Width</Listview_Width>
+		<Listview_Height>Wysokość listy</Listview_Height>
+		<Extensions>Rozszerzenia</Extensions>
+		<Deliminator>Delimator</Deliminator>
+		<Save_and_Close>Zapisz i zamknij</Save_and_Close>
+		<Close_wo_saving>Zamknij bez zapisu</Close_wo_saving>
+		<Failed_Load_Online_EULA>Nie można załadować online EULA</Failed_Load_Online_EULA>
+		<Auto_Log>Automatyczne logowanie</Auto_Log>
+		<Export_HTML_Schema>Wyeksportuj HTML SCHEMA w imieniu</Export_HTML_Schema>
+		<Export_HTML_Data>Eksportuj DANYCH HTML w imieniu</Export_HTML_Data>
+		<Check_Log>Błąd: sprawdź szczegóły logu</Check_Log>
+		<Query_Error>Błąd zapytania</Query_Error>
+		<Export_CSV>EXPORT CSV w imieniu</Export_CSV>
+		<Export_SQL_SCHEMA>Export SQL - SCHEMA - W imieniu</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Eksport SQL - SQL - W imieniu</Export_SQL_SQL>
+		<Export_XML>EXPORT XML ZAŁOŻONE</Export_XML>
+		<System>System</System>
+		<Views_Read_Only>Widoki są tylko do odczytu i nie można ich edytować</Views_Read_Only>
+		<Dataview_Error>Baza danych lub Dataview nie istnieje lub nie zostało jeszcze załadowane</Dataview_Error>
+		<Browse>Paść się</Browse>
+		<Statistics_Page>Strona Statystyka</Statistics_Page>
+		<Invert>Odwracać</Invert>
+		<Not_Supported>Nieobsługiwany</Not_Supported>
+		<CMD_Tooltip>Wykonuje niestandardowe instrukcje SQL w bazie danych</CMD_Tooltip>
+		<LOG_CSV_Path>Zaloguj ścieżkę CSV</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Ścieżka bazy danych transakcji</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Błąd krytycznego błędu</Critical_Fault_Error>
+		<Stack_Trace>Ślad stosu</Stack_Trace>
+		<Close_TW>Zamknij TW</Close_TW>
+		<Export_UI>Eksportuj interfejs użytkownika</Export_UI>
+		<Define_New_Table>Zdefiniuj nową tabelę</Define_New_Table>
+		<Create_Statistics_Page>Utwórz stronę statystyk</Create_Statistics_Page>
+		<Debug>Odpluskwić</Debug>
+		<New_in_Memory_Db>Nowość w bazie danych pamięci</New_in_Memory_Db>
+		<Import_SQL>Importuj SQL</Import_SQL>
+		<Plugin>Podłącz</Plugin>
+		<Opened>Otwierany</Opened>
+		<Converter>Przetwornik</Converter>
+		<HTML_to_CSV>HTML do CSV</HTML_to_CSV>
+		<Developer>Deweloper</Developer>
+	</Language>
+</root>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Jezik</Language>
+		<File>mapa</File>
+		<New>Novo</New>
+		<Open>Odprto</Open>
+		<Edit>Uredi</Edit>
+		<View>Pogled</View>
+		<Save>Shrani</Save>
+		<Import>Uvozi</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Izvozi</Export>
+		<HTML>HTML</HTML>
+		<Settings>Nastavitve</Settings>
+		<Help>Pomoč</Help>
+		<About>O podjetju</About>
+		<Show_Help>Prikaži pomoč</Show_Help>
+		<Settings_Editor>Urejevalnik nastavitev</Settings_Editor>
+		<Toggle_Debug>Toggle Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Preklopi dnevnik transakcij</Toggle_Transaction_Log>
+		<Refresh_Schema>Osveži shemo</Refresh_Schema>
+		<Check_for_Updates>Preveri za posodobitve</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Program se je začel</PRGM_Start>
+		<App>Uporaba</App>
+		<Failed_Save_Settings>Nastavitve ni bilo mogoče shraniti</Failed_Save_Settings>
+		<Error>Napaka</Error>
+		<Failed>Ni uspelo</Failed>
+		<Table>Tabela</Table>
+		<Index>Indeks</Index>
+		<Master_Table>Glavna tabela</Master_Table>
+		<Sort>Razvrsti</Sort>
+		<Asc>Naraščajoče</Asc>
+		<Desc>Padajoče</Desc>
+		<Display_Settings>Nastavitve zaslona</Display_Settings>
+		<Sort_by>Razvrsti po</Sort_by>
+		<Search_in>Išči v</Search_in>
+		<Search>Iskanje</Search>
+		<Functions>Funkcije</Functions>
+		<Strict_Search>Strogo iskanje</Strict_Search>
+		<Run_Function>Zaženi funkcijo</Run_Function>
+		<Query>Poizvedba</Query>
+		<Command>Ukaz</Command>
+		<Error_No_DB>Napaka: ni bila naložena nobena zbirka podatkov</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable ali "Master Table" je zaščitena tabela. Za zaščito integritete db te tabele ni mogoče urejati</Master_Table_Protected>
+		<Access_Denied>Dostop zavrnjen</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Ogled funkcije</View_Function>
+		<User_Requested>Zahtevani uporabnik</User_Requested>
+		<Listview_Width>Širina seznama</Listview_Width>
+		<Listview_Height>Višina seznama</Listview_Height>
+		<Extensions>Razširitve</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Shrani in zapri</Save_and_Close>
+		<Close_wo_saving>Zapri brez shranjevanja</Close_wo_saving>
+		<Failed_Load_Online_EULA>Spletnega dostopa EULA ni bilo mogoče naložiti</Failed_Load_Online_EULA>
+		<Auto_Log>Samodejni dnevnik</Auto_Log>
+		<Export_HTML_Schema>Izvozi HTML SCHEMA v imenu podjetja</Export_HTML_Schema>
+		<Export_HTML_Data>Izvozi podatke HTML v imenu</Export_HTML_Data>
+		<Check_Log>Napaka: prosimo, preverite dnevnik za podrobnosti</Check_Log>
+		<Query_Error>Napaka pri poizvedbi</Query_Error>
+		<Export_CSV>IZVOZNI CSV, KI JIH JE</Export_CSV>
+		<Export_SQL_SCHEMA>Izvozi SQL - SCHEMA - V imenu</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Izvozi SQL - SQL - V imenu</Export_SQL_SQL>
+		<Export_XML>IZVOZ XML ON</Export_XML>
+		<System>Sistem</System>
+		<Views_Read_Only>Ogledi so samo enkratni in jih ni mogoče urejati</Views_Read_Only>
+		<Dataview_Error>Baza podatkov ali ogled podatkov ne obstaja ali še ni bila naložena</Dataview_Error>
+		<Browse>Brskaj</Browse>
+		<Statistics_Page>Statistika strani</Statistics_Page>
+		<Invert>Invert</Invert>
+		<Not_Supported>Ne podpira</Not_Supported>
+		<CMD_Tooltip>Izvaja prilagojene izjave ukaza SQL na bazo podatkov</CMD_Tooltip>
+		<LOG_CSV_Path>Log CSV pot</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Pot podatkovne baze transakcij</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Napaka pri kritični napaki</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Zapri TW</Close_TW>
+		<Export_UI>Izvozi uporabniški vmesnik</Export_UI>
+		<Define_New_Table>Določite novo tabelo</Define_New_Table>
+		<Create_Statistics_Page>Ustvari statistično stran</Create_Statistics_Page>
+		<Debug>Debug</Debug>
+		<New_in_Memory_Db>Nova v pomnilniški bazi podatkov</New_in_Memory_Db>
+		<Import_SQL>Uvozite SQL</Import_SQL>
+		<Plugin>Vključiti</Plugin>
+		<Opened>Odprto</Opened>
+		<Converter>Pretvornik</Converter>
+		<HTML_to_CSV>HTML v CSV</HTML_to_CSV>
+		<Developer>Razvijalec</Developer>
+	</Language>
+</root>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Dil</Language>
+		<File>Fayl</File>
+		<New>Yeni</New>
+		<Open>Açıq</Open>
+		<Edit>Düz?liş edin</Edit>
+		<View>Görünüş</View>
+		<Save>Yadda saxla</Save>
+		<Import>İthalat</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>İxrac</Export>
+		<HTML>HTML</HTML>
+		<Settings>Ayarlar</Settings>
+		<Help>Köm?k edin</Help>
+		<About>Haqqında</About>
+		<Show_Help>Yardım göst?r</Show_Help>
+		<Settings_Editor>Ayarlar Düzenleyicisi</Settings_Editor>
+		<Toggle_Debug>Debug'u d?yişdirin</Toggle_Debug>
+		<Toggle_Transaction_Log>?m?liyyat girişini açın</Toggle_Transaction_Log>
+		<Refresh_Schema>Refresh Şeması</Refresh_Schema>
+		<Check_for_Updates>Updates yoxlayın</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Proqram başladı</PRGM_Start>
+		<App>?riz?</App>
+		<Failed_Save_Settings>Ayarları Saxla etm?miş</Failed_Save_Settings>
+		<Error>S?hv</Error>
+		<Failed>Failed</Failed>
+		<Table>C?dv?l</Table>
+		<Index>İndeks</Index>
+		<Master_Table>Master C?dv?l</Master_Table>
+		<Sort>Cür</Sort>
+		<Asc>Artan</Asc>
+		<Desc>Azalan</Desc>
+		<Display_Settings>Ekran parametrl?ri</Display_Settings>
+		<Sort_by>Sırala</Sort_by>
+		<Search_in>Axtarışa daxil et</Search_in>
+		<Search>Axtarış</Search>
+		<Functions>Funksiyalar</Functions>
+		<Strict_Search>Sıx Axtarış</Strict_Search>
+		<Run_Function>İşl?yin</Run_Function>
+		<Query>Sorgu</Query>
+		<Command>Komanda</Command>
+		<Error_No_DB>Hata: Veril?nl?r bazası yükl?nmir</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable v? ya 'Master C?dv?l' qorunan bir masa. DB-nin bütövlüyünü qorumaq üçün bu c?dv?ni redakt? ed? bilm?zsiniz</Master_Table_Protected>
+		<Access_Denied>Giriş qadağandır</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Funksiyası bax</View_Function>
+		<User_Requested>İstifad?çi ist?di</User_Requested>
+		<Listview_Width>Liste genişliyi</Listview_Width>
+		<Listview_Height>Listview Boyu</Listview_Height>
+		<Extensions>Extensions</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Saxla v? bağla</Save_and_Close>
+		<Close_wo_saving>Saxlanmadan Yoxlayın</Close_wo_saving>
+		<Failed_Load_Online_EULA>Onlayn EULA yükl?nm?miş</Failed_Load_Online_EULA>
+		<Auto_Log>Avtomatik giriş</Auto_Log>
+		<Export_HTML_Schema>HTML Şemasını ixrac etm?k adına</Export_HTML_Schema>
+		<Export_HTML_Data>HTML DATA adından ixrac edin</Export_HTML_Data>
+		<Check_Log>X?ta: Xahiş edirik ?traflı m?lumat üçün günd?mi yoxlayın</Check_Log>
+		<Query_Error>Sorgu hatası</Query_Error>
+		<Export_CSV>İxracat CSV</Export_CSV>
+		<Export_SQL_SCHEMA>Export SQL - SCHEMA - adından</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>İxrac SQL - SQL - adından</Export_SQL_SQL>
+		<Export_XML>XİDM?T İSTEHSALI</Export_XML>
+		<System>Sistem</System>
+		<Views_Read_Only>Baxışlar oxunur v? redakt? edil? bilm?z</Views_Read_Only>
+		<Dataview_Error>Veril?nl?r bazası v? ya Dataview mövcud deyil v? ya h?l? yükl?nmir</Dataview_Error>
+		<Browse>Gözd?n keçirin</Browse>
+		<Statistics_Page>Statistika S?hif?</Statistics_Page>
+		<Invert>Ters çevir</Invert>
+		<Not_Supported>D?st?kl?nmir</Not_Supported>
+		<CMD_Tooltip>Veril?nl?r bazasına xüsusi SQL ?mrl?ri verilir</CMD_Tooltip>
+		<LOG_CSV_Path>CSV Yolunu Girin</LOG_CSV_Path>
+		<LOG_DB_PATH>DatabasePath Giriş et</LOG_DB_PATH>
+		<Transaction_DB_Path>Transaction Database Path</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>T?nqidi s?hv x?tası</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>TW bağlayın</Close_TW>
+		<Export_UI>UI ixrac</Export_UI>
+		<Define_New_Table>Yeni C?dv?l t?yin edin</Define_New_Table>
+		<Create_Statistics_Page>Statistika S?hif? yaradın</Create_Statistics_Page>
+		<Debug>Debug</Debug>
+		<New_in_Memory_Db>Yaddaş bazasında yeni</New_in_Memory_Db>
+		<Import_SQL>SQL'i idxal et</Import_SQL>
+		<Plugin>Plugin</Plugin>
+		<Opened>Açıldı</Opened>
+		<Converter>Converter</Converter>
+		<HTML_to_CSV>CSV üçün HTML</HTML_to_CSV>
+		<Developer>İnkişaf etdirici</Developer>
+	</Language>
+</root>

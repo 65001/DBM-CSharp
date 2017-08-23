@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Keele</Language>
+		<File>Faili</File>
+		<New>Uus</New>
+		<Open>Avatud</Open>
+		<Edit>Muuda</Edit>
+		<View>Vaade</View>
+		<Save>Salvesta</Save>
+		<Import>Import</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Eksport</Export>
+		<HTML>HTML</HTML>
+		<Settings>Seaded</Settings>
+		<Help>Abi</Help>
+		<About>Umbes</About>
+		<Show_Help>Näita abi</Show_Help>
+		<Settings_Editor>Seadete redaktor</Settings_Editor>
+		<Toggle_Debug>Lülita silumine sisse</Toggle_Debug>
+		<Toggle_Transaction_Log>Lülita tehingute logi sisse</Toggle_Transaction_Log>
+		<Refresh_Schema>Värskenda skeemi</Refresh_Schema>
+		<Check_for_Updates>Kontrolli kas uuendused on saadaval</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Programm on käivitunud</PRGM_Start>
+		<App>Taotlus</App>
+		<Failed_Save_Settings>Seadete salvestamine ebaõnnestus</Failed_Save_Settings>
+		<Error>Viga</Error>
+		<Failed>Ebaõnnestus</Failed>
+		<Table>Tabel</Table>
+		<Index>Indeks</Index>
+		<Master_Table>Master tabel</Master_Table>
+		<Sort>Sorteeri</Sort>
+		<Asc>Kasvav</Asc>
+		<Desc>Kahanev</Desc>
+		<Display_Settings>Kuva seaded</Display_Settings>
+		<Sort_by>Sorteerima</Sort_by>
+		<Search_in>Otsi sisse</Search_in>
+		<Search>Otsing</Search>
+		<Functions>Funktsioonid</Functions>
+		<Strict_Search>Ranget otsingut</Strict_Search>
+		<Run_Function>Käivitage funktsioon</Run_Function>
+		<Query>Päring</Query>
+		<Command>Käsk</Command>
+		<Error_No_DB>Viga: andmebaasi pole laaditud</Error_No_DB>
+		<UI>Kasutajaliides</UI>
+		<Master_Table_Protected>Sqlite_mastertable või "Master Table" on kaitstud tabel. Db terviklikkuse kaitsmiseks ei saa te seda tabelit redigeerida</Master_Table_Protected>
+		<Access_Denied>Ligipääs keelatud</Access_Denied>
+		<Application>Rakendus</Application>
+		<View_Function>Kuva funktsioon</View_Function>
+		<User_Requested>Kasutaja soovitud</User_Requested>
+		<Listview_Width>Listviewi laius</Listview_Width>
+		<Listview_Height>Listview Height</Listview_Height>
+		<Extensions>Laiendused</Extensions>
+		<Deliminator>Deliminaator</Deliminator>
+		<Save_and_Close>Salvesta ja sulgeda</Save_and_Close>
+		<Close_wo_saving>Sulge ilma salvestamiseta</Close_wo_saving>
+		<Failed_Load_Online_EULA>EULA-võrguühenduseta laadimine ebaõnnestus</Failed_Load_Online_EULA>
+		<Auto_Log>Automaatne logimine</Auto_Log>
+		<Export_HTML_Schema>Ekspordi HTML SCHEMA nimel</Export_HTML_Schema>
+		<Export_HTML_Data>Ekspordi HTML DATA nimel</Export_HTML_Data>
+		<Check_Log>Viga: palun kontrollige logi üksikasjad</Check_Log>
+		<Query_Error>Päringu viga</Query_Error>
+		<Export_CSV>EKSPORDI CSV VÄLJAS</Export_CSV>
+		<Export_SQL_SCHEMA>Eksport SQL - SCHEMA - nimel</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Eksport SQL - SQL - nimel</Export_SQL_SQL>
+		<Export_XML>EXPORT XML KOHTA</Export_XML>
+		<System>Süsteem</System>
+		<Views_Read_Only>Vaated on kirjutuskaitstud ja neid ei saa muuta</Views_Read_Only>
+		<Dataview_Error>Andmebaasi või Dataview pole olemas või pole veel laetud</Dataview_Error>
+		<Browse>Sirvige</Browse>
+		<Statistics_Page>Statistika leht</Statistics_Page>
+		<Invert>Pööra ümber</Invert>
+		<Not_Supported>Ei toetata</Not_Supported>
+		<CMD_Tooltip>Käivitab kohandatud SQL käsu avaldused andmebaasi</CMD_Tooltip>
+		<LOG_CSV_Path>Logi CSV-tee</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Tehingu andmebaasi tee</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVAAT</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Kriitiline vea viga</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Sulgege TW</Close_TW>
+		<Export_UI>Ekspordi kasutajaliides</Export_UI>
+		<Define_New_Table>Määra uus tabel</Define_New_Table>
+		<Create_Statistics_Page>Loo statistika leht</Create_Statistics_Page>
+		<Debug>Silumine</Debug>
+		<New_in_Memory_Db>Uus mälu andmebaas</New_in_Memory_Db>
+		<Import_SQL>SQL-i import</Import_SQL>
+		<Plugin>Sisse panema</Plugin>
+		<Opened>Avatud</Opened>
+		<Converter>Konverter</Converter>
+		<HTML_to_CSV>HTML-i CSV-vormingusse</HTML_to_CSV>
+		<Developer>Arendaja</Developer>
+	</Language>
+</root>

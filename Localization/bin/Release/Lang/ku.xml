@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Ziman</Language>
+		<File>Dosî</File>
+		<New>Nsh</New>
+		<Open>Vekirî</Open>
+		<Edit>Wesandin</Edit>
+		<View>Dîtinî</View>
+		<Save>Rizgarkirin</Save>
+		<Import>Malanîn</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Eksport</Export>
+		<HTML>HTML</HTML>
+		<Settings>Mîhengên</Settings>
+		<Help>Alîkarî</Help>
+		<About>Ji dor</About>
+		<Show_Help>Alîkarî nîsan bide</Show_Help>
+		<Settings_Editor>Mîhengên Sîstema</Settings_Editor>
+		<Toggle_Debug>Debug Toggle</Toggle_Debug>
+		<Toggle_Transaction_Log>Tîma Transaction Log Toggle</Toggle_Transaction_Log>
+		<Refresh_Schema>Schema Refresh bike</Refresh_Schema>
+		<Check_for_Updates>Ji bo agahdariya kontrol bikin</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Program destpêkirin</PRGM_Start>
+		<App>Bikaranînî</App>
+		<Failed_Save_Settings>Failed to Settings</Failed_Save_Settings>
+		<Error>Sasî</Error>
+		<Failed>Têkçûn</Failed>
+		<Table>Mêz</Table>
+		<Index>Naverok</Index>
+		<Master_Table>Mamosteyê</Master_Table>
+		<Sort>Jiberhevxistin</Sort>
+		<Asc>Ascending</Asc>
+		<Desc>Berbiçav</Desc>
+		<Display_Settings>Settings Settings</Display_Settings>
+		<Sort_by>Sort By</Sort_by>
+		<Search_in>Lêgerîn In</Search_in>
+		<Search>Gerr</Search>
+		<Functions>Karkerên</Functions>
+		<Strict_Search>Hêza Lêgerîn</Strict_Search>
+		<Run_Function>Performansa Run</Run_Function>
+		<Query>Pirs</Query>
+		<Command>Ferman</Command>
+		<Error_No_DB>اewtiya: Dabes nehatiye barkirin</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable an 'Master Table' tabloya parastî ye. Ji bo parastina yekseriya db de hûn nikarin vê tabloyê biguherînin</Master_Table_Protected>
+		<Access_Denied>Access denied</Access_Denied>
+		<Application>App</Application>
+		<View_Function>اalakiya View</View_Function>
+		<User_Requested>Pêdiviya Bikarhêner</User_Requested>
+		<Listview_Width>Listview Width</Listview_Width>
+		<Listview_Height>Listview Height</Listview_Height>
+		<Extensions>Extensions</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Save and Close</Save_and_Close>
+		<Close_wo_saving>Bêyî Saving</Close_wo_saving>
+		<Failed_Load_Online_EULA>Failed to online EULA</Failed_Load_Online_EULA>
+		<Auto_Log>Auto Log</Auto_Log>
+		<Export_HTML_Schema>Li ser navê HTML SCHEMA Export</Export_HTML_Schema>
+		<Export_HTML_Data>Bi HTML-DATA vexwendina li ser navê</Export_HTML_Data>
+		<Check_Log>اewtiya: Ji kerema xwe ji bo agahdariyên têketinê kontrol bikin</Check_Log>
+		<Query_Error>اewtiya Query</Query_Error>
+		<Export_CSV>BERSخVEK BIXWخNE BERSخVEK</Export_CSV>
+		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Bi navê</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Export SQL - SQL - Bi navê</Export_SQL_SQL>
+		<Export_XML>BERSخVEK BI XWخNE XML</Export_XML>
+		<System>Sîstem</System>
+		<Views_Read_Only>Vê çavkaniyê bixwîne û nikarin guherandinê ne</Views_Read_Only>
+		<Dataview_Error>Databas an Dataviewek tune ye an jî nehatiye barkirin</Dataview_Error>
+		<Browse>Browse</Browse>
+		<Statistics_Page>Rûpelê Statîstîk</Statistics_Page>
+		<Invert>Veguherînin</Invert>
+		<Not_Supported>Ne pistevanîya</Not_Supported>
+		<CMD_Tooltip>Dezgehên berbiçavkirina danûstendinên SQL-ê li ser databases</CMD_Tooltip>
+		<LOG_CSV_Path>CSV Path Log</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Danûstandinan Database Path</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Xeletiyek çewt e</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>TW</Close_TW>
+		<Export_UI>UI Export</Export_UI>
+		<Define_New_Table>Define New Table</Define_New_Table>
+		<Create_Statistics_Page>Statîstikên Rûpelê çêbike</Create_Statistics_Page>
+		<Debug>Debug</Debug>
+		<New_in_Memory_Db>Nû di Database Database de</New_in_Memory_Db>
+		<Import_SQL>Import SQL</Import_SQL>
+		<Plugin>Girêdan</Plugin>
+		<Opened>Vekir</Opened>
+		<Converter>Krona</Converter>
+		<HTML_to_CSV>HTML to CSV</HTML_to_CSV>
+		<Developer>Developer</Developer>
+	</Language>
+</root>

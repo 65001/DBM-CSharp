@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Jezik</Language>
+		<File>Datoteka</File>
+		<New>Novi</New>
+		<Open>Otvoren</Open>
+		<Edit>Uredi</Edit>
+		<View>Pogled</View>
+		<Save>Uštedjeti</Save>
+		<Import>Uvoz</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Izvoz</Export>
+		<HTML>HTML</HTML>
+		<Settings>postavke</Settings>
+		<Help>Pomoć</Help>
+		<About>Oko</About>
+		<Show_Help>Prikaži pomoć</Show_Help>
+		<Settings_Editor>Postavke uređivača</Settings_Editor>
+		<Toggle_Debug>Uključivanje značajke Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Prebaci zapis o transakciji</Toggle_Transaction_Log>
+		<Refresh_Schema>Osvježi shemu</Refresh_Schema>
+		<Check_for_Updates>Provjerite ažuriranja</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Program je započeo</PRGM_Start>
+		<App>primjena</App>
+		<Failed_Save_Settings>Spremanje postavki nije uspjelo</Failed_Save_Settings>
+		<Error>greška</Error>
+		<Failed>Neuspjeh</Failed>
+		<Table>Stol</Table>
+		<Index>Indeks</Index>
+		<Master_Table>Glavna tablica</Master_Table>
+		<Sort>Vrsta</Sort>
+		<Asc>Uzlazni</Asc>
+		<Desc>Silazni</Desc>
+		<Display_Settings>Postavke prikaza</Display_Settings>
+		<Sort_by>Poredaj po</Sort_by>
+		<Search_in>Traži u</Search_in>
+		<Search>traži</Search>
+		<Functions>funkcije</Functions>
+		<Strict_Search>Strogo pretraživanje</Strict_Search>
+		<Run_Function>Pokreni funkciju</Run_Function>
+		<Query>pitanje</Query>
+		<Command>Naredba</Command>
+		<Error_No_DB>Pogreška: Nije učitana baza podataka</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable ili 'Master Table' je zaštićena tablica. Za zaštitu integriteta db ne možete uređivati ovu tablicu</Master_Table_Protected>
+		<Access_Denied>Pristup odbijen</Access_Denied>
+		<Application>Aplikacija</Application>
+		<View_Function>Prikaz funkcije</View_Function>
+		<User_Requested>Traženi korisnik</User_Requested>
+		<Listview_Width>Širina popisa</Listview_Width>
+		<Listview_Height>Visina listarne visine</Listview_Height>
+		<Extensions>Proširenja</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Spremi i zatvori</Save_and_Close>
+		<Close_wo_saving>Zatvorite bez spremanja</Close_wo_saving>
+		<Failed_Load_Online_EULA>Učitavanje EULA internetske veze nije uspjelo</Failed_Load_Online_EULA>
+		<Auto_Log>Auto Log</Auto_Log>
+		<Export_HTML_Schema>Izvoz HTML SCHEMA u ime tvrtke</Export_HTML_Schema>
+		<Export_HTML_Data>Izvoz HTML DATA u ime tvrtke</Export_HTML_Data>
+		<Check_Log>Pogreška: Molimo provjerite zapisnik za detalje</Check_Log>
+		<Query_Error>Pogreška upita</Query_Error>
+		<Export_CSV>IZVOZ CSV U SKLOPU</Export_CSV>
+		<Export_SQL_SCHEMA>Izvoz SQL - SCHEMA - U ime tvrtke</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Izvoz SQL - SQL - u ime tvrtke</Export_SQL_SQL>
+		<Export_XML>IZVOZ XML NA PODRUČJU</Export_XML>
+		<System>sistem</System>
+		<Views_Read_Only>Prikazi su samo za čitanje i ne mogu se uređivati</Views_Read_Only>
+		<Dataview_Error>Baza podataka ili Dataview ne postoji ili još nije učitana</Dataview_Error>
+		<Browse>brstiti</Browse>
+		<Statistics_Page>Stranica statistike</Statistics_Page>
+		<Invert>izokrenuti</Invert>
+		<Not_Supported>Nije podržano</Not_Supported>
+		<CMD_Tooltip>Izvršava prilagođene SQL naredbe iz naredbi na bazu podataka</CMD_Tooltip>
+		<LOG_CSV_Path>Prijavite CSV put</LOG_CSV_Path>
+		<LOG_DB_PATH>Prijavite DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Put baze podataka transakcije</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATNI</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Pogreška kritične pogreške</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Zatvori TW</Close_TW>
+		<Export_UI>Izvezi korisničko sučelje</Export_UI>
+		<Define_New_Table>Definirajte novu tablicu</Define_New_Table>
+		<Create_Statistics_Page>Napravite stranicu statistike</Create_Statistics_Page>
+		<Debug>otkloniti neispravnost</Debug>
+		<New_in_Memory_Db>Novo u memorijskoj bazi podataka</New_in_Memory_Db>
+		<Import_SQL>Uvoz SQL</Import_SQL>
+		<Plugin>Uključiti</Plugin>
+		<Opened>otvorena</Opened>
+		<Converter>Konverter</Converter>
+		<HTML_to_CSV>HTML u CSV</HTML_to_CSV>
+		<Developer>razvijač</Developer>
+	</Language>
+</root>

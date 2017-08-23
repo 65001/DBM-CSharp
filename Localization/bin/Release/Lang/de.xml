@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<Language>Sprache</Language>
+		<File>Datei</File>
+		<New>Neu</New>
+		<Open>Öffnen</Open>
+		<Edit>Bearbeiten</Edit>
+		<View>Aussicht</View>
+		<Save>sparen</Save>
+		<Import>Einführen</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Export</Export>
+		<HTML>HTML</HTML>
+		<Settings>Einstellungen</Settings>
+		<Help>Hilfe</Help>
+		<About>Über</About>
+		<Show_Help>Zeig Hilfe</Show_Help>
+		<Settings_Editor>Einstellungen Editor</Settings_Editor>
+		<Toggle_Debug>Tuggle Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Transaktionsprotokoll umschalten</Toggle_Transaction_Log>
+		<Refresh_Schema>Schema aktualisieren</Refresh_Schema>
+		<Check_for_Updates>Auf Updates prüfen</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Programm gestartet</PRGM_Start>
+		<App>Anwendung</App>
+		<Failed_Save_Settings>Fehler beim Speichern der Einstellungen</Failed_Save_Settings>
+		<Error>Fehler</Error>
+		<Failed>Gescheitert</Failed>
+		<Table>Tabelle</Table>
+		<Index>Index</Index>
+		<Master_Table>Master Tisch</Master_Table>
+		<Sort>Sortieren</Sort>
+		<Asc>Aufsteigend</Asc>
+		<Desc>Absteigend</Desc>
+		<Display_Settings>Bildschirmeinstellungen</Display_Settings>
+		<Sort_by>Sortiere nach</Sort_by>
+		<Search_in>Suchen in</Search_in>
+		<Search>Suche</Search>
+		<Functions>Funktionen</Functions>
+		<Strict_Search>Strenge Suche</Strict_Search>
+		<Run_Function>Funktion ausführen</Run_Function>
+		<Query>Abfrage</Query>
+		<Command>Befehl</Command>
+		<Error_No_DB>Fehler: Es wurde keine Datenbank geladen</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable oder 'Master Table' ist eine geschützte Tabelle. Um die Integrität des db zu schützen, kannst du diese Tabelle nicht bearbeiten</Master_Table_Protected>
+		<Access_Denied>Zugriff abgelehnt</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Ansicht Funktion</View_Function>
+		<User_Requested>Benutzer angefordert</User_Requested>
+		<Listview_Width>Listenansicht Breite</Listview_Width>
+		<Listview_Height>Listenansicht Höhe</Listview_Height>
+		<Extensions>Erweiterungen</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Speichern und schließen</Save_and_Close>
+		<Close_wo_saving>Schließen ohne zu speichern</Close_wo_saving>
+		<Failed_Load_Online_EULA>Fehler beim Laden von Online-EULA</Failed_Load_Online_EULA>
+		<Auto_Log>Auto Log</Auto_Log>
+		<Export_HTML_Schema>Export HTML SCHEMA im Auftrag von</Export_HTML_Schema>
+		<Export_HTML_Data>Export HTML DATA im Auftrag von</Export_HTML_Data>
+		<Check_Log>Fehler: Bitte überprüfen Sie das Protokoll auf Details</Check_Log>
+		<Query_Error>Abfragefehler</Query_Error>
+		<Export_CSV>EXPORT CSV IM BEHALT VON</Export_CSV>
+		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Im Auftrag von</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Export SQL - SQL - Im Auftrag von</Export_SQL_SQL>
+		<Export_XML>EXPORT XML AUF BEHALF VON</Export_XML>
+		<System>System</System>
+		<Views_Read_Only>Ansichten sind readonly und können nicht bearbeitet werden</Views_Read_Only>
+		<Dataview_Error>Die Datenbank oder der Dataview existiert nicht oder wurde noch nicht geladen</Dataview_Error>
+		<Browse>Durchsuchen</Browse>
+		<Statistics_Page>Statistikseite</Statistics_Page>
+		<Invert>Umkehren</Invert>
+		<Not_Supported>Nicht unterstützt</Not_Supported>
+		<CMD_Tooltip>Führt maßgeschneiderte SQL-Befehlsanweisungen auf die Datenbank aus</CMD_Tooltip>
+		<LOG_CSV_Path>Log CSV Pfad</LOG_CSV_Path>
+		<LOG_DB_PATH>Protokoll-Datenbankpfad</LOG_DB_PATH>
+		<Transaction_DB_Path>Transaktionsdatenbankpfad</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Kritischer Fehlerfehler</Critical_Fault_Error>
+		<Stack_Trace>Stapelspur</Stack_Trace>
+		<Close_TW>Schließen TW</Close_TW>
+		<Export_UI>Export-Benutzeroberfläche</Export_UI>
+		<Define_New_Table>Neue Tabelle definieren</Define_New_Table>
+		<Create_Statistics_Page>Statistik erstellen</Create_Statistics_Page>
+		<Debug>Debuggen</Debug>
+		<New_in_Memory_Db>Neu in der Speicher-Datenbank</New_in_Memory_Db>
+		<Import_SQL>SQL importieren</Import_SQL>
+		<Plugin>Plugin</Plugin>
+		<Opened>Eröffnet</Opened>
+		<Converter>Konverter</Converter>
+		<HTML_to_CSV>HTML zu CSV</HTML_to_CSV>
+		<Developer>Entwickler</Developer>
+	</Language>
+</root>

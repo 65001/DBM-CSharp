@@ -1,0 +1,19 @@
+@ECHO OFF
+ECHO Auto cleaning Release Build for publishing and zipping
+ECHO Removing Directories
+
+RD /s /q %~dp0\app.publish
+RD /s /q %~dp0\Properties
+
+ECHO Removing Files
+
+del SmallBasicLibrary.xml
+del LitDev.xml
+del DBM.application
+del DBM.exe.config
+del DBM.exe.manifest
+del DBM.exe.lastcodeanalysissucceeded
+del DBM.exe.CodeAnalysisLog.xml
+
+ECHO Complete
+exit 0
