@@ -86,8 +86,9 @@ namespace DBM
             }
             catch (Exception ex)
             {
-                Events.LogMessage(ex.Message, "System");
-                Utilities.StackTrace.Print();
+                Utilities.Localization.Print();
+                Events.LogMessage(ex.Message, Utilities.Localization["System"]);
+                
                 Program.End();
             }
         }
@@ -139,6 +140,7 @@ namespace DBM
             //Plugin.FindAll();
 
             Utilities.LocalizationXML(Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"));
+
             Events.LogMessage(Utilities.Localization["PRGM Start"], Utilities.Localization["Application"]);
             
             if (Program.ArgumentCount == 1)

@@ -1,97 +1,97 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-  <Language language="lv">
-    <File language="lv">Failu</File>
-    <New language="lv">Jauns</New>
-    <Open language="lv">Atvērts</Open>
-    <Edit language="lv">Rediģēt</Edit>
-    <View language="lv">Skats</View>
-    <Save language="lv">Saglabāt</Save>
-    <Import language="lv">Importa</Import>
-    <CSV language="lv">CSV</CSV>
-    <SQL language="lv">SQL</SQL>
-    <Export language="lv">Eksports</Export>
-    <HTML language="lv">HTML</HTML>
-    <Settings language="lv">Iestatījumi</Settings>
-    <Help language="lv">palīgā</Help>
-    <About language="lv">Par</About>
-    <Show_Help language="lv">Parādīt palīdzību</Show_Help>
-    <Settings_Editor language="lv">Iestatījumi redaktoru</Settings_Editor>
-    <Toggle_Debug language="lv">Rādīt atkļūdošanas</Toggle_Debug>
-    <Toggle_Transaction_Log language="lv">Pārslēgšanas darbību reģistrācijas žurnāls</Toggle_Transaction_Log>
-    <Refresh_Schema language="lv">Atsvaidzināt shēmas</Refresh_Schema>
-    <Check_for_Updates language="lv">Pārbaudīt, vai nav atjauninājumu</Check_for_Updates>
-    <PXML language="lv">XML</PXML>
-    <PRGM_Start language="lv">Startēta programma</PRGM_Start>
-    <App language="lv">Pieteikums</App>
-    <Failed_Save_Settings language="lv">Neizdevās saglabāt iestatījumus</Failed_Save_Settings>
-    <Error language="lv">Kļūda</Error>
-    <Failed language="lv">Neizdevās</Failed>
-    <Table language="lv">Tabula</Table>
-    <Index language="lv">Indekss</Index>
-    <Master_Table language="lv">Vispārējās tabulas</Master_Table>
-    <Sort language="lv">Kārtot</Sort>
-    <Asc language="lv">Augošā secībā</Asc>
-    <Desc language="lv">Dilstošā secībā</Desc>
-    <Display_Settings language="lv">Displeja iestatījumi</Display_Settings>
-    <Sort_by language="lv">Kārtot pēc</Sort_by>
-    <Search_in language="lv">Meklēt</Search_in>
-    <Search language="lv">Meklēšana</Search>
-    <Functions language="lv">Funkcijas</Functions>
-    <Strict_Search language="lv">Stingri meklēšanas</Strict_Search>
-    <Run_Function language="lv">Palaist funkciju</Run_Function>
-    <Query language="lv">Vaicājums</Query>
-    <Command language="lv">Komanda</Command>
-    <Error_No_DB language="lv">Kļūda: Nav datu bāzes ir ielādēts</Error_No_DB>
-    <UI language="lv">LIETOTĀJA INTERFEISA</UI>
-    <Master_Table_Protected language="lv">Aizsargāta satura ir Sqlite_mastertable vai "Master galds". Lai aizsargātu stiprību db nevar rediģēt šajā tabulā</Master_Table_Protected>
-    <Access_Denied language="lv">Piekļuve liegta</Access_Denied>
-    <Application language="lv">App</Application>
-    <View_Function language="lv">Skata funkcija</View_Function>
-    <User_Requested language="lv">Pieprasīts lietotāja</User_Requested>
-    <Listview_Width language="lv">ListView platums</Listview_Width>
-    <Listview_Height language="lv">ListView augstums</Listview_Height>
-    <Extensions language="lv">Paplašinājumi</Extensions>
-    <Deliminator language="lv">Deliminator</Deliminator>
-    <Language language="lv">Valodas</Language>
-    <Save_and_Close language="lv">Saglabājiet un aizveriet</Save_and_Close>
-    <Close_wo_saving language="lv">Aizvērt, nesaglabājot</Close_wo_saving>
-    <Failed_Load_Online_EULA language="lv">Neizdevās ielādēt tiešsaistes EULA</Failed_Load_Online_EULA>
-    <Auto_Log language="lv">Auto žurnāls</Auto_Log>
-    <Export_HTML_Schema language="lv">Eksportēt HTML shēmu vārdā </Export_HTML_Schema>
-    <Export_HTML_Data language="lv">DATU eksportēšana HTML vārdā </Export_HTML_Data>
-    <Check_Log language="lv">Kļūda: Lūdzu, pārbaudiet pieteikšanās informāciju</Check_Log>
-    <Query_Error language="lv">Kļūda vaicājuma</Query_Error>
-    <Export_CSV language="lv">EKSPORTĒT CSV VĀRDĀ </Export_CSV>
-    <Export_SQL_SCHEMA language="lv">SQL - shēma - eksporta vārdā </Export_SQL_SCHEMA>
-    <Export_SQL_SQL language="lv">SQL - SQL - eksporta vārdā </Export_SQL_SQL>
-    <Export_XML language="lv">EKSPORTĒT XML VĀRDĀ</Export_XML>
-    <System language="lv">Sistēma</System>
-    <Views_Read_Only language="lv">Skatos ir tikai lasāms un to nevar rediģēt</Views_Read_Only>
-    <Dataview_Error language="lv">Datu bāzi vai Dataview nepastāv vai vēl nav ielādēts</Dataview_Error>
-    <Browse language="lv">Pārlūkot</Browse>
-    <Statistics_Page language="lv">Lapā statistika</Statistics_Page>
-    <Invert language="lv">Invertēt</Invert>
-    <Not_Supported language="lv">Netiek atbalstīta</Not_Supported>
-    <CMD_Tooltip language="lv">Izpilda pielāgotā SQL komandu paziņojumus uz datu bāzi</CMD_Tooltip>
-    <LOG_CSV_Path language="lv">Žurnāla CSV ceļš</LOG_CSV_Path>
-    <LOG_DB_PATH language="lv">Pieteikties DatabasePath</LOG_DB_PATH>
-    <Transaction_DB_Path language="lv">Darbības datu bāzes ceļu</Transaction_DB_Path>
-    <SCHEMA_PRIVATE language="lv">SHĒMAS UN PRIVĀTĀS</SCHEMA_PRIVATE>
-    <Critical_Fault_Error language="lv">Kritiska kļūme kļūda</Critical_Fault_Error>
-    <Stack_Trace language="lv">Steka trase</Stack_Trace>
-    <Close_TW language="lv">Aizvērt TW</Close_TW>
-    <Export_UI language="lv">Eksportēt lietotāja interfeiss</Export_UI>
-    <Define_New_Table language="lv">Definētu jauno tabulu</Define_New_Table>
-    <Create_Statistics_Page language="lv">Izveidot lapas statistika</Create_Statistics_Page>
-    <Debug language="lv">Atkļūdošanas</Debug>
-    <New_in_Memory_Db language="lv">Jaunu atmiņas datu bāzē</New_in_Memory_Db>
-    <Import_SQL language="lv">Importēšana SQL</Import_SQL>
-    <Plugin language="lv">Spraudnis</Plugin>
-    <Opened language="lv">Atvēra</Opened>
-    <Converter language="lv">Konvertors</Converter>
-    <HTML_to_CSV language="lv">HTML, lai CSV</HTML_to_CSV>
-    <Developer language="lv">Attīstītājs</Developer>
-    <Search_Settings language="lv">Meklēšanas iestatījumus</Search_Settings>
-  </Language>
+	<Language>
+		<Language>Valoda</Language>
+		<File>Fails</File>
+		<New>Jauns</New>
+		<Open>Atvērt</Open>
+		<Edit>Rediģēt</Edit>
+		<View>Skats</View>
+		<Save>Saglabājiet</Save>
+		<Import>Importēt</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Eksports</Export>
+		<HTML>HTML</HTML>
+		<Settings>Iestatījumi</Settings>
+		<Help>Palīdzība</Help>
+		<About>Par</About>
+		<Show_Help>Parādīt palīdzību</Show_Help>
+		<Settings_Editor>Iestatījumu redaktors</Settings_Editor>
+		<Toggle_Debug>Pārslēgt atkļūdošanu</Toggle_Debug>
+		<Toggle_Transaction_Log>Pārslēgt darījumu žurnālu</Toggle_Transaction_Log>
+		<Refresh_Schema>Atsvaidzināt shēmu</Refresh_Schema>
+		<Check_for_Updates>Meklēt atjauninājumus</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Programma ir sākusies</PRGM_Start>
+		<App>Pieteikums</App>
+		<Failed_Save_Settings>Neizdevās saglabāt iestatījumus</Failed_Save_Settings>
+		<Error>Kļūda</Error>
+		<Failed>Neizdevās</Failed>
+		<Table>Tabula</Table>
+		<Index>Indekss</Index>
+		<Master_Table>Galvenā tabula</Master_Table>
+		<Sort>Kārtot</Sort>
+		<Asc>Augošā secībā</Asc>
+		<Desc>Dilstošā secībā</Desc>
+		<Display_Settings>Displeja iestatījumi</Display_Settings>
+		<Sort_by>Kārtot pēc</Sort_by>
+		<Search_in>Meklēt iekšā</Search_in>
+		<Search>Meklēt</Search>
+		<Functions>Funkcijas</Functions>
+		<Strict_Search>Stingra meklēšana</Strict_Search>
+		<Run_Function>Palaist funkciju</Run_Function>
+		<Query>Vaicājums</Query>
+		<Command>Pavēlniecība</Command>
+		<Error_No_DB>Kļūda: neviena datubāze nav ielādēta</Error_No_DB>
+		<UI>Lietotāja interfeiss</UI>
+		<Master_Table_Protected>Sqlite_mastertable vai "Master Table" ir aizsargāts tabula. Lai aizsargātu db integritāti, jūs nevarat rediģēt šo tabulu</Master_Table_Protected>
+		<Access_Denied>Pieeja noliegta</Access_Denied>
+		<Application>Lietotne</Application>
+		<View_Function>Skatīt funkciju</View_Function>
+		<User_Requested>Pieprasīts lietotājs</User_Requested>
+		<Listview_Width>Listview Width</Listview_Width>
+		<Listview_Height>Saraksta augstums</Listview_Height>
+		<Extensions>Paplašinājumi</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Saglabāt un aizvērt</Save_and_Close>
+		<Close_wo_saving>Aizvērt, nesaglabājot</Close_wo_saving>
+		<Failed_Load_Online_EULA>Neizdevās ielādēt tiešsaistes EULA</Failed_Load_Online_EULA>
+		<Auto_Log>Auto žurnāls</Auto_Log>
+		<Export_HTML_Schema>Eksportēt HTML SCHEMA vārdā</Export_HTML_Schema>
+		<Export_HTML_Data>Eksportēt HTML DATA vārdā</Export_HTML_Data>
+		<Check_Log>Kļūda: lūdzu, pārbaudiet žurnālu</Check_Log>
+		<Query_Error>Vaicājuma kļūda</Query_Error>
+		<Export_CSV>EKSPORTA CSV PĀRBAUDE</Export_CSV>
+		<Export_SQL_SCHEMA>Eksportēt SQL - SCHEMA - vārdā</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Eksportēt SQL - SQL - vārdā</Export_SQL_SQL>
+		<Export_XML>Eksportēt XML par</Export_XML>
+		<System>Sistēma</System>
+		<Views_Read_Only>Skatījumi ir tikai lasāmi un tos nevar rediģēt</Views_Read_Only>
+		<Dataview_Error>Datu bāze vai Dataview nepastāv vai vēl nav ielādēta</Dataview_Error>
+		<Browse>Pārlūkot</Browse>
+		<Statistics_Page>Statistikas lapa</Statistics_Page>
+		<Invert>Mainīt</Invert>
+		<Not_Supported>Nav atbalstīts</Not_Supported>
+		<CMD_Tooltip>Izpilda pielāgotus SQL komandu paziņojumus datu bāzē</CMD_Tooltip>
+		<LOG_CSV_Path>Log CSV ceļš</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Darījumu datubāzes ceļš</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Kritiskās kļūmes kļūda</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Aizveriet TW</Close_TW>
+		<Export_UI>Eksporta lietotāja saskarne</Export_UI>
+		<Define_New_Table>Definēt jaunu tabulu</Define_New_Table>
+		<Create_Statistics_Page>Izveidot statistikas lapu</Create_Statistics_Page>
+		<Debug>Atkļūdošana</Debug>
+		<New_in_Memory_Db>Jauns atmiņas datu bāzē</New_in_Memory_Db>
+		<Import_SQL>Importēt SQL</Import_SQL>
+		<Plugin>Iespraust</Plugin>
+		<Opened>Atvērts</Opened>
+		<Converter>Pārveidotājs</Converter>
+		<HTML_to_CSV>HTML CSV formātā</HTML_to_CSV>
+		<Developer>Izstrādātājs</Developer>
+		<Search_Settings>Meklēšanas iestatījumi</Search_Settings>
+	</Language>
 </root>

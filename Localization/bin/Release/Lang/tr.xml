@@ -92,5 +92,6 @@
 		<Converter>Dönüştürücü</Converter>
 		<HTML_to_CSV>HTML'den CSV'ye</HTML_to_CSV>
 		<Developer>Geliştirici</Developer>
+		<Search_Settings>Arama Ayarları</Search_Settings>
 	</Language>
 </root>

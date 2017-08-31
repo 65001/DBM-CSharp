@@ -1,97 +1,97 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-  <Language language="nl">
-    <File language="nl">Bestand</File>
-    <New language="nl">Nieuw</New>
-    <Open language="nl">Open</Open>
-    <Edit language="nl">Bewerken</Edit>
-    <View language="nl">Weergave</View>
-    <Save language="nl">Opslaan</Save>
-    <Import language="nl">Importeren</Import>
-    <CSV language="nl">CSV</CSV>
-    <SQL language="nl">SQL</SQL>
-    <Export language="nl">Exporteren</Export>
-    <HTML language="nl">HTML</HTML>
-    <Settings language="nl">Instellingen</Settings>
-    <Help language="nl">Help</Help>
-    <About language="nl">Over</About>
-    <Show_Help language="nl">Help weergeven</Show_Help>
-    <Settings_Editor language="nl">Instellingen Editor</Settings_Editor>
-    <Toggle_Debug language="nl">/ Uitschakelen Debug</Toggle_Debug>
-    <Toggle_Transaction_Log language="nl">Transactielogboek van de knevel</Toggle_Transaction_Log>
-    <Refresh_Schema language="nl">Vernieuwen van Schema</Refresh_Schema>
-    <Check_for_Updates language="nl">Controleren op Updates</Check_for_Updates>
-    <PXML language="nl">XML</PXML>
-    <PRGM_Start language="nl">Programma gestart</PRGM_Start>
-    <App language="nl">Toepassing</App>
-    <Failed_Save_Settings language="nl">Instellingen opslaan mislukt</Failed_Save_Settings>
-    <Error language="nl">Fout</Error>
-    <Failed language="nl">Mislukt</Failed>
-    <Table language="nl">Tabel</Table>
-    <Index language="nl">Index</Index>
-    <Master_Table language="nl">Tabel Master</Master_Table>
-    <Sort language="nl">Sorteren</Sort>
-    <Asc language="nl">Oplopend</Asc>
-    <Desc language="nl">Aflopend</Desc>
-    <Display_Settings language="nl">Weergave-instellingen</Display_Settings>
-    <Sort_by language="nl">Sorteren op</Sort_by>
-    <Search_in language="nl">Zoeken In</Search_in>
-    <Search language="nl">Zoek</Search>
-    <Functions language="nl">Functies</Functions>
-    <Strict_Search language="nl">Strikte zoeken</Strict_Search>
-    <Run_Function language="nl">Functie uitvoert</Run_Function>
-    <Query language="nl">Query</Query>
-    <Command language="nl">Opdracht</Command>
-    <Error_No_DB language="nl">Fout: Geen Database is geladen</Error_No_DB>
-    <UI language="nl">UI</UI>
-    <Master_Table_Protected language="nl">Sqlite_mastertable of 'Master Table' is een beschermde tafel. Ter bescherming van de integriteit van de db bewerken u deze tabel niet</Master_Table_Protected>
-    <Access_Denied language="nl">Toegang geweigerd</Access_Denied>
-    <Application language="nl">App</Application>
-    <View_Function language="nl">View functie</View_Function>
-    <User_Requested language="nl">Gebruiker gevraagd</User_Requested>
-    <Listview_Width language="nl">ListView breedte</Listview_Width>
-    <Listview_Height language="nl">ListView hoogte</Listview_Height>
-    <Extensions language="nl">Extensies</Extensions>
-    <Deliminator language="nl">Deliminator</Deliminator>
-    <Language language="nl">Taal</Language>
-    <Save_and_Close language="nl">Opslaan en sluiten</Save_and_Close>
-    <Close_wo_saving language="nl">Sluit zonder op te slaan</Close_wo_saving>
-    <Failed_Load_Online_EULA language="nl">Fout bij het laden van de on line Gebruiksrechtovereenkomst</Failed_Load_Online_EULA>
-    <Auto_Log language="nl">Auto Log</Auto_Log>
-    <Export_HTML_Schema language="nl">HTML-SCHEMA namens exporteren </Export_HTML_Schema>
-    <Export_HTML_Data language="nl">Exporteren van HTML-gegevens namens </Export_HTML_Data>
-    <Check_Log language="nl">Fout: Controleer het logboek voor meer informatie</Check_Log>
-    <Query_Error language="nl">Fout in de query</Query_Error>
-    <Export_CSV language="nl">EXPORTEREN VAN CSV NAMENS </Export_CSV>
-    <Export_SQL_SCHEMA language="nl">Exporteren van SQL - SCHEMA - namens </Export_SQL_SCHEMA>
-    <Export_SQL_SQL language="nl">Exporteren van SQL - SQL - namens </Export_SQL_SQL>
-    <Export_XML language="nl">XML NAMENS EXPORTEREN</Export_XML>
-    <System language="nl">Systeem</System>
-    <Views_Read_Only language="nl">Meningen zijn readonly en kunnen niet worden bewerkt</Views_Read_Only>
-    <Dataview_Error language="nl">De Database of Dataview bestaat niet of nog niet geladen is geweest</Dataview_Error>
-    <Browse language="nl">Bladeren</Browse>
-    <Statistics_Page language="nl">Statistiekenpagina</Statistics_Page>
-    <Invert language="nl">Omkeren</Invert>
-    <Not_Supported language="nl">Niet ondersteund</Not_Supported>
-    <CMD_Tooltip language="nl">Hiermee voert u aangepaste SQL-opdracht instructies naar de database</CMD_Tooltip>
-    <LOG_CSV_Path language="nl">CSV logboekpad</LOG_CSV_Path>
-    <LOG_DB_PATH language="nl">Log DatabasePath</LOG_DB_PATH>
-    <Transaction_DB_Path language="nl">Transactie databasepad</Transaction_DB_Path>
-    <SCHEMA_PRIVATE language="nl">SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-    <Critical_Fault_Error language="nl">Kritieke fout fout</Critical_Fault_Error>
-    <Stack_Trace language="nl">Stacktrace</Stack_Trace>
-    <Close_TW language="nl">Sluit TW</Close_TW>
-    <Export_UI language="nl">Exporteren van UI</Export_UI>
-    <Define_New_Table language="nl">Nieuwe tabel definiëren</Define_New_Table>
-    <Create_Statistics_Page language="nl">Statistiekenpagina maken</Create_Statistics_Page>
-    <Debug language="nl">Debug</Debug>
-    <New_in_Memory_Db language="nl">Nieuw in de Database van het geheugen</New_in_Memory_Db>
-    <Import_SQL language="nl">Import SQL</Import_SQL>
-    <Plugin language="nl">Plugin</Plugin>
-    <Opened language="nl">Geopend</Opened>
-    <Converter language="nl">Converter</Converter>
-    <HTML_to_CSV language="nl">HTML naar CSV</HTML_to_CSV>
-    <Developer language="nl">Ontwikkelaar</Developer>
-    <Search_Settings language="nl">Zoekinstellingen</Search_Settings>
-  </Language>
+	<Language>
+		<Language>Taal</Language>
+		<File>het dossier</File>
+		<New>nieuwe</New>
+		<Open>Open</Open>
+		<Edit>Bewerk</Edit>
+		<View>Uitzicht</View>
+		<Save>Save</Save>
+		<Import>Importeren</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Exporteren</Export>
+		<HTML>HTML</HTML>
+		<Settings>instellingen</Settings>
+		<Help>Helpen</Help>
+		<About>Over</About>
+		<Show_Help>Hulp laten zien</Show_Help>
+		<Settings_Editor>Instellingen Editor</Settings_Editor>
+		<Toggle_Debug>Schakel Debug in</Toggle_Debug>
+		<Toggle_Transaction_Log>Toggle Transaction Log</Toggle_Transaction_Log>
+		<Refresh_Schema>Schema vernieuwen</Refresh_Schema>
+		<Check_for_Updates>Controleer voor updates</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Programma gestart</PRGM_Start>
+		<App>Toepassing</App>
+		<Failed_Save_Settings>Kan instellingen opslaan</Failed_Save_Settings>
+		<Error>Fout</Error>
+		<Failed>mislukt</Failed>
+		<Table>Tafel</Table>
+		<Index>Inhoudsopgave</Index>
+		<Master_Table>Meestertafel</Master_Table>
+		<Sort>Soort</Sort>
+		<Asc>oplopend</Asc>
+		<Desc>Aflopend</Desc>
+		<Display_Settings>Beeldscherminstellingen</Display_Settings>
+		<Sort_by>Sorteer op</Sort_by>
+		<Search_in>Zoek in</Search_in>
+		<Search>Zoeken</Search>
+		<Functions>functies</Functions>
+		<Strict_Search>Strikt zoeken</Strict_Search>
+		<Run_Function>Run Function</Run_Function>
+		<Query>vraag</Query>
+		<Command>Opdracht</Command>
+		<Error_No_DB>Fout: Er is geen database geladen</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable of 'Master Table' is een beschermde tafel. Om de integriteit van de db te beschermen, kunt u deze tabel niet bewerken</Master_Table_Protected>
+		<Access_Denied>Toegang geweigerd</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Bekijk Functie</View_Function>
+		<User_Requested>Gebruiker gevraagd</User_Requested>
+		<Listview_Width>Lijstweergave Breedte</Listview_Width>
+		<Listview_Height>Lijstweergave hoogte</Listview_Height>
+		<Extensions>uitbreidingen</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Opslaan en afsluiten</Save_and_Close>
+		<Close_wo_saving>Sluiten zonder op te slaan</Close_wo_saving>
+		<Failed_Load_Online_EULA>Mislukt om online EULA te laden</Failed_Load_Online_EULA>
+		<Auto_Log>Automatisch logboek</Auto_Log>
+		<Export_HTML_Schema>HTML-HTML exporteren namens</Export_HTML_Schema>
+		<Export_HTML_Data>HTML-gegevens exporteren namens</Export_HTML_Data>
+		<Check_Log>Fout: Controleer het logboek voor details</Check_Log>
+		<Query_Error>Query Error</Query_Error>
+		<Export_CSV>EXPORT CSV IN DE HAND VAN</Export_CSV>
+		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Namens</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>SQL - SQL exporteren - namens</Export_SQL_SQL>
+		<Export_XML>EXPORT XML IN GEVAL VAN</Export_XML>
+		<System>Systeem</System>
+		<Views_Read_Only>Uitzicht is leesbaar en kan niet worden bewerkt</Views_Read_Only>
+		<Dataview_Error>De database of dataview bestaat niet of is nog niet geladen</Dataview_Error>
+		<Browse>Blader</Browse>
+		<Statistics_Page>Statistische pagina</Statistics_Page>
+		<Invert>Omkeren</Invert>
+		<Not_Supported>Niet ondersteund</Not_Supported>
+		<CMD_Tooltip>Uitvoering van aangepaste SQL-instructies op de database</CMD_Tooltip>
+		<LOG_CSV_Path>Log CSV-pad</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Transactie Database Pad</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Critical Error Error</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Sluit TW</Close_TW>
+		<Export_UI>UI exporteren</Export_UI>
+		<Define_New_Table>Definieer nieuwe tabel</Define_New_Table>
+		<Create_Statistics_Page>Maak statistische pagina aan</Create_Statistics_Page>
+		<Debug>debug</Debug>
+		<New_in_Memory_Db>Nieuw in Memory Database</New_in_Memory_Db>
+		<Import_SQL>SQL importeren</Import_SQL>
+		<Plugin>Inpluggen</Plugin>
+		<Opened>geopend</Opened>
+		<Converter>omvormer</Converter>
+		<HTML_to_CSV>HTML naar CSV</HTML_to_CSV>
+		<Developer>Ontwikkelaar</Developer>
+		<Search_Settings>Zoek instellingen</Search_Settings>
+	</Language>
 </root>

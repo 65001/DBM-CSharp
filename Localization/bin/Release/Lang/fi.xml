@@ -92,5 +92,6 @@
 		<Converter>Muunnin</Converter>
 		<HTML_to_CSV>HTML CSV: hen</HTML_to_CSV>
 		<Developer>Kehittäjä</Developer>
+		<Search_Settings>Hakuasetukset</Search_Settings>
 	</Language>
 </root>

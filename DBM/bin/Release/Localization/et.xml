@@ -1,97 +1,97 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-  <Language language="et">
-    <File language="et">Faili</File>
-    <New language="et">Uus</New>
-    <Open language="et">Avatud</Open>
-    <Edit language="et">Redigeeri</Edit>
-    <View language="et">Vaade</View>
-    <Save language="et">Salvesta</Save>
-    <Import language="et">Import</Import>
-    <CSV language="et">CSV</CSV>
-    <SQL language="et">SQL</SQL>
-    <Export language="et">Ekspordi</Export>
-    <HTML language="et">HTML</HTML>
-    <Settings language="et">Seaded</Settings>
-    <Help language="et">Abi</Help>
-    <About language="et">Kohta</About>
-    <Show_Help language="et">Kuva spikker</Show_Help>
-    <Settings_Editor language="et">Seaded toimetaja</Settings_Editor>
-    <Toggle_Debug language="et">Lülita Debug</Toggle_Debug>
-    <Toggle_Transaction_Log language="et">Lülita tehingute register</Toggle_Transaction_Log>
-    <Refresh_Schema language="et">Värskenda skeem</Refresh_Schema>
-    <Check_for_Updates language="et">Värskenduste otsimine</Check_for_Updates>
-    <PXML language="et">XML</PXML>
-    <PRGM_Start language="et">Programmi käivitumist</PRGM_Start>
-    <App language="et">Taotlus</App>
-    <Failed_Save_Settings language="et">Sätete salvestamine nurjus</Failed_Save_Settings>
-    <Error language="et">Tõrge</Error>
-    <Failed language="et">Nurjus</Failed>
-    <Table language="et">Tabel</Table>
-    <Index language="et">Indeks</Index>
-    <Master_Table language="et">Kapten tabel</Master_Table>
-    <Sort language="et">Sortimine</Sort>
-    <Asc language="et">Tõusvas järjestuses</Asc>
-    <Desc language="et">Laskuvas järjestuses</Desc>
-    <Display_Settings language="et">Ekraani seaded</Display_Settings>
-    <Sort_by language="et">Sorteeri</Sort_by>
-    <Search_in language="et">Otsing</Search_in>
-    <Search language="et">Otsi hotelle</Search>
-    <Functions language="et">Funktsioonid</Functions>
-    <Strict_Search language="et">Range Otsi</Strict_Search>
-    <Run_Function language="et">Kui käivitate</Run_Function>
-    <Query language="et">Päring</Query>
-    <Command language="et">Käsk</Command>
-    <Error_No_DB language="et">Tõrge: Andmebaasi ei ole laadimist</Error_No_DB>
-    <UI language="et">UI</UI>
-    <Master_Table_Protected language="et">Sqlite_mastertable või "Master tabelis" on kaitstud tabel. Db terviklikkust ei saa redigeerida selles tabelis</Master_Table_Protected>
-    <Access_Denied language="et">Juurdepääs keelatud</Access_Denied>
-    <Application language="et">App</Application>
-    <View_Function language="et">View funktsioon</View_Function>
-    <User_Requested language="et">Kasutaja soovis</User_Requested>
-    <Listview_Width language="et">Loendivaade laius</Listview_Width>
-    <Listview_Height language="et">Loendivaade kõrgus</Listview_Height>
-    <Extensions language="et">Laiendused</Extensions>
-    <Deliminator language="et">Deliminator</Deliminator>
-    <Language language="et">Keel</Language>
-    <Save_and_Close language="et">Salvesta ja Sule</Save_and_Close>
-    <Close_wo_saving language="et">Sule ilma salvestamata</Close_wo_saving>
-    <Failed_Load_Online_EULA language="et">Online EULA laadimine nurjus</Failed_Load_Online_EULA>
-    <Auto_Log language="et">Auto Logi</Auto_Log>
-    <Export_HTML_Schema language="et">Ekspordi HTML-i SKEEMI nimel </Export_HTML_Schema>
-    <Export_HTML_Data language="et">ANDMETE eksportimine HTML nimel </Export_HTML_Data>
-    <Check_Log language="et">Viga: Palun vaadake logist üksikasjad</Check_Log>
-    <Query_Error language="et">Päringule viga</Query_Error>
-    <Export_CSV language="et">EKSPORDI CSV NIMEL </Export_CSV>
-    <Export_SQL_SCHEMA language="et">Ekspordi SQL - SKEEMI - nimel </Export_SQL_SCHEMA>
-    <Export_SQL_SQL language="et">Ekspordi SQL - SQL - nimel </Export_SQL_SQL>
-    <Export_XML language="et">EKSPORDI XML-I NIMEL</Export_XML>
-    <System language="et">Süsteemi</System>
-    <Views_Read_Only language="et">Vaated on kirjutuskaitstud ja ei saa redigeerida</Views_Read_Only>
-    <Dataview_Error language="et">Andmebaasi või Andmevaate pole olemas või ei ole veel koormatud</Dataview_Error>
-    <Browse language="et">Sirvi</Browse>
-    <Statistics_Page language="et">Lehe statistika</Statistics_Page>
-    <Invert language="et">Teistpidi</Invert>
-    <Not_Supported language="et">Ei toetata</Not_Supported>
-    <CMD_Tooltip language="et">Käivitab kohandatud SQL käsk-laused andmebaasi</CMD_Tooltip>
-    <LOG_CSV_Path language="et">Logi CSV tee</LOG_CSV_Path>
-    <LOG_DB_PATH language="et">Logi DatabasePath</LOG_DB_PATH>
-    <Transaction_DB_Path language="et">Tehingute andmebaasi tee</Transaction_DB_Path>
-    <SCHEMA_PRIVATE language="et">SKEEMI JA ERASEKTORI</SCHEMA_PRIVATE>
-    <Critical_Fault_Error language="et">Kriitiline viga viga</Critical_Fault_Error>
-    <Stack_Trace language="et">Stack Trace</Stack_Trace>
-    <Close_TW language="et">Sulgege TW</Close_TW>
-    <Export_UI language="et">Eksportida UI</Export_UI>
-    <Define_New_Table language="et">Määratleda uue tabeli</Define_New_Table>
-    <Create_Statistics_Page language="et">Statistika lehe loomine</Create_Statistics_Page>
-    <Debug language="et">Siluda</Debug>
-    <New_in_Memory_Db language="et">Uus andmebaas</New_in_Memory_Db>
-    <Import_SQL language="et">Impordi SQL</Import_SQL>
-    <Plugin language="et">Plugin</Plugin>
-    <Opened language="et">Avatud</Opened>
-    <Converter language="et">Converter</Converter>
-    <HTML_to_CSV language="et">HTML, CSV</HTML_to_CSV>
-    <Developer language="et">Arendaja</Developer>
-    <Search_Settings language="et">Muuda keel</Search_Settings>
-  </Language>
+	<Language>
+		<Language>Keele</Language>
+		<File>Faili</File>
+		<New>Uus</New>
+		<Open>Avatud</Open>
+		<Edit>Muuda</Edit>
+		<View>Vaade</View>
+		<Save>Salvesta</Save>
+		<Import>Import</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Eksport</Export>
+		<HTML>HTML</HTML>
+		<Settings>Seaded</Settings>
+		<Help>Abi</Help>
+		<About>Umbes</About>
+		<Show_Help>Näita abi</Show_Help>
+		<Settings_Editor>Seadete redaktor</Settings_Editor>
+		<Toggle_Debug>Lülita silumine sisse</Toggle_Debug>
+		<Toggle_Transaction_Log>Lülita tehingute logi sisse</Toggle_Transaction_Log>
+		<Refresh_Schema>Värskenda skeemi</Refresh_Schema>
+		<Check_for_Updates>Kontrolli kas uuendused on saadaval</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Programm on käivitunud</PRGM_Start>
+		<App>Taotlus</App>
+		<Failed_Save_Settings>Seadete salvestamine ebaõnnestus</Failed_Save_Settings>
+		<Error>Viga</Error>
+		<Failed>Ebaõnnestus</Failed>
+		<Table>Tabel</Table>
+		<Index>Indeks</Index>
+		<Master_Table>Master tabel</Master_Table>
+		<Sort>Sorteeri</Sort>
+		<Asc>Kasvav</Asc>
+		<Desc>Kahanev</Desc>
+		<Display_Settings>Kuva seaded</Display_Settings>
+		<Sort_by>Sorteerima</Sort_by>
+		<Search_in>Otsi sisse</Search_in>
+		<Search>Otsing</Search>
+		<Functions>Funktsioonid</Functions>
+		<Strict_Search>Ranget otsingut</Strict_Search>
+		<Run_Function>Käivitage funktsioon</Run_Function>
+		<Query>Päring</Query>
+		<Command>Käsk</Command>
+		<Error_No_DB>Viga: andmebaasi pole laaditud</Error_No_DB>
+		<UI>Kasutajaliides</UI>
+		<Master_Table_Protected>Sqlite_mastertable või "Master Table" on kaitstud tabel. Db terviklikkuse kaitsmiseks ei saa te seda tabelit redigeerida</Master_Table_Protected>
+		<Access_Denied>Ligipääs keelatud</Access_Denied>
+		<Application>Rakendus</Application>
+		<View_Function>Kuva funktsioon</View_Function>
+		<User_Requested>Kasutaja soovitud</User_Requested>
+		<Listview_Width>Listviewi laius</Listview_Width>
+		<Listview_Height>Listview Height</Listview_Height>
+		<Extensions>Laiendused</Extensions>
+		<Deliminator>Deliminaator</Deliminator>
+		<Save_and_Close>Salvesta ja sulgeda</Save_and_Close>
+		<Close_wo_saving>Sulge ilma salvestamiseta</Close_wo_saving>
+		<Failed_Load_Online_EULA>EULA-võrguühenduseta laadimine ebaõnnestus</Failed_Load_Online_EULA>
+		<Auto_Log>Automaatne logimine</Auto_Log>
+		<Export_HTML_Schema>Ekspordi HTML SCHEMA nimel</Export_HTML_Schema>
+		<Export_HTML_Data>Ekspordi HTML DATA nimel</Export_HTML_Data>
+		<Check_Log>Viga: palun kontrollige logi üksikasjad</Check_Log>
+		<Query_Error>Päringu viga</Query_Error>
+		<Export_CSV>EKSPORDI CSV VÄLJAS</Export_CSV>
+		<Export_SQL_SCHEMA>Eksport SQL - SCHEMA - nimel</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Eksport SQL - SQL - nimel</Export_SQL_SQL>
+		<Export_XML>EXPORT XML KOHTA</Export_XML>
+		<System>Süsteem</System>
+		<Views_Read_Only>Vaated on kirjutuskaitstud ja neid ei saa muuta</Views_Read_Only>
+		<Dataview_Error>Andmebaasi või Dataviewi pole olemas või pole veel laetud</Dataview_Error>
+		<Browse>Sirvige</Browse>
+		<Statistics_Page>Statistika leht</Statistics_Page>
+		<Invert>Pööra ümber</Invert>
+		<Not_Supported>Ei toetata</Not_Supported>
+		<CMD_Tooltip>Käivitab kohandatud SQL käsu avaldused andmebaasi</CMD_Tooltip>
+		<LOG_CSV_Path>Logi CSV-tee</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Tehingu andmebaasi tee</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVAAT</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Kriitiline vea viga</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Sulgege TW</Close_TW>
+		<Export_UI>Ekspordi kasutajaliides</Export_UI>
+		<Define_New_Table>Määra uus tabel</Define_New_Table>
+		<Create_Statistics_Page>Loo statistika leht</Create_Statistics_Page>
+		<Debug>Silumine</Debug>
+		<New_in_Memory_Db>Uus mälu andmebaas</New_in_Memory_Db>
+		<Import_SQL>SQL-i import</Import_SQL>
+		<Plugin>Sisse panema</Plugin>
+		<Opened>Avatud</Opened>
+		<Converter>Konverter</Converter>
+		<HTML_to_CSV>HTML-i CSV-vormingusse</HTML_to_CSV>
+		<Developer>Arendaja</Developer>
+		<Search_Settings>Otsing Seaded</Search_Settings>
+	</Language>
 </root>

@@ -19,7 +19,7 @@
 		<Show_Help>Hulp laten zien</Show_Help>
 		<Settings_Editor>Instellingen Editor</Settings_Editor>
 		<Toggle_Debug>Schakel Debug in</Toggle_Debug>
-		<Toggle_Transaction_Log>Wissel Transactie Log</Toggle_Transaction_Log>
+		<Toggle_Transaction_Log>Toggle Transaction Log</Toggle_Transaction_Log>
 		<Refresh_Schema>Schema vernieuwen</Refresh_Schema>
 		<Check_for_Updates>Controleer voor updates</Check_for_Updates>
 		<PXML>XML</PXML>
@@ -92,5 +92,6 @@
 		<Converter>omvormer</Converter>
 		<HTML_to_CSV>HTML naar CSV</HTML_to_CSV>
 		<Developer>Ontwikkelaar</Developer>
+		<Search_Settings>Zoek instellingen</Search_Settings>
 	</Language>
 </root>

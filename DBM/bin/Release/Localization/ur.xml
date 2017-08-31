@@ -1,97 +1,97 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-  <Language language="ur">
-    <File language="ur">مسل</File>
-    <New language="ur">نیا</New>
-    <Open language="ur">کھلا</Open>
-    <Edit language="ur">تدوین کریں</Edit>
-    <View language="ur">منظر</View>
-    <Save language="ur">محفوظ کریں</Save>
-    <Import language="ur">درآمد کریں</Import>
-    <CSV language="ur">CSV</CSV>
-    <SQL language="ur">SQL</SQL>
-    <Export language="ur">برآمد کریں</Export>
-    <HTML language="ur">HTML</HTML>
-    <Settings language="ur">سیٹنگیں</Settings>
-    <Help language="ur">مدد</Help>
-    <About language="ur">کے بارے میں</About>
-    <Show_Help language="ur">مدد نمایش کریں</Show_Help>
-    <Settings_Editor language="ur">سیٹنگیں تدوین کار</Settings_Editor>
-    <Toggle_Debug language="ur">ٹوگل ٹھیک کریں</Toggle_Debug>
-    <Toggle_Transaction_Log language="ur">ٹوگل لین دین لاگ ان کریں</Toggle_Transaction_Log>
-    <Refresh_Schema language="ur">شجرہ کی تازہ کاری کریں</Refresh_Schema>
-    <Check_for_Updates language="ur">پڑتال برائے تازہ کاریاں</Check_for_Updates>
-    <PXML language="ur">XML</PXML>
-    <PRGM_Start language="ur">پروگرام کا آغاز</PRGM_Start>
-    <App language="ur">ایپلی کیشن</App>
-    <Failed_Save_Settings language="ur">ترتیبات کو محفوظ کرنے میں ناکام</Failed_Save_Settings>
-    <Error language="ur">نقص</Error>
-    <Failed language="ur">ناکام</Failed>
-    <Table language="ur">جدول</Table>
-    <Index language="ur">اشاریہ</Index>
-    <Master_Table language="ur">ماسٹر جدول</Master_Table>
-    <Sort language="ur">چھانٹیں</Sort>
-    <Asc language="ur">صعودی</Asc>
-    <Desc language="ur">نزولی</Desc>
-    <Display_Settings language="ur">ڈسپلے سیٹنگیں</Display_Settings>
-    <Sort_by language="ur">چھانٹیں بمطابق</Sort_by>
-    <Search_in language="ur">میں تلاش کریں</Search_in>
-    <Search language="ur">تلاش کریں</Search>
-    <Functions language="ur">افعال</Functions>
-    <Strict_Search language="ur">سخت تلاش</Strict_Search>
-    <Run_Function language="ur">فعل چلت کریں</Run_Function>
-    <Query language="ur">طلب</Query>
-    <Command language="ur">حکم</Command>
-    <Error_No_DB language="ur">نقص: کوئی ڈیٹا بیس لوڈ نہیں کیا گیا ہے</Error_No_DB>
-    <UI language="ur">UI</UI>
-    <Master_Table_Protected language="ur">Sqlite_mastertable یا 'ماسٹر جدول' ایک حفاظتی ٹیبل ہے ۔ Db کی سالمیت کو بچانے کے لیے آپ اس جدول تدوین نہیں کر سکتا</Master_Table_Protected>
-    <Access_Denied language="ur">رسائی نہیں دی گئی</Access_Denied>
-    <Application language="ur">اپلی کیشن</Application>
-    <View_Function language="ur">قول فعل</View_Function>
-    <User_Requested language="ur">صارف کی درخواست کی</User_Requested>
-    <Listview_Width language="ur">فہرست منظر چوڑائی</Listview_Width>
-    <Listview_Height language="ur">فہرست منظر اونچائی</Listview_Height>
-    <Extensions language="ur">توسیعات</Extensions>
-    <Deliminator language="ur">دالامانیٹر</Deliminator>
-    <Language language="ur">زبان</Language>
-    <Save_and_Close language="ur">محفوظ کریں اور بند کریں</Save_and_Close>
-    <Close_wo_saving language="ur">محفوظ کیے بغیر بند کریں</Close_wo_saving>
-    <Failed_Load_Online_EULA language="ur">آن لائن یولہ لوڈ نہیں کر سکا</Failed_Load_Online_EULA>
-    <Auto_Log language="ur">آٹو لاگ ان کریں</Auto_Log>
-    <Export_HTML_Schema language="ur">HTML شجرہ کے ایما پر برآمد کریں </Export_HTML_Schema>
-    <Export_HTML_Data language="ur">کے ایما پر HTML کوائف برآمد کریں </Export_HTML_Data>
-    <Check_Log language="ur">نقص: براہ مہربانی تفصیلات کے لیے لاگ کی پڑتال کریں</Check_Log>
-    <Query_Error language="ur">طلب نقص</Query_Error>
-    <Export_CSV language="ur">کے ایما پر CSV برآمد کریں </Export_CSV>
-    <Export_SQL_SCHEMA language="ur">کے ایما پر SQL - شجرہ - برآمد کریں </Export_SQL_SCHEMA>
-    <Export_SQL_SQL language="ur">کے ایما پر SQL - SQL - برآمد کریں </Export_SQL_SQL>
-    <Export_XML language="ur">XML کے ایما پر برآمد کریں</Export_XML>
-    <System language="ur">نظام</System>
-    <Views_Read_Only language="ur">خیالات ریڈونل ہیں اور تدوین نہیں کی جا سکتی</Views_Read_Only>
-    <Dataview_Error language="ur">کوائفیہ یا داتویو موجود نہیں یا ابھی تک لوڈ نہیں کی گئی ہے</Dataview_Error>
-    <Browse language="ur">براؤز کریں</Browse>
-    <Statistics_Page language="ur">اعداد و شمار صفحہ</Statistics_Page>
-    <Invert language="ur">الٹائیں</Invert>
-    <Not_Supported language="ur">غیر تائيد یافتہ</Not_Supported>
-    <CMD_Tooltip language="ur">تخصیص کردہ SQL کوائفیہ پر حکم بیانات کا نفاذ کرتا ہے</CMD_Tooltip>
-    <LOG_CSV_Path language="ur">لاگ ان کریں CSV راہ</LOG_CSV_Path>
-    <LOG_DB_PATH language="ur">داتباسیپیٹہ لاگ ان کریں</LOG_DB_PATH>
-    <Transaction_DB_Path language="ur">لین دین کی ڈیٹا بیس کی راہ</Transaction_DB_Path>
-    <SCHEMA_PRIVATE language="ur">شجرہ-نجی</SCHEMA_PRIVATE>
-    <Critical_Fault_Error language="ur">سنگین غلطی نقص</Critical_Fault_Error>
-    <Stack_Trace language="ur">قطار کی کھوج</Stack_Trace>
-    <Close_TW language="ur">ٹو بند کریں</Close_TW>
-    <Export_UI language="ur">UI برآمد کریں</Export_UI>
-    <Define_New_Table language="ur">نیا جدول واضح کریں</Define_New_Table>
-    <Create_Statistics_Page language="ur">اعداد و شمار صفحہ بنائیں</Create_Statistics_Page>
-    <Debug language="ur">ٹھیک کریں</Debug>
-    <New_in_Memory_Db language="ur">میموری کوائفیہ میں نیا</New_in_Memory_Db>
-    <Import_SQL language="ur">SQL درآمد کریں</Import_SQL>
-    <Plugin language="ur">پلگ ان</Plugin>
-    <Opened language="ur">کھولا</Opened>
-    <Converter language="ur">کنورٹر</Converter>
-    <HTML_to_CSV language="ur">HTML CSV</HTML_to_CSV>
-    <Developer language="ur">ڈویلپر</Developer>
-    <Search_Settings language="ur">تلاش کی ترتیبات</Search_Settings>
-  </Language>
+	<Language>
+		<Language>زبان</Language>
+		<File>فائل</File>
+		<New>نئ?</New>
+		<Open>کھول?ں</Open>
+		<Edit>ترم?م کر?ں</Edit>
+		<View>د?کھ?ں</View>
+		<Save>محفوظ کر?ں</Save>
+		<Import>درآمد کر?ں</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>برآمد کر?ں</Export>
+		<HTML>ا?چ ٹ? ا?م ا?ل</HTML>
+		<Settings>ترت?بات</Settings>
+		<Help>مدد</Help>
+		<About>کے بارے م?ں</About>
+		<Show_Help>مدد دکھائ?ں</Show_Help>
+		<Settings_Editor>ترت?بات ا?ڈ?ٹر</Settings_Editor>
+		<Toggle_Debug>ڈ?گگل ٹوگل کر?ں</Toggle_Debug>
+		<Toggle_Transaction_Log>ٹرانز?کشن لاگ ٹول</Toggle_Transaction_Log>
+		<Refresh_Schema>سک?م تازہ کر?ں</Refresh_Schema>
+		<Check_for_Updates>اپ ڈ?ٹ کے ل?ے چ?ک کر?ں</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>پروگرام شروع ہوا</PRGM_Start>
+		<App>درخواست</App>
+		<Failed_Save_Settings>ترت?بات کو محفوظ کرنے م?ں ناکام</Failed_Save_Settings>
+		<Error>خراب?</Error>
+		<Failed>ناکام</Failed>
+		<Table>م?ز</Table>
+		<Index>انڈ?کس</Index>
+		<Master_Table>ماسٹر ٹ?بل</Master_Table>
+		<Sort>ترت?ب د?ں</Sort>
+		<Asc>سنبھالنے</Asc>
+		<Desc>در?افت</Desc>
+		<Display_Settings>ترت?بات دکھائ?ں</Display_Settings>
+		<Sort_by>ک? طرف سے ترت?ب د?ں</Sort_by>
+		<Search_in>تلاش کر?ں</Search_in>
+		<Search>تلاش کر?ں</Search>
+		<Functions>افعال</Functions>
+		<Strict_Search>سخت تلاش</Strict_Search>
+		<Run_Function>چلائ?ں فنکشن</Run_Function>
+		<Query>سوال</Query>
+		<Command>کمانڈ</Command>
+		<Error_No_DB>خراب?: کوئ? ڈ?ٹا ب?س لوڈ نہ?ں ک?ا گ?ا ہے</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable ?ا 'ماسٹر ٹ?بل' ا?ک محفوظ م?ز ہے. ڈ? ب? کے صداقت ک? حفاظت کے لئے آپ اس م?ز م?ں ترم?م نہ?ں کرسکتے</Master_Table_Protected>
+		<Access_Denied>رسائ? سے انکار</Access_Denied>
+		<Application>اپل? ک?شن</Application>
+		<View_Function>فنکشن د?کھ?ں</View_Function>
+		<User_Requested>صارف ک? درخواست</User_Requested>
+		<Listview_Width>فہرست ک? چوڑائ?</Listview_Width>
+		<Listview_Height>فہرست ک? اونچائ?</Listview_Height>
+		<Extensions>توس?ع</Extensions>
+		<Deliminator>ڈ?ل?م?ٹر</Deliminator>
+		<Save_and_Close>محفوظ کر?ں اور بند کر?ں</Save_and_Close>
+		<Close_wo_saving>بغ?ر بچت بند</Close_wo_saving>
+		<Failed_Load_Online_EULA>آن لائن EULA لوڈ کرنے م?ں ناکام</Failed_Load_Online_EULA>
+		<Auto_Log>آٹو لاگ ان</Auto_Log>
+		<Export_HTML_Schema>ا?چ ٹ? ا?م ا?ل SCHEMA ک? طرف سے برآمد کر?ں</Export_HTML_Schema>
+		<Export_HTML_Data>ا?چ ٹ? ا?م ا?ل ڈ?ٹا ک? طرف سے برآمد کر?ں</Export_HTML_Data>
+		<Check_Log>غلط?: براہ کرم تفص?لات کے لئے لاگ ان ک? جانچ پڑتال کر?ں</Check_Log>
+		<Query_Error>سوال ک? خراب?</Query_Error>
+		<Export_CSV>ب?ورو پر برآمد برآمد</Export_CSV>
+		<Export_SQL_SCHEMA>SQL برآمد کر?ں - شما - ک? جانب سے</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>SQL برآمد کر?ں - SQL - ک? جانب سے</Export_SQL_SQL>
+		<Export_XML>ا?کسچ?نج پر ا?کس ا?کس ا?کس ا?کس</Export_XML>
+		<System>نظام</System>
+		<Views_Read_Only>مناظر پڑھنے والے ہ?ں اور ترم?م نہ?ں ک?ا جاسکتا ہے</Views_Read_Only>
+		<Dataview_Error>ڈ?ٹا ب?س ?ا ڈ?ٹ?ٹو? موجود نہ?ں ہے ?ا ابھ? تک لوڈ نہ?ں ک?ا گ?ا ہے</Dataview_Error>
+		<Browse>براؤز کر?ں</Browse>
+		<Statistics_Page>اعداد و شمار پ?ج</Statistics_Page>
+		<Invert>تبد?ل کر?ں</Invert>
+		<Not_Supported>سہولت مہ?ا نہ?ں</Not_Supported>
+		<CMD_Tooltip>ڈ?ٹا ب?س پر اپن? مرض? کے مطابق SQL کمان کے ب?انات کو چلاتا ہے</CMD_Tooltip>
+		<LOG_CSV_Path>CSV راستہ لاگ ان کر?ں</LOG_CSV_Path>
+		<LOG_DB_PATH>لاگ ڈ?ٹا ڈ?ٹا ب?س</LOG_DB_PATH>
+		<Transaction_DB_Path>ٹرانز?کشن ڈ?ٹا ب?س کا راستہ</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>ش?ما - ذات?</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>خطرناک غلط? ک? خراب?</Critical_Fault_Error>
+		<Stack_Trace>اسٹ?ک ٹر?س</Stack_Trace>
+		<Close_TW>TW بند کر?ں</Close_TW>
+		<Export_UI>برآمد UI</Export_UI>
+		<Define_New_Table>نئ? م?ز ک? وضاحت کر?ں</Define_New_Table>
+		<Create_Statistics_Page>اعداد و شمار کے صفحے بنائ?ں</Create_Statistics_Page>
+		<Debug>ڈ?بگ</Debug>
+		<New_in_Memory_Db>?اد داشت ڈ?ٹا ب?س م?ں ن?ا</New_in_Memory_Db>
+		<Import_SQL>SQL درآمد کر?ں</Import_SQL>
+		<Plugin>رابطہ بحال کرو</Plugin>
+		<Opened>کھول د?ا</Opened>
+		<Converter>کنورٹر</Converter>
+		<HTML_to_CSV>CSV م?ں ا?چ ٹ? ا?م ا?ل</HTML_to_CSV>
+		<Developer>ڈو?لپر</Developer>
+		<Search_Settings>تلاش ک? ترت?بات</Search_Settings>
+	</Language>
 </root>

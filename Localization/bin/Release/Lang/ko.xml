@@ -92,5 +92,6 @@
 		<Converter>변환기</Converter>
 		<HTML_to_CSV>HTML에서 CSV로</HTML_to_CSV>
 		<Developer>개발자</Developer>
+		<Search_Settings>검색 설정</Search_Settings>
 	</Language>
 </root>

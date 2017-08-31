@@ -186,8 +186,8 @@ namespace DBM
                 }
                 Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Import.SQL");//TODO Localize
             }
-            else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
-            { }
+            //else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
+            //{ }
             //Export
             else if (Item == Utilities.Localization["PXML"] + " ")
             {

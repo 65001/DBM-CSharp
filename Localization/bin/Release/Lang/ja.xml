@@ -92,5 +92,6 @@
 		<Converter>コンバータ</Converter>
 		<HTML_to_CSV>HTMLからCSVへ</HTML_to_CSV>
 		<Developer>開発者</Developer>
+		<Search_Settings>検索設定</Search_Settings>
 	</Language>
 </root>

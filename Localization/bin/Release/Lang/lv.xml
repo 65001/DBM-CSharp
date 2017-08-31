@@ -23,7 +23,7 @@
 		<Refresh_Schema>Atsvaidzināt shēmu</Refresh_Schema>
 		<Check_for_Updates>Meklēt atjauninājumus</Check_for_Updates>
 		<PXML>XML</PXML>
-		<PRGM_Start>Uzsākta programma</PRGM_Start>
+		<PRGM_Start>Programma ir sākusies</PRGM_Start>
 		<App>Pieteikums</App>
 		<Failed_Save_Settings>Neizdevās saglabāt iestatījumus</Failed_Save_Settings>
 		<Error>Kļūda</Error>
@@ -92,5 +92,6 @@
 		<Converter>Pārveidotājs</Converter>
 		<HTML_to_CSV>HTML CSV formātā</HTML_to_CSV>
 		<Developer>Izstrādātājs</Developer>
+		<Search_Settings>Meklēšanas iestatījumi</Search_Settings>
 	</Language>
 </root>

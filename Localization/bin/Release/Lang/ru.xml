@@ -92,5 +92,6 @@
 		<Converter>конвертер</Converter>
 		<HTML_to_CSV>HTML для CSV</HTML_to_CSV>
 		<Developer>разработчик</Developer>
+		<Search_Settings>Настройки поиска</Search_Settings>
 	</Language>
 </root>

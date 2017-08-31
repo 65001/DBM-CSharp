@@ -92,5 +92,6 @@
 		<Converter>Converter</Converter>
 		<HTML_to_CSV>HTML a CSV-hez</HTML_to_CSV>
 		<Developer>Fejlesztő</Developer>
+		<Search_Settings>Keresési beállítások</Search_Settings>
 	</Language>
 </root>

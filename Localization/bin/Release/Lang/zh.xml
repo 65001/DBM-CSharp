@@ -92,5 +92,6 @@
 		<Converter>变流器</Converter>
 		<HTML_to_CSV>HTML到CSV</HTML_to_CSV>
 		<Developer>开发人员</Developer>
+		<Search_Settings>搜索设置</Search_Settings>
 	</Language>
 </root>

@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBM", "DBM\DBM.csproj", "{88F827AA-CAD0-4FED-980D-83B9821E9BBB}"
 EndProject
@@ -22,6 +22,7 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{88F827AA-CAD0-4FED-980D-83B9821E9BBB}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{88F827AA-CAD0-4FED-980D-83B9821E9BBB}.Debug|Any CPU.Build.0 = Debug|x86
 		{88F827AA-CAD0-4FED-980D-83B9821E9BBB}.Debug|x64.ActiveCfg = Debug|x64
 		{88F827AA-CAD0-4FED-980D-83B9821E9BBB}.Debug|x64.Build.0 = Debug|x64
 		{88F827AA-CAD0-4FED-980D-83B9821E9BBB}.Debug|x86.ActiveCfg = Debug|x86

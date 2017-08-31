@@ -86,11 +86,12 @@
 		<Create_Statistics_Page>إنشاء صفحة الإحصاءات</Create_Statistics_Page>
 		<Debug>التصحيح</Debug>
 		<New_in_Memory_Db>جديد في قاعدة بيانات الذاكرة</New_in_Memory_Db>
-		<Import_SQL>استيراد سكل</Import_SQL>
+		<Import_SQL>استيراد SQL</Import_SQL>
 		<Plugin>توصيل في</Plugin>
 		<Opened>افتتح</Opened>
 		<Converter>محول</Converter>
 		<HTML_to_CSV>هتمل إلى كسف</HTML_to_CSV>
 		<Developer>مطور</Developer>
+		<Search_Settings>إعدادات البحث</Search_Settings>
 	</Language>
 </root>

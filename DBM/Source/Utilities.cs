@@ -86,26 +86,30 @@ namespace DBM
 			}
 			else
 			{
-				Events.LogMessage("Localization XML Missing", "Application"); //DO NOT LOCALIZE
+                throw new Exception("Localization File not found!"); //DO NOT LOCALIZE
 			}
 		}
 
         static void AddLocalization()
         {
             Primitive XML_Array = XMLAttributes();
-            string key = XML_Array[4].ToString().Replace("_"," ");
+            string key = ((string)XML_Array[4]).Replace("_"," ");
             string value = XML_Array[6];
-            if (_Localization.ContainsKey(key) == false)
+            if (string.IsNullOrWhiteSpace(key) || string.IsNullOrWhiteSpace(value) )
             {
-                    _Localization.Add(key, value);
+                throw new ArgumentException("The key or value is null." + XML_Array,$"{key} = {value};");
+            }
+            else if (_Localization.ContainsKey(key) == false)
+            {
+                _Localization.Add(key, value);
             }
             else
             {
-                throw new Exception("The key : " + key +" already exists in the Localization Dictionary.");
+                throw new Exception("The key : " + key +" already exists in the Localization Dictionary. " + XML_Array);
             }
         }
 
-	    public static string XMLAttributes() { return "1=" + LDxml.Attributes.ToString().Replace("=", "\\=").Replace(";", "\\;") + ";2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
+	    public static string XMLAttributes() { return "1= ;2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
 
         public static void AddtoStackTrace(string Data)
         {
@@ -294,6 +298,14 @@ namespace DBM
         public static void Print<T>(this Dictionary<T, T> Dictionary)
         {
             foreach (KeyValuePair<T,T> entry in Dictionary)
+            {
+                Console.WriteLine("{0} : {1}", entry.Key, entry.Value);
+            }
+        }
+
+        public static void Print<T>(this IReadOnlyDictionary<T, T> Dictionary)
+        {
+            foreach (KeyValuePair<T, T> entry in Dictionary)
             {
                 Console.WriteLine("{0} : {1}", entry.Key, entry.Value);
             }

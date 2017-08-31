@@ -92,5 +92,6 @@
 		<Converter>Konverteris</Converter>
 		<HTML_to_CSV>HTML į CSV</HTML_to_CSV>
 		<Developer>Programuotojas</Developer>
+		<Search_Settings>Paieškos nustatymai</Search_Settings>
 	</Language>
 </root>

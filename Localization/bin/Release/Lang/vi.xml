@@ -62,7 +62,7 @@
 		<Export_HTML_Data>Xu?t HTML DATA thay m?t cho</Export_HTML_Data>
 		<Check_Log>L?i: Vui lòng ki?m tra nh?t ký d? bi?t chi ti?t</Check_Log>
 		<Query_Error>L?i Truy v?n</Query_Error>
-		<Export_CSV>XU?T KH?U CSV Ð?I DI?N</Export_CSV>
+		<Export_CSV>EXPORT CSV thay m?t</Export_CSV>
 		<Export_SQL_SCHEMA>Xu?t SQL - SCHEMA - Thay m?t cho</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Xu?t SQL - SQL - Thay m?t cho</Export_SQL_SQL>
 		<Export_XML>XU?T KH?U XML Ð?I DI?N</Export_XML>
@@ -92,5 +92,6 @@
 		<Converter>Chuy?n d?i</Converter>
 		<HTML_to_CSV>HTML sang CSV</HTML_to_CSV>
 		<Developer>Nhà phát tri?n</Developer>
+		<Search_Settings>Thi?t l?p tìm ki?m</Search_Settings>
 	</Language>
 </root>

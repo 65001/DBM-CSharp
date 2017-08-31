@@ -68,7 +68,7 @@
 		<Export_XML>EXPORT XML KOHTA</Export_XML>
 		<System>Süsteem</System>
 		<Views_Read_Only>Vaated on kirjutuskaitstud ja neid ei saa muuta</Views_Read_Only>
-		<Dataview_Error>Andmebaasi või Dataview pole olemas või pole veel laetud</Dataview_Error>
+		<Dataview_Error>Andmebaasi või Dataviewi pole olemas või pole veel laetud</Dataview_Error>
 		<Browse>Sirvige</Browse>
 		<Statistics_Page>Statistika leht</Statistics_Page>
 		<Invert>Pööra ümber</Invert>
@@ -92,5 +92,6 @@
 		<Converter>Konverter</Converter>
 		<HTML_to_CSV>HTML-i CSV-vormingusse</HTML_to_CSV>
 		<Developer>Arendaja</Developer>
+		<Search_Settings>Otsing Seaded</Search_Settings>
 	</Language>
 </root>

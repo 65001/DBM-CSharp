@@ -1,97 +1,97 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-  <Language language="sv">
-    <File language="sv">Fil</File>
-    <New language="sv">Nya</New>
-    <Open language="sv">Öppna</Open>
-    <Edit language="sv">Redigera</Edit>
-    <View language="sv">Visa</View>
-    <Save language="sv">Spara</Save>
-    <Import language="sv">Import</Import>
-    <CSV language="sv">CSV</CSV>
-    <SQL language="sv">SQL</SQL>
-    <Export language="sv">Exportera</Export>
-    <HTML language="sv">HTML</HTML>
-    <Settings language="sv">Inställningar</Settings>
-    <Help language="sv">Hjälp</Help>
-    <About language="sv">Om</About>
-    <Show_Help language="sv">Visa hjälp</Show_Help>
-    <Settings_Editor language="sv">Inställningar för Editor</Settings_Editor>
-    <Toggle_Debug language="sv">Toggle Debug</Toggle_Debug>
-    <Toggle_Transaction_Log language="sv">Toggle transaktionsloggen</Toggle_Transaction_Log>
-    <Refresh_Schema language="sv">Uppdatera schemat</Refresh_Schema>
-    <Check_for_Updates language="sv">Sök efter uppdateringar</Check_for_Updates>
-    <PXML language="sv">XML</PXML>
-    <PRGM_Start language="sv">Programmet startas</PRGM_Start>
-    <App language="sv">Ansökan</App>
-    <Failed_Save_Settings language="sv">Det gick inte att spara inställningarna</Failed_Save_Settings>
-    <Error language="sv">Fel</Error>
-    <Failed language="sv">Misslyckades</Failed>
-    <Table language="sv">Tabell</Table>
-    <Index language="sv">Index</Index>
-    <Master_Table language="sv">Master tabell</Master_Table>
-    <Sort language="sv">Sortera</Sort>
-    <Asc language="sv">Stigande</Asc>
-    <Desc language="sv">Fallande</Desc>
-    <Display_Settings language="sv">Bildskärmsinställningar</Display_Settings>
-    <Sort_by language="sv">Sortera efter</Sort_by>
-    <Search_in language="sv">Sök i</Search_in>
-    <Search language="sv">Sök</Search>
-    <Functions language="sv">Funktioner</Functions>
-    <Strict_Search language="sv">Strikt Sök</Strict_Search>
-    <Run_Function language="sv">Kör funktionen</Run_Function>
-    <Query language="sv">Fråga</Query>
-    <Command language="sv">Kommandot</Command>
-    <Error_No_DB language="sv">Fel: Ingen databas har lästs</Error_No_DB>
-    <UI language="sv">UI</UI>
-    <Master_Table_Protected language="sv">Sqlite_mastertable eller 'Master bord' är en skyddad tabell. För att skydda integriteten hos db kan du inte redigera den här tabellen</Master_Table_Protected>
-    <Access_Denied language="sv">Åtkomst nekad</Access_Denied>
-    <Application language="sv">App</Application>
-    <View_Function language="sv">View-funktionen</View_Function>
-    <User_Requested language="sv">Användaren som begärde</User_Requested>
-    <Listview_Width language="sv">ListView bredd</Listview_Width>
-    <Listview_Height language="sv">ListView höjd</Listview_Height>
-    <Extensions language="sv">Tillägg</Extensions>
-    <Deliminator language="sv">Deliminator</Deliminator>
-    <Language language="sv">Språk</Language>
-    <Save_and_Close language="sv">Spara och Stäng</Save_and_Close>
-    <Close_wo_saving language="sv">Stäng utan att spara</Close_wo_saving>
-    <Failed_Load_Online_EULA language="sv">Misslyckades med att läsa online EULA</Failed_Load_Online_EULA>
-    <Auto_Log language="sv">Auto Log</Auto_Log>
-    <Export_HTML_Schema language="sv">Exportera HTML-SCHEMA för </Export_HTML_Schema>
-    <Export_HTML_Data language="sv">Exportera HTML-DATA för </Export_HTML_Data>
-    <Check_Log language="sv">Fel: Kontrollera loggen för Detaljer</Check_Log>
-    <Query_Error language="sv">Fråga fel</Query_Error>
-    <Export_CSV language="sv">EXPORTERA CSV PÅ UPPDRAG AV </Export_CSV>
-    <Export_SQL_SCHEMA language="sv">Exportera SQL - SCHEMA - på uppdrag av </Export_SQL_SCHEMA>
-    <Export_SQL_SQL language="sv">Exportera SQL - SQL - på uppdrag av </Export_SQL_SQL>
-    <Export_XML language="sv">EXPORTERA XML PÅ UPPDRAG AV</Export_XML>
-    <System language="sv">Systemet</System>
-    <Views_Read_Only language="sv">Vyer är skrivskyddade och kan inte redigeras</Views_Read_Only>
-    <Dataview_Error language="sv">Den databas eller Dataview existerar inte eller har inte lästs in ännu</Dataview_Error>
-    <Browse language="sv">Bläddra</Browse>
-    <Statistics_Page language="sv">Statistiksida</Statistics_Page>
-    <Invert language="sv">Invertera</Invert>
-    <Not_Supported language="sv">Stöds inte</Not_Supported>
-    <CMD_Tooltip language="sv">Kör anpassade SQL kommando uttalanden på databasen</CMD_Tooltip>
-    <LOG_CSV_Path language="sv">CSV-loggsökvägen</LOG_CSV_Path>
-    <LOG_DB_PATH language="sv">Logga DatabasePath</LOG_DB_PATH>
-    <Transaction_DB_Path language="sv">Databassökvägen för transaktion</Transaction_DB_Path>
-    <SCHEMA_PRIVATE language="sv">SCHEMA-PRIVAT</SCHEMA_PRIVATE>
-    <Critical_Fault_Error language="sv">Kritiska fel fel</Critical_Fault_Error>
-    <Stack_Trace language="sv">Stackspårning</Stack_Trace>
-    <Close_TW language="sv">Stäng TW</Close_TW>
-    <Export_UI language="sv">Exportera UI</Export_UI>
-    <Define_New_Table language="sv">Definiera ny tabell</Define_New_Table>
-    <Create_Statistics_Page language="sv">Skapa statistiksida</Create_Statistics_Page>
-    <Debug language="sv">Felsöka</Debug>
-    <New_in_Memory_Db language="sv">Nytt i Memory-databas</New_in_Memory_Db>
-    <Import_SQL language="sv">Importera SQL</Import_SQL>
-    <Plugin language="sv">Plugin</Plugin>
-    <Opened language="sv">Öppnas</Opened>
-    <Converter language="sv">Omvandlare</Converter>
-    <HTML_to_CSV language="sv">HTML till CSV</HTML_to_CSV>
-    <Developer language="sv">Utvecklare</Developer>
-    <Search_Settings language="sv">Sökinställningar</Search_Settings>
-  </Language>
+	<Language>
+		<Language>Språk</Language>
+		<File>Fil</File>
+		<New>Ny</New>
+		<Open>Öppen</Open>
+		<Edit>Redigera</Edit>
+		<View>Se</View>
+		<Save>Spara</Save>
+		<Import>Importera</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Exportera</Export>
+		<HTML>html</HTML>
+		<Settings>inställningar</Settings>
+		<Help>Hjälpa</Help>
+		<About>Handla om</About>
+		<Show_Help>Visa hjälp</Show_Help>
+		<Settings_Editor>Inställningsredigerare</Settings_Editor>
+		<Toggle_Debug>Byt felsökning</Toggle_Debug>
+		<Toggle_Transaction_Log>Växla Transaktionslogg</Toggle_Transaction_Log>
+		<Refresh_Schema>Uppdatera schema</Refresh_Schema>
+		<Check_for_Updates>Sök efter uppdateringar</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Program startat</PRGM_Start>
+		<App>Ansökan</App>
+		<Failed_Save_Settings>Misslyckades med att spara inställningar</Failed_Save_Settings>
+		<Error>Fel</Error>
+		<Failed>misslyckades</Failed>
+		<Table>Tabell</Table>
+		<Index>Index</Index>
+		<Master_Table>Masterbord</Master_Table>
+		<Sort>Sortera</Sort>
+		<Asc>Stigande</Asc>
+		<Desc>Nedåtgående</Desc>
+		<Display_Settings>Bildskärmsinställningar</Display_Settings>
+		<Sort_by>Sortera efter</Sort_by>
+		<Search_in>Sök i</Search_in>
+		<Search>Sök</Search>
+		<Functions>funktioner</Functions>
+		<Strict_Search>Strikt sökning</Strict_Search>
+		<Run_Function>Kör Funktion</Run_Function>
+		<Query>Fråga</Query>
+		<Command>Kommando</Command>
+		<Error_No_DB>Fel: Ingen databas har laddats</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable eller 'Master Table' är ett skyddat bord. För att skydda integriteten hos db kan du inte redigera den här tabellen</Master_Table_Protected>
+		<Access_Denied>Tillträde beviljas ej</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Visa funktion</View_Function>
+		<User_Requested>Användaren begärt</User_Requested>
+		<Listview_Width>Listvy bredd</Listview_Width>
+		<Listview_Height>Listvy Höjd</Listview_Height>
+		<Extensions>Extensions</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Spara och stäng</Save_and_Close>
+		<Close_wo_saving>Stäng utan att spara</Close_wo_saving>
+		<Failed_Load_Online_EULA>Misslyckades med att ladda online EULA</Failed_Load_Online_EULA>
+		<Auto_Log>Automatisk logg</Auto_Log>
+		<Export_HTML_Schema>Exportera HTML SCHEMA på uppdrag av</Export_HTML_Schema>
+		<Export_HTML_Data>Exportera HTML DATA på uppdrag av</Export_HTML_Data>
+		<Check_Log>Fel: Kontrollera loggen för detaljer</Check_Log>
+		<Query_Error>Frågefel</Query_Error>
+		<Export_CSV>EXPORT CSV PÅ HÄLSA AV</Export_CSV>
+		<Export_SQL_SCHEMA>Exportera SQL - SCHEMA - på uppdrag av</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Exportera SQL - SQL - På uppdrag av</Export_SQL_SQL>
+		<Export_XML>EXPORT XML PÅ HÄLSA AV</Export_XML>
+		<System>Systemet</System>
+		<Views_Read_Only>Visningar är readonly och kan inte redigeras</Views_Read_Only>
+		<Dataview_Error>Databasen eller Dataview finns inte eller har inte laddats än</Dataview_Error>
+		<Browse>Bläddra</Browse>
+		<Statistics_Page>Statistik sida</Statistics_Page>
+		<Invert>Invertera</Invert>
+		<Not_Supported>Stöds inte</Not_Supported>
+		<CMD_Tooltip>Exekverar anpassade SQL-kommandotillstånd i databasen</CMD_Tooltip>
+		<LOG_CSV_Path>Logg CSV-sökväg</LOG_CSV_Path>
+		<LOG_DB_PATH>Logga databas</LOG_DB_PATH>
+		<Transaction_DB_Path>Transaktionsdatabasväg</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Kritiskt felfel</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Stäng TW</Close_TW>
+		<Export_UI>Exportera användargränssnitt</Export_UI>
+		<Define_New_Table>Definiera ny tabell</Define_New_Table>
+		<Create_Statistics_Page>Skapa statistik sida</Create_Statistics_Page>
+		<Debug>debug</Debug>
+		<New_in_Memory_Db>Nytt i minnesdatabasen</New_in_Memory_Db>
+		<Import_SQL>Importera SQL</Import_SQL>
+		<Plugin>plugin</Plugin>
+		<Opened>Öppnad</Opened>
+		<Converter>Omvandlare</Converter>
+		<HTML_to_CSV>HTML till CSV</HTML_to_CSV>
+		<Developer>Utvecklare</Developer>
+		<Search_Settings>Sök inställningar</Search_Settings>
+	</Language>
 </root>

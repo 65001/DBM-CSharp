@@ -1,97 +1,97 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-  <Language language="fr">
-    <File language="fr">Fichier</File>
-    <New language="fr">Nouveau</New>
-    <Open language="fr">Ouvert</Open>
-    <Edit language="fr">Edit</Edit>
-    <View language="fr">Vue</View>
-    <Save language="fr">Enregistrer</Save>
-    <Import language="fr">Importation</Import>
-    <CSV language="fr">CSV</CSV>
-    <SQL language="fr">SQL</SQL>
-    <Export language="fr">Export</Export>
-    <HTML language="fr">HTML</HTML>
-    <Settings language="fr">Paramètres</Settings>
-    <Help language="fr">Aide</Help>
-    <About language="fr">Sur</About>
-    <Show_Help language="fr">Afficher l’aide</Show_Help>
-    <Settings_Editor language="fr">Éditeur de paramètres</Settings_Editor>
-    <Toggle_Debug language="fr">Activer/désactiver Debug</Toggle_Debug>
-    <Toggle_Transaction_Log language="fr">Activer/désactiver des transactions</Toggle_Transaction_Log>
-    <Refresh_Schema language="fr">Actualiser le schéma</Refresh_Schema>
-    <Check_for_Updates language="fr">Check for Updates</Check_for_Updates>
-    <PXML language="fr">XML</PXML>
-    <PRGM_Start language="fr">Débuté du programme</PRGM_Start>
-    <App language="fr">Application</App>
-    <Failed_Save_Settings language="fr">Impossible d’enregistrer les paramètres</Failed_Save_Settings>
-    <Error language="fr">Erreur</Error>
-    <Failed language="fr">A échoué</Failed>
-    <Table language="fr">Tableau</Table>
-    <Index language="fr">Index</Index>
-    <Master_Table language="fr">Tableau de maître</Master_Table>
-    <Sort language="fr">Tri</Sort>
-    <Asc language="fr">Ordre croissant</Asc>
-    <Desc language="fr">Décroissant</Desc>
-    <Display_Settings language="fr">Paramètres d’affichage</Display_Settings>
-    <Sort_by language="fr">Trier par</Sort_by>
-    <Search_in language="fr">Cherchez à</Search_in>
-    <Search language="fr">Recherche</Search>
-    <Functions language="fr">Fonctions</Functions>
-    <Strict_Search language="fr">Recherche stricte</Strict_Search>
-    <Run_Function language="fr">Exécuter une fonction</Run_Function>
-    <Query language="fr">Requête</Query>
-    <Command language="fr">Commande</Command>
-    <Error_No_DB language="fr">Erreur : Aucune base de données n’a été chargé.</Error_No_DB>
-    <UI language="fr">INTERFACE UTILISATEUR</UI>
-    <Master_Table_Protected language="fr">Sqlite_mastertable ou « Master Table » est une table protégée. Pour protéger l’intégrité de la db, vous ne pouvez pas modifier ce tableau</Master_Table_Protected>
-    <Access_Denied language="fr">Accès refusé</Access_Denied>
-    <Application language="fr">App</Application>
-    <View_Function language="fr">Fonction de visualisation</View_Function>
-    <User_Requested language="fr">Demandée par utilisateur</User_Requested>
-    <Listview_Width language="fr">Largeur de ListView</Listview_Width>
-    <Listview_Height language="fr">Hauteur de ListView</Listview_Height>
-    <Extensions language="fr">Extensions</Extensions>
-    <Deliminator language="fr">Persistante</Deliminator>
-    <Language language="fr">Langue</Language>
-    <Save_and_Close language="fr">Enregistrez et fermez</Save_and_Close>
-    <Close_wo_saving language="fr">Fermer sans enregistrer les modifications</Close_wo_saving>
-    <Failed_Load_Online_EULA language="fr">Impossible de charger le CLUF en ligne</Failed_Load_Online_EULA>
-    <Auto_Log language="fr">Auto Journal</Auto_Log>
-    <Export_HTML_Schema language="fr">Exportation HTML schéma au nom de </Export_HTML_Schema>
-    <Export_HTML_Data language="fr">Exporter des données HTML au nom de </Export_HTML_Data>
-    <Check_Log language="fr">Erreur : Veuillez consulter le journal pour plus de détails</Check_Log>
-    <Query_Error language="fr">Erreur de requête</Query_Error>
-    <Export_CSV language="fr">EXPORT CSV AU NOM DE </Export_CSV>
-    <Export_SQL_SCHEMA language="fr">Export SQL - schéma - au nom de </Export_SQL_SCHEMA>
-    <Export_SQL_SQL language="fr">Export SQL - SQL - au nom de </Export_SQL_SQL>
-    <Export_XML language="fr">EXPORT XML POUR LE COMPTE DE</Export_XML>
-    <System language="fr">Système</System>
-    <Views_Read_Only language="fr">Points de vue sont en lecture seule et ne peut pas être modifiées</Views_Read_Only>
-    <Dataview_Error language="fr">La base de données ou Dataview n’existe pas ou n’a pas été chargé encore</Dataview_Error>
-    <Browse language="fr">Parcourir</Browse>
-    <Statistics_Page language="fr">Page de statistiques</Statistics_Page>
-    <Invert language="fr">Inverti</Invert>
-    <Not_Supported language="fr">Non pris en charge</Not_Supported>
-    <CMD_Tooltip language="fr">Exécute les instructions de commande SQL personnalisées sur la base de données</CMD_Tooltip>
-    <LOG_CSV_Path language="fr">Le chemin d’accès de journal CSV</LOG_CSV_Path>
-    <LOG_DB_PATH language="fr">DatabasePath Journal</LOG_DB_PATH>
-    <Transaction_DB_Path language="fr">Chemin d’accès de base de données de transactions</Transaction_DB_Path>
-    <SCHEMA_PRIVATE language="fr">SCHÉMA-PRIVÉ</SCHEMA_PRIVATE>
-    <Critical_Fault_Error language="fr">Erreur critique</Critical_Fault_Error>
-    <Stack_Trace language="fr">Trace de la pile</Stack_Trace>
-    <Close_TW language="fr">Fermez TW</Close_TW>
-    <Export_UI language="fr">Exporter l’interface utilisateur</Export_UI>
-    <Define_New_Table language="fr">Définir la nouvelle Table</Define_New_Table>
-    <Create_Statistics_Page language="fr">Créer la Page de statistiques</Create_Statistics_Page>
-    <Debug language="fr">Débogage</Debug>
-    <New_in_Memory_Db language="fr">Nouveau dans la mémoire de base de données</New_in_Memory_Db>
-    <Import_SQL language="fr">Importation SQL</Import_SQL>
-    <Plugin language="fr">Plugin</Plugin>
-    <Opened language="fr">Ouvert</Opened>
-    <Converter language="fr">Convertisseur</Converter>
-    <HTML_to_CSV language="fr">HTML au format CSV</HTML_to_CSV>
-    <Developer language="fr">Développeur</Developer>
-    <Search_Settings language="fr">Paramètres de recherche</Search_Settings>
-  </Language>
+	<Language>
+		<Language>La langue</Language>
+		<File>Fichier</File>
+		<New>Nouveau</New>
+		<Open>Ouvrir</Open>
+		<Edit>modifier</Edit>
+		<View>Vue</View>
+		<Save>sauvegarder</Save>
+		<Import>Importer</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Exportation</Export>
+		<HTML>HTML</HTML>
+		<Settings>Paramètres</Settings>
+		<Help>Aidez-moi</Help>
+		<About>Sur</About>
+		<Show_Help>Afficher l'aide</Show_Help>
+		<Settings_Editor>Éditeur de paramètres</Settings_Editor>
+		<Toggle_Debug>Toggle Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Basculer le journal des transactions</Toggle_Transaction_Log>
+		<Refresh_Schema>Refresh Schema</Refresh_Schema>
+		<Check_for_Updates>Vérifier les mises à jour</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Programme lancé</PRGM_Start>
+		<App>Application</App>
+		<Failed_Save_Settings>Échec de l'enregistrement des paramètres</Failed_Save_Settings>
+		<Error>Erreur</Error>
+		<Failed>Échoué</Failed>
+		<Table>Table</Table>
+		<Index>Indice</Index>
+		<Master_Table>Table maîtresse</Master_Table>
+		<Sort>Trier</Sort>
+		<Asc>Ascendant</Asc>
+		<Desc>Descendant</Desc>
+		<Display_Settings>Paramètres d'affichage</Display_Settings>
+		<Sort_by>Trier par</Sort_by>
+		<Search_in>Rechercher dans</Search_in>
+		<Search>Chercher</Search>
+		<Functions>Les fonctions</Functions>
+		<Strict_Search>Recherche stricte</Strict_Search>
+		<Run_Function>Fonction de fonctionnement</Run_Function>
+		<Query>Question</Query>
+		<Command>Commander</Command>
+		<Error_No_DB>Erreur: aucune base de données n'a été chargée</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable ou 'Master Table' est une table protégée. Pour protéger l'intégrité du db, vous ne pouvez pas éditer ce tableau</Master_Table_Protected>
+		<Access_Denied>Accès refusé</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Fonction de visualisation</View_Function>
+		<User_Requested>Utilisateur demandé</User_Requested>
+		<Listview_Width>Largeur de liste</Listview_Width>
+		<Listview_Height>Hauteur de la liste</Listview_Height>
+		<Extensions>Extensions</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Sauver et fermer</Save_and_Close>
+		<Close_wo_saving>Fermer sans sauvegarder</Close_wo_saving>
+		<Failed_Load_Online_EULA>Impossible de charger l'EULA en ligne</Failed_Load_Online_EULA>
+		<Auto_Log>Journal automatique</Auto_Log>
+		<Export_HTML_Schema>Exporter HTML SCHEMA au nom de</Export_HTML_Schema>
+		<Export_HTML_Data>Exporter des données HTML pour le compte de</Export_HTML_Data>
+		<Check_Log>Erreur: vérifiez le journal pour plus de détails</Check_Log>
+		<Query_Error>Erreur de requête</Query_Error>
+		<Export_CSV>EXPORTATION CSV AU NOM DE</Export_CSV>
+		<Export_SQL_SCHEMA>Exporter SQL - SCHEMA - Au nom de</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Exporter SQL - SQL - Au nom de</Export_SQL_SQL>
+		<Export_XML>EXPORTATION XML AU NOM DE</Export_XML>
+		<System>Système</System>
+		<Views_Read_Only>Les vues sont lisibles et ne peuvent pas être modifiées</Views_Read_Only>
+		<Dataview_Error>La base de données ou Dataview n'existe pas ou n'a pas encore été chargée</Dataview_Error>
+		<Browse>Feuilleter</Browse>
+		<Statistics_Page>Page de statistiques</Statistics_Page>
+		<Invert>Inverser</Invert>
+		<Not_Supported>Non supporté</Not_Supported>
+		<CMD_Tooltip>Exécute des instructions de commande SQL personnalisées sur la base de données</CMD_Tooltip>
+		<LOG_CSV_Path>Log CSV Path</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Chemin de base de données de transaction</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA PRIVÉ</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Erreur de défaut critique</Critical_Fault_Error>
+		<Stack_Trace>Trace de la pile</Stack_Trace>
+		<Close_TW>Fermer TW</Close_TW>
+		<Export_UI>Export UI</Export_UI>
+		<Define_New_Table>Définir une nouvelle table</Define_New_Table>
+		<Create_Statistics_Page>Créer une page de statistiques</Create_Statistics_Page>
+		<Debug>Déboguer</Debug>
+		<New_in_Memory_Db>Nouvelle base de données mémoire</New_in_Memory_Db>
+		<Import_SQL>Import SQL</Import_SQL>
+		<Plugin>Brancher</Plugin>
+		<Opened>Ouvert</Opened>
+		<Converter>Convertisseur</Converter>
+		<HTML_to_CSV>HTML à CSV</HTML_to_CSV>
+		<Developer>Développeur</Developer>
+		<Search_Settings>Paramètres de recherche</Search_Settings>
+	</Language>
 </root>

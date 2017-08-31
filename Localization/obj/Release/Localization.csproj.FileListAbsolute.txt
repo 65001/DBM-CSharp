@@ -4,7 +4,7 @@ C:\Users\Abhishek\Documents\Projects\DBM\Localization\bin\Release\LitDev.dll
 C:\Users\Abhishek\Documents\Projects\DBM\Localization\bin\Release\SmallBasicLibrary.dll
 C:\Users\Abhishek\Documents\Projects\DBM\Localization\bin\Release\LitDev.xml
 C:\Users\Abhishek\Documents\Projects\DBM\Localization\bin\Release\SmallBasicLibrary.xml
-C:\Users\Abhishek\Documents\Projects\DBM\Localization\obj\Release\Localization.csprojResolveAssemblyReference.cache
 C:\Users\Abhishek\Documents\Projects\DBM\Localization\obj\Release\Localization.csproj.CoreCompileInputs.cache
 C:\Users\Abhishek\Documents\Projects\DBM\Localization\obj\Release\Localization.exe
 C:\Users\Abhishek\Documents\Projects\DBM\Localization\obj\Release\Localization.pdb
+C:\Users\Abhishek\Documents\Projects\DBM\Localization\obj\Release\Localization.csprojResolveAssemblyReference.cache

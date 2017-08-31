@@ -1,97 +1,97 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-  <Language language="fa">
-    <File language="fa">دریافت فایل</File>
-    <New language="fa">جدید</New>
-    <Open language="fa">باز</Open>
-    <Edit language="fa">ویرایش</Edit>
-    <View language="fa">مشاهده</View>
-    <Save language="fa">ذخیره</Save>
-    <Import language="fa">واردات</Import>
-    <CSV language="fa">CSV</CSV>
-    <SQL language="fa">SQL</SQL>
-    <Export language="fa">صادرات</Export>
-    <HTML language="fa">نسخه متنی</HTML>
-    <Settings language="fa">تنظیمات</Settings>
-    <Help language="fa">کمک</Help>
-    <About language="fa">درباره</About>
-    <Show_Help language="fa">راهنمای نمایش</Show_Help>
-    <Settings_Editor language="fa">تنظیمات ویرایشگر</Settings_Editor>
-    <Toggle_Debug language="fa">اشکالزدایی آمار بازدید</Toggle_Debug>
-    <Toggle_Transaction_Log language="fa">تغییر چگونگی وارد معامله</Toggle_Transaction_Log>
-    <Refresh_Schema language="fa">تازه کردن طرح کلی</Refresh_Schema>
-    <Check_for_Updates language="fa">بررسی برای به روز رسانی</Check_for_Updates>
-    <PXML language="fa">XML</PXML>
-    <PRGM_Start language="fa">برنامه آغاز شده</PRGM_Start>
-    <App language="fa">نرم افزار</App>
-    <Failed_Save_Settings language="fa">عدم موفقیت در ذخیره تنظیمات</Failed_Save_Settings>
-    <Error language="fa">خطا</Error>
-    <Failed language="fa">انجام نشد</Failed>
-    <Table language="fa">جدول</Table>
-    <Index language="fa">شاخص</Index>
-    <Master_Table language="fa">میز کارشناسی ارشد</Master_Table>
-    <Sort language="fa">مرتب کردن بر اساس</Sort>
-    <Asc language="fa">صعودی</Asc>
-    <Desc language="fa">نزولی</Desc>
-    <Display_Settings language="fa">تنظیمات نمایش</Display_Settings>
-    <Sort_by language="fa">مرتب سازی بر اساس</Sort_by>
-    <Search_in language="fa">جستجو در</Search_in>
-    <Search language="fa">جستجو</Search>
-    <Functions language="fa">توابع</Functions>
-    <Strict_Search language="fa">جستجوی دقیق</Strict_Search>
-    <Run_Function language="fa">اجرای تابع</Run_Function>
-    <Query language="fa">پرس و جو</Query>
-    <Command language="fa">فرمان</Command>
-    <Error_No_DB language="fa">خطا: هیچ پایگاه داده لود شده</Error_No_DB>
-    <UI language="fa">رابط کاربر</UI>
-    <Master_Table_Protected language="fa">Sqlite_mastertable یا میز کارشناسی ارشد جدول محافظت شده است. برای حفاظت از یکپارچگی دسی بل این جدول ویرایش نمی باشد</Master_Table_Protected>
-    <Access_Denied language="fa">دسترسی رد شد</Access_Denied>
-    <Application language="fa">نرم افزار</Application>
-    <View_Function language="fa">تابع های مشاهده</View_Function>
-    <User_Requested language="fa">کاربر درخواست شده</User_Requested>
-    <Listview_Width language="fa">عرض "نمای لیست"</Listview_Width>
-    <Listview_Height language="fa">ارتفاع "نمای لیست"</Listview_Height>
-    <Extensions language="fa">برنامه های افزودنی</Extensions>
-    <Deliminator language="fa">Deliminator</Deliminator>
-    <Language language="fa">زبان</Language>
-    <Save_and_Close language="fa">ذخیره و بستن</Save_and_Close>
-    <Close_wo_saving language="fa">بستن بدون ذخیره</Close_wo_saving>
-    <Failed_Load_Online_EULA language="fa">آنلاین EULA بارگیری نشد</Failed_Load_Online_EULA>
-    <Auto_Log language="fa">ورود به سیستم خودکار</Auto_Log>
-    <Export_HTML_Schema language="fa">طرح کلی اچ صادرات از طرف </Export_HTML_Schema>
-    <Export_HTML_Data language="fa">صادرات داده های متنی از طرف </Export_HTML_Data>
-    <Check_Log language="fa">خطا: ورود به سیستم برای اطلاعات بیشتر لطفا</Check_Log>
-    <Query_Error language="fa">پرس و جو خطا</Query_Error>
-    <Export_CSV language="fa">صادرات CSV از طرف </Export_CSV>
-    <Export_SQL_SCHEMA language="fa">صادرات SQL - طرح - از طرف </Export_SQL_SCHEMA>
-    <Export_SQL_SQL language="fa">صادرات SQL - SQL - از طرف </Export_SQL_SQL>
-    <Export_XML language="fa">صادرات XML از طرف</Export_XML>
-    <System language="fa">سیستم</System>
-    <Views_Read_Only language="fa">فقط خواندنی است و حذف نمی شود</Views_Read_Only>
-    <Dataview_Error language="fa">پایگاه داده و یا Dataview وجود ندارد یا هنوز بارگذاری نشده است</Dataview_Error>
-    <Browse language="fa">مرور</Browse>
-    <Statistics_Page language="fa">آمار صفحه</Statistics_Page>
-    <Invert language="fa">برعکس شود</Invert>
-    <Not_Supported language="fa">پشتیبانی نمی شود</Not_Supported>
-    <CMD_Tooltip language="fa">سفارشی اظهارات دستور SQL بر روی پایگاه داده را اعدام کرد</CMD_Tooltip>
-    <LOG_CSV_Path language="fa">مسیر ورود CSV</LOG_CSV_Path>
-    <LOG_DB_PATH language="fa">DatabasePath ورود به سیستم</LOG_DB_PATH>
-    <Transaction_DB_Path language="fa">معامله پایگاه داده مسیر</Transaction_DB_Path>
-    <SCHEMA_PRIVATE language="fa">طرح کلی خصوصی</SCHEMA_PRIVATE>
-    <Critical_Fault_Error language="fa">خطا بحرانی خطا</Critical_Fault_Error>
-    <Stack_Trace language="fa">مسیر بسته</Stack_Trace>
-    <Close_TW language="fa">بستن TW</Close_TW>
-    <Export_UI language="fa">صادرات رابط کاربر</Export_UI>
-    <Define_New_Table language="fa">تعریف جدول جدید</Define_New_Table>
-    <Create_Statistics_Page language="fa">ایجاد صفحه های آمار</Create_Statistics_Page>
-    <Debug language="fa">اشکال زدایی</Debug>
-    <New_in_Memory_Db language="fa">جدید در پایگاه داده حافظه</New_in_Memory_Db>
-    <Import_SQL language="fa">واردات SQL</Import_SQL>
-    <Plugin language="fa">پلاگین</Plugin>
-    <Opened language="fa">باز</Opened>
-    <Converter language="fa">مبدل</Converter>
-    <HTML_to_CSV language="fa">HTML به CSV</HTML_to_CSV>
-    <Developer language="fa">توسعه دهنده</Developer>
-    <Search_Settings language="fa">تنظیمات جستجو</Search_Settings>
-  </Language>
+	<Language>
+		<Language>زبان</Language>
+		<File>پرونده</File>
+		<New>جد?د</New>
+		<Open>باز کن</Open>
+		<Edit>و?را?ش کن?د</Edit>
+		<View>چشم انداز</View>
+		<Save>صرفه جو??</Save>
+		<Import>وارد كردن</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>صادرات</Export>
+		<HTML>HTML</HTML>
+		<Settings>تنظ?مات</Settings>
+		<Help>کمک</Help>
+		<About>در باره</About>
+		<Show_Help>نما?ش راهنما</Show_Help>
+		<Settings_Editor>و?را?شگر تنظ?مات</Settings_Editor>
+		<Toggle_Debug>تعو?ض اشکال زدا??</Toggle_Debug>
+		<Toggle_Transaction_Log>ورود به حساب تراکنش را تغ??ر ده?د</Toggle_Transaction_Log>
+		<Refresh_Schema>طرح تازه کردن</Refresh_Schema>
+		<Check_for_Updates>به روز رسان? ها رو بررس? کن</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>برنامه شروع شده است</PRGM_Start>
+		<App>کاربرد</App>
+		<Failed_Save_Settings>تنظ?مات ذخ?ره نشد</Failed_Save_Settings>
+		<Error>خطا</Error>
+		<Failed>ناموفق</Failed>
+		<Table>جدول</Table>
+		<Index>شاخص</Index>
+		<Master_Table>استاد جدول</Master_Table>
+		<Sort>مرتب ساز?</Sort>
+		<Asc>صعود?</Asc>
+		<Desc>نزول?</Desc>
+		<Display_Settings>تنظ?مات نما?شگر</Display_Settings>
+		<Sort_by>مرتب ساز? بر اساس</Sort_by>
+		<Search_in>جستجو در</Search_in>
+		<Search>جستجو کردن</Search>
+		<Functions>توابع</Functions>
+		<Strict_Search>جستجو? دق?ق</Strict_Search>
+		<Run_Function>اجرا? تابع</Run_Function>
+		<Query>پرس و جو</Query>
+		<Command>فرمانده?</Command>
+		<Error_No_DB>خطا: ه?چ پا?گاه داده بارگ?ر? نشده است</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable ?ا 'Master Table' ?ک جدول محافظت شده است. برا? محافظت از ?کپارچگ? DB شما نم?توان?د ا?ن جدول را و?را?ش کن?د</Master_Table_Protected>
+		<Access_Denied>دسترس? ممنوع است</Access_Denied>
+		<Application>برنامه</Application>
+		<View_Function>نما?ش عملکرد</View_Function>
+		<User_Requested>کاربر درخواست شده</User_Requested>
+		<Listview_Width>عرض Listview</Listview_Width>
+		<Listview_Height>ارتفاع Listview</Listview_Height>
+		<Extensions>برنامه ها? افزودن?</Extensions>
+		<Deliminator>دلپذ?ر</Deliminator>
+		<Save_and_Close>ذخ?ره کن و ببند</Save_and_Close>
+		<Close_wo_saving>نزد?ک بدون صرفه جو??</Close_wo_saving>
+		<Failed_Load_Online_EULA>خطا EULA آنلا?ن بارگ?ر? نشد</Failed_Load_Online_EULA>
+		<Auto_Log>خودکار ورود</Auto_Log>
+		<Export_HTML_Schema>صادرات HTML SCHEMA به نما?ندگ? از</Export_HTML_Schema>
+		<Export_HTML_Data>صادرات داده HTML به نما?ندگ? از</Export_HTML_Data>
+		<Check_Log>خطا: لطفا جزئ?ات ورود به س?ستم را بررس? کن?د</Check_Log>
+		<Query_Error>خطا درخواست</Query_Error>
+		<Export_CSV>صادرات CSV را از BEHALF OF</Export_CSV>
+		<Export_SQL_SCHEMA>صادرات SQL - SCHEMA - به نما?ندگ? از</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>صادرات SQL - SQL - به نما?ندگ? از</Export_SQL_SQL>
+		<Export_XML>صادرات XML در مورد</Export_XML>
+		<System>س?ستم</System>
+		<Views_Read_Only>نما?ش فقط خواندن? است و قابل و?را?ش ن?ست</Views_Read_Only>
+		<Dataview_Error>پا?گاه داده ?ا Dataview وجود ندارد ?ا هنوز بارگذار? نشده است</Dataview_Error>
+		<Browse>مرور کردن</Browse>
+		<Statistics_Page>صفحه آمار</Statistics_Page>
+		<Invert>معکوس</Invert>
+		<Not_Supported>پشت?بان? نشده</Not_Supported>
+		<CMD_Tooltip>دستورات دستور SQL سفارش? را بر رو? پا?گاه داده اجرا م? کند</CMD_Tooltip>
+		<LOG_CSV_Path>ورود به مس?ر CSV</LOG_CSV_Path>
+		<LOG_DB_PATH>ورود به DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>مس?ر پا?گاه داده تراکنش</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>خطا خطا بحران?</Critical_Fault_Error>
+		<Stack_Trace>پشته رد?اب?</Stack_Trace>
+		<Close_TW>بستن TW</Close_TW>
+		<Export_UI>UI صادرات</Export_UI>
+		<Define_New_Table>تعر?ف جدول جد?د</Define_New_Table>
+		<Create_Statistics_Page>صفحه آمار را ا?جاد کن?د</Create_Statistics_Page>
+		<Debug>اشکال زدا??</Debug>
+		<New_in_Memory_Db>جد?د در پا?گاه داده حافظه</New_in_Memory_Db>
+		<Import_SQL>وارد کردن SQL</Import_SQL>
+		<Plugin>پلاگ?ن</Plugin>
+		<Opened>افتتاح شد</Opened>
+		<Converter>مبدل</Converter>
+		<HTML_to_CSV>HTML به CSV</HTML_to_CSV>
+		<Developer>توسعهدهنده</Developer>
+		<Search_Settings>تنظ?مات جستجو</Search_Settings>
+	</Language>
 </root>

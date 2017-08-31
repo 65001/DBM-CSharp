@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Text;
 using System.Diagnostics;
 using System.Collections.Generic;
@@ -11,8 +12,9 @@ namespace Localization
     {
         static void Main(string[] args)
         {
-            TextFiles(Program.Directory + "\\Lang\\Array\\");
-            //sTranslateDB(Program.Directory + "\\Localization.db", Microsoft.SmallBasic.Library.Program.Directory+"\\Lang\\");
+            LDUtilities.ShowErrors = false;
+            //TextFiles(Program.Directory + "\\Lang\\Array\\");
+            TranslateDB(Program.Directory + "\\Localization.db", Microsoft.SmallBasic.Library.Program.Directory+"\\Lang\\");
         }
 
         static void TranslateDB(string DBPath,string LocalizationWritePath)
@@ -20,40 +22,48 @@ namespace Localization
             if (System.IO.File.Exists(DBPath) == false) throw new ArgumentException("The DBPath does not exist or is invalid");
             if(System.IO.Directory.Exists(LocalizationWritePath) == false) throw new ArgumentException("The LocalizationWritePath does not exist or is invalid");
             string Database = LDDataBase.ConnectSQLite(DBPath);
-            Console.WriteLine(Database);
             Primitive Records = LDDataBase.Query(Database, "SELECT * FROM Localizations;", null, true);
 
             Dictionary<string, string> Data = new Dictionary<string, string>();
+            
             //Convert Primitive Data to a Dictionary
-            for (int i = 1; i < Records.GetItemCount(); i++)
+            for (int i = 1; i <= Records.GetItemCount(); i++)
             {
                 Data.Add(Records[i]["Key"], Records[i]["Localization"]);
             }
 
             Primitive Languages = LDTranslate.Languages();
             Primitive Index = Languages.GetAllIndices();
-            //Translate all languages into a in memory dictionary
-            List<Dictionary<string, string>> TranslationDictionary = new List<Dictionary<string, string>>();
 
             for (int i = 1; i < Index.GetItemCount(); i++)
             {
-                Console.Write((string)Languages[Index[i]]);
                 Stopwatch SW = new Stopwatch();
                 SW.Start();
-                TranslationDictionary.Add(TranslateDictionary(Data, "en", Index[i]));
+                string Path = LocalizationWritePath + "\\" + Index[i] + ".xml";
                 SW.Stop();
-                Console.WriteLine($" {SW.ElapsedMilliseconds}");
-            }
-
-            for (int i = 0; i < TranslationDictionary.Count; i++)
-            {
-                Console.WriteLine("Writing {0}", Languages[Index[i + 1]]);
-                string Path = LocalizationWritePath + "\\" + Index[i + 1] + ".xml";
-                string TranslationXML = DictionaryToXml(TranslationDictionary[i]);
-                System.IO.File.WriteAllText(Path, TranslationXML);
             }
 
             Console.ReadKey();
+        }
+
+        static void TranslateLoop(string From, string To, Dictionary<string, string> Original, string Path)
+        {
+            Dictionary<string, string> Translated = new Dictionary<string, string>();
+
+            Translated = TranslateDictionary(Original, "en", To); //Translates Dictionary
+
+            Stopwatch IO = new Stopwatch();
+            IO.Start();
+            Write(Path, DictionaryToXml(Translated));
+            IO.Stop();
+
+            Console.WriteLine("To {0} Completed", To);
+            
+        }
+
+        static Task Write(string Path, string Contents)
+        {
+            return Task.Run(() => System.IO.File.WriteAllText(Path, Contents));
         }
 
         static string DictionaryToXml(Dictionary<string, string> Translation)
@@ -80,9 +90,10 @@ namespace Localization
         static Dictionary<string, string> TranslateDictionary(Dictionary<string,string> Data,string From,string To)
         {
             Dictionary<string, string> Results = new Dictionary<string, string>();
+            var Tasks = new List<Task<string>>();
             foreach (var Type in Data)
             {
-                Results.Add(Type.Key, Translate(Type.Value, From, To));
+                Results.Add(Type.Key, Translate(Type.Value, From, To) );
             }
             return Results;
         }

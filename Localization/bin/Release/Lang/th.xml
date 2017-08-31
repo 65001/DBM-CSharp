@@ -92,5 +92,6 @@
 		<Converter>แปลง</Converter>
 		<HTML_to_CSV>HTML เป็น CSV</HTML_to_CSV>
 		<Developer>ผู้พัฒนา</Developer>
+		<Search_Settings>การตั้งค่าการค้นหา</Search_Settings>
 	</Language>
 </root>

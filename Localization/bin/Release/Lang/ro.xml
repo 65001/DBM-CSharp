@@ -92,5 +92,6 @@
 		<Converter>convertizor</Converter>
 		<HTML_to_CSV>HTML pentru CSV</HTML_to_CSV>
 		<Developer>Dezvoltator</Developer>
+		<Search_Settings>Setări de căutare</Search_Settings>
 	</Language>
 </root>

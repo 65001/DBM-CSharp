@@ -1,97 +1,97 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-  <Language language="it">
-    <File language="it">File</File>
-    <New language="it">Nuovo</New>
-    <Open language="it">Aperto</Open>
-    <Edit language="it">Modifica</Edit>
-    <View language="it">Vista</View>
-    <Save language="it">Salva</Save>
-    <Import language="it">Importazione</Import>
-    <CSV language="it">CSV</CSV>
-    <SQL language="it">SQL</SQL>
-    <Export language="it">Esportazione</Export>
-    <HTML language="it">HTML</HTML>
-    <Settings language="it">Impostazioni</Settings>
-    <Help language="it">Guida</Help>
-    <About language="it">Circa</About>
-    <Show_Help language="it">Visualizza la guida</Show_Help>
-    <Settings_Editor language="it">Editor di impostazioni</Settings_Editor>
-    <Toggle_Debug language="it">Attiva/disattiva Debug</Toggle_Debug>
-    <Toggle_Transaction_Log language="it">Log delle transazioni attiva/disattiva</Toggle_Transaction_Log>
-    <Refresh_Schema language="it">Aggiornamento Schema</Refresh_Schema>
-    <Check_for_Updates language="it">Controlla aggiornamenti</Check_for_Updates>
-    <PXML language="it">XML</PXML>
-    <PRGM_Start language="it">Programma di avvio</PRGM_Start>
-    <App language="it">Applicazione</App>
-    <Failed_Save_Settings language="it">Impossibile salvare le impostazioni</Failed_Save_Settings>
-    <Error language="it">Errore</Error>
-    <Failed language="it">Non riuscita</Failed>
-    <Table language="it">tavolo</Table>
-    <Index language="it">Indice</Index>
-    <Master_Table language="it">Tabella master</Master_Table>
-    <Sort language="it">Ordinamento</Sort>
-    <Asc language="it">Ascendente</Asc>
-    <Desc language="it">Discendente</Desc>
-    <Display_Settings language="it">Impostazioni di visualizzazione</Display_Settings>
-    <Sort_by language="it">Ordina per</Sort_by>
-    <Search_in language="it">Cerca In</Search_in>
-    <Search language="it">Ricerca</Search>
-    <Functions language="it">Funzioni</Functions>
-    <Strict_Search language="it">Ricerca rigorosa</Strict_Search>
-    <Run_Function language="it">Eseguire la funzione</Run_Function>
-    <Query language="it">Query</Query>
-    <Command language="it">Comando</Command>
-    <Error_No_DB language="it">Errore: Nessun Database è stato caricato</Error_No_DB>
-    <UI language="it">INTERFACCIA UTENTE</UI>
-    <Master_Table_Protected language="it">Sqlite_mastertable o 'Master tabella' è una tabella protetta. Per proteggere l'integrità del db non è possibile modificare questa tabella</Master_Table_Protected>
-    <Access_Denied language="it">Accesso negato</Access_Denied>
-    <Application language="it">App</Application>
-    <View_Function language="it">Funzione di visualizzazione</View_Function>
-    <User_Requested language="it">Richiesta utente</User_Requested>
-    <Listview_Width language="it">Larghezza di ListView</Listview_Width>
-    <Listview_Height language="it">Altezza di ListView</Listview_Height>
-    <Extensions language="it">Estensioni</Extensions>
-    <Deliminator language="it">Deliminator</Deliminator>
-    <Language language="it">Lingua</Language>
-    <Save_and_Close language="it">Salva e Chiudi</Save_and_Close>
-    <Close_wo_saving language="it">Chiudere senza salvare</Close_wo_saving>
-    <Failed_Load_Online_EULA language="it">Impossibile caricare online EULA</Failed_Load_Online_EULA>
-    <Auto_Log language="it">Registro auto</Auto_Log>
-    <Export_HTML_Schema language="it">Esportazione HTML SCHEMA per conto di </Export_HTML_Schema>
-    <Export_HTML_Data language="it">Esportazione HTML dati per conto di </Export_HTML_Data>
-    <Check_Log language="it">Errore: Si prega di controllare il registro per i dettagli</Check_Log>
-    <Query_Error language="it">Errore di query</Query_Error>
-    <Export_CSV language="it">ESPORTAZIONE CSV PER CONTO DI </Export_CSV>
-    <Export_SQL_SCHEMA language="it">Esportare SQL - SCHEMA - per conto di </Export_SQL_SCHEMA>
-    <Export_SQL_SQL language="it">Esportazione di SQL - SQL - per conto di </Export_SQL_SQL>
-    <Export_XML language="it">ESPORTAZIONE XML PER CONTO DI</Export_XML>
-    <System language="it">Sistema</System>
-    <Views_Read_Only language="it">Viste sono readonly e non possono essere modificate</Views_Read_Only>
-    <Dataview_Error language="it">Il Database o Dataview non esiste o non è stato ancora caricato</Dataview_Error>
-    <Browse language="it">Sfoglia</Browse>
-    <Statistics_Page language="it">Statistiche pagina</Statistics_Page>
-    <Invert language="it">Inverti</Invert>
-    <Not_Supported language="it">Non supportato</Not_Supported>
-    <CMD_Tooltip language="it">Esecuzione delle istruzioni di comando SQL personalizzate nel database</CMD_Tooltip>
-    <LOG_CSV_Path language="it">Percorso di registro CSV</LOG_CSV_Path>
-    <LOG_DB_PATH language="it">Registro DatabasePath</LOG_DB_PATH>
-    <Transaction_DB_Path language="it">Percorso del Database di transazione</Transaction_DB_Path>
-    <SCHEMA_PRIVATE language="it">SCHEMA-PRIVATO</SCHEMA_PRIVATE>
-    <Critical_Fault_Error language="it">Errore di errore critico</Critical_Fault_Error>
-    <Stack_Trace language="it">Analisi dello stack</Stack_Trace>
-    <Close_TW language="it">Chiudere TW</Close_TW>
-    <Export_UI language="it">Esportazione dell'interfaccia utente</Export_UI>
-    <Define_New_Table language="it">Definire la nuova tabella</Define_New_Table>
-    <Create_Statistics_Page language="it">Creare statistiche pagina</Create_Statistics_Page>
-    <Debug language="it">Eseguire il debug</Debug>
-    <New_in_Memory_Db language="it">Nuova banca dati memoria</New_in_Memory_Db>
-    <Import_SQL language="it">Importazione SQL</Import_SQL>
-    <Plugin language="it">Plugin</Plugin>
-    <Opened language="it">Aperto</Opened>
-    <Converter language="it">Convertitore</Converter>
-    <HTML_to_CSV language="it">HTML in formato CSV</HTML_to_CSV>
-    <Developer language="it">Sviluppatore</Developer>
-    <Search_Settings language="it">Impostazioni di ricerca</Search_Settings>
-  </Language>
+	<Language>
+		<Language>Lingua</Language>
+		<File>File</File>
+		<New>Nuovo</New>
+		<Open>Aperto</Open>
+		<Edit>Modifica</Edit>
+		<View>vista</View>
+		<Save>Salvare</Save>
+		<Import>Importare</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>Esportare</Export>
+		<HTML>HTML</HTML>
+		<Settings>impostazioni</Settings>
+		<Help>Aiuto</Help>
+		<About>Di</About>
+		<Show_Help>Mostra aiuto</Show_Help>
+		<Settings_Editor>Editor delle impostazioni</Settings_Editor>
+		<Toggle_Debug>Toggle debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Toggle log di transazione</Toggle_Transaction_Log>
+		<Refresh_Schema>Schema di aggiornamento</Refresh_Schema>
+		<Check_for_Updates>Controlla gli aggiornamenti</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Programma iniziato</PRGM_Start>
+		<App>Applicazione</App>
+		<Failed_Save_Settings>Impossibile salvare le impostazioni</Failed_Save_Settings>
+		<Error>Errore</Error>
+		<Failed>fallito</Failed>
+		<Table>tavolo</Table>
+		<Index>Indice</Index>
+		<Master_Table>Tabella Master</Master_Table>
+		<Sort>Ordinare</Sort>
+		<Asc>Ascendente</Asc>
+		<Desc>Discendente</Desc>
+		<Display_Settings>Impostazioni di visualizzazione</Display_Settings>
+		<Sort_by>Ordina per</Sort_by>
+		<Search_in>Cerca nel</Search_in>
+		<Search>Ricerca</Search>
+		<Functions>funzioni</Functions>
+		<Strict_Search>Ricerca rigorosa</Strict_Search>
+		<Run_Function>Run Funzione</Run_Function>
+		<Query>domanda</Query>
+		<Command>Comando</Command>
+		<Error_No_DB>Errore: nessun database è stato caricato</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' è una tabella protetta. Per proteggere l'integrità del db non è possibile modificare questa tabella</Master_Table_Protected>
+		<Access_Denied>Accesso negato</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Funzione di visualizzazione</View_Function>
+		<User_Requested>Utente richiesto</User_Requested>
+		<Listview_Width>Larghezza di listino</Listview_Width>
+		<Listview_Height>ListView Height</Listview_Height>
+		<Extensions>estensioni</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Salva e chiudi</Save_and_Close>
+		<Close_wo_saving>Chiudi senza salvare</Close_wo_saving>
+		<Failed_Load_Online_EULA>Impossibile caricare l'EULA in linea</Failed_Load_Online_EULA>
+		<Auto_Log>Registro automatico</Auto_Log>
+		<Export_HTML_Schema>Esporta HTML SCHEMA per conto di</Export_HTML_Schema>
+		<Export_HTML_Data>Esporta i dati HTML per conto di</Export_HTML_Data>
+		<Check_Log>Errore: Controllare il registro per i dettagli</Check_Log>
+		<Query_Error>Errore di query</Query_Error>
+		<Export_CSV>ESPORTAZIONE CSV SUL COMPLETO DI</Export_CSV>
+		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Per conto di</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Esporta SQL - SQL - Per conto di</Export_SQL_SQL>
+		<Export_XML>ESPORTAZIONE XML IN CASO DI</Export_XML>
+		<System>Sistema</System>
+		<Views_Read_Only>Le visualizzazioni sono di sola lettura e non possono essere modificate</Views_Read_Only>
+		<Dataview_Error>Il database o Dataview non esiste o non è ancora stato caricato</Dataview_Error>
+		<Browse>Navigare</Browse>
+		<Statistics_Page>Pagina statistica</Statistics_Page>
+		<Invert>Invertire</Invert>
+		<Not_Supported>Non supportato</Not_Supported>
+		<CMD_Tooltip>Esegue le istruzioni di comando SQL personalizzate nel database</CMD_Tooltip>
+		<LOG_CSV_Path>Percorso del percorso CSV</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Transaction_DB_Path>Percorso database transazioni</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATO</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Errore di errore critico</Critical_Fault_Error>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Close_TW>Chiudi TW</Close_TW>
+		<Export_UI>Esportazione dell'interfaccia utente</Export_UI>
+		<Define_New_Table>Definire una nuova tabella</Define_New_Table>
+		<Create_Statistics_Page>Crea pagina statistica</Create_Statistics_Page>
+		<Debug>mettere a punto</Debug>
+		<New_in_Memory_Db>Nuovo nel database di memoria</New_in_Memory_Db>
+		<Import_SQL>Importa SQL</Import_SQL>
+		<Plugin>Collegare</Plugin>
+		<Opened>Ha aperto</Opened>
+		<Converter>Converter</Converter>
+		<HTML_to_CSV>HTML a CSV</HTML_to_CSV>
+		<Developer>Sviluppatore</Developer>
+		<Search_Settings>Cerca i settaggi</Search_Settings>
+	</Language>
 </root>

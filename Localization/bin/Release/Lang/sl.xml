@@ -92,5 +92,6 @@
 		<Converter>Pretvornik</Converter>
 		<HTML_to_CSV>HTML v CSV</HTML_to_CSV>
 		<Developer>Razvijalec</Developer>
+		<Search_Settings>Nastavitve iskanja</Search_Settings>
 	</Language>
 </root>

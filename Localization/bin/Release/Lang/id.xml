@@ -92,5 +92,6 @@
 		<Converter>Konverter</Converter>
 		<HTML_to_CSV>HTML ke CSV</HTML_to_CSV>
 		<Developer>Pengembang</Developer>
+		<Search_Settings>Pengaturan Pencarian</Search_Settings>
 	</Language>
 </root>

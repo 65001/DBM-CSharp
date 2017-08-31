@@ -1,97 +1,97 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-  <Language language="bg">
-    <File language="bg">Файл</File>
-    <New language="bg">Нов</New>
-    <Open language="bg">Отворен</Open>
-    <Edit language="bg">Редактиране</Edit>
-    <View language="bg">Изглед</View>
-    <Save language="bg">Запиши</Save>
-    <Import language="bg">Импортиране</Import>
-    <CSV language="bg">CSV</CSV>
-    <SQL language="bg">SQL</SQL>
-    <Export language="bg">Износ</Export>
-    <HTML language="bg">HTML</HTML>
-    <Settings language="bg">Настройки</Settings>
-    <Help language="bg">Помощ</Help>
-    <About language="bg">За</About>
-    <Show_Help language="bg">Показване на помощ</Show_Help>
-    <Settings_Editor language="bg">Настройки редактор</Settings_Editor>
-    <Toggle_Debug language="bg">Превключване Debug</Toggle_Debug>
-    <Toggle_Transaction_Log language="bg">Превключване на РКООНИК</Toggle_Transaction_Log>
-    <Refresh_Schema language="bg">Обнови схемата</Refresh_Schema>
-    <Check_for_Updates language="bg">Проверка за актуализации</Check_for_Updates>
-    <PXML language="bg">XML</PXML>
-    <PRGM_Start language="bg">Програмата стартира</PRGM_Start>
-    <App language="bg">Приложение</App>
-    <Failed_Save_Settings language="bg">Неуспешно записване на настройки</Failed_Save_Settings>
-    <Error language="bg">Грешка</Error>
-    <Failed language="bg">Неуспешно</Failed>
-    <Table language="bg">Таблица</Table>
-    <Index language="bg">Индекс</Index>
-    <Master_Table language="bg">Магистър Билярд</Master_Table>
-    <Sort language="bg">Сортиране</Sort>
-    <Asc language="bg">Възходящо</Asc>
-    <Desc language="bg">Низходящ</Desc>
-    <Display_Settings language="bg">Настройки на дисплея</Display_Settings>
-    <Sort_by language="bg">Сортиране по</Sort_by>
-    <Search_in language="bg">Търсене в</Search_in>
-    <Search language="bg">Търсене</Search>
-    <Functions language="bg">Функции</Functions>
-    <Strict_Search language="bg">Строг търсене</Strict_Search>
-    <Run_Function language="bg">Изпълнете функция</Run_Function>
-    <Query language="bg">Заявка</Query>
-    <Command language="bg">Команда</Command>
-    <Error_No_DB language="bg">Грешка: Няма база данни е натоварен</Error_No_DB>
-    <UI language="bg">ПОТРЕБИТЕЛСКИ ИНТЕРФЕЙС</UI>
-    <Master_Table_Protected language="bg">Sqlite_mastertable или "Магистър таблица" е защитена таблица. Да защити целостта на db не можете да редактирате тази таблица</Master_Table_Protected>
-    <Access_Denied language="bg">Отказан достъп</Access_Denied>
-    <Application language="bg">Ап</Application>
-    <View_Function language="bg">Преглед функция</View_Function>
-    <User_Requested language="bg">Поискан от потребителя</User_Requested>
-    <Listview_Width language="bg">Listview ширина</Listview_Width>
-    <Listview_Height language="bg">Listview височина</Listview_Height>
-    <Extensions language="bg">Разширения</Extensions>
-    <Deliminator language="bg">Deliminator</Deliminator>
-    <Language language="bg">Език</Language>
-    <Save_and_Close language="bg">Запиши и затвори</Save_and_Close>
-    <Close_wo_saving language="bg">Затвори без записване</Close_wo_saving>
-    <Failed_Load_Online_EULA language="bg">Неуспешно зареждане на онлайн ЛСКП</Failed_Load_Online_EULA>
-    <Auto_Log language="bg">Автоматичен вход</Auto_Log>
-    <Export_HTML_Schema language="bg">Експортиране на HTML схема от името на </Export_HTML_Schema>
-    <Export_HTML_Data language="bg">Експортиране на HTML данни от името на </Export_HTML_Data>
-    <Check_Log language="bg">Грешка: Моля Проверете регистрационния файл за подробни данни</Check_Log>
-    <Query_Error language="bg">Запитване грешка</Query_Error>
-    <Export_CSV language="bg">CSV ИЗНОС ОТ ИМЕТО НА </Export_CSV>
-    <Export_SQL_SCHEMA language="bg">Експортиране на SQL - схема - от името на </Export_SQL_SCHEMA>
-    <Export_SQL_SQL language="bg">Експортиране на SQL - SQL - от името на </Export_SQL_SQL>
-    <Export_XML language="bg">ЕКСПОРТИРАНЕ НА XML ОТ ИМЕТО НА</Export_XML>
-    <System language="bg">Система</System>
-    <Views_Read_Only language="bg">Мненията са само за четене и не може да бъде редактирана</Views_Read_Only>
-    <Dataview_Error language="bg">Базата данни или Dataview не съществува или не е бил натоварен още</Dataview_Error>
-    <Browse language="bg">Преглед</Browse>
-    <Statistics_Page language="bg">Статистика страница</Statistics_Page>
-    <Invert language="bg">Инвертирай</Invert>
-    <Not_Supported language="bg">Не се поддържа</Not_Supported>
-    <CMD_Tooltip language="bg">Изпълнява потребителски команди, SQL команда върху базата данни</CMD_Tooltip>
-    <LOG_CSV_Path language="bg">Регистрационния файл CSV път</LOG_CSV_Path>
-    <LOG_DB_PATH language="bg">Влезте DatabasePath</LOG_DB_PATH>
-    <Transaction_DB_Path language="bg">Път до базата данни транзакция</Transaction_DB_Path>
-    <SCHEMA_PRIVATE language="bg">СХЕМА ЧАСТНИ</SCHEMA_PRIVATE>
-    <Critical_Fault_Error language="bg">Критичната вина грешка</Critical_Fault_Error>
-    <Stack_Trace language="bg">Проследяването на стека</Stack_Trace>
-    <Close_TW language="bg">Затвори TW</Close_TW>
-    <Export_UI language="bg">Експортиране на потребителския интерфейс</Export_UI>
-    <Define_New_Table language="bg">Дефиниране на нова таблица</Define_New_Table>
-    <Create_Statistics_Page language="bg">Създаване статистика страница</Create_Statistics_Page>
-    <Debug language="bg">Отстраняване на грешки</Debug>
-    <New_in_Memory_Db language="bg">Ново в паметта база данни</New_in_Memory_Db>
-    <Import_SQL language="bg">Импортиране на SQL</Import_SQL>
-    <Plugin language="bg">Плъгин</Plugin>
-    <Opened language="bg">Отвори</Opened>
-    <Converter language="bg">Конвертор</Converter>
-    <HTML_to_CSV language="bg">HTML към CSV</HTML_to_CSV>
-    <Developer language="bg">Разработчици</Developer>
-    <Search_Settings language="bg">Настройки на търсенето</Search_Settings>
-  </Language>
+	<Language>
+		<Language>език</Language>
+		<File>досие</File>
+		<New>нов</New>
+		<Open>отворено</Open>
+		<Edit>редактиране</Edit>
+		<View>изглед</View>
+		<Save>Запази</Save>
+		<Import>внос</Import>
+		<CSV>CSV</CSV>
+		<SQL>SQL</SQL>
+		<Export>износ</Export>
+		<HTML>HTML</HTML>
+		<Settings>Настройки</Settings>
+		<Help>Помогне</Help>
+		<About>относно</About>
+		<Show_Help>Показване на помощ</Show_Help>
+		<Settings_Editor>Редактор на настройки</Settings_Editor>
+		<Toggle_Debug>Превключете отстраняването на грешки</Toggle_Debug>
+		<Toggle_Transaction_Log>Превключване на регистъра на транзакциите</Toggle_Transaction_Log>
+		<Refresh_Schema>Схема за обновяване</Refresh_Schema>
+		<Check_for_Updates>Провери за актуализации</Check_for_Updates>
+		<PXML>XML</PXML>
+		<PRGM_Start>Програмата стартира</PRGM_Start>
+		<App>Приложение</App>
+		<Failed_Save_Settings>Запазването на настройките не бе успешно</Failed_Save_Settings>
+		<Error>грешка</Error>
+		<Failed>Се провали</Failed>
+		<Table>маса</Table>
+		<Index>индекс</Index>
+		<Master_Table>Главна маса</Master_Table>
+		<Sort>Вид</Sort>
+		<Asc>Възходящ</Asc>
+		<Desc>Низходящо</Desc>
+		<Display_Settings>Настройки на дисплея</Display_Settings>
+		<Sort_by>Сортирай по</Sort_by>
+		<Search_in>Търсене в</Search_in>
+		<Search>Търсене</Search>
+		<Functions>Функции</Functions>
+		<Strict_Search>Строго търсене</Strict_Search>
+		<Run_Function>Функция за изпълнение</Run_Function>
+		<Query>Запитване</Query>
+		<Command>команда</Command>
+		<Error_No_DB>Грешка: Няма заредена база данни</Error_No_DB>
+		<UI>UI</UI>
+		<Master_Table_Protected>Sqlite_mastertable или "Master Table" е защитена таблица. За да защитите целостта на db, не можете да редактирате тази таблица</Master_Table_Protected>
+		<Access_Denied>Отказан достъп</Access_Denied>
+		<Application>App</Application>
+		<View_Function>Функция за преглед</View_Function>
+		<User_Requested>Потребителят е поискал</User_Requested>
+		<Listview_Width>Width на списъците</Listview_Width>
+		<Listview_Height>Височина на листата</Listview_Height>
+		<Extensions>Разширения</Extensions>
+		<Deliminator>Deliminator</Deliminator>
+		<Save_and_Close>Запазване и затваряне</Save_and_Close>
+		<Close_wo_saving>Затваряне без запазване</Close_wo_saving>
+		<Failed_Load_Online_EULA>Неуспешно зареждане на онлайн ЛСКП</Failed_Load_Online_EULA>
+		<Auto_Log>Автоматичен дневник</Auto_Log>
+		<Export_HTML_Schema>Експортиране на HTML SCHEMA от името на</Export_HTML_Schema>
+		<Export_HTML_Data>Експортирайте HTML ДАННИ от името на</Export_HTML_Data>
+		<Check_Log>Грешка: Проверете регистрационния файл за подробности</Check_Log>
+		<Query_Error>Грешка в заявката</Query_Error>
+		<Export_CSV>ЕКСПОРТ CSV ЗА ПОЛЗВАНЕ НА</Export_CSV>
+		<Export_SQL_SCHEMA>Експорт SQL - SCHEMA - От името на</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Експортиране на SQL - SQL - От името на</Export_SQL_SQL>
+		<Export_XML>ЕКСПОРТЪТ XML В БЪЛГАРИЯ</Export_XML>
+		<System>Система</System>
+		<Views_Read_Only>Изгледите са само за четене и не могат да бъдат редактирани</Views_Read_Only>
+		<Dataview_Error>Базата данни или Dataview не съществуват или все още не са заредени</Dataview_Error>
+		<Browse>паса</Browse>
+		<Statistics_Page>Статистика</Statistics_Page>
+		<Invert>Обръщане</Invert>
+		<Not_Supported>Не се поддържа</Not_Supported>
+		<CMD_Tooltip>Изпълнява персонализирани изрази на SQL команда в базата данни</CMD_Tooltip>
+		<LOG_CSV_Path>Път на CSV на дневника</LOG_CSV_Path>
+		<LOG_DB_PATH>База данни за базата данни</LOG_DB_PATH>
+		<Transaction_DB_Path>Път на база данни за транзакциите</Transaction_DB_Path>
+		<SCHEMA_PRIVATE>SCHEMA-ЧАСТНО</SCHEMA_PRIVATE>
+		<Critical_Fault_Error>Грешка при критични грешки</Critical_Fault_Error>
+		<Stack_Trace>Стъпка Трейс</Stack_Trace>
+		<Close_TW>Затворете TW</Close_TW>
+		<Export_UI>Експортиране на интерфейса</Export_UI>
+		<Define_New_Table>Определяне на нова таблица</Define_New_Table>
+		<Create_Statistics_Page>Създаване на страница със статистически данни</Create_Statistics_Page>
+		<Debug>Debug</Debug>
+		<New_in_Memory_Db>Нова в базата данни на паметта</New_in_Memory_Db>
+		<Import_SQL>Импортиране на SQL</Import_SQL>
+		<Plugin>Plug-in</Plugin>
+		<Opened>Отворен</Opened>
+		<Converter>конвертор</Converter>
+		<HTML_to_CSV>HTML до CSV</HTML_to_CSV>
+		<Developer>Разработчик</Developer>
+		<Search_Settings>Настройки за търсенето</Search_Settings>
+	</Language>
 </root>
