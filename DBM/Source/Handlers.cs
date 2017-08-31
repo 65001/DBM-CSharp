@@ -159,7 +159,7 @@ namespace DBM
                 }
                 else
                 {
-                    Events.LogMessagePopUp(Utilities.Localization["Error No DB"], Utilities.Localization["UI"], "Edit");
+                    Events.LogMessagePopUp(Utilities.Localization["Error No DB"], Utilities.Localization["UI"], Utilities.Localization["Edit"]);
                 }
                 return;
             }
@@ -170,10 +170,10 @@ namespace DBM
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Engines.Command(Engines.CurrentDatabase, Import.CSV(Path), GlobalStatic.UserName, "", false);
-                    Events.LogMessagePopUp("CSV Import Completed", Utilities.Localization["UI"], "Importer"); //TODO Localize 
+                    Events.LogMessagePopUp("CSV Import Completed", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize 
                     return;
                 }
-                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Import.CSV");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Import.CSV");//TODO Localize
             }
             else if (Item == Utilities.Localization["SQL"])
             {
@@ -181,10 +181,10 @@ namespace DBM
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     string SQL = System.IO.File.ReadAllText(Path);
-                    Events.LogMessagePopUp("SQL Import Completed", Utilities.Localization["UI"], "Importer"); //TODO Localize
+                    Events.LogMessagePopUp("SQL Import Completed", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Import.SQL");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Import.SQL");//TODO Localize
             }
             //else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
             //{ }
@@ -199,7 +199,7 @@ namespace DBM
                     Events.LogMessagePopUp("XML export of " + Engines.CurrentTable + " completed!", "Export", "Success");
                     return;
                 }
-                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.XML");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.XML");//TODO Localize
             }
             else if (Item == Utilities.Localization["HTML"] + " ")
             {
@@ -208,10 +208,10 @@ namespace DBM
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.HTML(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.SanitizeFieldName(), Path, GlobalStatic.ProductID + " V" + GlobalStatic.VersionID);
-                    Events.LogMessagePopUp("HTML export of " + Engines.CurrentTable + " completed!", "Export", "Success");
+                    Events.LogMessagePopUp("HTML export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]);
                     return;
                 }
-                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.HTML");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.HTML");//TODO Localize
             }
             else if (Item == Utilities.Localization["SQL"] + " ")
             {
@@ -233,10 +233,10 @@ namespace DBM
                     Dictionary<string, string> Types = Export.SQL_Fetch_Type(SchemaQuery, Schema, Engines.CurrentEngine);
                     Export.SQL(Data, Schema, PK, Types, Engines.CurrentTable, Path);
                     LDProcess.Start(Path, null);
-                    Events.LogMessagePopUp("SQL export of " + Engines.CurrentTable + " completed!", "Export", "Success"); //TODO Localize
+                    Events.LogMessagePopUp("SQL export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.SQL");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.SQL");//TODO Localize
             }
             else if (Item == Utilities.Localization["CSV"] + " ")
             {
@@ -245,10 +245,10 @@ namespace DBM
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.CSV(Data, Export.GenerateSchemaFromQueryData(Data), Path, GlobalStatic.Deliminator);
-                    Events.LogMessagePopUp("CSV export of " + Engines.CurrentTable + " completed!", "Export", "Success"); //TODO Localize
+                    Events.LogMessagePopUp("CSV export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.CSV");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.CSV");//TODO Localize
             }
             else if (Item == "JSON") //TODO Localize
             {
@@ -257,10 +257,10 @@ namespace DBM
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.JSON(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.SanitizeFieldName(), Path);
-                    Events.LogMessagePopUp("JSON export of " + Engines.CurrentTable + " completed!", "Export", "Success"); //TODO Localize
+                    Events.LogMessagePopUp("JSON export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.JSON");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.JSON");//TODO Localize
             }
             else if (Item == "MarkDown") //TODO Localize
             {
@@ -269,10 +269,10 @@ namespace DBM
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.MarkDown(Data, Export.GenerateSchemaFromQueryData(Data), Path);
-                    Events.LogMessagePopUp("MarkDown export is now complete", "Export", "Success"); //TODO Localize
+                    Events.LogMessagePopUp("MarkDown export is now complete", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.MarkDown");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.MarkDown");//TODO Localize
             }
             else if (Item == "Wiki MarkUp") //TODO Localize
             {
@@ -281,10 +281,10 @@ namespace DBM
                 {
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.MarkUp(Data, Export.GenerateSchemaFromQueryData(Data), Path);
-                    Events.LogMessagePopUp("Wiki Markup export is now complete", "Export", "Success"); //TODO Localize
+                    Events.LogMessagePopUp("Wiki Markup export is now complete", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp("Oh no something went wrong :(", "UI", "Export.Wiki Markup");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.Wiki Markup");//TODO Localize
             }
             //Settings
             else if (Item == Utilities.Localization["About"])
@@ -315,7 +315,7 @@ namespace DBM
             }
             else if (Item != null)
             {
-                Events.LogMessage(Item + " does not exist in context or is not yet implemented", "UI");
+                Events.LogMessage(Item + " does not exist in context or is not yet implemented", Utilities.Localization["UI"]);
             }
 		}
         

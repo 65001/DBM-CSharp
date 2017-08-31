@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Լեզու</Language>
-		<File>Ֆայլը</File>
-		<New>Նոր</New>
-		<Open>Բացեք</Open>
-		<Edit>Խմբագրել</Edit>
-		<View>Դիտել</View>
-		<Save>Պահել</Save>
-		<Import>Ներմուծում</Import>
-		<CSV>CSV- ն</CSV>
-		<SQL>SQL</SQL>
-		<Export>Արտահանումը</Export>
-		<HTML>HTML</HTML>
-		<Settings>Կարգավորումներ</Settings>
-		<Help>Օգնություն</Help>
 		<About>Մասին</About>
-		<Show_Help>Ցույց տալ օգնություն</Show_Help>
-		<Settings_Editor>Պարամետրերի խմբագիր</Settings_Editor>
-		<Toggle_Debug>Փոխարկեք Debug- ը</Toggle_Debug>
-		<Toggle_Transaction_Log>Փոխարկել գործարքի հաշիվը</Toggle_Transaction_Log>
-		<Refresh_Schema>Թարմացվող սխեմա</Refresh_Schema>
-		<Check_for_Updates>Ստուգել թարմացումները</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Ծրագիրն սկսվեց</PRGM_Start>
-		<App>Դիմում</App>
-		<Failed_Save_Settings>Չհաջողվեց պահպանել Պարամետրերը</Failed_Save_Settings>
-		<Error>Սխալ</Error>
-		<Failed>Ձախողվեց</Failed>
-		<Table>Աղյուսակ</Table>
-		<Index>Ինդեքս</Index>
-		<Master_Table>Վարպետ աղյուսակ</Master_Table>
-		<Sort>Տեսակավորել</Sort>
-		<Asc>Աճում է</Asc>
-		<Desc>Աճող</Desc>
-		<Display_Settings>Ցուցադրման կարգավորումները</Display_Settings>
-		<Sort_by>Դասավորել ըստ</Sort_by>
-		<Search_in>Որոնել մեջ</Search_in>
-		<Search>Որոնում</Search>
-		<Functions>Գործառույթներ</Functions>
-		<Strict_Search>Խիստ որոնում</Strict_Search>
-		<Run_Function>Run գործառույթը</Run_Function>
-		<Query>Հարցում</Query>
-		<Command>Հրաման</Command>
-		<Error_No_DB>Error: Ոչ մի բազա չի բեռնված</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable կամ 'Master Table' - պաշտպանված սեղան: ԴԲի ամբողջականությունը պաշտպանելու համար դուք չեք կարող խմբագրել այս աղյուսակը</Master_Table_Protected>
 		<Access_Denied>Մուտքն արգելված է</Access_Denied>
+		<App>Դիմում</App>
 		<Application>App</Application>
-		<View_Function>Դիտել գործառույթը</View_Function>
-		<User_Requested>Օգտվողի պահանջը</User_Requested>
-		<Listview_Width>Listview լայնությունը</Listview_Width>
-		<Listview_Height>Ցույց տալ բարձրությունը</Listview_Height>
-		<Extensions>Ընդլայնումներ</Extensions>
-		<Deliminator>Դելիմիրատոր</Deliminator>
-		<Save_and_Close>Պահպանեք եւ փակեք</Save_and_Close>
-		<Close_wo_saving>Փակել առանց փրկելու</Close_wo_saving>
-		<Failed_Load_Online_EULA>Չհաջողվեց բեռնել առցանց EULA</Failed_Load_Online_EULA>
+		<Asc>Աճում է</Asc>
 		<Auto_Log>Auto Log- ը</Auto_Log>
-		<Export_HTML_Schema>Արտահանման HTML SCHEMA անունից</Export_HTML_Schema>
-		<Export_HTML_Data>Արտահանման HTML DATA անունից</Export_HTML_Data>
+		<Browse>Փնտրել</Browse>
+		<CMD_Tooltip>Իրականացված SQL հրամանի հայտարարությունները կատարում է տվյալների բազայում</CMD_Tooltip>
+		<CSV>CSV- ն</CSV>
 		<Check_Log>Սխալ. Խնդրում ենք ստուգել տեղեկամատյանը մանրամասների համար</Check_Log>
-		<Query_Error>Հարցման սխալ</Query_Error>
+		<Check_for_Updates>Ստուգել թարմացումները</Check_for_Updates>
+		<Close_TW>Փակել TW</Close_TW>
+		<Close_wo_saving>Փակել առանց փրկելու</Close_wo_saving>
+		<Command>Հրաման</Command>
+		<Converter>Կոդավորվորիչ</Converter>
+		<Create_Statistics_Page>Ստեղծեք Վիճակագրություն էջ</Create_Statistics_Page>
+		<Critical_Fault_Error>Կրիտիկական սխալային սխալ</Critical_Fault_Error>
+		<Dataview_Error>Տվյալների բազան կամ Տվյալների հավաքածուը գոյություն չունի կամ դեռ չի բեռնվել</Dataview_Error>
+		<Debug>Խախտում</Debug>
+		<Define_New_Table>Սահմանել նոր աղյուսակ</Define_New_Table>
+		<Deliminator>Դելիմիրատոր</Deliminator>
+		<Desc>Աճող</Desc>
+		<Developer>Հեղինակ</Developer>
+		<Display_Settings>Ցուցադրման կարգավորումները</Display_Settings>
+		<Edit>Խմբագրել</Edit>
+		<Error>Սխալ</Error>
+		<Error_Generic>Օ՜, ոչինչ սխալվեց: :(</Error_Generic>
+		<Error_No_DB>Error: Ոչ մի բազա չի բեռնված</Error_No_DB>
+		<Export>Արտահանումը</Export>
 		<Export_CSV>ԷՔՍՊՈՐՏ ՔՍՎ</Export_CSV>
+		<Export_HTML_Data>Արտահանման HTML DATA անունից</Export_HTML_Data>
+		<Export_HTML_Schema>Արտահանման HTML SCHEMA անունից</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Արտահանման SQL - SCHEMA - անունից</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Արտահանման SQL - SQL - անունից</Export_SQL_SQL>
+		<Export_UI>Արտահանման UI</Export_UI>
 		<Export_XML>EXPORT XML- ի մասին</Export_XML>
-		<System>Համակարգը</System>
-		<Views_Read_Only>Դիտումները ընթերցում են եւ չեն կարող խմբագրվել</Views_Read_Only>
-		<Dataview_Error>Տվյալների բազան կամ Տվյալների հավաքածուը գոյություն չունի կամ դեռ չի բեռնվել</Dataview_Error>
-		<Browse>Փնտրել</Browse>
-		<Statistics_Page>Վիճակագրության էջ</Statistics_Page>
+		<Extensions>Ընդլայնումներ</Extensions>
+		<Failed>Ձախողվեց</Failed>
+		<Failed_Load_Online_EULA>Չհաջողվեց բեռնել առցանց EULA</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Չհաջողվեց պահպանել Պարամետրերը</Failed_Save_Settings>
+		<File>Ֆայլը</File>
+		<Functions>Գործառույթներ</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML- ը CSV- ին</HTML_to_CSV>
+		<Help>Օգնություն</Help>
+		<Import>Ներմուծում</Import>
+		<Import_SQL>Ներմուծել SQL</Import_SQL>
+		<Importer>Ներմուծող</Importer>
+		<Index>Ինդեքս</Index>
 		<Invert>Խուզել</Invert>
-		<Not_Supported>Չի ապահովվում</Not_Supported>
-		<CMD_Tooltip>Իրականացված SQL հրամանի հայտարարությունները կատարում է տվյալների բազայում</CMD_Tooltip>
 		<LOG_CSV_Path>CSV ուղակի մուտքագրեք</LOG_CSV_Path>
 		<LOG_DB_PATH>Մուտքի բազայի բազա</LOG_DB_PATH>
-		<Transaction_DB_Path>Գործարքի բազայի ուղին</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Կրիտիկական սխալային սխալ</Critical_Fault_Error>
-		<Stack_Trace>Հարկային հսկողություն</Stack_Trace>
-		<Close_TW>Փակել TW</Close_TW>
-		<Export_UI>Արտահանման UI</Export_UI>
-		<Define_New_Table>Սահմանել նոր աղյուսակ</Define_New_Table>
-		<Create_Statistics_Page>Ստեղծեք Վիճակագրություն էջ</Create_Statistics_Page>
-		<Debug>Խախտում</Debug>
+		<Language>Լեզու</Language>
+		<Listview_Height>Ցույց տալ բարձրությունը</Listview_Height>
+		<Listview_Width>Listview լայնությունը</Listview_Width>
+		<Master_Table>Վարպետ աղյուսակ</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable կամ 'Master Table' - պաշտպանված սեղան: ԴԲի ամբողջականությունը պաշտպանելու համար դուք չեք կարող խմբագրել այս աղյուսակը</Master_Table_Protected>
+		<New>Նոր</New>
 		<New_in_Memory_Db>Նոր հիշողության տվյալների շտեմարանում</New_in_Memory_Db>
-		<Import_SQL>Ներմուծել SQL</Import_SQL>
-		<Plugin>Միացնել</Plugin>
+		<Not_Supported>Չի ապահովվում</Not_Supported>
+		<Open>Բացեք</Open>
 		<Opened>Բացվեց</Opened>
-		<Converter>Կոդավորվորիչ</Converter>
-		<HTML_to_CSV>HTML- ը CSV- ին</HTML_to_CSV>
-		<Developer>Հեղինակ</Developer>
+		<PRGM_Start>Ծրագիրն սկսվեց</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Միացնել</Plugin>
+		<Query>Հարցում</Query>
+		<Query_Error>Հարցման սխալ</Query_Error>
+		<Refresh_Schema>Թարմացվող սխեմա</Refresh_Schema>
+		<Run_Function>Run գործառույթը</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Պահել</Save>
+		<Save_and_Close>Պահպանեք եւ փակեք</Save_and_Close>
+		<Search>Որոնում</Search>
 		<Search_Settings>Որոնման կարգավորումներ</Search_Settings>
+		<Search_in>Որոնել մեջ</Search_in>
+		<Settings>Կարգավորումներ</Settings>
+		<Settings_Editor>Պարամետրերի խմբագիր</Settings_Editor>
+		<Show_Help>Ցույց տալ օգնություն</Show_Help>
+		<Sort>Տեսակավորել</Sort>
+		<Sort_by>Դասավորել ըստ</Sort_by>
+		<Stack_Trace>Հարկային հսկողություն</Stack_Trace>
+		<Statistics_Page>Վիճակագրության էջ</Statistics_Page>
+		<Strict_Search>Խիստ որոնում</Strict_Search>
+		<Success>Հաջողությունը</Success>
+		<System>Համակարգը</System>
+		<Table>Աղյուսակ</Table>
+		<Toggle_Debug>Փոխարկեք Debug- ը</Toggle_Debug>
+		<Toggle_Transaction_Log>Փոխարկել գործարքի հաշիվը</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Գործարքի բազայի ուղին</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Օգտվողի պահանջը</User_Requested>
+		<View>Դիտել</View>
+		<View_Function>Դիտել գործառույթը</View_Function>
+		<Views_Read_Only>Դիտումները ընթերցում են եւ չեն կարող խմբագրվել</Views_Read_Only>
 	</Language>
 </root>

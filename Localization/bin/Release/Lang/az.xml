@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Dil</Language>
-		<File>Fayl</File>
-		<New>Yeni</New>
-		<Open>Açıq</Open>
-		<Edit>Düz?liş edin</Edit>
-		<View>Görünüş</View>
-		<Save>Yadda saxla</Save>
-		<Import>İthalat</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>İxrac</Export>
-		<HTML>HTML</HTML>
-		<Settings>Ayarlar</Settings>
-		<Help>Köm?k edin</Help>
 		<About>Haqqında</About>
-		<Show_Help>Yardım göst?r</Show_Help>
-		<Settings_Editor>Ayarlar Düzenleyicisi</Settings_Editor>
-		<Toggle_Debug>Debug'u d?yişdirin</Toggle_Debug>
-		<Toggle_Transaction_Log>?m?liyyat girişini açın</Toggle_Transaction_Log>
-		<Refresh_Schema>Refresh Şeması</Refresh_Schema>
-		<Check_for_Updates>Updates yoxlayın</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Proqram başladı</PRGM_Start>
-		<App>?riz?</App>
-		<Failed_Save_Settings>Ayarları Saxla etm?miş</Failed_Save_Settings>
-		<Error>S?hv</Error>
-		<Failed>Failed</Failed>
-		<Table>C?dv?l</Table>
-		<Index>İndeks</Index>
-		<Master_Table>Master C?dv?l</Master_Table>
-		<Sort>Cür</Sort>
-		<Asc>Artan</Asc>
-		<Desc>Azalan</Desc>
-		<Display_Settings>Ekran parametrl?ri</Display_Settings>
-		<Sort_by>Sırala</Sort_by>
-		<Search_in>Axtarışa daxil et</Search_in>
-		<Search>Axtarış</Search>
-		<Functions>Funksiyalar</Functions>
-		<Strict_Search>Sıx Axtarış</Strict_Search>
-		<Run_Function>İşl?yin</Run_Function>
-		<Query>Sorgu</Query>
-		<Command>Komanda</Command>
-		<Error_No_DB>Hata: Veril?nl?r bazası yükl?nmir</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable v? ya 'Master C?dv?l' qorunan bir masa. DB-nin bütövlüyünü qorumaq üçün bu c?dv?ni redakt? ed? bilm?zsiniz</Master_Table_Protected>
 		<Access_Denied>Giriş qadağandır</Access_Denied>
+		<App>?riz?</App>
 		<Application>App</Application>
-		<View_Function>Funksiyası bax</View_Function>
-		<User_Requested>İstifad?çi ist?di</User_Requested>
-		<Listview_Width>Liste genişliyi</Listview_Width>
-		<Listview_Height>Listview Boyu</Listview_Height>
-		<Extensions>Extensions</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>Saxla v? bağla</Save_and_Close>
-		<Close_wo_saving>Saxlanmadan Yoxlayın</Close_wo_saving>
-		<Failed_Load_Online_EULA>Onlayn EULA yükl?nm?miş</Failed_Load_Online_EULA>
+		<Asc>Artan</Asc>
 		<Auto_Log>Avtomatik giriş</Auto_Log>
-		<Export_HTML_Schema>HTML Şemasını ixrac etm?k adına</Export_HTML_Schema>
-		<Export_HTML_Data>HTML DATA adından ixrac edin</Export_HTML_Data>
+		<Browse>Gözd?n keçirin</Browse>
+		<CMD_Tooltip>Veril?nl?r bazasına xüsusi SQL ?mrl?ri verilir</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>X?ta: Xahiş edirik ?traflı m?lumat üçün günd?mi yoxlayın</Check_Log>
-		<Query_Error>Sorgu hatası</Query_Error>
+		<Check_for_Updates>Updates yoxlayın</Check_for_Updates>
+		<Close_TW>TW bağlayın</Close_TW>
+		<Close_wo_saving>Saxlanmadan Yoxlayın</Close_wo_saving>
+		<Command>Komanda</Command>
+		<Converter>Converter</Converter>
+		<Create_Statistics_Page>Statistika S?hif? yaradın</Create_Statistics_Page>
+		<Critical_Fault_Error>Kritik Arızalı Hata</Critical_Fault_Error>
+		<Dataview_Error>Veril?nl?r bazası v? ya Dataview mövcud deyil v? ya h?l? yükl?nmir</Dataview_Error>
+		<Debug>Debug</Debug>
+		<Define_New_Table>Yeni C?dv?l t?yin edin</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>Azalan</Desc>
+		<Developer>İnkişaf etdirici</Developer>
+		<Display_Settings>Ekran parametrl?ri</Display_Settings>
+		<Edit>Düz?liş edin</Edit>
+		<Error>S?hv</Error>
+		<Error_Generic>Oh heç bir şey yanlış getdi! :(</Error_Generic>
+		<Error_No_DB>Hata: Veril?nl?r bazası yükl?nmir</Error_No_DB>
+		<Export>İxrac</Export>
 		<Export_CSV>İxracat CSV</Export_CSV>
+		<Export_HTML_Data>HTML DATA adından ixrac edin</Export_HTML_Data>
+		<Export_HTML_Schema>HTML Şemasını ixrac etm?k adına</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Export SQL - SCHEMA - adından</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>İxrac SQL - SQL - adından</Export_SQL_SQL>
+		<Export_UI>UI ixrac</Export_UI>
 		<Export_XML>XİDM?T İSTEHSALI</Export_XML>
-		<System>Sistem</System>
-		<Views_Read_Only>Baxışlar oxunur v? redakt? edil? bilm?z</Views_Read_Only>
-		<Dataview_Error>Veril?nl?r bazası v? ya Dataview mövcud deyil v? ya h?l? yükl?nmir</Dataview_Error>
-		<Browse>Gözd?n keçirin</Browse>
-		<Statistics_Page>Statistika S?hif?</Statistics_Page>
+		<Extensions>Extensions</Extensions>
+		<Failed>Failed</Failed>
+		<Failed_Load_Online_EULA>Onlayn EULA yükl?nm?miş</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Ayarları Saxla etm?miş</Failed_Save_Settings>
+		<File>Fayl</File>
+		<Functions>Funksiyalar</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>CSV üçün HTML</HTML_to_CSV>
+		<Help>Köm?k edin</Help>
+		<Import>İthalat</Import>
+		<Import_SQL>SQL'i idxal et</Import_SQL>
+		<Importer>İthalatçı</Importer>
+		<Index>İndeks</Index>
 		<Invert>Ters çevir</Invert>
-		<Not_Supported>D?st?kl?nmir</Not_Supported>
-		<CMD_Tooltip>Veril?nl?r bazasına xüsusi SQL ?mrl?ri verilir</CMD_Tooltip>
 		<LOG_CSV_Path>CSV Yolunu Girin</LOG_CSV_Path>
 		<LOG_DB_PATH>DatabasePath Giriş et</LOG_DB_PATH>
-		<Transaction_DB_Path>Transaction Database Path</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Kritik Arızalı Hata</Critical_Fault_Error>
-		<Stack_Trace>Stack Trace</Stack_Trace>
-		<Close_TW>TW bağlayın</Close_TW>
-		<Export_UI>UI ixrac</Export_UI>
-		<Define_New_Table>Yeni C?dv?l t?yin edin</Define_New_Table>
-		<Create_Statistics_Page>Statistika S?hif? yaradın</Create_Statistics_Page>
-		<Debug>Debug</Debug>
+		<Language>Dil</Language>
+		<Listview_Height>Listview Boyu</Listview_Height>
+		<Listview_Width>Liste genişliyi</Listview_Width>
+		<Master_Table>Master C?dv?l</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable v? ya 'Master C?dv?l' qorunan bir masa. DB-nin bütövlüyünü qorumaq üçün bu c?dv?ni redakt? ed? bilm?zsiniz</Master_Table_Protected>
+		<New>Yeni</New>
 		<New_in_Memory_Db>Yaddaş bazasında yeni</New_in_Memory_Db>
-		<Import_SQL>SQL'i idxal et</Import_SQL>
-		<Plugin>Plugin</Plugin>
+		<Not_Supported>D?st?kl?nmir</Not_Supported>
+		<Open>Açıq</Open>
 		<Opened>Açıldı</Opened>
-		<Converter>Converter</Converter>
-		<HTML_to_CSV>CSV üçün HTML</HTML_to_CSV>
-		<Developer>İnkişaf etdirici</Developer>
+		<PRGM_Start>Proqram başladı</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Plugin</Plugin>
+		<Query>Sorgu</Query>
+		<Query_Error>Sorgu hatası</Query_Error>
+		<Refresh_Schema>Refresh Şeması</Refresh_Schema>
+		<Run_Function>İşl?yin</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Yadda saxla</Save>
+		<Save_and_Close>Saxla v? bağla</Save_and_Close>
+		<Search>Axtarış</Search>
 		<Search_Settings>Axtarış parametrl?ri</Search_Settings>
+		<Search_in>Axtarışa daxil et</Search_in>
+		<Settings>Ayarlar</Settings>
+		<Settings_Editor>Ayarlar Düzenleyicisi</Settings_Editor>
+		<Show_Help>Yardım göst?r</Show_Help>
+		<Sort>Cür</Sort>
+		<Sort_by>Sırala</Sort_by>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Statistics_Page>Statistika S?hif?</Statistics_Page>
+		<Strict_Search>Sıx Axtarış</Strict_Search>
+		<Success>Müv?ff?qiyy?t</Success>
+		<System>Sistem</System>
+		<Table>C?dv?l</Table>
+		<Toggle_Debug>Debug'u d?yişdirin</Toggle_Debug>
+		<Toggle_Transaction_Log>?m?liyyat girişini açın</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Transaction Database Path</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>İstifad?çi ist?di</User_Requested>
+		<View>Görünüş</View>
+		<View_Function>Funksiyası bax</View_Function>
+		<Views_Read_Only>Baxışlar oxunur v? redakt? edil? bilm?z</Views_Read_Only>
 	</Language>
 </root>

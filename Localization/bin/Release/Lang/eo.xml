@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Lingvo</Language>
-		<File>Dosiero</File>
-		<New>Nova</New>
-		<Open>Malfermita</Open>
-		<Edit>Redakti</Edit>
-		<View>Vido</View>
-		<Save>Savi</Save>
-		<Import>Importi</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Eksporti</Export>
-		<HTML>HTML</HTML>
-		<Settings>Agordoj</Settings>
-		<Help>Helpo</Help>
 		<About>Pri</About>
-		<Show_Help>Montri helpon</Show_Help>
-		<Settings_Editor>Agordoj Redaktoro</Settings_Editor>
-		<Toggle_Debug>Baskuligi Sangon</Toggle_Debug>
-		<Toggle_Transaction_Log>Salti Transaction-Log</Toggle_Transaction_Log>
-		<Refresh_Schema>Refresigi Schema</Refresh_Schema>
-		<Check_for_Updates>Kontrolu gisdatigojn</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Programo Komencita</PRGM_Start>
-		<App>Apliko</App>
-		<Failed_Save_Settings>Malsukcesis Konservi Agordojn</Failed_Save_Settings>
-		<Error>Eraro</Error>
-		<Failed>Malsukcesis</Failed>
-		<Table>Tablo</Table>
-		<Index>Indekso</Index>
-		<Master_Table>Majstro Tablo</Master_Table>
-		<Sort>Varo</Sort>
-		<Asc>Suprenirante</Asc>
-		<Desc>Posteulo</Desc>
-		<Display_Settings>Montri agordojn</Display_Settings>
-		<Sort_by>Ordigi lau</Sort_by>
-		<Search_in>Sercado</Search_in>
-		<Search>Serci</Search>
-		<Functions>Funkcioj</Functions>
-		<Strict_Search>Strikta Serco</Strict_Search>
-		<Run_Function>Kuri Funkcion</Run_Function>
-		<Query>Query</Query>
-		<Command>Komando</Command>
-		<Error_No_DB>Eraro: Neniu Datumbazo sargis</Error_No_DB>
-		<UI>IU</UI>
-		<Master_Table_Protected>Sqlite_mastertable au 'Master Table' estas protektita tablo. Por protekti la integrecon de la db vi ne povas redakti ci tiun tablon</Master_Table_Protected>
 		<Access_Denied>Aliro neita</Access_Denied>
+		<App>Apliko</App>
 		<Application>App</Application>
-		<View_Function>Vidi Funkcion</View_Function>
-		<User_Requested>Uzanto Petita</User_Requested>
-		<Listview_Width>Lerta Vidlinio</Listview_Width>
-		<Listview_Height>Lerta Alteco</Listview_Height>
-		<Extensions>Etendoj</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>Konservi kaj Fermi</Save_and_Close>
-		<Close_wo_saving>Fermi sen Savi</Close_wo_saving>
-		<Failed_Load_Online_EULA>Malsukcesis sargi en linio EULA</Failed_Load_Online_EULA>
+		<Asc>Suprenirante</Asc>
 		<Auto_Log>Automata Ensaluto</Auto_Log>
-		<Export_HTML_Schema>Eksporti HTML SCHEMA en nomo de</Export_HTML_Schema>
-		<Export_HTML_Data>Eksporti HTML-datumojn en nome de</Export_HTML_Data>
+		<Browse>Foliumi</Browse>
+		<CMD_Tooltip>Ekzekutas personecajn SQL-komandajn deklarojn al la datumbazo</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Eraro: Bonvolu kontroli la protokolon por detaloj</Check_Log>
-		<Query_Error>Query Eraro</Query_Error>
+		<Check_for_Updates>Kontrolu gisdatigojn</Check_for_Updates>
+		<Close_TW>Fermi TW</Close_TW>
+		<Close_wo_saving>Fermi sen Savi</Close_wo_saving>
+		<Command>Komando</Command>
+		<Converter>Konvertilo</Converter>
+		<Create_Statistics_Page>Krei Statistiko Pago</Create_Statistics_Page>
+		<Critical_Fault_Error>Kritika Eraro Eraro</Critical_Fault_Error>
+		<Dataview_Error>La Datumaro au Dataview ne ekzistas au ankorau ne estis sargita</Dataview_Error>
+		<Debug>Depuso</Debug>
+		<Define_New_Table>Difini Novan Tablon</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>Posteulo</Desc>
+		<Developer>Programisto</Developer>
+		<Display_Settings>Montri agordojn</Display_Settings>
+		<Edit>Redakti</Edit>
+		<Error>Eraro</Error>
+		<Error_Generic>Ho nenio iris malbone! :(</Error_Generic>
+		<Error_No_DB>Eraro: Neniu Datumbazo sargis</Error_No_DB>
+		<Export>Eksporti</Export>
 		<Export_CSV>Eksportado de CSV</Export_CSV>
+		<Export_HTML_Data>Eksporti HTML-datumojn en nome de</Export_HTML_Data>
+		<Export_HTML_Schema>Eksporti HTML SCHEMA en nomo de</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Eksportado SQL - SCHEMA - En la nomo de</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Eksporti SQL - SQL - Nome de</Export_SQL_SQL>
+		<Export_UI>Eksporti UI</Export_UI>
 		<Export_XML>Eksporta XML SINGLETE</Export_XML>
-		<System>Sistemo</System>
-		<Views_Read_Only>Vidoj estas lege kaj ne povas esti redaktataj</Views_Read_Only>
-		<Dataview_Error>La Datumaro au Dataview ne ekzistas au ankorau ne estis sargita</Dataview_Error>
-		<Browse>Foliumi</Browse>
-		<Statistics_Page>Statistiko Pago</Statistics_Page>
+		<Extensions>Etendoj</Extensions>
+		<Failed>Malsukcesis</Failed>
+		<Failed_Load_Online_EULA>Malsukcesis sargi en linio EULA</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Malsukcesis Konservi Agordojn</Failed_Save_Settings>
+		<File>Dosiero</File>
+		<Functions>Funkcioj</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML al CSV</HTML_to_CSV>
+		<Help>Helpo</Help>
+		<Import>Importi</Import>
+		<Import_SQL>Importi SQL</Import_SQL>
+		<Importer>Importisto</Importer>
+		<Index>Indekso</Index>
 		<Invert>Renversi</Invert>
-		<Not_Supported>Ne subtenata</Not_Supported>
-		<CMD_Tooltip>Ekzekutas personecajn SQL-komandajn deklarojn al la datumbazo</CMD_Tooltip>
 		<LOG_CSV_Path>Ensalutu CSV-vojon</LOG_CSV_Path>
 		<LOG_DB_PATH>Ensaluti DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>Transaction Database Path</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Kritika Eraro Eraro</Critical_Fault_Error>
-		<Stack_Trace>Stack Trace</Stack_Trace>
-		<Close_TW>Fermi TW</Close_TW>
-		<Export_UI>Eksporti UI</Export_UI>
-		<Define_New_Table>Difini Novan Tablon</Define_New_Table>
-		<Create_Statistics_Page>Krei Statistiko Pago</Create_Statistics_Page>
-		<Debug>Depuso</Debug>
+		<Language>Lingvo</Language>
+		<Listview_Height>Lerta Alteco</Listview_Height>
+		<Listview_Width>Lerta Vidlinio</Listview_Width>
+		<Master_Table>Majstro Tablo</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable au 'Master Table' estas protektita tablo. Por protekti la integrecon de la db vi ne povas redakti ci tiun tablon</Master_Table_Protected>
+		<New>Nova</New>
 		<New_in_Memory_Db>Nova en Memoria Datumbazo</New_in_Memory_Db>
-		<Import_SQL>Importi SQL</Import_SQL>
-		<Plugin>Konekti</Plugin>
+		<Not_Supported>Ne subtenata</Not_Supported>
+		<Open>Malfermita</Open>
 		<Opened>Malfermita</Opened>
-		<Converter>Konvertilo</Converter>
-		<HTML_to_CSV>HTML al CSV</HTML_to_CSV>
-		<Developer>Programisto</Developer>
+		<PRGM_Start>Programo Komencita</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Konekti</Plugin>
+		<Query>Query</Query>
+		<Query_Error>Query Eraro</Query_Error>
+		<Refresh_Schema>Refresigi Schema</Refresh_Schema>
+		<Run_Function>Kuri Funkcion</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Savi</Save>
+		<Save_and_Close>Konservi kaj Fermi</Save_and_Close>
+		<Search>Serci</Search>
 		<Search_Settings>Serci agordojn</Search_Settings>
+		<Search_in>Sercado</Search_in>
+		<Settings>Agordoj</Settings>
+		<Settings_Editor>Agordoj Redaktoro</Settings_Editor>
+		<Show_Help>Montri helpon</Show_Help>
+		<Sort>Varo</Sort>
+		<Sort_by>Ordigi lau</Sort_by>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Statistics_Page>Statistiko Pago</Statistics_Page>
+		<Strict_Search>Strikta Serco</Strict_Search>
+		<Success>Sukceso</Success>
+		<System>Sistemo</System>
+		<Table>Tablo</Table>
+		<Toggle_Debug>Baskuligi Sangon</Toggle_Debug>
+		<Toggle_Transaction_Log>Salti Transaction-Log</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Transaction Database Path</Transaction_DB_Path>
+		<UI>IU</UI>
+		<User_Requested>Uzanto Petita</User_Requested>
+		<View>Vido</View>
+		<View_Function>Vidi Funkcion</View_Function>
+		<Views_Read_Only>Vidoj estas lege kaj ne povas esti redaktataj</Views_Read_Only>
 	</Language>
 </root>

@@ -22,7 +22,7 @@ namespace Localization
             if (System.IO.File.Exists(DBPath) == false) throw new ArgumentException("The DBPath does not exist or is invalid");
             if(System.IO.Directory.Exists(LocalizationWritePath) == false) throw new ArgumentException("The LocalizationWritePath does not exist or is invalid");
             string Database = LDDataBase.ConnectSQLite(DBPath);
-            Primitive Records = LDDataBase.Query(Database, "SELECT * FROM Localizations;", null, true);
+            Primitive Records = LDDataBase.Query(Database, "SELECT * FROM Localizations ORDER BY KEY ASC;", null, true);
 
             Dictionary<string, string> Data = new Dictionary<string, string>();
             
@@ -40,9 +40,10 @@ namespace Localization
                 Stopwatch SW = new Stopwatch();
                 SW.Start();
                 string Path = LocalizationWritePath + "\\" + Index[i] + ".xml";
+                TranslateLoop("en", Index[i], Data, Path);
                 SW.Stop();
             }
-
+            Console.WriteLine("Completed!");
             Console.ReadKey();
         }
 
@@ -74,14 +75,12 @@ namespace Localization
             SB.Append(XML_Creation_Statement);
             SB.Append("<root>\n");
             SB.AppendFormat("\t<{0}>\n", "Language");
-
             foreach (var Key in Translation)
             {
                 string Node = (Key.Key).Replace(" ", "_").Replace("\"", "").Replace("&", "").Replace("<", "").Replace(">", "").Replace("'", "");
                 string Item = Key.Value.Replace("&", "&amp;").Replace("<", "&lt;");
                 SB.AppendFormat("\t\t<{0}>{1}</{0}>\n", Node, Item);
             }
-
             SB.AppendFormat("\t</{0}>\n", "Language");
             SB.Append("</root>");
             return SB.ToString();

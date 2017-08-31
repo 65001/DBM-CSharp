@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Til</Language>
-		<File>Fayl</File>
-		<New>Yangi</New>
-		<Open>Ochish</Open>
-		<Edit>Tahrirlash</Edit>
-		<View>Ko'rish</View>
-		<Save>Saqlash</Save>
-		<Import>Import</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Eksport</Export>
-		<HTML>HTML</HTML>
-		<Settings>Sozlamalar</Settings>
-		<Help>Yordam bering</Help>
 		<About>Haqida</About>
-		<Show_Help>Yordamni ko'rsatish</Show_Help>
-		<Settings_Editor>Sozlamalar muharriri</Settings_Editor>
-		<Toggle_Debug>Debugni almashtirish</Toggle_Debug>
-		<Toggle_Transaction_Log>Jurnal jurnalini almashtirish</Toggle_Transaction_Log>
-		<Refresh_Schema>Yangilash sxemasi</Refresh_Schema>
-		<Check_for_Updates>Yangilanishlarni tekshiring</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Dastur boshlandi</PRGM_Start>
-		<App>Dastur</App>
-		<Failed_Save_Settings>Sozlamalarni saqlab bo'lmadi</Failed_Save_Settings>
-		<Error>Xato</Error>
-		<Failed>Muvaffaqiyatsiz</Failed>
-		<Table>Jadval</Table>
-		<Index>Indeks</Index>
-		<Master_Table>Asosiy jadval</Master_Table>
-		<Sort>Saralash</Sort>
-		<Asc>Ortgan</Asc>
-		<Desc>Kamayish bo'yicha</Desc>
-		<Display_Settings>Displeyni sozlash</Display_Settings>
-		<Sort_by>Saralash turi</Sort_by>
-		<Search_in>Qidirish</Search_in>
-		<Search>Qidirmoq</Search>
-		<Functions>Vazifalar</Functions>
-		<Strict_Search>Qattiq qidirish</Strict_Search>
-		<Run_Function>Funkni ishga tushirish</Run_Function>
-		<Query>So'rov</Query>
-		<Command>Buyruq</Command>
-		<Error_No_DB>Xato: Ma'lumotlar bazasi yuklanmadi</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable yoki "Master Table" - himoyalangan jadval. JB ning yaxlitligini himoya qilish uchun siz ushbu jadvalni tahrirlay olmaysiz</Master_Table_Protected>
 		<Access_Denied>Murojaat rad etildi</Access_Denied>
+		<App>Dastur</App>
 		<Application>Ilova</Application>
-		<View_Function>Funktsiyani ko'rish</View_Function>
-		<User_Requested>Talab qilingan foydalanuvchi</User_Requested>
-		<Listview_Width>Ro'yxatning kengligi</Listview_Width>
-		<Listview_Height>Ro'yxatning balandligi</Listview_Height>
-		<Extensions>Kengaytmalar</Extensions>
-		<Deliminator>Delimniator</Deliminator>
-		<Save_and_Close>Saqlash va yopish</Save_and_Close>
-		<Close_wo_saving>Saqlamasdan yopish</Close_wo_saving>
-		<Failed_Load_Online_EULA>Onlayn EULA-ni yuklab bo'lmadi</Failed_Load_Online_EULA>
+		<Asc>Ortgan</Asc>
 		<Auto_Log>Avtomatik jurnal</Auto_Log>
-		<Export_HTML_Schema>HTML brauzer nomidan eksport qilish</Export_HTML_Schema>
-		<Export_HTML_Data>HTML DATA nomidan eksport</Export_HTML_Data>
+		<Browse>Ko'zdan kechiring</Browse>
+		<CMD_Tooltip>Ma'lumotlar bazasiga maxsus SQL buyruq ko'rsatmalarini bajaradi</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Xato: Batafsil ma'lumot uchun jurnalni tekshiring</Check_Log>
-		<Query_Error>So'rov xato</Query_Error>
+		<Check_for_Updates>Yangilanishlarni tekshiring</Check_for_Updates>
+		<Close_TW>TWni yoping</Close_TW>
+		<Close_wo_saving>Saqlamasdan yopish</Close_wo_saving>
+		<Command>Buyruq</Command>
+		<Converter>Konverter</Converter>
+		<Create_Statistics_Page>Statistika sahifasini yaratish</Create_Statistics_Page>
+		<Critical_Fault_Error>Muhim xato xati</Critical_Fault_Error>
+		<Dataview_Error>Ma'lumotlar bazasi yoki ma'lumotlar ko'rinishi mavjud emas yoki hali yuklanmadi</Dataview_Error>
+		<Debug>Xato qilish</Debug>
+		<Define_New_Table>Yangi jadvalni belgilang</Define_New_Table>
+		<Deliminator>Delimniator</Deliminator>
+		<Desc>Kamayish bo'yicha</Desc>
+		<Developer>Dasturchi</Developer>
+		<Display_Settings>Displeyni sozlash</Display_Settings>
+		<Edit>Tahrirlash</Edit>
+		<Error>Xato</Error>
+		<Error_Generic>Hech narsa noto'g'ri ketdi! :(</Error_Generic>
+		<Error_No_DB>Xato: Ma'lumotlar bazasi yuklanmadi</Error_No_DB>
+		<Export>Eksport</Export>
 		<Export_CSV>EKSPORT KOMPANIYASI</Export_CSV>
+		<Export_HTML_Data>HTML DATA nomidan eksport</Export_HTML_Data>
+		<Export_HTML_Schema>HTML brauzer nomidan eksport qilish</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Eksport SQL - SCHEMA - nomidan</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>SQL - SQL eksport - nomidan</Export_SQL_SQL>
+		<Export_UI>UI eksport qiling</Export_UI>
 		<Export_XML>EKSPORT XIZMATI</Export_XML>
-		<System>Tizim</System>
-		<Views_Read_Only>Ko'rishlar faqat o'qiladi va tahrirlanmaydi</Views_Read_Only>
-		<Dataview_Error>Ma'lumotlar bazasi yoki ma'lumotlar ko'rinishi mavjud emas yoki hali yuklanmadi</Dataview_Error>
-		<Browse>Ko'zdan kechiring</Browse>
-		<Statistics_Page>Statistika sahifasi</Statistics_Page>
+		<Extensions>Kengaytmalar</Extensions>
+		<Failed>Muvaffaqiyatsiz</Failed>
+		<Failed_Load_Online_EULA>Onlayn EULA-ni yuklab bo'lmadi</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Sozlamalarni saqlab bo'lmadi</Failed_Save_Settings>
+		<File>Fayl</File>
+		<Functions>Vazifalar</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>CSV uchun HTML</HTML_to_CSV>
+		<Help>Yordam bering</Help>
+		<Import>Import</Import>
+		<Import_SQL>SQLni import qilish</Import_SQL>
+		<Importer>Importchi</Importer>
+		<Index>Indeks</Index>
 		<Invert>Invert</Invert>
-		<Not_Supported>Qo'llab-quvvatlanmaydi</Not_Supported>
-		<CMD_Tooltip>Ma'lumotlar bazasiga maxsus SQL buyruq ko'rsatmalarini bajaradi</CMD_Tooltip>
 		<LOG_CSV_Path>CSV yo'lini kiriting</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>Jurnal bazasi yo'li</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Muhim xato xati</Critical_Fault_Error>
-		<Stack_Trace>Stakan iz</Stack_Trace>
-		<Close_TW>TWni yoping</Close_TW>
-		<Export_UI>UI eksport qiling</Export_UI>
-		<Define_New_Table>Yangi jadvalni belgilang</Define_New_Table>
-		<Create_Statistics_Page>Statistika sahifasini yaratish</Create_Statistics_Page>
-		<Debug>Xato qilish</Debug>
+		<Language>Til</Language>
+		<Listview_Height>Ro'yxatning balandligi</Listview_Height>
+		<Listview_Width>Ro'yxatning kengligi</Listview_Width>
+		<Master_Table>Asosiy jadval</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable yoki "Master Table" - himoyalangan jadval. JB ning yaxlitligini himoya qilish uchun siz ushbu jadvalni tahrirlay olmaysiz</Master_Table_Protected>
+		<New>Yangi</New>
 		<New_in_Memory_Db>Xotira bazasida yangi</New_in_Memory_Db>
-		<Import_SQL>SQLni import qilish</Import_SQL>
-		<Plugin>Ulash</Plugin>
+		<Not_Supported>Qo'llab-quvvatlanmaydi</Not_Supported>
+		<Open>Ochish</Open>
 		<Opened>Ochilgan</Opened>
-		<Converter>Konverter</Converter>
-		<HTML_to_CSV>CSV uchun HTML</HTML_to_CSV>
-		<Developer>Dasturchi</Developer>
+		<PRGM_Start>Dastur boshlandi</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Ulash</Plugin>
+		<Query>So'rov</Query>
+		<Query_Error>So'rov xato</Query_Error>
+		<Refresh_Schema>Yangilash sxemasi</Refresh_Schema>
+		<Run_Function>Funkni ishga tushirish</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Saqlash</Save>
+		<Save_and_Close>Saqlash va yopish</Save_and_Close>
+		<Search>Qidirmoq</Search>
 		<Search_Settings>Qidiruv sozlamalari</Search_Settings>
+		<Search_in>Qidirish</Search_in>
+		<Settings>Sozlamalar</Settings>
+		<Settings_Editor>Sozlamalar muharriri</Settings_Editor>
+		<Show_Help>Yordamni ko'rsatish</Show_Help>
+		<Sort>Saralash</Sort>
+		<Sort_by>Saralash turi</Sort_by>
+		<Stack_Trace>Stakan iz</Stack_Trace>
+		<Statistics_Page>Statistika sahifasi</Statistics_Page>
+		<Strict_Search>Qattiq qidirish</Strict_Search>
+		<Success>Muvaffaqiyat</Success>
+		<System>Tizim</System>
+		<Table>Jadval</Table>
+		<Toggle_Debug>Debugni almashtirish</Toggle_Debug>
+		<Toggle_Transaction_Log>Jurnal jurnalini almashtirish</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Jurnal bazasi yo'li</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Talab qilingan foydalanuvchi</User_Requested>
+		<View>Ko'rish</View>
+		<View_Function>Funktsiyani ko'rish</View_Function>
+		<Views_Read_Only>Ko'rishlar faqat o'qiladi va tahrirlanmaydi</Views_Read_Only>
 	</Language>
 </root>

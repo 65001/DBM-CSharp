@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Dil</Language>
-		<File>Dosya</File>
-		<New>Yeni</New>
-		<Open>Açık</Open>
-		<Edit>Düzenleme</Edit>
-		<View>Görünüm</View>
-		<Save>Kayıt etmek</Save>
-		<Import>İthalat</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>İhracat</Export>
-		<HTML>HTML</HTML>
-		<Settings>Ayarlar</Settings>
-		<Help>yardım et</Help>
 		<About>hakkında</About>
-		<Show_Help>Yardımı göster</Show_Help>
-		<Settings_Editor>Ayarlar Düzenleyici</Settings_Editor>
-		<Toggle_Debug>Hata ayıklamayı aç / kapat</Toggle_Debug>
-		<Toggle_Transaction_Log>İşlem Günlüğünü Aç / Kapat</Toggle_Transaction_Log>
-		<Refresh_Schema>Şemayı Yenile</Refresh_Schema>
-		<Check_for_Updates>Güncellemeleri kontrol et</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Program Başladı</PRGM_Start>
-		<App>Uygulama</App>
-		<Failed_Save_Settings>Ayarlar Kaydedilemedi</Failed_Save_Settings>
-		<Error>Hata</Error>
-		<Failed>Başarısız oldu</Failed>
-		<Table>tablo</Table>
-		<Index>indeks</Index>
-		<Master_Table>Ana Tablo</Master_Table>
-		<Sort>Çeşit</Sort>
-		<Asc>yükselen</Asc>
-		<Desc>Azalan</Desc>
-		<Display_Settings>Görüntü ayarları</Display_Settings>
-		<Sort_by>Göre sırala</Sort_by>
-		<Search_in>Araştır</Search_in>
-		<Search>Arama</Search>
-		<Functions>Fonksiyonlar</Functions>
-		<Strict_Search>Sıkı Arama</Strict_Search>
-		<Run_Function>Çalıştırma İşlevi</Run_Function>
-		<Query>Sorgu</Query>
-		<Command>komuta</Command>
-		<Error_No_DB>Hata: Veritabanı yüklenmedi</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable veya 'Master Table' korumalı bir tablodur. Db'nin bütünlüğünü korumak için bu tabloyu düzenleyemezsiniz</Master_Table_Protected>
 		<Access_Denied>Erişim reddedildi</Access_Denied>
+		<App>Uygulama</App>
 		<Application>Uygulama</Application>
-		<View_Function>İşlevleri Görüntüle</View_Function>
-		<User_Requested>İstenen Kullanıcı</User_Requested>
-		<Listview_Width>Liste Genişliği</Listview_Width>
-		<Listview_Height>Liste Görünümü Yüksekliği</Listview_Height>
-		<Extensions>Uzantıları</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>Kaydet ve kapat</Save_and_Close>
-		<Close_wo_saving>Tasarruf olmadan kapat</Close_wo_saving>
-		<Failed_Load_Online_EULA>Çevrimiçi EULA yüklenemedi</Failed_Load_Online_EULA>
+		<Asc>yükselen</Asc>
 		<Auto_Log>Otomatik Günlüğü</Auto_Log>
-		<Export_HTML_Schema>Adına adına HTML SCHEMA'yı dışa aktar</Export_HTML_Schema>
-		<Export_HTML_Data>Adına HTML Verilerini dışa aktar</Export_HTML_Data>
+		<Browse>tarayın</Browse>
+		<CMD_Tooltip>Özelleştirilmiş SQL komut deyimlerini veritabanında çalıştırır</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Hata: Ayrıntılar için günlüğünü kontrol edin</Check_Log>
-		<Query_Error>Sorgu Hatası</Query_Error>
+		<Check_for_Updates>Güncellemeleri kontrol et</Check_for_Updates>
+		<Close_TW>TW'yi kapat</Close_TW>
+		<Close_wo_saving>Tasarruf olmadan kapat</Close_wo_saving>
+		<Command>komuta</Command>
+		<Converter>Dönüştürücü</Converter>
+		<Create_Statistics_Page>İstatistik Sayfası Oluştur</Create_Statistics_Page>
+		<Critical_Fault_Error>Kritik Hata Hatası</Critical_Fault_Error>
+		<Dataview_Error>Veritabanı veya Dataview yok veya henüz yüklenmemiş</Dataview_Error>
+		<Debug>Hata ayıklama</Debug>
+		<Define_New_Table>Yeni Tablosu Tanımla</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>Azalan</Desc>
+		<Developer>Geliştirici</Developer>
+		<Display_Settings>Görüntü ayarları</Display_Settings>
+		<Edit>Düzenleme</Edit>
+		<Error>Hata</Error>
+		<Error_Generic>Oh hiçbir şey ters gitti! :(</Error_Generic>
+		<Error_No_DB>Hata: Veritabanı yüklenmedi</Error_No_DB>
+		<Export>İhracat</Export>
 		<Export_CSV>ŞİDDETİNE YÖNELİK İHRACAT CSV</Export_CSV>
+		<Export_HTML_Data>Adına HTML Verilerini dışa aktar</Export_HTML_Data>
+		<Export_HTML_Schema>Adına adına HTML SCHEMA'yı dışa aktar</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>İhracat SQL - SCHEMA - adına</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>İhracat SQL - SQL - adına</Export_SQL_SQL>
+		<Export_UI>Dışarı Aktar UI</Export_UI>
 		<Export_XML>İHRACAT XML'IN BAŞINA DÖN</Export_XML>
-		<System>sistem</System>
-		<Views_Read_Only>Görüntüler salt okunur ve düzenlenemez</Views_Read_Only>
-		<Dataview_Error>Veritabanı veya Dataview yok veya henüz yüklenmemiş</Dataview_Error>
-		<Browse>tarayın</Browse>
-		<Statistics_Page>İstatistik Sayfası</Statistics_Page>
+		<Extensions>Uzantıları</Extensions>
+		<Failed>Başarısız oldu</Failed>
+		<Failed_Load_Online_EULA>Çevrimiçi EULA yüklenemedi</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Ayarlar Kaydedilemedi</Failed_Save_Settings>
+		<File>Dosya</File>
+		<Functions>Fonksiyonlar</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML'den CSV'ye</HTML_to_CSV>
+		<Help>yardım et</Help>
+		<Import>İthalat</Import>
+		<Import_SQL>SQL içe aktar</Import_SQL>
+		<Importer>İthalatçı</Importer>
+		<Index>indeks</Index>
 		<Invert>evirmek</Invert>
-		<Not_Supported>Desteklenmiyor</Not_Supported>
-		<CMD_Tooltip>Özelleştirilmiş SQL komut deyimlerini veritabanında çalıştırır</CMD_Tooltip>
 		<LOG_CSV_Path>Günlük CSV Yolu</LOG_CSV_Path>
 		<LOG_DB_PATH>DatabasePath'ı günlüğe yaz</LOG_DB_PATH>
-		<Transaction_DB_Path>İşlem Veritabanı Yolu</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>ŞEMA-ÖZEL</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Kritik Hata Hatası</Critical_Fault_Error>
-		<Stack_Trace>Yığın izleme</Stack_Trace>
-		<Close_TW>TW'yi kapat</Close_TW>
-		<Export_UI>Dışarı Aktar UI</Export_UI>
-		<Define_New_Table>Yeni Tablosu Tanımla</Define_New_Table>
-		<Create_Statistics_Page>İstatistik Sayfası Oluştur</Create_Statistics_Page>
-		<Debug>Hata ayıklama</Debug>
+		<Language>Dil</Language>
+		<Listview_Height>Liste Görünümü Yüksekliği</Listview_Height>
+		<Listview_Width>Liste Genişliği</Listview_Width>
+		<Master_Table>Ana Tablo</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable veya 'Master Table' korumalı bir tablodur. Db'nin bütünlüğünü korumak için bu tabloyu düzenleyemezsiniz</Master_Table_Protected>
+		<New>Yeni</New>
 		<New_in_Memory_Db>Bellek Veritabanında Yeni</New_in_Memory_Db>
-		<Import_SQL>SQL içe aktar</Import_SQL>
-		<Plugin>Fişe takmak</Plugin>
+		<Not_Supported>Desteklenmiyor</Not_Supported>
+		<Open>Açık</Open>
 		<Opened>Açıldı</Opened>
-		<Converter>Dönüştürücü</Converter>
-		<HTML_to_CSV>HTML'den CSV'ye</HTML_to_CSV>
-		<Developer>Geliştirici</Developer>
+		<PRGM_Start>Program Başladı</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Fişe takmak</Plugin>
+		<Query>Sorgu</Query>
+		<Query_Error>Sorgu Hatası</Query_Error>
+		<Refresh_Schema>Şemayı Yenile</Refresh_Schema>
+		<Run_Function>Çalıştırma İşlevi</Run_Function>
+		<SCHEMA_PRIVATE>ŞEMA-ÖZEL</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Kayıt etmek</Save>
+		<Save_and_Close>Kaydet ve kapat</Save_and_Close>
+		<Search>Arama</Search>
 		<Search_Settings>Arama Ayarları</Search_Settings>
+		<Search_in>Araştır</Search_in>
+		<Settings>Ayarlar</Settings>
+		<Settings_Editor>Ayarlar Düzenleyici</Settings_Editor>
+		<Show_Help>Yardımı göster</Show_Help>
+		<Sort>Çeşit</Sort>
+		<Sort_by>Göre sırala</Sort_by>
+		<Stack_Trace>Yığın izleme</Stack_Trace>
+		<Statistics_Page>İstatistik Sayfası</Statistics_Page>
+		<Strict_Search>Sıkı Arama</Strict_Search>
+		<Success>başarı</Success>
+		<System>sistem</System>
+		<Table>tablo</Table>
+		<Toggle_Debug>Hata ayıklamayı aç / kapat</Toggle_Debug>
+		<Toggle_Transaction_Log>İşlem Günlüğünü Aç / Kapat</Toggle_Transaction_Log>
+		<Transaction_DB_Path>İşlem Veritabanı Yolu</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>İstenen Kullanıcı</User_Requested>
+		<View>Görünüm</View>
+		<View_Function>İşlevleri Görüntüle</View_Function>
+		<Views_Read_Only>Görüntüler salt okunur ve düzenlenemez</Views_Read_Only>
 	</Language>
 </root>

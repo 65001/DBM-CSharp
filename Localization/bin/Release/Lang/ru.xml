@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>язык</Language>
-		<File>файл</File>
-		<New>новый</New>
-		<Open>открыто</Open>
-		<Edit>редактировать</Edit>
-		<View>Посмотреть</View>
-		<Save>Сохранить</Save>
-		<Import>Импортировать</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>экспорт</Export>
-		<HTML>HTML</HTML>
-		<Settings>настройки</Settings>
-		<Help>Помогите</Help>
 		<About>Около</About>
-		<Show_Help>Показать справку</Show_Help>
-		<Settings_Editor>Редактор настроек</Settings_Editor>
-		<Toggle_Debug>Переключить Debug</Toggle_Debug>
-		<Toggle_Transaction_Log>Переключить журнал транзакций</Toggle_Transaction_Log>
-		<Refresh_Schema>Обновить схему</Refresh_Schema>
-		<Check_for_Updates>Проверить наличие обновлений</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Начало программы</PRGM_Start>
-		<App>заявка</App>
-		<Failed_Save_Settings>Не удалось сохранить настройки</Failed_Save_Settings>
-		<Error>ошибка</Error>
-		<Failed>Не смогли</Failed>
-		<Table>Таблица</Table>
-		<Index>Индекс</Index>
-		<Master_Table>Мастер-таблица</Master_Table>
-		<Sort>Сортировать</Sort>
-		<Asc>Восходящий</Asc>
-		<Desc>нисходящий</Desc>
-		<Display_Settings>Настройки отображения</Display_Settings>
-		<Sort_by>Сортировать по</Sort_by>
-		<Search_in>Поиск в</Search_in>
-		<Search>Поиск</Search>
-		<Functions>функции</Functions>
-		<Strict_Search>Строгий поиск</Strict_Search>
-		<Run_Function>Функция запуска</Run_Function>
-		<Query>запрос</Query>
-		<Command>команда</Command>
-		<Error_No_DB>Ошибка: база данных не загружена</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable или «Мастер-таблица» - это защищенная таблица. Чтобы защитить целостность db, вы не можете редактировать эту таблицу</Master_Table_Protected>
 		<Access_Denied>Доступ закрыт</Access_Denied>
+		<App>заявка</App>
 		<Application>Приложение</Application>
-		<View_Function>Функция просмотра</View_Function>
-		<User_Requested>Пользователь запросил</User_Requested>
-		<Listview_Width>Ширина списка</Listview_Width>
-		<Listview_Height>Высота списка просмотров</Listview_Height>
-		<Extensions>расширения</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>Сохрани и закрой</Save_and_Close>
-		<Close_wo_saving>Закрыть без сохранения</Close_wo_saving>
-		<Failed_Load_Online_EULA>Не удалось загрузить онлайн-лицензию EULA</Failed_Load_Online_EULA>
+		<Asc>Восходящий</Asc>
 		<Auto_Log>Автозапуск</Auto_Log>
-		<Export_HTML_Schema>Экспорт HTML SCHEMA от имени</Export_HTML_Schema>
-		<Export_HTML_Data>Экспорт HTML DATA от имени</Export_HTML_Data>
+		<Browse>Просматривать</Browse>
+		<CMD_Tooltip>Выполняет настраиваемые инструкции команд SQL в базе данных</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Ошибка: проверьте журнал для получения более подробной информации.</Check_Log>
-		<Query_Error>Ошибка запроса</Query_Error>
+		<Check_for_Updates>Проверить наличие обновлений</Check_for_Updates>
+		<Close_TW>Закрыть TW</Close_TW>
+		<Close_wo_saving>Закрыть без сохранения</Close_wo_saving>
+		<Command>команда</Command>
+		<Converter>конвертер</Converter>
+		<Create_Statistics_Page>Создать страницу статистики</Create_Statistics_Page>
+		<Critical_Fault_Error>Критическая ошибка ошибки</Critical_Fault_Error>
+		<Dataview_Error>База данных или Dataview не существует или еще не загружена</Dataview_Error>
+		<Debug>Отлаживать</Debug>
+		<Define_New_Table>Определение новой таблицы</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>нисходящий</Desc>
+		<Developer>разработчик</Developer>
+		<Display_Settings>Настройки отображения</Display_Settings>
+		<Edit>редактировать</Edit>
+		<Error>ошибка</Error>
+		<Error_Generic>О, ничего не получилось! :(</Error_Generic>
+		<Error_No_DB>Ошибка: база данных не загружена</Error_No_DB>
+		<Export>экспорт</Export>
 		<Export_CSV>ЭКСПОРТ CSV ОТ ИМЕНИ</Export_CSV>
+		<Export_HTML_Data>Экспорт HTML DATA от имени</Export_HTML_Data>
+		<Export_HTML_Schema>Экспорт HTML SCHEMA от имени</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Экспорт SQL - SCHEMA - От имени</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Экспорт SQL-SQL - от имени</Export_SQL_SQL>
+		<Export_UI>Экспортный интерфейс</Export_UI>
 		<Export_XML>ЭКСПОРТНЫЙ XML ОТ ИМЕНИ</Export_XML>
-		<System>система</System>
-		<Views_Read_Only>Представления являются readonly и не могут быть отредактированы</Views_Read_Only>
-		<Dataview_Error>База данных или Dataview не существует или еще не загружена</Dataview_Error>
-		<Browse>Просматривать</Browse>
-		<Statistics_Page>Страница статистики</Statistics_Page>
+		<Extensions>расширения</Extensions>
+		<Failed>Не смогли</Failed>
+		<Failed_Load_Online_EULA>Не удалось загрузить онлайн-лицензию EULA</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Не удалось сохранить настройки</Failed_Save_Settings>
+		<File>файл</File>
+		<Functions>функции</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML для CSV</HTML_to_CSV>
+		<Help>Помогите</Help>
+		<Import>Импортировать</Import>
+		<Import_SQL>Импорт SQL</Import_SQL>
+		<Importer>импортер</Importer>
+		<Index>Индекс</Index>
 		<Invert>инвертировать</Invert>
-		<Not_Supported>Не поддерживается</Not_Supported>
-		<CMD_Tooltip>Выполняет настраиваемые инструкции команд SQL в базе данных</CMD_Tooltip>
 		<LOG_CSV_Path>Путь к журналу CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>Путь к базе данных транзакций</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Критическая ошибка ошибки</Critical_Fault_Error>
-		<Stack_Trace>Трассировки стека</Stack_Trace>
-		<Close_TW>Закрыть TW</Close_TW>
-		<Export_UI>Экспортный интерфейс</Export_UI>
-		<Define_New_Table>Определение новой таблицы</Define_New_Table>
-		<Create_Statistics_Page>Создать страницу статистики</Create_Statistics_Page>
-		<Debug>Отлаживать</Debug>
+		<Language>язык</Language>
+		<Listview_Height>Высота списка просмотров</Listview_Height>
+		<Listview_Width>Ширина списка</Listview_Width>
+		<Master_Table>Мастер-таблица</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable или «Мастер-таблица» - это защищенная таблица. Чтобы защитить целостность db, вы не можете редактировать эту таблицу</Master_Table_Protected>
+		<New>новый</New>
 		<New_in_Memory_Db>Новое в базе данных памяти</New_in_Memory_Db>
-		<Import_SQL>Импорт SQL</Import_SQL>
-		<Plugin>Plugin</Plugin>
+		<Not_Supported>Не поддерживается</Not_Supported>
+		<Open>открыто</Open>
 		<Opened>открытый</Opened>
-		<Converter>конвертер</Converter>
-		<HTML_to_CSV>HTML для CSV</HTML_to_CSV>
-		<Developer>разработчик</Developer>
+		<PRGM_Start>Начало программы</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Plugin</Plugin>
+		<Query>запрос</Query>
+		<Query_Error>Ошибка запроса</Query_Error>
+		<Refresh_Schema>Обновить схему</Refresh_Schema>
+		<Run_Function>Функция запуска</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Сохранить</Save>
+		<Save_and_Close>Сохрани и закрой</Save_and_Close>
+		<Search>Поиск</Search>
 		<Search_Settings>Настройки поиска</Search_Settings>
+		<Search_in>Поиск в</Search_in>
+		<Settings>настройки</Settings>
+		<Settings_Editor>Редактор настроек</Settings_Editor>
+		<Show_Help>Показать справку</Show_Help>
+		<Sort>Сортировать</Sort>
+		<Sort_by>Сортировать по</Sort_by>
+		<Stack_Trace>Трассировки стека</Stack_Trace>
+		<Statistics_Page>Страница статистики</Statistics_Page>
+		<Strict_Search>Строгий поиск</Strict_Search>
+		<Success>успех</Success>
+		<System>система</System>
+		<Table>Таблица</Table>
+		<Toggle_Debug>Переключить Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Переключить журнал транзакций</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Путь к базе данных транзакций</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Пользователь запросил</User_Requested>
+		<View>Посмотреть</View>
+		<View_Function>Функция просмотра</View_Function>
+		<Views_Read_Only>Представления являются readonly и не могут быть отредактированы</Views_Read_Only>
 	</Language>
 </root>

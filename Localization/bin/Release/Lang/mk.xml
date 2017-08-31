@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Јазик</Language>
-		<File>Датотека</File>
-		<New>Ново</New>
-		<Open>Отвори</Open>
-		<Edit>Уредување</Edit>
-		<View>Погледнете</View>
-		<Save>Зачувај</Save>
-		<Import>Увоз</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Извоз</Export>
-		<HTML>HTML</HTML>
-		<Settings>Подесувања</Settings>
-		<Help>Помош</Help>
 		<About>За</About>
-		<Show_Help>Прикажи Помош</Show_Help>
-		<Settings_Editor>Уредувач на поставки</Settings_Editor>
-		<Toggle_Debug>Вклучи грешка</Toggle_Debug>
-		<Toggle_Transaction_Log>Вклучи дневник за трансакции</Toggle_Transaction_Log>
-		<Refresh_Schema>Освежи ја шемата</Refresh_Schema>
-		<Check_for_Updates>Провери за ажурирања</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Програмата започна</PRGM_Start>
-		<App>Апликација</App>
-		<Failed_Save_Settings>Не успеа да ги зачува поставките</Failed_Save_Settings>
-		<Error>Грешка</Error>
-		<Failed>Не успеа</Failed>
-		<Table>Табела</Table>
-		<Index>Индекс</Index>
-		<Master_Table>Мајстор табела</Master_Table>
-		<Sort>Сортирај</Sort>
-		<Asc>Растечки</Asc>
-		<Desc>Опаѓачки</Desc>
-		<Display_Settings>Поставки за екранот</Display_Settings>
-		<Sort_by>Сортирај по</Sort_by>
-		<Search_in>Барај во</Search_in>
-		<Search>Барај</Search>
-		<Functions>Функции</Functions>
-		<Strict_Search>Строга потрага</Strict_Search>
-		<Run_Function>Стартувај функција</Run_Function>
-		<Query>Пребарување</Query>
-		<Command>Команда</Command>
-		<Error_No_DB>Грешка: Не е вчитана база на податоци</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable или "Master Table" е заштитена табела. За заштита на интегритетот на DB не можете да ја уредувате оваа табела</Master_Table_Protected>
 		<Access_Denied>Одбиен пристап</Access_Denied>
+		<App>Апликација</App>
 		<Application>App</Application>
-		<View_Function>Погледнете ја функцијата</View_Function>
-		<User_Requested>Бараниот корисник</User_Requested>
-		<Listview_Width>Ширина на листа</Listview_Width>
-		<Listview_Height>Висина на листа</Listview_Height>
-		<Extensions>Екстензии</Extensions>
-		<Deliminator>Делиминатор</Deliminator>
-		<Save_and_Close>Зачувај и затвори</Save_and_Close>
-		<Close_wo_saving>Затвори без зачувување</Close_wo_saving>
-		<Failed_Load_Online_EULA>Не успеа да се вчита онлајн ЕУЛА</Failed_Load_Online_EULA>
+		<Asc>Растечки</Asc>
 		<Auto_Log>Автоматско логирање</Auto_Log>
-		<Export_HTML_Schema>Извоз HTML SCHEMA во име на</Export_HTML_Schema>
-		<Export_HTML_Data>Извоз HTML податоци во име на</Export_HTML_Data>
+		<Browse>Прегледај</Browse>
+		<CMD_Tooltip>Извршува кориснички SQL командски извештаи кон базата на податоци</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Грешка: Ве молиме проверете го дневникот за детали</Check_Log>
-		<Query_Error>Грешка при пребарување</Query_Error>
+		<Check_for_Updates>Провери за ажурирања</Check_for_Updates>
+		<Close_TW>Затвори TW</Close_TW>
+		<Close_wo_saving>Затвори без зачувување</Close_wo_saving>
+		<Command>Команда</Command>
+		<Converter>Конвертор</Converter>
+		<Create_Statistics_Page>Креирај статистичка страница</Create_Statistics_Page>
+		<Critical_Fault_Error>Грешка при критична грешка</Critical_Fault_Error>
+		<Dataview_Error>База на податоци или преглед на податоци не постои или си уште не е вчитан</Dataview_Error>
+		<Debug>Debug</Debug>
+		<Define_New_Table>Дефинирајте нова табела</Define_New_Table>
+		<Deliminator>Делиминатор</Deliminator>
+		<Desc>Опаѓачки</Desc>
+		<Developer>Развивач</Developer>
+		<Display_Settings>Поставки за екранот</Display_Settings>
+		<Edit>Уредување</Edit>
+		<Error>Грешка</Error>
+		<Error_Generic>О ништо не беше во ред! :(</Error_Generic>
+		<Error_No_DB>Грешка: Не е вчитана база на податоци</Error_No_DB>
+		<Export>Извоз</Export>
 		<Export_CSV>ИЗВОЗ CSV НА ИЗБОР НА</Export_CSV>
+		<Export_HTML_Data>Извоз HTML податоци во име на</Export_HTML_Data>
+		<Export_HTML_Schema>Извоз HTML SCHEMA во име на</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Извоз SQL - ШЕМА - Во име на</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Експортирај SQL - SQL - Во име на</Export_SQL_SQL>
+		<Export_UI>Извоз на кориснички интерфејс</Export_UI>
 		<Export_XML>ИЗВОЗ XML ПОДОБРУВАЈ НА</Export_XML>
-		<System>Систем</System>
-		<Views_Read_Only>Прегледите се читаат само еднаш и не можат да се уредуваат</Views_Read_Only>
-		<Dataview_Error>База на податоци или преглед на податоци не постои или си уште не е вчитан</Dataview_Error>
-		<Browse>Прегледај</Browse>
-		<Statistics_Page>Статистичка страница</Statistics_Page>
+		<Extensions>Екстензии</Extensions>
+		<Failed>Не успеа</Failed>
+		<Failed_Load_Online_EULA>Не успеа да се вчита онлајн ЕУЛА</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Не успеа да ги зачува поставките</Failed_Save_Settings>
+		<File>Датотека</File>
+		<Functions>Функции</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML до CSV</HTML_to_CSV>
+		<Help>Помош</Help>
+		<Import>Увоз</Import>
+		<Import_SQL>Увези го SQL</Import_SQL>
+		<Importer>Увозник</Importer>
+		<Index>Индекс</Index>
 		<Invert>Инвертирај</Invert>
-		<Not_Supported>Не се поддржани</Not_Supported>
-		<CMD_Tooltip>Извршува кориснички SQL командски извештаи кон базата на податоци</CMD_Tooltip>
 		<LOG_CSV_Path>Пријавете ја патеката CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Лог База на податоциPath</LOG_DB_PATH>
-		<Transaction_DB_Path>Пат база на податоци за трансакции</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>ШЕМА-ПРИВАТНО</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Грешка при критична грешка</Critical_Fault_Error>
-		<Stack_Trace>Стек за трага</Stack_Trace>
-		<Close_TW>Затвори TW</Close_TW>
-		<Export_UI>Извоз на кориснички интерфејс</Export_UI>
-		<Define_New_Table>Дефинирајте нова табела</Define_New_Table>
-		<Create_Statistics_Page>Креирај статистичка страница</Create_Statistics_Page>
-		<Debug>Debug</Debug>
+		<Language>Јазик</Language>
+		<Listview_Height>Висина на листа</Listview_Height>
+		<Listview_Width>Ширина на листа</Listview_Width>
+		<Master_Table>Мајстор табела</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable или "Master Table" е заштитена табела. За заштита на интегритетот на DB не можете да ја уредувате оваа табела</Master_Table_Protected>
+		<New>Ново</New>
 		<New_in_Memory_Db>Нова база на податоци за меморија</New_in_Memory_Db>
-		<Import_SQL>Увези го SQL</Import_SQL>
-		<Plugin>Вклучи, Поврзи</Plugin>
+		<Not_Supported>Не се поддржани</Not_Supported>
+		<Open>Отвори</Open>
 		<Opened>Отворен</Opened>
-		<Converter>Конвертор</Converter>
-		<HTML_to_CSV>HTML до CSV</HTML_to_CSV>
-		<Developer>Развивач</Developer>
+		<PRGM_Start>Програмата започна</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Вклучи, Поврзи</Plugin>
+		<Query>Пребарување</Query>
+		<Query_Error>Грешка при пребарување</Query_Error>
+		<Refresh_Schema>Освежи ја шемата</Refresh_Schema>
+		<Run_Function>Стартувај функција</Run_Function>
+		<SCHEMA_PRIVATE>ШЕМА-ПРИВАТНО</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Зачувај</Save>
+		<Save_and_Close>Зачувај и затвори</Save_and_Close>
+		<Search>Барај</Search>
 		<Search_Settings>Подесувања за пребарување</Search_Settings>
+		<Search_in>Барај во</Search_in>
+		<Settings>Подесувања</Settings>
+		<Settings_Editor>Уредувач на поставки</Settings_Editor>
+		<Show_Help>Прикажи Помош</Show_Help>
+		<Sort>Сортирај</Sort>
+		<Sort_by>Сортирај по</Sort_by>
+		<Stack_Trace>Стек за трага</Stack_Trace>
+		<Statistics_Page>Статистичка страница</Statistics_Page>
+		<Strict_Search>Строга потрага</Strict_Search>
+		<Success>Успех</Success>
+		<System>Систем</System>
+		<Table>Табела</Table>
+		<Toggle_Debug>Вклучи грешка</Toggle_Debug>
+		<Toggle_Transaction_Log>Вклучи дневник за трансакции</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Пат база на податоци за трансакции</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Бараниот корисник</User_Requested>
+		<View>Погледнете</View>
+		<View_Function>Погледнете ја функцијата</View_Function>
+		<Views_Read_Only>Прегледите се читаат само еднаш и не можат да се уредуваат</Views_Read_Only>
 	</Language>
 </root>

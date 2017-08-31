@@ -12,8 +12,6 @@ using LitDev;
 using Microsoft.SmallBasic.Library;
 
 /*
- *  TODO : Automatic updatechecking after 14 days
- 
 	TODO : SQLITE setup
 	TODO : Set it up so that if no table exists in a database then revert to sqlite_master or equivalent
 		
@@ -30,7 +28,7 @@ using Microsoft.SmallBasic.Library;
 
         //Primitive GlobalStatics to Dictionaries in the future and move to UI.
 
-        //TODO Improve Query times
+        //TODO Speedup Query times
         //TODO Implement Plugin System
         //TODO Implement Graphing?
  */
@@ -168,6 +166,7 @@ namespace DBM
             LDGraphicsWindow.State = 2;
             PreMainMenu();
             MainMenu();
+            //AutoUpdate
             if (GlobalStatic.AutoUpdate == true && GlobalStatic.LastUpdateCheck + 14 <= GlobalStatic.ISO_Today)
             {
                 Events.LogMessage("Autoupdate Check", "Updater");

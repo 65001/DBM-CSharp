@@ -168,15 +168,15 @@ namespace DBM
 
                 if (CurrentVersion == LatestVersion && UI == true)
                 {
-                    GraphicsWindow.ShowMessage("There are no updates available", "No Updates");
+                    GraphicsWindow.ShowMessage("There are no updates available", "No Updates"); //TODO LOCALIZE
                 }
                 else if (CurrentVersion > LatestVersion && UI == true)
                 {
                     GraphicsWindow.ShowMessage("You have a more recent edition of the program than that offered to the public.\nYou have version " + CurrentVersion + " while the most recent public release is version " + LatestVersion, "No Updates");
                 }
-                else if (CurrentVersion < LatestVersion) //Possible use case for automatic updatechecking after X days
+                else if (CurrentVersion < LatestVersion)
                 {
-                    if (LDDialogs.Confirm("Do you wish to download Version " + LatestVersion + "? You have Version " + CurrentVersion, "Download Update") == "Yes")
+                    if (LDDialogs.Confirm($"Do you wish to download Version {LatestVersion }? You have Version {CurrentVersion}.", "Download Update") == "Yes") //TODO LOCALIZE
                     {
                          DownloadUpdate(DownloadLocation);
                     }

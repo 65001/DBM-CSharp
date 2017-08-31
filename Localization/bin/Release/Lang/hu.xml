@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Nyelv</Language>
-		<File>fájl</File>
-		<New>Új</New>
-		<Open>Nyisd ki</Open>
-		<Edit>szerkesztése</Edit>
-		<View>Kilátás</View>
-		<Save>Mentés</Save>
-		<Import>import</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Export</Export>
-		<HTML>HTML</HTML>
-		<Settings>Beállítások</Settings>
-		<Help>Segítség</Help>
 		<About>Ról ről</About>
-		<Show_Help>Súgó megjelenítése</Show_Help>
-		<Settings_Editor>Beállítások szerkesztő</Settings_Editor>
-		<Toggle_Debug>A hibakeresés átkapcsolása</Toggle_Debug>
-		<Toggle_Transaction_Log>Tranzakciónapló váltása</Toggle_Transaction_Log>
-		<Refresh_Schema>Frissítési séma</Refresh_Schema>
-		<Check_for_Updates>Frissítések keresése</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Elindult a program</PRGM_Start>
-		<App>Alkalmazás</App>
-		<Failed_Save_Settings>Nem sikerült menteni a beállításokat</Failed_Save_Settings>
-		<Error>Hiba</Error>
-		<Failed>nem sikerült</Failed>
-		<Table>asztal</Table>
-		<Index>Index</Index>
-		<Master_Table>Mester táblázat</Master_Table>
-		<Sort>Fajta</Sort>
-		<Asc>növekvő</Asc>
-		<Desc>csökkenő</Desc>
-		<Display_Settings>Megjelenítési beállítások</Display_Settings>
-		<Sort_by>Sorrend</Sort_by>
-		<Search_in>Keresés</Search_in>
-		<Search>Keresés</Search>
-		<Functions>Funkciók</Functions>
-		<Strict_Search>Szigorú keresés</Strict_Search>
-		<Run_Function>Run funkció</Run_Function>
-		<Query>kérdés</Query>
-		<Command>Parancs</Command>
-		<Error_No_DB>Hiba: Nincs adatbázis betöltve</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>A Sqlite_mastertable vagy a "Master Table" egy védett táblázat. A db integritásának védelme érdekében nem szerkesztheti ezt a táblázatot</Master_Table_Protected>
 		<Access_Denied>Hozzáférés megtagadva</Access_Denied>
+		<App>Alkalmazás</App>
 		<Application>App</Application>
-		<View_Function>Funkció megtekintése</View_Function>
-		<User_Requested>Kért felhasználó</User_Requested>
-		<Listview_Width>Listaszélesség</Listview_Width>
-		<Listview_Height>Listamagasság</Listview_Height>
-		<Extensions>Extensions</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>Mentés és bezárás</Save_and_Close>
-		<Close_wo_saving>Bezárás mentés nélkül</Close_wo_saving>
-		<Failed_Load_Online_EULA>Az online EULA betöltése sikertelen volt</Failed_Load_Online_EULA>
+		<Asc>növekvő</Asc>
 		<Auto_Log>Automatikus naplózás</Auto_Log>
-		<Export_HTML_Schema>HTML SCHEMA exportálása a</Export_HTML_Schema>
-		<Export_HTML_Data>A HTML DATA exportálása a</Export_HTML_Data>
+		<Browse>Böngésszen</Browse>
+		<CMD_Tooltip>Testreszabott SQL utasítás utasításokat hajt végre az adatbázisba</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Hiba: Kérjük, ellenőrizze a naplót a részletekért</Check_Log>
-		<Query_Error>Lekérdezési hiba</Query_Error>
+		<Check_for_Updates>Frissítések keresése</Check_for_Updates>
+		<Close_TW>Bezár TW</Close_TW>
+		<Close_wo_saving>Bezárás mentés nélkül</Close_wo_saving>
+		<Command>Parancs</Command>
+		<Converter>Converter</Converter>
+		<Create_Statistics_Page>Statisztikai oldal létrehozása</Create_Statistics_Page>
+		<Critical_Fault_Error>Kritikus hiba hiba</Critical_Fault_Error>
+		<Dataview_Error>Az Adatbázis vagy a Dataview nem létezik, vagy még nincs betöltve</Dataview_Error>
+		<Debug>Debug</Debug>
+		<Define_New_Table>Új táblázat definiálása</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>csökkenő</Desc>
+		<Developer>Fejlesztő</Developer>
+		<Display_Settings>Megjelenítési beállítások</Display_Settings>
+		<Edit>szerkesztése</Edit>
+		<Error>Hiba</Error>
+		<Error_Generic>Ó, semmi baj nem történt! :(</Error_Generic>
+		<Error_No_DB>Hiba: Nincs adatbázis betöltve</Error_No_DB>
+		<Export>Export</Export>
 		<Export_CSV>EXPORT CSV BEHALF</Export_CSV>
+		<Export_HTML_Data>A HTML DATA exportálása a</Export_HTML_Data>
+		<Export_HTML_Schema>HTML SCHEMA exportálása a</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Export SQL - SCHEMA - A</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>SQL - SQL exportálása -</Export_SQL_SQL>
+		<Export_UI>Export felhasználói felület</Export_UI>
 		<Export_XML>EXPORT XML A BEHALF</Export_XML>
-		<System>Rendszer</System>
-		<Views_Read_Only>A nézetek csak olvashatóak és nem szerkeszthetők</Views_Read_Only>
-		<Dataview_Error>Az Adatbázis vagy a Dataview nem létezik, vagy még nincs betöltve</Dataview_Error>
-		<Browse>Böngésszen</Browse>
-		<Statistics_Page>Statisztikai oldal</Statistics_Page>
+		<Extensions>Extensions</Extensions>
+		<Failed>nem sikerült</Failed>
+		<Failed_Load_Online_EULA>Az online EULA betöltése sikertelen volt</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Nem sikerült menteni a beállításokat</Failed_Save_Settings>
+		<File>fájl</File>
+		<Functions>Funkciók</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML a CSV-hez</HTML_to_CSV>
+		<Help>Segítség</Help>
+		<Import>import</Import>
+		<Import_SQL>SQL importálása</Import_SQL>
+		<Importer>Importőr</Importer>
+		<Index>Index</Index>
 		<Invert>Invert</Invert>
-		<Not_Supported>Nem támogatott</Not_Supported>
-		<CMD_Tooltip>Testreszabott SQL utasítás utasításokat hajt végre az adatbázisba</CMD_Tooltip>
 		<LOG_CSV_Path>A CSV-útvonal rögzítése</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>Tranzakciós adatbázis elérési útja</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>Séma MAGÁN</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Kritikus hiba hiba</Critical_Fault_Error>
-		<Stack_Trace>Stack Trace</Stack_Trace>
-		<Close_TW>Bezár TW</Close_TW>
-		<Export_UI>Export felhasználói felület</Export_UI>
-		<Define_New_Table>Új táblázat definiálása</Define_New_Table>
-		<Create_Statistics_Page>Statisztikai oldal létrehozása</Create_Statistics_Page>
-		<Debug>Debug</Debug>
+		<Language>Nyelv</Language>
+		<Listview_Height>Listamagasság</Listview_Height>
+		<Listview_Width>Listaszélesség</Listview_Width>
+		<Master_Table>Mester táblázat</Master_Table>
+		<Master_Table_Protected>A Sqlite_mastertable vagy a "Master Table" egy védett táblázat. A db integritásának védelme érdekében nem szerkesztheti ezt a táblázatot</Master_Table_Protected>
+		<New>Új</New>
 		<New_in_Memory_Db>Új a memória adatbázisban</New_in_Memory_Db>
-		<Import_SQL>SQL importálása</Import_SQL>
-		<Plugin>Csatlakoztat</Plugin>
+		<Not_Supported>Nem támogatott</Not_Supported>
+		<Open>Nyisd ki</Open>
 		<Opened>Nyitott</Opened>
-		<Converter>Converter</Converter>
-		<HTML_to_CSV>HTML a CSV-hez</HTML_to_CSV>
-		<Developer>Fejlesztő</Developer>
+		<PRGM_Start>Elindult a program</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Csatlakoztat</Plugin>
+		<Query>kérdés</Query>
+		<Query_Error>Lekérdezési hiba</Query_Error>
+		<Refresh_Schema>Frissítési séma</Refresh_Schema>
+		<Run_Function>Run funkció</Run_Function>
+		<SCHEMA_PRIVATE>Séma MAGÁN</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Mentés</Save>
+		<Save_and_Close>Mentés és bezárás</Save_and_Close>
+		<Search>Keresés</Search>
 		<Search_Settings>Keresési beállítások</Search_Settings>
+		<Search_in>Keresés</Search_in>
+		<Settings>Beállítások</Settings>
+		<Settings_Editor>Beállítások szerkesztő</Settings_Editor>
+		<Show_Help>Súgó megjelenítése</Show_Help>
+		<Sort>Fajta</Sort>
+		<Sort_by>Sorrend</Sort_by>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Statistics_Page>Statisztikai oldal</Statistics_Page>
+		<Strict_Search>Szigorú keresés</Strict_Search>
+		<Success>Siker</Success>
+		<System>Rendszer</System>
+		<Table>asztal</Table>
+		<Toggle_Debug>A hibakeresés átkapcsolása</Toggle_Debug>
+		<Toggle_Transaction_Log>Tranzakciónapló váltása</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Tranzakciós adatbázis elérési útja</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Kért felhasználó</User_Requested>
+		<View>Kilátás</View>
+		<View_Function>Funkció megtekintése</View_Function>
+		<Views_Read_Only>A nézetek csak olvashatóak és nem szerkeszthetők</Views_Read_Only>
 	</Language>
 </root>

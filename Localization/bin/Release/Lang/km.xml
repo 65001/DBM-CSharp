@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>ភាសា</Language>
-		<File>ឯកសារ</File>
-		<New>ថ្មី</New>
-		<Open>បើក</Open>
-		<Edit>កែសម្រួល</Edit>
-		<View>មើល</View>
-		<Save>រក្សាទុក</Save>
-		<Import>នាំចូល</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>នាំចេញ</Export>
-		<HTML>HTML</HTML>
-		<Settings>ការកំណត់</Settings>
-		<Help>ជំនួយ</Help>
 		<About>អំពី</About>
-		<Show_Help>បង្� ាញជំនួយ</Show_Help>
-		<Settings_Editor>កម្មវិធីនិពន្ធការកំណត់</Settings_Editor>
-		<Toggle_Debug>បិទ / បើកការបំបាត់កំ� ុស</Toggle_Debug>
-		<Toggle_Transaction_Log>បិទបើកកំណត់� េតុប្រតិបត្តិការ</Toggle_Transaction_Log>
-		<Refresh_Schema>ធ្វើសង្គ្រាមឡើងវិញ</Refresh_Schema>
-		<Check_for_Updates>ពិនិត្យមើលបច្ចុប្បន្នភាព</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>កម្មវិធីបានចាប់ផ្ដើម</PRGM_Start>
-		<App>កម្មវិធី</App>
-		<Failed_Save_Settings>បានបរាជ័យក្នុងការរក្សាទុកការកំណត់</Failed_Save_Settings>
-		<Error>កំ� ុស</Error>
-		<Failed>បរាជ័យ</Failed>
-		<Table>តារាង</Table>
-		<Index>លិបិក្រម</Index>
-		<Master_Table>តារាងមេ</Master_Table>
-		<Sort>តម្រៀប</Sort>
-		<Asc>ឡើង</Asc>
-		<Desc>ចុះក្រោម</Desc>
-		<Display_Settings>បង្� ាញការកំណត់</Display_Settings>
-		<Sort_by>តម្រៀបតាម</Sort_by>
-		<Search_in>ស្វែងរកនៅក្នុង</Search_in>
-		<Search>ស្វែងរក</Search>
-		<Functions>អនុគមន៍</Functions>
-		<Strict_Search>ស្វែងរកតឹងរឹង</Strict_Search>
-		<Run_Function>រត់មុខងារ</Run_Function>
-		<Query>សំណួរ</Query>
-		<Command>ពាក្យបញ្ជា</Command>
-		<Error_No_DB>កំ� ុស: គ្មានទិន្នន័យត្រូវបានផ្ទុកទេ</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable ឬ 'តារាងមេ' ជាតារាងការពារ។ ដើម្បីការពារសុចរិតភាពនៃ db អ្នកមិនអាចកែប្រែតារាងនេះបានទេ</Master_Table_Protected>
 		<Access_Denied>ដំណើរ​ការ​ត្រូវ​បាន​បដិសេធ</Access_Denied>
+		<App>កម្មវិធី</App>
 		<Application>កម្មវិធី</Application>
-		<View_Function>មើលមុខងារ</View_Function>
-		<User_Requested>អ្នកប្រើបានស្នើ</User_Requested>
-		<Listview_Width>ទទឹងបញ្ជី</Listview_Width>
-		<Listview_Height>កម្ពស់បញ្ជី</Listview_Height>
-		<Extensions>ផ្នែកបន្ថែម</Extensions>
-		<Deliminator>អ្នកចែកចាយ</Deliminator>
-		<Save_and_Close>រក្សាទុកនិងបិទ</Save_and_Close>
-		<Close_wo_saving>បិទដោយគ្មានការរក្សាទុក</Close_wo_saving>
-		<Failed_Load_Online_EULA>បានបរាជ័យក្នុងការផ្ទុក EULA លើបណ្ដាញ</Failed_Load_Online_EULA>
+		<Asc>ឡើង</Asc>
 		<Auto_Log>កត់ត្រាស្វ័យប្រវត្តិ</Auto_Log>
-		<Export_HTML_Schema>នាំចេញ HTML SCHEMA ជំនួសឱ្យ</Export_HTML_Schema>
-		<Export_HTML_Data>នាំចេញទិន្នន័យ HTML ជំនួសឱ្យ</Export_HTML_Data>
+		<Browse>រកមើល</Browse>
+		<CMD_Tooltip>ប្រតិបត្តិសេចក្តីថ្លែងការពាក្យបញ្ជា SQL ដែលបានប្ដូរតាមបំណងទៅលើមូលដ្ឋានទិន្នន័យ</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>កំ� ុស: សូមពិនិត្យមើលកំណត់� េតុសម្រាប់ព័ត៌មានលំអិត</Check_Log>
-		<Query_Error>កំ� ុសសំណួរ</Query_Error>
+		<Check_for_Updates>ពិនិត្យមើលបច្ចុប្បន្នភាព</Check_for_Updates>
+		<Close_TW>បិទ TW</Close_TW>
+		<Close_wo_saving>បិទដោយគ្មានការរក្សាទុក</Close_wo_saving>
+		<Command>ពាក្យបញ្ជា</Command>
+		<Converter>កម្មវិធីបម្លែង</Converter>
+		<Create_Statistics_Page>បង្កើតទំព័រស្ថិតិ</Create_Statistics_Page>
+		<Critical_Fault_Error>កំ� ុសកំ� ុសសំខាន់</Critical_Fault_Error>
+		<Dataview_Error>Database ឬ Dataview មិនមានឬមិនទាន់ត្រូវបានផ្ទុកនៅឡើយទេ</Dataview_Error>
+		<Debug>បំបាត់កំ� ុស</Debug>
+		<Define_New_Table>កំណត់តារាងថ្មី</Define_New_Table>
+		<Deliminator>អ្នកចែកចាយ</Deliminator>
+		<Desc>ចុះក្រោម</Desc>
+		<Developer>អ្នកអភិវឌ្ឍន៍</Developer>
+		<Display_Settings>បង្� ាញការកំណត់</Display_Settings>
+		<Edit>កែសម្រួល</Edit>
+		<Error>កំ� ុស</Error>
+		<Error_Generic>អូមិនមានអ្វីខុសទេ! :(</Error_Generic>
+		<Error_No_DB>កំ� ុស: គ្មានទិន្នន័យត្រូវបានផ្ទុកទេ</Error_No_DB>
+		<Export>នាំចេញ</Export>
 		<Export_CSV>CSV នាំចេញអំពី</Export_CSV>
+		<Export_HTML_Data>នាំចេញទិន្នន័យ HTML ជំនួសឱ្យ</Export_HTML_Data>
+		<Export_HTML_Schema>នាំចេញ HTML SCHEMA ជំនួសឱ្យ</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>នាំចេញ SQL - SCHEMA - ជំនួសឱ្យ</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>នាំចេញ SQL - SQL - ជំនួសឱ្យ</Export_SQL_SQL>
+		<Export_UI>នាំចេញ UI</Export_UI>
 		<Export_XML>នាំយក XML នៅលើ BEHALF នៃ</Export_XML>
-		<System>ប្រព័ន្ធ</System>
-		<Views_Read_Only>ការមើលបានតែអាន� ើយមិនអាចកែបាន</Views_Read_Only>
-		<Dataview_Error>Database ឬ Dataview មិនមានឬមិនទាន់ត្រូវបានផ្ទុកនៅឡើយទេ</Dataview_Error>
-		<Browse>រកមើល</Browse>
-		<Statistics_Page>ទំព័រស្ថិតិ</Statistics_Page>
+		<Extensions>ផ្នែកបន្ថែម</Extensions>
+		<Failed>បរាជ័យ</Failed>
+		<Failed_Load_Online_EULA>បានបរាជ័យក្នុងការផ្ទុក EULA លើបណ្ដាញ</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>បានបរាជ័យក្នុងការរក្សាទុកការកំណត់</Failed_Save_Settings>
+		<File>ឯកសារ</File>
+		<Functions>អនុគមន៍</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML ទៅ CSV</HTML_to_CSV>
+		<Help>ជំនួយ</Help>
+		<Import>នាំចូល</Import>
+		<Import_SQL>នាំចូល SQL</Import_SQL>
+		<Importer>អ្នកនាំចូល</Importer>
+		<Index>លិបិក្រម</Index>
 		<Invert>បញ្ច្រាស</Invert>
-		<Not_Supported>មិន​គាំទ្រ</Not_Supported>
-		<CMD_Tooltip>ប្រតិបត្តិសេចក្តីថ្លែងការពាក្យបញ្ជា SQL ដែលបានប្ដូរតាមបំណងទៅលើមូលដ្ឋានទិន្នន័យ</CMD_Tooltip>
 		<LOG_CSV_Path>ចូលផ្លូវ CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Log Database Path</LOG_DB_PATH>
-		<Transaction_DB_Path>ផ្លូវមូលដ្ឋានទិន្នន័យប្រតិបត្តិការ</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>កំ� ុសកំ� ុសសំខាន់</Critical_Fault_Error>
-		<Stack_Trace>ដានត្រា</Stack_Trace>
-		<Close_TW>បិទ TW</Close_TW>
-		<Export_UI>នាំចេញ UI</Export_UI>
-		<Define_New_Table>កំណត់តារាងថ្មី</Define_New_Table>
-		<Create_Statistics_Page>បង្កើតទំព័រស្ថិតិ</Create_Statistics_Page>
-		<Debug>បំបាត់កំ� ុស</Debug>
+		<Language>ភាសា</Language>
+		<Listview_Height>កម្ពស់បញ្ជី</Listview_Height>
+		<Listview_Width>ទទឹងបញ្ជី</Listview_Width>
+		<Master_Table>តារាងមេ</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable ឬ 'តារាងមេ' ជាតារាងការពារ។ ដើម្បីការពារសុចរិតភាពនៃ db អ្នកមិនអាចកែប្រែតារាងនេះបានទេ</Master_Table_Protected>
+		<New>ថ្មី</New>
 		<New_in_Memory_Db>ថ្មីនៅក្នុងមូលដ្ឋានទិន្នន័យអង្គចងចាំ</New_in_Memory_Db>
-		<Import_SQL>នាំចូល SQL</Import_SQL>
-		<Plugin>កម្មវិធីជំនួយ</Plugin>
+		<Not_Supported>មិន​គាំទ្រ</Not_Supported>
+		<Open>បើក</Open>
 		<Opened>បានបើក</Opened>
-		<Converter>កម្មវិធីបម្លែង</Converter>
-		<HTML_to_CSV>HTML ទៅ CSV</HTML_to_CSV>
-		<Developer>អ្នកអភិវឌ្ឍន៍</Developer>
+		<PRGM_Start>កម្មវិធីបានចាប់ផ្ដើម</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>កម្មវិធីជំនួយ</Plugin>
+		<Query>សំណួរ</Query>
+		<Query_Error>កំ� ុសសំណួរ</Query_Error>
+		<Refresh_Schema>ធ្វើសង្គ្រាមឡើងវិញ</Refresh_Schema>
+		<Run_Function>រត់មុខងារ</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>រក្សាទុក</Save>
+		<Save_and_Close>រក្សាទុកនិងបិទ</Save_and_Close>
+		<Search>ស្វែងរក</Search>
 		<Search_Settings>ស្វែងរកការកំណត់</Search_Settings>
+		<Search_in>ស្វែងរកនៅក្នុង</Search_in>
+		<Settings>ការកំណត់</Settings>
+		<Settings_Editor>កម្មវិធីនិពន្ធការកំណត់</Settings_Editor>
+		<Show_Help>បង្� ាញជំនួយ</Show_Help>
+		<Sort>តម្រៀប</Sort>
+		<Sort_by>តម្រៀបតាម</Sort_by>
+		<Stack_Trace>ដានត្រា</Stack_Trace>
+		<Statistics_Page>ទំព័រស្ថិតិ</Statistics_Page>
+		<Strict_Search>ស្វែងរកតឹងរឹង</Strict_Search>
+		<Success>ជោគជ័យ</Success>
+		<System>ប្រព័ន្ធ</System>
+		<Table>តារាង</Table>
+		<Toggle_Debug>បិទ / បើកការបំបាត់កំ� ុស</Toggle_Debug>
+		<Toggle_Transaction_Log>បិទបើកកំណត់� េតុប្រតិបត្តិការ</Toggle_Transaction_Log>
+		<Transaction_DB_Path>ផ្លូវមូលដ្ឋានទិន្នន័យប្រតិបត្តិការ</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>អ្នកប្រើបានស្នើ</User_Requested>
+		<View>មើល</View>
+		<View_Function>មើលមុខងារ</View_Function>
+		<Views_Read_Only>ការមើលបានតែអាន� ើយមិនអាចកែបាន</Views_Read_Only>
 	</Language>
 </root>

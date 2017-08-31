@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Jazyk</Language>
-		<File>Soubor</File>
-		<New>Nový</New>
-		<Open>otevřeno</Open>
-		<Edit>Upravit</Edit>
-		<View>Pohled</View>
-		<Save>Uložit</Save>
-		<Import>Import</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Vývozní</Export>
-		<HTML>HTML</HTML>
-		<Settings>Nastavení</Settings>
-		<Help>Pomoc</Help>
 		<About>O</About>
-		<Show_Help>Zobrazit nápovědu</Show_Help>
-		<Settings_Editor>Editor úprav</Settings_Editor>
-		<Toggle_Debug>Přepnout ladění</Toggle_Debug>
-		<Toggle_Transaction_Log>Přepínání protokolu transakcí</Toggle_Transaction_Log>
-		<Refresh_Schema>Obnovit schéma</Refresh_Schema>
-		<Check_for_Updates>Kontrola aktualizací</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Program začal</PRGM_Start>
-		<App>aplikace</App>
-		<Failed_Save_Settings>Uložení nastavení se nezdařilo</Failed_Save_Settings>
-		<Error>Chyba</Error>
-		<Failed>Selhalo</Failed>
-		<Table>Stůl</Table>
-		<Index>Index</Index>
-		<Master_Table>Hlavní tabulka</Master_Table>
-		<Sort>Seřadit</Sort>
-		<Asc>Vzestupně</Asc>
-		<Desc>Klesající</Desc>
-		<Display_Settings>Nastavení obrazovky</Display_Settings>
-		<Sort_by>Seřazeno podle</Sort_by>
-		<Search_in>Hledat v</Search_in>
-		<Search>Vyhledávání</Search>
-		<Functions>Funkce</Functions>
-		<Strict_Search>Přísné vyhledávání</Strict_Search>
-		<Run_Function>Spustit funkci</Run_Function>
-		<Query>Dotaz</Query>
-		<Command>Příkaz</Command>
-		<Error_No_DB>Chyba: Nebyla vložena žádná databáze</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable nebo 'Master Table' je chráněná tabulka. Chcete-li chránit integritu db, nemůžete tuto tabulku upravit</Master_Table_Protected>
 		<Access_Denied>Přístup odepřen</Access_Denied>
+		<App>aplikace</App>
 		<Application>Aplikace</Application>
-		<View_Function>Funkce zobrazení</View_Function>
-		<User_Requested>Požadovaný uživatel</User_Requested>
-		<Listview_Width>Šířka seznamu</Listview_Width>
-		<Listview_Height>Výška seznamu</Listview_Height>
-		<Extensions>Rozšíření</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>Uložit a zavřít</Save_and_Close>
-		<Close_wo_saving>Zavřít bez ukládání</Close_wo_saving>
-		<Failed_Load_Online_EULA>Nepodařilo se načíst online smlouvu EULA</Failed_Load_Online_EULA>
+		<Asc>Vzestupně</Asc>
 		<Auto_Log>Automatický protokol</Auto_Log>
-		<Export_HTML_Schema>Export HTML SCHEMA jménem</Export_HTML_Schema>
-		<Export_HTML_Data>Exportovat HTML DATA jménem</Export_HTML_Data>
+		<Browse>Procházet</Browse>
+		<CMD_Tooltip>Provede přizpůsobené příkazy příkazu SQL do databáze</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Chyba: Prohlédněte si podrobnosti o protokolu</Check_Log>
-		<Query_Error>Chyba dotazu</Query_Error>
+		<Check_for_Updates>Kontrola aktualizací</Check_for_Updates>
+		<Close_TW>Zavřete TW</Close_TW>
+		<Close_wo_saving>Zavřít bez ukládání</Close_wo_saving>
+		<Command>Příkaz</Command>
+		<Converter>Konvertor</Converter>
+		<Create_Statistics_Page>Vytvořit stránku statistiky</Create_Statistics_Page>
+		<Critical_Fault_Error>Chyba kritické chyby</Critical_Fault_Error>
+		<Dataview_Error>Databáze nebo Dataview neexistují nebo dosud nebyly načteny</Dataview_Error>
+		<Debug>Ladit</Debug>
+		<Define_New_Table>Definujte novou tabulku</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>Klesající</Desc>
+		<Developer>Vývojář</Developer>
+		<Display_Settings>Nastavení obrazovky</Display_Settings>
+		<Edit>Upravit</Edit>
+		<Error>Chyba</Error>
+		<Error_Generic>Oh, nic se nestalo! :(</Error_Generic>
+		<Error_No_DB>Chyba: Nebyla vložena žádná databáze</Error_No_DB>
+		<Export>Vývozní</Export>
 		<Export_CSV>EXPORT CSV ZE ZÁKLADU</Export_CSV>
+		<Export_HTML_Data>Exportovat HTML DATA jménem</Export_HTML_Data>
+		<Export_HTML_Schema>Export HTML SCHEMA jménem</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Export SQL - SCHEMA - jménem</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Export SQL - SQL - jménem</Export_SQL_SQL>
+		<Export_UI>Exportní uživatelské rozhraní</Export_UI>
 		<Export_XML>EXPORT XML ZE SVĚTA</Export_XML>
-		<System>Systém</System>
-		<Views_Read_Only>Pohledy jsou číst a nelze je editovat</Views_Read_Only>
-		<Dataview_Error>Databáze nebo Dataview neexistují nebo dosud nebyly načteny</Dataview_Error>
-		<Browse>Procházet</Browse>
-		<Statistics_Page>Statistika Stránka</Statistics_Page>
+		<Extensions>Rozšíření</Extensions>
+		<Failed>Selhalo</Failed>
+		<Failed_Load_Online_EULA>Nepodařilo se načíst online smlouvu EULA</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Uložení nastavení se nezdařilo</Failed_Save_Settings>
+		<File>Soubor</File>
+		<Functions>Funkce</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML do formátu CSV</HTML_to_CSV>
+		<Help>Pomoc</Help>
+		<Import>Import</Import>
+		<Import_SQL>Importovat SQL</Import_SQL>
+		<Importer>Dovozce</Importer>
+		<Index>Index</Index>
 		<Invert>Obrátit se</Invert>
-		<Not_Supported>Není podporováno</Not_Supported>
-		<CMD_Tooltip>Provede přizpůsobené příkazy příkazu SQL do databáze</CMD_Tooltip>
 		<LOG_CSV_Path>Cesta protokolu CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Záznamová databáze protokolu</LOG_DB_PATH>
-		<Transaction_DB_Path>Cesta databáze transakcí</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Chyba kritické chyby</Critical_Fault_Error>
-		<Stack_Trace>Stack Trace</Stack_Trace>
-		<Close_TW>Zavřete TW</Close_TW>
-		<Export_UI>Exportní uživatelské rozhraní</Export_UI>
-		<Define_New_Table>Definujte novou tabulku</Define_New_Table>
-		<Create_Statistics_Page>Vytvořit stránku statistiky</Create_Statistics_Page>
-		<Debug>Ladit</Debug>
+		<Language>Jazyk</Language>
+		<Listview_Height>Výška seznamu</Listview_Height>
+		<Listview_Width>Šířka seznamu</Listview_Width>
+		<Master_Table>Hlavní tabulka</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable nebo 'Master Table' je chráněná tabulka. Chcete-li chránit integritu db, nemůžete tuto tabulku upravit</Master_Table_Protected>
+		<New>Nový</New>
 		<New_in_Memory_Db>Nové v databázi paměti</New_in_Memory_Db>
-		<Import_SQL>Importovat SQL</Import_SQL>
-		<Plugin>Zapojit</Plugin>
+		<Not_Supported>Není podporováno</Not_Supported>
+		<Open>otevřeno</Open>
 		<Opened>Otevřeno</Opened>
-		<Converter>Konvertor</Converter>
-		<HTML_to_CSV>HTML do formátu CSV</HTML_to_CSV>
-		<Developer>Vývojář</Developer>
+		<PRGM_Start>Program začal</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Zapojit</Plugin>
+		<Query>Dotaz</Query>
+		<Query_Error>Chyba dotazu</Query_Error>
+		<Refresh_Schema>Obnovit schéma</Refresh_Schema>
+		<Run_Function>Spustit funkci</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Uložit</Save>
+		<Save_and_Close>Uložit a zavřít</Save_and_Close>
+		<Search>Vyhledávání</Search>
 		<Search_Settings>Nastavení vyhledávání</Search_Settings>
+		<Search_in>Hledat v</Search_in>
+		<Settings>Nastavení</Settings>
+		<Settings_Editor>Editor úprav</Settings_Editor>
+		<Show_Help>Zobrazit nápovědu</Show_Help>
+		<Sort>Seřadit</Sort>
+		<Sort_by>Seřazeno podle</Sort_by>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Statistics_Page>Statistika Stránka</Statistics_Page>
+		<Strict_Search>Přísné vyhledávání</Strict_Search>
+		<Success>Úspěch</Success>
+		<System>Systém</System>
+		<Table>Stůl</Table>
+		<Toggle_Debug>Přepnout ladění</Toggle_Debug>
+		<Toggle_Transaction_Log>Přepínání protokolu transakcí</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Cesta databáze transakcí</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Požadovaný uživatel</User_Requested>
+		<View>Pohled</View>
+		<View_Function>Funkce zobrazení</View_Function>
+		<Views_Read_Only>Pohledy jsou číst a nelze je editovat</Views_Read_Only>
 	</Language>
 </root>

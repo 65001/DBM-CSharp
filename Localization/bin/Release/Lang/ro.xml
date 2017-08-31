@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Limba</Language>
-		<File>Fişier</File>
-		<New>Nou</New>
-		<Open>Deschis</Open>
-		<Edit>Edita?i | ×</Edit>
-		<View>Vedere</View>
-		<Save>Salva?i</Save>
-		<Import>Import</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Export</Export>
-		<HTML>HTML</HTML>
-		<Settings>Setări</Settings>
-		<Help>Ajutor</Help>
 		<About>Despre</About>
-		<Show_Help>Afi?a?i Ajutor</Show_Help>
-		<Settings_Editor>Editor de setări</Settings_Editor>
-		<Toggle_Debug>Comuta?i întrerupere</Toggle_Debug>
-		<Toggle_Transaction_Log>Comuta?i între jurnalul de tranzac?ii</Toggle_Transaction_Log>
-		<Refresh_Schema>Reîmprospăta?i schema</Refresh_Schema>
-		<Check_for_Updates>Verifică pentru actualizări</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Programul a început</PRGM_Start>
-		<App>cerere</App>
-		<Failed_Save_Settings>Setările de salvare nu au putut fi salvate</Failed_Save_Settings>
-		<Error>Eroare</Error>
-		<Failed>A e?uat</Failed>
-		<Table>Masa</Table>
-		<Index>Index</Index>
-		<Master_Table>Masa Master</Master_Table>
-		<Sort>Fel</Sort>
-		<Asc>Ascendent</Asc>
-		<Desc>Descendentă</Desc>
-		<Display_Settings>Setări de afi?are</Display_Settings>
-		<Sort_by>Filtrează după</Sort_by>
-		<Search_in>Cauta in</Search_in>
-		<Search>Căutare</Search>
-		<Functions>funcţii</Functions>
-		<Strict_Search>Căutarea strictă</Strict_Search>
-		<Run_Function>Func?ie de rulare</Run_Function>
-		<Query>întrebare</Query>
-		<Command>Comanda</Command>
-		<Error_No_DB>Eroare: Nu a fost încărcată nicio bază de date</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable sau "Master Table" este un tabel protejat. Pentru a proteja integritatea db nu pute?i edita acest tabel</Master_Table_Protected>
 		<Access_Denied>Acces interzis</Access_Denied>
+		<App>cerere</App>
 		<Application>App</Application>
-		<View_Function>Func?ia de vizualizare</View_Function>
-		<User_Requested>Utilizatorul solicitat</User_Requested>
-		<Listview_Width>Listview Width</Listview_Width>
-		<Listview_Height>Înăl?ime listă</Listview_Height>
-		<Extensions>Extensii</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>Salveaza si inchide</Save_and_Close>
-		<Close_wo_saving>Închide?i fără a salva</Close_wo_saving>
-		<Failed_Load_Online_EULA>Nu sa reu?it încărcarea EULA online</Failed_Load_Online_EULA>
+		<Asc>Ascendent</Asc>
 		<Auto_Log>Log automat</Auto_Log>
-		<Export_HTML_Schema>Exporta?i SCHEMA HTML în numele</Export_HTML_Schema>
-		<Export_HTML_Data>Exporta?i HTML DATA în numele</Export_HTML_Data>
+		<Browse>Naviga</Browse>
+		<CMD_Tooltip>Execută comenzi personalizate SQL comandă în baza de date</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Eroare: verifica?i jurnalul pentru detalii</Check_Log>
-		<Query_Error>Eroare de interogare</Query_Error>
+		<Check_for_Updates>Verifică pentru actualizări</Check_for_Updates>
+		<Close_TW>Închide?i TW</Close_TW>
+		<Close_wo_saving>Închide?i fără a salva</Close_wo_saving>
+		<Command>Comanda</Command>
+		<Converter>convertizor</Converter>
+		<Create_Statistics_Page>Crea?i o pagină de statistici</Create_Statistics_Page>
+		<Critical_Fault_Error>Eroare de eroare critică</Critical_Fault_Error>
+		<Dataview_Error>Baza de date sau Dataview nu există sau nu a fost încă încărcată</Dataview_Error>
+		<Debug>debug</Debug>
+		<Define_New_Table>Defini?i tabelul nou</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>Descendentă</Desc>
+		<Developer>Dezvoltator</Developer>
+		<Display_Settings>Setări de afi?are</Display_Settings>
+		<Edit>Edita?i | ×</Edit>
+		<Error>Eroare</Error>
+		<Error_Generic>Nu sa întâmplat ceva în neregulă! :(</Error_Generic>
+		<Error_No_DB>Eroare: Nu a fost încărcată nicio bază de date</Error_No_DB>
+		<Export>Export</Export>
 		<Export_CSV>EXPORT CSV ÎN EXCEP?IA</Export_CSV>
+		<Export_HTML_Data>Exporta?i HTML DATA în numele</Export_HTML_Data>
+		<Export_HTML_Schema>Exporta?i SCHEMA HTML în numele</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Export SQL - SCHEMA - În numele</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Export SQL - SQL - În numele</Export_SQL_SQL>
+		<Export_UI>IO de export</Export_UI>
 		<Export_XML>EXPORT XML EXPLOATARE</Export_XML>
-		<System>Sistem</System>
-		<Views_Read_Only>Vizionările sunt readonly ?i nu pot fi editate</Views_Read_Only>
-		<Dataview_Error>Baza de date sau Dataview nu există sau nu a fost încă încărcată</Dataview_Error>
-		<Browse>Naviga</Browse>
-		<Statistics_Page>Pagina de statistici</Statistics_Page>
+		<Extensions>Extensii</Extensions>
+		<Failed>A e?uat</Failed>
+		<Failed_Load_Online_EULA>Nu sa reu?it încărcarea EULA online</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Setările de salvare nu au putut fi salvate</Failed_Save_Settings>
+		<File>Fişier</File>
+		<Functions>funcţii</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML pentru CSV</HTML_to_CSV>
+		<Help>Ajutor</Help>
+		<Import>Import</Import>
+		<Import_SQL>Importa?i SQL</Import_SQL>
+		<Importer>Importator</Importer>
+		<Index>Index</Index>
 		<Invert>Inversa</Invert>
-		<Not_Supported>Nu sunt acceptate</Not_Supported>
-		<CMD_Tooltip>Execută comenzi personalizate SQL comandă în baza de date</CMD_Tooltip>
 		<LOG_CSV_Path>Cale CSV pentru jurnal</LOG_CSV_Path>
 		<LOG_DB_PATH>Jurnal de bază de date log</LOG_DB_PATH>
-		<Transaction_DB_Path>Calea bazei de date a tranzac?iei</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>PRIVAT-schemă</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Eroare de eroare critică</Critical_Fault_Error>
-		<Stack_Trace>Stack Trace</Stack_Trace>
-		<Close_TW>Închide?i TW</Close_TW>
-		<Export_UI>IO de export</Export_UI>
-		<Define_New_Table>Defini?i tabelul nou</Define_New_Table>
-		<Create_Statistics_Page>Crea?i o pagină de statistici</Create_Statistics_Page>
-		<Debug>debug</Debug>
+		<Language>Limba</Language>
+		<Listview_Height>Înăl?ime listă</Listview_Height>
+		<Listview_Width>Listview Width</Listview_Width>
+		<Master_Table>Masa Master</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable sau "Master Table" este un tabel protejat. Pentru a proteja integritatea db nu pute?i edita acest tabel</Master_Table_Protected>
+		<New>Nou</New>
 		<New_in_Memory_Db>Nou în baza de date de memorie</New_in_Memory_Db>
-		<Import_SQL>Importa?i SQL</Import_SQL>
-		<Plugin>Conecteaza</Plugin>
+		<Not_Supported>Nu sunt acceptate</Not_Supported>
+		<Open>Deschis</Open>
 		<Opened>Deschis</Opened>
-		<Converter>convertizor</Converter>
-		<HTML_to_CSV>HTML pentru CSV</HTML_to_CSV>
-		<Developer>Dezvoltator</Developer>
+		<PRGM_Start>Programul a început</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Conecteaza</Plugin>
+		<Query>întrebare</Query>
+		<Query_Error>Eroare de interogare</Query_Error>
+		<Refresh_Schema>Reîmprospăta?i schema</Refresh_Schema>
+		<Run_Function>Func?ie de rulare</Run_Function>
+		<SCHEMA_PRIVATE>PRIVAT-schemă</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Salva?i</Save>
+		<Save_and_Close>Salveaza si inchide</Save_and_Close>
+		<Search>Căutare</Search>
 		<Search_Settings>Setări de căutare</Search_Settings>
+		<Search_in>Cauta in</Search_in>
+		<Settings>Setări</Settings>
+		<Settings_Editor>Editor de setări</Settings_Editor>
+		<Show_Help>Afi?a?i Ajutor</Show_Help>
+		<Sort>Fel</Sort>
+		<Sort_by>Filtrează după</Sort_by>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Statistics_Page>Pagina de statistici</Statistics_Page>
+		<Strict_Search>Căutarea strictă</Strict_Search>
+		<Success>Succes</Success>
+		<System>Sistem</System>
+		<Table>Masa</Table>
+		<Toggle_Debug>Comuta?i întrerupere</Toggle_Debug>
+		<Toggle_Transaction_Log>Comuta?i între jurnalul de tranzac?ii</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Calea bazei de date a tranzac?iei</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Utilizatorul solicitat</User_Requested>
+		<View>Vedere</View>
+		<View_Function>Func?ia de vizualizare</View_Function>
+		<Views_Read_Only>Vizionările sunt readonly ?i nu pot fi editate</Views_Read_Only>
 	</Language>
 </root>
