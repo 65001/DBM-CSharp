@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Wika</Language>
-		<File>File</File>
-		<New>Bago</New>
-		<Open>Buksan</Open>
-		<Edit>I-edit</Edit>
-		<View>Tingnan</View>
-		<Save>I-save</Save>
-		<Import>Angkat</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>I-export</Export>
-		<HTML>HTML</HTML>
-		<Settings>Mga Setting</Settings>
-		<Help>Tulong</Help>
 		<About>Tungkol sa</About>
-		<Show_Help>Ipakita ang Tulong</Show_Help>
-		<Settings_Editor>Mga Setting ng Editor</Settings_Editor>
-		<Toggle_Debug>I-toggle ang Pag-debug</Toggle_Debug>
-		<Toggle_Transaction_Log>I-toggle ang Log ng Transaksyon</Toggle_Transaction_Log>
-		<Refresh_Schema>Refresh Schema</Refresh_Schema>
-		<Check_for_Updates>Tingnan ang Mga Update</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Nagsimula ang Programa</PRGM_Start>
-		<App>Application</App>
-		<Failed_Save_Settings>Nabigong I-save ang Mga Setting</Failed_Save_Settings>
-		<Error>Error</Error>
-		<Failed>Nabigo</Failed>
-		<Table>Table</Table>
-		<Index>Index</Index>
-		<Master_Table>Master Table</Master_Table>
-		<Sort>Ayusin</Sort>
-		<Asc>Pataas</Asc>
-		<Desc>Bumababa</Desc>
-		<Display_Settings>Mga Setting ng Display</Display_Settings>
-		<Sort_by>Ayusin Ayon sa</Sort_by>
-		<Search_in>Maghanap Sa</Search_in>
-		<Search>Paghahanap</Search>
-		<Functions>Pag-andar</Functions>
-		<Strict_Search>Mahigpit na Paghahanap</Strict_Search>
-		<Run_Function>Patakbuhin ang Function</Run_Function>
-		<Query>Tanong</Query>
-		<Command>Command</Command>
-		<Error_No_DB>Error: Hindi na-load ang Database</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' ay isang protektadong talahanayan. Upang maprotektahan ang integridad ng db hindi mo maaring i-edit ang talahanayan na ito</Master_Table_Protected>
 		<Access_Denied>Walang pahintulot</Access_Denied>
+		<App>Application</App>
 		<Application>App</Application>
-		<View_Function>Tingnan ang Function</View_Function>
-		<User_Requested>Hiniling ng User</User_Requested>
-		<Listview_Width>Listview Width</Listview_Width>
-		<Listview_Height>Listview Taas</Listview_Height>
-		<Extensions>Mga Extension</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>I-save at Isara</Save_and_Close>
-		<Close_wo_saving>Isara nang walang Pag-save</Close_wo_saving>
-		<Failed_Load_Online_EULA>Nabigong i-load ang online EULA</Failed_Load_Online_EULA>
+		<Asc>Pataas</Asc>
 		<Auto_Log>Auto Log</Auto_Log>
-		<Export_HTML_Schema>I-export ang HTML SCHEMA sa ngalan ng</Export_HTML_Schema>
-		<Export_HTML_Data>I-export ang HTML DATA sa ngalan ng</Export_HTML_Data>
+		<Browse>Mag-browse</Browse>
+		<CMD_Tooltip>Pinapatupad ang na-customize na pahayag ng SQL command papunta sa database</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Error: Mangyaring suriin ang log para sa mga detalye</Check_Log>
-		<Query_Error>Error sa Pag-query</Query_Error>
+		<Check_for_Updates>Tingnan ang Mga Update</Check_for_Updates>
+		<Close_TW>Isara ang TW</Close_TW>
+		<Close_wo_saving>Isara nang walang Pag-save</Close_wo_saving>
+		<Command>Command</Command>
+		<Converter>Converter</Converter>
+		<Create_Statistics_Page>Lumikha ng Pahina sa Istatistika</Create_Statistics_Page>
+		<Critical_Fault_Error>Error sa Kritikal na Error</Critical_Fault_Error>
+		<Dataview_Error>Ang Database o Dataview ay hindi umiiral o hindi pa na-load</Dataview_Error>
+		<Debug>Debug</Debug>
+		<Define_New_Table>Tukuyin ang Bagong Talahanayan</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>Bumababa</Desc>
+		<Developer>Developer</Developer>
+		<Display_Settings>Mga Setting ng Display</Display_Settings>
+		<Edit>I-edit</Edit>
+		<Error>Error</Error>
+		<Error_Generic>Oh walang nangyaring mali! :(</Error_Generic>
+		<Error_No_DB>Error: Hindi na-load ang Database</Error_No_DB>
+		<Export>I-export</Export>
 		<Export_CSV>EXPORT CSV ON BEHALF OF</Export_CSV>
+		<Export_HTML_Data>I-export ang HTML DATA sa ngalan ng</Export_HTML_Data>
+		<Export_HTML_Schema>I-export ang HTML SCHEMA sa ngalan ng</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>I-export ang SQL - SCHEMA - Sa ngalan ng</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>I-export ang SQL - SQL - Sa ngalan ng</Export_SQL_SQL>
+		<Export_UI>I-export ang UI</Export_UI>
 		<Export_XML>EXPORT XML ON BEHALF OF</Export_XML>
-		<System>System</System>
-		<Views_Read_Only>Ang mga panonood ay readonly at hindi ma-edit</Views_Read_Only>
-		<Dataview_Error>Ang Database o Dataview ay hindi umiiral o hindi pa na-load</Dataview_Error>
-		<Browse>Mag-browse</Browse>
-		<Statistics_Page>Pahina ng Istatistika</Statistics_Page>
+		<Extensions>Mga Extension</Extensions>
+		<Failed>Nabigo</Failed>
+		<Failed_Load_Online_EULA>Nabigong i-load ang online EULA</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Nabigong I-save ang Mga Setting</Failed_Save_Settings>
+		<File>File</File>
+		<Functions>Pag-andar</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML sa CSV</HTML_to_CSV>
+		<Help>Tulong</Help>
+		<Import>Angkat</Import>
+		<Import_SQL>Mag-import ng SQL</Import_SQL>
+		<Importer>Importer</Importer>
+		<Index>Index</Index>
 		<Invert>Baliktarin</Invert>
-		<Not_Supported>Hindi suportado</Not_Supported>
-		<CMD_Tooltip>Pinapatupad ang na-customize na pahayag ng SQL command papunta sa database</CMD_Tooltip>
 		<LOG_CSV_Path>Mag-log ng Path ng CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Mag-log sa DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>Path ng Database ng Transaksyon</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Error sa Kritikal na Error</Critical_Fault_Error>
-		<Stack_Trace>Stack Trace</Stack_Trace>
-		<Close_TW>Isara ang TW</Close_TW>
-		<Export_UI>I-export ang UI</Export_UI>
-		<Define_New_Table>Tukuyin ang Bagong Talahanayan</Define_New_Table>
-		<Create_Statistics_Page>Lumikha ng Pahina sa Istatistika</Create_Statistics_Page>
-		<Debug>Debug</Debug>
+		<Language>Wika</Language>
+		<Listview_Height>Listview Taas</Listview_Height>
+		<Listview_Width>Listview Width</Listview_Width>
+		<Master_Table>Master Table</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' ay isang protektadong talahanayan. Upang maprotektahan ang integridad ng db hindi mo maaring i-edit ang talahanayan na ito</Master_Table_Protected>
+		<New>Bago</New>
 		<New_in_Memory_Db>Bago sa Memory Database</New_in_Memory_Db>
-		<Import_SQL>Mag-import ng SQL</Import_SQL>
-		<Plugin>Isaksak</Plugin>
+		<Not_Supported>Hindi suportado</Not_Supported>
+		<Open>Buksan</Open>
 		<Opened>Binuksan</Opened>
-		<Converter>Converter</Converter>
-		<HTML_to_CSV>HTML sa CSV</HTML_to_CSV>
-		<Developer>Developer</Developer>
+		<PRGM_Start>Nagsimula ang Programa</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Isaksak</Plugin>
+		<Query>Tanong</Query>
+		<Query_Error>Error sa Pag-query</Query_Error>
+		<Refresh_Schema>Refresh Schema</Refresh_Schema>
+		<Run_Function>Patakbuhin ang Function</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>I-save</Save>
+		<Save_and_Close>I-save at Isara</Save_and_Close>
+		<Search>Paghahanap</Search>
 		<Search_Settings>Mga Setting ng Paghahanap</Search_Settings>
+		<Search_in>Maghanap Sa</Search_in>
+		<Settings>Mga Setting</Settings>
+		<Settings_Editor>Mga Setting ng Editor</Settings_Editor>
+		<Show_Help>Ipakita ang Tulong</Show_Help>
+		<Sort>Ayusin</Sort>
+		<Sort_by>Ayusin Ayon sa</Sort_by>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Statistics_Page>Pahina ng Istatistika</Statistics_Page>
+		<Strict_Search>Mahigpit na Paghahanap</Strict_Search>
+		<Success>Tagumpay</Success>
+		<System>System</System>
+		<Table>Table</Table>
+		<Toggle_Debug>I-toggle ang Pag-debug</Toggle_Debug>
+		<Toggle_Transaction_Log>I-toggle ang Log ng Transaksyon</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Path ng Database ng Transaksyon</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Hiniling ng User</User_Requested>
+		<View>Tingnan</View>
+		<View_Function>Tingnan ang Function</View_Function>
+		<Views_Read_Only>Ang mga panonood ay readonly at hindi ma-edit</Views_Read_Only>
 	</Language>
 </root>

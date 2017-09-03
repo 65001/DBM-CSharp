@@ -13,8 +13,16 @@ namespace Localization
         static void Main(string[] args)
         {
             LDUtilities.ShowErrors = false;
+            Console.Title = "Localizer";
+
+            Stopwatch SW = new Stopwatch();
+            SW.Start();
+
             //TextFiles(Program.Directory + "\\Lang\\Array\\");
             TranslateDB(Program.Directory + "\\Localization.db", Microsoft.SmallBasic.Library.Program.Directory+"\\Lang\\");
+
+            Console.WriteLine("Elapsed Time {0}", SW.ElapsedMilliseconds);
+            Console.ReadLine();
         }
 
         static void TranslateDB(string DBPath,string LocalizationWritePath)
@@ -34,17 +42,24 @@ namespace Localization
 
             Primitive Languages = LDTranslate.Languages();
             Primitive Index = Languages.GetAllIndices();
+            List<string> SortedIndex = new List<string>();
 
-            for (int i = 1; i < Index.GetItemCount(); i++)
+            //Converts the Primitive Index to a List<string>
+            for (int i = 1; i <= Index.GetItemCount(); i++)
+            {
+                SortedIndex.Add(Index[i]);
+            }
+            SortedIndex.Sort();
+
+            for (int i = 0; i < SortedIndex.Count; i++)
             {
                 Stopwatch SW = new Stopwatch();
                 SW.Start();
-                string Path = LocalizationWritePath + "\\" + Index[i] + ".xml";
-                TranslateLoop("en", Index[i], Data, Path);
+                string Path = string.Format("{0}\\{1}.xml", LocalizationWritePath, SortedIndex[i]);
+                TranslateLoop("en", SortedIndex[i], Data, Path);
                 SW.Stop();
+                Console.WriteLine(SW.ElapsedMilliseconds);
             }
-            Console.WriteLine("Completed!");
-            Console.ReadKey();
         }
 
         static void TranslateLoop(string From, string To, Dictionary<string, string> Original, string Path)
@@ -58,8 +73,7 @@ namespace Localization
             Write(Path, DictionaryToXml(Translated));
             IO.Stop();
 
-            Console.WriteLine("To {0} Completed", To);
-            
+            Console.Write("To {0} Completed IO:{1} ", To,IO.ElapsedMilliseconds);  
         }
 
         static Task Write(string Path, string Contents)

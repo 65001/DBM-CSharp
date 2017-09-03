@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Lingua</Language>
-		<File>File</File>
-		<New>Nuovo</New>
-		<Open>Aperto</Open>
-		<Edit>Modifica</Edit>
-		<View>vista</View>
-		<Save>Salvare</Save>
-		<Import>Importare</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Esportare</Export>
-		<HTML>HTML</HTML>
-		<Settings>impostazioni</Settings>
-		<Help>Aiuto</Help>
 		<About>Di</About>
-		<Show_Help>Mostra aiuto</Show_Help>
-		<Settings_Editor>Editor delle impostazioni</Settings_Editor>
-		<Toggle_Debug>Toggle debug</Toggle_Debug>
-		<Toggle_Transaction_Log>Toggle log di transazione</Toggle_Transaction_Log>
-		<Refresh_Schema>Schema di aggiornamento</Refresh_Schema>
-		<Check_for_Updates>Controlla gli aggiornamenti</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Programma iniziato</PRGM_Start>
-		<App>Applicazione</App>
-		<Failed_Save_Settings>Impossibile salvare le impostazioni</Failed_Save_Settings>
-		<Error>Errore</Error>
-		<Failed>fallito</Failed>
-		<Table>tavolo</Table>
-		<Index>Indice</Index>
-		<Master_Table>Tabella Master</Master_Table>
-		<Sort>Ordinare</Sort>
-		<Asc>Ascendente</Asc>
-		<Desc>Discendente</Desc>
-		<Display_Settings>Impostazioni di visualizzazione</Display_Settings>
-		<Sort_by>Ordina per</Sort_by>
-		<Search_in>Cerca nel</Search_in>
-		<Search>Ricerca</Search>
-		<Functions>funzioni</Functions>
-		<Strict_Search>Ricerca rigorosa</Strict_Search>
-		<Run_Function>Run Funzione</Run_Function>
-		<Query>domanda</Query>
-		<Command>Comando</Command>
-		<Error_No_DB>Errore: nessun database è stato caricato</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' è una tabella protetta. Per proteggere l'integrità del db non è possibile modificare questa tabella</Master_Table_Protected>
 		<Access_Denied>Accesso negato</Access_Denied>
+		<App>Applicazione</App>
 		<Application>App</Application>
-		<View_Function>Funzione di visualizzazione</View_Function>
-		<User_Requested>Utente richiesto</User_Requested>
-		<Listview_Width>Larghezza di listino</Listview_Width>
-		<Listview_Height>ListView Height</Listview_Height>
-		<Extensions>estensioni</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>Salva e chiudi</Save_and_Close>
-		<Close_wo_saving>Chiudi senza salvare</Close_wo_saving>
-		<Failed_Load_Online_EULA>Impossibile caricare l'EULA in linea</Failed_Load_Online_EULA>
+		<Asc>Ascendente</Asc>
 		<Auto_Log>Registro automatico</Auto_Log>
-		<Export_HTML_Schema>Esporta HTML SCHEMA per conto di</Export_HTML_Schema>
-		<Export_HTML_Data>Esporta i dati HTML per conto di</Export_HTML_Data>
+		<Browse>Navigare</Browse>
+		<CMD_Tooltip>Esegue le istruzioni di comando SQL personalizzate nel database</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Errore: Controllare il registro per i dettagli</Check_Log>
-		<Query_Error>Errore di query</Query_Error>
+		<Check_for_Updates>Controlla gli aggiornamenti</Check_for_Updates>
+		<Close_TW>Chiudi TW</Close_TW>
+		<Close_wo_saving>Chiudi senza salvare</Close_wo_saving>
+		<Command>Comando</Command>
+		<Converter>Converter</Converter>
+		<Create_Statistics_Page>Crea pagina statistica</Create_Statistics_Page>
+		<Critical_Fault_Error>Errore di errore critico</Critical_Fault_Error>
+		<Dataview_Error>Il database o Dataview non esiste o non è ancora stato caricato</Dataview_Error>
+		<Debug>mettere a punto</Debug>
+		<Define_New_Table>Definire una nuova tabella</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>Discendente</Desc>
+		<Developer>Sviluppatore</Developer>
+		<Display_Settings>Impostazioni di visualizzazione</Display_Settings>
+		<Edit>Modifica</Edit>
+		<Error>Errore</Error>
+		<Error_Generic>Oh, niente è andato storto! :(</Error_Generic>
+		<Error_No_DB>Errore: nessun database è stato caricato</Error_No_DB>
+		<Export>Esportare</Export>
 		<Export_CSV>ESPORTAZIONE CSV SUL COMPLETO DI</Export_CSV>
+		<Export_HTML_Data>Esporta i dati HTML per conto di</Export_HTML_Data>
+		<Export_HTML_Schema>Esporta HTML SCHEMA per conto di</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Per conto di</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Esporta SQL - SQL - Per conto di</Export_SQL_SQL>
+		<Export_UI>Esportazione dell'interfaccia utente</Export_UI>
 		<Export_XML>ESPORTAZIONE XML IN CASO DI</Export_XML>
-		<System>Sistema</System>
-		<Views_Read_Only>Le visualizzazioni sono di sola lettura e non possono essere modificate</Views_Read_Only>
-		<Dataview_Error>Il database o Dataview non esiste o non è ancora stato caricato</Dataview_Error>
-		<Browse>Navigare</Browse>
-		<Statistics_Page>Pagina statistica</Statistics_Page>
+		<Extensions>estensioni</Extensions>
+		<Failed>fallito</Failed>
+		<Failed_Load_Online_EULA>Impossibile caricare l'EULA in linea</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Impossibile salvare le impostazioni</Failed_Save_Settings>
+		<File>File</File>
+		<Functions>funzioni</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML a CSV</HTML_to_CSV>
+		<Help>Aiuto</Help>
+		<Import>Importare</Import>
+		<Import_SQL>Importa SQL</Import_SQL>
+		<Importer>Importatore</Importer>
+		<Index>Indice</Index>
 		<Invert>Invertire</Invert>
-		<Not_Supported>Non supportato</Not_Supported>
-		<CMD_Tooltip>Esegue le istruzioni di comando SQL personalizzate nel database</CMD_Tooltip>
 		<LOG_CSV_Path>Percorso del percorso CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>Percorso database transazioni</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATO</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Errore di errore critico</Critical_Fault_Error>
-		<Stack_Trace>Stack Trace</Stack_Trace>
-		<Close_TW>Chiudi TW</Close_TW>
-		<Export_UI>Esportazione dell'interfaccia utente</Export_UI>
-		<Define_New_Table>Definire una nuova tabella</Define_New_Table>
-		<Create_Statistics_Page>Crea pagina statistica</Create_Statistics_Page>
-		<Debug>mettere a punto</Debug>
+		<Language>Lingua</Language>
+		<Listview_Height>ListView Height</Listview_Height>
+		<Listview_Width>Larghezza di listino</Listview_Width>
+		<Master_Table>Tabella Master</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' è una tabella protetta. Per proteggere l'integrità del db non è possibile modificare questa tabella</Master_Table_Protected>
+		<New>Nuovo</New>
 		<New_in_Memory_Db>Nuovo nel database di memoria</New_in_Memory_Db>
-		<Import_SQL>Importa SQL</Import_SQL>
-		<Plugin>Collegare</Plugin>
+		<Not_Supported>Non supportato</Not_Supported>
+		<Open>Aperto</Open>
 		<Opened>Ha aperto</Opened>
-		<Converter>Converter</Converter>
-		<HTML_to_CSV>HTML a CSV</HTML_to_CSV>
-		<Developer>Sviluppatore</Developer>
+		<PRGM_Start>Programma iniziato</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Collegare</Plugin>
+		<Query>domanda</Query>
+		<Query_Error>Errore di query</Query_Error>
+		<Refresh_Schema>Schema di aggiornamento</Refresh_Schema>
+		<Run_Function>Run Funzione</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATO</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Salvare</Save>
+		<Save_and_Close>Salva e chiudi</Save_and_Close>
+		<Search>Ricerca</Search>
 		<Search_Settings>Cerca i settaggi</Search_Settings>
+		<Search_in>Cerca nel</Search_in>
+		<Settings>impostazioni</Settings>
+		<Settings_Editor>Editor delle impostazioni</Settings_Editor>
+		<Show_Help>Mostra aiuto</Show_Help>
+		<Sort>Ordinare</Sort>
+		<Sort_by>Ordina per</Sort_by>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Statistics_Page>Pagina statistica</Statistics_Page>
+		<Strict_Search>Ricerca rigorosa</Strict_Search>
+		<Success>Successo</Success>
+		<System>Sistema</System>
+		<Table>tavolo</Table>
+		<Toggle_Debug>Toggle debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Toggle log di transazione</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Percorso database transazioni</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Utente richiesto</User_Requested>
+		<View>vista</View>
+		<View_Function>Funzione di visualizzazione</View_Function>
+		<Views_Read_Only>Le visualizzazioni sono di sola lettura e non possono essere modificate</Views_Read_Only>
 	</Language>
 </root>

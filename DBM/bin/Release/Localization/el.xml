@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Γλώσσα</Language>
-		<File>Αρχείο</File>
-		<New>Νέος</New>
-		<Open>Ανοιξε</Open>
-		<Edit>Επεξεργασία</Edit>
-		<View>Θέα</View>
-		<Save>Αποθηκεύσετε</Save>
-		<Import>Εισαγωγή</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Εξαγωγή</Export>
-		<HTML>HTML</HTML>
-		<Settings>Ρυθμίσεις</Settings>
-		<Help>Βοήθεια</Help>
 		<About>Σχετικά με</About>
-		<Show_Help>Εμφάνιση βοήθειας</Show_Help>
-		<Settings_Editor>Εκδότης ρυθμίσεων</Settings_Editor>
-		<Toggle_Debug>Εναλλαγή εντοπισμού σφαλμάτων</Toggle_Debug>
-		<Toggle_Transaction_Log>Εναλλαγή καταγραφής συναλλαγών</Toggle_Transaction_Log>
-		<Refresh_Schema>Ανανέωση του σχήματος</Refresh_Schema>
-		<Check_for_Updates>Ελεγχος για ενημερώσεις</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Ξεκίνησε το πρόγραμμα</PRGM_Start>
-		<App>Εφαρμογή</App>
-		<Failed_Save_Settings>Αποτυχία αποθήκευσης ρυθμίσεων</Failed_Save_Settings>
-		<Error>Λάθος</Error>
-		<Failed>Απέτυχε</Failed>
-		<Table>Τραπέζι</Table>
-		<Index>Δείκτης</Index>
-		<Master_Table>Master Table</Master_Table>
-		<Sort>Είδος</Sort>
-		<Asc>Αύξουσα</Asc>
-		<Desc>Φθίνων</Desc>
-		<Display_Settings>Ρυθμίσεις οθόνης</Display_Settings>
-		<Sort_by>Ταξινόμηση κατά</Sort_by>
-		<Search_in>Αναζήτηση στο</Search_in>
-		<Search>Ψάξιμο</Search>
-		<Functions>Λειτουργίες</Functions>
-		<Strict_Search>Αυστηρή αναζήτηση</Strict_Search>
-		<Run_Function>Λειτουργία εκτέλεσης</Run_Function>
-		<Query>Ερώτηση</Query>
-		<Command>Εντολή</Command>
-		<Error_No_DB>Σφάλμα: Δεν έχει φορτωθεί καμία βάση δεδομένων</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Το Sqlite_mastertable ή το Master Table είναι προστατευόμενος πίνακας. Για να προστατεύσετε την ακεραιότητα του db, δεν μπορείτε να επεξεργαστείτε αυτόν τον πίνακα</Master_Table_Protected>
 		<Access_Denied>Δεν επιτρέπεται η πρόσβαση</Access_Denied>
+		<App>Εφαρμογή</App>
 		<Application>App</Application>
-		<View_Function>Λειτουργία προβολής</View_Function>
-		<User_Requested>Ο χρήστης ζητήθηκε</User_Requested>
-		<Listview_Width>List Width</Listview_Width>
-		<Listview_Height>Ύψος λίστας</Listview_Height>
-		<Extensions>Επεκτάσεις</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>Αποθήκευσε και κλείσε</Save_and_Close>
-		<Close_wo_saving>Κλείσιμο χωρίς αποθήκευση</Close_wo_saving>
-		<Failed_Load_Online_EULA>Αποτυχία φόρτωσης της διατραπεζικής υπηρεσίας EULA</Failed_Load_Online_EULA>
+		<Asc>Αύξουσα</Asc>
 		<Auto_Log>Αυτόματη καταγραφή</Auto_Log>
-		<Export_HTML_Schema>Εξαγωγή HTML SCHEMA εξ ονόματος του</Export_HTML_Schema>
-		<Export_HTML_Data>Εξαγωγή δεδομένων HTML για λογαριασμό του</Export_HTML_Data>
+		<Browse>Ξεφυλλίζω</Browse>
+		<CMD_Tooltip>Εκτελεί προσαρμοσμένες δηλώσεις εντολών SQL στη βάση δεδομένων</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Σφάλμα: Ελέγξτε το αρχείο καταγραφής για λεπτομέρειες</Check_Log>
-		<Query_Error>Σφάλμα ερωτήματος</Query_Error>
+		<Check_for_Updates>Ελεγχος για ενημερώσεις</Check_for_Updates>
+		<Close_TW>Κλείσιμο TW</Close_TW>
+		<Close_wo_saving>Κλείσιμο χωρίς αποθήκευση</Close_wo_saving>
+		<Command>Εντολή</Command>
+		<Converter>Μετατροπέας</Converter>
+		<Create_Statistics_Page>Δημιουργία σελίδας στατιστικών στοιχείων</Create_Statistics_Page>
+		<Critical_Fault_Error>Σφάλμα κρίσιμου σφάλματος</Critical_Fault_Error>
+		<Dataview_Error>Η βάση δεδομένων ή το Dataview δεν υπάρχει ή δεν έχει φορτωθεί ακόμα</Dataview_Error>
+		<Debug>Debug</Debug>
+		<Define_New_Table>Ορίστε νέο πίνακα</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>Φθίνων</Desc>
+		<Developer>Προγραμματιστής</Developer>
+		<Display_Settings>Ρυθμίσεις οθόνης</Display_Settings>
+		<Edit>Επεξεργασία</Edit>
+		<Error>Λάθος</Error>
+		<Error_Generic>Ω όχι κάτι πήγε στραβά! :(</Error_Generic>
+		<Error_No_DB>Σφάλμα: Δεν έχει φορτωθεί καμία βάση δεδομένων</Error_No_DB>
+		<Export>Εξαγωγή</Export>
 		<Export_CSV>ΕΞΑΓΩΓΗ CSV ΣΕ ΠΕΡΙΠΤΩΣΗ</Export_CSV>
+		<Export_HTML_Data>Εξαγωγή δεδομένων HTML για λογαριασμό του</Export_HTML_Data>
+		<Export_HTML_Schema>Εξαγωγή HTML SCHEMA εξ ονόματος του</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Εξαγωγή SQL - SCHEMA - Εκ μέρους του</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Εξαγωγή SQL - SQL - Εκ μέρους του</Export_SQL_SQL>
+		<Export_UI>Εξαγωγή διεπαφής χρήστη</Export_UI>
 		<Export_XML>ΕΞΑΓΩΓΗ XML ΣΧΕΤΙΚΑ ΜΕ ΤΟ</Export_XML>
-		<System>Σύστημα</System>
-		<Views_Read_Only>Οι προβολές είναι readonly και δεν μπορούν να επεξεργαστούν</Views_Read_Only>
-		<Dataview_Error>Η βάση δεδομένων ή το Dataview δεν υπάρχει ή δεν έχει φορτωθεί ακόμα</Dataview_Error>
-		<Browse>Ξεφυλλίζω</Browse>
-		<Statistics_Page>Στατιστική σελίδα</Statistics_Page>
+		<Extensions>Επεκτάσεις</Extensions>
+		<Failed>Απέτυχε</Failed>
+		<Failed_Load_Online_EULA>Αποτυχία φόρτωσης της διατραπεζικής υπηρεσίας EULA</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Αποτυχία αποθήκευσης ρυθμίσεων</Failed_Save_Settings>
+		<File>Αρχείο</File>
+		<Functions>Λειτουργίες</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML σε CSV</HTML_to_CSV>
+		<Help>Βοήθεια</Help>
+		<Import>Εισαγωγή</Import>
+		<Import_SQL>Εισαγωγή SQL</Import_SQL>
+		<Importer>Εισαγωγέας</Importer>
+		<Index>Δείκτης</Index>
 		<Invert>Αντιστρέφω</Invert>
-		<Not_Supported>Δεν υποστηρίζεται</Not_Supported>
-		<CMD_Tooltip>Εκτελεί προσαρμοσμένες δηλώσεις εντολών SQL στη βάση δεδομένων</CMD_Tooltip>
 		<LOG_CSV_Path>Διαδρομή CSV σύνδεσης</LOG_CSV_Path>
 		<LOG_DB_PATH>Αρχείο καταγραφής βάσεων δεδομένων</LOG_DB_PATH>
-		<Transaction_DB_Path>Διαδρομή βάσης δεδομένων συναλλαγών</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>ΣΧΕΔΙΟ-ΙΔΙΩΤΙΚΟ</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Σφάλμα κρίσιμου σφάλματος</Critical_Fault_Error>
-		<Stack_Trace>Στοίβα ίχνος</Stack_Trace>
-		<Close_TW>Κλείσιμο TW</Close_TW>
-		<Export_UI>Εξαγωγή διεπαφής χρήστη</Export_UI>
-		<Define_New_Table>Ορίστε νέο πίνακα</Define_New_Table>
-		<Create_Statistics_Page>Δημιουργία σελίδας στατιστικών στοιχείων</Create_Statistics_Page>
-		<Debug>Debug</Debug>
+		<Language>Γλώσσα</Language>
+		<Listview_Height>Ύψος λίστας</Listview_Height>
+		<Listview_Width>List Width</Listview_Width>
+		<Master_Table>Master Table</Master_Table>
+		<Master_Table_Protected>Το Sqlite_mastertable ή το Master Table είναι προστατευόμενος πίνακας. Για να προστατεύσετε την ακεραιότητα του db, δεν μπορείτε να επεξεργαστείτε αυτόν τον πίνακα</Master_Table_Protected>
+		<New>Νέος</New>
 		<New_in_Memory_Db>Νέα στη βάση δεδομένων μνήμης</New_in_Memory_Db>
-		<Import_SQL>Εισαγωγή SQL</Import_SQL>
-		<Plugin>Συνδέω</Plugin>
+		<Not_Supported>Δεν υποστηρίζεται</Not_Supported>
+		<Open>Ανοιξε</Open>
 		<Opened>Άνοιξε</Opened>
-		<Converter>Μετατροπέας</Converter>
-		<HTML_to_CSV>HTML σε CSV</HTML_to_CSV>
-		<Developer>Προγραμματιστής</Developer>
+		<PRGM_Start>Ξεκίνησε το πρόγραμμα</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Συνδέω</Plugin>
+		<Query>Ερώτηση</Query>
+		<Query_Error>Σφάλμα ερωτήματος</Query_Error>
+		<Refresh_Schema>Ανανέωση του σχήματος</Refresh_Schema>
+		<Run_Function>Λειτουργία εκτέλεσης</Run_Function>
+		<SCHEMA_PRIVATE>ΣΧΕΔΙΟ-ΙΔΙΩΤΙΚΟ</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Αποθηκεύσετε</Save>
+		<Save_and_Close>Αποθήκευσε και κλείσε</Save_and_Close>
+		<Search>Ψάξιμο</Search>
 		<Search_Settings>Ρυθμίσεις αναζήτησης</Search_Settings>
+		<Search_in>Αναζήτηση στο</Search_in>
+		<Settings>Ρυθμίσεις</Settings>
+		<Settings_Editor>Εκδότης ρυθμίσεων</Settings_Editor>
+		<Show_Help>Εμφάνιση βοήθειας</Show_Help>
+		<Sort>Είδος</Sort>
+		<Sort_by>Ταξινόμηση κατά</Sort_by>
+		<Stack_Trace>Στοίβα ίχνος</Stack_Trace>
+		<Statistics_Page>Στατιστική σελίδα</Statistics_Page>
+		<Strict_Search>Αυστηρή αναζήτηση</Strict_Search>
+		<Success>Επιτυχία</Success>
+		<System>Σύστημα</System>
+		<Table>Τραπέζι</Table>
+		<Toggle_Debug>Εναλλαγή εντοπισμού σφαλμάτων</Toggle_Debug>
+		<Toggle_Transaction_Log>Εναλλαγή καταγραφής συναλλαγών</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Διαδρομή βάσης δεδομένων συναλλαγών</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Ο χρήστης ζητήθηκε</User_Requested>
+		<View>Θέα</View>
+		<View_Function>Λειτουργία προβολής</View_Function>
+		<Views_Read_Only>Οι προβολές είναι readonly και δεν μπορούν να επεξεργαστούν</Views_Read_Only>
 	</Language>
 </root>

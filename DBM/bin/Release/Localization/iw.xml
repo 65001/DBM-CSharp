@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>שפה</Language>
-		<File>קוֹבֶץ</File>
-		<New>חָדָשׁ</New>
-		<Open>לִפְתוֹחַ</Open>
-		<Edit>לַעֲרוֹך</Edit>
-		<View>נוף</View>
-		<Save>להציל</Save>
-		<Import>יְבוּא</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>יְצוּא</Export>
-		<HTML>HTML</HTML>
-		<Settings>הגדרות</Settings>
-		<Help>עֶזרָה</Help>
 		<About>על אודות</About>
-		<Show_Help>הצג עזרה</Show_Help>
-		<Settings_Editor>עורך הגדרות</Settings_Editor>
-		<Toggle_Debug>החלף באגים</Toggle_Debug>
-		<Toggle_Transaction_Log>החלף יומן עסקאות</Toggle_Transaction_Log>
-		<Refresh_Schema>רענן סכימה</Refresh_Schema>
-		<Check_for_Updates>בדוק עדכונים</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>התוכנית התחילה</PRGM_Start>
-		<App>יישום</App>
-		<Failed_Save_Settings>שמירת ההגדרות נכשלה</Failed_Save_Settings>
-		<Error>שְׁגִיאָה</Error>
-		<Failed>נִכשָׁל</Failed>
-		<Table>שולחן</Table>
-		<Index>אינדקס</Index>
-		<Master_Table>לוח מאסטר</Master_Table>
-		<Sort>סוג</Sort>
-		<Asc>עולה</Asc>
-		<Desc>יורד</Desc>
-		<Display_Settings>הגדרות תצוגה</Display_Settings>
-		<Sort_by>מיין לפי</Sort_by>
-		<Search_in>חפשי ב</Search_in>
-		<Search>חפש</Search>
-		<Functions>פונקציות</Functions>
-		<Strict_Search>חיפוש קפדני</Strict_Search>
-		<Run_Function>הפעל פונקציה</Run_Function>
-		<Query>שאילתא</Query>
-		<Command>פקודה</Command>
-		<Error_No_DB>שגיאה: לא נטען מסד נתונים</Error_No_DB>
-		<UI>ממשק משתמש</UI>
-		<Master_Table_Protected>Sqlite_mastertable או 'לוח מאסטר' הוא טבלה מוגנת. כדי להגן על שלמות db אתה לא יכול לערוך את הטבלה</Master_Table_Protected>
 		<Access_Denied>גישה נדחתה</Access_Denied>
+		<App>יישום</App>
 		<Application>App</Application>
-		<View_Function>הצג פונקציה</View_Function>
-		<User_Requested>המשתמש המבוקש</User_Requested>
-		<Listview_Width>רוחב תצוגה</Listview_Width>
-		<Listview_Height>גובה רשימה</Listview_Height>
-		<Extensions>תוספים</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>שמור וסגור</Save_and_Close>
-		<Close_wo_saving>סגור ללא שמירה</Close_wo_saving>
-		<Failed_Load_Online_EULA>טעינת ה- EULA המקוונת נכשלה</Failed_Load_Online_EULA>
+		<Asc>עולה</Asc>
 		<Auto_Log>יומן אוטומטי</Auto_Log>
-		<Export_HTML_Schema>ייצוא HTML SCHEMA מטעם</Export_HTML_Schema>
-		<Export_HTML_Data>ייצוא נתוני HTML בשם</Export_HTML_Data>
+		<Browse>לְדַפדֵף</Browse>
+		<CMD_Tooltip>מבצעת הצהרות פקודות SQL מותאמות אישית למסד הנתונים</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>שגיאה: בדוק את היומן לקבלת פרטים</Check_Log>
-		<Query_Error>שגיאת שאילתה</Query_Error>
+		<Check_for_Updates>בדוק עדכונים</Check_for_Updates>
+		<Close_TW>סגור TW</Close_TW>
+		<Close_wo_saving>סגור ללא שמירה</Close_wo_saving>
+		<Command>פקודה</Command>
+		<Converter>מֵמִיר</Converter>
+		<Create_Statistics_Page>יצירת דף סטטיסטיקה</Create_Statistics_Page>
+		<Critical_Fault_Error>שגיאת תקלה קריטית</Critical_Fault_Error>
+		<Dataview_Error>מסד הנתונים או Dataview אינו קיים או לא נטען עדיין</Dataview_Error>
+		<Debug>לְנַפּוֹת</Debug>
+		<Define_New_Table>הגדר טבלה חדשה</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>יורד</Desc>
+		<Developer>מפתח</Developer>
+		<Display_Settings>הגדרות תצוגה</Display_Settings>
+		<Edit>לַעֲרוֹך</Edit>
+		<Error>שְׁגִיאָה</Error>
+		<Error_Generic>הו, שום דבר לא השתבש! You</Error_Generic>
+		<Error_No_DB>שגיאה: לא נטען מסד נתונים</Error_No_DB>
+		<Export>יְצוּא</Export>
 		<Export_CSV>יצוא CSV על שלום</Export_CSV>
+		<Export_HTML_Data>ייצוא נתוני HTML בשם</Export_HTML_Data>
+		<Export_HTML_Schema>ייצוא HTML SCHEMA מטעם</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>ייצוא SQL - SCHEMA - בשם</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>ייצוא SQL - SQL - מטעם</Export_SQL_SQL>
+		<Export_UI>ייצא ממשק משתמש</Export_UI>
 		<Export_XML>ייצוא XML על</Export_XML>
-		<System>מערכת</System>
-		<Views_Read_Only>צפיות הן לקריאה ולא ניתן לערוך אותן</Views_Read_Only>
-		<Dataview_Error>מסד הנתונים או Dataview אינו קיים או לא נטען עדיין</Dataview_Error>
-		<Browse>לְדַפדֵף</Browse>
-		<Statistics_Page>סטטיסטיקה עמוד</Statistics_Page>
+		<Extensions>תוספים</Extensions>
+		<Failed>נִכשָׁל</Failed>
+		<Failed_Load_Online_EULA>טעינת ה- EULA המקוונת נכשלה</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>שמירת ההגדרות נכשלה</Failed_Save_Settings>
+		<File>קוֹבֶץ</File>
+		<Functions>פונקציות</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML ל- CSV</HTML_to_CSV>
+		<Help>עֶזרָה</Help>
+		<Import>יְבוּא</Import>
+		<Import_SQL>ייבוא SQL</Import_SQL>
+		<Importer>יְבוּאָן</Importer>
+		<Index>אינדקס</Index>
 		<Invert>לַהֲפוֹך</Invert>
-		<Not_Supported>אינו נתמך</Not_Supported>
-		<CMD_Tooltip>מבצעת הצהרות פקודות SQL מותאמות אישית למסד הנתונים</CMD_Tooltip>
 		<LOG_CSV_Path>התחבר נתיב CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>רישום DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>נתיב מסד נתונים של עסקאות</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA פרטית</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>שגיאת תקלה קריטית</Critical_Fault_Error>
-		<Stack_Trace>ערימת מעקב</Stack_Trace>
-		<Close_TW>סגור TW</Close_TW>
-		<Export_UI>ייצא ממשק משתמש</Export_UI>
-		<Define_New_Table>הגדר טבלה חדשה</Define_New_Table>
-		<Create_Statistics_Page>יצירת דף סטטיסטיקה</Create_Statistics_Page>
-		<Debug>לְנַפּוֹת</Debug>
+		<Language>שפה</Language>
+		<Listview_Height>גובה רשימה</Listview_Height>
+		<Listview_Width>רוחב תצוגה</Listview_Width>
+		<Master_Table>לוח מאסטר</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable או 'לוח מאסטר' הוא טבלה מוגנת. כדי להגן על שלמות db אתה לא יכול לערוך את הטבלה</Master_Table_Protected>
+		<New>חָדָשׁ</New>
 		<New_in_Memory_Db>חדש במסד הנתונים זיכרון</New_in_Memory_Db>
-		<Import_SQL>ייבוא SQL</Import_SQL>
-		<Plugin>חיבור</Plugin>
+		<Not_Supported>אינו נתמך</Not_Supported>
+		<Open>לִפְתוֹחַ</Open>
 		<Opened>נפתח</Opened>
-		<Converter>מֵמִיר</Converter>
-		<HTML_to_CSV>HTML ל- CSV</HTML_to_CSV>
-		<Developer>מפתח</Developer>
+		<PRGM_Start>התוכנית התחילה</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>חיבור</Plugin>
+		<Query>שאילתא</Query>
+		<Query_Error>שגיאת שאילתה</Query_Error>
+		<Refresh_Schema>רענן סכימה</Refresh_Schema>
+		<Run_Function>הפעל פונקציה</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA פרטית</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>להציל</Save>
+		<Save_and_Close>שמור וסגור</Save_and_Close>
+		<Search>חפש</Search>
 		<Search_Settings>הגדרות חיפוש</Search_Settings>
+		<Search_in>חפשי ב</Search_in>
+		<Settings>הגדרות</Settings>
+		<Settings_Editor>עורך הגדרות</Settings_Editor>
+		<Show_Help>הצג עזרה</Show_Help>
+		<Sort>סוג</Sort>
+		<Sort_by>מיין לפי</Sort_by>
+		<Stack_Trace>ערימת מעקב</Stack_Trace>
+		<Statistics_Page>סטטיסטיקה עמוד</Statistics_Page>
+		<Strict_Search>חיפוש קפדני</Strict_Search>
+		<Success>הַצלָחָה</Success>
+		<System>מערכת</System>
+		<Table>שולחן</Table>
+		<Toggle_Debug>החלף באגים</Toggle_Debug>
+		<Toggle_Transaction_Log>החלף יומן עסקאות</Toggle_Transaction_Log>
+		<Transaction_DB_Path>נתיב מסד נתונים של עסקאות</Transaction_DB_Path>
+		<UI>ממשק משתמש</UI>
+		<User_Requested>המשתמש המבוקש</User_Requested>
+		<View>נוף</View>
+		<View_Function>הצג פונקציה</View_Function>
+		<Views_Read_Only>צפיות הן לקריאה ולא ניתן לערוך אותן</Views_Read_Only>
 	</Language>
 </root>

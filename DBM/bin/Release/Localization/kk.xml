@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Тіл</Language>
-		<File>Файл</File>
-		<New>Жаңа</New>
-		<Open>Ашық</Open>
-		<Edit>Өңдеу</Edit>
-		<View>Қарау</View>
-		<Save>Сақтау</Save>
-		<Import>Импорт</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Экспорттау</Export>
-		<HTML>HTML</HTML>
-		<Settings>Параметрлер</Settings>
-		<Help>Көмектесіңдер</Help>
 		<About>Біз туралы</About>
-		<Show_Help>Көмек көрсету</Show_Help>
-		<Settings_Editor>Параметрлер өңдеушісі</Settings_Editor>
-		<Toggle_Debug>Өшіруді ажырату</Toggle_Debug>
-		<Toggle_Transaction_Log>Мәмілелер журналын ауыстырып қосыңыз</Toggle_Transaction_Log>
-		<Refresh_Schema>Жаңарту схемасы</Refresh_Schema>
-		<Check_for_Updates>Жаңартуларды тексеру</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Бағдарлама басталды</PRGM_Start>
-		<App>Қолданба</App>
-		<Failed_Save_Settings>Параметрлерді сақтау сәтсіз аяқталды</Failed_Save_Settings>
-		<Error>Қате</Error>
-		<Failed>Аяқталмады</Failed>
-		<Table>Кесте</Table>
-		<Index>Индекс</Index>
-		<Master_Table>Мастер-кесте</Master_Table>
-		<Sort>Сұрыптау</Sort>
-		<Asc>Өсуі</Asc>
-		<Desc>Кему бойынша</Desc>
-		<Display_Settings>Дисплей параметрлері</Display_Settings>
-		<Sort_by>Бойынша сұрыптау</Sort_by>
-		<Search_in>Іздеу</Search_in>
-		<Search>Іздеу</Search>
-		<Functions>Функциялар</Functions>
-		<Strict_Search>Қатаң іздеу</Strict_Search>
-		<Run_Function>Функцияны іске қосу</Run_Function>
-		<Query>Сұрау</Query>
-		<Command>Команда</Command>
-		<Error_No_DB>Қате: Деректер базасы жүктелмеді</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable немесе 'Master Table' - қорғалған кесте. Db файлының тұтастығын қорғау үшін сіз бұл кестені өңдей алмайсыз</Master_Table_Protected>
 		<Access_Denied>� ұқсат жоқ</Access_Denied>
+		<App>Қолданба</App>
 		<Application>Қолданба</Application>
-		<View_Function>Функцияны көру</View_Function>
-		<User_Requested>Пайдаланушы сұраған</User_Requested>
-		<Listview_Width>Listview ені</Listview_Width>
-		<Listview_Height>Биіктігі Listview</Listview_Height>
-		<Extensions>Кеңейтімдер</Extensions>
-		<Deliminator>Делиматор</Deliminator>
-		<Save_and_Close>Сақтау және жабу</Save_and_Close>
-		<Close_wo_saving>Сақтаусыз жабу</Close_wo_saving>
-		<Failed_Load_Online_EULA>Онлайн EULA жүктеу сәтсіз аяқталды</Failed_Load_Online_EULA>
+		<Asc>Өсуі</Asc>
 		<Auto_Log>Автоматты журнал</Auto_Log>
-		<Export_HTML_Schema>Атынан HTML SCHEMA экспорттаңыз</Export_HTML_Schema>
-		<Export_HTML_Data>HTML DATA атынан экспорттау</Export_HTML_Data>
+		<Browse>Шолу</Browse>
+		<CMD_Tooltip>Дерекқорға реттелген SQL пәрмендерінің мәлімдемесін орындайды</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Қате: Мәліметтер үшін журналды тексеріңіз</Check_Log>
-		<Query_Error>Сұрау қатесі</Query_Error>
+		<Check_for_Updates>Жаңартуларды тексеру</Check_for_Updates>
+		<Close_TW>Жабу TW</Close_TW>
+		<Close_wo_saving>Сақтаусыз жабу</Close_wo_saving>
+		<Command>Команда</Command>
+		<Converter>Конвертер</Converter>
+		<Create_Statistics_Page>Статистика бетін жасау</Create_Statistics_Page>
+		<Critical_Fault_Error>Қате қатесі</Critical_Fault_Error>
+		<Dataview_Error>Дерекқор немесе Деректер көрінісі әлі жоқ немесе жүктелмеді</Dataview_Error>
+		<Debug>Debug</Debug>
+		<Define_New_Table>Жаңа кестені анықтаңыз</Define_New_Table>
+		<Deliminator>Делиматор</Deliminator>
+		<Desc>Кему бойынша</Desc>
+		<Developer>Әзірлеуші</Developer>
+		<Display_Settings>Дисплей параметрлері</Display_Settings>
+		<Edit>Өңдеу</Edit>
+		<Error>Қате</Error>
+		<Error_Generic>О, ештеңе дұрыс емес! :(</Error_Generic>
+		<Error_No_DB>Қате: Деректер базасы жүктелмеді</Error_No_DB>
+		<Export>Экспорттау</Export>
 		<Export_CSV>Экспорттаушы CSV</Export_CSV>
+		<Export_HTML_Data>HTML DATA атынан экспорттау</Export_HTML_Data>
+		<Export_HTML_Schema>Атынан HTML SCHEMA экспорттаңыз</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>SQL экспорттау - SCHEMA - атынан</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>SQL экспорттау - SQL - атынан</Export_SQL_SQL>
+		<Export_UI>UI экспорттау</Export_UI>
 		<Export_XML>ЭКСПО� Т КОМПАНИЯСЫНЫҢ КЕЗДЕСУІ</Export_XML>
-		<System>Жүйе</System>
-		<Views_Read_Only>Көрулер оқылымда және редакциялау мүмкін емес</Views_Read_Only>
-		<Dataview_Error>Дерекқор немесе Деректер көрінісі әлі жоқ немесе жүктелмеді</Dataview_Error>
-		<Browse>Шолу</Browse>
-		<Statistics_Page>Статистика беті</Statistics_Page>
+		<Extensions>Кеңейтімдер</Extensions>
+		<Failed>Аяқталмады</Failed>
+		<Failed_Load_Online_EULA>Онлайн EULA жүктеу сәтсіз аяқталды</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Параметрлерді сақтау сәтсіз аяқталды</Failed_Save_Settings>
+		<File>Файл</File>
+		<Functions>Функциялар</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML - CSV</HTML_to_CSV>
+		<Help>Көмектесіңдер</Help>
+		<Import>Импорт</Import>
+		<Import_SQL>SQL импорттау</Import_SQL>
+		<Importer>Импорттаушы</Importer>
+		<Index>Индекс</Index>
 		<Invert>Төңкеріңіз</Invert>
-		<Not_Supported>Қолдау көрсетілмейді</Not_Supported>
-		<CMD_Tooltip>Дерекқорға реттелген SQL пәрмендерінің мәлімдемесін орындайды</CMD_Tooltip>
 		<LOG_CSV_Path>CSV жолын тіркеу</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>Транзакция деректер базасының жолы</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Қате қатесі</Critical_Fault_Error>
-		<Stack_Trace>Stack Trace</Stack_Trace>
-		<Close_TW>Жабу TW</Close_TW>
-		<Export_UI>UI экспорттау</Export_UI>
-		<Define_New_Table>Жаңа кестені анықтаңыз</Define_New_Table>
-		<Create_Statistics_Page>Статистика бетін жасау</Create_Statistics_Page>
-		<Debug>Debug</Debug>
+		<Language>Тіл</Language>
+		<Listview_Height>Биіктігі Listview</Listview_Height>
+		<Listview_Width>Listview ені</Listview_Width>
+		<Master_Table>Мастер-кесте</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable немесе 'Master Table' - қорғалған кесте. Db файлының тұтастығын қорғау үшін сіз бұл кестені өңдей алмайсыз</Master_Table_Protected>
+		<New>Жаңа</New>
 		<New_in_Memory_Db>Жад деректер базасында жаңа</New_in_Memory_Db>
-		<Import_SQL>SQL импорттау</Import_SQL>
-		<Plugin>Плагин</Plugin>
+		<Not_Supported>Қолдау көрсетілмейді</Not_Supported>
+		<Open>Ашық</Open>
 		<Opened>Ашылды</Opened>
-		<Converter>Конвертер</Converter>
-		<HTML_to_CSV>HTML - CSV</HTML_to_CSV>
-		<Developer>Әзірлеуші</Developer>
+		<PRGM_Start>Бағдарлама басталды</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Плагин</Plugin>
+		<Query>Сұрау</Query>
+		<Query_Error>Сұрау қатесі</Query_Error>
+		<Refresh_Schema>Жаңарту схемасы</Refresh_Schema>
+		<Run_Function>Функцияны іске қосу</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Сақтау</Save>
+		<Save_and_Close>Сақтау және жабу</Save_and_Close>
+		<Search>Іздеу</Search>
 		<Search_Settings>Іздеу параметрлері</Search_Settings>
+		<Search_in>Іздеу</Search_in>
+		<Settings>Параметрлер</Settings>
+		<Settings_Editor>Параметрлер өңдеушісі</Settings_Editor>
+		<Show_Help>Көмек көрсету</Show_Help>
+		<Sort>Сұрыптау</Sort>
+		<Sort_by>Бойынша сұрыптау</Sort_by>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Statistics_Page>Статистика беті</Statistics_Page>
+		<Strict_Search>Қатаң іздеу</Strict_Search>
+		<Success>Жетістік</Success>
+		<System>Жүйе</System>
+		<Table>Кесте</Table>
+		<Toggle_Debug>Өшіруді ажырату</Toggle_Debug>
+		<Toggle_Transaction_Log>Мәмілелер журналын ауыстырып қосыңыз</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Транзакция деректер базасының жолы</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Пайдаланушы сұраған</User_Requested>
+		<View>Қарау</View>
+		<View_Function>Функцияны көру</View_Function>
+		<Views_Read_Only>Көрулер оқылымда және редакциялау мүмкін емес</Views_Read_Only>
 	</Language>
 </root>

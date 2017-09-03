@@ -69,7 +69,7 @@
 		<Query>navraag</Query>
 		<Query_Error>Navraag fout</Query_Error>
 		<Refresh_Schema>Herlaai Skema</Refresh_Schema>
-		<Run_Function>Begin funksie</Run_Function>
+		<Run_Function>Begin Funksie</Run_Function>
 		<SCHEMA_PRIVATE>Skema-private</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
 		<Save>Save</Save>

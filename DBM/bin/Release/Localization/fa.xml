@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>زبان</Language>
-		<File>پرونده</File>
-		<New>جد?د</New>
-		<Open>باز کن</Open>
-		<Edit>و?را?ش کن?د</Edit>
-		<View>چشم انداز</View>
-		<Save>صرفه جو??</Save>
-		<Import>وارد كردن</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>صادرات</Export>
-		<HTML>HTML</HTML>
-		<Settings>تنظ?مات</Settings>
-		<Help>کمک</Help>
 		<About>در باره</About>
-		<Show_Help>نما?ش راهنما</Show_Help>
-		<Settings_Editor>و?را?شگر تنظ?مات</Settings_Editor>
-		<Toggle_Debug>تعو?ض اشکال زدا??</Toggle_Debug>
-		<Toggle_Transaction_Log>ورود به حساب تراکنش را تغ??ر ده?د</Toggle_Transaction_Log>
-		<Refresh_Schema>طرح تازه کردن</Refresh_Schema>
-		<Check_for_Updates>به روز رسان? ها رو بررس? کن</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>برنامه شروع شده است</PRGM_Start>
-		<App>کاربرد</App>
-		<Failed_Save_Settings>تنظ?مات ذخ?ره نشد</Failed_Save_Settings>
-		<Error>خطا</Error>
-		<Failed>ناموفق</Failed>
-		<Table>جدول</Table>
-		<Index>شاخص</Index>
-		<Master_Table>استاد جدول</Master_Table>
-		<Sort>مرتب ساز?</Sort>
-		<Asc>صعود?</Asc>
-		<Desc>نزول?</Desc>
-		<Display_Settings>تنظ?مات نما?شگر</Display_Settings>
-		<Sort_by>مرتب ساز? بر اساس</Sort_by>
-		<Search_in>جستجو در</Search_in>
-		<Search>جستجو کردن</Search>
-		<Functions>توابع</Functions>
-		<Strict_Search>جستجو? دق?ق</Strict_Search>
-		<Run_Function>اجرا? تابع</Run_Function>
-		<Query>پرس و جو</Query>
-		<Command>فرمانده?</Command>
-		<Error_No_DB>خطا: ه?چ پا?گاه داده بارگ?ر? نشده است</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable ?ا 'Master Table' ?ک جدول محافظت شده است. برا? محافظت از ?کپارچگ? DB شما نم?توان?د ا?ن جدول را و?را?ش کن?د</Master_Table_Protected>
 		<Access_Denied>دسترس? ممنوع است</Access_Denied>
+		<App>کاربرد</App>
 		<Application>برنامه</Application>
-		<View_Function>نما?ش عملکرد</View_Function>
-		<User_Requested>کاربر درخواست شده</User_Requested>
-		<Listview_Width>عرض Listview</Listview_Width>
-		<Listview_Height>ارتفاع Listview</Listview_Height>
-		<Extensions>برنامه ها? افزودن?</Extensions>
-		<Deliminator>دلپذ?ر</Deliminator>
-		<Save_and_Close>ذخ?ره کن و ببند</Save_and_Close>
-		<Close_wo_saving>نزد?ک بدون صرفه جو??</Close_wo_saving>
-		<Failed_Load_Online_EULA>خطا EULA آنلا?ن بارگ?ر? نشد</Failed_Load_Online_EULA>
+		<Asc>صعود?</Asc>
 		<Auto_Log>خودکار ورود</Auto_Log>
-		<Export_HTML_Schema>صادرات HTML SCHEMA به نما?ندگ? از</Export_HTML_Schema>
-		<Export_HTML_Data>صادرات داده HTML به نما?ندگ? از</Export_HTML_Data>
+		<Browse>مرور کردن</Browse>
+		<CMD_Tooltip>دستورات دستور SQL سفارش? را بر رو? پا?گاه داده اجرا م? کند</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>خطا: لطفا جزئ?ات ورود به س?ستم را بررس? کن?د</Check_Log>
-		<Query_Error>خطا درخواست</Query_Error>
+		<Check_for_Updates>به روز رسان? ها رو بررس? کن</Check_for_Updates>
+		<Close_TW>بستن TW</Close_TW>
+		<Close_wo_saving>نزد?ک بدون صرفه جو??</Close_wo_saving>
+		<Command>فرمانده?</Command>
+		<Converter>مبدل</Converter>
+		<Create_Statistics_Page>صفحه آمار را ا?جاد کن?د</Create_Statistics_Page>
+		<Critical_Fault_Error>خطا خطا بحران?</Critical_Fault_Error>
+		<Dataview_Error>پا?گاه داده ?ا Dataview وجود ندارد ?ا هنوز بارگذار? نشده است</Dataview_Error>
+		<Debug>اشکال زدا??</Debug>
+		<Define_New_Table>تعر?ف جدول جد?د</Define_New_Table>
+		<Deliminator>دلپذ?ر</Deliminator>
+		<Desc>نزول?</Desc>
+		<Developer>توسعهدهنده</Developer>
+		<Display_Settings>تنظ?مات نما?شگر</Display_Settings>
+		<Edit>و?را?ش کن?د</Edit>
+		<Error>خطا</Error>
+		<Error_Generic>اوه ه?چ چ?ز اشتباه رفت! :(</Error_Generic>
+		<Error_No_DB>خطا: ه?چ پا?گاه داده بارگ?ر? نشده است</Error_No_DB>
+		<Export>صادرات</Export>
 		<Export_CSV>صادرات CSV را از BEHALF OF</Export_CSV>
+		<Export_HTML_Data>صادرات داده HTML به نما?ندگ? از</Export_HTML_Data>
+		<Export_HTML_Schema>صادرات HTML SCHEMA به نما?ندگ? از</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>صادرات SQL - SCHEMA - به نما?ندگ? از</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>صادرات SQL - SQL - به نما?ندگ? از</Export_SQL_SQL>
+		<Export_UI>UI صادرات</Export_UI>
 		<Export_XML>صادرات XML در مورد</Export_XML>
-		<System>س?ستم</System>
-		<Views_Read_Only>نما?ش فقط خواندن? است و قابل و?را?ش ن?ست</Views_Read_Only>
-		<Dataview_Error>پا?گاه داده ?ا Dataview وجود ندارد ?ا هنوز بارگذار? نشده است</Dataview_Error>
-		<Browse>مرور کردن</Browse>
-		<Statistics_Page>صفحه آمار</Statistics_Page>
+		<Extensions>برنامه ها? افزودن?</Extensions>
+		<Failed>ناموفق</Failed>
+		<Failed_Load_Online_EULA>خطا EULA آنلا?ن بارگ?ر? نشد</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>تنظ?مات ذخ?ره نشد</Failed_Save_Settings>
+		<File>پرونده</File>
+		<Functions>توابع</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML به CSV</HTML_to_CSV>
+		<Help>کمک</Help>
+		<Import>وارد كردن</Import>
+		<Import_SQL>وارد کردن SQL</Import_SQL>
+		<Importer>وارد کننده</Importer>
+		<Index>شاخص</Index>
 		<Invert>معکوس</Invert>
-		<Not_Supported>پشت?بان? نشده</Not_Supported>
-		<CMD_Tooltip>دستورات دستور SQL سفارش? را بر رو? پا?گاه داده اجرا م? کند</CMD_Tooltip>
 		<LOG_CSV_Path>ورود به مس?ر CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>ورود به DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>مس?ر پا?گاه داده تراکنش</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>خطا خطا بحران?</Critical_Fault_Error>
-		<Stack_Trace>پشته رد?اب?</Stack_Trace>
-		<Close_TW>بستن TW</Close_TW>
-		<Export_UI>UI صادرات</Export_UI>
-		<Define_New_Table>تعر?ف جدول جد?د</Define_New_Table>
-		<Create_Statistics_Page>صفحه آمار را ا?جاد کن?د</Create_Statistics_Page>
-		<Debug>اشکال زدا??</Debug>
+		<Language>زبان</Language>
+		<Listview_Height>ارتفاع Listview</Listview_Height>
+		<Listview_Width>عرض Listview</Listview_Width>
+		<Master_Table>استاد جدول</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable ?ا 'Master Table' ?ک جدول محافظت شده است. برا? محافظت از ?کپارچگ? DB شما نم?توان?د ا?ن جدول را و?را?ش کن?د</Master_Table_Protected>
+		<New>جد?د</New>
 		<New_in_Memory_Db>جد?د در پا?گاه داده حافظه</New_in_Memory_Db>
-		<Import_SQL>وارد کردن SQL</Import_SQL>
-		<Plugin>پلاگ?ن</Plugin>
+		<Not_Supported>پشت?بان? نشده</Not_Supported>
+		<Open>باز کن</Open>
 		<Opened>افتتاح شد</Opened>
-		<Converter>مبدل</Converter>
-		<HTML_to_CSV>HTML به CSV</HTML_to_CSV>
-		<Developer>توسعهدهنده</Developer>
+		<PRGM_Start>برنامه شروع شده است</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>پلاگ?ن</Plugin>
+		<Query>پرس و جو</Query>
+		<Query_Error>خطا درخواست</Query_Error>
+		<Refresh_Schema>طرح تازه کردن</Refresh_Schema>
+		<Run_Function>اجرا? تابع</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>صرفه جو??</Save>
+		<Save_and_Close>ذخ?ره کن و ببند</Save_and_Close>
+		<Search>جستجو کردن</Search>
 		<Search_Settings>تنظ?مات جستجو</Search_Settings>
+		<Search_in>جستجو در</Search_in>
+		<Settings>تنظ?مات</Settings>
+		<Settings_Editor>و?را?شگر تنظ?مات</Settings_Editor>
+		<Show_Help>نما?ش راهنما</Show_Help>
+		<Sort>مرتب ساز?</Sort>
+		<Sort_by>مرتب ساز? بر اساس</Sort_by>
+		<Stack_Trace>پشته رد?اب?</Stack_Trace>
+		<Statistics_Page>صفحه آمار</Statistics_Page>
+		<Strict_Search>جستجو? دق?ق</Strict_Search>
+		<Success>موفق?ت</Success>
+		<System>س?ستم</System>
+		<Table>جدول</Table>
+		<Toggle_Debug>تعو?ض اشکال زدا??</Toggle_Debug>
+		<Toggle_Transaction_Log>ورود به حساب تراکنش را تغ??ر ده?د</Toggle_Transaction_Log>
+		<Transaction_DB_Path>مس?ر پا?گاه داده تراکنش</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>کاربر درخواست شده</User_Requested>
+		<View>چشم انداز</View>
+		<View_Function>نما?ش عملکرد</View_Function>
+		<Views_Read_Only>نما?ش فقط خواندن? است و قابل و?را?ش ن?ست</Views_Read_Only>
 	</Language>
 </root>

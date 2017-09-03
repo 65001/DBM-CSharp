@@ -27,7 +27,7 @@
 		<Display_Settings>Erakutsi ezarpenak</Display_Settings>
 		<Edit>Edit</Edit>
 		<Error>Akatsa</Error>
-		<Error_Generic>Oh, ez da ezer gertatu da! :(</Error_Generic>
+		<Error_Generic>Oh, ez da ezer gaizki atera! :(</Error_Generic>
 		<Error_No_DB>Errorea: datu-basea ez da kargatu</Error_No_DB>
 		<Export>Export</Export>
 		<Export_CSV>EXPORT CSV BEHAR BEZALA</Export_CSV>

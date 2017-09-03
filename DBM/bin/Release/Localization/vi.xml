@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Ngôn ng?</Language>
-		<File>T?p tin</File>
-		<New>M?i</New>
-		<Open>M?</Open>
-		<Edit>Ch?nh s?a</Edit>
-		<View>Lu?t xem</View>
-		<Save>Ti?t ki?m</Save>
-		<Import>Nh?p kh?u</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Xu?t kh?u</Export>
-		<HTML>HTML</HTML>
-		<Settings>Cài d?t</Settings>
-		<Help>C?u giúp</Help>
 		<About>Trong kho?ng</About>
-		<Show_Help>Hi?n th? tr? giúp</Show_Help>
-		<Settings_Editor>Trình ch?nh s?a Cài d?t</Settings_Editor>
-		<Toggle_Debug>Chuy?n d?i Debug</Toggle_Debug>
-		<Toggle_Transaction_Log>Chuy?n d?i nh?t ký giao d?ch</Toggle_Transaction_Log>
-		<Refresh_Schema>Làm m?i Schema</Refresh_Schema>
-		<Check_for_Updates>Ki?m tra c?p nh?t</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Chuong trình b?t d?u</PRGM_Start>
-		<App>?ng d?ng</App>
-		<Failed_Save_Settings>Không luu du?c Cài d?t</Failed_Save_Settings>
-		<Error>l?i</Error>
-		<Failed>Th?t b?i</Failed>
-		<Table>Bàn</Table>
-		<Index>M?c l?c</Index>
-		<Master_Table>B?ng t?ng th?</Master_Table>
-		<Sort>Phân lo?i</Sort>
-		<Asc>Tang d?n</Asc>
-		<Desc>Gi?m d?n</Desc>
-		<Display_Settings>Cài d?t hi?n th?</Display_Settings>
-		<Sort_by>S?p x?p theo</Sort_by>
-		<Search_in>Tìm ki?m ?</Search_in>
-		<Search>Tìm ki?m</Search>
-		<Functions>Ch?c nang</Functions>
-		<Strict_Search>Tìm ki?m nghiêm ng?t</Strict_Search>
-		<Run_Function>Ch?y Ch?c nang</Run_Function>
-		<Query>Truy v?n</Query>
-		<Command>Ch? huy</Command>
-		<Error_No_DB>L?i: Không có Co s? d? li?u dã du?c t?i</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable ho?c 'Master Table' là m?t b?ng du?c b?o v?. Ð? b?o v? tính toàn v?n c?a db b?n không th? ch?nh s?a b?ng này</Master_Table_Protected>
 		<Access_Denied>Truy c?p dã b? t? ch?i</Access_Denied>
+		<App>?ng d?ng</App>
 		<Application>?ng d?ng</Application>
-		<View_Function>Xem Ch?c nang</View_Function>
-		<User_Requested>Yêu c?u Ngu?i dùng</User_Requested>
-		<Listview_Width>Width Width</Listview_Width>
-		<Listview_Height>Chi?u cao danh sách</Listview_Height>
-		<Extensions>Ti?n ích m? r?ng</Extensions>
-		<Deliminator>Ngu?i phân phát</Deliminator>
-		<Save_and_Close>Luu và Ðóng</Save_and_Close>
-		<Close_wo_saving>Ðóng mà không ti?t ki?m</Close_wo_saving>
-		<Failed_Load_Online_EULA>Không th? t?i EULA tr?c tuy?n</Failed_Load_Online_EULA>
+		<Asc>Tang d?n</Asc>
 		<Auto_Log>Nh?t ký t? d?ng</Auto_Log>
-		<Export_HTML_Schema>Xu?t kh?u HTML SCHEMA thay m?t cho</Export_HTML_Schema>
-		<Export_HTML_Data>Xu?t HTML DATA thay m?t cho</Export_HTML_Data>
+		<Browse>Duy?t</Browse>
+		<CMD_Tooltip>Th?c hi?n câu l?nh SQL tùy ch?nh vào co s? d? li?u</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>L?i: Vui lòng ki?m tra nh?t ký d? bi?t chi ti?t</Check_Log>
-		<Query_Error>L?i Truy v?n</Query_Error>
+		<Check_for_Updates>Ki?m tra c?p nh?t</Check_for_Updates>
+		<Close_TW>Ðóng TW</Close_TW>
+		<Close_wo_saving>Ðóng mà không ti?t ki?m</Close_wo_saving>
+		<Command>Ch? huy</Command>
+		<Converter>Chuy?n d?i</Converter>
+		<Create_Statistics_Page>T?o trang th?ng kê</Create_Statistics_Page>
+		<Critical_Fault_Error>L?i quan tr?ng l?i</Critical_Fault_Error>
+		<Dataview_Error>Co s? d? li?u ho?c Dataview không t?n t?i ho?c chua du?c t?i</Dataview_Error>
+		<Debug>G? r?i</Debug>
+		<Define_New_Table>Xác d?nh b?ng m?i</Define_New_Table>
+		<Deliminator>Ngu?i phân phát</Deliminator>
+		<Desc>Gi?m d?n</Desc>
+		<Developer>Nhà phát tri?n</Developer>
+		<Display_Settings>Cài d?t hi?n th?</Display_Settings>
+		<Edit>Ch?nh s?a</Edit>
+		<Error>l?i</Error>
+		<Error_Generic>Oh không có di?u gì sai! :(</Error_Generic>
+		<Error_No_DB>L?i: Không có Co s? d? li?u dã du?c t?i</Error_No_DB>
+		<Export>Xu?t kh?u</Export>
 		<Export_CSV>EXPORT CSV thay m?t</Export_CSV>
+		<Export_HTML_Data>Xu?t HTML DATA thay m?t cho</Export_HTML_Data>
+		<Export_HTML_Schema>Xu?t kh?u HTML SCHEMA thay m?t cho</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Xu?t SQL - SCHEMA - Thay m?t cho</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Xu?t SQL - SQL - Thay m?t cho</Export_SQL_SQL>
+		<Export_UI>Xu?t kh?u giao di?n ngu?i dùng</Export_UI>
 		<Export_XML>XU?T KH?U XML Ð?I DI?N</Export_XML>
-		<System>H? th?ng</System>
-		<Views_Read_Only>S? lu?t xem là ch? d?c và không th? ch?nh s?a du?c</Views_Read_Only>
-		<Dataview_Error>Co s? d? li?u ho?c Dataview không t?n t?i ho?c chua du?c t?i</Dataview_Error>
-		<Browse>Duy?t</Browse>
-		<Statistics_Page>Trang th?ng kê</Statistics_Page>
+		<Extensions>Ti?n ích m? r?ng</Extensions>
+		<Failed>Th?t b?i</Failed>
+		<Failed_Load_Online_EULA>Không th? t?i EULA tr?c tuy?n</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Không luu du?c Cài d?t</Failed_Save_Settings>
+		<File>T?p tin</File>
+		<Functions>Ch?c nang</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML sang CSV</HTML_to_CSV>
+		<Help>C?u giúp</Help>
+		<Import>Nh?p kh?u</Import>
+		<Import_SQL>Nh?p SQL</Import_SQL>
+		<Importer>Nhà nh?p kh?u</Importer>
+		<Index>M?c l?c</Index>
 		<Invert>Ð?o ngu?c</Invert>
-		<Not_Supported>Không du?c h? tr?</Not_Supported>
-		<CMD_Tooltip>Th?c hi?n câu l?nh SQL tùy ch?nh vào co s? d? li?u</CMD_Tooltip>
 		<LOG_CSV_Path>Ðang nh?p CSV Path</LOG_CSV_Path>
 		<LOG_DB_PATH>Ðang nh?p DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>Ðu?ng d?n co s? d? li?u giao d?ch</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>L?i quan tr?ng l?i</Critical_Fault_Error>
-		<Stack_Trace>Stack Trace</Stack_Trace>
-		<Close_TW>Ðóng TW</Close_TW>
-		<Export_UI>Xu?t kh?u giao di?n ngu?i dùng</Export_UI>
-		<Define_New_Table>Xác d?nh b?ng m?i</Define_New_Table>
-		<Create_Statistics_Page>T?o trang th?ng kê</Create_Statistics_Page>
-		<Debug>G? r?i</Debug>
+		<Language>Ngôn ng?</Language>
+		<Listview_Height>Chi?u cao danh sách</Listview_Height>
+		<Listview_Width>Width Width</Listview_Width>
+		<Master_Table>B?ng t?ng th?</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable ho?c 'Master Table' là m?t b?ng du?c b?o v?. Ð? b?o v? tính toàn v?n c?a db b?n không th? ch?nh s?a b?ng này</Master_Table_Protected>
+		<New>M?i</New>
 		<New_in_Memory_Db>M?i trong co s? d? li?u b? nh?</New_in_Memory_Db>
-		<Import_SQL>Nh?p SQL</Import_SQL>
-		<Plugin>C?m vào</Plugin>
+		<Not_Supported>Không du?c h? tr?</Not_Supported>
+		<Open>M?</Open>
 		<Opened>Ðã m?</Opened>
-		<Converter>Chuy?n d?i</Converter>
-		<HTML_to_CSV>HTML sang CSV</HTML_to_CSV>
-		<Developer>Nhà phát tri?n</Developer>
+		<PRGM_Start>Chuong trình b?t d?u</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>C?m vào</Plugin>
+		<Query>Truy v?n</Query>
+		<Query_Error>L?i Truy v?n</Query_Error>
+		<Refresh_Schema>Làm m?i Schema</Refresh_Schema>
+		<Run_Function>Ch?y Ch?c nang</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Ti?t ki?m</Save>
+		<Save_and_Close>Luu và Ðóng</Save_and_Close>
+		<Search>Tìm ki?m</Search>
 		<Search_Settings>Thi?t l?p tìm ki?m</Search_Settings>
+		<Search_in>Tìm ki?m ?</Search_in>
+		<Settings>Cài d?t</Settings>
+		<Settings_Editor>Trình ch?nh s?a Cài d?t</Settings_Editor>
+		<Show_Help>Hi?n th? tr? giúp</Show_Help>
+		<Sort>Phân lo?i</Sort>
+		<Sort_by>S?p x?p theo</Sort_by>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Statistics_Page>Trang th?ng kê</Statistics_Page>
+		<Strict_Search>Tìm ki?m nghiêm ng?t</Strict_Search>
+		<Success>S? thành công</Success>
+		<System>H? th?ng</System>
+		<Table>Bàn</Table>
+		<Toggle_Debug>Chuy?n d?i Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Chuy?n d?i nh?t ký giao d?ch</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Ðu?ng d?n co s? d? li?u giao d?ch</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Yêu c?u Ngu?i dùng</User_Requested>
+		<View>Lu?t xem</View>
+		<View_Function>Xem Ch?c nang</View_Function>
+		<Views_Read_Only>S? lu?t xem là ch? d?c và không th? ch?nh s?a du?c</Views_Read_Only>
 	</Language>
 </root>

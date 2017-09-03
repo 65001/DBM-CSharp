@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Мова</Language>
-		<File>Файл</File>
-		<New>Новий</New>
-		<Open>ВІДЧИНЕНО</Open>
-		<Edit>Редагувати</Edit>
-		<View>Вид</View>
-		<Save>Зберегти</Save>
-		<Import>Імпортувати</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Експортувати</Export>
-		<HTML>HTML</HTML>
-		<Settings>Налаштування</Settings>
-		<Help>Допомога</Help>
 		<About>Про</About>
-		<Show_Help>Показати довідку</Show_Help>
-		<Settings_Editor>Редактор налаштувань</Settings_Editor>
-		<Toggle_Debug>Переключити налагодження</Toggle_Debug>
-		<Toggle_Transaction_Log>Переключити журнал транзакцій</Toggle_Transaction_Log>
-		<Refresh_Schema>Оновити схему</Refresh_Schema>
-		<Check_for_Updates>Перевірити наявність оновлень</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Програма запущена</PRGM_Start>
-		<App>Застосування</App>
-		<Failed_Save_Settings>Не вдалося зберегти налаштування</Failed_Save_Settings>
-		<Error>Помилка</Error>
-		<Failed>Помилка</Failed>
-		<Table>Таблиця</Table>
-		<Index>Індекс</Index>
-		<Master_Table>Майстер-таблиця</Master_Table>
-		<Sort>Сортувати</Sort>
-		<Asc>Висхідний</Asc>
-		<Desc>Спускається</Desc>
-		<Display_Settings>Налаштування дисплею</Display_Settings>
-		<Sort_by>Сортувати за</Sort_by>
-		<Search_in>Пошук в</Search_in>
-		<Search>Пошук</Search>
-		<Functions>Функції</Functions>
-		<Strict_Search>Строгий пошук</Strict_Search>
-		<Run_Function>Запустити функцію</Run_Function>
-		<Query>Запит</Query>
-		<Command>Команда</Command>
-		<Error_No_DB>Помилка: ніяка база даних не завантажена</Error_No_DB>
-		<UI>Інтерфейс користувача</UI>
-		<Master_Table_Protected>Sqlite_mastertable або 'Master Table' є захищеною таблицею. Щоб захистити цілісність дБ, ви не можете редагувати цю таблицю</Master_Table_Protected>
 		<Access_Denied>Доступ заборонено</Access_Denied>
+		<App>Застосування</App>
 		<Application>Додаток</Application>
-		<View_Function>Переглянути функцію</View_Function>
-		<User_Requested>Запит користувача</User_Requested>
-		<Listview_Width>Ширина списку</Listview_Width>
-		<Listview_Height>Висота списку</Listview_Height>
-		<Extensions>Розширення</Extensions>
-		<Deliminator>Делімітатор</Deliminator>
-		<Save_and_Close>Зберегти та закрити</Save_and_Close>
-		<Close_wo_saving>Закрити без збереження</Close_wo_saving>
-		<Failed_Load_Online_EULA>Не вдалося завантажити ліцензійну ліцензію EULA</Failed_Load_Online_EULA>
+		<Asc>Висхідний</Asc>
 		<Auto_Log>Автоматичний журнал</Auto_Log>
-		<Export_HTML_Schema>Експорт HTML SCHEMA від імені</Export_HTML_Schema>
-		<Export_HTML_Data>Експорт HTML DATA від імені</Export_HTML_Data>
+		<Browse>Перегляньте</Browse>
+		<CMD_Tooltip>Виконає індивідуальні операції команди SQL у базі даних</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Помилка. Будь ласка, перевірте журнал для деталей</Check_Log>
-		<Query_Error>Помилка запиту</Query_Error>
+		<Check_for_Updates>Перевірити наявність оновлень</Check_for_Updates>
+		<Close_TW>Закрити TW</Close_TW>
+		<Close_wo_saving>Закрити без збереження</Close_wo_saving>
+		<Command>Команда</Command>
+		<Converter>Конвертер</Converter>
+		<Create_Statistics_Page>Створити сторінку статистики</Create_Statistics_Page>
+		<Critical_Fault_Error>Критична помилка несправності</Critical_Fault_Error>
+		<Dataview_Error>База даних або Dataview не існує або ще не завантажено</Dataview_Error>
+		<Debug>Відлагоджувати</Debug>
+		<Define_New_Table>Визначте нову таблицю</Define_New_Table>
+		<Deliminator>Делімітатор</Deliminator>
+		<Desc>Спускається</Desc>
+		<Developer>Розробник</Developer>
+		<Display_Settings>Налаштування дисплею</Display_Settings>
+		<Edit>Редагувати</Edit>
+		<Error>Помилка</Error>
+		<Error_Generic>О, нічого не вийшло не так! :(</Error_Generic>
+		<Error_No_DB>Помилка: ніяка база даних не завантажена</Error_No_DB>
+		<Export>Експортувати</Export>
 		<Export_CSV>ЕКСПОРТ CSV ЗА БЕЗКОШТОВНОСТІ</Export_CSV>
+		<Export_HTML_Data>Експорт HTML DATA від імені</Export_HTML_Data>
+		<Export_HTML_Schema>Експорт HTML SCHEMA від імені</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Експорт SQL - SCHEMA - Від імені</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Експорт SQL - SQL - Від імені</Export_SQL_SQL>
+		<Export_UI>Експорт інтерфейсу</Export_UI>
 		<Export_XML>Експортувати XML на будь-який з</Export_XML>
-		<System>Система</System>
-		<Views_Read_Only>Перегляди доступні лише для читання та їх не можна редагувати</Views_Read_Only>
-		<Dataview_Error>База даних або Dataview не існує або ще не завантажено</Dataview_Error>
-		<Browse>Перегляньте</Browse>
-		<Statistics_Page>Статистика сторінок</Statistics_Page>
+		<Extensions>Розширення</Extensions>
+		<Failed>Помилка</Failed>
+		<Failed_Load_Online_EULA>Не вдалося завантажити ліцензійну ліцензію EULA</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Не вдалося зберегти налаштування</Failed_Save_Settings>
+		<File>Файл</File>
+		<Functions>Функції</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML у форматі CSV</HTML_to_CSV>
+		<Help>Допомога</Help>
+		<Import>Імпортувати</Import>
+		<Import_SQL>Імпортувати SQL</Import_SQL>
+		<Importer>Імпортер</Importer>
+		<Index>Індекс</Index>
 		<Invert>Інвертувати</Invert>
-		<Not_Supported>Не підтримується</Not_Supported>
-		<CMD_Tooltip>Виконає індивідуальні операції команди SQL у базі даних</CMD_Tooltip>
 		<LOG_CSV_Path>Журнал шляху журналу CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Увійти DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>Шлях бази даних транзакції</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Критична помилка несправності</Critical_Fault_Error>
-		<Stack_Trace>Стек Trace</Stack_Trace>
-		<Close_TW>Закрити TW</Close_TW>
-		<Export_UI>Експорт інтерфейсу</Export_UI>
-		<Define_New_Table>Визначте нову таблицю</Define_New_Table>
-		<Create_Statistics_Page>Створити сторінку статистики</Create_Statistics_Page>
-		<Debug>Відлагоджувати</Debug>
+		<Language>Мова</Language>
+		<Listview_Height>Висота списку</Listview_Height>
+		<Listview_Width>Ширина списку</Listview_Width>
+		<Master_Table>Майстер-таблиця</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable або 'Master Table' є захищеною таблицею. Щоб захистити цілісність дБ, ви не можете редагувати цю таблицю</Master_Table_Protected>
+		<New>Новий</New>
 		<New_in_Memory_Db>Нове в базі даних пам'яті</New_in_Memory_Db>
-		<Import_SQL>Імпортувати SQL</Import_SQL>
-		<Plugin>Підключати</Plugin>
+		<Not_Supported>Не підтримується</Not_Supported>
+		<Open>ВІДЧИНЕНО</Open>
 		<Opened>Відкрито</Opened>
-		<Converter>Конвертер</Converter>
-		<HTML_to_CSV>HTML у форматі CSV</HTML_to_CSV>
-		<Developer>Розробник</Developer>
+		<PRGM_Start>Програма запущена</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Підключати</Plugin>
+		<Query>Запит</Query>
+		<Query_Error>Помилка запиту</Query_Error>
+		<Refresh_Schema>Оновити схему</Refresh_Schema>
+		<Run_Function>Запустити функцію</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Зберегти</Save>
+		<Save_and_Close>Зберегти та закрити</Save_and_Close>
+		<Search>Пошук</Search>
 		<Search_Settings>Налаштування пошуку</Search_Settings>
+		<Search_in>Пошук в</Search_in>
+		<Settings>Налаштування</Settings>
+		<Settings_Editor>Редактор налаштувань</Settings_Editor>
+		<Show_Help>Показати довідку</Show_Help>
+		<Sort>Сортувати</Sort>
+		<Sort_by>Сортувати за</Sort_by>
+		<Stack_Trace>Стек Trace</Stack_Trace>
+		<Statistics_Page>Статистика сторінок</Statistics_Page>
+		<Strict_Search>Строгий пошук</Strict_Search>
+		<Success>Успіх</Success>
+		<System>Система</System>
+		<Table>Таблиця</Table>
+		<Toggle_Debug>Переключити налагодження</Toggle_Debug>
+		<Toggle_Transaction_Log>Переключити журнал транзакцій</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Шлях бази даних транзакції</Transaction_DB_Path>
+		<UI>Інтерфейс користувача</UI>
+		<User_Requested>Запит користувача</User_Requested>
+		<View>Вид</View>
+		<View_Function>Переглянути функцію</View_Function>
+		<Views_Read_Only>Перегляди доступні лише для читання та їх не можна редагувати</Views_Read_Only>
 	</Language>
 </root>

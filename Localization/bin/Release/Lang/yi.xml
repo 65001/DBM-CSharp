@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<Language>
+		<About>וועגן</About>
+		<Access_Denied>Access denied</Access_Denied>
+		<App>אַפּפּליקאַטיאָן</App>
+		<Application>App</Application>
+		<Asc>אַסענדינג</Asc>
+		<Auto_Log>Auto Log</Auto_Log>
+		<Browse>בלעטער</Browse>
+		<CMD_Tooltip>עקסאַקיוץ קאַסטאַמייזד סקל באַפֿעל סטייטמאַנץ אַנטו די דייטאַבייס</CMD_Tooltip>
+		<CSV>קסוו</CSV>
+		<Check_Log>גרייַז: ביטע טשעק די קלאָץ פֿאַר פרטים</Check_Log>
+		<Check_for_Updates>טשעק פֿאַר ופּדאַטעס</Check_for_Updates>
+		<Close_TW>Close TW</Close_TW>
+		<Close_wo_saving>נאָענט אָן שפּאָרן</Close_wo_saving>
+		<Command>באַפֿעל</Command>
+		<Converter>קאָנווערטער</Converter>
+		<Create_Statistics_Page>שאַפֿן סטאַטיסטיק Page</Create_Statistics_Page>
+		<Critical_Fault_Error>Critical Fault Error</Critical_Fault_Error>
+		<Dataview_Error>די דאַטאַבאַסע אָדער דאַטאַוויעוו טוט נישט עקסיסטירן אָדער האט נישט געווען לאָודיד נאָך</Dataview_Error>
+		<Debug>Debug</Debug>
+		<Define_New_Table>דעפינירן ניו טיש</Define_New_Table>
+		<Deliminator>דעלימינאַטאָר</Deliminator>
+		<Desc>Descending</Desc>
+		<Developer>דעוועלאָפּער</Developer>
+		<Display_Settings>ווייַז סעטטינגס</Display_Settings>
+		<Edit>רעדאַגירן</Edit>
+		<Error>Error</Error>
+		<Error_Generic>אָה קיין עפּעס איז פאַלש! :(</Error_Generic>
+		<Error_No_DB>גרייַז: קיין דאַטאַבאַסע איז לאָודיד</Error_No_DB>
+		<Export>אַרויספירן</Export>
+		<Export_CSV>אַרויספירן קסוו אויף בעהאַלל פון</Export_CSV>
+		<Export_HTML_Data>אַרויספירן HTML דאַטע אויף ביכאַף פון</Export_HTML_Data>
+		<Export_HTML_Schema>אַרויספירן HTML SCHEMA אויף ביכאַף פון</Export_HTML_Schema>
+		<Export_SQL_SCHEMA>אַרויספירן סקל - SCHEMA - אויף ביכאַף פון</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>אַרויספירן סקל - סקל - אויף ביכאַף פון</Export_SQL_SQL>
+		<Export_UI>אַרויספירן וי</Export_UI>
+		<Export_XML>אַרויספירן קסמל אויף בעהאַלל פון</Export_XML>
+		<Extensions>עקסטרעמענץ</Extensions>
+		<Failed>ניט אַנדערש</Failed>
+		<Failed_Load_Online_EULA>ניט אַנדערש צו מאַסע אָנליין עולאַ</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>ניט אַנדערש צו ראַטעווען סעטטינגס</Failed_Save_Settings>
+		<File>טעקע</File>
+		<Functions>פאַנגקשאַנז</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML צו קסוו</HTML_to_CSV>
+		<Help>הילף</Help>
+		<Import>ימפּאָרט</Import>
+		<Import_SQL>אַרייַנפיר סקל</Import_SQL>
+		<Importer>ימפּאָרטער</Importer>
+		<Index>Index</Index>
+		<Invert>Invert</Invert>
+		<LOG_CSV_Path>קלאָץ CSV Path</LOG_CSV_Path>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<Language>שפּראַך</Language>
+		<Listview_Height>Listview Height</Listview_Height>
+		<Listview_Width>Listview Width</Listview_Width>
+		<Master_Table>Master Table</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable אָדער 'Master Table' איז אַ פּראָטעקטעד טיש. צו באַשיצן די אָרנטלעכקייַט פון די דב איר קענען נישט רעדאַגירן דעם טיש</Master_Table_Protected>
+		<New>New</New>
+		<New_in_Memory_Db>New אין זכּרון דאַטאַבאַסע</New_in_Memory_Db>
+		<Not_Supported>ניט שטיצט</Not_Supported>
+		<Open>Open</Open>
+		<Opened>געעפנט</Opened>
+		<PRGM_Start>פּראָגראַם סטאַרטעד</PRGM_Start>
+		<PXML>קסמל</PXML>
+		<Plugin>שטעק אריין</Plugin>
+		<Query>Query</Query>
+		<Query_Error>Query Error</Query_Error>
+		<Refresh_Schema>Refresh Schema</Refresh_Schema>
+		<Run_Function>לויפן פונקציע</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>היט</Save>
+		<Save_and_Close>היט און נאָענט</Save_and_Close>
+		<Search>זוכן</Search>
+		<Search_Settings>זוכן סעטטינגס</Search_Settings>
+		<Search_in>זוכן אין</Search_in>
+		<Settings>Settings</Settings>
+		<Settings_Editor>Settings Editor</Settings_Editor>
+		<Show_Help>ווייַזן הילף</Show_Help>
+		<Sort>סאָרט</Sort>
+		<Sort_by>סאָרט דורך</Sort_by>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Statistics_Page>סטאַטיסטיק Page</Statistics_Page>
+		<Strict_Search>שטרענג זוך</Strict_Search>
+		<Success>הצלחה</Success>
+		<System>סיסטעם</System>
+		<Table>טיש</Table>
+		<Toggle_Debug>Toggle Debug</Toggle_Debug>
+		<Toggle_Transaction_Log>Toggle Transaction Log</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Transaction Database Path</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>User Requested</User_Requested>
+		<View>View</View>
+		<View_Function>View Function</View_Function>
+		<Views_Read_Only>קוקן זענען לידאָנלי און קענען ניט זיין עדיטיד</Views_Read_Only>
+	</Language>
+</root>

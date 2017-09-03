@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>тил</Language>
-		<File>File</File>
-		<New>жа?ы</New>
-		<Open>ачык</Open>
-		<Edit>редакциялоо</Edit>
-		<View>к?р?н?ш</View>
-		<Save>Save</Save>
-		<Import>Import</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>экспорттоо</Export>
-		<HTML>HTML</HTML>
-		<Settings>Орнотуулар</Settings>
-		<Help>жардам</Help>
 		<About>ж?н?нд?</About>
-		<Show_Help>Show Жардам</Show_Help>
-		<Settings_Editor>Орнотуулар Editor</Settings_Editor>
-		<Toggle_Debug>ДЕМ м?ч?л?шт?кт?рд?</Toggle_Debug>
-		<Toggle_Transaction_Log>ДЕМ б?т?мд?н Кир??</Toggle_Transaction_Log>
-		<Refresh_Schema>Аудару схема</Refresh_Schema>
-		<Check_for_Updates>?зг?р??л?р текшер??</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Программанын башталышы</PRGM_Start>
-		<App>арыз</App>
-		<Failed_Save_Settings>Ж?нд??л?рд? сактай албай койду</Failed_Save_Settings>
-		<Error>ката</Error>
-		<Failed>ишке ашкан жок</Failed>
-		<Table>стол</Table>
-		<Index>к?рс?тк?ч</Index>
-		<Master_Table>Master токтому</Master_Table>
-		<Sort>т?р</Sort>
-		<Asc>Азаюусу боюунча</Asc>
-		<Desc>Азаюусу боюунча</Desc>
-		<Display_Settings>Display Орнотуулар</Display_Settings>
-		<Sort_by>Иретт??</Sort_by>
-		<Search_in>Изд??</Search_in>
-		<Search>изд??</Search>
-		<Functions>Functions</Functions>
-		<Strict_Search>катуу Изд??</Strict_Search>
-		<Run_Function>Run Function</Run_Function>
-		<Query>суроо</Query>
-		<Command>буйрук</Command>
-		<Error_No_DB>Ката: No базасы артып калды</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable же "Кожоюн стол" корголуучу стол болуп саналат. DB б?т?нд?г?н сактоо ?ч?н бул ?ст?л т?з?т?? м?мк?н болбой жатат</Master_Table_Protected>
 		<Access_Denied>М?мк?нч?л?к четке кагылды</Access_Denied>
+		<App>арыз</App>
 		<Application>App</Application>
-		<View_Function>ЖМКнын иш-милдети</View_Function>
-		<User_Requested>Колдонуучу суралды</User_Requested>
-		<Listview_Width>Listview Ширина</Listview_Width>
-		<Listview_Height>Listview Бийиктиги</Listview_Height>
-		<Extensions>Extensions</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>Сактоо жана жабуу</Save_and_Close>
-		<Close_wo_saving>жок Жабуу Сакталып жатат</Close_wo_saving>
-		<Failed_Load_Online_EULA>онлайн EULA ж?кт?? ишке ашкан жок</Failed_Load_Online_EULA>
+		<Asc>Азаюусу боюунча</Asc>
 		<Auto_Log>Auto Кир??</Auto_Log>
-		<Export_HTML_Schema>атынан экспорту HTML схемасы</Export_HTML_Schema>
-		<Export_HTML_Data>атынан экспорту HTML DATA</Export_HTML_Data>
+		<Browse>Browse</Browse>
+		<CMD_Tooltip>маалыматтар базасын к?зд?й ?зг?ч? SQL буйрук билдир??л?р?н? аткарат</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Ката: чоо-жайын бил?? ?ч?н тизмесин текшерип коюш керек</Check_Log>
-		<Query_Error>Query Error</Query_Error>
+		<Check_for_Updates>?зг?р??л?р текшер??</Check_for_Updates>
+		<Close_TW>Жабуу TW</Close_TW>
+		<Close_wo_saving>жок Жабуу Сакталып жатат</Close_wo_saving>
+		<Command>буйрук</Command>
+		<Converter>Converter</Converter>
+		<Create_Statistics_Page>Т?з?? Статистика Page</Create_Statistics_Page>
+		<Critical_Fault_Error>Кескин жаракасы Error</Critical_Fault_Error>
+		<Dataview_Error>Базасы же Dataview жок же ге ж?кт?лг?н эмес,</Dataview_Error>
+		<Debug>м?ч?л?шт?кт?рд?</Debug>
+		<Define_New_Table>Аныктоо Болумушту Мазмуну</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>Азаюусу боюунча</Desc>
+		<Developer>Иштеп</Developer>
+		<Display_Settings>Display Орнотуулар</Display_Settings>
+		<Edit>редакциялоо</Edit>
+		<Error>ката</Error>
+		<Error_Generic>О, жок, бир нерсе туура эмес кетти! :(</Error_Generic>
+		<Error_No_DB>Ката: No базасы артып калды</Error_No_DB>
+		<Export>экспорттоо</Export>
 		<Export_CSV>ЭКСПОРТ CSV АТЫНАН</Export_CSV>
+		<Export_HTML_Data>атынан экспорту HTML DATA</Export_HTML_Data>
+		<Export_HTML_Schema>атынан экспорту HTML схемасы</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Экспорт SQL - схема - атынан</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Экспорт SQL - SQL - атынан</Export_SQL_SQL>
+		<Export_UI>Экспорт UI</Export_UI>
 		<Export_XML>ЭКСПОРТ XML АТЫНАН</Export_XML>
-		<System>система</System>
-		<Views_Read_Only>Views кир??н? жана аны т?з?т?? м?мк?н эмес болуп саналат</Views_Read_Only>
-		<Dataview_Error>Базасы же Dataview жок же ге ж?кт?лг?н эмес,</Dataview_Error>
-		<Browse>Browse</Browse>
-		<Statistics_Page>Статистика Page</Statistics_Page>
+		<Extensions>Extensions</Extensions>
+		<Failed>ишке ашкан жок</Failed>
+		<Failed_Load_Online_EULA>онлайн EULA ж?кт?? ишке ашкан жок</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Ж?нд??л?рд? сактай албай койду</Failed_Save_Settings>
+		<File>File</File>
+		<Functions>Functions</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>CSV ?ч?н HTML</HTML_to_CSV>
+		<Help>жардам</Help>
+		<Import>Import</Import>
+		<Import_SQL>Import SQL</Import_SQL>
+		<Importer>импортер аял</Importer>
+		<Index>к?рс?тк?ч</Index>
 		<Invert>Белгиленгенди текскерилет??</Invert>
-		<Not_Supported>эмес, колдоо</Not_Supported>
-		<CMD_Tooltip>маалыматтар базасын к?зд?й ?зг?ч? SQL буйрук билдир??л?р?н? аткарат</CMD_Tooltip>
 		<LOG_CSV_Path>Log CSV жол</LOG_CSV_Path>
 		<LOG_DB_PATH>Кир?? DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>Б?т?м базасы Path</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>Схема-ЖЕКЕ</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Кескин жаракасы Error</Critical_Fault_Error>
-		<Stack_Trace>Кырка</Stack_Trace>
-		<Close_TW>Жабуу TW</Close_TW>
-		<Export_UI>Экспорт UI</Export_UI>
-		<Define_New_Table>Аныктоо Болумушту Мазмуну</Define_New_Table>
-		<Create_Statistics_Page>Т?з?? Статистика Page</Create_Statistics_Page>
-		<Debug>м?ч?л?шт?кт?рд?</Debug>
+		<Language>тил</Language>
+		<Listview_Height>Listview Бийиктиги</Listview_Height>
+		<Listview_Width>Listview Ширина</Listview_Width>
+		<Master_Table>Master токтому</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable же "Кожоюн стол" корголуучу стол болуп саналат. DB б?т?нд?г?н сактоо ?ч?н бул ?ст?л т?з?т?? м?мк?н болбой жатат</Master_Table_Protected>
+		<New>жа?ы</New>
 		<New_in_Memory_Db>Memory базасында жа?ы</New_in_Memory_Db>
-		<Import_SQL>Import SQL</Import_SQL>
-		<Plugin>Плагин</Plugin>
+		<Not_Supported>эмес, колдоо</Not_Supported>
+		<Open>ачык</Open>
 		<Opened>ачылды</Opened>
-		<Converter>Converter</Converter>
-		<HTML_to_CSV>CSV ?ч?н HTML</HTML_to_CSV>
-		<Developer>Иштеп</Developer>
+		<PRGM_Start>Программанын башталышы</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Плагин</Plugin>
+		<Query>суроо</Query>
+		<Query_Error>Query Error</Query_Error>
+		<Refresh_Schema>Аудару схема</Refresh_Schema>
+		<Run_Function>Run Function</Run_Function>
+		<SCHEMA_PRIVATE>Схема-ЖЕКЕ</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Save</Save>
+		<Save_and_Close>Сактоо жана жабуу</Save_and_Close>
+		<Search>изд??</Search>
 		<Search_Settings>Изд?? Орнотуулар</Search_Settings>
+		<Search_in>Изд??</Search_in>
+		<Settings>Орнотуулар</Settings>
+		<Settings_Editor>Орнотуулар Editor</Settings_Editor>
+		<Show_Help>Show Жардам</Show_Help>
+		<Sort>т?р</Sort>
+		<Sort_by>Иретт??</Sort_by>
+		<Stack_Trace>Кырка</Stack_Trace>
+		<Statistics_Page>Статистика Page</Statistics_Page>
+		<Strict_Search>катуу Изд??</Strict_Search>
+		<Success>ийгилик</Success>
+		<System>система</System>
+		<Table>стол</Table>
+		<Toggle_Debug>ДЕМ м?ч?л?шт?кт?рд?</Toggle_Debug>
+		<Toggle_Transaction_Log>ДЕМ б?т?мд?н Кир??</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Б?т?м базасы Path</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Колдонуучу суралды</User_Requested>
+		<View>к?р?н?ш</View>
+		<View_Function>ЖМКнын иш-милдети</View_Function>
+		<Views_Read_Only>Views кир??н? жана аны т?з?т?? м?мк?н эмес болуп саналат</Views_Read_Only>
 	</Language>
 </root>

@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>Hizkuntza</Language>
-		<File>file</File>
-		<New>New</New>
-		<Open>Open</Open>
-		<Edit>Edit</Edit>
-		<View>ikusi</View>
-		<Save>Save</Save>
-		<Import>Inportazio</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>Export</Export>
-		<HTML>HTML</HTML>
-		<Settings>ezarpenak</Settings>
-		<Help>Laguntza</Help>
 		<About>About</About>
-		<Show_Help>Erakutsi laguntza</Show_Help>
-		<Settings_Editor>Ezarpenak editorea</Settings_Editor>
-		<Toggle_Debug>Aldatu arazteko</Toggle_Debug>
-		<Toggle_Transaction_Log>Aktibatu Transakzioen erregistroa</Toggle_Transaction_Log>
-		<Refresh_Schema>Freskatu eskema</Refresh_Schema>
-		<Check_for_Updates>Egiaztatu eguneraketak</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>Programa hasi zen</PRGM_Start>
-		<App>Aplikazio</App>
-		<Failed_Save_Settings>Ezarpenak gordetzean huts egin du</Failed_Save_Settings>
-		<Error>Akatsa</Error>
-		<Failed>Huts</Failed>
-		<Table>Table</Table>
-		<Index>Index</Index>
-		<Master_Table>Mahai nagusia</Master_Table>
-		<Sort>Sort</Sort>
-		<Asc>Goruntz</Asc>
-		<Desc>beheranzko</Desc>
-		<Display_Settings>Erakutsi ezarpenak</Display_Settings>
-		<Sort_by>Sort By</Sort_by>
-		<Search_in>Bilatu in</Search_in>
-		<Search>Search</Search>
-		<Functions>funtzioak</Functions>
-		<Strict_Search>Bilaketa zorrotza</Strict_Search>
-		<Run_Function>Exekutatu funtzioa</Run_Function>
-		<Query>Kontsulta</Query>
-		<Command>Komando</Command>
-		<Error_No_DB>Errorea: datu-basea ez da kargatu</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable edo 'Master Table' babestutako taula bat da. Dbaren osotasuna babesteko ezin duzu taula hau editatu</Master_Table_Protected>
 		<Access_Denied>Sarrera debekatua</Access_Denied>
+		<App>Aplikazio</App>
 		<Application>aplikazioa</Application>
-		<View_Function>Ikusi funtzioa</View_Function>
-		<User_Requested>Erabiltzaile eskatutakoa</User_Requested>
-		<Listview_Width>Zerrenda zabalera</Listview_Width>
-		<Listview_Height>Listview Height</Listview_Height>
-		<Extensions>Extensions</Extensions>
-		<Deliminator>Deliminator</Deliminator>
-		<Save_and_Close>Gorde eta itxi</Save_and_Close>
-		<Close_wo_saving>Itxi Aurrezteko gabe</Close_wo_saving>
-		<Failed_Load_Online_EULA>Ezin izan da EULA linean kargatu</Failed_Load_Online_EULA>
+		<Asc>Goruntz</Asc>
 		<Auto_Log>Saioa automatikoa</Auto_Log>
-		<Export_HTML_Schema>Esportatu HTML SCHEMA izenean</Export_HTML_Schema>
-		<Export_HTML_Data>Esportatu HTML DATUAK izenean</Export_HTML_Data>
+		<Browse>arakatu</Browse>
+		<CMD_Tooltip>SQL komandoen adierazpenak pertsonalizatzen ditu datu-basean</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>Errorea: egiaztatu erregistroa xehetasunetarako</Check_Log>
-		<Query_Error>Bilaketa-errorea</Query_Error>
+		<Check_for_Updates>Egiaztatu eguneraketak</Check_for_Updates>
+		<Close_TW>Itxi TW</Close_TW>
+		<Close_wo_saving>Itxi Aurrezteko gabe</Close_wo_saving>
+		<Command>Komando</Command>
+		<Converter>Converter</Converter>
+		<Create_Statistics_Page>Sortu estatistikak orria</Create_Statistics_Page>
+		<Critical_Fault_Error>Akatsen akats kritikoa</Critical_Fault_Error>
+		<Dataview_Error>Datu-basea edo Dataview ez da existitzen edo oraindik ez da kargatu</Dataview_Error>
+		<Debug>Araztu</Debug>
+		<Define_New_Table>Taula berria zehaztu</Define_New_Table>
+		<Deliminator>Deliminator</Deliminator>
+		<Desc>beheranzko</Desc>
+		<Developer>Developer</Developer>
+		<Display_Settings>Erakutsi ezarpenak</Display_Settings>
+		<Edit>Edit</Edit>
+		<Error>Akatsa</Error>
+		<Error_Generic>Oh, ez da ezer gaizki atera! :(</Error_Generic>
+		<Error_No_DB>Errorea: datu-basea ez da kargatu</Error_No_DB>
+		<Export>Export</Export>
 		<Export_CSV>EXPORT CSV BEHAR BEZALA</Export_CSV>
+		<Export_HTML_Data>Esportatu HTML DATUAK izenean</Export_HTML_Data>
+		<Export_HTML_Schema>Esportatu HTML SCHEMA izenean</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Esportatu SQL - SCHEMA - izenean</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Esportatu SQL - SQL - izenean</Export_SQL_SQL>
+		<Export_UI>Esportatu UI</Export_UI>
 		<Export_XML>EXPORT XML BEHALGO DA</Export_XML>
-		<System>Sistema</System>
-		<Views_Read_Only>Bistak irakurriak dira eta ezin dira editatu</Views_Read_Only>
-		<Dataview_Error>Datu-basea edo Dataview ez da existitzen edo oraindik ez da kargatu</Dataview_Error>
-		<Browse>arakatu</Browse>
-		<Statistics_Page>Estatistiken orria</Statistics_Page>
+		<Extensions>Extensions</Extensions>
+		<Failed>Huts</Failed>
+		<Failed_Load_Online_EULA>Ezin izan da EULA linean kargatu</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Ezarpenak gordetzean huts egin du</Failed_Save_Settings>
+		<File>file</File>
+		<Functions>funtzioak</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML-tik CSV-ra</HTML_to_CSV>
+		<Help>Laguntza</Help>
+		<Import>Inportazio</Import>
+		<Import_SQL>Inportatu SQL</Import_SQL>
+		<Importer>Importer</Importer>
+		<Index>Index</Index>
 		<Invert>Alderantzikatu</Invert>
-		<Not_Supported>Ez da onartzen</Not_Supported>
-		<CMD_Tooltip>SQL komandoen adierazpenak pertsonalizatzen ditu datu-basean</CMD_Tooltip>
 		<LOG_CSV_Path>Hasi saioa CSV bidea</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>Transakzioaren datu-basearen bidea</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>Eskema-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>Akatsen akats kritikoa</Critical_Fault_Error>
-		<Stack_Trace>Stack Trace</Stack_Trace>
-		<Close_TW>Itxi TW</Close_TW>
-		<Export_UI>Esportatu UI</Export_UI>
-		<Define_New_Table>Taula berria zehaztu</Define_New_Table>
-		<Create_Statistics_Page>Sortu estatistikak orria</Create_Statistics_Page>
-		<Debug>Araztu</Debug>
+		<Language>Hizkuntza</Language>
+		<Listview_Height>Listview Height</Listview_Height>
+		<Listview_Width>Zerrenda zabalera</Listview_Width>
+		<Master_Table>Mahai nagusia</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable edo 'Master Table' babestutako taula bat da. Dbaren osotasuna babesteko ezin duzu taula hau editatu</Master_Table_Protected>
+		<New>New</New>
 		<New_in_Memory_Db>Memoria datu-base berrian</New_in_Memory_Db>
-		<Import_SQL>Inportatu SQL</Import_SQL>
-		<Plugin>Plugin</Plugin>
+		<Not_Supported>Ez da onartzen</Not_Supported>
+		<Open>Open</Open>
 		<Opened>Irekita</Opened>
-		<Converter>Converter</Converter>
-		<HTML_to_CSV>HTML-tik CSV-ra</HTML_to_CSV>
-		<Developer>Developer</Developer>
+		<PRGM_Start>Programa hasi zen</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>Plugin</Plugin>
+		<Query>Kontsulta</Query>
+		<Query_Error>Bilaketa-errorea</Query_Error>
+		<Refresh_Schema>Freskatu eskema</Refresh_Schema>
+		<Run_Function>Exekutatu funtzioa</Run_Function>
+		<SCHEMA_PRIVATE>Eskema-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>Save</Save>
+		<Save_and_Close>Gorde eta itxi</Save_and_Close>
+		<Search>Search</Search>
 		<Search_Settings>Bilaketa ezarpenak</Search_Settings>
+		<Search_in>Bilatu in</Search_in>
+		<Settings>ezarpenak</Settings>
+		<Settings_Editor>Ezarpenak editorea</Settings_Editor>
+		<Show_Help>Erakutsi laguntza</Show_Help>
+		<Sort>Sort</Sort>
+		<Sort_by>Sort By</Sort_by>
+		<Stack_Trace>Stack Trace</Stack_Trace>
+		<Statistics_Page>Estatistiken orria</Statistics_Page>
+		<Strict_Search>Bilaketa zorrotza</Strict_Search>
+		<Success>Arrakasta</Success>
+		<System>Sistema</System>
+		<Table>Table</Table>
+		<Toggle_Debug>Aldatu arazteko</Toggle_Debug>
+		<Toggle_Transaction_Log>Aktibatu Transakzioen erregistroa</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Transakzioaren datu-basearen bidea</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>Erabiltzaile eskatutakoa</User_Requested>
+		<View>ikusi</View>
+		<View_Function>Ikusi funtzioa</View_Function>
+		<Views_Read_Only>Bistak irakurriak dira eta ezin dira editatu</Views_Read_Only>
 	</Language>
 </root>

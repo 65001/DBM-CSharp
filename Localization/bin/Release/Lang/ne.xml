@@ -10,7 +10,7 @@
 		<Browse>ब्राउज गर्नुहोस्</Browse>
 		<CMD_Tooltip>डेटाबेसमा अनुकूलित SQL आदेश विवरणहरू कार्यान्वयन गर्दछ</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>त्रुटि: कृपया विवरणहरूको लागी लग जाँच गर्नुहोस्</Check_Log>
+		<Check_Log>त्रुटि: कृपया विवरणका लागि लग जाँच गर्नुहोस्</Check_Log>
 		<Check_for_Updates>अद्यावधिकहरूको लागि जाँच गर्नुहोस्</Check_for_Updates>
 		<Close_TW>TW बन्द गर्नुहोस्</Close_TW>
 		<Close_wo_saving>बचत नगरी बन्द गर्नुहोस्</Close_wo_saving>

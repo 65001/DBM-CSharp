@@ -27,7 +27,7 @@
 		<Display_Settings>Дэлгэцийн тохиргоо</Display_Settings>
 		<Edit>Засварлах</Edit>
 		<Error>Алдаа</Error>
-		<Error_Generic>Ай ямар нэг з?йл буруугаар эргэв! :(</Error_Generic>
+		<Error_Generic>Ай ямар нэг з?йл буруугаар эргэв ??! :(</Error_Generic>
 		<Error_No_DB>Алдаа: ?г?й мэдээллийн сан ачаалагдсан байна</Error_No_DB>
 		<Export>Экспорт</Export>
 		<Export_CSV>EXPORT CSV-ийн талаархи мэдээлэл</Export_CSV>

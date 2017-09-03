@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>भाषा</Language>
-		<File>फाइल</File>
-		<New>नयाँ</New>
-		<Open>खोल्नुहोस्</Open>
-		<Edit>सम्पादन गर्नुहोस्</Edit>
-		<View>हेर्नुहोस्</View>
-		<Save>बचत गर्नुहोस्</Save>
-		<Import>आयात गर्नुहोस्</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>निर्यात गर्नुहोस्</Export>
-		<HTML>एचटीएमएल</HTML>
-		<Settings>सेटिङ्हरू</Settings>
-		<Help>मद्दत</Help>
 		<About>बारेमा</About>
-		<Show_Help>मद्दत देखाउनुहोस्</Show_Help>
-		<Settings_Editor>सेटिङ सम्पादक</Settings_Editor>
-		<Toggle_Debug>डिबग टगल गर्नुहोस्</Toggle_Debug>
-		<Toggle_Transaction_Log>लेनदेन लग टगल गर्नुहोस्</Toggle_Transaction_Log>
-		<Refresh_Schema>स्कीमा ताजा गर्नुहोस्</Refresh_Schema>
-		<Check_for_Updates>अद्यावधिकहरूको लागि जाँच गर्नुहोस्</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>कार्यक्रम सुरु भयो</PRGM_Start>
-		<App>अनुप्रयोग</App>
-		<Failed_Save_Settings>सेटिंग्स बचत गर्न असफल भयो</Failed_Save_Settings>
-		<Error>त्रुटि</Error>
-		<Failed>असफल भयो</Failed>
-		<Table>तालिका</Table>
-		<Index>अनुक्रमणिका</Index>
-		<Master_Table>मास्टर तालिका</Master_Table>
-		<Sort>क्रमबद्ध गर्नुहोस्</Sort>
-		<Asc>एसेन्डिङ</Asc>
-		<Desc>घट्दो</Desc>
-		<Display_Settings>सेटिंग्स प्रदर्शन गर्नुहोस्</Display_Settings>
-		<Sort_by>द्वारा क्रमबद्ध गर्नुहोस्</Sort_by>
-		<Search_in>खोजी गर्नुहोस्</Search_in>
-		<Search>खोजी गर्नुहोस्</Search>
-		<Functions>कार्यहरू</Functions>
-		<Strict_Search>सख्त खोजी</Strict_Search>
-		<Run_Function>प्रकार्य चलाउनुहोस्</Run_Function>
-		<Query>प्रश्न</Query>
-		<Command>आदेश</Command>
-		<Error_No_DB>त्रुटि: डेटाबेस लोड गरिएको छैन</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable वा 'मास्टर टेबल' एक सुरक्षित तालिका हो। डीबीको सत्यताको रक्षा गर्न यो तालिका सम्पादन गर्न सक्नुहुन्न</Master_Table_Protected>
 		<Access_Denied>प्रवेश अस्वीकृत</Access_Denied>
+		<App>अनुप्रयोग</App>
 		<Application>एप</Application>
-		<View_Function>प्रकार्य हेर्नुहोस्</View_Function>
-		<User_Requested>प्रयोगकर्ता अनुरोध गरियो</User_Requested>
-		<Listview_Width>सूची दृश्य चौडाइ</Listview_Width>
-		<Listview_Height>लम्बाई सूची</Listview_Height>
-		<Extensions>एक्स्टेन्सनहरू</Extensions>
-		<Deliminator>डिलिमेटर</Deliminator>
-		<Save_and_Close>बचत र बन्द गर्नुहोस्</Save_and_Close>
-		<Close_wo_saving>बचत नगरी बन्द गर्नुहोस्</Close_wo_saving>
-		<Failed_Load_Online_EULA>अनलाइन EULA लोड गर्न असफल भयो</Failed_Load_Online_EULA>
+		<Asc>एसेन्डिङ</Asc>
 		<Auto_Log>स्वत: लग</Auto_Log>
-		<Export_HTML_Schema>यसबाट HTML SCHEMA निर्यात गर्नुहोस्</Export_HTML_Schema>
-		<Export_HTML_Data>यसबाट HTML डाटा निर्यात गर्नुहोस्</Export_HTML_Data>
-		<Check_Log>त्रुटि: कृपया विवरणहरूको लागी लग जाँच गर्नुहोस्</Check_Log>
-		<Query_Error>क्वेरी त्रुटि</Query_Error>
+		<Browse>ब्राउज गर्नुहोस्</Browse>
+		<CMD_Tooltip>डेटाबेसमा अनुकूलित SQL आदेश विवरणहरू कार्यान्वयन गर्दछ</CMD_Tooltip>
+		<CSV>CSV</CSV>
+		<Check_Log>त्रुटि: कृपया विवरणका लागि लग जाँच गर्नुहोस्</Check_Log>
+		<Check_for_Updates>अद्यावधिकहरूको लागि जाँच गर्नुहोस्</Check_for_Updates>
+		<Close_TW>TW बन्द गर्नुहोस्</Close_TW>
+		<Close_wo_saving>बचत नगरी बन्द गर्नुहोस्</Close_wo_saving>
+		<Command>आदेश</Command>
+		<Converter>कनवर्टर</Converter>
+		<Create_Statistics_Page>तथ्याङ्क पृष्�  सिर्जना गर्नुहोस्</Create_Statistics_Page>
+		<Critical_Fault_Error>आलोचनात्मक त्रुटि त्रुटि</Critical_Fault_Error>
+		<Dataview_Error>डाटाबेस वा डाटाभीडियो अवस्थित छैन वा अझै लोड भएको छैन</Dataview_Error>
+		<Debug>डिबग</Debug>
+		<Define_New_Table>नयाँ तालिका परिभाषित गर्नुहोस्</Define_New_Table>
+		<Deliminator>डिलिमेटर</Deliminator>
+		<Desc>घट्दो</Desc>
+		<Developer>विकासकर्ता</Developer>
+		<Display_Settings>सेटिंग्स प्रदर्शन गर्नुहोस्</Display_Settings>
+		<Edit>सम्पादन गर्नुहोस्</Edit>
+		<Error>त्रुटि</Error>
+		<Error_Generic>ओह कुनै केहि गलत भयो! :(</Error_Generic>
+		<Error_No_DB>त्रुटि: डेटाबेस लोड गरिएको छैन</Error_No_DB>
+		<Export>निर्यात गर्नुहोस्</Export>
 		<Export_CSV>बेच्नका लागि सीएसवी निर्यात गर्नुहोस्</Export_CSV>
+		<Export_HTML_Data>यसबाट HTML डाटा निर्यात गर्नुहोस्</Export_HTML_Data>
+		<Export_HTML_Schema>यसबाट HTML SCHEMA निर्यात गर्नुहोस्</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>SQL निर्यात गर्नुहोस् - SCHEMA - को तर्फबाट</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>SQL निर्यात गर्नुहोस् - SQL - को तर्फबाट</Export_SQL_SQL>
+		<Export_UI>निर्यात यूआई</Export_UI>
 		<Export_XML>एक्स एक्स एक्स बेल्लफ मा निर्यात गर्नुहोस्</Export_XML>
-		<System>प्रणाली</System>
-		<Views_Read_Only>दृश्यहरू केवल पढ्न र सम्पादन गर्न सकिँदैन</Views_Read_Only>
-		<Dataview_Error>डाटाबेस वा डाटाभीडियो अवस्थित छैन वा अझै लोड भएको छैन</Dataview_Error>
-		<Browse>ब्राउज गर्नुहोस्</Browse>
-		<Statistics_Page>तथ्याङ्क पृष्� </Statistics_Page>
+		<Extensions>एक्स्टेन्सनहरू</Extensions>
+		<Failed>असफल भयो</Failed>
+		<Failed_Load_Online_EULA>अनलाइन EULA लोड गर्न असफल भयो</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>सेटिंग्स बचत गर्न असफल भयो</Failed_Save_Settings>
+		<File>फाइल</File>
+		<Functions>कार्यहरू</Functions>
+		<HTML>एचटीएमएल</HTML>
+		<HTML_to_CSV>CSV मा HTML</HTML_to_CSV>
+		<Help>मद्दत</Help>
+		<Import>आयात गर्नुहोस्</Import>
+		<Import_SQL>SQL आयात गर्नुहोस्</Import_SQL>
+		<Importer>आयातक</Importer>
+		<Index>अनुक्रमणिका</Index>
 		<Invert>उल्टाउनुहोस्</Invert>
-		<Not_Supported>मेला खाएन</Not_Supported>
-		<CMD_Tooltip>डेटाबेसमा अनुकूलित SQL आदेश विवरणहरू कार्यान्वयन गर्दछ</CMD_Tooltip>
 		<LOG_CSV_Path>CSV मार्ग लग गर्नुहोस्</LOG_CSV_Path>
 		<LOG_DB_PATH>लग डेटाबेसप्याट</LOG_DB_PATH>
-		<Transaction_DB_Path>लेनदेन डाटाबेस पथ</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>आलोचनात्मक त्रुटि त्रुटि</Critical_Fault_Error>
-		<Stack_Trace>स्ट्याक ट्रेस</Stack_Trace>
-		<Close_TW>TW बन्द गर्नुहोस्</Close_TW>
-		<Export_UI>निर्यात यूआई</Export_UI>
-		<Define_New_Table>नयाँ तालिका परिभाषित गर्नुहोस्</Define_New_Table>
-		<Create_Statistics_Page>तथ्याङ्क पृष्�  सिर्जना गर्नुहोस्</Create_Statistics_Page>
-		<Debug>डिबग</Debug>
+		<Language>भाषा</Language>
+		<Listview_Height>लम्बाई सूची</Listview_Height>
+		<Listview_Width>सूची दृश्य चौडाइ</Listview_Width>
+		<Master_Table>मास्टर तालिका</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable वा 'मास्टर टेबल' एक सुरक्षित तालिका हो। डीबीको सत्यताको रक्षा गर्न यो तालिका सम्पादन गर्न सक्नुहुन्न</Master_Table_Protected>
+		<New>नयाँ</New>
 		<New_in_Memory_Db>मेमोरी डाटाबेसमा नयाँ</New_in_Memory_Db>
-		<Import_SQL>SQL आयात गर्नुहोस्</Import_SQL>
-		<Plugin>जोड्नु</Plugin>
+		<Not_Supported>मेला खाएन</Not_Supported>
+		<Open>खोल्नुहोस्</Open>
 		<Opened>खोलियो</Opened>
-		<Converter>कनवर्टर</Converter>
-		<HTML_to_CSV>CSV मा HTML</HTML_to_CSV>
-		<Developer>विकासकर्ता</Developer>
+		<PRGM_Start>कार्यक्रम सुरु भयो</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>जोड्नु</Plugin>
+		<Query>प्रश्न</Query>
+		<Query_Error>क्वेरी त्रुटि</Query_Error>
+		<Refresh_Schema>स्कीमा ताजा गर्नुहोस्</Refresh_Schema>
+		<Run_Function>प्रकार्य चलाउनुहोस्</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>बचत गर्नुहोस्</Save>
+		<Save_and_Close>बचत र बन्द गर्नुहोस्</Save_and_Close>
+		<Search>खोजी गर्नुहोस्</Search>
 		<Search_Settings>सेटिङहरू खोजी गर्नुहोस्</Search_Settings>
+		<Search_in>खोजी गर्नुहोस्</Search_in>
+		<Settings>सेटिङ्हरू</Settings>
+		<Settings_Editor>सेटिङ सम्पादक</Settings_Editor>
+		<Show_Help>मद्दत देखाउनुहोस्</Show_Help>
+		<Sort>क्रमबद्ध गर्नुहोस्</Sort>
+		<Sort_by>द्वारा क्रमबद्ध गर्नुहोस्</Sort_by>
+		<Stack_Trace>स्ट्याक ट्रेस</Stack_Trace>
+		<Statistics_Page>तथ्याङ्क पृष्� </Statistics_Page>
+		<Strict_Search>सख्त खोजी</Strict_Search>
+		<Success>सफलता</Success>
+		<System>प्रणाली</System>
+		<Table>तालिका</Table>
+		<Toggle_Debug>डिबग टगल गर्नुहोस्</Toggle_Debug>
+		<Toggle_Transaction_Log>लेनदेन लग टगल गर्नुहोस्</Toggle_Transaction_Log>
+		<Transaction_DB_Path>लेनदेन डाटाबेस पथ</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>प्रयोगकर्ता अनुरोध गरियो</User_Requested>
+		<View>हेर्नुहोस्</View>
+		<View_Function>प्रकार्य हेर्नुहोस्</View_Function>
+		<Views_Read_Only>दृश्यहरू केवल पढ्न र सम्पादन गर्न सकिँदैन</Views_Read_Only>
 	</Language>
 </root>

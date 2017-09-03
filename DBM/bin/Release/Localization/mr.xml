@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>भाषा</Language>
-		<File>फाईल</File>
-		<New>नवीन</New>
-		<Open>उघडा</Open>
-		<Edit>संपादित करा</Edit>
-		<View>पहा</View>
-		<Save>जतन करा</Save>
-		<Import>आयात करा</Import>
-		<CSV>CSV</CSV>
-		<SQL>एस क्यू एल</SQL>
-		<Export>निर्यात करा</Export>
-		<HTML>HTML</HTML>
-		<Settings>सेटिंग्ज</Settings>
-		<Help>मदत</Help>
 		<About>विषयी</About>
-		<Show_Help>मदत दर्शवा</Show_Help>
-		<Settings_Editor>सेटिंग्ज संपादक</Settings_Editor>
-		<Toggle_Debug>डीबग टॉगल करा</Toggle_Debug>
-		<Toggle_Transaction_Log>व्यवहार लॉग टॉगल करा</Toggle_Transaction_Log>
-		<Refresh_Schema>रिफ्रेश स्कीमा</Refresh_Schema>
-		<Check_for_Updates>अद्यतनांसा� ी तपासा</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>कार्यक्रम सुरु झाला</PRGM_Start>
-		<App>अनुप्रयोग</App>
-		<Failed_Save_Settings>सेटिंग्ज जतन करण्यात अयशस्वी</Failed_Save_Settings>
-		<Error>त्रुटी</Error>
-		<Failed>अयशस्वी</Failed>
-		<Table>टेबल</Table>
-		<Index>निर्देशांक</Index>
-		<Master_Table>मास्टर टेबल</Master_Table>
-		<Sort>क्रमवारी लावा</Sort>
-		<Asc>चढत्या क्रमाने</Asc>
-		<Desc>उतरत्या क्रमाने</Desc>
-		<Display_Settings>प्रदर्शन सेटिंग्ज</Display_Settings>
-		<Sort_by>क्रमवारी लावा</Sort_by>
-		<Search_in>शोधा</Search_in>
-		<Search>शोधा</Search>
-		<Functions>कार्ये</Functions>
-		<Strict_Search>क� ोर शोध</Strict_Search>
-		<Run_Function>चालवा कार्य</Run_Function>
-		<Query>क्वेरी</Query>
-		<Command>आदेश</Command>
-		<Error_No_DB>त्रुटी: कोणतेही डेटाबेस लोड केले गेले नाही</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable किंवा 'Master Table' संरक्षित सारणी आहे डीबीची एकाग्रता संरक्षित करण्यासा� ी आपण ही सारणी संपादित करु शकत नाही</Master_Table_Protected>
 		<Access_Denied>प्रवेश नाकारला</Access_Denied>
+		<App>अनुप्रयोग</App>
 		<Application>अॅप</Application>
-		<View_Function>दृश्य पहा</View_Function>
-		<User_Requested>वापरकर्त्याने विनंती केली</User_Requested>
-		<Listview_Width>सूचीची चौकट</Listview_Width>
-		<Listview_Height>उंची पाहाणे</Listview_Height>
-		<Extensions>विस्तार</Extensions>
-		<Deliminator>डिलिमिनेटर</Deliminator>
-		<Save_and_Close>जतन करा आणि बंद करा</Save_and_Close>
-		<Close_wo_saving>जतन न करता बंद करा</Close_wo_saving>
-		<Failed_Load_Online_EULA>ऑनलाइन EULA लोड करण्यात अयशस्वी</Failed_Load_Online_EULA>
+		<Asc>चढण</Asc>
 		<Auto_Log>स्वयं लॉग</Auto_Log>
-		<Export_HTML_Schema>च्या वतीने HTML SCHEMA निर्यात करा</Export_HTML_Schema>
-		<Export_HTML_Data>च्या वतीने HTML डेटा निर्यात करा</Export_HTML_Data>
+		<Browse>ब्राउझ करा</Browse>
+		<CMD_Tooltip>डेटाबेसवर कस्टमाइझ केलेल्या SQL आदेश स्टेटमेंटची अंमलबजावणी करा</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>त्रुटी: कृपया तपशीलासा� ी लॉग तपासा</Check_Log>
-		<Query_Error>क्वेरी त्रुटी</Query_Error>
+		<Check_for_Updates>अद्यतनांसा� ी तपासा</Check_for_Updates>
+		<Close_TW>TW बंद करा</Close_TW>
+		<Close_wo_saving>जतन न करता बंद करा</Close_wo_saving>
+		<Command>आदेश</Command>
+		<Converter>कनवर्टर</Converter>
+		<Create_Statistics_Page>सांख्यिकी पृष्�  तयार करा</Create_Statistics_Page>
+		<Critical_Fault_Error>गंभीर गलबत त्रुटी</Critical_Fault_Error>
+		<Dataview_Error>डेटाबेस किंवा डेटाव्ह्यू अस्तित्वात नाही किंवा अद्याप लोड केले गेले नाही</Dataview_Error>
+		<Debug>डीबग करा</Debug>
+		<Define_New_Table>नवीन सारणी परिभाषित करा</Define_New_Table>
+		<Deliminator>डिलिमिनेटर</Deliminator>
+		<Desc>उतरत्या क्रमाने</Desc>
+		<Developer>विकसक</Developer>
+		<Display_Settings>प्रदर्शन सेटिंग्ज</Display_Settings>
+		<Edit>संपादित करा</Edit>
+		<Error>त्रुटी</Error>
+		<Error_Generic>ओह काहीतरी चूक झाली! :(</Error_Generic>
+		<Error_No_DB>त्रुटी: कोणतेही डेटाबेस लोड केले गेले नाही</Error_No_DB>
+		<Export>निर्यात करा</Export>
 		<Export_CSV>च्या मागे CSV ची निर्यात करा</Export_CSV>
+		<Export_HTML_Data>च्या वतीने HTML डेटा निर्यात करा</Export_HTML_Data>
+		<Export_HTML_Schema>च्या वतीने HTML SCHEMA निर्यात करा</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>एस क्यू एल एक्स - एसएपीएमए निर्यात करा -</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>निर्यात एस क्यू एल - एसक्यूएल - च्या वतीने</Export_SQL_SQL>
+		<Export_UI>निर्यात UI</Export_UI>
 		<Export_XML>निर्यात एक्सएमएल च्या मागे</Export_XML>
-		<System>सिस्टम</System>
-		<Views_Read_Only>दृश्ये केवळ वाचनीय आहेत आणि संपादित केली जाऊ शकत नाहीत</Views_Read_Only>
-		<Dataview_Error>डेटाबेस किंवा डेटाव्ह्यू अस्तित्वात नाही किंवा अद्याप लोड केले गेले नाही</Dataview_Error>
-		<Browse>ब्राउझ करा</Browse>
-		<Statistics_Page>सांख्यिकी पृष्� </Statistics_Page>
+		<Extensions>विस्तार</Extensions>
+		<Failed>अयशस्वी</Failed>
+		<Failed_Load_Online_EULA>ऑनलाइन EULA लोड करण्यात अयशस्वी</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>सेटिंग्ज जतन करण्यात अयशस्वी</Failed_Save_Settings>
+		<File>फाईल</File>
+		<Functions>कार्ये</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>CSV मध्ये HTML</HTML_to_CSV>
+		<Help>मदत</Help>
+		<Import>आयात करा</Import>
+		<Import_SQL>एसक्यूएल आयात करा</Import_SQL>
+		<Importer>आयातकर्ता</Importer>
+		<Index>निर्देशांक</Index>
 		<Invert>उलट करा</Invert>
-		<Not_Supported>समर्थित नाही</Not_Supported>
-		<CMD_Tooltip>डेटाबेसवर कस्टमाइझ केलेल्या SQL आदेश स्टेटमेंटची अंमलबजावणी करा</CMD_Tooltip>
 		<LOG_CSV_Path>लॉग CSV पथ</LOG_CSV_Path>
 		<LOG_DB_PATH>लॉग डेटाबेसपथ</LOG_DB_PATH>
-		<Transaction_DB_Path>व्यवहार डेटाबेस पथ</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA- खाजगी</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>गंभीर गलबत त्रुटी</Critical_Fault_Error>
-		<Stack_Trace>स्टॅक ट्रेस</Stack_Trace>
-		<Close_TW>TW बंद करा</Close_TW>
-		<Export_UI>निर्यात UI</Export_UI>
-		<Define_New_Table>नवीन सारणी परिभाषित करा</Define_New_Table>
-		<Create_Statistics_Page>सांख्यिकी पृष्�  तयार करा</Create_Statistics_Page>
-		<Debug>डीबग करा</Debug>
+		<Language>भाषा</Language>
+		<Listview_Height>उंची पाहाणे</Listview_Height>
+		<Listview_Width>सूचीची चौकट</Listview_Width>
+		<Master_Table>मास्टर टेबल</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable किंवा 'Master Table' संरक्षित सारणी आहे डीबीची एकाग्रता संरक्षित करण्यासा� ी आपण ही सारणी संपादित करु शकत नाही</Master_Table_Protected>
+		<New>नवीन</New>
 		<New_in_Memory_Db>मेमरी डाटाबेसमध्ये नवीन</New_in_Memory_Db>
-		<Import_SQL>एसक्यूएल आयात करा</Import_SQL>
-		<Plugin>प्लगइन</Plugin>
+		<Not_Supported>समर्थित नाही</Not_Supported>
+		<Open>उघडा</Open>
 		<Opened>उघडलेले</Opened>
-		<Converter>कनवर्टर</Converter>
-		<HTML_to_CSV>CSV मध्ये HTML</HTML_to_CSV>
-		<Developer>विकसक</Developer>
+		<PRGM_Start>कार्यक्रम सुरु झाला</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>प्लगइन</Plugin>
+		<Query>क्वेरी</Query>
+		<Query_Error>क्वेरी त्रुटी</Query_Error>
+		<Refresh_Schema>रिफ्रेश स्कीमा</Refresh_Schema>
+		<Run_Function>चालवा कार्य</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA- खाजगी</SCHEMA_PRIVATE>
+		<SQL>एस क्यू एल</SQL>
+		<Save>जतन करा</Save>
+		<Save_and_Close>जतन करा आणि बंद करा</Save_and_Close>
+		<Search>शोधा</Search>
 		<Search_Settings>शोध सेटिंग्ज</Search_Settings>
+		<Search_in>शोधा</Search_in>
+		<Settings>सेटिंग्ज</Settings>
+		<Settings_Editor>सेटिंग्ज संपादक</Settings_Editor>
+		<Show_Help>मदत दर्शवा</Show_Help>
+		<Sort>क्रमवारी लावा</Sort>
+		<Sort_by>क्रमवारी लावा</Sort_by>
+		<Stack_Trace>स्टॅक ट्रेस</Stack_Trace>
+		<Statistics_Page>सांख्यिकी पृष्� </Statistics_Page>
+		<Strict_Search>क� ोर शोध</Strict_Search>
+		<Success>यश</Success>
+		<System>सिस्टम</System>
+		<Table>टेबल</Table>
+		<Toggle_Debug>डीबग टॉगल करा</Toggle_Debug>
+		<Toggle_Transaction_Log>व्यवहार लॉग टॉगल करा</Toggle_Transaction_Log>
+		<Transaction_DB_Path>व्यवहार डेटाबेस पथ</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>वापरकर्त्याने विनंती केली</User_Requested>
+		<View>पहा</View>
+		<View_Function>दृश्य पहा</View_Function>
+		<Views_Read_Only>दृश्ये केवळ वाचनीय आहेत आणि संपादित केली जाऊ शकत नाहीत</Views_Read_Only>
 	</Language>
 </root>

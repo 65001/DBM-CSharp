@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<Language>
-		<Language>ენა</Language>
-		<File>ფაილი</File>
-		<New>ახალი</New>
-		<Open>გახსნა</Open>
-		<Edit>� ედაქტი� ება</Edit>
-		<View>ნახვა</View>
-		<Save>გადა� ჩენა</Save>
-		<Import>იმპო� ტი</Import>
-		<CSV>CSV</CSV>
-		<SQL>SQL</SQL>
-		<Export>ექსპო� ტი</Export>
-		<HTML>HTML</HTML>
-		<Settings>პა� ამეტ� ები</Settings>
-		<Help>დახმა� ება</Help>
 		<About>შესახებ</About>
-		<Show_Help>დახმა� ება აჩვენეთ</Show_Help>
-		<Settings_Editor>პა� ამეტ� ების � ედაქტო� ი</Settings_Editor>
-		<Toggle_Debug>შეცვალეთ შეცდომა</Toggle_Debug>
-		<Toggle_Transaction_Log>გადა� იცხვა ჩანაწე� ის გადა� თვა</Toggle_Transaction_Log>
-		<Refresh_Schema>განახლების სქემა</Refresh_Schema>
-		<Check_for_Updates>შეამოწმოთ განახლებები</Check_for_Updates>
-		<PXML>XML</PXML>
-		<PRGM_Start>პ� ოგ� ამა დაიწყო</PRGM_Start>
-		<App>განაცხადი</App>
-		<Failed_Save_Settings>პა� ამეტ� ების შენახვა ვე�  მოხე� ხდა</Failed_Save_Settings>
-		<Error>შეცდომა</Error>
-		<Failed>ვე�  მოხე� ხდა</Failed>
-		<Table>მაგიდა</Table>
-		<Index>ინდექსი</Index>
-		<Master_Table>სამაგისტ� ო მაგიდა</Master_Table>
-		<Sort>სო� ტი� ება</Sort>
-		<Asc>აღმავალი</Asc>
-		<Desc>კლებადი</Desc>
-		<Display_Settings>ეკ� ანის პა� ამეტ� ები</Display_Settings>
-		<Sort_by>დალაგება</Sort_by>
-		<Search_in>ძიება</Search_in>
-		<Search>ძიება</Search>
-		<Functions>ფუნქციები</Functions>
-		<Strict_Search>მკაც� ი ძიება</Strict_Search>
-		<Run_Function>გაუშვით ფუნქცია</Run_Function>
-		<Query>შეკითხვას</Query>
-		<Command>ბ� ძანება</Command>
-		<Error_No_DB>შეცდომა: მონაცემთა ბაზა ა�  ა� ის დატვი� თული</Error_No_DB>
-		<UI>UI</UI>
-		<Master_Table_Protected>Sqlite_mastertable ან 'Master Table' ა� ის დაცული მაგიდა. იმისათვის, � ომ დავიცვათ მთლიანობა დბ თქვენ ვე�  შეცვალონ ეს მაგიდა</Master_Table_Protected>
 		<Access_Denied>შეღწევა უა� ყოფილია</Access_Denied>
+		<App>განაცხადი</App>
 		<Application>აპლიკაცია</Application>
-		<View_Function>ფუნქციის ნახვა</View_Function>
-		<User_Requested>მომხმა� ებელი მოითხოვა</User_Requested>
-		<Listview_Width>სიის სიგანე</Listview_Width>
-		<Listview_Height>სიმაღლე</Listview_Height>
-		<Extensions>გაგ� ძელება</Extensions>
-		<Deliminator>დემიმინატო� ი</Deliminator>
-		<Save_and_Close>შენახვა და დახუ� ვა</Save_and_Close>
-		<Close_wo_saving>დახუ� ვა გა� ეშე შენახვა</Close_wo_saving>
-		<Failed_Load_Online_EULA>ონლაინ EULA- ს ჩატვი� თვა ვე�  მოხე� ხდა</Failed_Load_Online_EULA>
+		<Asc>აღმავალი</Asc>
 		<Auto_Log>ავტო შესვლა</Auto_Log>
-		<Export_HTML_Schema>ექსპო� ტი HTML SCHEMA სახელით</Export_HTML_Schema>
-		<Export_HTML_Data>ექსპო� ტის HTML DATA სახელით</Export_HTML_Data>
+		<Browse>იხილე</Browse>
+		<CMD_Tooltip>ახო� ციელებს სავალდებულო SQL ბ� ძანებულებების შესახებ მონაცემთა ბაზაში</CMD_Tooltip>
+		<CSV>CSV</CSV>
 		<Check_Log>შეცდომა: გთხოვთ შეამოწმოთ დეტალები შესვლა</Check_Log>
-		<Query_Error>შეკითხვის შეცდომა</Query_Error>
+		<Check_for_Updates>შეამოწმოთ განახლებები</Check_for_Updates>
+		<Close_TW>დახუ� ვა TW</Close_TW>
+		<Close_wo_saving>დახუ� ვა გა� ეშე შენახვა</Close_wo_saving>
+		<Command>ბ� ძანება</Command>
+		<Converter>კონვე� ტო� ი</Converter>
+		<Create_Statistics_Page>სტატისტიკა გვე� დი შექმნა</Create_Statistics_Page>
+		<Critical_Fault_Error>კ� იტიკული ბ� ალია შეცდომა</Critical_Fault_Error>
+		<Dataview_Error>მონაცემთა ბაზა ან Dataview ა�  ა� სებობს ან ჯე�  ა�  ა� ის დატვი� თული</Dataview_Error>
+		<Debug>დუბა</Debug>
+		<Define_New_Table>ახალი მაგიდის განსაზღვ� ა</Define_New_Table>
+		<Deliminator>დემიმინატო� ი</Deliminator>
+		<Desc>კლებადი</Desc>
+		<Developer>შემქმნელი</Developer>
+		<Display_Settings>ეკ� ანის პა� ამეტ� ები</Display_Settings>
+		<Edit>� ედაქტი� ება</Edit>
+		<Error>შეცდომა</Error>
+		<Error_Generic>ოჰ ა� ასწო� ია! :(</Error_Generic>
+		<Error_No_DB>შეცდომა: მონაცემთა ბაზა ა�  ა� ის დატვი� თული</Error_No_DB>
+		<Export>ექსპო� ტი</Export>
 		<Export_CSV>EXPORT CSV- ს შესახებ</Export_CSV>
+		<Export_HTML_Data>ექსპო� ტის HTML DATA სახელით</Export_HTML_Data>
+		<Export_HTML_Schema>ექსპო� ტი HTML SCHEMA სახელით</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>ექსპო� ტი SQL - SCHEMA - სახელით</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>ექსპო� ტი SQL - SQL - სახელით</Export_SQL_SQL>
+		<Export_UI>ექსპო� ტის UI</Export_UI>
 		<Export_XML>ექსპო� ტის XML</Export_XML>
-		<System>სისტემა</System>
-		<Views_Read_Only>შეხედულებები კითხულობს და ა�  შეიძლება იყოს � ედაქტი� ებული</Views_Read_Only>
-		<Dataview_Error>მონაცემთა ბაზა ან Dataview ა�  ა� სებობს ან ჯე�  ა�  ა� ის დატვი� თული</Dataview_Error>
-		<Browse>იხილე</Browse>
-		<Statistics_Page>სტატისტიკა გვე� დი</Statistics_Page>
+		<Extensions>გაგ� ძელება</Extensions>
+		<Failed>ვე�  მოხე� ხდა</Failed>
+		<Failed_Load_Online_EULA>ონლაინ EULA- ს ჩატვი� თვა ვე�  მოხე� ხდა</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>პა� ამეტ� ების შენახვა ვე�  მოხე� ხდა</Failed_Save_Settings>
+		<File>ფაილი</File>
+		<Functions>ფუნქციები</Functions>
+		<HTML>HTML</HTML>
+		<HTML_to_CSV>HTML to CSV</HTML_to_CSV>
+		<Help>დახმა� ება</Help>
+		<Import>იმპო� ტი</Import>
+		<Import_SQL>იმპო� ტი SQL</Import_SQL>
+		<Importer>იმპო� ტიო� ი</Importer>
+		<Index>ინდექსი</Index>
 		<Invert>ინვე� ტული</Invert>
-		<Not_Supported>ა�  ა� ის მხა� დაჭე� ილი</Not_Supported>
-		<CMD_Tooltip>ახო� ციელებს სავალდებულო SQL ბ� ძანებულებების შესახებ მონაცემთა ბაზაში</CMD_Tooltip>
 		<LOG_CSV_Path>შესვლა CSV გზა</LOG_CSV_Path>
 		<LOG_DB_PATH>შესვლა DatabasePath</LOG_DB_PATH>
-		<Transaction_DB_Path>გა� იგების მონაცემთა ბაზის გზა</Transaction_DB_Path>
-		<SCHEMA_PRIVATE>SCHEMA- კე� ძო</SCHEMA_PRIVATE>
-		<Critical_Fault_Error>კ� იტიკული ბ� ალია შეცდომა</Critical_Fault_Error>
-		<Stack_Trace>დასტის კვალი</Stack_Trace>
-		<Close_TW>დახუ� ვა TW</Close_TW>
-		<Export_UI>ექსპო� ტის UI</Export_UI>
-		<Define_New_Table>ახალი მაგიდის განსაზღვ� ა</Define_New_Table>
-		<Create_Statistics_Page>სტატისტიკა გვე� დი შექმნა</Create_Statistics_Page>
-		<Debug>დუბა</Debug>
+		<Language>ენა</Language>
+		<Listview_Height>სიმაღლე</Listview_Height>
+		<Listview_Width>სიის სიგანე</Listview_Width>
+		<Master_Table>სამაგისტ� ო მაგიდა</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable ან 'Master Table' ა� ის დაცული მაგიდა. იმისათვის, � ომ დავიცვათ მთლიანობა დბ თქვენ ვე�  შეცვალონ ეს მაგიდა</Master_Table_Protected>
+		<New>ახალი</New>
 		<New_in_Memory_Db>ახალი მეხსიე� ების მონაცემთა ბაზაში</New_in_Memory_Db>
-		<Import_SQL>იმპო� ტი SQL</Import_SQL>
-		<Plugin>ჩა� თვა შეე� თება</Plugin>
+		<Not_Supported>ა�  ა� ის მხა� დაჭე� ილი</Not_Supported>
+		<Open>გახსნა</Open>
 		<Opened>გაიხსნა</Opened>
-		<Converter>კონვე� ტო� ი</Converter>
-		<HTML_to_CSV>HTML to CSV</HTML_to_CSV>
-		<Developer>შემქმნელი</Developer>
+		<PRGM_Start>პ� ოგ� ამა დაიწყო</PRGM_Start>
+		<PXML>XML</PXML>
+		<Plugin>ჩა� თვა შეე� თება</Plugin>
+		<Query>შეკითხვას</Query>
+		<Query_Error>შეკითხვის შეცდომა</Query_Error>
+		<Refresh_Schema>განახლების სქემა</Refresh_Schema>
+		<Run_Function>გაუშვით ფუნქცია</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA- კე� ძო</SCHEMA_PRIVATE>
+		<SQL>SQL</SQL>
+		<Save>გადა� ჩენა</Save>
+		<Save_and_Close>შენახვა და დახუ� ვა</Save_and_Close>
+		<Search>ძიება</Search>
 		<Search_Settings>ძიების პა� ამეტ� ები</Search_Settings>
+		<Search_in>ძიება</Search_in>
+		<Settings>პა� ამეტ� ები</Settings>
+		<Settings_Editor>პა� ამეტ� ების � ედაქტო� ი</Settings_Editor>
+		<Show_Help>დახმა� ება აჩვენეთ</Show_Help>
+		<Sort>სო� ტი� ება</Sort>
+		<Sort_by>დალაგება</Sort_by>
+		<Stack_Trace>დასტის კვალი</Stack_Trace>
+		<Statistics_Page>სტატისტიკა გვე� დი</Statistics_Page>
+		<Strict_Search>მკაც� ი ძიება</Strict_Search>
+		<Success>წა� მატება</Success>
+		<System>სისტემა</System>
+		<Table>მაგიდა</Table>
+		<Toggle_Debug>შეცვალეთ შეცდომა</Toggle_Debug>
+		<Toggle_Transaction_Log>გადა� იცხვა ჩანაწე� ის გადა� თვა</Toggle_Transaction_Log>
+		<Transaction_DB_Path>გა� იგების მონაცემთა ბაზის გზა</Transaction_DB_Path>
+		<UI>UI</UI>
+		<User_Requested>მომხმა� ებელი მოითხოვა</User_Requested>
+		<View>ნახვა</View>
+		<View_Function>ფუნქციის ნახვა</View_Function>
+		<Views_Read_Only>შეხედულებები კითხულობს და ა�  შეიძლება იყოს � ედაქტი� ებული</Views_Read_Only>
 	</Language>
 </root>
