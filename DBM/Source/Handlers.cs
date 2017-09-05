@@ -169,7 +169,8 @@ namespace DBM
                 string Path = LDDialogs.OpenFile("csv", null);
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
-                    Engines.Command(Engines.CurrentDatabase, Import.CSV(Path), GlobalStatic.UserName, "", false);
+                    string SQL = Import.CSV(Path);
+                    Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, "", false);
                     Events.LogMessagePopUp("CSV Import Completed", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize 
                     return;
                 }
