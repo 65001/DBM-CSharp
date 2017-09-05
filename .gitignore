@@ -20,6 +20,7 @@ LitDev.xml
 SmallBasicLibrary.xml
 app.publish/
 DBM.exe.config
+**/obj/**
 
 # User-specific files
 *.suo
