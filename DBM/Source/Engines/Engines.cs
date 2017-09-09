@@ -345,7 +345,9 @@ namespace DBM
             switch (Mode)
             {
                 case EnginesMode.SQLITE:
-                    return new List<string> {"Avg","Count","Max","Min","Sum","Total","Hex","Length","Lower","Round","Trim","Upper" };
+                    List<string> Func = new List<string> { "Avg", "Count", "Max", "Min", "Sum", "Total", "Hex", "Length", "Lower", "Round", "Trim", "Upper","SQRT","Abs" };
+                    Func.Sort();
+                    return Func;
                 default:
                     throw new NotImplementedException();
             }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SQLite;
 using System.Globalization;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -68,13 +69,14 @@ namespace DBM
                         return CurrentDatabase;
                     case EnginesMode.SQLITE:
 
-                        if (System.IO.Directory.Exists( Path.GetDirectoryName(Data["URI"])))
+                        if (Directory.Exists( Path.GetDirectoryName(Data["URI"])))
                         {
                             string Database = LDDataBase.ConnectSQLite(Data["URI"]);
                             AddToList(Data["URI"], Database, ShortName, EnginesMode.SQLITE);
                             Settings.SaveSettings();
                             CurrentDatabase = Database;
                             _DB_Hash.Add(HashCode, CurrentDatabase);
+                            GetConnection(Database).AutoBind();
                             return Database;
                         }
                         return null;

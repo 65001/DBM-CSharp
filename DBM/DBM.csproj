@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Source\DBM.cs">
     </Compile>
+    <Compile Include="Source\Engines\Bindings and Custom Functions.cs" />
     <Compile Include="Source\Engines\Emulator.cs" />
     <Compile Include="Source\Engines\Engine.Misc.cs" />
     <Compile Include="Source\GlobalSuppressions.cs" />
@@ -122,6 +123,7 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>

@@ -137,6 +137,8 @@ namespace DBM
             Settings.IniateDatabases();
             //Plugin.FindAll();
 
+            Engines.CreateBindList();
+
             Utilities.LocalizationXML(Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"));
 
             Events.LogMessage(Utilities.Localization["PRGM Start"], Utilities.Localization["Application"]);
