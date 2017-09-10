@@ -177,8 +177,8 @@ namespace DBM
                 switch (Engines.DB_Engine[Engines.DB_Name.IndexOf(Database)])
                 {
                     case EnginesMode.SQLITE:
-                        SQL.AppendLine("DROP TABLE IF EXISTS " + StatTableName + ";");
-                        SQL.AppendLine("CREATE TEMP TABLE " + StatTableName + " (Row Text,SUM INT,AVG INT,COUNT INT,\"COUNT DISTINCT\" INT,MAX INT,MIN INT,TYPE Text,Length TEXT,\"UTC DATE\" TEXT,\"UTC TIME\" TEXT);");
+                        SQL.AppendFormat("DROP TABLE IF EXISTS {0};", StatTableName);
+                        SQL.AppendFormat("CREATE TEMP TABLE {0} (Row Text,SUM INT,AVG INT,COUNT INT,\"COUNT DISTINCT\" INT,MAX INT,MIN INT,TYPE Text,Length TEXT,\"UTC DATE\" TEXT,\"UTC TIME\" TEXT);", StatTableName);
                         for (int i = 1; i <= Schema.GetItemCount(); i++)
                         {
                             string Row = "\"" + Schema[i] + "\"";
@@ -188,7 +188,6 @@ namespace DBM
                         break;
                 }
             }
-            
         }
 
         //Read Only Collections of Private Data

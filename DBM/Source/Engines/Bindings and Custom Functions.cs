@@ -57,7 +57,6 @@ namespace DBM
             AddToBindList(new CustomFunctions.cosh());
             AddToBindList(new CustomFunctions.tan());
             AddToBindList(new CustomFunctions.tanh());
-
         }
 
         public static SQLiteConnection GetConnection(string DataBase)
