@@ -13,7 +13,6 @@ namespace DBM
 
         static void Bind(this SQLiteConnection connection, SQLiteFunction function)
         {
-
             var attributes = function.GetType().GetCustomAttributes(typeof(SQLiteFunctionAttribute), true).Cast<SQLiteFunctionAttribute>().ToArray();
             if (attributes.Length == 0)
             {

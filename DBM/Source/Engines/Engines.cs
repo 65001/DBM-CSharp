@@ -39,7 +39,10 @@ namespace DBM
             }
         }
 
-		public static string GQ_CMD { get; private set; } //Auto Generated Query SQL Statements 
+        /// <summary>
+        /// Auto Generated Query SQL Statements 
+        /// </summary>
+		public static string GQ_CMD { get; private set; } 
 
 		static List<string> _DB_Path = new List<string>();
 		static List<string> _DB_Name = new List<string>();

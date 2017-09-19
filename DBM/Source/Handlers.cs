@@ -170,7 +170,7 @@ namespace DBM
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     string SQL = Import.CSV(Path);
-                    Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, "", false);
+                    Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, null, false);
                     Events.LogMessagePopUp("CSV Import Completed", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize 
                     return;
                 }
@@ -182,6 +182,7 @@ namespace DBM
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     string SQL = System.IO.File.ReadAllText(Path);
+                    Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, null, false);
                     Events.LogMessagePopUp("SQL Import Completed", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize
                     return;
                 }
