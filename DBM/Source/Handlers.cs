@@ -174,7 +174,7 @@ namespace DBM
                     Events.LogMessagePopUp("CSV Import Completed", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize 
                     return;
                 }
-                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Import.CSV");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Import.CSV");//TODO Localize
             }
             else if (Item == Utilities.Localization["SQL"])
             {
@@ -186,7 +186,7 @@ namespace DBM
                     Events.LogMessagePopUp("SQL Import Completed", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Import.SQL");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Import.SQL");//TODO Localize
             }
             //else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
             //{ }
@@ -201,7 +201,7 @@ namespace DBM
                     Events.LogMessagePopUp("XML export of " + Engines.CurrentTable + " completed!", "Export", "Success");
                     return;
                 }
-                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.XML");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.XML");//TODO Localize
             }
             else if (Item == Utilities.Localization["HTML"] + " ")
             {
@@ -213,7 +213,7 @@ namespace DBM
                     Events.LogMessagePopUp("HTML export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]);
                     return;
                 }
-                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.HTML");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.HTML");//TODO Localize
             }
             else if (Item == Utilities.Localization["SQL"] + " ")
             {
@@ -238,7 +238,7 @@ namespace DBM
                     Events.LogMessagePopUp("SQL export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.SQL");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.SQL");//TODO Localize
             }
             else if (Item == Utilities.Localization["CSV"] + " ")
             {
@@ -250,7 +250,7 @@ namespace DBM
                     Events.LogMessagePopUp("CSV export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.CSV");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.CSV");//TODO Localize
             }
             else if (Item == "JSON") //TODO Localize
             {
@@ -262,7 +262,7 @@ namespace DBM
                     Events.LogMessagePopUp("JSON export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.JSON");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.JSON");//TODO Localize
             }
             else if (Item == "MarkDown") //TODO Localize
             {
@@ -274,7 +274,7 @@ namespace DBM
                     Events.LogMessagePopUp("MarkDown export is now complete", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.MarkDown");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.MarkDown");//TODO Localize
             }
             else if (Item == "Wiki MarkUp") //TODO Localize
             {
@@ -286,7 +286,7 @@ namespace DBM
                     Events.LogMessagePopUp("Wiki Markup export is now complete", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
                     return;
                 }
-                Events.LogMessagePopUp(Utilities.Localization["Error_Generic"], Utilities.Localization["UI"], "Export.Wiki Markup");//TODO Localize
+                Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.Wiki Markup");//TODO Localize
             }
             //Settings
             else if (Item == Utilities.Localization["About"])

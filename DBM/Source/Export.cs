@@ -251,7 +251,7 @@ namespace DBM
             SB.AppendLine("|-");
             SB.Append("! ");
             //Headers
-            for (int i = 1; i < Schema.GetItemCount(); i++)
+            for (int i = 1; i <= Schema.GetItemCount(); i++)
             {
                 if (i != 1)
                 {
@@ -266,12 +266,12 @@ namespace DBM
             int DataCount = Data.GetItemCount();
             int SchemaCount = Schema.GetItemCount();
 
-            for(int i = 1; i < DataCount; i++)
+            for(int i = 1; i <= DataCount; i++)
             {
                 SB.Append("|-\n|");
-                for (int ii = 1; ii < SchemaCount; ii++)
+                for (int ii = 1; ii <= SchemaCount; ii++)
                 {
-                    if (ii < (SchemaCount - 1) )
+                    if (ii < SchemaCount)
                     {
                         SB.AppendFormat("{0} ||",Data[i][Schema[ii]]);
                     }
@@ -308,21 +308,21 @@ namespace DBM
             StringBuilder SB = new StringBuilder();
             //Create Header stuff
             SB.Append("|");
-            for(int i = 1; i < Schema.GetItemCount(); i++)
+            for(int i = 1; i <= Schema.GetItemCount(); i++)
             {
-                SB.AppendFormat("{0}|", ((string)Schema[Index[i]]).Replace("|","`|") );
+                SB.AppendFormat(" {0} |", ((string)Schema[Index[i]]).Replace("|","`|") );
             }
             SB.AppendLine();
 
             //Cell allignment
             SB.Append("|");
-            for (int i = 1; i < Schema.GetItemCount(); i++)
+            for (int i = 1; i <= Schema.GetItemCount(); i++)
             {
                 SB.Append(":---|");
             }
             SB.AppendLine();
 
-            for(int i = 1; i < Data.GetItemCount(); i++)
+            for(int i = 1; i <= Data.GetItemCount(); i++)
             {
                 SB.Append("|");
                 for (int ii = 1; ii < Schema.GetItemCount(); ii++)
