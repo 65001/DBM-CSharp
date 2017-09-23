@@ -403,10 +403,10 @@ namespace DBM
 
             HTML_Statement.Append("<div style=\"overflow-x:auto;\">\n\t\t\t");
             HTML_Statement.Append("<table>\n\t\t\t\t");
-            HTML_Statement.Append("<tr>\n\t\t\t\t\t<td id=\"Main\" colspan = \"");
+            HTML_Statement.Append("<thead>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td id=\"Main\" colspan = \"");
             HTML_Statement.Append(Schema.GetItemCount().ToString());
-            HTML_Statement.Append("\">" + Title + "</td>\n\t\t\t\t");
-            HTML_Statement.Append("</tr>\n\t\t\t\t<tr>\n");
+            HTML_Statement.Append("\">" + Title + "</td>\n\t\t\t\t\t");
+            HTML_Statement.Append("</tr>\n\t\t\t\t\t<tr>\n");
 
             //Converts Primitive Data Type to String[,].
             string[,] DataArray = ConvertData(Schema, Data);
@@ -419,10 +419,10 @@ namespace DBM
             {
                 string Temp_Schema = SchemaArray[i].Replace("_", " ");
                 Temp_Schema = Text.GetSubText(Temp_Schema, 1, 1).ToString().ToUpper() + Text.GetSubTextToEnd(Temp_Schema, 2);
-                HTML_Statement.Append("\t\t\t\t\t<th>" + Temp_Schema + "</th>\n");
+                HTML_Statement.Append("\t\t\t\t\t\t<th>" + Temp_Schema + "</th>\n");
             }
 
-            HTML_Statement.Append("\t\t\t\t</tr>\n");
+            HTML_Statement.Append("\t\t\t\t\t</tr>\n\t\t\t\t</thead>\n");
             //Convert Table Data into HTML table rows.
             for (int i = 0; i < DataCount; i++)
             {

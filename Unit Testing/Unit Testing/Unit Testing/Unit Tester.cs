@@ -48,7 +48,7 @@ namespace Unit_Testing
         public void HTML(string URI,string Query,string Title,string HTMLPath)
         {
             Load(URI, Query);
-            string HTML = Export.HTML(Data, Schema, Title, "DBM C# V1230"); //TODO
+            string HTML = Export.HTML(Data, Schema, Title, "DBM C# V1240"); //TODO
             Assert.AreEqual(HTML, System.IO.File.ReadAllText(HTMLPath));
         }
 
