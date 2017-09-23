@@ -53,7 +53,8 @@ namespace DBM
 
             Data[0] = Schema; //Sets the Schema at Indicie zero
             //Shift all indicies by one to meet implicit expectations of the Primitive[] Datatype from SmallBasic
-            for (int i = 0; i <= Data.GetItemCount() + 1; i++)
+            int DataCount = Data.GetItemCount();
+            for (int i = 0; i <= DataCount + 1; i++)
             {
                 _Data[(i + 1)] = Data[i];
             }
@@ -104,30 +105,36 @@ namespace DBM
                 throw new ArgumentNullException("Types");
             }
 
+            string[] SchemArray = ConvertSchema(Schema);
+            string[,] DataArray = ConvertData(Schema, Data);
+            int DataCount = Data.GetItemCount();
+            int SchemaCount = Schema.GetItemCount();
+
             StringBuilder SQL = new StringBuilder();
             SQL.Append("CREATE TABLE " + TableName + "(");
             //Header Stuff
-            for (int i = 1; i <= Schema.GetItemCount(); i++)
+            for (int i = 0; i < SchemArray.Length; i++)
             {
-                SQL.Append("\"" + (string)Schema[i] + "\" " + Types[Schema[i]]);
-                if (PK[Schema[i]])
+                SQL.Append("\"" + SchemArray[i] + "\" " + Types[SchemArray[i]]);
+                if (PK[SchemArray[i]])
                 {
                     SQL.Append("  PRIMARY KEY");
                 }
-                if (i < Schema.GetItemCount())
+                if (i < (SchemArray.Length - 1) )
                 {
                     SQL.Append(",");
                 }
             }
             SQL.Append(");\n");
+
             //Data Extraction
-            for (int i = 1; i <= Data.GetItemCount(); i++)
+            for (int i = 0; i < DataCount; i++)
             {
                 SQL.Append("INSERT INTO " + TableName + " VALUES ('");
-                for (int ii = 1; ii <= Data[i].GetItemCount(); ii++)
+                for (int ii = 0; ii < SchemaCount; ii++)
                 {
-                    SQL.Append(Data[i][Schema[ii]].ToString().Replace("'", "''"));
-                    if (ii < Data[i].GetItemCount())
+                    SQL.Append( DataArray[i,ii].Replace("'", "''") );
+                    if (ii < (SchemArray.Length - 1) )
                     {
                         SQL.Append("','");
                     }
@@ -178,9 +185,12 @@ namespace DBM
             switch (CurrentEngine)
             {
                 case Engines.EnginesMode.SQLITE:
-                    for (int i = 1; i <= SchemaQuery.GetItemCount(); i++)
+                    int SchemaQueryCount = SchemaQuery.GetItemCount();
+                    int SchemaCount = Schema.GetItemCount();
+
+                    for (int i = 1; i <= SchemaQueryCount; i++)
                     {
-                        for (int ii = 1; ii <= Schema.GetItemCount(); ii++)
+                        for (int ii = 1; ii <= SchemaCount; ii++)
                         {
                             if (Schema[ii] == SchemaQuery[i]["name"])
                             {
@@ -213,13 +223,18 @@ namespace DBM
             _XML.Append("<root>\n");
             _XML.AppendFormat("\t<{0}>\n", Title);
 
-            for (int i = 1; i <= Data.GetItemCount(); i++)
+            string[] SchemArray = ConvertSchema(Schema);
+            string[,] DataArray = ConvertData(Schema, Data);
+            int DataCount = Data.GetItemCount();
+            int SchemaCount = Schema.GetItemCount();
+
+            for (int i = 0; i < DataCount; i++)
             {
                 _XML.Append("\t\t<row>\n");
-                for (int ii = 1; ii <= Schema.GetItemCount(); ii++)
+                for (int ii = 0; ii < SchemaCount; ii++)
                 {
-                    string Node = ((string)Schema[ii]).Replace(" ", "_").Replace("\"", "").Replace("&","").Replace("<", "").Replace(">", "").Replace("'", "");
-                    string Item = ((string)Data[i][Schema[ii]]).Replace("&", "&amp;").Replace("<", "&lt;");
+                    string Node =  SchemArray[ii].Replace(" ", "_").Replace("\"", "").Replace("&","").Replace("<", "").Replace(">", "").Replace("'", "");
+                    string Item =  DataArray[i,ii].Replace("&", "&amp;").Replace("<", "&lt;");
                     _XML.AppendFormat("\t\t\t<{0}>{1}</{0}>\n", Node, Item);
                 }
                 _XML.Append("\t\t</row>\n");
@@ -246,38 +261,41 @@ namespace DBM
             Utilities.AddtoStackTrace("Export.MarkUp");
             Primitive Index = Schema.GetAllIndices();
 
+            int DataCount = Data.GetItemCount();
+            int SchemaCount = Schema.GetItemCount();
+            string[] SchemaArray = ConvertSchema(Schema);
+            string[,] DataArray = ConvertData(Schema, Data);
+
             StringBuilder SB = new StringBuilder();
             SB.AppendLine("{| class=\"wikitable sortable\"");
             SB.AppendLine("|-");
             SB.Append("! ");
             //Headers
-            for (int i = 1; i <= Schema.GetItemCount(); i++)
+            for (int i = 0; i < SchemaCount; i++)
             {
-                if (i != 1)
+                if (i != 0)
                 {
-                    SB.AppendFormat("!! {0}", ((string)Schema[Index[i]]));
+                    SB.AppendFormat("!! {0}", SchemaArray[i]);
                 }
                 else
                 {
-                    SB.AppendFormat("{0}", ((string)Schema[Index[i]]));
+                    SB.AppendFormat("{0}", SchemaArray[i]);
                 }
             }
             SB.AppendLine();
-            int DataCount = Data.GetItemCount();
-            int SchemaCount = Schema.GetItemCount();
 
-            for(int i = 1; i <= DataCount; i++)
+            for(int i = 0; i < DataCount; i++)
             {
                 SB.Append("|-\n|");
-                for (int ii = 1; ii <= SchemaCount; ii++)
+                for (int ii = 0; ii < SchemaCount; ii++)
                 {
-                    if (ii < SchemaCount)
+                    if (ii < (SchemaCount - 1 ) )
                     {
-                        SB.AppendFormat("{0} ||",Data[i][Schema[ii]]);
+                        SB.AppendFormat("{0} ||", DataArray[i,ii]);
                     }
                     else
                     {
-                        SB.Append((string)Data[i][Schema[ii]]);
+                        SB.Append(DataArray[i,ii]);
                     }
                 }
                 SB.AppendLine();
@@ -304,34 +322,43 @@ namespace DBM
         {
             Utilities.AddtoStackTrace("Export.MarkDown");
             Primitive Index = Schema.GetAllIndices();
+            Stopwatch MD = new Stopwatch();
+            MD.Start();
 
             StringBuilder SB = new StringBuilder();
+
+            string[] SchemaArray = ConvertSchema(Schema);
+            string[,] DataArray = ConvertData(Schema, Data);
+            int SchemaCount = Schema.GetItemCount();
+            int DataCount = Data.GetItemCount();
+
             //Create Header stuff
             SB.Append("|");
-            for(int i = 1; i <= Schema.GetItemCount(); i++)
+            for(int i = 0; i < SchemaArray.Length; i++)
             {
-                SB.AppendFormat(" {0} |", ((string)Schema[Index[i]]).Replace("|","`|") );
+                SB.AppendFormat(" {0} |", SchemaArray[i].Replace("|","`|") );
             }
             SB.AppendLine();
 
             //Cell allignment
             SB.Append("|");
-            for (int i = 1; i <= Schema.GetItemCount(); i++)
+            for (int i = 0; i < SchemaArray.Length; i++)
             {
                 SB.Append(":---|");
             }
             SB.AppendLine();
 
-            for(int i = 1; i <= Data.GetItemCount(); i++)
+            for(int i = 0; i < DataCount; i++)
             {
                 SB.Append("|");
-                for (int ii = 1; ii < Schema.GetItemCount(); ii++)
+                for (int ii = 0; ii < SchemaCount; ii++)
                 {
-                    SB.AppendFormat("{0}|", Data[i][Schema[ii]]);
+                    SB.AppendFormat("{0}|", DataArray[i,ii]);
                 }
                 SB.AppendLine();
             }
 
+            Console.WriteLine("Markdown completed in {0} ms",MD.ElapsedMilliseconds);
             return SB.ToString();
         }
 
@@ -346,6 +373,7 @@ namespace DBM
         {
             Utilities.AddtoStackTrace("Export.HTML");
             Stopwatch HTML_Timer = new Stopwatch();
+
             HTML_Timer.Start();
             if (string.IsNullOrWhiteSpace(Data) || string.IsNullOrWhiteSpace(Schema) || string.IsNullOrWhiteSpace(Title))
             {
@@ -380,38 +408,32 @@ namespace DBM
             HTML_Statement.Append("\">" + Title + "</td>\n\t\t\t\t");
             HTML_Statement.Append("</tr>\n\t\t\t\t<tr>\n");
 
-            //Converts Primitive Data Type to FastArray.
-            string FastArray = LDFastArray.Add();
-            for (int i = 1; i <= Data.GetItemCount(); i++)
-            {
-                Primitive Temp_HTML = Data[i];
-                for (int ii = 1; ii <= Schema.GetItemCount(); ii++)
-                {
-                    LDFastArray.Set2D(FastArray, i, ii, Temp_HTML[Schema[ii]]);
-                }
-            }
+            //Converts Primitive Data Type to String[,].
+            string[,] DataArray = ConvertData(Schema, Data);
+            string[] SchemaArray = ConvertSchema(Schema);
+            int DataCount = Data.GetItemCount();
+            int SchemaCount = Schema.GetItemCount();
 
             //Converts Column Names in the database to Columns in a html document
-            for (int i = 1; i <= Schema.GetItemCount(); i++)
+            for (int i = 0; i < SchemaCount; i++)
             {
-                string Temp_Schema = Schema[i].ToString().Replace("_", " ");
-                Temp_Schema = Text.ConvertToUpperCase(Text.GetSubText(Temp_Schema, 1, 1)) + Text.GetSubTextToEnd(Temp_Schema, 2);
+                string Temp_Schema = SchemaArray[i].Replace("_", " ");
+                Temp_Schema = Text.GetSubText(Temp_Schema, 1, 1).ToString().ToUpper() + Text.GetSubTextToEnd(Temp_Schema, 2);
                 HTML_Statement.Append("\t\t\t\t\t<th>" + Temp_Schema + "</th>\n");
             }
 
             HTML_Statement.Append("\t\t\t\t</tr>\n");
             //Convert Table Data into HTML table rows.
-            for (int i = 1; i <= Data.GetItemCount(); i++)
+            for (int i = 0; i < DataCount; i++)
             {
                 HTML_Statement.Append("\t\t\t\t<tr>\n");
-                for (int ii = 1; ii <= Schema.GetItemCount(); ii++)
+                for (int ii = 0; ii < SchemaCount; ii++)
                 {
-                    HTML_Statement.Append("\t\t\t\t\t<td>" + LDFastArray.Get2D(FastArray, i, ii).ToString() + "</td>\n");
+                    HTML_Statement.Append("\t\t\t\t\t<td>" + DataArray[i,ii]  + "</td>\n");
                 }
                 HTML_Statement.Append("\t\t\t\t</tr>\n");
             }
 
-            LDFastArray.Remove(FastArray);
             HTML_Statement.Append("\t\t\t</table>\n\t\t</div>\n\t</body>\n</html>");
 
             HTML_Timer.Stop();
@@ -438,25 +460,59 @@ namespace DBM
             StringBuilder _JSON = new StringBuilder();
             _JSON.Append("{\"" + Title +"\": {");
             _JSON.Append("\"Record\": [");
-            for (int i = 1; i <= Data.GetItemCount(); i++)
+
+            string[]  SchemaArray = ConvertSchema(Schema);
+            string[,] DataArray = ConvertData(Schema, Data);
+            int SchemaCount = Schema.GetItemCount();
+            int DataCount = Data.GetItemCount();
+
+            for (int i = 0; i < DataCount; i++)
             {
                 _JSON.Append("{");
-                for (int ii = 1; ii <= Schema.GetItemCount(); ii++)
+                for (int ii = 0; ii < SchemaCount; ii++)
                 {
-                    _JSON.Append("\"" + (string)Schema[ii] + "\" : \"" + ((string)Data[i][Schema[ii]]).Replace(Environment.NewLine,string.Empty) + "\"");
-                    if (ii < Schema.GetItemCount())
+                    _JSON.Append("\"" + SchemaArray[ii] + "\" : \"" +  DataArray[i,ii].Replace(Environment.NewLine,string.Empty) + "\"");
+                    if (ii < (SchemaCount - 1 ))
                     {
                         _JSON.Append(",");
                     }
                 }
                 _JSON.AppendLine("}");
-                if (i < Data.GetItemCount())
+                if (i < (DataCount - 1 ))
                 {
                     _JSON.Append(",");
                 }
             }
             _JSON.Append("]}}");
             return _JSON.ToString();
+        }
+
+        public static string[,] ConvertData(Primitive Schema, Primitive Data)
+        {
+            int DataCount = Data.GetItemCount();
+            int SchemaCount = Schema.GetItemCount();
+            string[,] DataArray = new string[DataCount, SchemaCount];
+
+            for (int i = 1; i <= DataCount; i++)
+            {
+                Primitive Temp_HTML = Data[i];
+                for (int ii = 1; ii <= SchemaCount; ii++)
+                {
+                    DataArray[i - 1, ii - 1] = Temp_HTML[Schema[ii]];
+                }
+            }
+            return DataArray;
+        }
+
+        public static string[] ConvertSchema(Primitive Schema)
+        {
+            int SchemaCount = Schema.GetItemCount();
+            string[] SchemaArray = new string[SchemaCount];
+            for (int i = 1; i <= SchemaCount; i++)
+            {
+                SchemaArray[i - 1] = Schema[i];
+            }
+            return SchemaArray;
         }
 
     }

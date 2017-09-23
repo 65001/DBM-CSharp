@@ -48,14 +48,14 @@ namespace DBM
             AddToBindList(new CustomFunctions.Sqrt() );
             AddToBindList(new CustomFunctions.e());
             AddToBindList(new CustomFunctions.PI());
-            AddToBindList(new CustomFunctions.log());
+            AddToBindList(new CustomFunctions.Log());
 
             AddToBindList(new CustomFunctions.Sin());
             AddToBindList(new CustomFunctions.Sinh());
-            AddToBindList(new CustomFunctions.cos());
-            AddToBindList(new CustomFunctions.cosh());
-            AddToBindList(new CustomFunctions.tan());
-            AddToBindList(new CustomFunctions.tanh());
+            AddToBindList(new CustomFunctions.Cos());
+            AddToBindList(new CustomFunctions.Cosh());
+            AddToBindList(new CustomFunctions.Tan());
+            AddToBindList(new CustomFunctions.Tanh());
         }
 
         public static SQLiteConnection GetConnection(string DataBase)
@@ -121,7 +121,7 @@ namespace DBM
         }
 
         [SQLiteFunction(Arguments = 1, FuncType = FunctionType.Scalar, Name = "cos")]
-        public class cos : SQLiteFunction
+        public class Cos : SQLiteFunction
         {
             public override object Invoke(object[] args)
             {
@@ -130,7 +130,7 @@ namespace DBM
         }
 
         [SQLiteFunction(Arguments = 1, FuncType = FunctionType.Scalar, Name = "cosh")]
-        public class cosh : SQLiteFunction
+        public class Cosh : SQLiteFunction
         {
             public override object Invoke(object[] args)
             {
@@ -139,7 +139,7 @@ namespace DBM
         }
 
         [SQLiteFunction(Arguments = 1, FuncType = FunctionType.Scalar, Name = "tan")]
-        public class tan : SQLiteFunction
+        public class Tan : SQLiteFunction
         {
             public override object Invoke(object[] args)
             {
@@ -148,7 +148,7 @@ namespace DBM
         }
 
         [SQLiteFunction(Arguments = 1, FuncType = FunctionType.Scalar, Name = "tanh")]
-        public class tanh : SQLiteFunction
+        public class Tanh : SQLiteFunction
         {
             public override object Invoke(object[] args)
             {
@@ -176,7 +176,7 @@ namespace DBM
         }
 
         [SQLiteFunction(Arguments = 1, FuncType = FunctionType.Scalar, Name = "log")]
-        public class log : SQLiteFunction
+        public class Log : SQLiteFunction
         {
             public override object Invoke(object[] args)
             {
