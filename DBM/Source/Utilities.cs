@@ -51,12 +51,12 @@ namespace DBM
         /// Loads localized text from XML File
         /// </summary>
         /// <param name="XMLPath"></param>
-        public static void LocalizationXML(string XMLPath)
+        public static void LocalizationXML(string XMLPath,string DataPath)
 		{
-			AddtoStackTrace( "Utilities.LocalizationXML()");
+			AddtoStackTrace("Utilities.LocalizationXML()");
            
 			string XMLDoc = LDxml.Open(XMLPath);
-			if (System.IO.File.Exists(XMLPath))
+			if (System.IO.File.Exists(XMLPath) && System.IO.File.Exists(DataPath))
 			{
                 _Localization.Clear();
 
@@ -65,11 +65,10 @@ namespace DBM
                 LDxml.LastChild();
 
                 AddLocalization();
-				while (LDxml.PreviousSibling() == "SUCCESS")
-				{
+                while (LDxml.PreviousSibling() == "SUCCESS")
+                {
                     AddLocalization();
-				}
-                string DataPath =  Path.Combine( GlobalStatic.Localization_LanguageCodes_Path , GlobalStatic.LanguageCode + ".txt");
+                }
 
                 Primitive Localization_Temp = System.IO.File.ReadAllText(DataPath);
                 string[] LocalizationFiles  = Directory.GetFiles(Path.GetDirectoryName(XMLPath));
@@ -86,7 +85,7 @@ namespace DBM
 			}
 			else
 			{
-                throw new Exception("Localization File not found!"); //DO NOT LOCALIZE
+                throw new FileNotFoundException("Localization File not found!"); //DO NOT LOCALIZE
 			}
 		}
 
@@ -150,74 +149,92 @@ namespace DBM
 			return null;
 		}
 
-		public static void Updater(bool UI = true)  //TODO Update Functionality. Possibly make this a function?
-		{
-			AddtoStackTrace( "Utilities.Updater()");
-            if (string.IsNullOrWhiteSpace(UpdaterDB) == false || LDNetwork.DownloadFile(GlobalStatic.UpdaterDBpath, GlobalStatic.OnlineDB_Refrence_Location) != -1)
+        public class Updater
+        {
+
+            public static void CheckForUpdates(string downloadlocation, string URI = GlobalStatic.OnlineDB_Refrence_Location, bool UI = true)  //TODO Update Functionality. Possibly make this a function?
+            {
+                AddtoStackTrace($"Utilities.Updater.CheckForUpdates({UI})");
+                if (string.IsNullOrWhiteSpace(UpdaterDB) == false || LDNetwork.DownloadFile(downloadlocation, URI) != -1)
+                {
+                    int LatestVersion = LatestUpdate();
+                    int.TryParse(GlobalStatic.VersionID, out int CurrentVersion);
+
+                    string[] Locations = DownloadLinks();
+                    string DownloadLocation = Locations[0];
+                    string DownloadLocation2 = Locations[1];
+
+                    if (CurrentVersion == LatestVersion && UI == true)
+                    {
+                        GraphicsWindow.ShowMessage("There are no updates available", "No Updates"); //TODO LOCALIZE
+                    }
+                    else if (CurrentVersion > LatestVersion && UI == true)
+                    {
+                        GraphicsWindow.ShowMessage("You have a more recent edition of the program than that offered to the public.\nYou have version " + CurrentVersion + " while the most recent public release is version " + LatestVersion, "No Updates");
+                    }
+                    else if (CurrentVersion < LatestVersion)
+                    {
+                        if (LDDialogs.Confirm($"Do you wish to download Version {LatestVersion }? You have Version {CurrentVersion}.", "Download Update") == "Yes") //TODO LOCALIZE
+                        {
+                            Download(DownloadLocation);
+                        }
+                    }
+
+                    GlobalStatic.Settings["LastUpdateCheck"] = DateTime.Now.ToString("yyyy-MM-dd");
+                    Settings.SaveSettings();
+                    Settings.LoadSettings(GlobalStatic.RestoreSettings);
+                }
+                else
+                {
+                    GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
+                }
+            }
+
+            public static int LatestUpdate()
             {
                 if (string.IsNullOrWhiteSpace(UpdaterDB))
                 {
                     UpdaterDB = LDDataBase.ConnectSQLite(GlobalStatic.UpdaterDBpath);
                 }
-                Primitive QueryItems = LDDataBase.Query(UpdaterDB, "SELECT * FROM updates WHERE PRODUCTID =" + "'" + GlobalStatic.ProductID + "';", null, true);
+                Primitive QueryItems = LDDataBase.Query(UpdaterDB, $"SELECT * FROM updates WHERE PRODUCTID = '{ GlobalStatic.ProductID }';", null, true);
                 int.TryParse(QueryItems[1]["VERSION"], out int LatestVersion);
-                int.TryParse(GlobalStatic.VersionID, out int CurrentVersion);
-
-                string DownloadLocation = QueryItems[1]["URL"];
-                string DownloadLocation2 = QueryItems[1]["URL2"];
-
-                if (CurrentVersion == LatestVersion && UI == true)
-                {
-                    GraphicsWindow.ShowMessage("There are no updates available", "No Updates"); //TODO LOCALIZE
-                }
-                else if (CurrentVersion > LatestVersion && UI == true)
-                {
-                    GraphicsWindow.ShowMessage("You have a more recent edition of the program than that offered to the public.\nYou have version " + CurrentVersion + " while the most recent public release is version " + LatestVersion, "No Updates");
-                }
-                else if (CurrentVersion < LatestVersion)
-                {
-                    if (LDDialogs.Confirm($"Do you wish to download Version {LatestVersion }? You have Version {CurrentVersion}.", "Download Update") == "Yes") //TODO LOCALIZE
-                    {
-                         DownloadUpdate(DownloadLocation);
-                    }
-                }
-                //IMPORTANT. Updates LastUpdateCheck
-                GlobalStatic.Settings["LastUpdateCheck"] = DateTime.Now.ToString("yyyy-MM-dd");
-                Settings.SaveSettings();
-                Settings.LoadSettings(GlobalStatic.RestoreSettings);
+                return LatestVersion;
             }
-            else
+
+            public static string[] DownloadLinks()
             {
-                GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
+                if (string.IsNullOrWhiteSpace(UpdaterDB))
+                {
+                    UpdaterDB = LDDataBase.ConnectSQLite(GlobalStatic.UpdaterDBpath);
+                }
+                Primitive QueryItems = LDDataBase.Query(UpdaterDB, $"SELECT * FROM updates WHERE PRODUCTID = '{ GlobalStatic.ProductID }';", null, true);
+                string[] Locations = new string[2];
+                Locations[0] = QueryItems[1]["URL"];
+                Locations[1] = QueryItems[1]["URL2"];
+                return Locations;
+            }
+
+            static void Download(string URL)
+            {
+                AddtoStackTrace("Utilities.DownloadUpdate(" + URL + ")");
+                string DownloadFolder = string.Empty;
+                while (string.IsNullOrWhiteSpace(DownloadFolder) || string.IsNullOrWhiteSpace(LDFile.GetExtension(DownloadFolder)))
+                {
+                    GraphicsWindow.ShowMessage("You will be prompted to select the download location.", "Download Location");
+                    DownloadFolder = LDDialogs.SaveFile("1=zip;", Program.Directory);
+                }
+                int UpdaterSize = LDNetwork.DownloadFile(DownloadFolder, URL);
+                switch (UpdaterSize)
+                {
+                    case -1:
+                        GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
+                        break;
+                    default:
+                        GraphicsWindow.ShowMessage("SUCCESS", "Update Downloaded");
+                        break;
+                }
             }
         }
-
-        static void DownloadUpdate(string DownloadLink)
-        {
-            AddtoStackTrace("Utilities.DownloadUpdate(" + DownloadLink + ")");
-            string DownloadFolder = string.Empty;
-            while (string.IsNullOrWhiteSpace( DownloadFolder ) || string.IsNullOrWhiteSpace( LDFile.GetExtension(DownloadFolder) ))
-            {
-                GraphicsWindow.ShowMessage("You will be prompted to select the download location.", "Download Location");
-                DownloadFolder = LDDialogs.SaveFile("1=zip;", Program.Directory);
-            }
-            int UpdaterSize = LDNetwork.DownloadFile(DownloadFolder, DownloadLink);
-            switch (UpdaterSize)
-            {
-                case -1:
-                    GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
-                    break;
-                default:
-                    GraphicsWindow.ShowMessage("SUCCESS", "Update Downloaded");
-                    break;
-            }
-        }
-
-
-		public static void AddControl() 
-		{ 
-		
-		}
 
 		static void AddToList(string Name, string Handler, string Action)
 		{
@@ -313,7 +330,7 @@ namespace DBM
 
         public static string SanitizeFieldName(this string String)
         {
-            return String.Replace("\"", "").Replace("[", "").Replace("]", "");
+            return String?.Replace("\"", "").Replace("[", "").Replace("]", "");
         }
     }
 }

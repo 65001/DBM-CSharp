@@ -60,9 +60,11 @@ namespace DBM
         
         static List<Type> _Type_Referer = new List<Type>();
         static List<long> _Timer = new List<long>();
+        static List<string> _Explanation = new List<string>();
+        static List<string> _User = new List<string>();
         static List<string> _Last_Query = new List<string>();
         static List<string> _Last_NonSchema_Query = new List<string>();
-
+        static List<string> _UTC_Start = new List<string>();
         public static event EventHandler OnSchemaChange;
         public static event EventHandler OnGetColumnsofTable;
 
@@ -83,6 +85,7 @@ namespace DBM
         public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
             Utilities.AddtoStackTrace("Engines.Command("+Database+")");
+            _UTC_Start.Add(DateTime.UtcNow.ToString("hh:mm:ss tt"));
             Stopwatch CommandTime = Stopwatch.StartNew();
 			if (RunParser == false)
 			{
@@ -95,7 +98,8 @@ namespace DBM
 
             _Type_Referer.Add(Type.Command);
             _Timer.Add(CommandTime.ElapsedMilliseconds);
-
+            _Explanation.Add(Explanation);
+            _User.Add(User);
             //TODO Implement Parser Stuff 
 			return 0;
 		}
@@ -104,6 +108,7 @@ namespace DBM
 		{
             Utilities.AddtoStackTrace("Engines.Query()");
 
+            _UTC_Start.Add(DateTime.UtcNow.ToString("hh:mm:ss tt"));
             Stopwatch QueryTime = Stopwatch.StartNew();
             
             if (SQL.StartsWith("."))
@@ -132,6 +137,8 @@ namespace DBM
 
             _Last_Query.Add(SQL);
             _Timer.Add(QueryTime.ElapsedMilliseconds);
+            _Explanation.Add(Explanation);
+            _User.Add(UserName);
 			return QueryResults;
 		}
 
@@ -245,7 +252,7 @@ namespace DBM
                 case EnginesMode.SQLITE:
                     _Schema.Clear();
 
-                    Primitive QSchema = Query(database, "PRAGMA table_info(" + table + ");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
+                    Primitive QSchema = Query(database, "PRAGMA table_info(\"" + table.SanitizeFieldName() + "\");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
                     for (int i = 1; i <= QSchema.GetItemCount(); i++)
                     {
                         _Schema.Add(QSchema[i]["name"]);

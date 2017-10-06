@@ -24,7 +24,7 @@ namespace DBM
                         EmulatorTable = "DBM_SQLITE_Help";
                         List<string> Arguments = new List<string>()
                         {
-                            ".help",".databases",".tables",".index",".pragma",".querytimes",".filesystem $Path",".stacktrace"
+                            ".help",".databases",".tables",".index",".pragma",".querytimes",".filesystem $Path",".stacktrace",".localizations",".functions"
                         };
                         Dictionary<string, string> Description = new Dictionary<string, string>
                         {
@@ -33,9 +33,11 @@ namespace DBM
                             { ".tables","Lists all tables and views in the current database."},
                             { ".index","Lists all the indexes in the current database."},
                             { ".pragma","Lists most pragma settings for sqlite db."},
-                            { ".querytimes","Lists all queries executed by the program and the time in miliseconds"},
+                            { ".querytimes","Lists all queries executed by the program and the time in miliseconds."},
                             { ".filesystem $Path","Lists all the folders and files in the argumented path. Defaults to MyDocuments if no argument is given." },
-                            { ".stacktrace","Lists the functions and methods and the like and the order they were called in." }
+                            { ".stacktrace","Lists the functions and methods and the like and the order they were called in." },
+                            { ".localizations","List of the key value pairs of the current languages localization"},
+                            { ".functions","List of all custom functions."}
                         };
                         Arguments.Sort();
                         Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Arguments TEXT,Description TEXT);", EmulatorTable);
@@ -103,37 +105,43 @@ namespace DBM
                     }
                     else if (SQL.StartsWith(".filesystem", Comparison))
                     {
-
-                        string _Path = SQL.Substring(".filesystem".Length);
-                        if (string.IsNullOrWhiteSpace(_Path))
+                        try
                         {
-                            _Path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                            string _Path = SQL.Substring(".filesystem".Length);
+                            if (string.IsNullOrWhiteSpace(_Path))
+                            {
+                                _Path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                            }
+                            List<string> DirectoryList = new List<string>(System.IO.Directory.EnumerateDirectories(_Path));
+                            List<string> FileList = new List<string>(System.IO.Directory.EnumerateFiles(_Path));
+
+                            EmulatorTable = "DBM_SQLITE_Filesystem";
+                            Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Name TEXT,\"Date Modified\" TEXT,TYPE TEXT,SIZE INT);", EmulatorTable);
+
+                            for (int i = 0; i < DirectoryList.Count; i++)
+                            {
+                                string Directory = DirectoryList[i];
+                                DirectoryInfo DI = new DirectoryInfo(Directory);
+                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','File Folder',NULL);", EmulatorTable, Directory, DI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"));
+                            }
+
+                            for (int i = 0; i < FileList.Count; i++)
+                            {
+                                string File = FileList[i];
+                                FileInfo FI = new FileInfo(File);
+
+                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','{3}','{4}');", EmulatorTable, File, FI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"), FI.Extension, FI.Length);
+                            }
                         }
-                        List<string> DirectoryList = new List<string>(System.IO.Directory.EnumerateDirectories(_Path));
-                        List<string> FileList = new List<string>(System.IO.Directory.EnumerateFiles(_Path));
-
-                        EmulatorTable = "DBM_SQLITE_Filesystem";
-                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Name TEXT,\"Date Modified\" TEXT,TYPE TEXT,SIZE INT);", EmulatorTable);
-
-                        for (int i = 0; i < DirectoryList.Count; i++)
+                        catch(Exception ex)
                         {
-                            string Directory = DirectoryList[i];
-                            DirectoryInfo DI = new DirectoryInfo(Directory);
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','File Folder',NULL);", EmulatorTable, Directory, DI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"));
-                        }
-
-                        for (int i = 0; i < FileList.Count; i++)
-                        {
-                            string File = FileList[i];
-                            FileInfo FI = new FileInfo(File);
-
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','{3}','{4}');", EmulatorTable, File, FI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"), FI.Extension, FI.Length);
+                            Events.LogMessage(ex.Message, Utilities.Localization["System"]);
                         }
                     }
                     else if (SQL.StartsWith(".querytimes", Comparison))
                     {
                         EmulatorTable = "DBM_SQLITE_QueryTimes";
-                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,SQL TEXT,\"Execution Time (ms)\" INTEGER);", EmulatorTable);
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,SQL TEXT,\"Execution Time (ms)\" INTEGER,Explanation TEXT,User TEXT,\"Start Time (UTC)\" TEXT);", EmulatorTable);
 
                         int ii = 0;
                         LastQuery.Print();
@@ -141,7 +149,7 @@ namespace DBM
                         {
                             if (_Type_Referer[i] == Type.Query)
                             {
-                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}');", EmulatorTable, ii, LastQuery[ii].Replace("'", "''"), _Timer[i]);
+                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}','{4}','{5}','{6}');", EmulatorTable, ii, LastQuery[ii].Replace("'", "''"), _Timer[i],_Explanation[i],_User[i],_UTC_Start[i]);
                                 ii++;
                             }
                             else
@@ -153,10 +161,47 @@ namespace DBM
                     else if (SQL.StartsWith(".stacktrace", Comparison))
                     {
                         EmulatorTable = "DBM_SQLITE_StackTrace";
-                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,Item TEXT,\"Start Time (UTC)\" TEXT);",EmulatorTable);
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,Item TEXT,\"Start Time (UTC)\" TEXT);", EmulatorTable);
                         for (int i = 0; i < Utilities.StackTrace.Count; i++)
                         {
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}');", EmulatorTable, i, Utilities.StackTrace[i],Utilities.StackIniationTime[i]);
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}');", EmulatorTable, i, Utilities.StackTrace[i], Utilities.StackIniationTime[i]);
+                        }
+                    }
+                    else if (SQL.StartsWith(".localization", Comparison))
+                    {
+                        EmulatorTable = "DBM_SQLITE_Localizations";
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,KEY TEXT,VALUE TEXT);", EmulatorTable);
+                        foreach (KeyValuePair<string, string> entry in Utilities.Localization)
+                        {
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} (Key,Value) VALUES('{1}','{2}');", EmulatorTable, entry.Key, entry.Value);
+                        }
+                    }
+                    else if (SQL.StartsWith(".function", Comparison))
+                    {
+                        EmulatorTable = "DBM_Sqlite_Functions";
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,Function TEXT,Description TEXT);", EmulatorTable);
+                        Dictionary<string, string> Functions = new Dictionary<string, string>()
+                        {
+                            {"REGEXP(input,pattern)","Pattern matching" },
+                            {"POWER(b,x)","b^x" },
+                            {"Sqrt(x)","x^(1/2)" },
+                            {"Sin(x)","" },
+                            {"Sinh(x)","" },
+                            {"Cos(x)","" },
+                            {"Cosh(x)","" },
+                            {"Tan(x)","" },
+                            {"Tanh(x)","" },
+                            {"e()","" },
+                            {"pi()","" },
+                            {"log(x)","" },
+                            {"encrypt(text,password)","Encrypts the text given the password using AES encryption." },
+                            {"decrypt(text,password)","Decrypts the text given the password using AES encryption." },
+                            {"hash(text)","Hashes an item using SHA512." },
+                        };
+
+                        foreach (KeyValuePair<string, string> entry in Functions)
+                        {
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} (Function,Description) VALUES('{1}','{2}');", EmulatorTable, entry.Key, entry.Value);
                         }
                     }
                     break;
@@ -167,8 +212,8 @@ namespace DBM
             if (EmulatorTable != null)
             {
                 string _SQL = Emulator_Sql.ToString();
-                Command(Database, "DROP TABLE IF EXISTS " + EmulatorTable + ";" + _SQL, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
-                Query(Database, "SELECT * FROM " + EmulatorTable + ";", Listview, false, Username, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
+                Command(Database,$"DROP TABLE IF EXISTS {EmulatorTable};" + _SQL, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
+                Query(Database, $"SELECT * FROM {EmulatorTable};", Listview, false, Username, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
 
                 Engines.GetSchema(Database);
                 Engines.SetDefaultTable(EmulatorTable);

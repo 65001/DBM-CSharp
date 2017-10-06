@@ -49,6 +49,7 @@ namespace DBM
 
         public static void CSV(Primitive Data, Primitive Schema, string FilePath, string deliminator)
         {
+            Utilities.AddtoStackTrace("Export.CSV");
             Primitive _Data = null;
 
             Data[0] = Schema; //Sets the Schema at Indicie zero
@@ -68,6 +69,7 @@ namespace DBM
 
         public static void SQL(Primitive Data, Primitive Schema, Dictionary<string, bool> PK, Dictionary<string, string> Types, string TableName, string FilePath)
         {
+            Utilities.AddtoStackTrace("Export.SQL");
             Stopwatch SQL_Time = new Stopwatch();
             SQL_Time.Start();
             string _SQL = SQL(Data, Schema, PK, Types, Engines.CurrentTable);
@@ -273,7 +275,7 @@ namespace DBM
             //Headers
             for (int i = 0; i < SchemaCount; i++)
             {
-                if (i != 0)
+                if (i > 0)
                 {
                     SB.AppendFormat("!! {0}", SchemaArray[i]);
                 }
@@ -438,7 +440,11 @@ namespace DBM
 
             HTML_Timer.Stop();
             Console.WriteLine("Export.HTML Run time {0} ms", HTML_Timer.ElapsedMilliseconds);
-            return HTML_Statement.ToString();
+            return System.Text.RegularExpressions.Regex.Replace(HTML_Statement.ToString(),
+                @"((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)",
+                "<a target='_blank' href='$1'>$1</a>")
+                ;
+            
         }
 
         public static void JSON(Primitive Data, Primitive Schema, string Title, string Path)
@@ -489,6 +495,7 @@ namespace DBM
 
         public static string[,] ConvertData(Primitive Schema, Primitive Data)
         {
+            Utilities.AddtoStackTrace("Export.ConvertData()");
             int DataCount = Data.GetItemCount();
             int SchemaCount = Schema.GetItemCount();
             string[,] DataArray = new string[DataCount, SchemaCount];
@@ -506,6 +513,7 @@ namespace DBM
 
         public static string[] ConvertSchema(Primitive Schema)
         {
+            Utilities.AddtoStackTrace("Export.ConvertSchema()");
             int SchemaCount = Schema.GetItemCount();
             string[] SchemaArray = new string[SchemaCount];
             for (int i = 1; i <= SchemaCount; i++)

@@ -313,7 +313,7 @@ namespace DBM
             }
             else if (Item == Utilities.Localization["Check for Updates"])
             {
-                Utilities.Updater();
+                Utilities.Updater.CheckForUpdates(GlobalStatic.UpdaterDBpath);
             }
             else if (Item != null)
             {

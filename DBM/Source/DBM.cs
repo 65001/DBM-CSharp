@@ -139,7 +139,10 @@ namespace DBM
 
             Engines.CreateBindList();
 
-            Utilities.LocalizationXML(Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"));
+            Utilities.LocalizationXML(
+                Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"), 
+                Path.Combine(GlobalStatic.Localization_LanguageCodes_Path, GlobalStatic.LanguageCode + ".txt")
+                );
 
             Events.LogMessage(Utilities.Localization["PRGM Start"], Utilities.Localization["Application"]);
             
@@ -157,7 +160,7 @@ namespace DBM
                 EULA.UI(GlobalStatic.EULA_Text_File, 0, GlobalStatic.Title, GlobalStatic.Copyright,GlobalStatic.ProductID);
             }
             StartUpStopWatch.Stop();
-            Events.LogMessage("Startup Time : " + StartUpStopWatch.ElapsedMilliseconds + " (ms)", Utilities.Localization["UI"]);
+            Events.LogMessage($"Startup Time : {StartUpStopWatch.ElapsedMilliseconds} (ms)", Utilities.Localization["UI"]);
         }
 
         public static void StartupGUI()
@@ -172,7 +175,7 @@ namespace DBM
             if (GlobalStatic.AutoUpdate == true && GlobalStatic.LastUpdateCheck + 14 <= GlobalStatic.ISO_Today)
             {
                 Events.LogMessage("Autoupdate Check", "Updater");
-                Utilities.Updater(false);
+                Utilities.Updater.CheckForUpdates(GlobalStatic.UpdaterDBpath,GlobalStatic.OnlineDB_Refrence_Location,false);
             }
         }
 
@@ -229,14 +232,6 @@ namespace DBM
             MenuList["-"] = Utilities.Localization["Settings"];
 
             //IconList[Utilities.Localization["Settings Editor"]] = LDImage.LoadSVG( GlobalStatic.AssetPath + "\\Images\\settings.svg");
-
-            //Plugin Section
-            /*
-			GlobalStatic.MenuList["SB Backup Script"] = Utilities.Localization["Plugin"];
-			GlobalStatic.MenuList["Scan"] = "SB Backup Script";
-			GlobalStatic.MenuList["View"] = "SB Backup Script";
-			GlobalStatic.MenuList["ICF"] = Utilities.Localization["Plugin"];
-            */
         }
 
         public static void MainMenu()
@@ -247,7 +242,7 @@ namespace DBM
 
             LDGraphicsWindow.State = 2;
             GraphicsWindow.Title = GlobalStatic.Title + " ";
-            Primitive Sorts = "1=" + Utilities.Localization["Table"] + ";2=" + Utilities.Localization["View"] + ";3=" + Utilities.Localization["Index"] + ";4=" + Utilities.Localization["Master Table"] + ";";
+            Primitive Sorts = $"1={Utilities.Localization["Table"]};2={Utilities.Localization["View"]};3={Utilities.Localization["Index"]};4={Utilities.Localization["Master Table"]};";
             if (Engines.CurrentDatabase != null && Engines.CurrentDatabase != null)
             {
                 Engines.GetSchema(Engines.CurrentDatabase);
@@ -552,7 +547,12 @@ namespace DBM
                 GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
                 Settings.SaveSettings();
                 Settings.LoadSettings(GlobalStatic.RestoreSettings);
-                Utilities.LocalizationXML(Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"));
+
+                Utilities.LocalizationXML(
+                    Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"),
+                    Path.Combine(GlobalStatic.Localization_LanguageCodes_Path, GlobalStatic.LanguageCode + ".txt")
+                    );
+
                 SettingsUIButton(_Buttons["Settings Close"]);
                 return;
             }
@@ -742,6 +742,10 @@ namespace DBM
             else if(Message.Contains("LDDataBase.Query") == true || Message.Contains("LDDataBase.Command") == true)
             {
                 Console.WriteLine("Event silent Logger: {0}:{1}",Engines.CurrentDatabase, Message);
+                if (Message.Contains("logic error"))
+                {
+                    Type = "SQL Error";
+                }
                 //return;
             }
 

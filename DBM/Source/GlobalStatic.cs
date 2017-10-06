@@ -8,7 +8,7 @@ namespace DBM
 {
 		public static class GlobalStatic //List of Variables shared across everything through this class
 		{
-			public static readonly string ProgramDirectory = Program.Directory;
+			public static readonly string Directory = Program.Directory;
 			public static readonly string UserName =  Environment.UserName;
 			public static bool  EulaTest, LoadedFile;
 
@@ -31,10 +31,10 @@ namespace DBM
 			public static int DefaultFontSize;
         
 			//URI
-			public static string AssetPath = Path.Combine( ProgramDirectory , "Assets");
-			public static string LocalizationFolder = Path.Combine( ProgramDirectory , "Localization");
+			public static string AssetPath = Path.Combine( Directory , "Assets");
+			public static string LocalizationFolder = Path.Combine( Directory , "Localization");
 			public static string Localization_LanguageCodes_Path = Path.Combine(LocalizationFolder, "Lang");
-			public static string PluginPath = Path.Combine( ProgramDirectory ,"Plugin");
+			public static string PluginPath = Path.Combine( Directory ,"Plugin");
 			public static string LogDBpath = Path.Combine(AssetPath , "Log.db");
             public static string UpdaterDBpath = Path.Combine(AssetPath, "Updater.db");
 			public static string TransactionDBPath = Path.Combine(AssetPath , "Transactions.db");

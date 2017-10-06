@@ -43,9 +43,9 @@ namespace DBM
 
         public static void CreateBindList()
         {
-            AddToBindList(new CustomFunctions.RegEx() );
-            AddToBindList(new CustomFunctions.Power() );
-            AddToBindList(new CustomFunctions.Sqrt() );
+            AddToBindList(new CustomFunctions.RegEx());
+            AddToBindList(new CustomFunctions.Power());
+            AddToBindList(new CustomFunctions.Sqrt());
             AddToBindList(new CustomFunctions.e());
             AddToBindList(new CustomFunctions.PI());
             AddToBindList(new CustomFunctions.Log());
@@ -56,6 +56,9 @@ namespace DBM
             AddToBindList(new CustomFunctions.Cosh());
             AddToBindList(new CustomFunctions.Tan());
             AddToBindList(new CustomFunctions.Tanh());
+            AddToBindList(new CustomFunctions.Encrypt());
+            AddToBindList(new CustomFunctions.Decrypt());
+            AddToBindList(new CustomFunctions.Hash());
         }
 
         public static SQLiteConnection GetConnection(string DataBase)
@@ -181,6 +184,33 @@ namespace DBM
             public override object Invoke(object[] args)
             {
                 return Math.Log10(Double.Parse( args[0].ToString() ));
+            }
+        }
+
+        [SQLiteFunction(Arguments = 2, FuncType = FunctionType.Scalar, Name = "encrypt")]
+        public class Encrypt : SQLiteFunction
+        {
+            public override object Invoke(object[] args)
+            {
+                return LDEncryption.AESEncrypt(args[0].ToString(),args[1].ToString());
+            }
+        }
+
+        [SQLiteFunction(Arguments = 2, FuncType = FunctionType.Scalar, Name = "decrypt")]
+        public class Decrypt : SQLiteFunction
+        {
+            public override object Invoke(object[] args)
+            {
+                return LDEncryption.AESDecrypt(args[0].ToString(),args[1].ToString());
+            }
+        }
+
+        [SQLiteFunction(Arguments = 1, FuncType = FunctionType.Scalar, Name = "hash")]
+        public class Hash : SQLiteFunction
+        {
+            public override object Invoke(object[] args)
+            {
+                return LDEncryption.SHA512Hash(args[0].ToString() );
             }
         }
 

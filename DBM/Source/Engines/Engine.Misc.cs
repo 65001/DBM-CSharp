@@ -33,7 +33,7 @@ namespace DBM
                 switch (Mode)
                 {
                     case EnginesMode.SQLITE:
-                        return DB(Mode, Data, Path.GetFileNameWithoutExtension( Data["URI"]));
+                        return DB(Mode, Data, Path.GetFileNameWithoutExtension(Data["URI"]));
                     default:
                         throw new NotImplementedException();
                 }
@@ -42,7 +42,7 @@ namespace DBM
             public static string DB(EnginesMode Mode, Dictionary<string, string> Data, string ShortName)
             {
                 //MAKE SURE The CurrentMode is always currently changed.
-                Utilities.AddtoStackTrace("Engines.Load.DB("+Mode+","+ShortName+")");
+                Utilities.AddtoStackTrace("Engines.Load.DB(" + Mode + "," + ShortName + ")");
                 string HashCode = Data.ToPrimitiveArray();
                 //If DB is already in the list...
                 if (_DB_Hash.ContainsKey(HashCode))
@@ -69,7 +69,7 @@ namespace DBM
                         return CurrentDatabase;
                     case EnginesMode.SQLITE:
 
-                        if (Directory.Exists( Path.GetDirectoryName(Data["URI"])))
+                        if (Directory.Exists(Path.GetDirectoryName(Data["URI"])))
                         {
                             string Database = LDDataBase.ConnectSQLite(Data["URI"]);
                             AddToList(Data["URI"], Database, ShortName, EnginesMode.SQLITE);
@@ -172,7 +172,7 @@ namespace DBM
         {
             public static void CreateStatisticsTable(string Database, string Table, string StatTableName, Primitive Schema)
             {
-                Utilities.AddtoStackTrace("Engines.Transform.CreateStatisticsPage("+Database+","+Table+","+StatTableName+")");
+                Utilities.AddtoStackTrace("Engines.Transform.CreateStatisticsPage(" + Database + "," + Table + "," + StatTableName + ")");
                 StringBuilder SQL = new StringBuilder();
                 switch (Engines.DB_Engine[Engines.DB_Name.IndexOf(Database)])
                 {
@@ -244,6 +244,16 @@ namespace DBM
         public static IReadOnlyList<string> LastNonSchemaQuery
         {
             get { return _Last_NonSchema_Query.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<string> Explanations
+        {
+            get { return _Explanation.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<string> User
+        {
+            get { return _User.AsReadOnly(); }
         }
     }
 }
