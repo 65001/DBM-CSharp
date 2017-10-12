@@ -27,3 +27,4 @@ DBM.exe.config
 *.user
 *.userosscache
 *.sln.docstates
+DBM/bin/Release/Assets/setting.xml

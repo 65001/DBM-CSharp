@@ -2,142 +2,286 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
-using System.Globalization;
-using System.Collections.Generic;
 using Microsoft.SmallBasic.Library;
 using LitDev;
+using System.Text;
 using System.IO;
 
 namespace DBM
 {
-	[SmallBasicType]
-	public static class Settings
-	{
-        static List<string> NullSettings = new List<string>()
+    public static class Settings
+    {
+        public static void LoadSettings(bool RestoreSettings, string SettingsPath)
         {
-            "Listview_Width","Listview_Height","VersionID","Extensions","Language","Transaction_Query","Transaction_Commands","Deliminator","TimeOut","LastFolder"
-            ,"OS_Dir","Asset_Dir","Log_DB_Path","Transaction_DB","Font_Size","LastUpdateCheck","AutoUpdate"
-        };
-
-		public static void LoadSettings(bool RestoreSettings)
-		{
-            Utilities.AddtoStackTrace("Settings.LoadSettings(" + RestoreSettings+ ")");
-            if (RestoreSettings == false && System.IO.File.Exists(GlobalStatic.SettingsPath))
-			{
-				GlobalStatic.Settings = System.IO.File.ReadAllText(GlobalStatic.SettingsPath);
-			}
-            SettingsToFields();
-
-            Dictionary<string, Primitive> Defaults = new Dictionary<string, Primitive>
+            Utilities.AddtoStackTrace($"Settings.LoadSettings({RestoreSettings},{SettingsPath})");
+            if (string.IsNullOrWhiteSpace(SettingsPath))
             {
-                { "Listview_Width", Desktop.Width - 400 },
-                { "Listview_Height", Desktop.Height - 150 },
-                { "VersionID", GlobalStatic.VersionID },
-                { "Extensions", "1=db;2=sqlite;3=sqlite3;4=db3;5=*;" },
-                { "Language", "en" },
-                { "Transaction_Query", false },
-                { "Transaction_Commands", false },
-                { "Deliminator", "," },
-                { "TimeOut", 10000 },
-                { "LastFolder", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) },
-                { "OS_Dir", Environment.SystemDirectory },
-                { "Asset_Dir", Program.Directory + "\\Assets\\" },
-                { "Log_DB_Path", Program.Directory + "\\Assets\\Log.db" },
-                { "Transaction_DB", Program.Directory + "\\Assets\\Transactions.db" },
-                { "Font_Size", 12 },
-                { "LastUpdateCheck",DateTime.Now.AddDays(-14).ToString("yyyy-MM-dd") },
-                { "AutoUpdate",true }
-            };
-            //Attempts to convert your language automatically if needed.
-            //Untested
-            if (string.IsNullOrWhiteSpace(GlobalStatic.Settings["Language"]))
+                throw new ArgumentNullException("The Settings Path was not found");
+            }
+
+            string XMLPath = SettingsPath.Replace(".txt", ".xml");
+
+            if (RestoreSettings == false && (System.IO.File.Exists(SettingsPath) || System.IO.File.Exists(XMLPath)) )
             {
-                CultureInfo CI = CultureInfo.CurrentUICulture;
-                for (int i = 0; i < Utilities.ISO_LangCode.Count; i++)
+                if (Path.GetExtension(SettingsPath) == ".txt") //Auto Converts Text file to an XML Settings file
                 {
-                    if (Utilities.ISO_LangCode[i] != Defaults["Language"] && CI.TwoLetterISOLanguageName == Utilities.ISO_LangCode[i])
+                    if (System.IO.File.Exists(XMLPath) == false)
                     {
-                        if (LitDev.LDDialogs.Confirm("Do you wish to change your language from en to " + CI.TwoLetterISOLanguageName, "") == "Yes")
-                        {
-                            Defaults["Language"] = CI.TwoLetterISOLanguageName;
-                        }
+                        ConverttoXML(System.IO.File.ReadAllText(SettingsPath), XMLPath);
                     }
                 }
             }
 
-            Primitive Settings_Directories = "10=1;11=1;12=1;";
-            Primitive Setting_Files = "13=1;14=1;";
-
-            if(NullSettings.Count != Defaults.Count) { throw new ApplicationException("Disparity between NullSettings Values and Default Values. Could indicate Settings Corruption."); }
-
-			for (int i = 1; i <= NullSettings.Count; i++) //Sets Default Settings for files if they do not yet exist!!
-			{
-                string Key = NullSettings[i - 1];
-                string Value = GlobalStatic.Settings[Key];
-
-                if (ReplaceWithDefault(Value, Setting_Files[i], Settings_Directories[i]))
-                {
-                    GlobalStatic.Settings[Key] = Defaults[Key];
-                    GlobalStatic.RestoreSettings = true; RestoreSettings = true;
-                }
-			}
-
-            if (RestoreSettings)
-			{
-                SettingsToFields();
-			}
-			SaveSettings();
-		}
-
-        static bool ReplaceWithDefault(string Value, int isFile, int isDirectory)
-        {
-            if (string.IsNullOrWhiteSpace(Value)) return true;
-            if (isFile == 1 && System.IO.File.Exists(Value) == false) return true;
-            else if (isDirectory == 1 && Directory.Exists(Value) == false) return true;
-            return false;
+            //Reads Setttings from XML 
+            GlobalStatic.Settings = XML(XMLPath);
+            SettingsToFields(); //Bind Settings.
+            Defaults();
+            SettingsToFields(); //Binds Settings in the event a default has been set.
+            SaveSettings(); //Save Settings in the event a value has been changed.
         }
 
+        static void Defaults()
+        {
+            GlobalStatic.Settings["VersionID"] = GlobalStatic.VersionID;
+
+            if (GlobalStatic.Listview_Width == 0)
+            {
+                Primitive Temp = GlobalStatic.Settings["listview"];
+                Temp["width"] = Desktop.Width - 400;
+                GlobalStatic.Settings["listview"] = Temp;
+            }
+
+            if (GlobalStatic.Listview_Height == 0)
+            {
+                Primitive Temp = GlobalStatic.Settings["listview"];
+                Temp["height"] = Desktop.Height - 150;
+                GlobalStatic.Settings["listview"] = Temp;
+            }
+
+            if (GlobalStatic.DefaultFontSize == 0)
+            {
+                GlobalStatic.Settings["fontsize"] = 12;
+            }
+
+            if (string.IsNullOrWhiteSpace(GlobalStatic.LanguageCode))
+            {
+                GlobalStatic.Settings["language"] = "en";
+            }
+
+            if (string.IsNullOrWhiteSpace(GlobalStatic.Deliminator))
+            {
+                GlobalStatic.Settings["Deliminator"] = ",";
+            }
+
+            //Directories
+            //Checks to see if directories are accessible or valid by the local computer
+            if (Directory.Exists(GlobalStatic.Settings["Paths"]["OS"]) == false)
+            {
+                Primitive Temp = GlobalStatic.Settings["Paths"];
+                Temp["OS"] = Environment.SystemDirectory;
+                GlobalStatic.Settings["Paths"] = Temp;
+            }
+            if (Directory.Exists(GlobalStatic.Settings["Paths"]["LastFolder"]) == false)
+            {
+                Primitive Temp = GlobalStatic.Settings["Paths"];
+                Temp["LastFolder"] = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                GlobalStatic.Settings["Paths"] = Temp;
+            }
+            if (Directory.Exists(GlobalStatic.Settings["Paths"]["Assets"]) == false)
+            {
+                Primitive Temp = GlobalStatic.Settings["Paths"];
+                Temp["Assets"] = Program.Directory+"\\Assets\\";
+                GlobalStatic.Settings["Paths"] = Temp;
+            }
+
+            //Files. Tests to see if files can be accessed by the local computer.
+            if (System.IO.File.Exists(GlobalStatic.Settings["Paths"]["Log"]) == false)
+            {
+                Primitive Temp = GlobalStatic.Settings["Paths"];
+                Temp["Log"] = Program.Directory + "\\Assets\\Log.db";
+                GlobalStatic.Settings["Paths"] = Temp;
+            }
+
+            if (System.IO.File.Exists(GlobalStatic.Settings["Paths"]["Transaction"]) == false)
+            {
+                Primitive Temp = GlobalStatic.Settings["Paths"];
+                Temp["Transaction"] = Program.Directory + "\\Assets\\Transactions.db";
+                GlobalStatic.Settings["Paths"] = Temp;
+            }
+
+            if (string.IsNullOrWhiteSpace(GlobalStatic.Settings["Extensions"]))
+            {
+                GlobalStatic.Settings["Extensions"] = "1=db;2=sqlite;3=sqlite3;4=db3;5=*;";
+            }
+
+            if (string.IsNullOrWhiteSpace(GlobalStatic.Settings["Updates"]["AutoUpdate"]))
+            {
+                Primitive Temp = GlobalStatic.Settings["Updates"];
+                Temp["AutoUpdate"] = true;
+                GlobalStatic.Settings["Updates"] = Temp;
+            }
+
+            if (string.IsNullOrWhiteSpace(GlobalStatic.Settings["Updates"]["LastCheck"]))
+            {
+                Primitive Temp = GlobalStatic.Settings["Updates"];
+                Temp["LastCheck"] = DateTime.Now.AddDays(-14).ToString("yyyy-MM-dd");
+                GlobalStatic.Settings["Updates"] = Temp;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(GlobalStatic.Settings["EULA"]["Signed"]))
+            {
+                Primitive Temp = GlobalStatic.Settings["EULA"];
+                Temp["Signed"] = false;
+                GlobalStatic.Settings["EULA"] = Temp;
+            }
+        }
+
+        /// <summary>
+        /// Binds Primitive GlobalStatic.Settings to GlobalStatic.SettingKey. 
+        /// </summary>
         static void SettingsToFields()
         {
-            GlobalStatic.Listview_Width = GlobalStatic.Settings["Listview_Width"];
-            GlobalStatic.Listview_Height = GlobalStatic.Settings["Listview_Height"];
-            GlobalStatic.LastFolder = GlobalStatic.Settings["LastFolder"];
-            GlobalStatic.Extensions = GlobalStatic.Settings["Extensions"];
-            GlobalStatic.Deliminator = GlobalStatic.Settings["Deliminator"];
-            GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
+            //Listview
+            GlobalStatic.Listview_Width = (int?)GlobalStatic.Settings["listview"]["Width"] ?? GlobalStatic.Settings["Listview_Width"];
+            GlobalStatic.Listview_Height = (int?)GlobalStatic.Settings["listview"]["Height"] ?? GlobalStatic.Settings["Listview_Height"];
 
-            GlobalStatic.EULA_Acceptance = GlobalStatic.Settings["EULA"];
-            GlobalStatic.EULA_UserName = GlobalStatic.Settings["EULA_By"];
+            //Paths
+            GlobalStatic.LastFolder = (string)GlobalStatic.Settings["Paths"]["LastFolder"] ?? (string)GlobalStatic.Settings["LastFolder"];
+            GlobalStatic.AssetPath = (string)GlobalStatic.Settings["Paths"]["Assets"] ?? (string)GlobalStatic.Settings["Asset_Dir"];
+            GlobalStatic.LogDBpath = (string)GlobalStatic.Settings["Paths"]["Log"]  ?? (string)GlobalStatic.Settings["Log_DB_Path"];
+            GlobalStatic.TransactionDBPath = (string)GlobalStatic.Settings["Paths"]["Transaction"]  ?? (string)GlobalStatic.Settings["Transaction_DB"];
+            //Transactions
+            GlobalStatic.Transaction_Query = (bool?)GlobalStatic.Settings["Transactions"]["Query"]  ?? GlobalStatic.Settings["Transaction_Query"];
+            GlobalStatic.Transaction_Commands = (bool?)GlobalStatic.Settings["Transactions"]["Commands"]  ?? GlobalStatic.Settings["Transaction_Commands"];
+            //Updates
+            GlobalStatic.AutoUpdate = (bool?)GlobalStatic.Settings["Updates"]["AutoUpdate"]  ?? GlobalStatic.Settings["AutoUpdate"];
+            string LastUpdate = (string)GlobalStatic.Settings["Updates"]["LastCheck"]  ?? (string)GlobalStatic.Settings["LastUpdateCheck"] ?? DateTime.Now.AddDays(-14).ToString("yyyy-MM-dd");
 
-            GlobalStatic.AssetPath = GlobalStatic.Settings["Asset_Dir"];
-            GlobalStatic.LogDBpath = GlobalStatic.Settings["Log_DB_Path"];
-            GlobalStatic.TransactionDBPath = GlobalStatic.Settings["Transaction_DB"];
-            GlobalStatic.Transaction_Query = GlobalStatic.Settings["Transaction_Query"];
-            GlobalStatic.Transaction_Commands = GlobalStatic.Settings["Transaction_Commands"];
-            GlobalStatic.DefaultFontSize = GlobalStatic.Settings["Font_Size"];
-            GlobalStatic.AutoUpdate = GlobalStatic.Settings["AutoUpdate"];
-            int.TryParse(GlobalStatic.Settings["LastUpdateCheck"].ToString().Replace("-", ""), out int LastAutoUpdate);
-            GlobalStatic.LastUpdateCheck = LastAutoUpdate;
+            int.TryParse(LastUpdate.ToString().Replace("-", "") , out int LastAutoUpdate);
             int.TryParse(DateTime.Now.ToString("yyyyMMdd"), out int Today);
+
             GlobalStatic.ISO_Today = Today;
+            GlobalStatic.LastUpdateCheck = LastAutoUpdate;
+
+            GlobalStatic.Extensions = (string)GlobalStatic.Settings["Extensions"] ?? "1=db;2=sqlite;3=sqlite3;4=db3;5=*;";
+            GlobalStatic.Deliminator = (string)GlobalStatic.Settings["Deliminator"] ?? ",";
+            GlobalStatic.LanguageCode = ((string)GlobalStatic.Settings["language"] ?? GlobalStatic.Settings["Language"]);
+            GlobalStatic.DefaultFontSize = (int?)GlobalStatic.Settings["fontsize"] ?? GlobalStatic.Settings["Font_Size"];
+
+            GlobalStatic.EULA_Acceptance = (bool?)GlobalStatic.Settings["EULA"]["Signed"] ?? (bool?)GlobalStatic.Settings["EULA"] ?? false;
+            GlobalStatic.EULA_UserName = (string)GlobalStatic.Settings["EULA"]["Signer"] ?? (string)GlobalStatic.Settings["EULA_By"] ?? null;
         }
 
+        //TODO setup For XML
 		public static void SaveSettings()
 		{
             Utilities.AddtoStackTrace("Settings.SaveSettings()");
-			if (System.IO.File.Exists(GlobalStatic.SettingsPath) == false ||  GlobalStatic.Settings.EqualTo(System.IO.File.ReadAllText(GlobalStatic.SettingsPath)) == false)
-			{
-                try
-                {
-                    System.IO.File.WriteAllText(GlobalStatic.SettingsPath, GlobalStatic.Settings);
-                }
-                catch (Exception) //Settings could not be saved for some reason!
-                {
-                    Events.LogMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["UI"]);
-                    GraphicsWindow.ShowMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["Error"]);
-                }
-			}
+            try
+            {
+                ConverttoXML(GlobalStatic.Settings, GlobalStatic.SettingsPath.Replace(".txt", ".xml"));
+            }
+            catch (Exception) //Settings could not be saved for some reason!
+            {
+                Events.LogMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["UI"]);
+            }
 		}
+
+        /// <summary>
+        /// Converts a text settings file to an XML settings file.
+        /// </summary>
+        static void ConverttoXML(Primitive Settings, string URI)
+        { 
+            try
+            {
+                System.IO.File.WriteAllText(URI, ConverttoXML(Settings) );
+            }
+            catch (Exception)
+            {
+                GraphicsWindow.ShowMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["Error"]);
+            }
+        }
+
+        /// <summary>
+        /// Converts a text settings file to XML  .
+        /// </summary>
+        static string ConverttoXML(Primitive Settings)
+        {
+            StringBuilder SB = new StringBuilder();
+            SB.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+            SB.AppendLine("<root>");
+            SB.AppendLine("\t<!-- Details whether or not a transaction is stored in the transaction database -->");
+            SB.AppendLine("\t<Transactions>");
+            SB.AppendFormat("\t\t<Query>{0}</Query>\n", (bool?)Settings["Transactions"]["Query"] ?? Settings["Transaction_Query"]);
+            SB.AppendFormat("\t\t<Commands>{0}</Commands>\n", (bool?)Settings["Transactions"]["Commands"] ?? Settings["Transaction_Commands"]);
+            SB.AppendLine("\t</Transactions>\n");
+            SB.AppendLine("\t<!-- List of all paths that the Program uses.-->");
+            SB.AppendLine("\t<!-- Warning: Change this at your own risk! It may break the application!-->");
+            SB.AppendLine("\t<Paths>");
+            SB.AppendFormat("\t\t<OS>{0}</OS>\n", (string)Settings["Paths"]["OS"] ?? Settings["OS_Dir"]);
+
+            SB.AppendFormat("\t\t<LastFolder>{0}</LastFolder>\n", (string)Settings["Paths"]["LastFolder"] ?? Settings["LastFolder"]);
+            SB.AppendFormat("\t\t<Assets>{0}</Assets>\n", (string)Settings["Paths"]["Assets"] ?? Settings["Asset_Dir"]);
+            SB.AppendFormat("\t\t<Log>{0}</Log>\n", (string)Settings["Paths"]["Log"] ?? Settings["Log_DB_Path"]);
+            SB.AppendFormat("\t\t<Transaction>{0}</Transaction>\n", (string)Settings["Paths"]["Transaction"] ?? Settings["Transaction_DB"]);
+            SB.AppendLine("\t</Paths>\n");
+
+            SB.AppendLine("\t<!-- Set AutoUpdate to False if Internet Access is restricted or unavailable.-->");
+            SB.AppendLine("\t<Updates>");
+            SB.AppendFormat("\t\t<LastCheck>{0}</LastCheck>\n", (string)Settings["Updates"]["LastCheck"] ?? Settings["LastUpdateCheck"]);
+            SB.AppendFormat("\t\t<AutoUpdate>{0}</AutoUpdate>\n", (string)Settings["Updates"]["AutoUpdate"] ?? Settings["AutoUpdate"]);
+            SB.AppendLine("\t</Updates>\n");
+
+            SB.AppendLine("\t<EULA>");
+            SB.AppendFormat("\t\t<Signer>{0}</Signer>\n", (string)Settings["EULA"]["Signer"] ?? Settings["EULA_By"]);
+            SB.AppendFormat("\t\t<Signed>{0}</Signed>\n", (string)Settings["EULA"]["Signed"] ?? Settings["EULA"]);
+            SB.AppendLine("\t</EULA>\n");
+
+            SB.AppendFormat("\t<Deliminator>{0}</Deliminator>\n", Settings["Deliminator"]);
+            SB.AppendFormat("\t<VersionID>{0}</VersionID>\n", Settings["VersionID"]);
+            SB.AppendFormat("\t<Extensions>{0}</Extensions>\n", Settings["Extensions"]);
+            SB.AppendLine("	<!-- UI Related Stuff -->");
+            SB.AppendFormat("\t<fontsize>{0}</fontsize>\n", (string)Settings["fontsize"] ?? Settings["Font_Size"]);
+            SB.AppendFormat("\t<language>{0}</language>\n", (string)Settings["language"] ?? Settings["Language"]);
+            SB.AppendLine("\t<listview>");
+            SB.AppendFormat("\t\t<width>{0}</width>\n", (int?)Settings["listview"]["width"] ?? Settings["Listview_Width"]);
+            SB.AppendFormat("\t\t<height>{0}</height>\n", (int?)Settings["listview"]["height"] ?? Settings["Listview_Height"]);
+            SB.AppendLine("\t</listview>");
+            SB.Append("</root>");
+            return SB.ToString();
+        }
+
+
+        static Primitive XML(string URI)
+        {
+            LDxml.Open(URI);
+            Primitive Data = LDxml.ToArray();
+            Data = Data["root"]["children"];
+            Primitive RData = null;
+            for (int i = 1; i <= Data.GetItemCount(); i++)
+            {
+                Primitive indicies = Data[i].GetAllIndices();
+                if (Data[i][indicies[1]]["Data"] != string.Empty)
+                {
+                    RData[indicies[1]] = Data[i][indicies[1]]["Data"];
+                }
+                else if (Data[i][indicies[1]]["Children"] != string.Empty)
+                {
+                    Primitive Temp = null;
+                    for (int ii = 1; ii <= Data[i][indicies[1]]["Children"].GetItemCount(); ii++)
+                    {
+                        Primitive Index = Data[i][indicies[1]]["Children"][ii].GetAllIndices();
+                        Temp[Index[1]] += Data[i][indicies[1]]["Children"][ii][Index[1]]["Data"];
+                    }
+                    RData[indicies[1]] = Temp;
+                }
+                else
+                {
+                    //GraphicsWindow.ShowMessage(Data[i], "XML");
+                }
+            }
+            return RData;
+        }
 
 		public static void Paths(string AssetPath,string PluginPath,string LocalizationFolder,string AutoRunPluginPath,string Localization_LanguageCodes_Path,string AutoRunPluginMessage)
 		{
@@ -155,15 +299,13 @@ namespace DBM
 			}
 		}
 
-
 		public static void IniateDatabases()
 		{
-            Utilities.AddtoStackTrace( "Settings.IniateDatabases()");
-            /*
-			GlobalStatic.LogDB = LDDataBase.ConnectSQLite(GlobalStatic.LogDBpath);
-			GlobalStatic.TransactionDB = LDDataBase.ConnectSQLite(GlobalStatic.TransactionDBPath);
-            */
-
+            Utilities.AddtoStackTrace("Settings.IniateDatabases()");
+            if (string.IsNullOrWhiteSpace(GlobalStatic.TransactionDBPath) || string.IsNullOrWhiteSpace(GlobalStatic.LogDBpath))
+            {
+                throw new ArgumentNullException("Transaction or Log Path is null");
+            }
             GlobalStatic.TransactionDB =Engines.Load.Sqlite(GlobalStatic.TransactionDBPath,"Transaction Log");
             GlobalStatic.LogDB = Engines.Load.Sqlite(GlobalStatic.LogDBpath, "Master Log");
             

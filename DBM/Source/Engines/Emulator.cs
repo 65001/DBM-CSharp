@@ -10,7 +10,7 @@ namespace DBM
         public static void Emulator(EnginesMode Mode, string Database, string SQL, string Username, string Listview) //TODO Implement Emulator atleast for sqlite for DBM
         {
             //Attempts to emulate some if not all commands of a database engine by aliasing it to SQL
-            Utilities.AddtoStackTrace("Engines.Emulator("+Mode+","+Database+","+SQL+")");
+            Utilities.AddtoStackTrace($"Engines.Emulator({Mode},{Database},{SQL}");
             StringBuilder Emulator_Sql = new StringBuilder();
             string EmulatorTable = null;
 
@@ -152,10 +152,12 @@ namespace DBM
                                 Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}','{4}','{5}','{6}');", EmulatorTable, ii, LastQuery[ii].Replace("'", "''"), _Timer[i],_Explanation[i],_User[i],_UTC_Start[i]);
                                 ii++;
                             }
+                            #if DEBUG
                             else
                             {
                                 Console.WriteLine("#{0} is a {1} with a time of {2}(ms)", i, _Type_Referer[i], _Timer[i]);
                             }
+                            #endif
                         }
                     }
                     else if (SQL.StartsWith(".stacktrace", Comparison))

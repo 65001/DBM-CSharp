@@ -84,7 +84,7 @@ namespace DBM
         /// <returns></returns>
         public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
 		{
-            Utilities.AddtoStackTrace("Engines.Command("+Database+")");
+            Utilities.AddtoStackTrace($"Engines.Command({Database})");
             _UTC_Start.Add(DateTime.UtcNow.ToString("hh:mm:ss tt"));
             Stopwatch CommandTime = Stopwatch.StartNew();
 			if (RunParser == false)
@@ -187,7 +187,7 @@ namespace DBM
 
         public static void GetSchema(string Database)
         {
-            Utilities.AddtoStackTrace("Engines.GetSchema("+Database+")");
+            Utilities.AddtoStackTrace($"Engines.GetSchema({Database})");
             if (string.IsNullOrEmpty(Database))//Prevents Prevents Application from querying a nonexistent db 
             {
                 return;
@@ -239,7 +239,7 @@ namespace DBM
 
         public static void GetColumnsofTable(string database, string table)
         {
-            Utilities.AddtoStackTrace("Engines.GetSchemaofTable("+database+","+table+")");
+            Utilities.AddtoStackTrace($"Engines.GetSchemaofTable({database},{table})");
 
             if (string.IsNullOrEmpty(database)) //Prevents calls to nonexistent Databases
             {
@@ -305,7 +305,9 @@ namespace DBM
                     GQ_CMD += GenerateSort(OrderBy, SortOrder);
                 }
             }
+        #if DEBUG
             Console.WriteLine(GQ_CMD);
+        #endif
             Query(CurrentDatabase, GQ_CMD, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.UserName);
             GQ_CMD = null;
         }

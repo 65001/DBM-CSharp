@@ -71,7 +71,9 @@ namespace DBM
 			//Drops The FastArray
 			LDFastArray.Remove(Data);
 
+        #if DEBUG
             Console.WriteLine("Import.CSV time {0} ms", Elappsed.ElapsedMilliseconds);
+        #endif
             return string.Empty;
 		}
 

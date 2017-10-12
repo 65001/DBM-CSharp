@@ -74,7 +74,9 @@ namespace DBM
             SQL_Time.Start();
             string _SQL = SQL(Data, Schema, PK, Types, Engines.CurrentTable);
             System.IO.File.WriteAllText(FilePath, _SQL);
+#if DEBUG
             Console.WriteLine("SQL void time {0} ms", SQL_Time.ElapsedMilliseconds);
+#endif
         }
 
         public static string SQL(Primitive Data, Primitive Schema, Dictionary<string, bool> PK, Dictionary<string, string> Types, string TableName)
@@ -144,7 +146,9 @@ namespace DBM
                 SQL.Append("');\n");
             }
             SQL.Replace("' '", "NULL").Replace("''", "NULL");
+#if DEBUG
             Console.WriteLine("SQL string time {0} ms", SQL_Time.ElapsedMilliseconds);
+#endif
             return SQL.ToString();
         }
 
@@ -359,8 +363,9 @@ namespace DBM
                 }
                 SB.AppendLine();
             }
-
-            Console.WriteLine("Markdown completed in {0} ms",MD.ElapsedMilliseconds);
+#if DEBUG
+                Console.WriteLine("Markdown completed in {0} ms",MD.ElapsedMilliseconds);
+#endif
             return SB.ToString();
         }
 
@@ -439,7 +444,9 @@ namespace DBM
             HTML_Statement.Append("\t\t\t</table>\n\t\t</div>\n\t</body>\n</html>");
 
             HTML_Timer.Stop();
+#if DEBUG
             Console.WriteLine("Export.HTML Run time {0} ms", HTML_Timer.ElapsedMilliseconds);
+#endif
             return System.Text.RegularExpressions.Regex.Replace(HTML_Statement.ToString(),
                 @"((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)",
                 "<a target='_blank' href='$1'>$1</a>")

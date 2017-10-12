@@ -179,10 +179,11 @@ namespace DBM
                             Download(DownloadLocation);
                         }
                     }
-
-                    GlobalStatic.Settings["LastUpdateCheck"] = DateTime.Now.ToString("yyyy-MM-dd");
+                    Primitive Temp = GlobalStatic.Settings["Updates"];
+                    Temp["LastCheck"] = DateTime.Now.ToString("yyyy-MM-dd");
+                    GlobalStatic.Settings["Updates"] = Temp;
                     Settings.SaveSettings();
-                    Settings.LoadSettings(GlobalStatic.RestoreSettings);
+                    Settings.LoadSettings(GlobalStatic.RestoreSettings,GlobalStatic.SettingsPath);
                 }
                 else
                 {

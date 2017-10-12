@@ -22,7 +22,7 @@ namespace DBM
         /// <param name="Item">Localized Menu Item</param>
 		public static void Menu(string Item)
 		{
-            Utilities.AddtoStackTrace("Handlers.Menu(" + Item + ")");
+            Utilities.AddtoStackTrace($"Handlers.Menu({Item})");
 
             //Switch and Enum cannot be used because values can change
             //File Menu Items
@@ -34,7 +34,7 @@ namespace DBM
                     GlobalStatic.ListView = null;
                     GlobalStatic.Dataview = null;
                     GlobalStatic.LastFolder = System.IO.Path.GetDirectoryName(Path);
-                    Settings.LoadSettings(GlobalStatic.RestoreSettings);
+                    Settings.LoadSettings(GlobalStatic.RestoreSettings,GlobalStatic.SettingsPath);
                     Settings.SaveSettings();
                     LDDataBase.ConnectSQLite(Path);
                     Engines.Load.Sqlite(Path);
@@ -50,7 +50,7 @@ namespace DBM
             {
                 GlobalStatic.ListView = null;
                 GlobalStatic.Dataview = null;
-                Settings.LoadSettings(GlobalStatic.RestoreSettings); //Reloads Settings
+                Settings.LoadSettings(GlobalStatic.RestoreSettings,GlobalStatic.SettingsPath); //Reloads Settings
                 string Path = UI.GetPath(Engines.EnginesMode.SQLITE);
 
                 if (!string.IsNullOrWhiteSpace(Path))
@@ -73,7 +73,6 @@ namespace DBM
             }
             else if (Item == Utilities.Localization["New in Memory Db"])
             {
-                LDDataBase.Connection = "Data Source=:memory:;Version=3;New=True;";
                 Engines.Load.MemoryDB(Engines.EnginesMode.SQLITE);
                 UI.PreMainMenu();
                 UI.MainMenu();
@@ -82,10 +81,10 @@ namespace DBM
             {
                 string Name = string.Format("\"Statistics of {0}\"", Engines.CurrentTable.SanitizeFieldName());
                 Engines.Transform.CreateStatisticsTable(Engines.CurrentDatabase, Engines.CurrentTable, Name, Export.GenerateSchemaFromLastQuery());
-                Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Name, GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["Statistics Page"]);
+                Engines.Query(Engines.CurrentDatabase,$"SELECT * FROM {Name};", GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["Statistics Page"]);
 
                 Engines.GetSchema(Engines.CurrentDatabase);
-                Engines.SetDefaultTable(Name);
+                Engines.SetDefaultTable(Name.SanitizeFieldName());
                 Engines.GetColumnsofTable(Engines.CurrentDatabase, Name);
                 SetComboBox();
             }
@@ -323,7 +322,7 @@ namespace DBM
         
         public static void ContextMenu(string Control,int Index)
         {
-            Utilities.AddtoStackTrace("Handlers.ContextMenu(" + Control + "," + Index + ")");
+            Utilities.AddtoStackTrace($"Handlers.ContextMenu({Control},{Index})");
             if (Control == GlobalStatic.ListView)
             {
                 if (Index <= 3)
@@ -338,7 +337,7 @@ namespace DBM
 
         public static void Buttons(string LastButton)
 		{
-            Utilities.AddtoStackTrace("Handlers.Buttons(" + LastButton + ")");
+            Utilities.AddtoStackTrace($"Handlers.Buttons({LastButton})");
             try
             {
                 if (LastButton == UI.Buttons["Search"] || LastButton == UI.Buttons["Sort"] || LastButton == UI.Buttons["RunFunction"])
@@ -371,10 +370,12 @@ namespace DBM
                         SortBy = string.Empty;
                     }
 
+                #if DEBUG
                     Console.WriteLine();
                     Console.WriteLine("Search: {0} Sort : {1} Function :{2}", Search, Sort, Function);
                     Console.WriteLine("Strict Search : {0} Invert Search : {1}", StrictSearch, InvertSearch);
                     Console.WriteLine("SearchIn : {0} Search Text : {1} FunctionIn : {2} FunctionCalled : {3} SortBy : {4} ASCDESC : {5} LastButton : {6}", SearchIn, SearchText, FunctionIn, FunctionCalled, SortBy, ASCDESC, Controls.GetButtonCaption(LastButton));
+                #endif
 
                     Engines.GenerateQuery(Search, Sort, Function, SearchIn, SortBy, ASCDESC, StrictSearch, InvertSearch, FunctionCalled, FunctionIn, SearchText);
                 }
@@ -397,7 +398,7 @@ namespace DBM
 
 		public static void ComboBox(string ComboBox, int Index)
 		{
-            Utilities.AddtoStackTrace("Handlers.ComboBox("+ComboBox+","+Index+")");
+            Utilities.AddtoStackTrace($"Handlers.ComboBox({ComboBox},{Index})");
             try
             {
                 if (ComboBox == GlobalStatic.ComboBox["Table"])
@@ -513,7 +514,7 @@ namespace DBM
 				UI.Title();
                 return;
 			}
-			Events.LogMessage("In the current database no " + Utilities.Localization[TypeofSorts[GlobalStatic.SortBy]] + "s can be found.", Utilities.Localization["UI"]);
+			Events.LogMessage("In the current database no " + Utilities.Localization[TypeofSorts[(int)GlobalStatic.SortBy]] + "s can be found.", Utilities.Localization["UI"]);
 		}
 	}
 }

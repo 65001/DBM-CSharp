@@ -44,8 +44,6 @@ namespace DBM
 		{
             Utilities.AddtoStackTrace("EULA.Handler()");
 			string lastButton = Controls.LastClickedButton;
-			GlobalStatic.Settings["EULA_By"] = GlobalStatic.UserName;
-			//GlobalStatic.Settings["EULA_Version"] = GlobalStatic.EULA_Newest_Version;
 			GlobalStatic.Settings["VersionID"] = GlobalStatic.VersionID;
 
             Controls.ButtonClicked -= Handler; //Unsubcribes the event Handler from the event
@@ -53,7 +51,7 @@ namespace DBM
             //Forced to use Else If due to non-constant values
             if (lastButton == Accept)
 			{
-				GlobalStatic.Settings["EULA"] = true;
+                GlobalStatic.Settings["EULA"] = string.Format("Signed=true;Signer={0};", GlobalStatic.UserName);
 				Settings.SaveSettings();
 				DBM.UI.StartupGUI();
 			}

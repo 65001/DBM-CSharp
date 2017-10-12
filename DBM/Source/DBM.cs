@@ -85,6 +85,7 @@ namespace DBM
             catch (Exception ex)
             {
                 Utilities.Localization.Print();
+                Utilities.StackTrace.Print();
                 Events.LogMessage(ex.Message, Utilities.Localization["System"]);
                 
                 Program.End();
@@ -123,17 +124,20 @@ namespace DBM
         public static void Startup()
         {
             Utilities.AddtoStackTrace("UI.Startup()");
-            Settings.LoadSettings(GlobalStatic.RestoreSettings); //Load Application Settings from text file
-            Settings.Paths
-                (
-                GlobalStatic.AssetPath,
-                GlobalStatic.PluginPath,
-                GlobalStatic.LocalizationFolder,
-                GlobalStatic.AutoRunPluginPath,
-                GlobalStatic.Localization_LanguageCodes_Path,
-                GlobalStatic.AutoRunPluginMessage
-                ); //Makes sure passed paths are valid and creates them if they are not
-
+            try
+            {
+                Settings.LoadSettings(GlobalStatic.RestoreSettings, GlobalStatic.SettingsPath); //Load Application Settings from text file
+                Settings.Paths
+                    (
+                    GlobalStatic.AssetPath,
+                    GlobalStatic.PluginPath,
+                    GlobalStatic.LocalizationFolder,
+                    GlobalStatic.AutoRunPluginPath,
+                    GlobalStatic.Localization_LanguageCodes_Path,
+                    GlobalStatic.AutoRunPluginMessage
+                    ); //Makes sure passed paths are valid and creates them if they are not
+            }
+            catch (Exception) { }
             Settings.IniateDatabases();
             //Plugin.FindAll();
 
@@ -283,7 +287,7 @@ namespace DBM
 
         public static string GetPath(Engines.EnginesMode EngineMode)
         {
-            Utilities.AddtoStackTrace("UI.GetPath(" + EngineMode + ")");
+            Utilities.AddtoStackTrace($"UI.GetPath({EngineMode})");
             if (Program.ArgumentCount == 1 && GlobalStatic.LoadedFile == false)
             { GlobalStatic.LoadedFile = true; return Program.GetArgument(1); }
             {
@@ -539,14 +543,13 @@ namespace DBM
         {
             if (LastClickedButton == _Buttons["Settings Save"])
             {
-                GlobalStatic.Settings["Listview_Width"] = Controls.GetTextBoxText(_TextBox["Settings_Width"]);
-                GlobalStatic.Settings["Listview_Height"] = Controls.GetTextBoxText(_TextBox["Settings_Height"]);
+                GlobalStatic.Settings["Listview"] = string.Format("Width={0};Height={1};", Controls.GetTextBoxText(_TextBox["Settings_Width"]), Controls.GetTextBoxText(_TextBox["Settings_Height"]));
                 GlobalStatic.Settings["Extensions"] = Controls.GetTextBoxText(_TextBox["Settings_Extensions"]);
                 GlobalStatic.Settings["Deliminator"] = Controls.GetTextBoxText(_TextBox["Settings_Deliminator"]);
                 GlobalStatic.Settings["Language"] = Utilities.ISO_LangCode[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Language"]) - 1];
                 GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
                 Settings.SaveSettings();
-                Settings.LoadSettings(GlobalStatic.RestoreSettings);
+                Settings.LoadSettings(GlobalStatic.RestoreSettings,GlobalStatic.SettingsPath);
 
                 Utilities.LocalizationXML(
                     Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"),
@@ -723,8 +726,9 @@ namespace DBM
 
         static void LogMessage(string Message, string Type, string Caller)
         {
+        #if DEBUG
             Console.WriteLine("Log : Caller was : {0}; Type: {1}; Message: {2} ;", Caller, Type, Message);
-
+        #endif
             if (string.IsNullOrWhiteSpace(Type))
             {
                 Type = "Unknown";
@@ -741,15 +745,14 @@ namespace DBM
             }
             else if(Message.Contains("LDDataBase.Query") == true || Message.Contains("LDDataBase.Command") == true)
             {
-                Console.WriteLine("Event silent Logger: {0}:{1}",Engines.CurrentDatabase, Message);
                 if (Message.Contains("logic error"))
                 {
                     Type = "SQL Error";
+                    GraphicsWindow.ShowMessage(Message, Type);
                 }
-                //return;
             }
-
-            Utilities.AddtoStackTrace("Events.LogMessage(" + Message +","+ Type +"," + Caller +")");
+            
+            Utilities.AddtoStackTrace($"Events.LogMessage({Message},{Type},{Caller})");
 
             string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'" + GlobalStatic.UserName + "','"+ GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message.Replace("\n","") + "','" + Type + "');"; ;
 
@@ -786,7 +789,7 @@ namespace DBM
         public async static void BC(string LastClickedButton)
         {
             await Task.Run(() => { Handlers.Buttons(LastClickedButton); });
-            Utilities.AddtoStackTrace(string.Format("Events.BC({0})",LastClickedButton));
+            Utilities.AddtoStackTrace($"Events.BC({ LastClickedButton}");
         }
 
         /// <summary>
@@ -801,7 +804,7 @@ namespace DBM
         public async static void MC(string LastMenuItem)
         {
             await Task.Run(() => { Handlers.Menu(LastMenuItem); });
-            Utilities.AddtoStackTrace(string.Format("Events.MC({0})",LastMenuItem));
+            Utilities.AddtoStackTrace($"Events.MC({LastMenuItem})");
         }
 
         /// <summary>
