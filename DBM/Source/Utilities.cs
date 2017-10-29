@@ -48,7 +48,7 @@ namespace DBM
         }
 
         /// <summary>
-        /// Loads localized text from XML File
+        /// Loads localized text from a XML File
         /// </summary>
         /// <param name="XMLPath"></param>
         public static void LocalizationXML(string XMLPath,string DataPath)
@@ -176,7 +176,10 @@ namespace DBM
                     {
                         if (LDDialogs.Confirm($"Do you wish to download Version {LatestVersion }? You have Version {CurrentVersion}.", "Download Update") == "Yes") //TODO LOCALIZE
                         {
-                            Download(DownloadLocation);
+                            if (Download(DownloadLocation) == false)
+                            {
+                                Download(DownloadLocation2);
+                            }
                         }
                     }
                     Primitive Temp = GlobalStatic.Settings["Updates"];
@@ -215,7 +218,7 @@ namespace DBM
                 return Locations;
             }
 
-            static void Download(string URL)
+            static bool Download(string URL)
             {
                 AddtoStackTrace("Utilities.DownloadUpdate(" + URL + ")");
                 string DownloadFolder = string.Empty;
@@ -229,10 +232,10 @@ namespace DBM
                 {
                     case -1:
                         GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
-                        break;
+                        return false;
                     default:
                         GraphicsWindow.ShowMessage("SUCCESS", "Update Downloaded");
-                        break;
+                        return true;
                 }
             }
         }

@@ -200,7 +200,6 @@ namespace DBM
                     _Tables.Clear();
                     _Views.Clear();
                     _Indexes.Clear();
-
                     Primitive Master_Schema_List = Query(Database, "SELECT tbl_name,name,type FROM sqlite_master UNION Select tbl_name,name,type From SQLite_Temp_Master;", null, true, Utilities.Localization["App"], "SCHEMA");
                     for (int i = 1; i <= Master_Schema_List.GetItemCount(); i++)
                     {
@@ -306,7 +305,7 @@ namespace DBM
                 }
             }
         #if DEBUG
-            Console.WriteLine(GQ_CMD);
+            Console.WriteLine("Generated Query :{0}",GQ_CMD);
         #endif
             Query(CurrentDatabase, GQ_CMD, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.UserName);
             GQ_CMD = null;
@@ -357,7 +356,7 @@ namespace DBM
             switch (Mode)
             {
                 case EnginesMode.SQLITE:
-                    List<string> Func = new List<string> { "Avg", "Count", "Max", "Min", "Sum", "Total", "Hex", "Length", "Lower", "Round", "Trim", "Upper","SQRT","Abs" };
+                    List<string> Func = new List<string> { "Avg", "Count", "Max", "Min", "Sum", "Total", "Hex", "Length", "Lower", "Round", "Trim", "Upper","Sqrt","Abs" };
                     Func.Sort();
                     return Func;
                 default:

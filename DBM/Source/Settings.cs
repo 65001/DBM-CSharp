@@ -16,10 +16,10 @@ namespace DBM
             Utilities.AddtoStackTrace($"Settings.LoadSettings({RestoreSettings},{SettingsPath})");
             if (string.IsNullOrWhiteSpace(SettingsPath))
             {
-                throw new ArgumentNullException("The Settings Path was not found");
+                throw new ArgumentNullException("The Settings Path was null or whitespace");
             }
 
-            string XMLPath = SettingsPath.Replace(".txt", ".xml");
+            string XMLPath = SettingsPath?.Replace(".txt", ".xml");
 
             if (RestoreSettings == false && (System.IO.File.Exists(SettingsPath) || System.IO.File.Exists(XMLPath)) )
             {
@@ -46,16 +46,12 @@ namespace DBM
 
             if (GlobalStatic.Listview_Width == 0)
             {
-                Primitive Temp = GlobalStatic.Settings["listview"];
-                Temp["width"] = Desktop.Width - 400;
-                GlobalStatic.Settings["listview"] = Temp;
+                SetSettingsValue("listview", "width", Desktop.Width - 400);
             }
 
             if (GlobalStatic.Listview_Height == 0)
             {
-                Primitive Temp = GlobalStatic.Settings["listview"];
-                Temp["height"] = Desktop.Height - 150;
-                GlobalStatic.Settings["listview"] = Temp;
+                SetSettingsValue("listview", "height", Desktop.Height - 150);
             }
 
             if (GlobalStatic.DefaultFontSize == 0)
@@ -77,36 +73,26 @@ namespace DBM
             //Checks to see if directories are accessible or valid by the local computer
             if (Directory.Exists(GlobalStatic.Settings["Paths"]["OS"]) == false)
             {
-                Primitive Temp = GlobalStatic.Settings["Paths"];
-                Temp["OS"] = Environment.SystemDirectory;
-                GlobalStatic.Settings["Paths"] = Temp;
+                SetSettingsValue("Paths", "OS", Environment.SystemDirectory);
             }
             if (Directory.Exists(GlobalStatic.Settings["Paths"]["LastFolder"]) == false)
             {
-                Primitive Temp = GlobalStatic.Settings["Paths"];
-                Temp["LastFolder"] = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                GlobalStatic.Settings["Paths"] = Temp;
+                SetSettingsValue("Paths", "LastFolder", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
             }
             if (Directory.Exists(GlobalStatic.Settings["Paths"]["Assets"]) == false)
             {
-                Primitive Temp = GlobalStatic.Settings["Paths"];
-                Temp["Assets"] = Program.Directory+"\\Assets\\";
-                GlobalStatic.Settings["Paths"] = Temp;
+                SetSettingsValue("Paths", "Assets", Program.Directory + "\\Assets\\");
             }
 
             //Files. Tests to see if files can be accessed by the local computer.
             if (System.IO.File.Exists(GlobalStatic.Settings["Paths"]["Log"]) == false)
             {
-                Primitive Temp = GlobalStatic.Settings["Paths"];
-                Temp["Log"] = Program.Directory + "\\Assets\\Log.db";
-                GlobalStatic.Settings["Paths"] = Temp;
+                SetSettingsValue("Paths", "Log", Program.Directory + "\\Assets\\Log.db");
             }
 
             if (System.IO.File.Exists(GlobalStatic.Settings["Paths"]["Transaction"]) == false)
             {
-                Primitive Temp = GlobalStatic.Settings["Paths"];
-                Temp["Transaction"] = Program.Directory + "\\Assets\\Transactions.db";
-                GlobalStatic.Settings["Paths"] = Temp;
+                SetSettingsValue("Paths", "Transaction", Program.Directory + "\\Assets\\Transactions.db");
             }
 
             if (string.IsNullOrWhiteSpace(GlobalStatic.Settings["Extensions"]))
@@ -116,25 +102,26 @@ namespace DBM
 
             if (string.IsNullOrWhiteSpace(GlobalStatic.Settings["Updates"]["AutoUpdate"]))
             {
-                Primitive Temp = GlobalStatic.Settings["Updates"];
-                Temp["AutoUpdate"] = true;
-                GlobalStatic.Settings["Updates"] = Temp;
+                SetSettingsValue("Updates", "AutoUpdate", true);
             }
 
             if (string.IsNullOrWhiteSpace(GlobalStatic.Settings["Updates"]["LastCheck"]))
             {
-                Primitive Temp = GlobalStatic.Settings["Updates"];
-                Temp["LastCheck"] = DateTime.Now.AddDays(-14).ToString("yyyy-MM-dd");
-                GlobalStatic.Settings["Updates"] = Temp;
+                SetSettingsValue("Updates", "LastCheck", DateTime.Now.AddDays(-14).ToString("yyyy-MM-dd"));
             }
 
 
             if (string.IsNullOrWhiteSpace(GlobalStatic.Settings["EULA"]["Signed"]))
             {
-                Primitive Temp = GlobalStatic.Settings["EULA"];
-                Temp["Signed"] = false;
-                GlobalStatic.Settings["EULA"] = Temp;
+                SetSettingsValue("EULA", "Signed", false);
             }
+        }
+
+        static void SetSettingsValue<T>(string Key1,string Key2,T Value)
+        {
+            Primitive Temp = GlobalStatic.Settings[Key1];
+            Temp[Key2] = Value.ToString();
+            GlobalStatic.Settings[Key1] = Temp;
         }
 
         /// <summary>
@@ -173,7 +160,6 @@ namespace DBM
             GlobalStatic.EULA_UserName = (string)GlobalStatic.Settings["EULA"]["Signer"] ?? (string)GlobalStatic.Settings["EULA_By"] ?? null;
         }
 
-        //TODO setup For XML
 		public static void SaveSettings()
 		{
             Utilities.AddtoStackTrace("Settings.SaveSettings()");
@@ -194,7 +180,7 @@ namespace DBM
         { 
             try
             {
-                System.IO.File.WriteAllText(URI, ConverttoXML(Settings) );
+                System.IO.File.WriteAllText(URI,ConverttoXML(Settings));
             }
             catch (Exception)
             {
@@ -203,7 +189,7 @@ namespace DBM
         }
 
         /// <summary>
-        /// Converts a text settings file to XML  .
+        /// Converts a text settings file to XML.
         /// </summary>
         static string ConverttoXML(Primitive Settings)
         {
@@ -283,6 +269,9 @@ namespace DBM
             return RData;
         }
 
+        /// <summary>
+        /// Automatically creates Directories if they do not exist.
+        /// </summary>
 		public static void Paths(string AssetPath,string PluginPath,string LocalizationFolder,string AutoRunPluginPath,string Localization_LanguageCodes_Path,string AutoRunPluginMessage)
 		{
             Utilities.AddtoStackTrace("Settings.Paths()");
@@ -299,6 +288,9 @@ namespace DBM
 			}
 		}
 
+        /// <summary>
+        /// Connects to and creates Log and Transaction databases with default tables.
+        /// </summary>
 		public static void IniateDatabases()
 		{
             Utilities.AddtoStackTrace("Settings.IniateDatabases()");

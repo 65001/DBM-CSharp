@@ -87,7 +87,7 @@ namespace DBM
                 Utilities.Localization.Print();
                 Utilities.StackTrace.Print();
                 Events.LogMessage(ex.Message, Utilities.Localization["System"]);
-                
+                Program.Delay(1000);
                 Program.End();
             }
         }
@@ -154,7 +154,7 @@ namespace DBM
             {
                 Engines.Load.Sqlite(GetPath(Engines.EnginesMode.SQLITE));
             }
-            if (GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_UserName == GlobalStatic.UserName && GlobalStatic.EulaTest == false)
+            if (RunProgram())
             {
                 StartupGUI();
             }
@@ -167,6 +167,11 @@ namespace DBM
             Events.LogMessage($"Startup Time : {StartUpStopWatch.ElapsedMilliseconds} (ms)", Utilities.Localization["UI"]);
         }
 
+        static bool RunProgram()
+        {
+            return GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_UserName == GlobalStatic.UserName && GlobalStatic.EulaTest == false;
+        }
+
         public static void StartupGUI()
         {
             Utilities.AddtoStackTrace("UI.StartupGUI()");
@@ -175,7 +180,7 @@ namespace DBM
             LDGraphicsWindow.State = 2;
             PreMainMenu();
             MainMenu();
-            //AutoUpdate
+            //AutoUpdate Code
             if (GlobalStatic.AutoUpdate == true && GlobalStatic.LastUpdateCheck + 14 <= GlobalStatic.ISO_Today)
             {
                 Events.LogMessage("Autoupdate Check", "Updater");
@@ -360,7 +365,6 @@ namespace DBM
 			GraphicsWindow.Top = 0;
 			GlobalStatic.UIx = GlobalStatic.Listview_Width + 50;
             DisplayHelper();
-            //TODO Implement LOG CB?
 
             //Sort
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 1;

@@ -41,6 +41,9 @@ namespace DBM
             FunctionList.Add(function);
         }
 
+        /// <summary>
+        /// Automatically adds a list of custom functions to be binded on database creation :)
+        /// </summary>
         public static void CreateBindList()
         {
             AddToBindList(new CustomFunctions.RegEx());

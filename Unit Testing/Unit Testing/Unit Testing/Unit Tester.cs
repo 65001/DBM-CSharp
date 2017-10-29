@@ -12,7 +12,7 @@ namespace Unit_Testing
     {
         static void Main(string[] args)
         {
-        } 
+        }
     }
 
     [TestFixture]
@@ -21,7 +21,7 @@ namespace Unit_Testing
         [Test]
         public void Localization()
         {
-            Assert.That(() => DBM.Utilities.LocalizationXML(null,null), Throws.TypeOf<FileNotFoundException>());
+            Assert.That(() => DBM.Utilities.LocalizationXML(null, null), Throws.TypeOf<FileNotFoundException>());
         }
 
         [TestCase("C:\\Users\\Abhishek\\Documents\\Projects\\DBM\\DBM\\bin\\Release\\Localization\\en.xml", "C:\\Users\\Abhishek\\Documents\\Projects\\DBM\\DBM\\bin\\Release\\Localization\\Lang\\en.txt")]
@@ -32,6 +32,15 @@ namespace Unit_Testing
         }
     }
 
+    [TestFixture]
+    class SettingsTest
+    {
+        [Test]
+        public void Load()
+        {
+            Assert.That(() => Settings.LoadSettings(false, null), Throws.TypeOf < ArgumentNullException>());
+        }
+    }
 
     [TestFixture]
     class ImportTest
