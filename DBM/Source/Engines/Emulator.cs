@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Microsoft.SmallBasic.Library;
 
 namespace DBM
 {
@@ -133,7 +134,7 @@ namespace DBM
                                 Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','{3}','{4}');", EmulatorTable, File, FI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"), FI.Extension, FI.Length);
                             }
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             Events.LogMessage(ex.Message, Utilities.Localization["System"]);
                         }
@@ -149,15 +150,15 @@ namespace DBM
                         {
                             if (_Type_Referer[i] == Type.Query)
                             {
-                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}','{4}','{5}','{6}');", EmulatorTable, ii, LastQuery[ii].Replace("'", "''"), _Timer[i],_Explanation[i],_User[i],_UTC_Start[i]);
+                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}','{4}','{5}','{6}');", EmulatorTable, ii, LastQuery[ii].Replace("'", "''"), _Timer[i], _Explanation[i], _User[i], _UTC_Start[i]);
                                 ii++;
                             }
-                            #if DEBUG
+#if DEBUG
                             else
                             {
                                 Console.WriteLine("#{0} is a {1} with a time of {2}(ms)", i, _Type_Referer[i], _Timer[i]);
                             }
-                            #endif
+#endif
                         }
                     }
                     else if (SQL.StartsWith(".stacktrace", Comparison))
@@ -205,6 +206,52 @@ namespace DBM
                         {
                             Emulator_Sql.AppendFormat("INSERT INTO {0} (Function,Description) VALUES('{1}','{2}');", EmulatorTable, entry.Key, entry.Value);
                         }
+                    }
+                    else if (SQL.StartsWith(".charts", Comparison))
+                    {
+
+                    }
+                    else if (SQL.StartsWith(".bar", Comparison))
+                    {
+                        //Column(s)?
+                        //Values
+
+                        //Title
+                        //SubTitle
+                        //Haxis Title
+                        //Yaxis Title
+                        Chart chart = new Chart.Bar();
+                        SQL = SQL.Remove(0, 5);
+                        string[] Arguments = SQL.Split(',');
+                        string SQLQuery = string.Format("SELECT {0},{1} FROM {2} GROUP BY {0};", Arguments[0].Replace("(", "").Replace(")", ""), Arguments[1], CurrentTable.SanitizeFieldName());
+                        Primitive Data = Query(CurrentDatabase, 
+                            SQLQuery,
+                            null,
+                            true,
+                            Username,
+                            "Chart"
+                            );
+                        Primitive Columns = Data[1].GetAllIndices();
+                        //Console.WriteLine((string)Arguments.ToPrimitiveArray());
+                        //Console.WriteLine((string)Columns);
+                        //Console.WriteLine((string)Data);
+
+                        chart.AddColumn(Columns[1]);
+                        chart.AddColumn(Columns[2],Chart.DataType.number);
+
+                        for (int i = 1; i <= Data.GetItemCount(); i++)
+                        {
+                            for (int ii = 1; ii <= Data[i].GetItemCount(); ii++) {
+                                chart.AddRowData(i - 1, Data[i][Columns[ii]]);
+                            }
+                        }
+
+                        chart.Title = (Arguments[2] ?? Engines.CurrentTable).Replace("'","");
+                        chart.SubTitle = (Arguments[3] ?? string.Empty).Replace("'","");
+                        chart.Xaxis = (Arguments[4] ?? string.Empty).Replace("'", "");
+                        chart.Yaxis = (Arguments[5] ?? string.Empty).Replace("'", "");
+
+                        Console.WriteLine(chart.Export());
                     }
                     break;
                 default:

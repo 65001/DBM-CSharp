@@ -68,23 +68,30 @@ namespace DBM
             }
         }
 
-        private string ListToJsonArray(List<string> Data)
+        private string ListToJsonArray(List<string> Data,bool respectNumber = true)
         {
             StringBuilder SB = new StringBuilder();
             SB.Append("[");
             for (int i = 0; i< Data.Count; i++)
             {
-                switch (Types[i])
+                if (respectNumber == false)
                 {
-                    case DataType.text:
-                        SB.AppendFormat("'{0}'", Data[i]);
-                        break;
-                    case DataType.number:
-                        SB.AppendFormat("{0}", Data[i]);
-                        break;
-                    default:
-                        SB.AppendFormat("'{0}'", Data[i]);
-                        break;
+                    SB.AppendFormat("'{0}'", Data[i]);
+                }
+                else
+                {
+                    switch (Types[i])
+                    {
+                        case DataType.text:
+                            SB.AppendFormat("'{0}'", Data[i]);
+                            break;
+                        case DataType.number:
+                            SB.AppendFormat("{0}", Data[i]);
+                            break;
+                        default:
+                            SB.AppendFormat("'{0}'", Data[i]);
+                            break;
+                    }
                 }
                 if (i<(Data.Count - 1))
                 {
@@ -128,7 +135,7 @@ namespace DBM
             SB.AppendLine("\t\t\t\tvar data = google.visualization.arrayToDataTable([");
             //Columns
             SB.Append("\t\t\t\t\t");
-            SB.Append(ListToJsonArray(Columns));
+            SB.Append(ListToJsonArray(Columns,false));
             SB.AppendLine(",");
             //Data
             for (int i = 0; i < Data.Count; i++)
@@ -169,8 +176,12 @@ namespace DBM
             System.IO.File.WriteAllText(URI, Data);
         }
 
+        public abstract class CoreChart : Chart
+        {
+            public override string Package { get { return "corechart"; } }
+        }
 
-        public class Bar : Chart
+        public class Bar : CoreChart
         {
             public override ChartTypes ChartType
             {
@@ -178,10 +189,9 @@ namespace DBM
             }
 
             public override string Function { get { return "ColumnChart"; } }
-            public override string Package { get { return "corechart"; } }
         }
 
-        public class Bubble : Chart
+        public class Bubble : CoreChart
         {
             public override ChartTypes ChartType
             {
@@ -189,10 +199,9 @@ namespace DBM
             }
 
             public override string Function { get { return "BubbleChart"; } }
-            public override string Package { get { return "corechart"; } }
         }
 
-        public class Column : Chart
+        public class Column : CoreChart
         {
             public override ChartTypes ChartType
             {
@@ -200,7 +209,6 @@ namespace DBM
             }
 
             public override string Function { get { return "ColumnChart"; } }
-            public override string Package { get { return "corechart"; } }
         }
 
 

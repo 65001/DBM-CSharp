@@ -53,6 +53,36 @@ namespace Unit_Testing
     }
 
     [TestFixture]
+    class ChartTest
+    {
+        [Test]
+        public void AddColumns()
+        {
+            DBM.Chart chart = new DBM.Chart.Bar();
+            chart.AddColumn("President");
+            chart.AddColumn("Money",DBM.Chart.DataType.number);
+            Assert.Pass();
+        }
+
+        [Test]
+        public void AddData()
+        {
+            DBM.Chart chart = new DBM.Chart.Bar();
+            chart.AddColumn("President");
+            chart.AddColumn("Money", DBM.Chart.DataType.number);
+            chart.AddRowData(1,"Obama");
+            chart.AddRowData(2, "1000");
+            Assert.Pass();
+        }
+
+        [Test]
+        public void Export()
+        {
+            Assert.Pass();
+        }
+    }
+
+    [TestFixture]
     class ExportTest
     {
         static Primitive Schema;

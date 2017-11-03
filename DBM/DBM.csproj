@@ -89,11 +89,13 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Source\Chart.cs" />
     <Compile Include="Source\DBM.cs">
     </Compile>
     <Compile Include="Source\Engines\Bindings and Custom Functions.cs" />
     <Compile Include="Source\Engines\Emulator.cs" />
     <Compile Include="Source\Engines\Engine.Misc.cs" />
+    <Compile Include="Source\Engines\Generic Engines.cs" />
     <Compile Include="Source\GlobalSuppressions.cs" />
     <Compile Include="Source\Engines\Engines.cs">
     </Compile>

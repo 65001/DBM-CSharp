@@ -12,7 +12,7 @@ using Microsoft.SmallBasic.Library;
 using LitDev;
 namespace DBM
 {
-    public static class Export
+    public static partial class Export
     {
         public static Primitive Generate2DArray(string Database, string SQL)
         {
