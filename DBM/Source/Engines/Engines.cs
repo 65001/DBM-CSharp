@@ -67,7 +67,7 @@ namespace DBM
         static List<string> _UTC_Start = new List<string>();
         public static event EventHandler OnSchemaChange;
         public static event EventHandler OnGetColumnsofTable;
-
+        
         public static int Command(string Database, string SQL,string Explanation)
         {
             return Command(Database, SQL, GlobalStatic.UserName, Explanation, false);
@@ -192,7 +192,7 @@ namespace DBM
             {
                 return;
             }
-
+            
             EnginesMode EngineMode = Engine_Type(Database);
             switch (EngineMode)
             {
@@ -200,7 +200,7 @@ namespace DBM
                     _Tables.Clear();
                     _Views.Clear();
                     _Indexes.Clear();
-                    Primitive Master_Schema_List = Query(Database, "SELECT tbl_name,name,type FROM sqlite_master UNION Select tbl_name,name,type From SQLite_Temp_Master;", null, true, Utilities.Localization["App"], "SCHEMA");
+                    Primitive Master_Schema_List = Query(Database,SQLITE.GetSchema(), null, true, Utilities.Localization["App"], "SCHEMA");
                     for (int i = 1; i <= Master_Schema_List.GetItemCount(); i++)
                     {
                         string Name = Master_Schema_List[i]["tbl_name"];
@@ -217,23 +217,23 @@ namespace DBM
                                 break;
                         }
                     }
-                    try
-                    {
-                        CurrentTable = _Tables.FirstOrDefault();
-                    }
-                    catch (Exception ex)
-                    {
-                        Events.LogMessage(ex.ToString(), "System");
-                    }
-                    _TrackingDefaultTable.Add(Database + "." + CurrentTable);
-                    if (Database != null && CurrentTable != null)
-                    {
-                        GetColumnsofTable(Database, CurrentTable);
-                    }
-
-                    OnSchemaChange?.Invoke(null,EventArgs.Empty);
                     break;
             }
+
+            try
+            {
+                CurrentTable = _Tables.FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                Events.LogMessage(ex.ToString(), "System");
+            }
+            _TrackingDefaultTable.Add(Database + "." + CurrentTable);
+            if (Database != null && CurrentTable != null)
+            {
+                GetColumnsofTable(Database, CurrentTable);
+            }
+            OnSchemaChange?.Invoke(null, EventArgs.Empty);
         }
 
         public static void GetColumnsofTable(string database, string table)
@@ -246,20 +246,20 @@ namespace DBM
             }
 
             EnginesMode EngineMode = Engine_Type(database);
+            string SchemaQuery;
             switch (EngineMode)
             {
                 case EnginesMode.SQLITE:
                     _Schema.Clear();
-
-                    Primitive QSchema = Query(database, "PRAGMA table_info(\"" + table.SanitizeFieldName() + "\");", null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
-                    for (int i = 1; i <= QSchema.GetItemCount(); i++)
-                    {
-                        _Schema.Add(QSchema[i]["name"]);
-                    }
-                    Schema = _Schema.ToPrimitiveArray(); ;
-                    OnGetColumnsofTable?.Invoke(null,EventArgs.Empty);
+                    SchemaQuery = SQLITE.GetColumnsOfTable(table);
+                    Primitive QSchema = Query(database, SchemaQuery, null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
+                    _Schema = SQLITE.GetColumnsOfTable(QSchema);
                     break;
+                default:
+                    throw new NotImplementedException();
             }
+            Schema = _Schema.ToPrimitiveArray();
+            OnGetColumnsofTable?.Invoke(null, EventArgs.Empty);
         }
 
         public static void EditTable(string Table, string Control)
