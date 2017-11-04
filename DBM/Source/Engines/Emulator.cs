@@ -38,7 +38,8 @@ namespace DBM
                             { ".filesystem $Path","Lists all the folders and files in the argumented path. Defaults to MyDocuments if no argument is given." },
                             { ".stacktrace","Lists the functions and methods and the like and the order they were called in." },
                             { ".localizations","List of the key value pairs of the current languages localization"},
-                            { ".functions","List of all custom functions."}
+                            { ".functions","List of all custom functions."},
+                            { ".charts","A List of all charts currentley implemented"}
                         };
                         Arguments.Sort();
                         Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Arguments TEXT,Description TEXT);", EmulatorTable);
@@ -210,6 +211,20 @@ namespace DBM
                     else if (SQL.StartsWith(".charts", Comparison))
                     {
                         //TODO Make a list of all available charts
+                        EmulatorTable = "DBM_Charts";
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,Chart TEXT,Arguments TEXT);", EmulatorTable);
+                        Dictionary<string, string> Charts = new Dictionary<string, string>()
+                        {
+                            {"bar","Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis" },
+                            {"column","Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis" },
+                            {"pie","Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis" },
+                            {"sankey","From,To,Weight,Title,SubTitle,Xaxis,Yaxis"},
+                            { "org","Position,Manager,Name,Title,SubTitle,Xaxis,Yaxis"}
+                        };
+                        foreach (KeyValuePair<string, string> entry in Charts)
+                        {
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} (Chart,Arguments) VALUES('{1}','{2}');", EmulatorTable, entry.Key, entry.Value);
+                        }
                     }
                     else if (SQL.StartsWith(".bar", Comparison))
                     {
@@ -245,6 +260,15 @@ namespace DBM
                         string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 7).Split(',');
                         Import(chart, Arguments);
                         string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + "\\Sankey Chart.html";
+                        chart.Write(OutPut, chart.Export());
+                    }
+                    else if (SQL.StartsWith(".org", Comparison))
+                    {
+                        //Columns(From,To,..),Title,SubTitle,Xaxis,Yaxis
+                        Chart chart = new Chart.OrgChart();
+                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 4).Split(',');
+                        Import(chart, Arguments);
+                        string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + "\\Org Chart.html";
                         chart.Write(OutPut, chart.Export());
                     }
                     break;
@@ -318,11 +342,11 @@ namespace DBM
 
             if (Arguments.Length > chart.MinColumns + 1)
             {
-                chart.Title = (Arguments[chart.MinColumns + 1] ?? Engines.CurrentTable)?.Replace("'", "");
+                chart.Title = (Arguments[chart.MinColumns + 1] ?? CurrentTable)?.Replace("'", "");
             }
             else
             {
-                chart.Title = Engines.CurrentTable.Replace("'","").Replace("\"","");
+                chart.Title = CurrentTable.Replace("'","").Replace("\"","");
             }
 
             if (Arguments.Length > chart.MinColumns + 2)

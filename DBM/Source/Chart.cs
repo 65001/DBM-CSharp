@@ -17,6 +17,7 @@ namespace DBM
         public abstract ChartTypes ChartType { get; }
         public abstract string Function { get; }
         public abstract string Package { get; }
+        public abstract bool[] RespectNumbers { get; }
 
         public string Title;
         public string SubTitle;
@@ -77,7 +78,8 @@ namespace DBM
         {
             StringBuilder SB = new StringBuilder();
             SB.Append("[");
-            for (int i = 0; i< Data.Count; i++)
+            int Max = Data.Count - 1;
+            for (int i = 0;i < Data.Count;i++)
             {
                 Data[i] = Data[i]?.Replace("\"", "");
                 if (respectNumber == false)
@@ -88,27 +90,25 @@ namespace DBM
                 {
                     switch (Types[i])
                     {
-                        case DataType.text:
-                            SB.AppendFormat("'{0}'", Data[i]);
-                            break;
                         case DataType.number:
                             SB.AppendFormat("{0}", Data[i]);
                             break;
+                        case DataType.text:
                         default:
                             SB.AppendFormat("'{0}'", Data[i]);
                             break;
                     }
                 }
-                if (i<(Data.Count - 1))
+                if (i< Max)
                 {
                     SB.Append(",");
                 }
             }
             SB.Append("]");
-            return SB.ToString();
+            return SB.ToString().Replace("' '","''");
         }
 
-        public string Export()
+        public virtual string Export()
         {
             if (Title == null) Title = string.Empty;
             if (SubTitle == null) SubTitle = string.Empty;
@@ -116,10 +116,10 @@ namespace DBM
             if (Yaxis == null) Yaxis = string.Empty;
             if (Function == null) throw new ArgumentNullException("Function");
             if (Package == null) throw new ArgumentNullException("Package");
-            return Export(Function, Package, Title, SubTitle, Xaxis, Yaxis);
+            return Export(Function, Package, Title, SubTitle, Xaxis, Yaxis,RespectNumbers);
         }
 
-        string Export(string Function, string Package, string Title, string SubTitle, string Xaxis, string Yaxis)
+        public virtual string Export(string Function, string Package, string Title, string SubTitle, string Xaxis, string Yaxis, bool[] RespectNumbers)
         {
             StringBuilder SB = new StringBuilder();
             string width = "95%";
@@ -141,14 +141,14 @@ namespace DBM
             SB.AppendLine("\t\t\t\tvar data = google.visualization.arrayToDataTable([");
             //Columns
             SB.Append("\t\t\t\t\t");
-            SB.Append(ListToJsonArray(Columns,false));
+            SB.Append(ListToJsonArray(Columns,RespectNumbers[0]));
             SB.AppendLine(",");
             //Data
             for (int i = 0; i < Data.Count; i++)
             {
                 SB.Append("\t\t\t\t\t");
                 //Data Level 2
-                SB.Append(ListToJsonArray(Data[i]));
+                SB.Append(ListToJsonArray(Data[i],RespectNumbers[1]));
                 SB.Append("");
                 if (i < (Data.Count - 1))
                 {
@@ -169,6 +169,8 @@ namespace DBM
             SB.AppendLine("\t}\n\t\t</script>");
             SB.AppendLine("\t</head>");
             SB.AppendLine("\t<body>");
+            //SB.AppendFormat("\t\t<h1>{0}</h1>\n", Title);
+            //SB.AppendFormat("\t\t<h2>{0}</h2>\n", SubTitle);
             SB.AppendFormat("\t\t<div id='{0}' style=\"width:{1}; height: {2};\"></div>\n", "chart", width, height);
             SB.AppendLine("\t</body>");
             SB.AppendLine("</html>");
@@ -185,6 +187,16 @@ namespace DBM
         public abstract class CoreChart : Chart
         {
             public override int MinColumns { get { return 1; } }
+
+            public override bool[] RespectNumbers
+            {
+                get
+                {
+                    bool[] Temp = new bool[2] { false, true };
+                    return Temp;
+                }
+            }
+
             public override string Package { get { return "corechart"; } }
         }
 
@@ -226,9 +238,18 @@ namespace DBM
                 get { return ChartTypes.Org; }
             }
 
-            public override int MinColumns { get { return 1; } }
+            public override int MinColumns { get { return 2; } }
             public override string Package { get { return "orgchart"; } }
             public override string Function { get { return "OrgChart"; } }
+
+            public override bool[] RespectNumbers
+            {
+                get
+                {
+                    bool[] Temp = new bool[2] { false, false };
+                    return Temp;
+                }
+            }
         }
 
         public class SanKey : Chart
@@ -236,6 +257,15 @@ namespace DBM
             public override ChartTypes ChartType
             {
                 get { return ChartTypes.Sankey; }
+            }
+
+            public override bool[] RespectNumbers
+            {
+                get
+                {
+                    bool[] Temp = new bool[2] { false, true };
+                    return Temp;
+                }
             }
 
             public override int MinColumns  { get { return 2; } }
