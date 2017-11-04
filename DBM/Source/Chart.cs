@@ -11,7 +11,7 @@ namespace DBM
         List<DataType> Types = new List<DataType>();
         List<List<string>> Data = new List<List<string>>();
 
-        public enum ChartTypes { Bar, Bubble, Column, Donut, Pie, Table };
+        public enum ChartTypes { Bar, Bubble, Column, Donut, Pie, Table,Org,Sankey };
         public enum DataType { number,text};
 
         public abstract ChartTypes ChartType { get; }
@@ -22,6 +22,11 @@ namespace DBM
         public string SubTitle;
         public string Xaxis;
         public string Yaxis;
+
+        /// <summary>
+        /// Counts from zero and not one!!!
+        /// </summary>
+        public abstract int MinColumns { get; }
 
         public void AddColumn(string Column, DataType Type = DataType.text)
         {
@@ -74,6 +79,7 @@ namespace DBM
             SB.Append("[");
             for (int i = 0; i< Data.Count; i++)
             {
+                Data[i] = Data[i]?.Replace("\"", "");
                 if (respectNumber == false)
                 {
                     SB.AppendFormat("'{0}'", Data[i]);
@@ -178,6 +184,7 @@ namespace DBM
 
         public abstract class CoreChart : Chart
         {
+            public override int MinColumns { get { return 1; } }
             public override string Package { get { return "corechart"; } }
         }
 
@@ -188,17 +195,7 @@ namespace DBM
                 get { return ChartTypes.Bar; }
             }
 
-            public override string Function { get { return "ColumnChart"; } }
-        }
-
-        public class Bubble : CoreChart
-        {
-            public override ChartTypes ChartType
-            {
-                get { return ChartTypes.Bubble; }
-            }
-
-            public override string Function { get { return "BubbleChart"; } }
+            public override string Function { get { return "BarChart"; } }
         }
 
         public class Column : CoreChart
@@ -212,15 +209,38 @@ namespace DBM
         }
 
 
-        public class Pie : Chart
+        public class Pie : CoreChart
         {
             public override ChartTypes ChartType
             {
                 get { return ChartTypes.Pie; }
             }
 
-            public override string Function { get { return ""; } }
-            public override string Package => throw new NotImplementedException();
+            public override string Function { get { return "PieChart"; } }
+        }
+
+        public class OrgChart : Chart
+        {
+            public override ChartTypes ChartType
+            {
+                get { return ChartTypes.Org; }
+            }
+
+            public override int MinColumns { get { return 1; } }
+            public override string Package { get { return "orgchart"; } }
+            public override string Function { get { return "OrgChart"; } }
+        }
+
+        public class SanKey : Chart
+        {
+            public override ChartTypes ChartType
+            {
+                get { return ChartTypes.Sankey; }
+            }
+
+            public override int MinColumns  { get { return 2; } }
+            public override string Package  { get { return "sankey"; } }
+            public override string Function { get { return "Sankey"; } }
         }
     }
 }

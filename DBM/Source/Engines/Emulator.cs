@@ -209,49 +209,43 @@ namespace DBM
                     }
                     else if (SQL.StartsWith(".charts", Comparison))
                     {
-
+                        //TODO Make a list of all available charts
                     }
                     else if (SQL.StartsWith(".bar", Comparison))
                     {
-                        //Column(s)?
-                        //Values
-
-                        //Title
-                        //SubTitle
-                        //Haxis Title
-                        //Yaxis Title
+                        //Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis
                         Chart chart = new Chart.Bar();
-                        SQL = SQL.Remove(0, 5);
-                        string[] Arguments = SQL.Split(',');
-                        string SQLQuery = string.Format("SELECT {0},{1} FROM {2} GROUP BY {0};", Arguments[0].Replace("(", "").Replace(")", ""), Arguments[1], CurrentTable.SanitizeFieldName());
-                        Primitive Data = Query(CurrentDatabase, 
-                            SQLQuery,
-                            null,
-                            true,
-                            Username,
-                            "Chart"
-                            );
-                        Primitive Columns = Data[1].GetAllIndices();
-                        //Console.WriteLine((string)Arguments.ToPrimitiveArray());
-                        //Console.WriteLine((string)Columns);
-                        //Console.WriteLine((string)Data);
-
-                        chart.AddColumn(Columns[1]);
-                        chart.AddColumn(Columns[2],Chart.DataType.number);
-
-                        for (int i = 1; i <= Data.GetItemCount(); i++)
-                        {
-                            for (int ii = 1; ii <= Data[i].GetItemCount(); ii++) {
-                                chart.AddRowData(i - 1, Data[i][Columns[ii]]);
-                            }
-                        }
-
-                        chart.Title = (Arguments[2] ?? Engines.CurrentTable).Replace("'","");
-                        chart.SubTitle = (Arguments[3] ?? string.Empty).Replace("'","");
-                        chart.Xaxis = (Arguments[4] ?? string.Empty).Replace("'", "");
-                        chart.Yaxis = (Arguments[5] ?? string.Empty).Replace("'", "");
-
-                        Console.WriteLine(chart.Export());
+                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 5).Split(',');
+                        Import(chart, Arguments);
+                        string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + "\\Bar Chart.html";
+                        chart.Write(OutPut, chart.Export());
+                    }
+                    else if (SQL.StartsWith(".pie", Comparison))
+                    {
+                        //Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis
+                        Chart chart = new Chart.Pie();
+                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 5).Split(',');
+                        Import(chart, Arguments);
+                        string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + "\\Pie Chart.html";
+                        chart.Write(OutPut, chart.Export());
+                    }
+                    else if (SQL.StartsWith(".column", Comparison))
+                    {
+                        //Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis
+                        Chart chart = new Chart.Column();
+                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 7).Split(',');
+                        Import(chart, Arguments);
+                        string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + "\\Column Chart.html";
+                        chart.Write(OutPut, chart.Export());
+                    }
+                    else if (SQL.StartsWith(".sankey", Comparison))
+                    {
+                        //Columns(From,To,..),Title,SubTitle,Xaxis,Yaxis
+                        Chart chart = new Chart.SanKey();
+                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 7).Split(',');
+                        Import(chart, Arguments);
+                        string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + "\\Sankey Chart.html";
+                        chart.Write(OutPut, chart.Export());
                     }
                     break;
                 default:
@@ -267,6 +261,83 @@ namespace DBM
                 Engines.GetSchema(Database);
                 Engines.SetDefaultTable(EmulatorTable);
                 Engines.GetColumnsofTable(Database, EmulatorTable);
+            }
+
+        }
+
+        static void Import(Chart chart, string[] Arguments)
+        {
+            //TODO add support for multiple columns and value types..
+            Arguments[0] = Arguments[0].Replace("(", "").Replace(")", "");
+            string SQLQuery = string.Empty;
+            if (chart.MinColumns == 1)
+            {
+                SQLQuery = string.Format("SELECT {0},{1} FROM {2} GROUP BY {0};", Arguments[0], Arguments[1], CurrentTable.SanitizeFieldName());
+            }
+            else if (chart.MinColumns == 2)
+            {
+                SQLQuery = string.Format("SELECT {0},{1},{2} FROM {3};", Arguments[0], Arguments[1],Arguments[2], CurrentTable.SanitizeFieldName());
+            }
+            Console.WriteLine(SQLQuery);
+            Primitive Data = Query(CurrentDatabase,
+                SQLQuery,
+                null,
+                true,
+                "App",
+                "Chart"
+                );
+            Console.WriteLine((string)Data);
+            Import(chart, Data, Arguments);
+        }
+
+        static void Import(Chart chart,Primitive Data,string[] Arguments)
+        {
+            Primitive Columns = Data[1].GetAllIndices();
+            //TODO add better type determination for charts...
+            //Current Assumption is the last value will always be a number
+            //and all previous columns are string data types..
+            for (int i = 1; i <= Columns.GetItemCount(); i++)
+            {
+                if (i < Columns.GetItemCount())
+                {
+                    chart.AddColumn(Columns[i]);
+                }
+                else
+                {
+                    chart.AddColumn(Columns[i], Chart.DataType.number);
+                }
+            }
+
+            for (int i = 1; i <= Data.GetItemCount(); i++)
+            {
+                for (int ii = 1; ii <= Data[i].GetItemCount(); ii++)
+                {
+                    chart.AddRowData(i - 1, Data[i][Columns[ii]]);
+                }
+            }
+
+            if (Arguments.Length > chart.MinColumns + 1)
+            {
+                chart.Title = (Arguments[chart.MinColumns + 1] ?? Engines.CurrentTable)?.Replace("'", "");
+            }
+            else
+            {
+                chart.Title = Engines.CurrentTable.Replace("'","").Replace("\"","");
+            }
+
+            if (Arguments.Length > chart.MinColumns + 2)
+            {
+                chart.SubTitle = (Arguments[chart.MinColumns + 2] ?? string.Empty)?.Replace("'", "");
+            }
+
+            if (Arguments.Length > chart.MinColumns + 3)
+            {
+                chart.Xaxis = (Arguments[chart.MinColumns + 3] ?? string.Empty)?.Replace("'", "");
+            }
+
+            if (Arguments.Length > chart.MinColumns + 4)
+            {
+                chart.Yaxis = (Arguments[chart.MinColumns + 4] ?? string.Empty)?.Replace("'", "");
             }
 
         }

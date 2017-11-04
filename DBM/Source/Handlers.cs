@@ -222,7 +222,7 @@ namespace DBM
                     switch (Engines.CurrentEngine)
                     {
                         case Engines.EnginesMode.SQLITE:
-                            SchemaQuery = Engines.Query(Engines.CurrentDatabase, "PRAGMA table_info(" + Engines.CurrentTable + ");", null, true, GlobalStatic.UserName, "SCHEMA");
+                            SchemaQuery = Engines.Query(Engines.CurrentDatabase, "PRAGMA table_info(" + Engines.CurrentTable.SanitizeFieldName() + ");", null, true, GlobalStatic.UserName, "SCHEMA");
                             break;
                         default:
                             throw new PlatformNotSupportedException("Currently database is not supported");

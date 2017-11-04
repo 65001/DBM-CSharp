@@ -21,6 +21,12 @@ namespace DBM
 		public static string CurrentTable { get; private set; }
 		public static string DatabaseShortname { get; private set; }
 
+
+        public static int GetDataBaseIndex(string Database)
+        {
+            return DB_Name.IndexOf(Database);
+        }
+
         /// <summary>
         /// Returns the current EngineMode or EngineModes.NONE if no data is currently in the List
         /// </summary>
