@@ -296,11 +296,11 @@ namespace DBM
             string SQLQuery = string.Empty;
             if (chart.MinColumns == 1)
             {
-                SQLQuery = string.Format("SELECT {0},{1} FROM {2} GROUP BY {0};", Arguments[0], Arguments[1], CurrentTable.SanitizeFieldName());
+                SQLQuery = string.Format("SELECT {0},{1} FROM \"{2}\" GROUP BY {0};", Arguments[0], Arguments[1], CurrentTable.SanitizeFieldName());
             }
             else if (chart.MinColumns == 2)
             {
-                SQLQuery = string.Format("SELECT {0},{1},{2} FROM {3};", Arguments[0], Arguments[1],Arguments[2], CurrentTable.SanitizeFieldName());
+                SQLQuery = string.Format("SELECT {0},{1},{2} FROM \"{3}\";", Arguments[0], Arguments[1],Arguments[2], CurrentTable.SanitizeFieldName());
             }
             Console.WriteLine(SQLQuery);
             Primitive Data = Query(CurrentDatabase,

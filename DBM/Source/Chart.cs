@@ -68,8 +68,10 @@ namespace DBM
             }
             else
             {
-                List<string> Temp = new List<string>();
-                Temp.Add(Data.ToString());
+                List<string> Temp = new List<string>
+                {
+                    Data.ToString()
+                };
                 this.Data.Add(Temp);
             }
         }
@@ -81,7 +83,7 @@ namespace DBM
             int Max = Data.Count - 1;
             for (int i = 0;i < Data.Count;i++)
             {
-                Data[i] = Data[i]?.Replace("\"", "");
+                Data[i] = Data[i]?.Replace("\"", "").Replace("'","\'");
                 if (respectNumber == false)
                 {
                     SB.AppendFormat("'{0}'", Data[i]);

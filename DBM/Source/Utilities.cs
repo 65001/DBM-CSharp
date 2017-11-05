@@ -151,8 +151,7 @@ namespace DBM
 
         public class Updater
         {
-
-            public static void CheckForUpdates(string downloadlocation, string URI = GlobalStatic.OnlineDB_Refrence_Location, bool UI = true)  //TODO Update Functionality. Possibly make this a function?
+            public static void CheckForUpdates(string downloadlocation, string URI = GlobalStatic.OnlineDB_Refrence_Location, bool UI = true)
             {
                 AddtoStackTrace($"Utilities.Updater.CheckForUpdates({UI})");
                 if (string.IsNullOrWhiteSpace(UpdaterDB) == false || LDNetwork.DownloadFile(downloadlocation, URI) != -1)
