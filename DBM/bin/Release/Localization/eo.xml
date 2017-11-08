@@ -2,13 +2,13 @@
 <root>
 	<Language>
 		<About>Pri</About>
-		<Access_Denied>Aliro neita</Access_Denied>
+		<Access_Denied>Aliro malkonfirmita</Access_Denied>
 		<App>Apliko</App>
 		<Application>App</Application>
 		<Asc>Suprenirante</Asc>
 		<Auto_Log>Automata Ensaluto</Auto_Log>
 		<Browse>Foliumi</Browse>
-		<CMD_Tooltip>Ekzekutas personecajn SQL-komandajn deklarojn al la datumbazo</CMD_Tooltip>
+		<CMD_Tooltip>Ekzekutas personigitajn komandajn komandojn de SQL al la datumbazo</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Eraro: Bonvolu kontroli la protokolon por detaloj</Check_Log>
 		<Check_for_Updates>Kontrolu gisdatigojn</Check_for_Updates>
@@ -25,18 +25,19 @@
 		<Desc>Posteulo</Desc>
 		<Developer>Programisto</Developer>
 		<Display_Settings>Montri agordojn</Display_Settings>
+		<Download_Update>Elsuti Gisdatigu</Download_Update>
 		<Edit>Redakti</Edit>
 		<Error>Eraro</Error>
 		<Error_Generic>Ho nenio iris malbone! :(</Error_Generic>
 		<Error_No_DB>Eraro: Neniu Datumbazo sargis</Error_No_DB>
 		<Export>Eksporti</Export>
-		<Export_CSV>Eksportado de CSV</Export_CSV>
-		<Export_HTML_Data>Eksporti HTML-datumojn en nome de</Export_HTML_Data>
+		<Export_CSV>Eksporta CSV-PRAJO</Export_CSV>
+		<Export_HTML_Data>Eksporti HTML-datumojn nome de</Export_HTML_Data>
 		<Export_HTML_Schema>Eksporti HTML SCHEMA en nomo de</Export_HTML_Schema>
-		<Export_SQL_SCHEMA>Eksportado SQL - SCHEMA - En la nomo de</Export_SQL_SCHEMA>
+		<Export_SQL_SCHEMA>Eksportado SQL - SCHEMA - Nome de</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Eksporti SQL - SQL - Nome de</Export_SQL_SQL>
 		<Export_UI>Eksporti UI</Export_UI>
-		<Export_XML>Eksporta XML SINGLETE</Export_XML>
+		<Export_XML>Eksporta XML SINGLE DE</Export_XML>
 		<Extensions>Etendoj</Extensions>
 		<Failed>Malsukcesis</Failed>
 		<Failed_Load_Online_EULA>Malsukcesis sargi en linio EULA</Failed_Load_Online_EULA>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML al CSV</HTML_to_CSV>
 		<Help>Helpo</Help>
 		<Import>Importi</Import>
+		<Import_Completed>Importi Kompletigita</Import_Completed>
 		<Import_SQL>Importi SQL</Import_SQL>
 		<Importer>Importisto</Importer>
 		<Index>Indekso</Index>
-		<Invert>Renversi</Invert>
+		<Invert>Reverti</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Ensalutu CSV-vojon</LOG_CSV_Path>
 		<LOG_DB_PATH>Ensaluti DatabasePath</LOG_DB_PATH>
 		<Language>Lingvo</Language>
-		<Listview_Height>Lerta Alteco</Listview_Height>
+		<Listview_Height>Altrigardo Alteco</Listview_Height>
 		<Listview_Width>Lerta Vidlinio</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Majstro Tablo</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable au 'Master Table' estas protektita tablo. Por protekti la integrecon de la db vi ne povas redakti ci tiun tablon</Master_Table_Protected>
 		<New>Nova</New>
 		<New_in_Memory_Db>Nova en Memoria Datumbazo</New_in_Memory_Db>
+		<NoUpdates>Neniu gisdatigoj</NoUpdates>
+		<No_Updates>Ne ekzistas disponeblaj gisdatigoj</No_Updates>
 		<Not_Supported>Ne subtenata</Not_Supported>
 		<Open>Malfermita</Open>
 		<Opened>Malfermita</Opened>
@@ -88,13 +94,14 @@
 		<Success>Sukceso</Success>
 		<System>Sistemo</System>
 		<Table>Tablo</Table>
-		<Toggle_Debug>Baskuligi Sangon</Toggle_Debug>
-		<Toggle_Transaction_Log>Salti Transaction-Log</Toggle_Transaction_Log>
+		<Toggle_Debug>Baskuligi Srancilon</Toggle_Debug>
+		<Toggle_Transaction_Log>Baskuligi Transaction Log</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Transaction Database Path</Transaction_DB_Path>
-		<UI>IU</UI>
+		<UI>UI</UI>
 		<User_Requested>Uzanto Petita</User_Requested>
 		<View>Vido</View>
 		<View_Function>Vidi Funkcion</View_Function>
 		<Views_Read_Only>Vidoj estas lege kaj ne povas esti redaktataj</Views_Read_Only>
+		<WMU>Vikio MarkUp</WMU>
 	</Language>
 </root>

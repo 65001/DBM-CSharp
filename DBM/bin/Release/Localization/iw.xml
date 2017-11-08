@@ -25,21 +25,22 @@
 		<Desc>יורד</Desc>
 		<Developer>מפתח</Developer>
 		<Display_Settings>הגדרות תצוגה</Display_Settings>
+		<Download_Update>להוריד עדכון</Download_Update>
 		<Edit>לַעֲרוֹך</Edit>
 		<Error>שְׁגִיאָה</Error>
 		<Error_Generic>הו, שום דבר לא השתבש! You</Error_Generic>
 		<Error_No_DB>שגיאה: לא נטען מסד נתונים</Error_No_DB>
 		<Export>יְצוּא</Export>
-		<Export_CSV>יצוא CSV על שלום</Export_CSV>
+		<Export_CSV>יצוא CSV על BEHALF</Export_CSV>
 		<Export_HTML_Data>ייצוא נתוני HTML בשם</Export_HTML_Data>
 		<Export_HTML_Schema>ייצוא HTML SCHEMA מטעם</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>ייצוא SQL - SCHEMA - בשם</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>ייצוא SQL - SQL - מטעם</Export_SQL_SQL>
 		<Export_UI>ייצא ממשק משתמש</Export_UI>
-		<Export_XML>ייצוא XML על</Export_XML>
+		<Export_XML>יצוא XML על מצבו של</Export_XML>
 		<Extensions>תוספים</Extensions>
 		<Failed>נִכשָׁל</Failed>
-		<Failed_Load_Online_EULA>טעינת ה- EULA המקוונת נכשלה</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>טעינה של EULA מקוונת נכשלה</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>שמירת ההגדרות נכשלה</Failed_Save_Settings>
 		<File>קוֹבֶץ</File>
 		<Functions>פונקציות</Functions>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML ל- CSV</HTML_to_CSV>
 		<Help>עֶזרָה</Help>
 		<Import>יְבוּא</Import>
+		<Import_Completed>הייבוא הושלם</Import_Completed>
 		<Import_SQL>ייבוא SQL</Import_SQL>
 		<Importer>יְבוּאָן</Importer>
 		<Index>אינדקס</Index>
 		<Invert>לַהֲפוֹך</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>התחבר נתיב CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>רישום DatabasePath</LOG_DB_PATH>
 		<Language>שפה</Language>
 		<Listview_Height>גובה רשימה</Listview_Height>
 		<Listview_Width>רוחב תצוגה</Listview_Width>
+		<MD>מארקדון</MD>
 		<Master_Table>לוח מאסטר</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable או 'לוח מאסטר' הוא טבלה מוגנת. כדי להגן על שלמות db אתה לא יכול לערוך את הטבלה</Master_Table_Protected>
 		<New>חָדָשׁ</New>
-		<New_in_Memory_Db>חדש במסד הנתונים זיכרון</New_in_Memory_Db>
+		<New_in_Memory_Db>חדש במסד הנתונים של זיכרון</New_in_Memory_Db>
+		<NoUpdates>אין עדכונים</NoUpdates>
+		<No_Updates>אין עדכונים זמינים</No_Updates>
 		<Not_Supported>אינו נתמך</Not_Supported>
 		<Open>לִפְתוֹחַ</Open>
 		<Opened>נפתח</Opened>
@@ -70,7 +76,7 @@
 		<Query_Error>שגיאת שאילתה</Query_Error>
 		<Refresh_Schema>רענן סכימה</Refresh_Schema>
 		<Run_Function>הפעל פונקציה</Run_Function>
-		<SCHEMA_PRIVATE>SCHEMA פרטית</SCHEMA_PRIVATE>
+		<SCHEMA_PRIVATE>SCHEMA - פרטי</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
 		<Save>להציל</Save>
 		<Save_and_Close>שמור וסגור</Save_and_Close>
@@ -96,5 +102,6 @@
 		<View>נוף</View>
 		<View_Function>הצג פונקציה</View_Function>
 		<Views_Read_Only>צפיות הן לקריאה ולא ניתן לערוך אותן</Views_Read_Only>
+		<WMU>Wiki</WMU>
 	</Language>
 </root>

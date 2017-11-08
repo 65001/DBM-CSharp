@@ -25,17 +25,18 @@
 		<Desc>synkende</Desc>
 		<Developer>Utvikler</Developer>
 		<Display_Settings>Skjerminnstillinger</Display_Settings>
+		<Download_Update>Last ned oppdatering</Download_Update>
 		<Edit>Redigere</Edit>
 		<Error>Feil</Error>
 		<Error_Generic>Åh ikke noe gikk galt! :(</Error_Generic>
 		<Error_No_DB>Feil: Ingen database er lastet inn</Error_No_DB>
 		<Export>Eksport</Export>
-		<Export_CSV>EKSPORT CSV PÅ HELE</Export_CSV>
+		<Export_CSV>Eksportere CSV på grunn av</Export_CSV>
 		<Export_HTML_Data>Eksporter HTML DATA på vegne av</Export_HTML_Data>
 		<Export_HTML_Schema>Eksporter HTML-skjema på vegne av</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Eksporter SQL - SCHEMA - På vegne av</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Eksporter SQL - SQL - På vegne av</Export_SQL_SQL>
-		<Export_UI>Eksportere brukergrensesnitt</Export_UI>
+		<Export_UI>Eksporter brukergrensesnitt</Export_UI>
 		<Export_XML>Eksport XML på grunn av</Export_XML>
 		<Extensions>utvidelser</Extensions>
 		<Failed>mislyktes</Failed>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML til CSV</HTML_to_CSV>
 		<Help>Hjelp</Help>
 		<Import>Import</Import>
+		<Import_Completed>Importen er fullført</Import_Completed>
 		<Import_SQL>Importer SQL</Import_SQL>
 		<Importer>Importør</Importer>
 		<Index>Hovedsiden</Index>
 		<Invert>Inverter</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Logg CSV-sti</LOG_CSV_Path>
 		<LOG_DB_PATH>Logg DatabasePath</LOG_DB_PATH>
 		<Language>Språk</Language>
 		<Listview_Height>Listevisning Høyde</Listview_Height>
 		<Listview_Width>Listevisningsbredde</Listview_Width>
+		<MD>Markdown</MD>
 		<Master_Table>Mestertabell</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable eller 'Master Table' er et beskyttet bord. For å beskytte integriteten til db kan du ikke redigere denne tabellen</Master_Table_Protected>
 		<New>Ny</New>
-		<New_in_Memory_Db>Nytt i Memory Database</New_in_Memory_Db>
+		<New_in_Memory_Db>Ny i Memory Database</New_in_Memory_Db>
+		<NoUpdates>Ingen oppdateringer</NoUpdates>
+		<No_Updates>Det er ingen oppdateringer tilgjengelig</No_Updates>
 		<Not_Supported>Ikke støttet</Not_Supported>
 		<Open>Åpen</Open>
 		<Opened>åpnet</Opened>
@@ -96,5 +102,6 @@
 		<View>Utsikt</View>
 		<View_Function>Vis Funksjon</View_Function>
 		<Views_Read_Only>Visninger er readonly og kan ikke redigeres</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

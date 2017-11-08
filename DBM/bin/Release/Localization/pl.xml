@@ -4,42 +4,43 @@
 		<About>O</About>
 		<Access_Denied>Brak dostępu</Access_Denied>
 		<App>Podanie</App>
-		<Application>Aplikacja</Application>
+		<Application>App</Application>
 		<Asc>Rosnąco</Asc>
-		<Auto_Log>Automatyczne logowanie</Auto_Log>
+		<Auto_Log>Auto Log</Auto_Log>
 		<Browse>Paść się</Browse>
-		<CMD_Tooltip>Wykonuje niestandardowe instrukcje SQL w bazie danych</CMD_Tooltip>
+		<CMD_Tooltip>Wykonuje niestandardowe polecenia poleceń SQL do bazy danych</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>Błąd: sprawdź szczegóły logu</Check_Log>
+		<Check_Log>Błąd: sprawdź dziennik, aby uzyskać szczegółowe informacje</Check_Log>
 		<Check_for_Updates>Sprawdź aktualizacje</Check_for_Updates>
 		<Close_TW>Zamknij TW</Close_TW>
-		<Close_wo_saving>Zamknij bez zapisu</Close_wo_saving>
+		<Close_wo_saving>Zamknij bez zapisywania</Close_wo_saving>
 		<Command>Rozkaz</Command>
 		<Converter>Przetwornik</Converter>
 		<Create_Statistics_Page>Utwórz stronę statystyk</Create_Statistics_Page>
-		<Critical_Fault_Error>Błąd krytycznego błędu</Critical_Fault_Error>
-		<Dataview_Error>Baza danych lub Dataview nie istnieje lub nie zostało jeszcze załadowane</Dataview_Error>
+		<Critical_Fault_Error>Błąd krytyczny</Critical_Fault_Error>
+		<Dataview_Error>Baza danych lub DataView nie istnieje lub jeszcze nie została załadowana</Dataview_Error>
 		<Debug>Odpluskwić</Debug>
 		<Define_New_Table>Zdefiniuj nową tabelę</Define_New_Table>
-		<Deliminator>Delimator</Deliminator>
+		<Deliminator>Deliminator</Deliminator>
 		<Desc>Malejąco</Desc>
 		<Developer>Deweloper</Developer>
 		<Display_Settings>Ustawienia wyświetlania</Display_Settings>
+		<Download_Update>Pobierz aktualizację</Download_Update>
 		<Edit>Edytować</Edit>
 		<Error>Błąd</Error>
-		<Error_Generic>Och, nic się nie stało! :(</Error_Generic>
-		<Error_No_DB>Błąd: nie została załadowana baza danych</Error_No_DB>
+		<Error_Generic>Och, coś poszło nie tak! :(</Error_Generic>
+		<Error_No_DB>Błąd: nie załadowano bazy danych</Error_No_DB>
 		<Export>Eksport</Export>
-		<Export_CSV>EXPORT CSV w imieniu</Export_CSV>
-		<Export_HTML_Data>Eksportuj DANYCH HTML w imieniu</Export_HTML_Data>
+		<Export_CSV>EKSPORT CSV O BEHALFIE</Export_CSV>
+		<Export_HTML_Data>Eksportuj dane HTML w imieniu</Export_HTML_Data>
 		<Export_HTML_Schema>Wyeksportuj HTML SCHEMA w imieniu</Export_HTML_Schema>
-		<Export_SQL_SCHEMA>Export SQL - SCHEMA - W imieniu</Export_SQL_SCHEMA>
-		<Export_SQL_SQL>Eksport SQL - SQL - W imieniu</Export_SQL_SQL>
+		<Export_SQL_SCHEMA>Eksportuj SQL - SCHEMA - W imieniu</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>Eksportuj SQL - SQL - W imieniu</Export_SQL_SQL>
 		<Export_UI>Eksportuj interfejs użytkownika</Export_UI>
-		<Export_XML>EXPORT XML ZAŁOŻONE</Export_XML>
+		<Export_XML>WYWOŁUJ XML NA BOCZNIE</Export_XML>
 		<Extensions>Rozszerzenia</Extensions>
-		<Failed>Niepowodzenie</Failed>
-		<Failed_Load_Online_EULA>Nie można załadować online EULA</Failed_Load_Online_EULA>
+		<Failed>Nie powiodło się</Failed>
+		<Failed_Load_Online_EULA>Nie udało się załadować EULA online</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Nie udało się zapisać ustawień</Failed_Save_Settings>
 		<File>Plik</File>
 		<Functions>Funkcje</Functions>
@@ -47,35 +48,40 @@
 		<HTML_to_CSV>HTML do CSV</HTML_to_CSV>
 		<Help>Wsparcie</Help>
 		<Import>Import</Import>
+		<Import_Completed>Importuj zakończone</Import_Completed>
 		<Import_SQL>Importuj SQL</Import_SQL>
 		<Importer>Importer</Importer>
 		<Index>Indeks</Index>
 		<Invert>Odwracać</Invert>
-		<LOG_CSV_Path>Zaloguj ścieżkę CSV</LOG_CSV_Path>
-		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<JSON>JSON</JSON>
+		<LOG_CSV_Path>Zaloguj się Ścieżka CSV</LOG_CSV_Path>
+		<LOG_DB_PATH>Loguj bazę danych</LOG_DB_PATH>
 		<Language>Język</Language>
-		<Listview_Height>Wysokość listy</Listview_Height>
-		<Listview_Width>Width Width</Listview_Width>
-		<Master_Table>Master Table</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable lub 'Master Table' jest chronioną tabelą. Aby chronić integralność db, nie można edytować tej tabeli</Master_Table_Protected>
+		<Listview_Height>Wysokość widoku</Listview_Height>
+		<Listview_Width>Szerokość widoku listy</Listview_Width>
+		<MD>Obniżka cen</MD>
+		<Master_Table>Tabela główna</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable lub "Master Table" to tabela chroniona. Aby chronić integralność bazy danych, nie można jej edytować</Master_Table_Protected>
 		<New>Nowy</New>
-		<New_in_Memory_Db>Nowość w bazie danych pamięci</New_in_Memory_Db>
+		<New_in_Memory_Db>Nowa baza pamięci</New_in_Memory_Db>
+		<NoUpdates>Brak aktualizacji</NoUpdates>
+		<No_Updates>Brak dostępnych aktualizacji</No_Updates>
 		<Not_Supported>Nieobsługiwany</Not_Supported>
 		<Open>otwarty</Open>
 		<Opened>Otwierany</Opened>
-		<PRGM_Start>Uruchomienie programu</PRGM_Start>
+		<PRGM_Start>Program uruchomiony</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>Podłącz</Plugin>
 		<Query>Pytanie</Query>
 		<Query_Error>Błąd zapytania</Query_Error>
 		<Refresh_Schema>Odśwież schemat</Refresh_Schema>
 		<Run_Function>Uruchom funkcję</Run_Function>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<SCHEMA_PRIVATE>SCHEMAT-PRYWATNY</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
 		<Save>Zapisać</Save>
 		<Save_and_Close>Zapisz i zamknij</Save_and_Close>
 		<Search>Szukanie</Search>
-		<Search_Settings>Ustawienia wyszukiwania</Search_Settings>
+		<Search_Settings>Wyszukaj ustawienia</Search_Settings>
 		<Search_in>Szukać w</Search_in>
 		<Settings>Ustawienia</Settings>
 		<Settings_Editor>Edytor ustawień</Settings_Editor>
@@ -83,7 +89,7 @@
 		<Sort>Sortować</Sort>
 		<Sort_by>Sortuj według</Sort_by>
 		<Stack_Trace>Ślad stosu</Stack_Trace>
-		<Statistics_Page>Strona Statystyka</Statistics_Page>
+		<Statistics_Page>Strona statystyk</Statistics_Page>
 		<Strict_Search>Ścisłe wyszukiwanie</Strict_Search>
 		<Success>Powodzenie</Success>
 		<System>System</System>
@@ -91,10 +97,11 @@
 		<Toggle_Debug>Przełącz debugowanie</Toggle_Debug>
 		<Toggle_Transaction_Log>Przełącz dziennik transakcji</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Ścieżka bazy danych transakcji</Transaction_DB_Path>
-		<UI>UI</UI>
-		<User_Requested>Użytkownik został poproszony</User_Requested>
+		<UI>Interfejs użytkownika</UI>
+		<User_Requested>Użytkownik zażądał</User_Requested>
 		<View>Widok</View>
-		<View_Function>Wyświetl funkcję</View_Function>
+		<View_Function>Zobacz funkcję</View_Function>
 		<Views_Read_Only>Widoki są tylko do odczytu i nie można ich edytować</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

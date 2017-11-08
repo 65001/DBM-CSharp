@@ -25,6 +25,7 @@
 		<Desc>Descending</Desc>
 		<Developer>Developer</Developer>
 		<Display_Settings>Display Settings</Display_Settings>
+		<Download_Update>Download Update</Download_Update>
 		<Edit>Edit</Edit>
 		<Error>Error</Error>
 		<Error_Generic>Oh no something went wrong! :(</Error_Generic>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML to CSV</HTML_to_CSV>
 		<Help>Help</Help>
 		<Import>Import</Import>
+		<Import_Completed>Import Completed</Import_Completed>
 		<Import_SQL>Import SQL</Import_SQL>
 		<Importer>Importer</Importer>
 		<Index>Index</Index>
 		<Invert>Invert</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Log CSV Path</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Language</Language>
 		<Listview_Height>Listview Height</Listview_Height>
 		<Listview_Width>Listview Width</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Master Table</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable or 'Master Table' is a protected table. To protect the integrity of the db you cannot edit this table</Master_Table_Protected>
 		<New>New</New>
 		<New_in_Memory_Db>New in Memory Database</New_in_Memory_Db>
+		<NoUpdates>No Updates</NoUpdates>
+		<No_Updates>There are no updates available</No_Updates>
 		<Not_Supported>Not Supported</Not_Supported>
 		<Open>Open</Open>
 		<Opened>Opened</Opened>
@@ -96,5 +102,6 @@
 		<View>View</View>
 		<View_Function>View Function</View_Function>
 		<Views_Read_Only>Views are readonly and cannot be edited</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

@@ -25,21 +25,22 @@
 		<Desc>klesajúci</Desc>
 		<Developer>vývojka</Developer>
 		<Display_Settings>Nastavenia zobrazenia</Display_Settings>
+		<Download_Update>Prevziať aktualizáciu</Download_Update>
 		<Edit>editovať</Edit>
 		<Error>Chyba</Error>
 		<Error_Generic>Oh, niečo sa pokazilo! :(</Error_Generic>
-		<Error_No_DB>Chyba: Nenašla sa žiadna databáza</Error_No_DB>
+		<Error_No_DB>Chyba: Nie je načítaná žiadna databáza</Error_No_DB>
 		<Export>Export</Export>
 		<Export_CSV>EXPORT CSV ZA VOĽNU</Export_CSV>
-		<Export_HTML_Data>Exportovať HTML DATA v mene</Export_HTML_Data>
+		<Export_HTML_Data>Export HTML DATA v mene</Export_HTML_Data>
 		<Export_HTML_Schema>Export HTML SCHEMA v mene spoločnosti</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Export SQL - SCHEMA - V mene spoločnosti</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Export SQL - SQL - V mene spoločnosti</Export_SQL_SQL>
 		<Export_UI>UI exportu</Export_UI>
-		<Export_XML>EXPORT XML VO VECE</Export_XML>
+		<Export_XML>EXPORT XML VOĽNOM</Export_XML>
 		<Extensions>rozšírenie</Extensions>
 		<Failed>neúspešný</Failed>
-		<Failed_Load_Online_EULA>Nepodarilo sa načítať online zmluvu EULA</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>Nepodarilo sa načítať zmluvu EULA online</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Nepodarilo sa uložiť nastavenia</Failed_Save_Settings>
 		<File>súbor</File>
 		<Functions>funkcie</Functions>
@@ -47,23 +48,28 @@
 		<HTML_to_CSV>HTML do formátu CSV</HTML_to_CSV>
 		<Help>Pomoc</Help>
 		<Import>import</Import>
+		<Import_Completed>Import bol dokončený</Import_Completed>
 		<Import_SQL>Importovať SQL</Import_SQL>
 		<Importer>dovozca</Importer>
 		<Index>index</Index>
 		<Invert>invertný</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Cesta k CSV protokolom</LOG_CSV_Path>
-		<LOG_DB_PATH>Záznam databázy log</LOG_DB_PATH>
+		<LOG_DB_PATH>Záznamová databáza cesty</LOG_DB_PATH>
 		<Language>Jazyk</Language>
-		<Listview_Height>Výška zoznamu</Listview_Height>
+		<Listview_Height>Height Viewview</Listview_Height>
 		<Listview_Width>Šírka zoznamu</Listview_Width>
+		<MD>markdown</MD>
 		<Master_Table>Master Table</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable alebo "Master Table" je chránená tabuľka. Na ochranu integrity db nemôžete túto tabuľku upraviť</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable alebo "Master Table" je chránená tabuľka. Na ochranu integrity databázy db nemôžete upraviť túto tabuľku</Master_Table_Protected>
 		<New>Nový</New>
 		<New_in_Memory_Db>Nové v databáze pamäte</New_in_Memory_Db>
+		<NoUpdates>Žiadne aktualizácie</NoUpdates>
+		<No_Updates>Nie sú k dispozícii žiadne aktualizácie</No_Updates>
 		<Not_Supported>Nie je podporované</Not_Supported>
 		<Open>Otvorený</Open>
 		<Opened>otvoril</Opened>
-		<PRGM_Start>Program začal</PRGM_Start>
+		<PRGM_Start>Program sa začal</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>Zapojiť</Plugin>
 		<Query>Dopyt</Query>
@@ -96,5 +102,6 @@
 		<View>vyhliadka</View>
 		<View_Function>Funkcia zobrazenia</View_Function>
 		<Views_Read_Only>Zobrazenia sú readonly a nemožno ich upraviť</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

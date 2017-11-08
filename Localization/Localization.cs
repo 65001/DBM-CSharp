@@ -120,7 +120,10 @@ namespace Localization
             return translation;
         }
 
-        
+        /// <summary>
+        /// Creates a Text files of all other languages supported by the localizer in every language supported by the localizer
+        /// </summary>
+        /// <param name="Path">A directory to put these translated text files in..</param>
         static void TextFiles(string Path)
         {
             Primitive Languages = LDTranslate.Languages();

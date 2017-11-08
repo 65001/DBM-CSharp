@@ -10,33 +10,34 @@
 		<Browse>Squeaky toy</Browse>
 		<CMD_Tooltip>Executa instruções de comando SQL personalizadas no banco de dados</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>Erro: verifique o registro para obter detalhes</Check_Log>
-		<Check_for_Updates>Verifique as atualizações</Check_for_Updates>
+		<Check_Log>Erro: Verifique o registro para obter detalhes</Check_Log>
+		<Check_for_Updates>Verifique atualizações</Check_for_Updates>
 		<Close_TW>Fechar TW</Close_TW>
 		<Close_wo_saving>Feche sem salvar</Close_wo_saving>
 		<Command>Comando</Command>
 		<Converter>Conversor</Converter>
 		<Create_Statistics_Page>Criar página de estatísticas</Create_Statistics_Page>
 		<Critical_Fault_Error>Erro de falha crítica</Critical_Fault_Error>
-		<Dataview_Error>O banco de dados ou o Dataview não existem ou ainda não foram carregados</Dataview_Error>
+		<Dataview_Error>O banco de dados ou Dataview não existe ou ainda não foi carregado</Dataview_Error>
 		<Debug>Depurar</Debug>
 		<Define_New_Table>Definir nova tabela</Define_New_Table>
 		<Deliminator>Deliminator</Deliminator>
 		<Desc>descendente</Desc>
 		<Developer>Desenvolvedor</Developer>
 		<Display_Settings>Configurações do visor</Display_Settings>
+		<Download_Update>Faça o download da atualização</Download_Update>
 		<Edit>Editar</Edit>
 		<Error>Erro</Error>
-		<Error_Generic>Ah, não houve algo errado! :(</Error_Generic>
+		<Error_Generic>Ah, alguma coisa deu errado! :(</Error_Generic>
 		<Error_No_DB>Erro: nenhum banco de dados foi carregado</Error_No_DB>
 		<Export>Exportar</Export>
 		<Export_CSV>EXPORTAÇÃO CSV NO NOME DA</Export_CSV>
 		<Export_HTML_Data>Exportar HTML DATA em nome de</Export_HTML_Data>
-		<Export_HTML_Schema>Exporte HTML SCHEMA em nome de</Export_HTML_Schema>
+		<Export_HTML_Schema>Exportar HTML SCHEMA em nome de</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Exportar SQL - SCHEMA - Em nome de</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Exportar SQL - SQL - Em nome de</Export_SQL_SQL>
-		<Export_UI>Exportar UI</Export_UI>
-		<Export_XML>EXPORTAR XML EM NOME DA</Export_XML>
+		<Export_UI>UI de exportação</Export_UI>
+		<Export_XML>EXPORTAR XML NO NOME DE</Export_XML>
 		<Extensions>Extensões</Extensions>
 		<Failed>Falhou</Failed>
 		<Failed_Load_Online_EULA>Falha ao carregar o EULA online</Failed_Load_Online_EULA>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML para CSV</HTML_to_CSV>
 		<Help>Socorro</Help>
 		<Import>Importar</Import>
+		<Import_Completed>Importação concluída</Import_Completed>
 		<Import_SQL>Importar SQL</Import_SQL>
 		<Importer>Importador</Importer>
 		<Index>Índice</Index>
 		<Invert>Invertido</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Log CSV Path</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Língua</Language>
-		<Listview_Height>Altura de ListView</Listview_Height>
+		<Listview_Height>Altura da lista</Listview_Height>
 		<Listview_Width>Largura da lista</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Mesa principal</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable ou 'Master Table' é uma tabela protegida. Para proteger a integridade do db, você não pode editar esta tabela</Master_Table_Protected>
 		<New>Novo</New>
 		<New_in_Memory_Db>Novo no banco de dados da memória</New_in_Memory_Db>
+		<NoUpdates>Não há atualizações</NoUpdates>
+		<No_Updates>Não há atualizações disponíveis</No_Updates>
 		<Not_Supported>Não suportado</Not_Supported>
 		<Open>Aberto</Open>
 		<Opened>Aberto</Opened>
@@ -94,7 +100,8 @@
 		<UI>UI</UI>
 		<User_Requested>Usuário solicitado</User_Requested>
 		<View>Visão</View>
-		<View_Function>Função de exibição</View_Function>
+		<View_Function>Função de visualização</View_Function>
 		<Views_Read_Only>As visualizações são lidas e não podem ser editadas</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

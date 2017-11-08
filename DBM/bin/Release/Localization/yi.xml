@@ -9,9 +9,9 @@
 		<Auto_Log>Auto Log</Auto_Log>
 		<Browse>בלעטער</Browse>
 		<CMD_Tooltip>עקסאַקיוץ קאַסטאַמייזד סקל באַפֿעל סטייטמאַנץ אַנטו די דייטאַבייס</CMD_Tooltip>
-		<CSV>קסוו</CSV>
+		<CSV>CSV</CSV>
 		<Check_Log>גרייַז: ביטע טשעק די קלאָץ פֿאַר פרטים</Check_Log>
-		<Check_for_Updates>טשעק פֿאַר ופּדאַטעס</Check_for_Updates>
+		<Check_for_Updates>טשעק פֿאַר דערהייַנטיקונגען</Check_for_Updates>
 		<Close_TW>Close TW</Close_TW>
 		<Close_wo_saving>נאָענט אָן שפּאָרן</Close_wo_saving>
 		<Command>באַפֿעל</Command>
@@ -25,11 +25,12 @@
 		<Desc>Descending</Desc>
 		<Developer>דעוועלאָפּער</Developer>
 		<Display_Settings>ווייַז סעטטינגס</Display_Settings>
+		<Download_Update>Download Update</Download_Update>
 		<Edit>רעדאַגירן</Edit>
 		<Error>Error</Error>
 		<Error_Generic>אָה קיין עפּעס איז פאַלש! :(</Error_Generic>
 		<Error_No_DB>גרייַז: קיין דאַטאַבאַסע איז לאָודיד</Error_No_DB>
-		<Export>אַרויספירן</Export>
+		<Export>עקספּאָרט</Export>
 		<Export_CSV>אַרויספירן קסוו אויף בעהאַלל פון</Export_CSV>
 		<Export_HTML_Data>אַרויספירן HTML דאַטע אויף ביכאַף פון</Export_HTML_Data>
 		<Export_HTML_Schema>אַרויספירן HTML SCHEMA אויף ביכאַף פון</Export_HTML_Schema>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML צו קסוו</HTML_to_CSV>
 		<Help>הילף</Help>
 		<Import>ימפּאָרט</Import>
+		<Import_Completed>Import Completed</Import_Completed>
 		<Import_SQL>אַרייַנפיר סקל</Import_SQL>
 		<Importer>ימפּאָרטער</Importer>
 		<Index>Index</Index>
 		<Invert>Invert</Invert>
+		<JSON>דזשסאָן</JSON>
 		<LOG_CSV_Path>קלאָץ CSV Path</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>שפּראַך</Language>
 		<Listview_Height>Listview Height</Listview_Height>
 		<Listview_Width>Listview Width</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Master Table</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable אָדער 'Master Table' איז אַ פּראָטעקטעד טיש. צו באַשיצן די אָרנטלעכקייַט פון די דב איר קענען נישט רעדאַגירן דעם טיש</Master_Table_Protected>
 		<New>New</New>
 		<New_in_Memory_Db>New אין זכּרון דאַטאַבאַסע</New_in_Memory_Db>
+		<NoUpdates>ניט קיין דערהייַנטיקונגען</NoUpdates>
+		<No_Updates>עס זענען קיין דערהייַנטיקונגען בנימצא</No_Updates>
 		<Not_Supported>ניט שטיצט</Not_Supported>
 		<Open>Open</Open>
 		<Opened>געעפנט</Opened>
@@ -95,6 +101,7 @@
 		<User_Requested>User Requested</User_Requested>
 		<View>View</View>
 		<View_Function>View Function</View_Function>
-		<Views_Read_Only>קוקן זענען לידאָנלי און קענען ניט זיין עדיטיד</Views_Read_Only>
+		<Views_Read_Only>קוקן זענען לידאָנלי און קען נישט זיין עדיטיד</Views_Read_Only>
+		<WMU>וויקי Markup</WMU>
 	</Language>
 </root>

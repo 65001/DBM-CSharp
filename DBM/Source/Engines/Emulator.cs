@@ -232,8 +232,7 @@ namespace DBM
                         Chart chart = new Chart.Bar();
                         string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 5).Split(',');
                         Import(chart, Arguments);
-                        string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + "\\Bar Chart.html";
-                        chart.Write(OutPut, chart.Export());
+                        Write(chart, "Bar");
                     }
                     else if (SQL.StartsWith(".pie", Comparison))
                     {
@@ -241,8 +240,7 @@ namespace DBM
                         Chart chart = new Chart.Pie();
                         string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 5).Split(',');
                         Import(chart, Arguments);
-                        string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + "\\Pie Chart.html";
-                        chart.Write(OutPut, chart.Export());
+                        Write(chart, "Pie");
                     }
                     else if (SQL.StartsWith(".column", Comparison))
                     {
@@ -250,8 +248,7 @@ namespace DBM
                         Chart chart = new Chart.Column();
                         string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 7).Split(',');
                         Import(chart, Arguments);
-                        string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + "\\Column Chart.html";
-                        chart.Write(OutPut, chart.Export());
+                        Write(chart, "Column");
                     }
                     else if (SQL.StartsWith(".sankey", Comparison))
                     {
@@ -259,8 +256,7 @@ namespace DBM
                         Chart chart = new Chart.SanKey();
                         string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 7).Split(',');
                         Import(chart, Arguments);
-                        string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + "\\Sankey Chart.html";
-                        chart.Write(OutPut, chart.Export());
+                        Write(chart, "Sankey");
                     }
                     else if (SQL.StartsWith(".org", Comparison))
                     {
@@ -268,9 +264,12 @@ namespace DBM
                         Chart chart = new Chart.OrgChart();
                         string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 4).Split(',');
                         Import(chart, Arguments);
-                        string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + "\\Org Chart.html";
-                        chart.Write(OutPut, chart.Export());
+                        Write(chart, "Org");
                     }
+                    else if (SQL.StartsWith(".histogram", Comparison)) { }
+                    else if (SQL.StartsWith(".scatter", Comparison)) { }
+                    else if (SQL.StartsWith(".table", Comparison)) { }
+                    else if (SQL.StartsWith(".geo", Comparison)) { }
                     break;
                 default:
                     throw new NotImplementedException();
@@ -282,11 +281,16 @@ namespace DBM
                 Command(Database,$"DROP TABLE IF EXISTS {EmulatorTable};" + _SQL, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
                 Query(Database, $"SELECT * FROM {EmulatorTable};", Listview, false, Username, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
 
-                Engines.GetSchema(Database);
-                Engines.SetDefaultTable(EmulatorTable);
-                Engines.GetColumnsofTable(Database, EmulatorTable);
+                GetSchema(Database);
+                SetDefaultTable(EmulatorTable);
+                GetColumnsofTable(Database, EmulatorTable);
             }
+        }
 
+        static void Write(Chart chart,string ChartType)
+        {
+            string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + string.Format("\\{0} {1} Chart.html", Engines.CurrentTable, ChartType);
+            chart.Write(OutPut, chart.Export());
         }
 
         static void Import(Chart chart, string[] Arguments)

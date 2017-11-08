@@ -25,6 +25,7 @@
 		<Desc>csökkenő</Desc>
 		<Developer>Fejlesztő</Developer>
 		<Display_Settings>Megjelenítési beállítások</Display_Settings>
+		<Download_Update>Frissítés letöltése</Download_Update>
 		<Edit>szerkesztése</Edit>
 		<Error>Hiba</Error>
 		<Error_Generic>Ó, semmi baj nem történt! :(</Error_Generic>
@@ -39,31 +40,36 @@
 		<Export_XML>EXPORT XML A BEHALF</Export_XML>
 		<Extensions>Extensions</Extensions>
 		<Failed>nem sikerült</Failed>
-		<Failed_Load_Online_EULA>Az online EULA betöltése sikertelen volt</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>Az online EULA betöltése sikertelen</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Nem sikerült menteni a beállításokat</Failed_Save_Settings>
 		<File>fájl</File>
 		<Functions>Funkciók</Functions>
 		<HTML>HTML</HTML>
-		<HTML_to_CSV>HTML a CSV-hez</HTML_to_CSV>
+		<HTML_to_CSV>HTML a CSV-be</HTML_to_CSV>
 		<Help>Segítség</Help>
 		<Import>import</Import>
+		<Import_Completed>Befejezett importálás</Import_Completed>
 		<Import_SQL>SQL importálása</Import_SQL>
 		<Importer>Importőr</Importer>
 		<Index>Index</Index>
 		<Invert>Invert</Invert>
-		<LOG_CSV_Path>A CSV-útvonal rögzítése</LOG_CSV_Path>
+		<JSON>JSON</JSON>
+		<LOG_CSV_Path>Csevegjen a CSV útvonalon</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Nyelv</Language>
 		<Listview_Height>Listamagasság</Listview_Height>
-		<Listview_Width>Listaszélesség</Listview_Width>
+		<Listview_Width>Lista szélesség</Listview_Width>
+		<MD>Árleszállítás</MD>
 		<Master_Table>Mester táblázat</Master_Table>
 		<Master_Table_Protected>A Sqlite_mastertable vagy a "Master Table" egy védett táblázat. A db integritásának védelme érdekében nem szerkesztheti ezt a táblázatot</Master_Table_Protected>
 		<New>Új</New>
 		<New_in_Memory_Db>Új a memória adatbázisban</New_in_Memory_Db>
+		<NoUpdates>Nincs frissítés</NoUpdates>
+		<No_Updates>Nincsenek frissítések</No_Updates>
 		<Not_Supported>Nem támogatott</Not_Supported>
 		<Open>Nyisd ki</Open>
 		<Opened>Nyitott</Opened>
-		<PRGM_Start>Elindult a program</PRGM_Start>
+		<PRGM_Start>A program indult</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>Csatlakoztat</Plugin>
 		<Query>kérdés</Query>
@@ -88,13 +94,14 @@
 		<Success>Siker</Success>
 		<System>Rendszer</System>
 		<Table>asztal</Table>
-		<Toggle_Debug>A hibakeresés átkapcsolása</Toggle_Debug>
+		<Toggle_Debug>Tiltás a hibakereséshez</Toggle_Debug>
 		<Toggle_Transaction_Log>Tranzakciónapló váltása</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Tranzakciós adatbázis elérési útja</Transaction_DB_Path>
 		<UI>UI</UI>
-		<User_Requested>Kért felhasználó</User_Requested>
+		<User_Requested>A megkérdezett felhasználó</User_Requested>
 		<View>Kilátás</View>
 		<View_Function>Funkció megtekintése</View_Function>
 		<Views_Read_Only>A nézetek csak olvashatóak és nem szerkeszthetők</Views_Read_Only>
+		<WMU>Wiki Markup</WMU>
 	</Language>
 </root>

@@ -5,7 +5,7 @@
 		<Access_Denied>Access michud</Access_Denied>
 		<App>Applikazzjoni</App>
 		<Application>App</Application>
-		<Asc>Nimxu</Asc>
+		<Asc>Joghla</Asc>
 		<Auto_Log>Log Auto</Auto_Log>
 		<Browse>Fittex</Browse>
 		<CMD_Tooltip>Tesegwixxi dikjarazzjonijiet personalizzati ta 'kmand SQL fuq id-database</CMD_Tooltip>
@@ -25,6 +25,7 @@
 		<Desc>Baxxa</Desc>
 		<Developer>Developer</Developer>
 		<Display_Settings>Settings tal-Wiri</Display_Settings>
+		<Download_Update>Nizzel Aggornament</Download_Update>
 		<Edit>Edit</Edit>
 		<Error>Zball</Error>
 		<Error_Generic>Oh ebda haga marret hazin! :(</Error_Generic>
@@ -33,7 +34,7 @@
 		<Export_CSV>ESPORTAZZJONI CSV F'ISEMA TA '</Export_CSV>
 		<Export_HTML_Data>Esporta HTML DATA f'isem</Export_HTML_Data>
 		<Export_HTML_Schema>Esportazzjoni SCHEMA HTML f'isem</Export_HTML_Schema>
-		<Export_SQL_SCHEMA>Esportazzjoni SQL - SKEMA - f'isem</Export_SQL_SCHEMA>
+		<Export_SQL_SCHEMA>Esportazzjoni SQL - SCHEMA - f'isem</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Esportazzjoni SQL - SQL - f'isem</Export_SQL_SQL>
 		<Export_UI>UI ta 'esportazzjoni</Export_UI>
 		<Export_XML>ESPORTAZZJONI XML FIS-SOMMA TA '</Export_XML>
@@ -47,22 +48,27 @@
 		<HTML_to_CSV>HTML ghal CSV</HTML_to_CSV>
 		<Help>Ghajnuna</Help>
 		<Import>Importazzjoni</Import>
+		<Import_Completed>Importazzjoni Kompletata</Import_Completed>
 		<Import_SQL>Importa SQL</Import_SQL>
 		<Importer>Importatur</Importer>
 		<Index>Indici</Index>
 		<Invert>Invert</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Log CSV Path</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Lingwa</Language>
 		<Listview_Height>L-Gholi tal-Listview</Listview_Height>
 		<Listview_Width>Wisa 'tal-Listview</Listview_Width>
-		<Master_Table>Tabella tal-Kaptan</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable jew "Master Table" hija tabella protetta. Biex tipprotegi l-integrità tad-db ma tistax torganizza din it-tabella</Master_Table_Protected>
+		<MD>MarkDown</MD>
+		<Master_Table>Master Table</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable jew 'Master Table' hija tabella protetta. Biex tipprotegi l-integrità tad-db ma tistax torganizza din it-tabella</Master_Table_Protected>
 		<New>Gdid</New>
-		<New_in_Memory_Db>Gdid fil-Database tal-Memorja</New_in_Memory_Db>
+		<New_in_Memory_Db>Dejta gdida fil-Memorja</New_in_Memory_Db>
+		<NoUpdates>Nru Aggornamenti</NoUpdates>
+		<No_Updates>M'hemmx aggornamenti disponibbli</No_Updates>
 		<Not_Supported>Mhux Sostnuti</Not_Supported>
 		<Open>Miftuha</Open>
-		<Opened>Miftuha</Opened>
+		<Opened>Miftuh</Opened>
 		<PRGM_Start>Il-Programm Beda</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>Plugin</Plugin>
@@ -70,7 +76,7 @@
 		<Query_Error>Zball ta 'Mistoqsija</Query_Error>
 		<Refresh_Schema>Aggorna l-Iskema</Refresh_Schema>
 		<Run_Function>Run Function</Run_Function>
-		<SCHEMA_PRIVATE>SKEMA-PRIVAT</SCHEMA_PRIVATE>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVAT</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
 		<Save>Hlief</Save>
 		<Save_and_Close>Hlief u Aghlaq</Save_and_Close>
@@ -95,6 +101,7 @@
 		<User_Requested>Utent Mitlub</User_Requested>
 		<View>Ara</View>
 		<View_Function>Funzjoni tal-Veduta</View_Function>
-		<Views_Read_Only>Il-fehmiet huma rikonnoxxuti u ma jistghux jigu editjati</Views_Read_Only>
+		<Views_Read_Only>Il-fehmiet huma readonly u ma jistghux jigu editjati</Views_Read_Only>
+		<WMU>Wiki Markup</WMU>
 	</Language>
 </root>

@@ -13,7 +13,7 @@
 		<Check_Log>Errore: Controllare il registro per i dettagli</Check_Log>
 		<Check_for_Updates>Controlla gli aggiornamenti</Check_for_Updates>
 		<Close_TW>Chiudi TW</Close_TW>
-		<Close_wo_saving>Chiudi senza salvare</Close_wo_saving>
+		<Close_wo_saving>Chiudi senza salvataggio</Close_wo_saving>
 		<Command>Comando</Command>
 		<Converter>Converter</Converter>
 		<Create_Statistics_Page>Crea pagina statistica</Create_Statistics_Page>
@@ -25,21 +25,22 @@
 		<Desc>Discendente</Desc>
 		<Developer>Sviluppatore</Developer>
 		<Display_Settings>Impostazioni di visualizzazione</Display_Settings>
+		<Download_Update>Scarica l'aggiornamento</Download_Update>
 		<Edit>Modifica</Edit>
 		<Error>Errore</Error>
 		<Error_Generic>Oh, niente è andato storto! :(</Error_Generic>
 		<Error_No_DB>Errore: nessun database è stato caricato</Error_No_DB>
 		<Export>Esportare</Export>
 		<Export_CSV>ESPORTAZIONE CSV SUL COMPLETO DI</Export_CSV>
-		<Export_HTML_Data>Esporta i dati HTML per conto di</Export_HTML_Data>
+		<Export_HTML_Data>Esporta i dati HTML in nome di</Export_HTML_Data>
 		<Export_HTML_Schema>Esporta HTML SCHEMA per conto di</Export_HTML_Schema>
-		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Per conto di</Export_SQL_SCHEMA>
+		<Export_SQL_SCHEMA>Esportazione di SQL - SCHEMA - Per conto di</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Esporta SQL - SQL - Per conto di</Export_SQL_SQL>
-		<Export_UI>Esportazione dell'interfaccia utente</Export_UI>
-		<Export_XML>ESPORTAZIONE XML IN CASO DI</Export_XML>
+		<Export_UI>UI di esportazione</Export_UI>
+		<Export_XML>ESPORTAZIONE XML IN BASE DI</Export_XML>
 		<Extensions>estensioni</Extensions>
 		<Failed>fallito</Failed>
-		<Failed_Load_Online_EULA>Impossibile caricare l'EULA in linea</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>Impossibile caricare l'EULA online</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Impossibile salvare le impostazioni</Failed_Save_Settings>
 		<File>File</File>
 		<Functions>funzioni</Functions>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML a CSV</HTML_to_CSV>
 		<Help>Aiuto</Help>
 		<Import>Importare</Import>
+		<Import_Completed>Importazione completata</Import_Completed>
 		<Import_SQL>Importa SQL</Import_SQL>
 		<Importer>Importatore</Importer>
 		<Index>Indice</Index>
 		<Invert>Invertire</Invert>
-		<LOG_CSV_Path>Percorso del percorso CSV</LOG_CSV_Path>
+		<JSON>JSON</JSON>
+		<LOG_CSV_Path>Log percorso CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Lingua</Language>
 		<Listview_Height>ListView Height</Listview_Height>
-		<Listview_Width>Larghezza di listino</Listview_Width>
+		<Listview_Width>Larghezza di listview</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Tabella Master</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' è una tabella protetta. Per proteggere l'integrità del db non è possibile modificare questa tabella</Master_Table_Protected>
 		<New>Nuovo</New>
 		<New_in_Memory_Db>Nuovo nel database di memoria</New_in_Memory_Db>
+		<NoUpdates>Nessun aggiornamento</NoUpdates>
+		<No_Updates>Non ci sono aggiornamenti disponibili</No_Updates>
 		<Not_Supported>Non supportato</Not_Supported>
 		<Open>Aperto</Open>
 		<Opened>Ha aperto</Opened>
@@ -89,12 +95,13 @@
 		<System>Sistema</System>
 		<Table>tavolo</Table>
 		<Toggle_Debug>Toggle debug</Toggle_Debug>
-		<Toggle_Transaction_Log>Toggle log di transazione</Toggle_Transaction_Log>
+		<Toggle_Transaction_Log>Toggle il log di transazioni</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Percorso database transazioni</Transaction_DB_Path>
 		<UI>UI</UI>
 		<User_Requested>Utente richiesto</User_Requested>
 		<View>vista</View>
 		<View_Function>Funzione di visualizzazione</View_Function>
 		<Views_Read_Only>Le visualizzazioni sono di sola lettura e non possono essere modificate</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

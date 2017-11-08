@@ -10,56 +10,62 @@
 		<Browse>Vistazo</Browse>
 		<CMD_Tooltip>Ejecuta instrucciones de comando SQL personalizadas en la base de datos</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>Error: Por favor, compruebe el registro para más detalles</Check_Log>
+		<Check_Log>Error: verifique el registro para obtener más detalles</Check_Log>
 		<Check_for_Updates>Buscar actualizaciones</Check_for_Updates>
 		<Close_TW>Cerrar TW</Close_TW>
 		<Close_wo_saving>Cerrar sin guardar</Close_wo_saving>
 		<Command>Mando</Command>
 		<Converter>Convertidor</Converter>
 		<Create_Statistics_Page>Crear página de estadísticas</Create_Statistics_Page>
-		<Critical_Fault_Error>Error crítico de error</Critical_Fault_Error>
-		<Dataview_Error>La base de datos o Dataview no existe o no se ha cargado todavía</Dataview_Error>
+		<Critical_Fault_Error>Error crítico de falla</Critical_Fault_Error>
+		<Dataview_Error>La base de datos o la vista de datos no existe o no se ha cargado aún</Dataview_Error>
 		<Debug>Depurar</Debug>
-		<Define_New_Table>Definir una nueva tabla</Define_New_Table>
-		<Deliminator>Deliminador</Deliminator>
+		<Define_New_Table>Definir nueva tabla</Define_New_Table>
+		<Deliminator>Delimador</Deliminator>
 		<Desc>Descendente</Desc>
 		<Developer>Desarrollador</Developer>
-		<Display_Settings>Configuración de la pantalla</Display_Settings>
+		<Display_Settings>Configuración de pantalla</Display_Settings>
+		<Download_Update>Descarga de la actualización</Download_Update>
 		<Edit>Editar</Edit>
 		<Error>Error</Error>
-		<Error_Generic>¡Oh, no salió nada mal! :(</Error_Generic>
+		<Error_Generic>¡Oh, no, no salió nada! :(</Error_Generic>
 		<Error_No_DB>Error: no se ha cargado ninguna base de datos</Error_No_DB>
 		<Export>Exportar</Export>
-		<Export_CSV>EXPORT CSV EN NOMBRE DE</Export_CSV>
-		<Export_HTML_Data>Exportar DATOS HTML en nombre de</Export_HTML_Data>
-		<Export_HTML_Schema>Export HTML SCHEMA en nombre de</Export_HTML_Schema>
+		<Export_CSV>EXPORTAR CSV EN NOMBRE DE</Export_CSV>
+		<Export_HTML_Data>Exportar HTML DATA en nombre de</Export_HTML_Data>
+		<Export_HTML_Schema>Exportar HTML SCHEMA en nombre de</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Exportar SQL - SCHEMA - En nombre de</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Exportar SQL - SQL - En nombre de</Export_SQL_SQL>
-		<Export_UI>Exportar interfaz de usuario</Export_UI>
+		<Export_UI>IU de exportación</Export_UI>
 		<Export_XML>EXPORTACIÓN XML EN NOMBRE DE</Export_XML>
 		<Extensions>Extensiones</Extensions>
 		<Failed>Ha fallado</Failed>
 		<Failed_Load_Online_EULA>Error al cargar el EULA en línea</Failed_Load_Online_EULA>
-		<Failed_Save_Settings>No se pudo guardar la configuración</Failed_Save_Settings>
+		<Failed_Save_Settings>Error al guardar la configuración</Failed_Save_Settings>
 		<File>Archivo</File>
 		<Functions>Funciones</Functions>
 		<HTML>HTML</HTML>
 		<HTML_to_CSV>HTML a CSV</HTML_to_CSV>
 		<Help>Ayuda</Help>
 		<Import>Importar</Import>
+		<Import_Completed>Importar completado</Import_Completed>
 		<Import_SQL>Importar SQL</Import_SQL>
 		<Importer>Importador</Importer>
 		<Index>Índice</Index>
 		<Invert>Invertir</Invert>
-		<LOG_CSV_Path>Ruta de acceso de registro CSV</LOG_CSV_Path>
+		<JSON>JSON</JSON>
+		<LOG_CSV_Path>Log CSV Path</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Idioma</Language>
-		<Listview_Height>Altura de lista</Listview_Height>
-		<Listview_Width>Ancho de vista de lista</Listview_Width>
+		<Listview_Height>Altura de la vista de lista</Listview_Height>
+		<Listview_Width>Listview Ancho</Listview_Width>
+		<MD>Reducción</MD>
 		<Master_Table>Mesa maestra</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' es una tabla protegida. Para proteger la integridad del db, no puede editar esta tabla</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' es una tabla protegida. Para proteger la integridad de la base de datos no puede editar esta tabla</Master_Table_Protected>
 		<New>Nuevo</New>
 		<New_in_Memory_Db>Nuevo en la base de datos de memoria</New_in_Memory_Db>
+		<NoUpdates>Sin actualizaciones</NoUpdates>
+		<No_Updates>No hay actualizaciones disponibles</No_Updates>
 		<Not_Supported>No soportado</Not_Supported>
 		<Open>Abierto</Open>
 		<Opened>Abrió</Opened>
@@ -69,32 +75,33 @@
 		<Query>Consulta</Query>
 		<Query_Error>Error de consulta</Query_Error>
 		<Refresh_Schema>Actualizar esquema</Refresh_Schema>
-		<Run_Function>Ejecutar Función</Run_Function>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Run_Function>Funcion Run</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVADO</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
 		<Save>Salvar</Save>
 		<Save_and_Close>Guardar y cerrar</Save_and_Close>
 		<Search>Buscar</Search>
 		<Search_Settings>Configuración de búsqueda</Search_Settings>
 		<Search_in>Busca en</Search_in>
-		<Settings>Ajustes</Settings>
-		<Settings_Editor>Editor de configuración</Settings_Editor>
+		<Settings>Configuraciones</Settings>
+		<Settings_Editor>Editor de configuraciones</Settings_Editor>
 		<Show_Help>Mostrar ayuda</Show_Help>
 		<Sort>Ordenar</Sort>
 		<Sort_by>Ordenar por</Sort_by>
-		<Stack_Trace>Rastro de la pila</Stack_Trace>
+		<Stack_Trace>Stack Trace</Stack_Trace>
 		<Statistics_Page>Página de estadísticas</Statistics_Page>
 		<Strict_Search>Búsqueda estricta</Strict_Search>
 		<Success>Éxito</Success>
 		<System>Sistema</System>
 		<Table>Mesa</Table>
-		<Toggle_Debug>Toggle Debug</Toggle_Debug>
-		<Toggle_Transaction_Log>Alternar registro de transacciones</Toggle_Transaction_Log>
-		<Transaction_DB_Path>Trayectoria de base de datos</Transaction_DB_Path>
+		<Toggle_Debug>Alternar depuración</Toggle_Debug>
+		<Toggle_Transaction_Log>Alternar el registro de transacciones</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Ruta de la base de datos de transacciones</Transaction_DB_Path>
 		<UI>UI</UI>
 		<User_Requested>Usuario solicitado</User_Requested>
 		<View>Ver</View>
-		<View_Function>Ver Función</View_Function>
-		<Views_Read_Only>Las vistas son de sólo lectura y no se pueden editar</Views_Read_Only>
+		<View_Function>Función de vista</View_Function>
+		<Views_Read_Only>Las vistas son de solo lectura y no se pueden editar</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

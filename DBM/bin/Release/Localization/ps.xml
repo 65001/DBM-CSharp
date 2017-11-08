@@ -4,30 +4,31 @@
 		<About>په ا?ه</About>
 		<Access_Denied>رس? منکره شوه</Access_Denied>
 		<App>کار?ال</App>
-		<Application>اپارتمان</Application>
+		<Application>اپل</Application>
 		<Asc>ژغورل</Asc>
-		<Auto_Log>اتوم لو?</Auto_Log>
+		<Auto_Log>د اتوم لو?</Auto_Log>
 		<Browse>ل?ون کول</Browse>
-		<CMD_Tooltip>په ???اب?س ک? د ا?س ا?س ا?ل قوماند? ب?انات تطب?قوي</CMD_Tooltip>
+		<CMD_Tooltip>د ا?س ا?س ا?ل قوماند? ب?انات په ?ا?اب?س ک? عملي کوي</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>ت?روتنه: مهرباني وک?ئ د معلوماتو لپاره ل?نک و?ورئ</Check_Log>
 		<Check_for_Updates>د اوسمهالونو لپاره ?وري</Check_for_Updates>
 		<Close_TW>بندول</Close_TW>
 		<Close_wo_saving>ب? ?ا?ه بنده ک?ئ</Close_wo_saving>
-		<Command>قوماند?</Command>
+		<Command>قومانده</Command>
 		<Converter>بدل?دونک?</Converter>
 		<Create_Statistics_Page>د احصا?ه پا?ه جو?ول</Create_Statistics_Page>
-		<Critical_Fault_Error>د انتقالي غلط? ت?روتنه</Critical_Fault_Error>
-		<Dataview_Error>?ا?اب?س ?ا ?ا?و?و? شتون نلري ?ا لا تر اوسه نه د? پورته شو?</Dataview_Error>
+		<Critical_Fault_Error>انتقالي غلطي ت?روتنه</Critical_Fault_Error>
+		<Dataview_Error>???اب?س ?ا ?ا?و?و? شتون نلري ?ا لا تر اوسه نه د? پورته شو?</Dataview_Error>
 		<Debug>Debug</Debug>
 		<Define_New_Table>نوي جدول تعر?ف ک?ئ</Define_New_Table>
 		<Deliminator>و?جا?ونک?</Deliminator>
 		<Desc>تاوان</Desc>
 		<Developer>پرمختلونک?</Developer>
-		<Display_Settings>?وون?ز ترت?بونه</Display_Settings>
+		<Display_Settings>شاخصونه</Display_Settings>
+		<Download_Update>اوسمهال ک?ته کول</Download_Update>
 		<Edit>سمون</Edit>
 		<Error>ت?روتنه</Error>
-		<Error_Generic>هو نه کوم ?ه خراب شول! :(</Error_Generic>
+		<Error_Generic>هو نه ه?? ش? غلط? شو?! :(</Error_Generic>
 		<Error_No_DB>ت?روتنه: ه?? ?ا?اب?س ند? پورته شو?</Error_No_DB>
 		<Export>صادرات</Export>
 		<Export_CSV>د ش?انو په ا?ه د CSV صادرات</Export_CSV>
@@ -37,7 +38,7 @@
 		<Export_SQL_SQL>ا?س ا?س ا?ل صادر ک?ئ - ا?س ا?س ا?ل - د د? په استاز?توب</Export_SQL_SQL>
 		<Export_UI>صادرات UI</Export_UI>
 		<Export_XML>د ا?کسچ?ن? په ا?ه ا?کس ا?کس ا?کس ا?کس ا?کس</Export_XML>
-		<Extensions>تمد?دونه</Extensions>
+		<Extensions>توکبنس?ونه</Extensions>
 		<Failed>ناکام شو</Failed>
 		<Failed_Load_Online_EULA>د آنلا?ن EULA د پورته کولو توان نلري</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>د ترت?بونو خوندي کولو ک? پات? راغلل</Failed_Save_Settings>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML ته CSV</HTML_to_CSV>
 		<Help>مرسته</Help>
 		<Import>واردات</Import>
+		<Import_Completed>وارد شو? بشپ? شو?</Import_Completed>
 		<Import_SQL>ا?س ا?س ا?ل وارد ک?ئ</Import_SQL>
 		<Importer>واردونک?</Importer>
 		<Index>ل?که</Index>
 		<Invert>تکرار</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>د سي ا?س و? پته ??که</LOG_CSV_Path>
 		<LOG_DB_PATH>د ننوت ???اب?سپاتات</LOG_DB_PATH>
 		<Language>ژبه</Language>
 		<Listview_Height>د ل?ست ل?د لو??</Listview_Height>
-		<Listview_Width>د ل?ست ل?د چو?</Listview_Width>
+		<Listview_Width>د ل?ست ل?د ?لورم</Listview_Width>
+		<MD>مارک ?اؤن</MD>
 		<Master_Table>ماس?ر جدول</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable ?ا 'ماس?ر جدول' خوندي شو? م?ز د?. د DB د بشپ?ت?ا ساتلو لپاره تاسو دا م?ز نه شي تا??دول?</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable ?ا 'ماس?ر جدول' خوندي شو? م?ز د?. د DB د بشپ?ت?ا ساتلو لپاره تاسو دا م?ز نه شي تمد?دول?</Master_Table_Protected>
 		<New>نو?</New>
-		<New_in_Memory_Db>په حافظ? ?ا?اب?س ک? نو?</New_in_Memory_Db>
+		<New_in_Memory_Db>په ?اد?ت ?ا?اب?س ک? نو?</New_in_Memory_Db>
+		<NoUpdates>ه?? اوسمهال نشته</NoUpdates>
+		<No_Updates>ه?? اوسمهال شتون نلري</No_Updates>
 		<Not_Supported>ملات? ند?</Not_Supported>
 		<Open>پران?ست?</Open>
 		<Opened>پرانيستل شوه</Opened>
@@ -84,7 +90,7 @@
 		<Sort_by>ترت?ب ?? ک?ه په</Sort_by>
 		<Stack_Trace>س??ک ?ر?س</Stack_Trace>
 		<Statistics_Page>د احصا?? پا?ه</Statistics_Page>
-		<Strict_Search>سخته پل?نه</Strict_Search>
+		<Strict_Search>سخته ل?ون</Strict_Search>
 		<Success>بر?ال?توب</Success>
 		<System>س?س?م</System>
 		<Table>جدول</Table>
@@ -96,5 +102,6 @@
 		<View>و?وره</View>
 		<View_Function>فعال?ت و?ورئ</View_Function>
 		<Views_Read_Only>ل?دونه په سمه تو?ه دي او نشي کول? چ? سمبال شي</Views_Read_Only>
+		<WMU>ويکي مارک اپ اپ</WMU>
 	</Language>
 </root>

@@ -10,14 +10,14 @@
 		<Browse>selailla</Browse>
 		<CMD_Tooltip>Suorittaa räätälöityjä SQL-käskykomentoja tietokantaan</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>Virhe: tarkista lokitiedot</Check_Log>
+		<Check_Log>Virhe: Tarkista yksityiskohdat lokista</Check_Log>
 		<Check_for_Updates>Tarkista päivitykset</Check_for_Updates>
 		<Close_TW>Sulje TW</Close_TW>
 		<Close_wo_saving>Sulje ilman tallennusta</Close_wo_saving>
 		<Command>Komento</Command>
 		<Converter>Muunnin</Converter>
 		<Create_Statistics_Page>Luo tilastosivu</Create_Statistics_Page>
-		<Critical_Fault_Error>Kriittinen virhevirhe</Critical_Fault_Error>
+		<Critical_Fault_Error>Kriittisen virheen virhe</Critical_Fault_Error>
 		<Dataview_Error>Tietokanta tai Dataview ei ole olemassa tai sitä ei ole vielä ladattu</Dataview_Error>
 		<Debug>debug</Debug>
 		<Define_New_Table>Määritä uusi taulukko</Define_New_Table>
@@ -25,12 +25,13 @@
 		<Desc>aleneva</Desc>
 		<Developer>Kehittäjä</Developer>
 		<Display_Settings>Näyttöasetukset</Display_Settings>
+		<Download_Update>Lataa päivitys</Download_Update>
 		<Edit>Muokata</Edit>
 		<Error>Virhe</Error>
 		<Error_Generic>Voi, ettei jotain meni vikaan! :(</Error_Generic>
 		<Error_No_DB>Virhe: Tietokanta ei ole ladattu</Error_No_DB>
 		<Export>Viedä</Export>
-		<Export_CSV>VIENTI CSV KÄYNNISSÄ</Export_CSV>
+		<Export_CSV>VIENTI CSV ON</Export_CSV>
 		<Export_HTML_Data>Vie HTML DATA: n puolesta</Export_HTML_Data>
 		<Export_HTML_Schema>Vie HTML SCHEMA</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Vie SQL - SCHEMA - puolesta</Export_SQL_SCHEMA>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML CSV: hen</HTML_to_CSV>
 		<Help>auta</Help>
 		<Import>Tuonti</Import>
+		<Import_Completed>Tuo valmis</Import_Completed>
 		<Import_SQL>Tuo SQL</Import_SQL>
 		<Importer>maahantuoja</Importer>
 		<Index>Indeksi</Index>
 		<Invert>Käänteinen</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Kirjaa CSV-polku</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Kieli</Language>
 		<Listview_Height>Listan korkeus</Listview_Height>
-		<Listview_Width>ListView Leveys</Listview_Width>
+		<Listview_Width>Listan leveys</Listview_Width>
+		<MD>hinnanalennus</MD>
 		<Master_Table>Päätaulukko</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable tai "Master Table" on suojattu taulukko. Et voi muokata tätä taulukkoa db-eheyden suojaamiseksi</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable tai "Master Table" on suojattu taulukko. Et voi muokata tätä taulukkoa DB: n eheyden suojaamiseksi</Master_Table_Protected>
 		<New>Uusi</New>
 		<New_in_Memory_Db>Uusi muistitietokantaan</New_in_Memory_Db>
+		<NoUpdates>Ei päivityksiä</NoUpdates>
+		<No_Updates>Päivityksiä ei ole saatavilla</No_Updates>
 		<Not_Supported>Ei tueta</Not_Supported>
 		<Open>Avata</Open>
 		<Opened>avattu</Opened>
@@ -96,5 +102,6 @@
 		<View>näkymä</View>
 		<View_Function>Näytä toiminto</View_Function>
 		<Views_Read_Only>Näkymät ovat luettavissa ja niitä ei voi muokata</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

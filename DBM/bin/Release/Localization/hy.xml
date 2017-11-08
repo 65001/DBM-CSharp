@@ -9,8 +9,8 @@
 		<Auto_Log>Auto Log- ը</Auto_Log>
 		<Browse>Փնտրել</Browse>
 		<CMD_Tooltip>Իրականացված SQL հրամանի հայտարարությունները կատարում է տվյալների բազայում</CMD_Tooltip>
-		<CSV>CSV- ն</CSV>
-		<Check_Log>Սխալ. Խնդրում ենք ստուգել տեղեկամատյանը մանրամասների համար</Check_Log>
+		<CSV>CSV- ը</CSV>
+		<Check_Log>Խախտում. Խնդրում ենք ստուգել մանրամասները</Check_Log>
 		<Check_for_Updates>Ստուգել թարմացումները</Check_for_Updates>
 		<Close_TW>Փակել TW</Close_TW>
 		<Close_wo_saving>Փակել առանց փրկելու</Close_wo_saving>
@@ -18,19 +18,20 @@
 		<Converter>Կոդավորվորիչ</Converter>
 		<Create_Statistics_Page>Ստեղծեք Վիճակագրություն էջ</Create_Statistics_Page>
 		<Critical_Fault_Error>Կրիտիկական սխալային սխալ</Critical_Fault_Error>
-		<Dataview_Error>Տվյալների բազան կամ Տվյալների հավաքածուը գոյություն չունի կամ դեռ չի բեռնվել</Dataview_Error>
+		<Dataview_Error>Տվյալների բազան կամ Տվյալների մատյանը գոյություն չունի կամ դեռ չի բեռնվել</Dataview_Error>
 		<Debug>Խախտում</Debug>
 		<Define_New_Table>Սահմանել նոր աղյուսակ</Define_New_Table>
 		<Deliminator>Դելիմիրատոր</Deliminator>
 		<Desc>Աճող</Desc>
 		<Developer>Հեղինակ</Developer>
-		<Display_Settings>Ցուցադրման կարգավորումները</Display_Settings>
+		<Display_Settings>Ցուցադրման կարգավորումներ</Display_Settings>
+		<Download_Update>Ներբեռնեք թարմացումը</Download_Update>
 		<Edit>Խմբագրել</Edit>
 		<Error>Սխալ</Error>
 		<Error_Generic>Օ՜, ոչինչ սխալվեց: :(</Error_Generic>
 		<Error_No_DB>Error: Ոչ մի բազա չի բեռնված</Error_No_DB>
 		<Export>Արտահանումը</Export>
-		<Export_CSV>ԷՔՍՊՈՐՏ ՔՍՎ</Export_CSV>
+		<Export_CSV>ԷՔՍՊՈՐՏ ՔԵԶ</Export_CSV>
 		<Export_HTML_Data>Արտահանման HTML DATA անունից</Export_HTML_Data>
 		<Export_HTML_Schema>Արտահանման HTML SCHEMA անունից</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Արտահանման SQL - SCHEMA - անունից</Export_SQL_SCHEMA>
@@ -44,26 +45,31 @@
 		<File>Ֆայլը</File>
 		<Functions>Գործառույթներ</Functions>
 		<HTML>HTML</HTML>
-		<HTML_to_CSV>HTML- ը CSV- ին</HTML_to_CSV>
+		<HTML_to_CSV>HTML- ից CSV- ին</HTML_to_CSV>
 		<Help>Օգնություն</Help>
 		<Import>Ներմուծում</Import>
+		<Import_Completed>Ներմուծումը ավարտված է</Import_Completed>
 		<Import_SQL>Ներմուծել SQL</Import_SQL>
 		<Importer>Ներմուծող</Importer>
 		<Index>Ինդեքս</Index>
-		<Invert>Խուզել</Invert>
-		<LOG_CSV_Path>CSV ուղակի մուտքագրեք</LOG_CSV_Path>
-		<LOG_DB_PATH>Մուտքի բազայի բազա</LOG_DB_PATH>
+		<Invert>Անջատեք</Invert>
+		<JSON>JSON</JSON>
+		<LOG_CSV_Path>Մուտքագրեք CSV Path- ը</LOG_CSV_Path>
+		<LOG_DB_PATH>Մուտքային տվյալների բազա</LOG_DB_PATH>
 		<Language>Լեզու</Language>
 		<Listview_Height>Ցույց տալ բարձրությունը</Listview_Height>
-		<Listview_Width>Listview լայնությունը</Listview_Width>
+		<Listview_Width>Լսեք լայնությունը</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Վարպետ աղյուսակ</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable կամ 'Master Table' - պաշտպանված սեղան: ԴԲի ամբողջականությունը պաշտպանելու համար դուք չեք կարող խմբագրել այս աղյուսակը</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable կամ 'Master Table' - պաշտպանված սեղան: ԴԲի ամբողջականությունը պաշտպանելու համար չեք կարող խմբագրել այս աղյուսակը</Master_Table_Protected>
 		<New>Նոր</New>
-		<New_in_Memory_Db>Նոր հիշողության տվյալների շտեմարանում</New_in_Memory_Db>
+		<New_in_Memory_Db>Նոր հիշատակումների բազայում</New_in_Memory_Db>
+		<NoUpdates>Թարմացումներ չկան</NoUpdates>
+		<No_Updates>Չկան թարմացումներ</No_Updates>
 		<Not_Supported>Չի ապահովվում</Not_Supported>
 		<Open>Բացեք</Open>
 		<Opened>Բացվեց</Opened>
-		<PRGM_Start>Ծրագիրն սկսվեց</PRGM_Start>
+		<PRGM_Start>Ծրագիրը մեկնարկեց</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>Միացնել</Plugin>
 		<Query>Հարցում</Query>
@@ -82,19 +88,20 @@
 		<Show_Help>Ցույց տալ օգնություն</Show_Help>
 		<Sort>Տեսակավորել</Sort>
 		<Sort_by>Դասավորել ըստ</Sort_by>
-		<Stack_Trace>Հարկային հսկողություն</Stack_Trace>
-		<Statistics_Page>Վիճակագրության էջ</Statistics_Page>
+		<Stack_Trace>Stack Trace- ը</Stack_Trace>
+		<Statistics_Page>Վիճակագրության էջը</Statistics_Page>
 		<Strict_Search>Խիստ որոնում</Strict_Search>
-		<Success>Հաջողությունը</Success>
+		<Success>Հաջողություն</Success>
 		<System>Համակարգը</System>
 		<Table>Աղյուսակ</Table>
-		<Toggle_Debug>Փոխարկեք Debug- ը</Toggle_Debug>
+		<Toggle_Debug>Անջատել Debug- ը</Toggle_Debug>
 		<Toggle_Transaction_Log>Փոխարկել գործարքի հաշիվը</Toggle_Transaction_Log>
-		<Transaction_DB_Path>Գործարքի բազայի ուղին</Transaction_DB_Path>
+		<Transaction_DB_Path>Գործարքի բազայի ուղի</Transaction_DB_Path>
 		<UI>UI</UI>
-		<User_Requested>Օգտվողի պահանջը</User_Requested>
+		<User_Requested>Պահանջվող օգտվողը</User_Requested>
 		<View>Դիտել</View>
-		<View_Function>Դիտել գործառույթը</View_Function>
-		<Views_Read_Only>Դիտումները ընթերցում են եւ չեն կարող խմբագրվել</Views_Read_Only>
+		<View_Function>Դիտել ֆունկցիան</View_Function>
+		<Views_Read_Only>Դիտումներն ընթերցվում են եւ չեն կարող խմբագրվել</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

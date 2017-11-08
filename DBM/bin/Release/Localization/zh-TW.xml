@@ -8,38 +8,39 @@
 		<Asc>上升</Asc>
 		<Auto_Log>自動日誌</Auto_Log>
 		<Browse>瀏覽</Browse>
-		<CMD_Tooltip>在數據庫上執行自定義的SQL命令語句</CMD_Tooltip>
+		<CMD_Tooltip>將自定義的SQL命令語句執行到數據庫中</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>錯誤：請查看日誌了解詳情</Check_Log>
+		<Check_Log>錯誤：請檢查日誌中的詳細信息</Check_Log>
 		<Check_for_Updates>檢查更新</Check_for_Updates>
 		<Close_TW>關閉TW</Close_TW>
-		<Close_wo_saving>關閉而不保存</Close_wo_saving>
+		<Close_wo_saving>關閉不保存</Close_wo_saving>
 		<Command>命令</Command>
 		<Converter>變流器</Converter>
 		<Create_Statistics_Page>創建統計頁面</Create_Statistics_Page>
 		<Critical_Fault_Error>嚴重故障錯誤</Critical_Fault_Error>
-		<Dataview_Error>數據庫或Dataview不存在或尚未加載</Dataview_Error>
+		<Dataview_Error>數據庫或數據視圖不存在或尚未加載</Dataview_Error>
 		<Debug>調試</Debug>
 		<Define_New_Table>定義新表</Define_New_Table>
 		<Deliminator>Deliminator</Deliminator>
 		<Desc>降序</Desc>
 		<Developer>開發人員</Developer>
 		<Display_Settings>顯示設置</Display_Settings>
+		<Download_Update>下載更新</Download_Update>
 		<Edit>編輯</Edit>
 		<Error>錯誤</Error>
-		<Error_Generic>哦沒有什麼問題！ :(</Error_Generic>
-		<Error_No_DB>錯誤：沒有加載數據庫</Error_No_DB>
+		<Error_Generic>哦，沒有出錯！ :(</Error_Generic>
+		<Error_No_DB>錯誤：沒有數據庫已被加載</Error_No_DB>
 		<Export>出口</Export>
-		<Export_CSV>出口CSV</Export_CSV>
+		<Export_CSV>出口CSV代表</Export_CSV>
 		<Export_HTML_Data>導出HTML數據代表</Export_HTML_Data>
 		<Export_HTML_Schema>導出HTML SCHEMA代表</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>導出SQL  -  SCHEMA  - 代表</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>導出SQL  -  SQL  - 代表</Export_SQL_SQL>
 		<Export_UI>導出UI</Export_UI>
-		<Export_XML>出口XML</Export_XML>
+		<Export_XML>出口XML的代表</Export_XML>
 		<Extensions>擴展</Extensions>
 		<Failed>失敗</Failed>
-		<Failed_Load_Online_EULA>無法在線加載EULA</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>無法加載在線EULA</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>無法保存設置</Failed_Save_Settings>
 		<File>文件</File>
 		<Functions>功能</Functions>
@@ -47,23 +48,28 @@
 		<HTML_to_CSV>HTML到CSV</HTML_to_CSV>
 		<Help>幫幫我</Help>
 		<Import>進口</Import>
+		<Import_Completed>導入已完成</Import_Completed>
 		<Import_SQL>導入SQL</Import_SQL>
 		<Importer>進口商</Importer>
 		<Index>指數</Index>
 		<Invert>倒置</Invert>
-		<LOG_CSV_Path>記錄CSV路徑</LOG_CSV_Path>
-		<LOG_DB_PATH>日誌數據庫路徑</LOG_DB_PATH>
+		<JSON>JSON</JSON>
+		<LOG_CSV_Path>日誌CSV路徑</LOG_CSV_Path>
+		<LOG_DB_PATH>記錄數據庫路徑</LOG_DB_PATH>
 		<Language>語言</Language>
-		<Listview_Height>列表高度</Listview_Height>
-		<Listview_Width>Listview寬度</Listview_Width>
+		<Listview_Height>列表視圖高度</Listview_Height>
+		<Listview_Width>列表視圖寬度</Listview_Width>
+		<MD>降價</MD>
 		<Master_Table>主表</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable或“Master Table”是受保護的表。為了保護數據庫的完整性，您無法編輯此表</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable或“主表”是一個受保護的表。為了保護數據庫的完整性，你不能編輯這個表</Master_Table_Protected>
 		<New>新</New>
-		<New_in_Memory_Db>內存數據庫新功能</New_in_Memory_Db>
+		<New_in_Memory_Db>內存數據庫新增功能</New_in_Memory_Db>
+		<NoUpdates>沒有更新</NoUpdates>
+		<No_Updates>沒有可用的更新</No_Updates>
 		<Not_Supported>不支持</Not_Supported>
 		<Open>打開</Open>
 		<Opened>開業</Opened>
-		<PRGM_Start>程序開始</PRGM_Start>
+		<PRGM_Start>程序啟動</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>插入</Plugin>
 		<Query>詢問</Query>
@@ -84,17 +90,18 @@
 		<Sort_by>排序方式</Sort_by>
 		<Stack_Trace>堆棧跟?</Stack_Trace>
 		<Statistics_Page>統計頁面</Statistics_Page>
-		<Strict_Search>嚴格搜索</Strict_Search>
+		<Strict_Search>嚴格的搜索</Strict_Search>
 		<Success>成功</Success>
 		<System>系統</System>
 		<Table>表</Table>
 		<Toggle_Debug>切換調試</Toggle_Debug>
 		<Toggle_Transaction_Log>切換事務日誌</Toggle_Transaction_Log>
-		<Transaction_DB_Path>事務數據庫路徑</Transaction_DB_Path>
+		<Transaction_DB_Path>交易數據庫路徑</Transaction_DB_Path>
 		<UI>UI</UI>
 		<User_Requested>用戶請求</User_Requested>
 		<View>視圖</View>
 		<View_Function>查看功能</View_Function>
-		<Views_Read_Only>視圖是只讀的，無法編輯</Views_Read_Only>
+		<Views_Read_Only>視圖是只讀的，不能被編輯</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

@@ -5,19 +5,19 @@
 		<Access_Denied>Akses ditolak</Access_Denied>
 		<App>Aplikasi</App>
 		<Application>Aplikasi</Application>
-		<Asc>Naik</Asc>
+		<Asc>Menaik</Asc>
 		<Auto_Log>Log Otomatis</Auto_Log>
 		<Browse>Jelajahi</Browse>
 		<CMD_Tooltip>Jalankan perintah perintah SQL yang disesuaikan ke database</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Kesalahan: Harap periksa log untuk rinciannya</Check_Log>
-		<Check_for_Updates>Periksa Pembaharuan</Check_for_Updates>
+		<Check_for_Updates>Periksa pembaruan</Check_for_Updates>
 		<Close_TW>Tutup TW</Close_TW>
 		<Close_wo_saving>Tutup tanpa Menyimpan</Close_wo_saving>
 		<Command>Perintah</Command>
 		<Converter>Konverter</Converter>
 		<Create_Statistics_Page>Buat Halaman Statistik</Create_Statistics_Page>
-		<Critical_Fault_Error>Kesalahan Kritis Kesalahan</Critical_Fault_Error>
+		<Critical_Fault_Error>Kesalahan Fault Kritis</Critical_Fault_Error>
 		<Dataview_Error>Database atau Dataview tidak ada atau belum dimuat</Dataview_Error>
 		<Debug>Debug</Debug>
 		<Define_New_Table>Tentukan Tabel Baru</Define_New_Table>
@@ -25,12 +25,13 @@
 		<Desc>Descending</Desc>
 		<Developer>Pengembang</Developer>
 		<Display_Settings>Pengaturan tampilan</Display_Settings>
+		<Download_Update>Download Update</Download_Update>
 		<Edit>Edit</Edit>
 		<Error>Kesalahan</Error>
 		<Error_Generic>Oh tidak ada yang salah! :(</Error_Generic>
 		<Error_No_DB>Kesalahan: Tidak ada Database yang dimuat</Error_No_DB>
 		<Export>Ekspor</Export>
-		<Export_CSV>EKSPOR CSV PADA BEHALF OF</Export_CSV>
+		<Export_CSV>CSV EKSPOR PADA BEHALF OF</Export_CSV>
 		<Export_HTML_Data>Ekspor DATA HTML atas nama</Export_HTML_Data>
 		<Export_HTML_Schema>Ekspor HTML SCHEMA atas nama</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Ekspor SQL - SCHEMA - Atas nama</Export_SQL_SCHEMA>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML ke CSV</HTML_to_CSV>
 		<Help>Membantu</Help>
 		<Import>Impor</Import>
+		<Import_Completed>Impor Selesai</Import_Completed>
 		<Import_SQL>Impor SQL</Import_SQL>
 		<Importer>Pengimpor</Importer>
 		<Index>Indeks</Index>
 		<Invert>Membalikkan</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Jalur CSV Masuk</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Bahasa</Language>
 		<Listview_Height>Listview Tinggi</Listview_Height>
 		<Listview_Width>Lebar Listview</Listview_Width>
+		<MD>Penurunan harga</MD>
 		<Master_Table>Meja master</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable atau 'Master Table' adalah tabel yang dilindungi. Untuk melindungi integritas db Anda tidak dapat mengedit tabel ini</Master_Table_Protected>
 		<New>Baru</New>
 		<New_in_Memory_Db>Baru di Memory Database</New_in_Memory_Db>
+		<NoUpdates>Tidak ada update</NoUpdates>
+		<No_Updates>Tidak ada update yang tersedia</No_Updates>
 		<Not_Supported>Tidak didukung</Not_Supported>
 		<Open>Buka</Open>
 		<Opened>Dibuka</Opened>
@@ -95,6 +101,7 @@
 		<User_Requested>Permintaan pengguna</User_Requested>
 		<View>Melihat</View>
 		<View_Function>Lihat Fungsi</View_Function>
-		<Views_Read_Only>Tampilan hanya bisa dibaca dan tidak bisa diedit</Views_Read_Only>
+		<Views_Read_Only>Tampilan hanya dibaca dan tidak bisa diedit</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

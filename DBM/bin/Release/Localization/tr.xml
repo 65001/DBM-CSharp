@@ -8,7 +8,7 @@
 		<Asc>yükselen</Asc>
 		<Auto_Log>Otomatik Günlüğü</Auto_Log>
 		<Browse>tarayın</Browse>
-		<CMD_Tooltip>Özelleştirilmiş SQL komut deyimlerini veritabanında çalıştırır</CMD_Tooltip>
+		<CMD_Tooltip>Özelleştirilmiş SQL komut ifadelerini veritabanında çalıştırır</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Hata: Ayrıntılar için günlüğünü kontrol edin</Check_Log>
 		<Check_for_Updates>Güncellemeleri kontrol et</Check_for_Updates>
@@ -18,25 +18,26 @@
 		<Converter>Dönüştürücü</Converter>
 		<Create_Statistics_Page>İstatistik Sayfası Oluştur</Create_Statistics_Page>
 		<Critical_Fault_Error>Kritik Hata Hatası</Critical_Fault_Error>
-		<Dataview_Error>Veritabanı veya Dataview yok veya henüz yüklenmemiş</Dataview_Error>
+		<Dataview_Error>Veritabanı veya Dataview yok veya henüz yüklenmedi</Dataview_Error>
 		<Debug>Hata ayıklama</Debug>
 		<Define_New_Table>Yeni Tablosu Tanımla</Define_New_Table>
 		<Deliminator>Deliminator</Deliminator>
 		<Desc>Azalan</Desc>
-		<Developer>Developer</Developer>
+		<Developer>Geliştirici</Developer>
 		<Display_Settings>Görüntü ayarları</Display_Settings>
+		<Download_Update>Güncelleştirmeyi İndir</Download_Update>
 		<Edit>Düzenleme</Edit>
 		<Error>Hata</Error>
 		<Error_Generic>Oh hiçbir şey ters gitti! :(</Error_Generic>
 		<Error_No_DB>Hata: Veritabanı yüklenmedi</Error_No_DB>
 		<Export>İhracat</Export>
-		<Export_CSV>ŞİDDETİNE YÖNELİK İHRACAT CSV</Export_CSV>
+		<Export_CSV>İHRACAT BİRLİĞİ BAŞKANLIĞINA CEVAP</Export_CSV>
 		<Export_HTML_Data>Adına HTML Verilerini dışa aktar</Export_HTML_Data>
-		<Export_HTML_Schema>Adına adına HTML SCHEMA'yı dışa aktar</Export_HTML_Schema>
+		<Export_HTML_Schema>Adına HTML SCHEMA verin</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>İhracat SQL - SCHEMA - adına</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>İhracat SQL - SQL - adına</Export_SQL_SQL>
 		<Export_UI>Dışarı Aktar UI</Export_UI>
-		<Export_XML>İHRACAT XML'IN BAŞINA DÖN</Export_XML>
+		<Export_XML>İHRACAT XML'DAN BİR ŞEY</Export_XML>
 		<Extensions>Uzantıları</Extensions>
 		<Failed>Başarısız oldu</Failed>
 		<Failed_Load_Online_EULA>Çevrimiçi EULA yüklenemedi</Failed_Load_Online_EULA>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML'den CSV'ye</HTML_to_CSV>
 		<Help>yardım et</Help>
 		<Import>İthalat</Import>
+		<Import_Completed>İçe Aktarma Tamamlandı</Import_Completed>
 		<Import_SQL>SQL içe aktar</Import_SQL>
 		<Importer>İthalatçı</Importer>
 		<Index>indeks</Index>
 		<Invert>evirmek</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Günlük CSV Yolu</LOG_CSV_Path>
 		<LOG_DB_PATH>DatabasePath'ı günlüğe yaz</LOG_DB_PATH>
 		<Language>Dil</Language>
 		<Listview_Height>Liste Görünümü Yüksekliği</Listview_Height>
 		<Listview_Width>Liste Genişliği</Listview_Width>
+		<MD>Markdown</MD>
 		<Master_Table>Ana Tablo</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable veya 'Master Table' korumalı bir tablodur. Db'nin bütünlüğünü korumak için bu tabloyu düzenleyemezsiniz</Master_Table_Protected>
 		<New>Yeni</New>
 		<New_in_Memory_Db>Bellek Veritabanında Yeni</New_in_Memory_Db>
+		<NoUpdates>Güncelleme Yok</NoUpdates>
+		<No_Updates>Mevcut güncelleme yok</No_Updates>
 		<Not_Supported>Desteklenmiyor</Not_Supported>
 		<Open>Açık</Open>
 		<Opened>Açıldı</Opened>
@@ -96,5 +102,6 @@
 		<View>Görünüm</View>
 		<View_Function>İşlevleri Görüntüle</View_Function>
 		<Views_Read_Only>Görüntüler salt okunur ve düzenlenemez</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

@@ -10,13 +10,13 @@
 		<Browse>Naršyti</Browse>
 		<CMD_Tooltip>Vykdo pritaikytus SQL komandų teiginius į duomenų bazę</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>Klaida. Prašome patikrinti žurnalą</Check_Log>
+		<Check_Log>Klaida: žiūrėkite žurnalą</Check_Log>
 		<Check_for_Updates>Tikrinti, ar yra atnaujinimų</Check_for_Updates>
 		<Close_TW>Uždaryti TW</Close_TW>
 		<Close_wo_saving>Uždaryti be taupymo</Close_wo_saving>
-		<Command>Valdymas</Command>
+		<Command>Komanda</Command>
 		<Converter>Konverteris</Converter>
-		<Create_Statistics_Page>Sukurti statistikos puslapį</Create_Statistics_Page>
+		<Create_Statistics_Page>Sukurkite statistikos puslapį</Create_Statistics_Page>
 		<Critical_Fault_Error>Kritinė gedimo klaida</Critical_Fault_Error>
 		<Dataview_Error>Duomenų bazė arba "Dataview" neegzistuoja arba dar nebuvo įkelta</Dataview_Error>
 		<Debug>Derinti</Debug>
@@ -25,12 +25,13 @@
 		<Desc>Mažėja</Desc>
 		<Developer>Programuotojas</Developer>
 		<Display_Settings>Ekrano nustatymai</Display_Settings>
+		<Download_Update>Atsisiųsti naujinimą</Download_Update>
 		<Edit>Redaguoti</Edit>
 		<Error>Klaida</Error>
 		<Error_Generic>O ne nieko blogo! :(</Error_Generic>
 		<Error_No_DB>Klaida: duomenų bazė nebuvo įkelta</Error_No_DB>
 		<Export>Eksportas</Export>
-		<Export_CSV>EKSPORTO CSV</Export_CSV>
+		<Export_CSV>EKSPORTO CSV UŽ BEHALF OF</Export_CSV>
 		<Export_HTML_Data>Eksportuoti HTML DATA vardu</Export_HTML_Data>
 		<Export_HTML_Schema>Eksporto HTML SCHEMA vardu</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Eksportas SQL - SCHEMA - vardu</Export_SQL_SCHEMA>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML į CSV</HTML_to_CSV>
 		<Help>Pagalba</Help>
 		<Import>Importuoti</Import>
+		<Import_Completed>Importuotas baigtas</Import_Completed>
 		<Import_SQL>Importuoti SQL</Import_SQL>
 		<Importer>Importuotojas</Importer>
 		<Index>Indeksas</Index>
-		<Invert>Apversti</Invert>
+		<Invert>Invertuoti</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Prisijungti CSV kelias</LOG_CSV_Path>
 		<LOG_DB_PATH>Prisijungti DatabasePath</LOG_DB_PATH>
 		<Language>Kalba</Language>
 		<Listview_Height>Listview Height</Listview_Height>
 		<Listview_Width>Listview Plotis</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Pagrindinė lentelė</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable arba "Master Table" yra saugoma lentelė. Kad apsaugotumėte db vientisumą, negalėsite redaguoti šios lentelės</Master_Table_Protected>
 		<New>Naujas</New>
 		<New_in_Memory_Db>Nauja atminties bazėje</New_in_Memory_Db>
+		<NoUpdates>Nėra atnaujinimų</NoUpdates>
+		<No_Updates>Nėra jokių atnaujinimų</No_Updates>
 		<Not_Supported>Nepalaikomas</Not_Supported>
 		<Open>Atviras</Open>
 		<Opened>Atidaryta</Opened>
@@ -95,6 +101,7 @@
 		<User_Requested>Prašomas naudotojas</User_Requested>
 		<View>Vaizdas</View>
 		<View_Function>Peržiūrėti funkciją</View_Function>
-		<Views_Read_Only>Vaizdai yra skaitomi, jų negalima redaguoti</Views_Read_Only>
+		<Views_Read_Only>Vaizdai yra tik skaitomi ir jų negalima redaguoti</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

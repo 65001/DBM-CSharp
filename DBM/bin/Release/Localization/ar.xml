@@ -25,14 +25,15 @@
 		<Desc>تنازلي</Desc>
 		<Developer>مطور</Developer>
 		<Display_Settings>اعدادات العرض</Display_Settings>
+		<Download_Update>حمل التحديث</Download_Update>
 		<Edit>تصحيح</Edit>
 		<Error>خطأ</Error>
-		<Error_Generic>أوه لم يحدث خطأ ما! :(</Error_Generic>
+		<Error_Generic>أوه لم يحدث خطأ! :(</Error_Generic>
 		<Error_No_DB>خطأ: لم يتم تحميل قاعدة بيانات</Error_No_DB>
 		<Export>تصدير</Export>
 		<Export_CSV>تصدير كسف على بيهالف من</Export_CSV>
 		<Export_HTML_Data>تصدير هتمل البيانات نيابة عن</Export_HTML_Data>
-		<Export_HTML_Schema>تصدير هتمل ششيما نيابة عن</Export_HTML_Schema>
+		<Export_HTML_Schema>تصدير هتمل سشيما نيابة عن</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>تصدير سكل - ششيما - نيابة عن</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>تصدير سكل - سكل - نيابة عن</Export_SQL_SQL>
 		<Export_UI>واجهة المستخدم للتصدير</Export_UI>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>هتمل إلى كسف</HTML_to_CSV>
 		<Help>مساعدة</Help>
 		<Import>استيراد</Import>
-		<Import_SQL>استيراد SQL</Import_SQL>
+		<Import_Completed>اكتمل الاستيراد</Import_Completed>
+		<Import_SQL>استيراد سكل</Import_SQL>
 		<Importer>المستورد</Importer>
 		<Index>فهرس</Index>
 		<Invert>عكس</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>سجل مسار كسف</LOG_CSV_Path>
 		<LOG_DB_PATH>سجل داتاباسيباث</LOG_DB_PATH>
 		<Language>لغة</Language>
 		<Listview_Height>ليستفيو الارتفاع</Listview_Height>
 		<Listview_Width>عرض ليستفيو</Listview_Width>
-		<Master_Table>جدول رئيسي</Master_Table>
+		<MD>تخفيض السعر</MD>
+		<Master_Table>الجدول الرئيسي</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable أو 'الجدول الرئيسي' هو جدول المحمية. لحماية سلامة ديسيبل لا يمكنك تحرير هذا الجدول</Master_Table_Protected>
 		<New>الجديد</New>
 		<New_in_Memory_Db>جديد في قاعدة بيانات الذاكرة</New_in_Memory_Db>
+		<NoUpdates>لا تحديثات</NoUpdates>
+		<No_Updates>لا تتوفر أية تحديثات</No_Updates>
 		<Not_Supported>غير معتمد</Not_Supported>
 		<Open>فتح</Open>
 		<Opened>افتتح</Opened>
@@ -88,7 +94,7 @@
 		<Success>نجاح</Success>
 		<System>النظام</System>
 		<Table>الطاولة</Table>
-		<Toggle_Debug>تبديل التصحيح</Toggle_Debug>
+		<Toggle_Debug>تبديل تصحيح الأخطاء</Toggle_Debug>
 		<Toggle_Transaction_Log>تبديل سجل المعاملات</Toggle_Transaction_Log>
 		<Transaction_DB_Path>مسار قاعدة بيانات المعاملات</Transaction_DB_Path>
 		<UI>UI</UI>
@@ -96,5 +102,6 @@
 		<View>رأي</View>
 		<View_Function>عرض الوظيفة</View_Function>
 		<Views_Read_Only>المشاهدات قابلة للقراءة فقط ولا يمكن تعديلها</Views_Read_Only>
+		<WMU>ويكي ماركوب</WMU>
 	</Language>
 </root>

@@ -25,10 +25,11 @@
 		<Desc>Syrthio</Desc>
 		<Developer>Datblygwr</Developer>
 		<Display_Settings>Gosodiadau Arddangos</Display_Settings>
+		<Download_Update>Lawrlwytho Diweddariad</Download_Update>
 		<Edit>Golygu</Edit>
 		<Error>Gwall</Error>
 		<Error_Generic>O na aeth rhywbeth o'i le! :(</Error_Generic>
-		<Error_No_DB>Gwall: Ni chafwyd Cronfa Ddata Dim</Error_No_DB>
+		<Error_No_DB>Gwall: Nid oes Cronfa Ddata wedi'i lwytho</Error_No_DB>
 		<Export>Allforio</Export>
 		<Export_CSV>CSV ALLFORIO AR GYMRAEG</Export_CSV>
 		<Export_HTML_Data>Allforio HTML DATA ar ran</Export_HTML_Data>
@@ -36,10 +37,10 @@
 		<Export_SQL_SCHEMA>Allforio SQL - SCHEMA - Ar ran</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Allforio SQL - SQL - Ar ran</Export_SQL_SQL>
 		<Export_UI>UI Allforio</Export_UI>
-		<Export_XML>ALLFORIO XML AR GYFER YR</Export_XML>
+		<Export_XML>ALLFORIO XML AR GYFER</Export_XML>
 		<Extensions>Estyniadau</Extensions>
 		<Failed>Wedi methu</Failed>
-		<Failed_Load_Online_EULA>Methwyd llwytho EULA ar-lein</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>Methu llwytho EULA ar-lein</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Methwyd i Arbed Gosodiadau</Failed_Save_Settings>
 		<File>Ffeil</File>
 		<Functions>Swyddogaethau</Functions>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML i CSV</HTML_to_CSV>
 		<Help>Help</Help>
 		<Import>Mewnforio</Import>
+		<Import_Completed>Mewnforio Wedi'i gwblhau</Import_Completed>
 		<Import_SQL>Mewnforio SQL</Import_SQL>
 		<Importer>Importer</Importer>
 		<Index>Mynegai</Index>
 		<Invert>Gwrthdroi</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Llwybr CSV Log</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Iaith</Language>
 		<Listview_Height>Uchder Rhestr</Listview_Height>
 		<Listview_Width>Lled Listview</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Tabl Meistr</Master_Table>
-		<Master_Table_Protected>Mae sqlite_mastertable neu 'Master Table' yn dabl wedi'i diogelu. Er mwyn diogelu uniondeb y db, ni allwch olygu'r tabl hwn</Master_Table_Protected>
+		<Master_Table_Protected>Mae sqlite_mastertable neu 'Master Table' yn fwrdd a ddiogelir. I ddiogelu uniondeb y db, ni allwch olygu'r tabl hwn</Master_Table_Protected>
 		<New>Newydd</New>
 		<New_in_Memory_Db>Cronfa Ddata Newydd mewn Cof</New_in_Memory_Db>
+		<NoUpdates>Dim Diweddariadau</NoUpdates>
+		<No_Updates>Nid oes unrhyw ddiweddariadau ar gael</No_Updates>
 		<Not_Supported>Heb eu cefnogi</Not_Supported>
 		<Open>Agor</Open>
 		<Opened>Agorwyd</Opened>
@@ -76,7 +82,7 @@
 		<Save_and_Close>Arbed a Chau</Save_and_Close>
 		<Search>Chwilio</Search>
 		<Search_Settings>Chwilio'r Settings</Search_Settings>
-		<Search_in>Chwilio Yn</Search_in>
+		<Search_in>Chwilio Mewn</Search_in>
 		<Settings>Gosodiadau</Settings>
 		<Settings_Editor>Golygydd Gosodiadau</Settings_Editor>
 		<Show_Help>Dangos Help</Show_Help>
@@ -96,5 +102,6 @@
 		<View>Gweld</View>
 		<View_Function>View Function</View_Function>
 		<Views_Read_Only>Mae'r farn yn ddarlleniadol ac ni ellir ei olygu</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

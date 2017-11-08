@@ -6,9 +6,9 @@
 		<App>Maombi</App>
 		<Application>Programu</Application>
 		<Asc>Inapanda</Asc>
-		<Auto_Log>Ingia ya Hifadhi</Auto_Log>
+		<Auto_Log>Ingia moja kwa moja</Auto_Log>
 		<Browse>Vinjari</Browse>
-		<CMD_Tooltip>Inafanya taarifa za amri za SQL iliyoboreshwa kwenye database</CMD_Tooltip>
+		<CMD_Tooltip>Inafanya taarifa za amri za SQL zilizoboreshwa kwenye database</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Hitilafu: Tafadhali angalia logi kwa maelezo</Check_Log>
 		<Check_for_Updates>Angalia kwa Sasisho</Check_for_Updates>
@@ -17,7 +17,7 @@
 		<Command>Amri</Command>
 		<Converter>Kubadilisha</Converter>
 		<Create_Statistics_Page>Unda Ukurasa wa Takwimu</Create_Statistics_Page>
-		<Critical_Fault_Error>Hitilafu mbaya ya Fault</Critical_Fault_Error>
+		<Critical_Fault_Error>Hitilafu ya Faid muhimu</Critical_Fault_Error>
 		<Dataview_Error>Hifadhi au Dataview haipo au haijawahi kubeba</Dataview_Error>
 		<Debug>Dhibiti</Debug>
 		<Define_New_Table>Eleza Jedwali Jipya</Define_New_Table>
@@ -25,41 +25,47 @@
 		<Desc>Inashuka</Desc>
 		<Developer>Msanidi programu</Developer>
 		<Display_Settings>Mipangilio ya kuonyesha</Display_Settings>
+		<Download_Update>Pakua Mwisho</Download_Update>
 		<Edit>Badilisha</Edit>
 		<Error>Hitilafu</Error>
 		<Error_Generic>Oh hakuna kitu kilichosababisha! :(</Error_Generic>
-		<Error_No_DB>Hitilafu: Hakuna Hifadhi imefakia</Error_No_DB>
+		<Error_No_DB>Hitilafu: Hakuna Hifadhi imepakia</Error_No_DB>
 		<Export>Tuma nje</Export>
-		<Export_CSV>SHUTA YA KUFUTA KATIKA MAHALI YA</Export_CSV>
+		<Export_CSV>SHUTHA YA KUFUTA KATIKA MAFUNZO YA</Export_CSV>
 		<Export_HTML_Data>Export HTML DATA kwa niaba ya</Export_HTML_Data>
 		<Export_HTML_Schema>Toka HTML SCHEMA kwa niaba ya</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Kwa niaba ya</Export_SQL_SCHEMA>
-		<Export_SQL_SQL>Sport SQL - SQL - Kwa niaba ya</Export_SQL_SQL>
+		<Export_SQL_SQL>Export SQL - SQL - Kwa niaba ya</Export_SQL_SQL>
 		<Export_UI>Tuma UI</Export_UI>
-		<Export_XML>UFUNYAJI WA XML KATIKA MAHALI YA</Export_XML>
+		<Export_XML>UFUNZO WA XML KATIKA MAHALI YA</Export_XML>
 		<Extensions>Upanuzi</Extensions>
 		<Failed>Imeshindwa</Failed>
 		<Failed_Load_Online_EULA>Imeshindwa kupakia EULA mtandaoni</Failed_Load_Online_EULA>
-		<Failed_Save_Settings>Imeshindwa Kuokoa Mipangilio</Failed_Save_Settings>
+		<Failed_Save_Settings>Imeshindwa Kuhifadhi Mipangilio</Failed_Save_Settings>
 		<File>Funga</File>
 		<Functions>Kazi</Functions>
 		<HTML>HTML</HTML>
 		<HTML_to_CSV>HTML kwa CSV</HTML_to_CSV>
 		<Help>Msaada</Help>
 		<Import>Ingiza</Import>
+		<Import_Completed>Ingiza Imekamilika</Import_Completed>
 		<Import_SQL>Ingiza SQL</Import_SQL>
 		<Importer>Kuingiza</Importer>
 		<Index>Nambari</Index>
 		<Invert>Pindua</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Ingia Njia ya CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Ingia Mtazamo wa Hifadhi</LOG_DB_PATH>
 		<Language>Lugha</Language>
 		<Listview_Height>Orodha ya Orodha ya Urefu</Listview_Height>
-		<Listview_Width>Orodha ya Upanaji wa Orodha</Listview_Width>
+		<Listview_Width>Orodha ya Upanaji</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Jedwali la Mwalimu</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable au 'Master Table' ni meza iliyohifadhiwa. Ili kulinda uaminifu wa db huwezi kuhariri meza hii</Master_Table_Protected>
 		<New>Mpya</New>
 		<New_in_Memory_Db>Mpya kwenye Kumbukumbu ya Kumbukumbu</New_in_Memory_Db>
+		<NoUpdates>Hakuna Marekebisho</NoUpdates>
+		<No_Updates>Hakuna updates zinazopatikana</No_Updates>
 		<Not_Supported>Si Kusaidiwa</Not_Supported>
 		<Open>Fungua</Open>
 		<Opened>Ilifunguliwa</Opened>
@@ -89,12 +95,13 @@
 		<System>Mfumo</System>
 		<Table>Jedwali</Table>
 		<Toggle_Debug>Badilisha kubadilisha</Toggle_Debug>
-		<Toggle_Transaction_Log>Badilisha Ingia ya Ushirikiano</Toggle_Transaction_Log>
+		<Toggle_Transaction_Log>Badilisha kubadilisha Ingia</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Njia ya Kusambaza Dhamana</Transaction_DB_Path>
 		<UI>UI</UI>
 		<User_Requested>Mtumiaji aliombwa</User_Requested>
 		<View>Angalia</View>
 		<View_Function>Angalia Kazi</View_Function>
-		<Views_Read_Only>Maoni ni ya wasomaji na hauwezi kuhaririwa</Views_Read_Only>
+		<Views_Read_Only>Maoni ni ya kusoma na haiwezi kuhaririwa</Views_Read_Only>
+		<WMU>Mchapishaji wa Wiki</WMU>
 	</Language>
 </root>

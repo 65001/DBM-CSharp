@@ -25,6 +25,7 @@
 		<Desc>нисходящий</Desc>
 		<Developer>разработчик</Developer>
 		<Display_Settings>Настройки отображения</Display_Settings>
+		<Download_Update>Загрузить обновление</Download_Update>
 		<Edit>редактировать</Edit>
 		<Error>ошибка</Error>
 		<Error_Generic>О, ничего не получилось! :(</Error_Generic>
@@ -33,7 +34,7 @@
 		<Export_CSV>ЭКСПОРТ CSV ОТ ИМЕНИ</Export_CSV>
 		<Export_HTML_Data>Экспорт HTML DATA от имени</Export_HTML_Data>
 		<Export_HTML_Schema>Экспорт HTML SCHEMA от имени</Export_HTML_Schema>
-		<Export_SQL_SCHEMA>Экспорт SQL - SCHEMA - От имени</Export_SQL_SCHEMA>
+		<Export_SQL_SCHEMA>Экспорт SQL - SCHEMA - от имени</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Экспорт SQL-SQL - от имени</Export_SQL_SQL>
 		<Export_UI>Экспортный интерфейс</Export_UI>
 		<Export_XML>ЭКСПОРТНЫЙ XML ОТ ИМЕНИ</Export_XML>
@@ -47,23 +48,28 @@
 		<HTML_to_CSV>HTML для CSV</HTML_to_CSV>
 		<Help>Помогите</Help>
 		<Import>Импортировать</Import>
+		<Import_Completed>Импорт завершен</Import_Completed>
 		<Import_SQL>Импорт SQL</Import_SQL>
 		<Importer>импортер</Importer>
 		<Index>Индекс</Index>
 		<Invert>инвертировать</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Путь к журналу CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>язык</Language>
 		<Listview_Height>Высота списка просмотров</Listview_Height>
 		<Listview_Width>Ширина списка</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Мастер-таблица</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable или «Мастер-таблица» - это защищенная таблица. Чтобы защитить целостность db, вы не можете редактировать эту таблицу</Master_Table_Protected>
 		<New>новый</New>
 		<New_in_Memory_Db>Новое в базе данных памяти</New_in_Memory_Db>
+		<NoUpdates>Нет обновлений</NoUpdates>
+		<No_Updates>Нет доступных обновлений</No_Updates>
 		<Not_Supported>Не поддерживается</Not_Supported>
 		<Open>открыто</Open>
 		<Opened>открытый</Opened>
-		<PRGM_Start>Начало программы</PRGM_Start>
+		<PRGM_Start>Запущена программа</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>Plugin</Plugin>
 		<Query>запрос</Query>
@@ -96,5 +102,6 @@
 		<View>Посмотреть</View>
 		<View_Function>Функция просмотра</View_Function>
 		<Views_Read_Only>Представления являются readonly и не могут быть отредактированы</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

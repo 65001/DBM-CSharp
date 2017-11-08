@@ -21,10 +21,11 @@
 		<Dataview_Error>データベースまたはDataviewが存在しないか、まだロードされていません</Dataview_Error>
 		<Debug>デバッグ</Debug>
 		<Define_New_Table>新しいテーブルを定義する</Define_New_Table>
-		<Deliminator>デリミネーター</Deliminator>
+		<Deliminator>デリミネータ</Deliminator>
 		<Desc>降順</Desc>
 		<Developer>開発者</Developer>
 		<Display_Settings>ディスプレイの設定</Display_Settings>
+		<Download_Update>アップデートをダウンロード</Download_Update>
 		<Edit>編集</Edit>
 		<Error>エラー</Error>
 		<Error_Generic>・・、何かが間違っていた！ :(</Error_Generic>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTMLからCSVへ</HTML_to_CSV>
 		<Help>助けて</Help>
 		<Import>インポート</Import>
+		<Import_Completed>インポートが完了しました</Import_Completed>
 		<Import_SQL>SQLのインポート</Import_SQL>
-		<Importer>輸入者</Importer>
+		<Importer>輸入業者</Importer>
 		<Index>インデックス</Index>
 		<Invert>反転</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>ログCSVパス</LOG_CSV_Path>
-		<LOG_DB_PATH>DatabasePathをログに記録する</LOG_DB_PATH>
+		<LOG_DB_PATH>ログDatabasePath</LOG_DB_PATH>
 		<Language>言語</Language>
 		<Listview_Height>リストビューの高さ</Listview_Height>
 		<Listview_Width>リストビューの幅</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>マスターテーブル</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertableまたは 'マスターテーブル'は保護されたテーブルです。データベースの整合性を保護するために、このテーブルを編集することはできません</Master_Table_Protected>
 		<New>新しい</New>
 		<New_in_Memory_Db>メモリデータベースの新機能</New_in_Memory_Db>
+		<NoUpdates>アップデートなし</NoUpdates>
+		<No_Updates>利用可能な更新は・りません</No_Updates>
 		<Not_Supported>サポートされていません</Not_Supported>
 		<Open>開いた</Open>
 		<Opened>開かれた</Opened>
@@ -79,7 +85,7 @@
 		<Search_in>検索</Search_in>
 		<Settings>設定</Settings>
 		<Settings_Editor>設定エディタ</Settings_Editor>
-		<Show_Help>ヘルプを表示する</Show_Help>
+		<Show_Help>ヘルプを表示</Show_Help>
 		<Sort>ソート</Sort>
 		<Sort_by>並び替え</Sort_by>
 		<Stack_Trace>スタックトレース</Stack_Trace>
@@ -96,5 +102,6 @@
 		<View>ビュー</View>
 		<View_Function>ビュー機能</View_Function>
 		<Views_Read_Only>ビューは読み取り専用で編集できません</Views_Read_Only>
+		<WMU>Wikiマークアップ</WMU>
 	</Language>
 </root>

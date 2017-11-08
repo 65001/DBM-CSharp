@@ -13,10 +13,10 @@
 		<Check_Log>L?i: Vui lòng ki?m tra nh?t ký d? bi?t chi ti?t</Check_Log>
 		<Check_for_Updates>Ki?m tra c?p nh?t</Check_for_Updates>
 		<Close_TW>Ðóng TW</Close_TW>
-		<Close_wo_saving>Ðóng mà không ti?t ki?m</Close_wo_saving>
+		<Close_wo_saving>Ðóng mà không luu</Close_wo_saving>
 		<Command>Ch? huy</Command>
 		<Converter>Chuy?n d?i</Converter>
-		<Create_Statistics_Page>T?o trang th?ng kê</Create_Statistics_Page>
+		<Create_Statistics_Page>T?o trang Th?ng kê</Create_Statistics_Page>
 		<Critical_Fault_Error>L?i quan tr?ng l?i</Critical_Fault_Error>
 		<Dataview_Error>Co s? d? li?u ho?c Dataview không t?n t?i ho?c chua du?c t?i</Dataview_Error>
 		<Debug>G? r?i</Debug>
@@ -25,41 +25,47 @@
 		<Desc>Gi?m d?n</Desc>
 		<Developer>Nhà phát tri?n</Developer>
 		<Display_Settings>Cài d?t hi?n th?</Display_Settings>
+		<Download_Update>T?i xu?ng C?p nh?t</Download_Update>
 		<Edit>Ch?nh s?a</Edit>
 		<Error>l?i</Error>
 		<Error_Generic>Oh không có di?u gì sai! :(</Error_Generic>
 		<Error_No_DB>L?i: Không có Co s? d? li?u dã du?c t?i</Error_No_DB>
 		<Export>Xu?t kh?u</Export>
-		<Export_CSV>EXPORT CSV thay m?t</Export_CSV>
+		<Export_CSV>XU?T KH?U CSV TRU?C Ð?N</Export_CSV>
 		<Export_HTML_Data>Xu?t HTML DATA thay m?t cho</Export_HTML_Data>
 		<Export_HTML_Schema>Xu?t kh?u HTML SCHEMA thay m?t cho</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Xu?t SQL - SCHEMA - Thay m?t cho</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Xu?t SQL - SQL - Thay m?t cho</Export_SQL_SQL>
-		<Export_UI>Xu?t kh?u giao di?n ngu?i dùng</Export_UI>
+		<Export_UI>Xu?t Giao di?n Ngu?i dùng</Export_UI>
 		<Export_XML>XU?T KH?U XML Ð?I DI?N</Export_XML>
 		<Extensions>Ti?n ích m? r?ng</Extensions>
 		<Failed>Th?t b?i</Failed>
 		<Failed_Load_Online_EULA>Không th? t?i EULA tr?c tuy?n</Failed_Load_Online_EULA>
-		<Failed_Save_Settings>Không luu du?c Cài d?t</Failed_Save_Settings>
+		<Failed_Save_Settings>Không th? luu Cài d?t</Failed_Save_Settings>
 		<File>T?p tin</File>
 		<Functions>Ch?c nang</Functions>
 		<HTML>HTML</HTML>
 		<HTML_to_CSV>HTML sang CSV</HTML_to_CSV>
 		<Help>C?u giúp</Help>
 		<Import>Nh?p kh?u</Import>
+		<Import_Completed>Nh?p dã hoàn thành</Import_Completed>
 		<Import_SQL>Nh?p SQL</Import_SQL>
 		<Importer>Nhà nh?p kh?u</Importer>
 		<Index>M?c l?c</Index>
 		<Invert>Ð?o ngu?c</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Ðang nh?p CSV Path</LOG_CSV_Path>
 		<LOG_DB_PATH>Ðang nh?p DatabasePath</LOG_DB_PATH>
 		<Language>Ngôn ng?</Language>
 		<Listview_Height>Chi?u cao danh sách</Listview_Height>
 		<Listview_Width>Width Width</Listview_Width>
-		<Master_Table>B?ng t?ng th?</Master_Table>
+		<MD>MarkDown</MD>
+		<Master_Table>B?ng Master</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable ho?c 'Master Table' là m?t b?ng du?c b?o v?. Ð? b?o v? tính toàn v?n c?a db b?n không th? ch?nh s?a b?ng này</Master_Table_Protected>
 		<New>M?i</New>
 		<New_in_Memory_Db>M?i trong co s? d? li?u b? nh?</New_in_Memory_Db>
+		<NoUpdates>Không c?p nh?t</NoUpdates>
+		<No_Updates>Không có b?n c?p nh?t nào</No_Updates>
 		<Not_Supported>Không du?c h? tr?</Not_Supported>
 		<Open>M?</Open>
 		<Opened>Ðã m?</Opened>
@@ -95,6 +101,7 @@
 		<User_Requested>Yêu c?u Ngu?i dùng</User_Requested>
 		<View>Lu?t xem</View>
 		<View_Function>Xem Ch?c nang</View_Function>
-		<Views_Read_Only>S? lu?t xem là ch? d?c và không th? ch?nh s?a du?c</Views_Read_Only>
+		<Views_Read_Only>Ch? d? xem là ch? d?c và không th? ch?nh s?a du?c</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

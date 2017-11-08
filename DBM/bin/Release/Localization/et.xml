@@ -17,14 +17,15 @@
 		<Command>Käsk</Command>
 		<Converter>Konverter</Converter>
 		<Create_Statistics_Page>Loo statistika leht</Create_Statistics_Page>
-		<Critical_Fault_Error>Kriitiline vea viga</Critical_Fault_Error>
-		<Dataview_Error>Andmebaasi või Dataviewi pole olemas või pole veel laetud</Dataview_Error>
+		<Critical_Fault_Error>Kriitilise vea tõrge</Critical_Fault_Error>
+		<Dataview_Error>Andmebaasi või Dataviewi ei eksisteeri või pole veel laetud</Dataview_Error>
 		<Debug>Silumine</Debug>
-		<Define_New_Table>Määra uus tabel</Define_New_Table>
+		<Define_New_Table>Määratle uus tabel</Define_New_Table>
 		<Deliminator>Deliminaator</Deliminator>
 		<Desc>Kahanev</Desc>
 		<Developer>Arendaja</Developer>
 		<Display_Settings>Kuva seaded</Display_Settings>
+		<Download_Update>Laadi alla värskendus</Download_Update>
 		<Edit>Muuda</Edit>
 		<Error>Viga</Error>
 		<Error_Generic>Oh pole midagi valesti läinud! :(</Error_Generic>
@@ -39,27 +40,32 @@
 		<Export_XML>EXPORT XML KOHTA</Export_XML>
 		<Extensions>Laiendused</Extensions>
 		<Failed>Ebaõnnestus</Failed>
-		<Failed_Load_Online_EULA>EULA-võrguühenduseta laadimine ebaõnnestus</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>EULA-võrguühenduse laadimine ebaõnnestus</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Seadete salvestamine ebaõnnestus</Failed_Save_Settings>
 		<File>Faili</File>
 		<Functions>Funktsioonid</Functions>
 		<HTML>HTML</HTML>
-		<HTML_to_CSV>HTML-i CSV-vormingusse</HTML_to_CSV>
+		<HTML_to_CSV>CSV-vormingus HTML</HTML_to_CSV>
 		<Help>Abi</Help>
 		<Import>Import</Import>
+		<Import_Completed>Import lõppes</Import_Completed>
 		<Import_SQL>SQL-i import</Import_SQL>
 		<Importer>Importija</Importer>
 		<Index>Indeks</Index>
 		<Invert>Pööra ümber</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Logi CSV-tee</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
-		<Language>Keele</Language>
+		<Language>Keel</Language>
 		<Listview_Height>Listview Height</Listview_Height>
-		<Listview_Width>Listviewi laius</Listview_Width>
+		<Listview_Width>ListViewi laius</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Master tabel</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable või "Master Table" on kaitstud tabel. Db terviklikkuse kaitsmiseks ei saa te seda tabelit redigeerida</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable või Master Tabel on kaitstud tabel. Db terviklikkuse kaitsmiseks ei saa te seda tabelit redigeerida</Master_Table_Protected>
 		<New>Uus</New>
-		<New_in_Memory_Db>Uus mälu andmebaas</New_in_Memory_Db>
+		<New_in_Memory_Db>Uus mälu andmebaasis</New_in_Memory_Db>
+		<NoUpdates>Uuendusi pole</NoUpdates>
+		<No_Updates>Värskendusi pole saadaval</No_Updates>
 		<Not_Supported>Ei toetata</Not_Supported>
 		<Open>Avatud</Open>
 		<Opened>Avatud</Opened>
@@ -69,7 +75,7 @@
 		<Query>Päring</Query>
 		<Query_Error>Päringu viga</Query_Error>
 		<Refresh_Schema>Värskenda skeemi</Refresh_Schema>
-		<Run_Function>Käivitage funktsioon</Run_Function>
+		<Run_Function>Käivita funktsioon</Run_Function>
 		<SCHEMA_PRIVATE>SCHEMA-PRIVAAT</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
 		<Save>Salvesta</Save>
@@ -91,10 +97,11 @@
 		<Toggle_Debug>Lülita silumine sisse</Toggle_Debug>
 		<Toggle_Transaction_Log>Lülita tehingute logi sisse</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Tehingu andmebaasi tee</Transaction_DB_Path>
-		<UI>Kasutajaliides</UI>
+		<UI>UI</UI>
 		<User_Requested>Kasutaja soovitud</User_Requested>
 		<View>Vaade</View>
 		<View_Function>Kuva funktsioon</View_Function>
 		<Views_Read_Only>Vaated on kirjutuskaitstud ja neid ei saa muuta</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

@@ -294,15 +294,16 @@ namespace DBM
         {
             Utilities.AddtoStackTrace($"UI.GetPath({EngineMode})");
             if (Program.ArgumentCount == 1 && GlobalStatic.LoadedFile == false)
-            { GlobalStatic.LoadedFile = true; return Program.GetArgument(1); }
             {
-                switch (EngineMode)
-                {
-                    case Engines.EnginesMode.SQLITE:
-                        return LDDialogs.OpenFile(GlobalStatic.Extensions, GlobalStatic.LastFolder + "\\");
-                    default:
-                        throw new NotImplementedException();
-                }
+                GlobalStatic.LoadedFile = true;
+                return Program.GetArgument(1);
+            }
+            switch (EngineMode)
+            {
+                case Engines.EnginesMode.SQLITE:
+                    return LDDialogs.OpenFile(GlobalStatic.Extensions, GlobalStatic.LastFolder + "\\");
+                default:
+                    throw new NotImplementedException();
             }
         }
 

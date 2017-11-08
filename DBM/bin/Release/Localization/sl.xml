@@ -8,7 +8,7 @@
 		<Asc>Naraščajoče</Asc>
 		<Auto_Log>Samodejni dnevnik</Auto_Log>
 		<Browse>Brskaj</Browse>
-		<CMD_Tooltip>Izvaja prilagojene izjave ukaza SQL na bazo podatkov</CMD_Tooltip>
+		<CMD_Tooltip>Izvaja prilagojene ukazne ukaze SQL v bazo podatkov</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Napaka: prosimo, preverite dnevnik za podrobnosti</Check_Log>
 		<Check_for_Updates>Preveri za posodobitve</Check_for_Updates>
@@ -17,7 +17,7 @@
 		<Command>Ukaz</Command>
 		<Converter>Pretvornik</Converter>
 		<Create_Statistics_Page>Ustvari statistično stran</Create_Statistics_Page>
-		<Critical_Fault_Error>Napaka pri kritični napaki</Critical_Fault_Error>
+		<Critical_Fault_Error>Kritična napaka v napaki</Critical_Fault_Error>
 		<Dataview_Error>Baza podatkov ali ogled podatkov ne obstaja ali še ni bila naložena</Dataview_Error>
 		<Debug>Debug</Debug>
 		<Define_New_Table>Določite novo tabelo</Define_New_Table>
@@ -25,6 +25,7 @@
 		<Desc>Padajoče</Desc>
 		<Developer>Razvijalec</Developer>
 		<Display_Settings>Nastavitve zaslona</Display_Settings>
+		<Download_Update>Prenos posodobitve</Download_Update>
 		<Edit>Uredi</Edit>
 		<Error>Napaka</Error>
 		<Error_Generic>Oh, nič ni šlo narobe! :(</Error_Generic>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML v CSV</HTML_to_CSV>
 		<Help>Pomoč</Help>
 		<Import>Uvozi</Import>
+		<Import_Completed>Uvoz končan</Import_Completed>
 		<Import_SQL>Uvozite SQL</Import_SQL>
 		<Importer>Uvoznik</Importer>
 		<Index>Indeks</Index>
 		<Invert>Invert</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Log CSV pot</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Jezik</Language>
 		<Listview_Height>Višina seznama</Listview_Height>
 		<Listview_Width>Širina seznama</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Glavna tabela</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable ali "Master Table" je zaščitena tabela. Za zaščito integritete db te tabele ni mogoče urejati</Master_Table_Protected>
 		<New>Novo</New>
 		<New_in_Memory_Db>Nova v pomnilniški bazi podatkov</New_in_Memory_Db>
+		<NoUpdates>Ni posodobitev</NoUpdates>
+		<No_Updates>Na voljo ni nobenih posodobitev</No_Updates>
 		<Not_Supported>Ne podpira</Not_Supported>
 		<Open>Odprto</Open>
 		<Opened>Odprto</Opened>
@@ -67,8 +73,8 @@
 		<PXML>XML</PXML>
 		<Plugin>Vključiti</Plugin>
 		<Query>Poizvedba</Query>
-		<Query_Error>Napaka pri poizvedbi</Query_Error>
-		<Refresh_Schema>Osveži shemo</Refresh_Schema>
+		<Query_Error>Napaka v poizvedbi</Query_Error>
+		<Refresh_Schema>Osvežitvena shema</Refresh_Schema>
 		<Run_Function>Zaženi funkcijo</Run_Function>
 		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
@@ -95,6 +101,7 @@
 		<User_Requested>Zahtevani uporabnik</User_Requested>
 		<View>Pogled</View>
 		<View_Function>Ogled funkcije</View_Function>
-		<Views_Read_Only>Ogledi so samo enkratni in jih ni mogoče urejati</Views_Read_Only>
+		<Views_Read_Only>Ogledi so samo za branje in jih ni mogoče urejati</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

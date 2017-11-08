@@ -165,7 +165,11 @@ namespace DBM
                 string Path = LDDialogs.OpenFile("csv", null);
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
+                    //Outputted to a temporary path in the event the import doesn't work...
+                    string TempPath = System.IO.Path.GetTempFileName();
                     string SQL = Import.CSV(Path);
+                    System.IO.File.WriteAllText(TempPath, SQL);
+                    LDProcess.Start(TempPath, null); // TODO Replace with native C# implentation...
                     Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, null, false);
                     Events.LogMessagePopUp("CSV Import Completed", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize 
                     return;
@@ -511,7 +515,7 @@ namespace DBM
 				UI.Title();
                 return;
 			}
-			Events.LogMessage("In the current database no " + Utilities.Localization[TypeofSorts[(int)GlobalStatic.SortBy]] + "s can be found.", Utilities.Localization["UI"]);
+			Events.LogMessage("In the current database no " + Utilities.Localization[TypeofSorts[GlobalStatic.SortBy]] + "s can be found.", Utilities.Localization["UI"]);
 		}
 	}
 }

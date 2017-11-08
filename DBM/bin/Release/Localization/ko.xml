@@ -16,7 +16,7 @@
 		<Close_wo_saving>저장하지 않고 닫기</Close_wo_saving>
 		<Command>명령</Command>
 		<Converter>변환기</Converter>
-		<Create_Statistics_Page>통계 작성 페이지</Create_Statistics_Page>
+		<Create_Statistics_Page>통계 페이지 생성</Create_Statistics_Page>
 		<Critical_Fault_Error>중대한 오류 오류</Critical_Fault_Error>
 		<Dataview_Error>데이터베이스 또는 Dataview가 없거나 아직로드되지 않았습니다.</Dataview_Error>
 		<Debug>디버그</Debug>
@@ -25,6 +25,7 @@
 		<Desc>내림차순</Desc>
 		<Developer>개발자</Developer>
 		<Display_Settings>화면 설정</Display_Settings>
+		<Download_Update>다운로드 업데이트</Download_Update>
 		<Edit>편집하다</Edit>
 		<Error>오류</Error>
 		<Error_Generic>오, 뭔가 잘못 됐어! :(</Error_Generic>
@@ -34,10 +35,10 @@
 		<Export_HTML_Data>대신 HTML 데이터 내보내기</Export_HTML_Data>
 		<Export_HTML_Schema>를 대신하여 HTML SCHEMA 내보내기</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>SQL 내보내기 - SCHEMA - 대신</Export_SQL_SCHEMA>
-		<Export_SQL_SQL>SQL - SQL 내보내기 - 대신</Export_SQL_SQL>
+		<Export_SQL_SQL>SQL 내보내기 - SQL -를 대신하여</Export_SQL_SQL>
 		<Export_UI>UI 내보내기</Export_UI>
-		<Export_XML>엑스포트를위한 XML</Export_XML>
-		<Extensions>확장 기능</Extensions>
+		<Export_XML>다음을 대표하여 XML 내보내기</Export_XML>
+		<Extensions>확장 프로그램</Extensions>
 		<Failed>실패한</Failed>
 		<Failed_Load_Online_EULA>온라인 EULA를로드하지 못했습니다.</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>설정을 저장하지 못했습니다.</Failed_Save_Settings>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML에서 CSV로</HTML_to_CSV>
 		<Help>도움</Help>
 		<Import>수입</Import>
+		<Import_Completed>가져 오기 완료 됨</Import_Completed>
 		<Import_SQL>SQL 가져 오기</Import_SQL>
 		<Importer>수입자</Importer>
 		<Index>색인</Index>
 		<Invert>거꾸로 하다</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>CSV 경로 기록</LOG_CSV_Path>
 		<LOG_DB_PATH>DatabasePath 로그</LOG_DB_PATH>
 		<Language>언어</Language>
 		<Listview_Height>목록 뷰 높이</Listview_Height>
 		<Listview_Width>목록보기 너비</Listview_Width>
+		<MD>가격 인하</MD>
 		<Master_Table>마스터 테이블</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable 또는 '마스터 테이블'은 보호 된 테이블입니다. 데이터베이스의 무결성을 보호하기 위해이 테이블을 편집 할 수 없습니다.</Master_Table_Protected>
 		<New>새로운</New>
 		<New_in_Memory_Db>메모리 데이터베이스의 새로운 기능</New_in_Memory_Db>
+		<NoUpdates>업데이트 없음</NoUpdates>
+		<No_Updates>사용 가능한 업데이트가 없습니다.</No_Updates>
 		<Not_Supported>지원되지 않음</Not_Supported>
 		<Open>열다</Open>
 		<Opened>열린</Opened>
@@ -95,6 +101,7 @@
 		<User_Requested>사용자가 요청한</User_Requested>
 		<View>전망</View>
 		<View_Function>기능보기</View_Function>
-		<Views_Read_Only>보기는 읽기 전용이며 편집 할 수 없습니다.</Views_Read_Only>
+		<Views_Read_Only>보기는 읽기 전용이므로 편집 할 수 없습니다.</Views_Read_Only>
+		<WMU>위키 마크 업</WMU>
 	</Language>
 </root>

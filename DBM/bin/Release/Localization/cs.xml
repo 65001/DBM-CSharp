@@ -10,7 +10,7 @@
 		<Browse>Procházet</Browse>
 		<CMD_Tooltip>Provede přizpůsobené příkazy příkazu SQL do databáze</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>Chyba: Prohlédněte si podrobnosti o protokolu</Check_Log>
+		<Check_Log>Chyba: Zkontrolujte podrobnosti protokolu</Check_Log>
 		<Check_for_Updates>Kontrola aktualizací</Check_for_Updates>
 		<Close_TW>Zavřete TW</Close_TW>
 		<Close_wo_saving>Zavřít bez ukládání</Close_wo_saving>
@@ -18,19 +18,20 @@
 		<Converter>Konvertor</Converter>
 		<Create_Statistics_Page>Vytvořit stránku statistiky</Create_Statistics_Page>
 		<Critical_Fault_Error>Chyba kritické chyby</Critical_Fault_Error>
-		<Dataview_Error>Databáze nebo Dataview neexistují nebo dosud nebyly načteny</Dataview_Error>
+		<Dataview_Error>Databáze nebo Dataview neexistují nebo nebyly dosud načteny</Dataview_Error>
 		<Debug>Ladit</Debug>
 		<Define_New_Table>Definujte novou tabulku</Define_New_Table>
 		<Deliminator>Deliminator</Deliminator>
 		<Desc>Klesající</Desc>
 		<Developer>Vývojář</Developer>
 		<Display_Settings>Nastavení obrazovky</Display_Settings>
+		<Download_Update>Stáhnout aktualizaci</Download_Update>
 		<Edit>Upravit</Edit>
 		<Error>Chyba</Error>
-		<Error_Generic>Oh, nic se nestalo! :(</Error_Generic>
-		<Error_No_DB>Chyba: Nebyla vložena žádná databáze</Error_No_DB>
+		<Error_Generic>Ach, nic se nestalo! :(</Error_Generic>
+		<Error_No_DB>Chyba: Nebyla načtena žádná databáze</Error_No_DB>
 		<Export>Vývozní</Export>
-		<Export_CSV>EXPORT CSV ZE ZÁKLADU</Export_CSV>
+		<Export_CSV>EXPORT CSV ZA ZÁKLADĚ</Export_CSV>
 		<Export_HTML_Data>Exportovat HTML DATA jménem</Export_HTML_Data>
 		<Export_HTML_Schema>Export HTML SCHEMA jménem</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Export SQL - SCHEMA - jménem</Export_SQL_SCHEMA>
@@ -39,7 +40,7 @@
 		<Export_XML>EXPORT XML ZE SVĚTA</Export_XML>
 		<Extensions>Rozšíření</Extensions>
 		<Failed>Selhalo</Failed>
-		<Failed_Load_Online_EULA>Nepodařilo se načíst online smlouvu EULA</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>Nelze načíst online smlouvu EULA</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Uložení nastavení se nezdařilo</Failed_Save_Settings>
 		<File>Soubor</File>
 		<Functions>Funkce</Functions>
@@ -47,23 +48,28 @@
 		<HTML_to_CSV>HTML do formátu CSV</HTML_to_CSV>
 		<Help>Pomoc</Help>
 		<Import>Import</Import>
+		<Import_Completed>Import dokončen</Import_Completed>
 		<Import_SQL>Importovat SQL</Import_SQL>
 		<Importer>Dovozce</Importer>
 		<Index>Index</Index>
 		<Invert>Obrátit se</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Cesta protokolu CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Záznamová databáze protokolu</LOG_DB_PATH>
 		<Language>Jazyk</Language>
 		<Listview_Height>Výška seznamu</Listview_Height>
-		<Listview_Width>Šířka seznamu</Listview_Width>
+		<Listview_Width>Width Listview</Listview_Width>
+		<MD>Snížení</MD>
 		<Master_Table>Hlavní tabulka</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable nebo 'Master Table' je chráněná tabulka. Chcete-li chránit integritu db, nemůžete tuto tabulku upravit</Master_Table_Protected>
 		<New>Nový</New>
 		<New_in_Memory_Db>Nové v databázi paměti</New_in_Memory_Db>
+		<NoUpdates>Žádné aktualizace</NoUpdates>
+		<No_Updates>Neexistují žádné aktualizace</No_Updates>
 		<Not_Supported>Není podporováno</Not_Supported>
 		<Open>otevřeno</Open>
 		<Opened>Otevřeno</Opened>
-		<PRGM_Start>Program začal</PRGM_Start>
+		<PRGM_Start>Program byl spuštěn</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>Zapojit</Plugin>
 		<Query>Dotaz</Query>
@@ -80,7 +86,7 @@
 		<Settings>Nastavení</Settings>
 		<Settings_Editor>Editor úprav</Settings_Editor>
 		<Show_Help>Zobrazit nápovědu</Show_Help>
-		<Sort>Seřadit</Sort>
+		<Sort>Třídit</Sort>
 		<Sort_by>Seřazeno podle</Sort_by>
 		<Stack_Trace>Stack Trace</Stack_Trace>
 		<Statistics_Page>Statistika Stránka</Statistics_Page>
@@ -96,5 +102,6 @@
 		<View>Pohled</View>
 		<View_Function>Funkce zobrazení</View_Function>
 		<Views_Read_Only>Pohledy jsou číst a nelze je editovat</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

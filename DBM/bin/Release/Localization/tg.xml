@@ -5,41 +5,42 @@
 		<Access_Denied>Дастраси манъ аст</Access_Denied>
 		<App>Ариза</App>
 		<Application>App</Application>
-		<Asc>Афсӯс</Asc>
-		<Auto_Log>Log Log</Auto_Log>
+		<Asc>Афзоиши</Asc>
+		<Auto_Log>Log Auto</Auto_Log>
 		<Browse>Ҷустуҷӯ</Browse>
-		<CMD_Tooltip>Гузаронидани ҳисобҳои фармоишии SQL-ро ба пойгоҳи додашударо иҷро кунед</CMD_Tooltip>
+		<CMD_Tooltip>Гузарвожаҳои фармоиши SQL-ро дар асоси пойгоҳи додашударо иҷро кунед</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Хато: Лутфан сабтро барои тафсилот тафтиш кунед</Check_Log>
 		<Check_for_Updates>Навигариҳо тафтиш кунед</Check_for_Updates>
-		<Close_TW>TW</Close_TW>
+		<Close_TW>ТВ</Close_TW>
 		<Close_wo_saving>Бе бидуни захира</Close_wo_saving>
 		<Command>Фармон</Command>
-		<Converter>Конверт</Converter>
+		<Converter>Табдилдиҳанда</Converter>
 		<Create_Statistics_Page>Сохтани Саҳифаҳо</Create_Statistics_Page>
-		<Critical_Fault_Error>Хатогиҳои ҷиддии хато</Critical_Fault_Error>
+		<Critical_Fault_Error>Хатогиҳои хатари ҷиддӣ</Critical_Fault_Error>
 		<Dataview_Error>Database ё Dataview вуҷуд надорад ё ҳанӯз бор карда нашудааст</Dataview_Error>
 		<Debug>Debug</Debug>
-		<Define_New_Table>Ҷадвали ҷадвал</Define_New_Table>
-		<Deliminator>Димитроватсия</Deliminator>
-		<Desc>Камбизоатӣ</Desc>
+		<Define_New_Table>Ҷадвали ҷадвалро муайян кунед</Define_New_Table>
+		<Deliminator>Димитератор</Deliminator>
+		<Desc>Тозатарин</Desc>
 		<Developer>Таҳиякунанда</Developer>
 		<Display_Settings>Танзимоти намоиш</Display_Settings>
+		<Download_Update>Навсозии нармафзор</Download_Update>
 		<Edit>Таҳрири</Edit>
 		<Error>Хато</Error>
-		<Error_Generic>Ҳа ҳеҷ чиз нодуруст рафт! :(</Error_Generic>
+		<Error_Generic>Ҳа чиз чизе нодуруст рафт! :(</Error_Generic>
 		<Error_No_DB>Хато: Бе маълумот дода нашудааст</Error_No_DB>
 		<Export>Содирот</Export>
 		<Export_CSV>ШАҲ� И ҚӮ� ҒОНТЕППА</Export_CSV>
-		<Export_HTML_Data>HTML аз DATA содир кунед</Export_HTML_Data>
+		<Export_HTML_Data>Аз номи DATA HTML содир кунед</Export_HTML_Data>
 		<Export_HTML_Schema>Истифодаи HTML SCHEMA аз номи</Export_HTML_Schema>
-		<Export_SQL_SCHEMA>Содироти SQL - SCHEMA - аз номи</Export_SQL_SCHEMA>
+		<Export_SQL_SCHEMA>Содироти SQL - SCHEMA - Аз номи</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Содироти SQL - СМС - Аз номи</Export_SQL_SQL>
 		<Export_UI>UI содир кунед</Export_UI>
 		<Export_XML>XML аз фахрии EXE</Export_XML>
 		<Extensions>Extensions</Extensions>
 		<Failed>Ҳалокат</Failed>
-		<Failed_Load_Online_EULA>Ба EULA вебсайт нарасидааст</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>Ба EULA онлайн бор кардан душвор нест</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Нигоҳ доштани танзимоти танзимот</Failed_Save_Settings>
 		<File>Файл</File>
 		<Functions>Функсияҳо</Functions>
@@ -47,31 +48,36 @@
 		<HTML_to_CSV>HTML ба CSV</HTML_to_CSV>
 		<Help>Кӯмак</Help>
 		<Import>Воридот</Import>
+		<Import_Completed>Иҷро шуд</Import_Completed>
 		<Import_SQL>Воридоти SQL</Import_SQL>
-		<Importer>Иҷрокунанда</Importer>
+		<Importer>Воридкунанда</Importer>
 		<Index>Индекси</Index>
-		<Invert>Invert</Invert>
+		<Invert>Бештар</Invert>
+		<JSON>ҶСОН</JSON>
 		<LOG_CSV_Path>� оҳ ба CSV нависед</LOG_CSV_Path>
-		<LOG_DB_PATH>Департаменти Депозит</LOG_DB_PATH>
+		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Забон</Language>
 		<Listview_Height>� ӯйхати назарҳо</Listview_Height>
-		<Listview_Width>� оҳхати номҳо</Listview_Width>
+		<Listview_Width>Width � ӯйхати</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Ҷадвали Master</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable ё 'Master Table' як мизи муҳофизатшуда аст. Барои ҳифзи виҷдонатон шумо ин табақро таҳрир карда наметавонед</Master_Table_Protected>
 		<New>Нав</New>
 		<New_in_Memory_Db>Нав дар базаи Memory</New_in_Memory_Db>
-		<Not_Supported>Дастгирӣ нашуда истодааст</Not_Supported>
+		<NoUpdates>Навсозӣ нест</NoUpdates>
+		<No_Updates>Навсозии дастрас нест</No_Updates>
+		<Not_Supported>Дастгирӣ нашудааст</Not_Supported>
 		<Open>Кушодан</Open>
 		<Opened>Кушодан</Opened>
 		<PRGM_Start>Барнома оғоз ёфт</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>Plugin</Plugin>
 		<Query>Савол</Query>
-		<Query_Error>Хатогиро пурсед</Query_Error>
-		<Refresh_Schema>Шахси нав</Refresh_Schema>
+		<Query_Error>Хатогии пурсиш</Query_Error>
+		<Refresh_Schema>Шаблонро такмил диҳед</Refresh_Schema>
 		<Run_Function>Функсияро идора кунед</Run_Function>
 		<SCHEMA_PRIVATE>ШАҲ� И ҚӮ� ҒОНТЕППА</SCHEMA_PRIVATE>
-		<SQL>Система</SQL>
+		<SQL>СМС</SQL>
 		<Save>Save</Save>
 		<Save_and_Close>Нигоҳ кунед ва пӯшед</Save_and_Close>
 		<Search>Ҷустуҷӯ</Search>
@@ -80,10 +86,10 @@
 		<Settings>Танзимотҳо</Settings>
 		<Settings_Editor>Таҳрири Таҳрир</Settings_Editor>
 		<Show_Help>Кӯмак нишон диҳед</Show_Help>
-		<Sort>Сирри</Sort>
+		<Sort>Сатҳи</Sort>
 		<Sort_by>Ҷудо кардан ба</Sort_by>
 		<Stack_Trace>Трактори истгоҳ</Stack_Trace>
-		<Statistics_Page>Садо Ояндасоз</Statistics_Page>
+		<Statistics_Page>Саҳифаи оморӣ</Statistics_Page>
 		<Strict_Search>Ҷустуҷӯҳои сахт</Strict_Search>
 		<Success>Муваффақият</Success>
 		<System>Система</System>
@@ -96,5 +102,6 @@
 		<View>Намоиш</View>
 		<View_Function>Намоиши функсия</View_Function>
 		<Views_Read_Only>Назоратҳо сабт карда шудаанд ва таҳрир карда намешаванд</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

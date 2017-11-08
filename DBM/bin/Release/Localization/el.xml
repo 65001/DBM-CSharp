@@ -8,11 +8,11 @@
 		<Asc>Αύξουσα</Asc>
 		<Auto_Log>Αυτόματη καταγραφή</Auto_Log>
 		<Browse>Ξεφυλλίζω</Browse>
-		<CMD_Tooltip>Εκτελεί προσαρμοσμένες δηλώσεις εντολών SQL στη βάση δεδομένων</CMD_Tooltip>
+		<CMD_Tooltip>Εκτελεί εξατομικευμένες εντολές SQL εντολών στη βάση δεδομένων</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Σφάλμα: Ελέγξτε το αρχείο καταγραφής για λεπτομέρειες</Check_Log>
 		<Check_for_Updates>Ελεγχος για ενημερώσεις</Check_for_Updates>
-		<Close_TW>Κλείσιμο TW</Close_TW>
+		<Close_TW>Κλείστε TW</Close_TW>
 		<Close_wo_saving>Κλείσιμο χωρίς αποθήκευση</Close_wo_saving>
 		<Command>Εντολή</Command>
 		<Converter>Μετατροπέας</Converter>
@@ -25,12 +25,13 @@
 		<Desc>Φθίνων</Desc>
 		<Developer>Προγραμματιστής</Developer>
 		<Display_Settings>Ρυθμίσεις οθόνης</Display_Settings>
+		<Download_Update>Λήψη ενημέρωσης</Download_Update>
 		<Edit>Επεξεργασία</Edit>
 		<Error>Λάθος</Error>
-		<Error_Generic>Ω όχι κάτι πήγε στραβά! :(</Error_Generic>
-		<Error_No_DB>Σφάλμα: Δεν έχει φορτωθεί καμία βάση δεδομένων</Error_No_DB>
+		<Error_Generic>Ω, τίποτα δεν πήγε στραβά! :(</Error_Generic>
+		<Error_No_DB>Σφάλμα: Δεν έχει τοποθετηθεί βάση δεδομένων</Error_No_DB>
 		<Export>Εξαγωγή</Export>
-		<Export_CSV>ΕΞΑΓΩΓΗ CSV ΣΕ ΠΕΡΙΠΤΩΣΗ</Export_CSV>
+		<Export_CSV>ΕΞΑΓΩΓΗ CSV ΣΤΟ ΠΛΑΙΣΙΟ ΤΟΥ</Export_CSV>
 		<Export_HTML_Data>Εξαγωγή δεδομένων HTML για λογαριασμό του</Export_HTML_Data>
 		<Export_HTML_Schema>Εξαγωγή HTML SCHEMA εξ ονόματος του</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Εξαγωγή SQL - SCHEMA - Εκ μέρους του</Export_SQL_SCHEMA>
@@ -39,7 +40,7 @@
 		<Export_XML>ΕΞΑΓΩΓΗ XML ΣΧΕΤΙΚΑ ΜΕ ΤΟ</Export_XML>
 		<Extensions>Επεκτάσεις</Extensions>
 		<Failed>Απέτυχε</Failed>
-		<Failed_Load_Online_EULA>Αποτυχία φόρτωσης της διατραπεζικής υπηρεσίας EULA</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>Αποτυχία φόρτωσης της διαδικτυακής λίστας EULA</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Αποτυχία αποθήκευσης ρυθμίσεων</Failed_Save_Settings>
 		<File>Αρχείο</File>
 		<Functions>Λειτουργίες</Functions>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML σε CSV</HTML_to_CSV>
 		<Help>Βοήθεια</Help>
 		<Import>Εισαγωγή</Import>
+		<Import_Completed>Η εισαγωγή ολοκληρώθηκε</Import_Completed>
 		<Import_SQL>Εισαγωγή SQL</Import_SQL>
 		<Importer>Εισαγωγέας</Importer>
 		<Index>Δείκτης</Index>
 		<Invert>Αντιστρέφω</Invert>
-		<LOG_CSV_Path>Διαδρομή CSV σύνδεσης</LOG_CSV_Path>
+		<JSON>JSON</JSON>
+		<LOG_CSV_Path>Διαδρομή CSV διαδρομής</LOG_CSV_Path>
 		<LOG_DB_PATH>Αρχείο καταγραφής βάσεων δεδομένων</LOG_DB_PATH>
 		<Language>Γλώσσα</Language>
 		<Listview_Height>Ύψος λίστας</Listview_Height>
-		<Listview_Width>List Width</Listview_Width>
+		<Listview_Width>Width Listview</Listview_Width>
+		<MD>Χαμήλωση τιμής</MD>
 		<Master_Table>Master Table</Master_Table>
-		<Master_Table_Protected>Το Sqlite_mastertable ή το Master Table είναι προστατευόμενος πίνακας. Για να προστατεύσετε την ακεραιότητα του db, δεν μπορείτε να επεξεργαστείτε αυτόν τον πίνακα</Master_Table_Protected>
+		<Master_Table_Protected>Το Sqlite_mastertable ή το Master Table είναι ένας προστατευμένος πίνακας. Για να προστατεύσετε την ακεραιότητα του db, δεν μπορείτε να επεξεργαστείτε αυτόν τον πίνακα</Master_Table_Protected>
 		<New>Νέος</New>
 		<New_in_Memory_Db>Νέα στη βάση δεδομένων μνήμης</New_in_Memory_Db>
+		<NoUpdates>Δεν υπάρχουν ενημερώσεις</NoUpdates>
+		<No_Updates>Δεν υπάρχουν διαθέσιμες ενημερώσεις</No_Updates>
 		<Not_Supported>Δεν υποστηρίζεται</Not_Supported>
 		<Open>Ανοιξε</Open>
 		<Opened>Άνοιξε</Opened>
@@ -70,7 +76,7 @@
 		<Query_Error>Σφάλμα ερωτήματος</Query_Error>
 		<Refresh_Schema>Ανανέωση του σχήματος</Refresh_Schema>
 		<Run_Function>Λειτουργία εκτέλεσης</Run_Function>
-		<SCHEMA_PRIVATE>ΣΧΕΔΙΟ-ΙΔΙΩΤΙΚΟ</SCHEMA_PRIVATE>
+		<SCHEMA_PRIVATE>ΣΧΗΜΑ-ΙΔΙΩΤΙΚΟ</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
 		<Save>Αποθηκεύσετε</Save>
 		<Save_and_Close>Αποθήκευσε και κλείσε</Save_and_Close>
@@ -82,7 +88,7 @@
 		<Show_Help>Εμφάνιση βοήθειας</Show_Help>
 		<Sort>Είδος</Sort>
 		<Sort_by>Ταξινόμηση κατά</Sort_by>
-		<Stack_Trace>Στοίβα ίχνος</Stack_Trace>
+		<Stack_Trace>Ανίχνευση στοίβας</Stack_Trace>
 		<Statistics_Page>Στατιστική σελίδα</Statistics_Page>
 		<Strict_Search>Αυστηρή αναζήτηση</Strict_Search>
 		<Success>Επιτυχία</Success>
@@ -96,5 +102,6 @@
 		<View>Θέα</View>
 		<View_Function>Λειτουργία προβολής</View_Function>
 		<Views_Read_Only>Οι προβολές είναι readonly και δεν μπορούν να επεξεργαστούν</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

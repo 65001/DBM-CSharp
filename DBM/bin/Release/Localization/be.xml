@@ -8,7 +8,7 @@
 		<Asc>узыходзячая</Asc>
 		<Auto_Log>Auto Log</Auto_Log>
 		<Browse>прагартаць</Browse>
-		<CMD_Tooltip>Выконвае індывідуальныя заявы каманды SQL ў базе дадзеных</CMD_Tooltip>
+		<CMD_Tooltip>Выконвае індывідуальныя заявы каманды SQL у базу дадзеных</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Памылка: Калі ласка, праверце часопіс для дэталяў</Check_Log>
 		<Check_for_Updates>Праверыць наяўнасць абнаўленняў</Check_for_Updates>
@@ -18,13 +18,14 @@
 		<Converter>канвэртар</Converter>
 		<Create_Statistics_Page>Стварэнне статыстыкі Старонка</Create_Statistics_Page>
 		<Critical_Fault_Error>Крытычная памылка Памылка</Critical_Fault_Error>
-		<Dataview_Error>База дадзеных або DataView не існуе ці не загружаны</Dataview_Error>
+		<Dataview_Error>База дадзеныя або DataView не існуе ці не загружаны</Dataview_Error>
 		<Debug>адладжваць</Debug>
 		<Define_New_Table>Вызначыць новую табліцу</Define_New_Table>
 		<Deliminator>Deliminator</Deliminator>
 		<Desc>сыходны</Desc>
 		<Developer>распрацоўшчык</Developer>
 		<Display_Settings>налады адлюстравання</Display_Settings>
+		<Download_Update>спампаваць абнаўленне</Download_Update>
 		<Edit>рэдагаваць</Edit>
 		<Error>памылка</Error>
 		<Error_Generic>О, не што-то пайшло не так! :(</Error_Generic>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML у CSV</HTML_to_CSV>
 		<Help>дапамогу</Help>
 		<Import>імпарт</Import>
+		<Import_Completed>імпарт Завершаны</Import_Completed>
 		<Import_SQL>імпарт SQL</Import_SQL>
 		<Importer>імпарцёр</Importer>
 		<Index>індэкс</Index>
 		<Invert>інвертаваць</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Уваход CSV Шлях</LOG_CSV_Path>
 		<LOG_DB_PATH>Уваход DatabasePath</LOG_DB_PATH>
 		<Language>мова</Language>
 		<Listview_Height>ListView Вышыня</Listview_Height>
 		<Listview_Width>ListView Шырыня</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>майстар Табліца</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable або «Master Табліца» ўяўляе сабой абароненую табліцу. Для абароны цэласнасці БД вы не можаце рэдагаваць гэтую табліцу</Master_Table_Protected>
 		<New>новы</New>
 		<New_in_Memory_Db>Новае ў базе дадзеных памяці</New_in_Memory_Db>
+		<NoUpdates>няма абнаўленняў</NoUpdates>
+		<No_Updates>Там няма даступных абнаўленняў</No_Updates>
 		<Not_Supported>Не падтрымліваецца</Not_Supported>
 		<Open>адкрыты</Open>
 		<Opened>адкрыты</Opened>
@@ -96,5 +102,6 @@
 		<View>выгляд</View>
 		<View_Function>выгляд функцыі</View_Function>
 		<Views_Read_Only>Прадстаўлення і чытання не могуць быць зменены</Views_Read_Only>
+		<WMU>разметка вікі</WMU>
 	</Language>
 </root>

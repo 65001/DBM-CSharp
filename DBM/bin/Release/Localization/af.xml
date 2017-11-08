@@ -18,20 +18,21 @@
 		<Converter>Converter</Converter>
 		<Create_Statistics_Page>Skep Statistieke</Create_Statistics_Page>
 		<Critical_Fault_Error>Kritieke foutfout</Critical_Fault_Error>
-		<Dataview_Error>Die databasis of dataview bestaan nie of is nog nie gelaai nie</Dataview_Error>
+		<Dataview_Error>Die Databasis of Dataview bestaan nie of is nog nie gelaai nie</Dataview_Error>
 		<Debug>debug</Debug>
 		<Define_New_Table>Definieer nuwe tabel</Define_New_Table>
 		<Deliminator>Deliminator</Deliminator>
 		<Desc>Neerdaal</Desc>
 		<Developer>Ontwikkelaar</Developer>
 		<Display_Settings>Vertoon opsies</Display_Settings>
+		<Download_Update>Laai opdatering af</Download_Update>
 		<Edit>wysig</Edit>
 		<Error>fout</Error>
 		<Error_Generic>O, niks het verkeerd gegaan nie! :(</Error_Generic>
 		<Error_No_DB>Fout: Geen databasis is gelaai nie</Error_No_DB>
 		<Export>uitvoer</Export>
-		<Export_CSV>UITVOER CSV TEEN HANG VAN</Export_CSV>
-		<Export_HTML_Data>HTML DATA uitvoer namens</Export_HTML_Data>
+		<Export_CSV>UITVOER CSV TEN OPSIGTE VAN</Export_CSV>
+		<Export_HTML_Data>Voer HTML DATA namens</Export_HTML_Data>
 		<Export_HTML_Schema>HTML skedule uitvoer namens</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Uitvoer SQL - SKEMA - Namens</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Uitvoer SQL - SQL - Namens</Export_SQL_SQL>
@@ -39,7 +40,7 @@
 		<Export_XML>UITVOER XML OP HANG VAN</Export_XML>
 		<Extensions>uitbreidings</Extensions>
 		<Failed>misluk</Failed>
-		<Failed_Load_Online_EULA>Kon nie aanlyn-toestemming verkry nie</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>Kon nie aanlyn EULA laai nie</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Kon nie instellings stoor nie</Failed_Save_Settings>
 		<File>lêer</File>
 		<Functions>funksies</Functions>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML na CSV</HTML_to_CSV>
 		<Help>help</Help>
 		<Import>invoer</Import>
+		<Import_Completed>Invoer voltooi</Import_Completed>
 		<Import_SQL>Voer SQL in</Import_SQL>
 		<Importer>invoerder</Importer>
 		<Index>indeks</Index>
 		<Invert>Keer</Invert>
+		<JSON>into</JSON>
 		<LOG_CSV_Path>Log CSV-pad</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Taal</Language>
 		<Listview_Height>Listview Hoogte</Listview_Height>
 		<Listview_Width>Lys oorsig Breedte</Listview_Width>
+		<MD>markdown</MD>
 		<Master_Table>Meestertafel</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable of 'Master Table' is 'n beskermde tafel. Om die integriteit van die db te beskerm, kan u hierdie tabel nie wysig nie</Master_Table_Protected>
 		<New>nuwe</New>
 		<New_in_Memory_Db>Nuut in geheue databasis</New_in_Memory_Db>
+		<NoUpdates>Geen opdaterings</NoUpdates>
+		<No_Updates>Daar is geen opdaterings beskikbaar nie</No_Updates>
 		<Not_Supported>Nie ondersteun nie</Not_Supported>
 		<Open>oop</Open>
 		<Opened>geopen</Opened>
@@ -89,12 +95,13 @@
 		<System>stelsel</System>
 		<Table>tafel</Table>
 		<Toggle_Debug>Skakel Debug</Toggle_Debug>
-		<Toggle_Transaction_Log>Wissel transaksielog</Toggle_Transaction_Log>
+		<Toggle_Transaction_Log>Wissel transaksie log</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Transaksie Databasis Pad</Transaction_DB_Path>
 		<UI>UI</UI>
 		<User_Requested>Gebruiker versoek</User_Requested>
 		<View>Beskou</View>
 		<View_Function>Kyk funksie</View_Function>
 		<Views_Read_Only>Uitsigte is leesbaar en kan nie geredigeer word nie</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

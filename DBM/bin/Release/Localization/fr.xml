@@ -10,67 +10,73 @@
 		<Browse>Feuilleter</Browse>
 		<CMD_Tooltip>Exécute des instructions de commande SQL personnalisées sur la base de données</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>Erreur: vérifiez le journal pour plus de détails</Check_Log>
+		<Check_Log>Erreur: Veuillez vérifier le journal pour plus de détails</Check_Log>
 		<Check_for_Updates>Vérifier les mises à jour</Check_for_Updates>
 		<Close_TW>Fermer TW</Close_TW>
-		<Close_wo_saving>Fermer sans sauvegarder</Close_wo_saving>
+		<Close_wo_saving>Fermer sans enregistrer</Close_wo_saving>
 		<Command>Commander</Command>
 		<Converter>Convertisseur</Converter>
 		<Create_Statistics_Page>Créer une page de statistiques</Create_Statistics_Page>
-		<Critical_Fault_Error>Erreur de défaut critique</Critical_Fault_Error>
-		<Dataview_Error>La base de données ou Dataview n'existe pas ou n'a pas encore été chargée</Dataview_Error>
+		<Critical_Fault_Error>Erreur de faute critique</Critical_Fault_Error>
+		<Dataview_Error>La base de données ou Dataview n'existe pas ou n'a pas encore été chargé</Dataview_Error>
 		<Debug>Déboguer</Debug>
 		<Define_New_Table>Définir une nouvelle table</Define_New_Table>
-		<Deliminator>Deliminator</Deliminator>
+		<Deliminator>Suppresseur</Deliminator>
 		<Desc>Descendant</Desc>
 		<Developer>Développeur</Developer>
 		<Display_Settings>Paramètres d'affichage</Display_Settings>
+		<Download_Update>Télécharger la mise à jour</Download_Update>
 		<Edit>modifier</Edit>
 		<Error>Erreur</Error>
-		<Error_Generic>Oh, pas quelque chose a mal tourné! :(</Error_Generic>
-		<Error_No_DB>Erreur: aucune base de données n'a été chargée</Error_No_DB>
+		<Error_Generic>Oh, il n'y a pas eu de problème! :(</Error_Generic>
+		<Error_No_DB>Erreur: Aucune base de données n'a été chargée</Error_No_DB>
 		<Export>Exportation</Export>
-		<Export_CSV>EXPORTATION CSV AU NOM DE</Export_CSV>
+		<Export_CSV>EXPORTER CSV AU NOM DE</Export_CSV>
 		<Export_HTML_Data>Exporter des données HTML pour le compte de</Export_HTML_Data>
-		<Export_HTML_Schema>Exporter HTML SCHEMA au nom de</Export_HTML_Schema>
-		<Export_SQL_SCHEMA>Exporter SQL - SCHEMA - Au nom de</Export_SQL_SCHEMA>
+		<Export_HTML_Schema>Export HTML SCHEMA pour le compte de</Export_HTML_Schema>
+		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Au nom de</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Exporter SQL - SQL - Au nom de</Export_SQL_SQL>
-		<Export_UI>Export UI</Export_UI>
-		<Export_XML>EXPORTATION XML AU NOM DE</Export_XML>
+		<Export_UI>Exporter l'interface utilisateur</Export_UI>
+		<Export_XML>EXPORTER XML AU NOM DE</Export_XML>
 		<Extensions>Extensions</Extensions>
 		<Failed>Échoué</Failed>
-		<Failed_Load_Online_EULA>Impossible de charger l'EULA en ligne</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>Impossible de charger le CLUF en ligne</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Échec de l'enregistrement des paramètres</Failed_Save_Settings>
 		<File>Fichier</File>
 		<Functions>Les fonctions</Functions>
 		<HTML>HTML</HTML>
-		<HTML_to_CSV>HTML à CSV</HTML_to_CSV>
+		<HTML_to_CSV>HTML vers CSV</HTML_to_CSV>
 		<Help>Aidez-moi</Help>
 		<Import>Importer</Import>
-		<Import_SQL>Import SQL</Import_SQL>
+		<Import_Completed>Importation terminée</Import_Completed>
+		<Import_SQL>Importer SQL</Import_SQL>
 		<Importer>Importateur</Importer>
 		<Index>Indice</Index>
 		<Invert>Inverser</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Log CSV Path</LOG_CSV_Path>
-		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
+		<LOG_DB_PATH>Journal DatabasePath</LOG_DB_PATH>
 		<Language>La langue</Language>
 		<Listview_Height>Hauteur de la liste</Listview_Height>
-		<Listview_Width>Largeur de liste</Listview_Width>
-		<Master_Table>Table maîtresse</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable ou 'Master Table' est une table protégée. Pour protéger l'intégrité du db, vous ne pouvez pas éditer ce tableau</Master_Table_Protected>
+		<Listview_Width>Listview Largeur</Listview_Width>
+		<MD>Réduction</MD>
+		<Master_Table>Table principale</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable ou "Master Table" est une table protégée. Pour protéger l'intégrité de la base de données, vous ne pouvez pas modifier cette table</Master_Table_Protected>
 		<New>Nouveau</New>
-		<New_in_Memory_Db>Nouvelle base de données mémoire</New_in_Memory_Db>
+		<New_in_Memory_Db>Nouveau dans la base de données de mémoire</New_in_Memory_Db>
+		<NoUpdates>Aucune mise à jour</NoUpdates>
+		<No_Updates>Il n'y a pas de mises à jour disponibles</No_Updates>
 		<Not_Supported>Non supporté</Not_Supported>
 		<Open>Ouvrir</Open>
 		<Opened>Ouvert</Opened>
-		<PRGM_Start>Programme lancé</PRGM_Start>
+		<PRGM_Start>Programme démarré</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>Brancher</Plugin>
 		<Query>Question</Query>
 		<Query_Error>Erreur de requête</Query_Error>
-		<Refresh_Schema>Refresh Schema</Refresh_Schema>
-		<Run_Function>Fonction de fonctionnement</Run_Function>
-		<SCHEMA_PRIVATE>SCHEMA PRIVÉ</SCHEMA_PRIVATE>
+		<Refresh_Schema>Actualiser le schéma</Refresh_Schema>
+		<Run_Function>Exécuter la fonction</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
 		<Save>sauvegarder</Save>
 		<Save_and_Close>Sauver et fermer</Save_and_Close>
@@ -88,13 +94,14 @@
 		<Success>Succès</Success>
 		<System>Système</System>
 		<Table>Table</Table>
-		<Toggle_Debug>Toggle Debug</Toggle_Debug>
-		<Toggle_Transaction_Log>Basculer le journal des transactions</Toggle_Transaction_Log>
-		<Transaction_DB_Path>Chemin de base de données de transaction</Transaction_DB_Path>
+		<Toggle_Debug>Basculer le débogage</Toggle_Debug>
+		<Toggle_Transaction_Log>Activer le journal des transactions</Toggle_Transaction_Log>
+		<Transaction_DB_Path>Chemin de la base de données de transaction</Transaction_DB_Path>
 		<UI>UI</UI>
 		<User_Requested>Utilisateur demandé</User_Requested>
 		<View>Vue</View>
-		<View_Function>Fonction de visualisation</View_Function>
-		<Views_Read_Only>Les vues sont lisibles et ne peuvent pas être modifiées</Views_Read_Only>
+		<View_Function>Fonction d'affichage</View_Function>
+		<Views_Read_Only>Les vues sont en lecture seule et ne peuvent pas être modifiées</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

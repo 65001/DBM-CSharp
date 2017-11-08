@@ -7,17 +7,17 @@
 		<Application>App</Application>
 		<Asc>Artan</Asc>
 		<Auto_Log>Avtomatik giriş</Auto_Log>
-		<Browse>Gözd?n keçirin</Browse>
+		<Browse>Göz atın</Browse>
 		<CMD_Tooltip>Veril?nl?r bazasına xüsusi SQL ?mrl?ri verilir</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>X?ta: Xahiş edirik ?traflı m?lumat üçün günd?mi yoxlayın</Check_Log>
 		<Check_for_Updates>Updates yoxlayın</Check_for_Updates>
 		<Close_TW>TW bağlayın</Close_TW>
-		<Close_wo_saving>Saxlanmadan Yoxlayın</Close_wo_saving>
+		<Close_wo_saving>Saxla etm?d?n bağlayın</Close_wo_saving>
 		<Command>Komanda</Command>
 		<Converter>Converter</Converter>
 		<Create_Statistics_Page>Statistika S?hif? yaradın</Create_Statistics_Page>
-		<Critical_Fault_Error>Kritik Arızalı Hata</Critical_Fault_Error>
+		<Critical_Fault_Error>T?nqidi s?hv x?tası</Critical_Fault_Error>
 		<Dataview_Error>Veril?nl?r bazası v? ya Dataview mövcud deyil v? ya h?l? yükl?nmir</Dataview_Error>
 		<Debug>Debug</Debug>
 		<Define_New_Table>Yeni C?dv?l t?yin edin</Define_New_Table>
@@ -25,18 +25,19 @@
 		<Desc>Azalan</Desc>
 		<Developer>İnkişaf etdirici</Developer>
 		<Display_Settings>Ekran parametrl?ri</Display_Settings>
+		<Download_Update>Yenil?m?ni yükl?yin</Download_Update>
 		<Edit>Düz?liş edin</Edit>
 		<Error>S?hv</Error>
 		<Error_Generic>Oh heç bir şey yanlış getdi! :(</Error_Generic>
 		<Error_No_DB>Hata: Veril?nl?r bazası yükl?nmir</Error_No_DB>
 		<Export>İxrac</Export>
-		<Export_CSV>İxracat CSV</Export_CSV>
+		<Export_CSV>EXPORT CSV İL? BAĞLI</Export_CSV>
 		<Export_HTML_Data>HTML DATA adından ixrac edin</Export_HTML_Data>
 		<Export_HTML_Schema>HTML Şemasını ixrac etm?k adına</Export_HTML_Schema>
-		<Export_SQL_SCHEMA>Export SQL - SCHEMA - adından</Export_SQL_SCHEMA>
+		<Export_SQL_SCHEMA>İxrac SQL - SCHEMA - adından</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>İxrac SQL - SQL - adından</Export_SQL_SQL>
 		<Export_UI>UI ixrac</Export_UI>
-		<Export_XML>XİDM?T İSTEHSALI</Export_XML>
+		<Export_XML>EXPORT X?ST?LİYİ</Export_XML>
 		<Extensions>Extensions</Extensions>
 		<Failed>Failed</Failed>
 		<Failed_Load_Online_EULA>Onlayn EULA yükl?nm?miş</Failed_Load_Online_EULA>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>CSV üçün HTML</HTML_to_CSV>
 		<Help>Köm?k edin</Help>
 		<Import>İthalat</Import>
+		<Import_Completed>İdxal tamamlandı</Import_Completed>
 		<Import_SQL>SQL'i idxal et</Import_SQL>
 		<Importer>İthalatçı</Importer>
 		<Index>İndeks</Index>
 		<Invert>Ters çevir</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>CSV Yolunu Girin</LOG_CSV_Path>
 		<LOG_DB_PATH>DatabasePath Giriş et</LOG_DB_PATH>
 		<Language>Dil</Language>
-		<Listview_Height>Listview Boyu</Listview_Height>
-		<Listview_Width>Liste genişliyi</Listview_Width>
+		<Listview_Height>Siyahısı Boyu</Listview_Height>
+		<Listview_Width>Siyahı Genişliyi</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Master C?dv?l</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable v? ya 'Master C?dv?l' qorunan bir masa. DB-nin bütövlüyünü qorumaq üçün bu c?dv?ni redakt? ed? bilm?zsiniz</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable v? ya 'Master C?dv?l' qorunan bir masa. Db bütövlüyünü qorumaq üçün bu c?dv?ni redakt? ed? bilm?zsiniz</Master_Table_Protected>
 		<New>Yeni</New>
 		<New_in_Memory_Db>Yaddaş bazasında yeni</New_in_Memory_Db>
+		<NoUpdates>Updates yoxdur</NoUpdates>
+		<No_Updates>Mövcud yenilikl?r yoxdur</No_Updates>
 		<Not_Supported>D?st?kl?nmir</Not_Supported>
 		<Open>Açıq</Open>
 		<Opened>Açıldı</Opened>
@@ -69,7 +75,7 @@
 		<Query>Sorgu</Query>
 		<Query_Error>Sorgu hatası</Query_Error>
 		<Refresh_Schema>Refresh Şeması</Refresh_Schema>
-		<Run_Function>İşl?yin</Run_Function>
+		<Run_Function>Function funksiyası</Run_Function>
 		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
 		<Save>Yadda saxla</Save>
@@ -89,12 +95,13 @@
 		<System>Sistem</System>
 		<Table>C?dv?l</Table>
 		<Toggle_Debug>Debug'u d?yişdirin</Toggle_Debug>
-		<Toggle_Transaction_Log>?m?liyyat girişini açın</Toggle_Transaction_Log>
+		<Toggle_Transaction_Log>Transaction Log'ını d?yişin</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Transaction Database Path</Transaction_DB_Path>
 		<UI>UI</UI>
 		<User_Requested>İstifad?çi ist?di</User_Requested>
 		<View>Görünüş</View>
 		<View_Function>Funksiyası bax</View_Function>
-		<Views_Read_Only>Baxışlar oxunur v? redakt? edil? bilm?z</Views_Read_Only>
+		<Views_Read_Only>Görünüşl?r oxunur v? redakt? edil? bilm?z</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

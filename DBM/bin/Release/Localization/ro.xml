@@ -8,7 +8,7 @@
 		<Asc>Ascendent</Asc>
 		<Auto_Log>Log automat</Auto_Log>
 		<Browse>Naviga</Browse>
-		<CMD_Tooltip>Execută comenzi personalizate SQL comandă în baza de date</CMD_Tooltip>
+		<CMD_Tooltip>Execută comenzi personalizate de comandă SQL în baza de date</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Eroare: verifica?i jurnalul pentru detalii</Check_Log>
 		<Check_for_Updates>Verifică pentru actualizări</Check_for_Updates>
@@ -25,6 +25,7 @@
 		<Desc>Descendentă</Desc>
 		<Developer>Dezvoltator</Developer>
 		<Display_Settings>Setări de afi?are</Display_Settings>
+		<Download_Update>Descărca?i actualizarea</Download_Update>
 		<Edit>Edita?i | ×</Edit>
 		<Error>Eroare</Error>
 		<Error_Generic>Nu sa întâmplat ceva în neregulă! :(</Error_Generic>
@@ -36,7 +37,7 @@
 		<Export_SQL_SCHEMA>Export SQL - SCHEMA - În numele</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Export SQL - SQL - În numele</Export_SQL_SQL>
 		<Export_UI>IO de export</Export_UI>
-		<Export_XML>EXPORT XML EXPLOATARE</Export_XML>
+		<Export_XML>EXPORT XML ÎN VERIFICARE</Export_XML>
 		<Extensions>Extensii</Extensions>
 		<Failed>A e?uat</Failed>
 		<Failed_Load_Online_EULA>Nu sa reu?it încărcarea EULA online</Failed_Load_Online_EULA>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML pentru CSV</HTML_to_CSV>
 		<Help>Ajutor</Help>
 		<Import>Import</Import>
+		<Import_Completed>Importul finalizat</Import_Completed>
 		<Import_SQL>Importa?i SQL</Import_SQL>
 		<Importer>Importator</Importer>
 		<Index>Index</Index>
 		<Invert>Inversa</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Cale CSV pentru jurnal</LOG_CSV_Path>
 		<LOG_DB_PATH>Jurnal de bază de date log</LOG_DB_PATH>
 		<Language>Limba</Language>
-		<Listview_Height>Înăl?ime listă</Listview_Height>
+		<Listview_Height>Înăl?imea listă</Listview_Height>
 		<Listview_Width>Listview Width</Listview_Width>
+		<MD>markdown</MD>
 		<Master_Table>Masa Master</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable sau "Master Table" este un tabel protejat. Pentru a proteja integritatea db nu pute?i edita acest tabel</Master_Table_Protected>
 		<New>Nou</New>
 		<New_in_Memory_Db>Nou în baza de date de memorie</New_in_Memory_Db>
+		<NoUpdates>Nu există actualizări</NoUpdates>
+		<No_Updates>Nu există actualizări disponibile</No_Updates>
 		<Not_Supported>Nu sunt acceptate</Not_Supported>
 		<Open>Deschis</Open>
 		<Opened>Deschis</Opened>
@@ -89,12 +95,13 @@
 		<System>Sistem</System>
 		<Table>Masa</Table>
 		<Toggle_Debug>Comuta?i întrerupere</Toggle_Debug>
-		<Toggle_Transaction_Log>Comuta?i între jurnalul de tranzac?ii</Toggle_Transaction_Log>
+		<Toggle_Transaction_Log>Comuta?i jurnalul de tranzac?ii</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Calea bazei de date a tranzac?iei</Transaction_DB_Path>
 		<UI>UI</UI>
 		<User_Requested>Utilizatorul solicitat</User_Requested>
 		<View>Vedere</View>
 		<View_Function>Func?ia de vizualizare</View_Function>
 		<Views_Read_Only>Vizionările sunt readonly ?i nu pot fi editate</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

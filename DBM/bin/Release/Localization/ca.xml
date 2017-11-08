@@ -3,7 +3,7 @@
 	<Language>
 		<About>Quant a</About>
 		<Access_Denied>Accés denegat</Access_Denied>
-		<App>Sol·licitud</App>
+		<App>Aplicació</App>
 		<Application>Aplicació</Application>
 		<Asc>Ascendent</Asc>
 		<Auto_Log>Registre automàtic</Auto_Log>
@@ -17,24 +17,25 @@
 		<Command>Comandament</Command>
 		<Converter>Convertidor</Converter>
 		<Create_Statistics_Page>Crea una pàgina d'estadístiques</Create_Statistics_Page>
-		<Critical_Fault_Error>Error crític de fallada</Critical_Fault_Error>
+		<Critical_Fault_Error>Error de falla crítica</Critical_Fault_Error>
 		<Dataview_Error>La base de dades o Dataview encara no existeix o encara no s'ha carregat</Dataview_Error>
 		<Debug>Depuració</Debug>
 		<Define_New_Table>Defineix una taula nova</Define_New_Table>
-		<Deliminator>Deliminador</Deliminator>
+		<Deliminator>Deliminator</Deliminator>
 		<Desc>Descendent</Desc>
 		<Developer>Desenvolupador</Developer>
 		<Display_Settings>Configuració de la pantalla</Display_Settings>
+		<Download_Update>Baixa l'actualització</Download_Update>
 		<Edit>Edita</Edit>
 		<Error>Error</Error>
 		<Error_Generic>Ah, no s'ha produït cap problema. :(</Error_Generic>
 		<Error_No_DB>Error: no s'ha carregat cap base de dades</Error_No_DB>
 		<Export>Exportació</Export>
-		<Export_CSV>EXPORTAR CSV EN NOM DEL</Export_CSV>
+		<Export_CSV>EXPORT CSV EN NOM DEL</Export_CSV>
 		<Export_HTML_Data>Exporta HTML DATA en nom de</Export_HTML_Data>
 		<Export_HTML_Schema>Exporta HTML SCHEMA en nom de</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Exporta SQL - SCHEMA - en nom de</Export_SQL_SCHEMA>
-		<Export_SQL_SQL>Exporta SQL - SQL - en nom de</Export_SQL_SQL>
+		<Export_SQL_SQL>Exporta SQL - SQL - En nom de</Export_SQL_SQL>
 		<Export_UI>Exporta la UI</Export_UI>
 		<Export_XML>EXPORT XML EN NOM DEL</Export_XML>
 		<Extensions>Extensions</Extensions>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML a CSV</HTML_to_CSV>
 		<Help>Ajuda</Help>
 		<Import>Importació</Import>
+		<Import_Completed>S'ha completat la importació</Import_Completed>
 		<Import_SQL>Importar SQL</Import_SQL>
 		<Importer>Importador</Importer>
 		<Index>Índex</Index>
 		<Invert>Invertir</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Inicieu la ruta del CSV</LOG_CSV_Path>
-		<LOG_DB_PATH>Base de dades de registre</LOG_DB_PATH>
+		<LOG_DB_PATH>Registre de bases de dades</LOG_DB_PATH>
 		<Language>Llenguatge</Language>
 		<Listview_Height>Alt de llista de publicacions</Listview_Height>
 		<Listview_Width>Amplada de llista de publicacions</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Taula mestra</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' és una taula protegida. Per protegir la integritat del db no podeu editar aquesta taula</Master_Table_Protected>
 		<New>Nou</New>
 		<New_in_Memory_Db>Nou a la base de dades de memòria</New_in_Memory_Db>
+		<NoUpdates>Sense actualitzacions</NoUpdates>
+		<No_Updates>No hi ha actualitzacions disponibles</No_Updates>
 		<Not_Supported>No compatible</Not_Supported>
 		<Open>Obert</Open>
 		<Opened>Obert</Opened>
@@ -94,7 +100,8 @@
 		<UI>UI</UI>
 		<User_Requested>Usuari sol·licitat</User_Requested>
 		<View>Veure</View>
-		<View_Function>Veure funció</View_Function>
+		<View_Function>Visualitza la funció</View_Function>
 		<Views_Read_Only>Les vistes són llegibles i no es poden editar</Views_Read_Only>
+		<WMU>Wiki Markup</WMU>
 	</Language>
 </root>

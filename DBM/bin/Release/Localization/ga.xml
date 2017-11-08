@@ -17,7 +17,7 @@
 		<Command>Ordú</Command>
 		<Converter>Tiontaire</Converter>
 		<Create_Statistics_Page>Cruthaigh Leathanach Staitisticí</Create_Statistics_Page>
-		<Critical_Fault_Error>Earráid Ealaíne Criticiúil</Critical_Fault_Error>
+		<Critical_Fault_Error>Earráid Chreasach Éasca</Critical_Fault_Error>
 		<Dataview_Error>Níl an Bunachar Sonraí nó Dataview ann nó níor luchtaíodh go fóill</Dataview_Error>
 		<Debug>Debug</Debug>
 		<Define_New_Table>Sainmhínigh Tábla Nua</Define_New_Table>
@@ -25,13 +25,14 @@
 		<Desc>Ag titim</Desc>
 		<Developer>Forbróir</Developer>
 		<Display_Settings>Taispeáin Socruithe</Display_Settings>
+		<Download_Update>Íoslódáil Nuashonraithe</Download_Update>
 		<Edit>Athraigh</Edit>
 		<Error>Earráid</Error>
 		<Error_Generic>Oh níor chuaigh rud ar bith mícheart! :(</Error_Generic>
-		<Error_No_DB>Earráid: Níl aon Bunachar Sonraí luchtaithe</Error_No_DB>
+		<Error_No_DB>Earráid: Níor luchtaíodh an Bunachar Sonraí</Error_No_DB>
 		<Export>Easpórtáil</Export>
 		<Export_CSV>ONNMHAIRIÚ CSV MAIDIR LE</Export_CSV>
-		<Export_HTML_Data>Onnmhairigh SONRAÍ HTML ar son</Export_HTML_Data>
+		<Export_HTML_Data>Onnmhairigh SONRAÍ HTML thar ceann</Export_HTML_Data>
 		<Export_HTML_Schema>Export SCHEMA HTML thar ceann</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Ar son na</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Export SQL - SQL - Thar ceann</Export_SQL_SQL>
@@ -39,27 +40,32 @@
 		<Export_XML>ONNMHAIRIÚ XML MAIDIR LE</Export_XML>
 		<Extensions>Eisínteachtaí</Extensions>
 		<Failed>Theip ar</Failed>
-		<Failed_Load_Online_EULA>Níorbh fhéidir EULA a lódáil ar líne</Failed_Load_Online_EULA>
-		<Failed_Save_Settings>Theip ar Shocruithe Sábháil</Failed_Save_Settings>
+		<Failed_Load_Online_EULA>Níorbh fhéidir EULA ar líne a luchtú</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Theip ar Shábháil Socruithe</Failed_Save_Settings>
 		<File>Comhad</File>
 		<Functions>Feidhmeanna</Functions>
 		<HTML>HTML</HTML>
 		<HTML_to_CSV>HTML go CSV</HTML_to_CSV>
 		<Help>Cabhrú</Help>
 		<Import>Iompórtáil</Import>
+		<Import_Completed>Iompórtáil Críochnaithe</Import_Completed>
 		<Import_SQL>Iompórtáil SQL</Import_SQL>
 		<Importer>Allmhaireoir</Importer>
 		<Index>Innéacs</Index>
 		<Invert>Invert</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Logáil CSV Path</LOG_CSV_Path>
 		<LOG_DB_PATH>Log Logáil isteach DatabasePath</LOG_DB_PATH>
 		<Language>Teanga</Language>
 		<Listview_Height>Ardeaglais an Liosta</Listview_Height>
 		<Listview_Width>Leithead Radhairc</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Tábla Máistir</Master_Table>
 		<Master_Table_Protected>Is sqlite_mastertable nó 'Máistir Tábla' tábla cosanta. Chun ionracas an db a chosaint ní féidir leat an tábla seo a eagrú</Master_Table_Protected>
 		<New>Nua</New>
 		<New_in_Memory_Db>Bunachar Nua Cuimhne</New_in_Memory_Db>
+		<NoUpdates>Gan Nuashonruithe</NoUpdates>
+		<No_Updates>Níl aon nuashonruithe ar fáil</No_Updates>
 		<Not_Supported>Gan tacaíocht</Not_Supported>
 		<Open>Oscail</Open>
 		<Opened>Oscailte</Opened>
@@ -68,7 +74,7 @@
 		<Plugin>Plugáil isteach</Plugin>
 		<Query>Cheist</Query>
 		<Query_Error>Earráid Iarratas</Query_Error>
-		<Refresh_Schema>Athnuachan ar Scéim</Refresh_Schema>
+		<Refresh_Schema>Scéim a Athnuachan</Refresh_Schema>
 		<Run_Function>Feidhm Rith</Run_Function>
 		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
@@ -95,6 +101,7 @@
 		<User_Requested>Úsáideoir Iarrtha</User_Requested>
 		<View>Amharc</View>
 		<View_Function>Feidhm View</View_Function>
-		<Views_Read_Only>Tá radhairc léitheoireachta agus ní féidir iad a chur in eagar</Views_Read_Only>
+		<Views_Read_Only>Tá na radhairc léite agus ní féidir iad a chur in eagar</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

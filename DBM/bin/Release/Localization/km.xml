@@ -8,10 +8,10 @@
 		<Asc>ឡើង</Asc>
 		<Auto_Log>កត់ត្រាស្វ័យប្រវត្តិ</Auto_Log>
 		<Browse>រកមើល</Browse>
-		<CMD_Tooltip>ប្រតិបត្តិសេចក្តីថ្លែងការពាក្យបញ្ជា SQL ដែលបានប្ដូរតាមបំណងទៅលើមូលដ្ឋានទិន្នន័យ</CMD_Tooltip>
+		<CMD_Tooltip>ប្រតិបត្តិសេចក្តីថ្លែងពាក្យបញ្ជា SQL ដែលបានប្ដូរតាមបំណងទៅលើមូលដ្ឋានទិន្នន័យ</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>កំ� ុស: សូមពិនិត្យមើលកំណត់� េតុសម្រាប់ព័ត៌មានលំអិត</Check_Log>
-		<Check_for_Updates>ពិនិត្យមើលបច្ចុប្បន្នភាព</Check_for_Updates>
+		<Check_Log>កំ� ុស: សូមពិនិត្យមើលកំណត់� េតុសម្រាប់ព័ត៌មានលម្អិត</Check_Log>
+		<Check_for_Updates>ពិនិត្យរកមើលភាពទាន់សម័យ</Check_for_Updates>
 		<Close_TW>បិទ TW</Close_TW>
 		<Close_wo_saving>បិទដោយគ្មានការរក្សាទុក</Close_wo_saving>
 		<Command>ពាក្យបញ្ជា</Command>
@@ -25,6 +25,7 @@
 		<Desc>ចុះក្រោម</Desc>
 		<Developer>អ្នកអភិវឌ្ឍន៍</Developer>
 		<Display_Settings>បង្� ាញការកំណត់</Display_Settings>
+		<Download_Update>ទាញយកបច្ចុប្បន្នភាព</Download_Update>
 		<Edit>កែសម្រួល</Edit>
 		<Error>កំ� ុស</Error>
 		<Error_Generic>អូមិនមានអ្វីខុសទេ! :(</Error_Generic>
@@ -39,7 +40,7 @@
 		<Export_XML>នាំយក XML នៅលើ BEHALF នៃ</Export_XML>
 		<Extensions>ផ្នែកបន្ថែម</Extensions>
 		<Failed>បរាជ័យ</Failed>
-		<Failed_Load_Online_EULA>បានបរាជ័យក្នុងការផ្ទុក EULA លើបណ្ដាញ</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>បរាជ័យក្នុងការផ្ទុក EULA លើបណ្ដាញ</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>បានបរាជ័យក្នុងការរក្សាទុកការកំណត់</Failed_Save_Settings>
 		<File>ឯកសារ</File>
 		<Functions>អនុគមន៍</Functions>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML ទៅ CSV</HTML_to_CSV>
 		<Help>ជំនួយ</Help>
 		<Import>នាំចូល</Import>
+		<Import_Completed>ការនាំចូលបានបញ្ចប់</Import_Completed>
 		<Import_SQL>នាំចូល SQL</Import_SQL>
 		<Importer>អ្នកនាំចូល</Importer>
 		<Index>លិបិក្រម</Index>
 		<Invert>បញ្ច្រាស</Invert>
-		<LOG_CSV_Path>ចូលផ្លូវ CSV</LOG_CSV_Path>
+		<JSON>JSON</JSON>
+		<LOG_CSV_Path>កត់ត្រាផ្លូវ CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Log Database Path</LOG_DB_PATH>
 		<Language>ភាសា</Language>
 		<Listview_Height>កម្ពស់បញ្ជី</Listview_Height>
 		<Listview_Width>ទទឹងបញ្ជី</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>តារាងមេ</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable ឬ 'តារាងមេ' ជាតារាងការពារ។ ដើម្បីការពារសុចរិតភាពនៃ db អ្នកមិនអាចកែប្រែតារាងនេះបានទេ</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable ឬ 'តារាងមេ' ជាតារាងការពារ។ ដើម្បីការពារសុចរិតភាពនៃ db អ្នកមិនអាចកែសម្រួលតារាងនេះបានទេ</Master_Table_Protected>
 		<New>ថ្មី</New>
-		<New_in_Memory_Db>ថ្មីនៅក្នុងមូលដ្ឋានទិន្នន័យអង្គចងចាំ</New_in_Memory_Db>
+		<New_in_Memory_Db>ថ្មីក្នុងមូលដ្ឋានទិន្នន័យអង្គចងចាំ</New_in_Memory_Db>
+		<NoUpdates>គ្មានការធ្វើបច្ចុប្បន្នភាព</NoUpdates>
+		<No_Updates>មិនមានភាពទាន់សម័យទេ</No_Updates>
 		<Not_Supported>មិន​គាំទ្រ</Not_Supported>
 		<Open>បើក</Open>
 		<Opened>បានបើក</Opened>
@@ -68,7 +74,7 @@
 		<Plugin>កម្មវិធីជំនួយ</Plugin>
 		<Query>សំណួរ</Query>
 		<Query_Error>កំ� ុសសំណួរ</Query_Error>
-		<Refresh_Schema>ធ្វើសង្គ្រាមឡើងវិញ</Refresh_Schema>
+		<Refresh_Schema>ធ្វើឱ្យស្រស់គ្រោងការណ៍</Refresh_Schema>
 		<Run_Function>រត់មុខងារ</Run_Function>
 		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
@@ -96,5 +102,6 @@
 		<View>មើល</View>
 		<View_Function>មើលមុខងារ</View_Function>
 		<Views_Read_Only>ការមើលបានតែអាន� ើយមិនអាចកែបាន</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

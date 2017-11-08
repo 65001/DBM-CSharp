@@ -21,6 +21,11 @@ namespace DBM
 		public static string CurrentTable { get; private set; }
 		public static string DatabaseShortname { get; private set; }
 
+        static SQLITE Sqlite = new SQLITE();
+        static OLDEB Oldeb = new OLDEB();
+        static ODBC Odbc = new ODBC();
+        static MySQL Mysql = new MySQL();
+        static SQLServer SQLserver = new SQLServer();
 
         public static int GetDataBaseIndex(string Database)
         {
@@ -206,7 +211,7 @@ namespace DBM
                     _Tables.Clear();
                     _Views.Clear();
                     _Indexes.Clear();
-                    Primitive Master_Schema_List = Query(Database,SQLITE.GetSchema(), null, true, Utilities.Localization["App"], "SCHEMA");
+                    Primitive Master_Schema_List = Query(Database,Sqlite.GetSchemaQuery(), null, true, Utilities.Localization["App"], "SCHEMA");
                     for (int i = 1; i <= Master_Schema_List.GetItemCount(); i++)
                     {
                         string Name = Master_Schema_List[i]["tbl_name"];
@@ -257,9 +262,9 @@ namespace DBM
             {
                 case EnginesMode.SQLITE:
                     _Schema.Clear();
-                    SchemaQuery = SQLITE.GetColumnsOfTable(table);
+                    SchemaQuery = Sqlite.GetSchemaQuery();
                     Primitive QSchema = Query(database, SchemaQuery, null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
-                    _Schema = SQLITE.GetColumnsOfTable(QSchema);
+                    _Schema = Sqlite.GetColumnsOfTable(QSchema);
                     break;
                 default:
                     throw new NotImplementedException();
@@ -283,7 +288,7 @@ namespace DBM
                     {
                         Events.LogMessage("The presence of the one of the following characters has been detected : \"[] in Engines.SetDefaultTable(" + table + "). This may cause unexpected behaviour.", "Warning");
                     }
-                    CurrentTable = "\"" + table.SanitizeFieldName() + "\"";
+                    CurrentTable = $"\"{table.SanitizeFieldName()}\"";
                     _TrackingDefaultTable.Add(CurrentDatabase + "." + CurrentTable);
                     return;
                 }
@@ -373,7 +378,7 @@ namespace DBM
         static EnginesMode Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database 
         {
             int Index = _DB_Name.IndexOf(Database);
-            if (Index != -1)
+            if (Index >= 0)
             {
                 return _DB_Engine[Index];
             }

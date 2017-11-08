@@ -165,11 +165,11 @@ namespace DBM
 
                     if (CurrentVersion == LatestVersion && UI == true)
                     {
-                        GraphicsWindow.ShowMessage("There are no updates available", "No Updates"); //TODO LOCALIZE
+                        GraphicsWindow.ShowMessage("There are no updates available", Localization["NoUpdates"] ?? "No Updates"); //TODO LOCALIZE
                     }
                     else if (CurrentVersion > LatestVersion && UI == true)
                     {
-                        GraphicsWindow.ShowMessage("You have a more recent edition of the program than that offered to the public.\nYou have version " + CurrentVersion + " while the most recent public release is version " + LatestVersion, "No Updates");
+                        GraphicsWindow.ShowMessage("You have a more recent edition of the program than that offered to the public.\nYou have version " + CurrentVersion + " while the most recent public release is version " + LatestVersion, Localization["NoUpdates"] ?? "No Updates");
                     }
                     else if (CurrentVersion < LatestVersion)
                     {

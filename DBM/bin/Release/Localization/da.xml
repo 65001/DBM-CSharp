@@ -25,6 +25,7 @@
 		<Desc>Aftagende</Desc>
 		<Developer>Udvikler</Developer>
 		<Display_Settings>Skærmindstillinger</Display_Settings>
+		<Download_Update>Download opdatering</Download_Update>
 		<Edit>Redigere</Edit>
 		<Error>Fejl</Error>
 		<Error_Generic>Åh ikke noget gik galt! :(</Error_Generic>
@@ -35,7 +36,7 @@
 		<Export_HTML_Schema>Eksporter HTML SCHEMA på vegne af</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Eksporter SQL - SCHEMA - På vegne af</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Eksporter SQL - SQL - På vegne af</Export_SQL_SQL>
-		<Export_UI>Eksport UI</Export_UI>
+		<Export_UI>Eksporter brugergrænseflade</Export_UI>
 		<Export_XML>Eksport XML på grund af</Export_XML>
 		<Extensions>Udvidelser</Extensions>
 		<Failed>mislykkedes</Failed>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML til CSV</HTML_to_CSV>
 		<Help>Hjælp</Help>
 		<Import>Importere</Import>
+		<Import_Completed>Importen er afsluttet</Import_Completed>
 		<Import_SQL>Import SQL</Import_SQL>
 		<Importer>Importør</Importer>
 		<Index>Indeks</Index>
 		<Invert>Inverter</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Log CSV-sti</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Sprog</Language>
 		<Listview_Height>Listview Højde</Listview_Height>
 		<Listview_Width>Listevisningsbredde</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Masterbord</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable eller 'Master Table' er et beskyttet bord. For at beskytte integriteten af db kan du ikke redigere denne tabel</Master_Table_Protected>
 		<New>Ny</New>
-		<New_in_Memory_Db>Nyt i hukommelsesdatabasen</New_in_Memory_Db>
+		<New_in_Memory_Db>Ny i Memory Database</New_in_Memory_Db>
+		<NoUpdates>Ingen opdateringer</NoUpdates>
+		<No_Updates>Der er ingen tilgængelige opdateringer</No_Updates>
 		<Not_Supported>Ikke understøttet</Not_Supported>
 		<Open>Åben</Open>
 		<Opened>åbnede</Opened>
@@ -75,7 +81,7 @@
 		<Save>Gemme</Save>
 		<Save_and_Close>Gem og luk</Save_and_Close>
 		<Search>Søg</Search>
-		<Search_Settings>Søgeindstillinger</Search_Settings>
+		<Search_Settings>Søgningsindstillinger</Search_Settings>
 		<Search_in>Søg i</Search_in>
 		<Settings>Indstillinger</Settings>
 		<Settings_Editor>Indstillinger Editor</Settings_Editor>
@@ -96,5 +102,6 @@
 		<View>Udsigt</View>
 		<View_Function>Vis Funktion</View_Function>
 		<Views_Read_Only>Visninger er readonly og kan ikke redigeres</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

@@ -5,8 +5,8 @@
 		<Access_Denied>رسائي رد ?ئي وئي</Access_Denied>
 		<App>درخواست</App>
 		<Application>ايپ</Application>
-		<Asc>جيترو</Asc>
-		<Auto_Log>خود?ار لاگ ان</Auto_Log>
+		<Asc>جزا</Asc>
+		<Auto_Log>پا?مرادو لاگ ان</Auto_Log>
 		<Browse>برائوز ?ريو</Browse>
 		<CMD_Tooltip>?ي?ابيس تي ?س?م ?س?م بيانن جي ?س?مائي?</CMD_Tooltip>
 		<CSV>سي ايس وي</CSV>
@@ -15,51 +15,57 @@
 		<Close_TW>TW بند ?ريو</Close_TW>
 		<Close_wo_saving>بغير بچائ? بند ?ريو</Close_wo_saving>
 		<Command>ح?م</Command>
-		<Converter>?ن?رول</Converter>
+		<Converter>?نور?ر</Converter>
 		<Create_Statistics_Page>اعداد و شمار جو صفحو ?اهيو</Create_Statistics_Page>
 		<Critical_Fault_Error>غلطي غلطي جي غلطي</Critical_Fault_Error>
 		<Dataview_Error>?ي?ابيس يا ?ي?اويو موجود ناهي يا ا?ان تائين لو? نه ?ي چ?و آهي</Dataview_Error>
 		<Debug>?يگ</Debug>
-		<Define_New_Table>ھدايتون نئين ?يبل</Define_New_Table>
+		<Define_New_Table>نيون ?يبل جي وضاحت ?ريو</Define_New_Table>
 		<Deliminator>?يلمي?ر</Deliminator>
 		<Desc>وجھ?</Desc>
 		<Developer>?اهيند?</Developer>
 		<Display_Settings>سي?نگون</Display_Settings>
+		<Download_Update>?ائون لو? ?ريو</Download_Update>
 		<Edit>ترميم ?ريو</Edit>
 		<Error>غلطي</Error>
 		<Error_Generic>ها? ?جهه غلط ?ي چ?و آهي! :(</Error_Generic>
 		<Error_No_DB>غلطي: ?ابه ?ي?ابيس لو? ?ي وئي آھي</Error_No_DB>
 		<Export>?اھر مو?ليو</Export>
 		<Export_CSV>برآمد ?يند? شي?ول تي سي ?ي وي</Export_CSV>
-		<Export_HTML_Data>جي طرف کان HTML ?ي? مو?ليو</Export_HTML_Data>
+		<Export_HTML_Data>ھن جي طرفان HTML ?ي? مو?ليو</Export_HTML_Data>
 		<Export_HTML_Schema>جي طرفان HTML SCHEMA کي برآمد ?ريو</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>برآمد ?ريو SQL - SCHEMA - جي طرفان</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>?اھر مو?ليو SQL - SQL - جي طرفان</Export_SQL_SQL>
 		<Export_UI>يو ايس برآمد ?ريو</Export_UI>
 		<Export_XML>برآمد ?يل هفتي تي XML</Export_XML>
-		<Extensions>وا?ايون</Extensions>
+		<Extensions>منتقلي</Extensions>
 		<Failed>نا?ام ?يو</Failed>
 		<Failed_Load_Online_EULA>آن لائن EULA کي لو? ?ر? ? نا?ام ?يو</Failed_Load_Online_EULA>
-		<Failed_Save_Settings>سي?نگون کي محفوظ ?ر? ? نا?ام ?يو</Failed_Save_Settings>
+		<Failed_Save_Settings>سي?نگون محفوظ ?ر? ? نا?ام ?يو</Failed_Save_Settings>
 		<File>فائل</File>
 		<Functions>?ار?ن</Functions>
 		<HTML>HTML</HTML>
 		<HTML_to_CSV>HTML ?انهن CSV</HTML_to_CSV>
 		<Help>مدد</Help>
 		<Import>آمد</Import>
+		<Import_Completed>وارد ?يل م?مل</Import_Completed>
 		<Import_SQL>ايس ايم ايسي? ?ريو</Import_SQL>
 		<Importer>درآمد ?ند?</Importer>
 		<Index>Index</Index>
 		<Invert>?يرائ?</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>سي ايم وي ر?ا کي و?و</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>?ولي</Language>
 		<Listview_Height>لائي? وارو نقشو</Listview_Height>
-		<Listview_Width>لس? ?ي? وي?ر</Listview_Width>
+		<Listview_Width>لس? وارو ?ي?</Listview_Width>
+		<MD>مار? ?ائون</MD>
 		<Master_Table>ماس?ر ?يبل</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable يا 'ماس?ر ?يبل' محفوظ ?يل ?يبل آهي. ?ي بي جي ايمانداري جي حفاظت لاء توهان هن ميز کي ترميم نه ?ري سگهو ?ا</Master_Table_Protected>
 		<New>نئون</New>
 		<New_in_Memory_Db>ميموري ?ي?ابيس ? نئون</New_in_Memory_Db>
+		<NoUpdates>?ا به خبر ناهي</NoUpdates>
+		<No_Updates>?ابه تازيون دستياب ناھي</No_Updates>
 		<Not_Supported>حمايت نه ?ئي وئي آهي</Not_Supported>
 		<Open>کليل</Open>
 		<Opened>لياري ??يو</Opened>
@@ -82,7 +88,7 @@
 		<Show_Help>مدد ?يکاريو</Show_Help>
 		<Sort>ترتيب ?نل</Sort>
 		<Sort_by>ترتيب ?نل</Sort_by>
-		<Stack_Trace>اس?ي? ?ري?</Stack_Trace>
+		<Stack_Trace>اس?ي? جو رستو</Stack_Trace>
 		<Statistics_Page>شماريات جو صفحو</Statistics_Page>
 		<Strict_Search>سخت ?ولا</Strict_Search>
 		<Success>?امياب</Success>
@@ -94,7 +100,8 @@
 		<UI>يو</UI>
 		<User_Requested>استعمال ?ند? جي درخواست ?ئي وئي</User_Requested>
 		<View>?سو</View>
-		<View_Function>فن?شنل ?سو</View_Function>
+		<View_Function>فن?شن ?سو</View_Function>
 		<Views_Read_Only>مناظر پ?ھندا آھن ? تبديلي نه ?و ?ري سگھجي</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

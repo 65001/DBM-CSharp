@@ -8,7 +8,7 @@
 		<Asc>Ascending</Asc>
 		<Auto_Log>Auto Log</Auto_Log>
 		<Browse>ຄົ້ນຫາ</Browse>
-		<CMD_Tooltip>ປະຕິບັດຄໍາສັ່ງຄໍາສັ່ງ SQL customized ໃສ່ຖານຂໍ້ມູນ</CMD_Tooltip>
+		<CMD_Tooltip>ປະຕິບັດຄໍາສັ່ງຄໍາສັ່ງທີ່ກໍາຫນົດເອງ SQL ໃນຖານຂໍ້ມູນ</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>ຂໍ້ຜິດພາດ: ກະລຸນາກວດເບິ່ງບັນທຶກສໍາລັບລາຍລະອຽດ</Check_Log>
 		<Check_for_Updates>ກວດສອບການອັບເດດ</Check_for_Updates>
@@ -25,6 +25,7 @@
 		<Desc>Descending</Desc>
 		<Developer>ຜູ້ພັດທະນາ</Developer>
 		<Display_Settings>Display Settings</Display_Settings>
+		<Download_Update>ດາວໂຫລດອັບເດດ</Download_Update>
 		<Edit>ແກ້ໄຂ</Edit>
 		<Error>ຂໍ້ຜິດພາດ</Error>
 		<Error_Generic>ໂອ້ບໍ່ມີສິ່ງໃດຜິດພາດ! :(</Error_Generic>
@@ -32,53 +33,58 @@
 		<Export>ສົ່ງອອກ</Export>
 		<Export_CSV>EXPORT CSV ON BEHALF OF</Export_CSV>
 		<Export_HTML_Data>ສົ່ງ HTML DATA ແທນ</Export_HTML_Data>
-		<Export_HTML_Schema>ສົ່ງ HTML SCHEMA ໃນນາມຂອງ</Export_HTML_Schema>
+		<Export_HTML_Schema>Export HTML SCHEMA ໃນນາມຂອງ</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Export SQL - SCHEMA - ໃນນາມຂອງ</Export_SQL_SCHEMA>
-		<Export_SQL_SQL>Export SQL-SQL - ໃນນາມຂອງ</Export_SQL_SQL>
+		<Export_SQL_SQL>ການນໍາເຂົ້າ SQL - SQL - ໃນນາມຂອງ</Export_SQL_SQL>
 		<Export_UI>ສົ່ງອອກ UI</Export_UI>
-		<Export_XML>ນໍາໃຊ້ XML ກ່ຽວກັບ BEHALF OF</Export_XML>
+		<Export_XML>ການນໍາເຂົ້າ XML ກ່ຽວກັບ BEHALF OF</Export_XML>
 		<Extensions>Extensions</Extensions>
 		<Failed>ລົ້ມເຫລວ</Failed>
-		<Failed_Load_Online_EULA>ບໍ່ສາມາດໂຫລດ EULA ອອນໄລນ໌ໄດ້</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>ບໍ່ສາມາດໂຫລດ EULA ອອນໄລນ໌</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>ບໍ່ສາມາດບັນທຶກການຕັ້ງຄ່າໄດ້</Failed_Save_Settings>
-		<File>File</File>
+		<File>ໄຟລ໌</File>
 		<Functions>ຟັງຊັນ</Functions>
 		<HTML>HTML</HTML>
 		<HTML_to_CSV>HTML ເພື່ອ CSV</HTML_to_CSV>
 		<Help>ຊ່ວຍເຫຼືອ</Help>
 		<Import>ນໍາເຂົ້າ</Import>
+		<Import_Completed>Import completed</Import_Completed>
 		<Import_SQL>ນໍາເຂົ້າ SQL</Import_SQL>
 		<Importer>ຜູ້ນໍາເຂົ້າ</Importer>
 		<Index>ດັດນີ</Index>
 		<Invert>Invert</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>ເສັ້ນທາງເສັ້ນທາງ CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>ພາສາ</Language>
 		<Listview_Height>Listview Height</Listview_Height>
 		<Listview_Width>Listview Width</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Master Table</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable ຫຼື 'Table Master Table' ແມ່ນຕາຕະລາງປ້ອງກັນ. ເພື່ອປົກປ້ອງຄວາມສົມບູນຂອງ db ທ່ານບໍ່ສາມາດແກ້ຕາລາງນີ້</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable ຫຼື 'Table Master Table' ແມ່ນຕາຕະລາງປ້ອງກັນ. ເພື່ອປົກປ້ອງຄວາມສົມບູນຂອງ db ທ່ານບໍ່ສາມາດແກ້ຕາລາງນີ້ໄດ້</Master_Table_Protected>
 		<New>ໃຫມ່</New>
 		<New_in_Memory_Db>ໃຫມ່ໃນຖານຂໍ້ມູນຫນ່ວຍຄວາມຈໍາ</New_in_Memory_Db>
+		<NoUpdates>ບໍ່ມີການປັບປຸງ</NoUpdates>
+		<No_Updates>ມີການປັບປຸງບໍ່ມີ</No_Updates>
 		<Not_Supported>ບໍ່​ສະ​ຫນັບ​ສະ​ຫນຸນ</Not_Supported>
 		<Open>ເປີດ</Open>
 		<Opened>ໄດ້ເປີດ</Opened>
 		<PRGM_Start>Program Started</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>Plugin</Plugin>
-		<Query>ສອບຖາມ</Query>
+		<Query>ການສອບຖາມ</Query>
 		<Query_Error>Query Error</Query_Error>
 		<Refresh_Schema>Refresh Schema</Refresh_Schema>
 		<Run_Function>Run Function</Run_Function>
 		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
-		<Save>ບັນທຶກ</Save>
+		<Save>ຊ່ວຍປະຢັດ</Save>
 		<Save_and_Close>ບັນທຶກແລະປິດ</Save_and_Close>
 		<Search>ຄົ້ນຫາ</Search>
 		<Search_Settings>ຄົ້ນຫາການຕັ້ງຄ່າ</Search_Settings>
 		<Search_in>ຄົ້ນຫາໃນ</Search_in>
 		<Settings>Settings</Settings>
-		<Settings_Editor>Edit Settings</Settings_Editor>
+		<Settings_Editor>ບັນນາທິການ Settings</Settings_Editor>
 		<Show_Help>ສະແດງຄວາມຊ່ວຍເຫຼືອ</Show_Help>
 		<Sort>ຈັດຮຽງ</Sort>
 		<Sort_by>ຄັດໂດຍ</Sort_by>
@@ -95,6 +101,7 @@
 		<User_Requested>User Requested</User_Requested>
 		<View>ເບິ່ງ</View>
 		<View_Function>ເບິ່ງຫນ້າທີ່</View_Function>
-		<Views_Read_Only>ການເບິ່ງແມ່ນອ່ານພຽງແຕ່ບໍ່ສາມາດແກ້ໄຂ</Views_Read_Only>
+		<Views_Read_Only>ການອ່ານແມ່ນອ່ານເທົ່ານັ້ນແລະບໍ່ສາມາດແກ້ໄຂ</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

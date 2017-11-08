@@ -6,7 +6,7 @@
 		<App>Pieteikums</App>
 		<Application>Lietotne</Application>
 		<Asc>Augošā secībā</Asc>
-		<Auto_Log>Auto žurnāls</Auto_Log>
+		<Auto_Log>Automātiskais žurnāls</Auto_Log>
 		<Browse>Pārlūkot</Browse>
 		<CMD_Tooltip>Izpilda pielāgotus SQL komandu paziņojumus datu bāzē</CMD_Tooltip>
 		<CSV>CSV</CSV>
@@ -17,21 +17,22 @@
 		<Command>Pavēlniecība</Command>
 		<Converter>Pārveidotājs</Converter>
 		<Create_Statistics_Page>Izveidot statistikas lapu</Create_Statistics_Page>
-		<Critical_Fault_Error>Kritiskās kļūmes kļūda</Critical_Fault_Error>
+		<Critical_Fault_Error>Kritiskās kļūdas kļūda</Critical_Fault_Error>
 		<Dataview_Error>Datu bāze vai Dataview nepastāv vai vēl nav ielādēta</Dataview_Error>
 		<Debug>Atkļūdošana</Debug>
 		<Define_New_Table>Definēt jaunu tabulu</Define_New_Table>
-		<Deliminator>Deliminator</Deliminator>
+		<Deliminator>Delimināators</Deliminator>
 		<Desc>Dilstošā secībā</Desc>
 		<Developer>Izstrādātājs</Developer>
 		<Display_Settings>Displeja iestatījumi</Display_Settings>
+		<Download_Update>Lejupielādēt atjauninājumu</Download_Update>
 		<Edit>Rediģēt</Edit>
 		<Error>Kļūda</Error>
-		<Error_Generic>Ak, nekas nav kārtībā! :(</Error_Generic>
+		<Error_Generic>Ak, nekas nav noticis! :(</Error_Generic>
 		<Error_No_DB>Kļūda: neviena datubāze nav ielādēta</Error_No_DB>
-		<Export>Eksports</Export>
+		<Export>Eksportēt</Export>
 		<Export_CSV>EKSPORTA CSV PĀRBAUDE</Export_CSV>
-		<Export_HTML_Data>Eksportēt HTML DATA vārdā</Export_HTML_Data>
+		<Export_HTML_Data>Eksportējiet HTML DATA vārdā</Export_HTML_Data>
 		<Export_HTML_Schema>Eksportēt HTML SCHEMA vārdā</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Eksportēt SQL - SCHEMA - vārdā</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Eksportēt SQL - SQL - vārdā</Export_SQL_SQL>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML CSV formātā</HTML_to_CSV>
 		<Help>Palīdzība</Help>
 		<Import>Importēt</Import>
+		<Import_Completed>Importēšana pabeigta</Import_Completed>
 		<Import_SQL>Importēt SQL</Import_SQL>
 		<Importer>Importētājs</Importer>
 		<Index>Indekss</Index>
 		<Invert>Mainīt</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Log CSV ceļš</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Valoda</Language>
 		<Listview_Height>Saraksta augstums</Listview_Height>
 		<Listview_Width>Listview Width</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Galvenā tabula</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable vai "Master Table" ir aizsargāts tabula. Lai aizsargātu db integritāti, jūs nevarat rediģēt šo tabulu</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable vai "Master Table" ir aizsargāta tabula. Lai aizsargātu db integritāti, jūs nevarat rediģēt šo tabulu</Master_Table_Protected>
 		<New>Jauns</New>
 		<New_in_Memory_Db>Jauns atmiņas datu bāzē</New_in_Memory_Db>
+		<NoUpdates>Nav atjauninājumu</NoUpdates>
+		<No_Updates>Nav pieejami atjauninājumi</No_Updates>
 		<Not_Supported>Nav atbalstīts</Not_Supported>
 		<Open>Atvērt</Open>
 		<Opened>Atvērts</Opened>
@@ -96,5 +102,6 @@
 		<View>Skats</View>
 		<View_Function>Skatīt funkciju</View_Function>
 		<Views_Read_Only>Skatījumi ir tikai lasāmi un tos nevar rediģēt</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

@@ -11,7 +11,7 @@ namespace DBM
         List<DataType> Types = new List<DataType>();
         List<List<string>> Data = new List<List<string>>();
 
-        public enum ChartTypes { Bar, Bubble, Column, Donut, Pie, Table,Org,Sankey };
+        public enum ChartTypes { Bar, Bubble, Column, Donut, Pie, Table,Org,Sankey,Histogram,Scatter};
         public enum DataType { number,text};
 
         public abstract ChartTypes ChartType { get; }
@@ -56,7 +56,7 @@ namespace DBM
                 LocalMax = this.Data[Index].Count;
             }
 
-            int ColumnMax = this.Columns.Count;
+            int ColumnMax = Columns.Count;
             if (LocalMax + 1 > ColumnMax)
             {
                 throw new ArgumentOutOfRangeException("Index"," You have added too many rows but lack sufficient number of columns");
@@ -171,8 +171,6 @@ namespace DBM
             SB.AppendLine("\t}\n\t\t</script>");
             SB.AppendLine("\t</head>");
             SB.AppendLine("\t<body>");
-            //SB.AppendFormat("\t\t<h1>{0}</h1>\n", Title);
-            //SB.AppendFormat("\t\t<h2>{0}</h2>\n", SubTitle);
             SB.AppendFormat("\t\t<div id='{0}' style=\"width:{1}; height: {2};\"></div>\n", "chart", width, height);
             SB.AppendLine("\t</body>");
             SB.AppendLine("</html>");
@@ -194,8 +192,7 @@ namespace DBM
             {
                 get
                 {
-                    bool[] Temp = new bool[2] { false, true };
-                    return Temp;
+                    return new bool[2] { false, true };
                 }
             }
 
@@ -225,12 +222,29 @@ namespace DBM
 
         public class Pie : CoreChart
         {
-            public override ChartTypes ChartType
-            {
-                get { return ChartTypes.Pie; }
-            }
-
+            public override ChartTypes ChartType {get { return ChartTypes.Pie; }}
             public override string Function { get { return "PieChart"; } }
+        }
+
+        public class Histograms : CoreChart
+        {
+            public override ChartTypes ChartType { get { return ChartTypes.Histogram; } }
+            public override string Function {get { return "Histogram"; }}
+        }
+
+        public class Scatter : CoreChart
+        {
+            public override ChartTypes ChartType { get { return ChartTypes.Scatter; } }
+            public override string Function { get {return "ScatterChart"; } }
+        }
+
+        public class Table : Chart
+        {
+            public override string Function { get { return "Table"; } }
+            public override string Package { get { return "table"; } }
+            public override ChartTypes ChartType { get { return ChartTypes.Table; } }
+            public override bool[] RespectNumbers { get { return new bool[2] { false, false }; } }
+            public override int MinColumns { get { return 2; } }
         }
 
         public class OrgChart : Chart
@@ -246,12 +260,13 @@ namespace DBM
 
             public override bool[] RespectNumbers
             {
-                get
-                {
-                    bool[] Temp = new bool[2] { false, false };
-                    return Temp;
-                }
+                get{return new bool[2] { false, false };}
             }
+        }
+
+        public class GeoCharts
+        {
+
         }
 
         public class SanKey : Chart
@@ -263,11 +278,7 @@ namespace DBM
 
             public override bool[] RespectNumbers
             {
-                get
-                {
-                    bool[] Temp = new bool[2] { false, true };
-                    return Temp;
-                }
+                get{return new bool[2] { false, true };}
             }
 
             public override int MinColumns  { get { return 2; } }

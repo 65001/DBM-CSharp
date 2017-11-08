@@ -8,7 +8,7 @@
 		<Asc>Ortgan</Asc>
 		<Auto_Log>Avtomatik jurnal</Auto_Log>
 		<Browse>Ko'zdan kechiring</Browse>
-		<CMD_Tooltip>Ma'lumotlar bazasiga maxsus SQL buyruq ko'rsatmalarini bajaradi</CMD_Tooltip>
+		<CMD_Tooltip>Ma'lumotlar bazasida tayyorlangan SQL buyruq ko'rsatmalarini bajaradi</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Xato: Batafsil ma'lumot uchun jurnalni tekshiring</Check_Log>
 		<Check_for_Updates>Yangilanishlarni tekshiring</Check_for_Updates>
@@ -16,8 +16,8 @@
 		<Close_wo_saving>Saqlamasdan yopish</Close_wo_saving>
 		<Command>Buyruq</Command>
 		<Converter>Konverter</Converter>
-		<Create_Statistics_Page>Statistika sahifasini yaratish</Create_Statistics_Page>
-		<Critical_Fault_Error>Muhim xato xati</Critical_Fault_Error>
+		<Create_Statistics_Page>Statistika sahifasi yaratish</Create_Statistics_Page>
+		<Critical_Fault_Error>Muhim xato xabari</Critical_Fault_Error>
 		<Dataview_Error>Ma'lumotlar bazasi yoki ma'lumotlar ko'rinishi mavjud emas yoki hali yuklanmadi</Dataview_Error>
 		<Debug>Xato qilish</Debug>
 		<Define_New_Table>Yangi jadvalni belgilang</Define_New_Table>
@@ -25,6 +25,7 @@
 		<Desc>Kamayish bo'yicha</Desc>
 		<Developer>Dasturchi</Developer>
 		<Display_Settings>Displeyni sozlash</Display_Settings>
+		<Download_Update>Yangilanishni yuklab oling</Download_Update>
 		<Edit>Tahrirlash</Edit>
 		<Error>Xato</Error>
 		<Error_Generic>Hech narsa noto'g'ri ketdi! :(</Error_Generic>
@@ -36,7 +37,7 @@
 		<Export_SQL_SCHEMA>Eksport SQL - SCHEMA - nomidan</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>SQL - SQL eksport - nomidan</Export_SQL_SQL>
 		<Export_UI>UI eksport qiling</Export_UI>
-		<Export_XML>EKSPORT XIZMATI</Export_XML>
+		<Export_XML>EKSPORT XARAJATIDA XML</Export_XML>
 		<Extensions>Kengaytmalar</Extensions>
 		<Failed>Muvaffaqiyatsiz</Failed>
 		<Failed_Load_Online_EULA>Onlayn EULA-ni yuklab bo'lmadi</Failed_Load_Online_EULA>
@@ -47,20 +48,25 @@
 		<HTML_to_CSV>CSV uchun HTML</HTML_to_CSV>
 		<Help>Yordam bering</Help>
 		<Import>Import</Import>
+		<Import_Completed>Import amalga oshdi</Import_Completed>
 		<Import_SQL>SQLni import qilish</Import_SQL>
 		<Importer>Importchi</Importer>
 		<Index>Indeks</Index>
 		<Invert>Invert</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>CSV yo'lini kiriting</LOG_CSV_Path>
 		<LOG_DB_PATH>Log DatabasePath</LOG_DB_PATH>
 		<Language>Til</Language>
 		<Listview_Height>Ro'yxatning balandligi</Listview_Height>
 		<Listview_Width>Ro'yxatning kengligi</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Asosiy jadval</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable yoki "Master Table" - himoyalangan jadval. JB ning yaxlitligini himoya qilish uchun siz ushbu jadvalni tahrirlay olmaysiz</Master_Table_Protected>
 		<New>Yangi</New>
 		<New_in_Memory_Db>Xotira bazasida yangi</New_in_Memory_Db>
-		<Not_Supported>Qo'llab-quvvatlanmaydi</Not_Supported>
+		<NoUpdates>Yangilanishlar yo'q</NoUpdates>
+		<No_Updates>Yangilanish mavjud emas</No_Updates>
+		<Not_Supported>Qo'llab-quvvatlanmagan</Not_Supported>
 		<Open>Ochish</Open>
 		<Opened>Ochilgan</Opened>
 		<PRGM_Start>Dastur boshlandi</PRGM_Start>
@@ -82,7 +88,7 @@
 		<Show_Help>Yordamni ko'rsatish</Show_Help>
 		<Sort>Saralash</Sort>
 		<Sort_by>Saralash turi</Sort_by>
-		<Stack_Trace>Stakan iz</Stack_Trace>
+		<Stack_Trace>Stack Track</Stack_Trace>
 		<Statistics_Page>Statistika sahifasi</Statistics_Page>
 		<Strict_Search>Qattiq qidirish</Strict_Search>
 		<Success>Muvaffaqiyat</Success>
@@ -90,11 +96,12 @@
 		<Table>Jadval</Table>
 		<Toggle_Debug>Debugni almashtirish</Toggle_Debug>
 		<Toggle_Transaction_Log>Jurnal jurnalini almashtirish</Toggle_Transaction_Log>
-		<Transaction_DB_Path>Jurnal bazasi yo'li</Transaction_DB_Path>
+		<Transaction_DB_Path>Transaction Database Path</Transaction_DB_Path>
 		<UI>UI</UI>
 		<User_Requested>Talab qilingan foydalanuvchi</User_Requested>
 		<View>Ko'rish</View>
 		<View_Function>Funktsiyani ko'rish</View_Function>
 		<Views_Read_Only>Ko'rishlar faqat o'qiladi va tahrirlanmaydi</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

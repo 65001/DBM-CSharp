@@ -8,38 +8,39 @@
 		<Asc>上升</Asc>
 		<Auto_Log>自动日志</Auto_Log>
 		<Browse>浏览</Browse>
-		<CMD_Tooltip>在数据库上执行自定义的SQL命令语句</CMD_Tooltip>
+		<CMD_Tooltip>将自定义的SQL命令语句执行到数据库中</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>错误：请查看日志了解详情</Check_Log>
+		<Check_Log>错误：请检查日志中的详细信息</Check_Log>
 		<Check_for_Updates>检查更新</Check_for_Updates>
 		<Close_TW>关闭TW</Close_TW>
-		<Close_wo_saving>关闭而不保存</Close_wo_saving>
+		<Close_wo_saving>关闭不保存</Close_wo_saving>
 		<Command>命令</Command>
 		<Converter>变流器</Converter>
 		<Create_Statistics_Page>创建统计页面</Create_Statistics_Page>
 		<Critical_Fault_Error>严重故障错误</Critical_Fault_Error>
-		<Dataview_Error>数据库或Dataview不存在或尚未加载</Dataview_Error>
+		<Dataview_Error>数据库或数据视图不存在或尚未加载</Dataview_Error>
 		<Debug>调试</Debug>
 		<Define_New_Table>定义新表</Define_New_Table>
 		<Deliminator>Deliminator</Deliminator>
 		<Desc>降序</Desc>
 		<Developer>开发人员</Developer>
 		<Display_Settings>显示设置</Display_Settings>
+		<Download_Update>下载更新</Download_Update>
 		<Edit>编辑</Edit>
 		<Error>错误</Error>
-		<Error_Generic>哦没有什么问题！ :(</Error_Generic>
-		<Error_No_DB>错误：没有加载数据库</Error_No_DB>
+		<Error_Generic>哦，没有出错！ :(</Error_Generic>
+		<Error_No_DB>错误：没有数据库已被加载</Error_No_DB>
 		<Export>出口</Export>
-		<Export_CSV>出口CSV</Export_CSV>
+		<Export_CSV>出口CSV代表</Export_CSV>
 		<Export_HTML_Data>导出HTML数据代表</Export_HTML_Data>
 		<Export_HTML_Schema>导出HTML SCHEMA代表</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>导出SQL  -  SCHEMA  - 代表</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>导出SQL  -  SQL  - 代表</Export_SQL_SQL>
 		<Export_UI>导出UI</Export_UI>
-		<Export_XML>出口XML</Export_XML>
+		<Export_XML>出口XML的代表</Export_XML>
 		<Extensions>扩展</Extensions>
 		<Failed>失败</Failed>
-		<Failed_Load_Online_EULA>无法在线加载EULA</Failed_Load_Online_EULA>
+		<Failed_Load_Online_EULA>无法加载在线EULA</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>无法保存设置</Failed_Save_Settings>
 		<File>文件</File>
 		<Functions>功能</Functions>
@@ -47,23 +48,28 @@
 		<HTML_to_CSV>HTML到CSV</HTML_to_CSV>
 		<Help>帮帮我</Help>
 		<Import>进口</Import>
+		<Import_Completed>导入已完成</Import_Completed>
 		<Import_SQL>导入SQL</Import_SQL>
 		<Importer>进口商</Importer>
 		<Index>指数</Index>
 		<Invert>倒置</Invert>
-		<LOG_CSV_Path>记录CSV路径</LOG_CSV_Path>
-		<LOG_DB_PATH>日志数据库路径</LOG_DB_PATH>
+		<JSON>JSON</JSON>
+		<LOG_CSV_Path>日志CSV路径</LOG_CSV_Path>
+		<LOG_DB_PATH>记录数据库路径</LOG_DB_PATH>
 		<Language>语言</Language>
-		<Listview_Height>列表高度</Listview_Height>
-		<Listview_Width>Listview宽度</Listview_Width>
+		<Listview_Height>列表视图高度</Listview_Height>
+		<Listview_Width>列表视图宽度</Listview_Width>
+		<MD>降价</MD>
 		<Master_Table>主表</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable或“Master Table”是受保护的表。为了保护数据库的完整性，您无法编辑此表</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable或“主表”是一个受保护的表。为了保护数据库的完整性，你不能编辑这个表</Master_Table_Protected>
 		<New>新</New>
-		<New_in_Memory_Db>内存数据库新功能</New_in_Memory_Db>
+		<New_in_Memory_Db>内存数据库新增功能</New_in_Memory_Db>
+		<NoUpdates>没有更新</NoUpdates>
+		<No_Updates>没有可用的更新</No_Updates>
 		<Not_Supported>不支持</Not_Supported>
 		<Open>打开</Open>
 		<Opened>开业</Opened>
-		<PRGM_Start>程序开始</PRGM_Start>
+		<PRGM_Start>程序启动</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>插入</Plugin>
 		<Query>询问</Query>
@@ -84,17 +90,18 @@
 		<Sort_by>排序方式</Sort_by>
 		<Stack_Trace>堆栈跟踪</Stack_Trace>
 		<Statistics_Page>统计页面</Statistics_Page>
-		<Strict_Search>严格搜索</Strict_Search>
+		<Strict_Search>严格的搜索</Strict_Search>
 		<Success>成功</Success>
 		<System>系统</System>
 		<Table>表</Table>
 		<Toggle_Debug>切换调试</Toggle_Debug>
 		<Toggle_Transaction_Log>切换事务日志</Toggle_Transaction_Log>
-		<Transaction_DB_Path>事务数据库路径</Transaction_DB_Path>
+		<Transaction_DB_Path>交易数据库路径</Transaction_DB_Path>
 		<UI>UI</UI>
 		<User_Requested>用户请求</User_Requested>
 		<View>视图</View>
 		<View_Function>查看功能</View_Function>
-		<Views_Read_Only>视图是只读的，无法编辑</Views_Read_Only>
+		<Views_Read_Only>视图是只读的，不能被编辑</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

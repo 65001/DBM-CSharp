@@ -7,7 +7,7 @@
 		<Application>App</Application>
 		<Asc>Ascendente</Asc>
 		<Auto_Log>Rexistro automático</Auto_Log>
-		<Browse>Navegar</Browse>
+		<Browse>Buscar</Browse>
 		<CMD_Tooltip>Executa instrucións de comando SQL personalizadas na base de datos</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Erro: comprobe o rexistro para obter máis detalles</Check_Log>
@@ -21,10 +21,11 @@
 		<Dataview_Error>A base de datos ou Dataview non existe ou aínda non se cargou</Dataview_Error>
 		<Debug>Depuración</Debug>
 		<Define_New_Table>Definir nova táboa</Define_New_Table>
-		<Deliminator>Deliminator</Deliminator>
+		<Deliminator>Deliminador</Deliminator>
 		<Desc>Descendente</Desc>
 		<Developer>Desenvolvedor</Developer>
 		<Display_Settings>Configuración da pantalla</Display_Settings>
+		<Download_Update>Descargar actualización</Download_Update>
 		<Edit>Editar</Edit>
 		<Error>Erro</Error>
 		<Error_Generic>Ah, non hai algo mal. :(</Error_Generic>
@@ -38,28 +39,33 @@
 		<Export_UI>Exportar a interface de usuario</Export_UI>
 		<Export_XML>EXPORT XML EN NOME DE</Export_XML>
 		<Extensions>Extensións</Extensions>
-		<Failed>Fallo</Failed>
+		<Failed>Fallou</Failed>
 		<Failed_Load_Online_EULA>Non se puido cargar o EULA en liña</Failed_Load_Online_EULA>
-		<Failed_Save_Settings>Non se puido gardar a configuración</Failed_Save_Settings>
+		<Failed_Save_Settings>Fallo ao gardar os axustes</Failed_Save_Settings>
 		<File>Arquivo</File>
 		<Functions>Funcións</Functions>
 		<HTML>HTML</HTML>
 		<HTML_to_CSV>HTML para CSV</HTML_to_CSV>
 		<Help>Axuda</Help>
 		<Import>Importar</Import>
+		<Import_Completed>Importouse completado</Import_Completed>
 		<Import_SQL>Importar SQL</Import_SQL>
 		<Importer>Importador</Importer>
 		<Index>Índice</Index>
 		<Invert>Invertir</Invert>
-		<LOG_CSV_Path>Rexistrar o camiño CSV</LOG_CSV_Path>
+		<JSON>JSON</JSON>
+		<LOG_CSV_Path>Rexistrar o camiño de CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Base de datos de rexistro</LOG_DB_PATH>
 		<Language>Lingua</Language>
 		<Listview_Height>Altura da lista</Listview_Height>
 		<Listview_Width>Ancho da lista</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Mesa mestra</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable ou 'Master Table' é unha táboa protexida. Para protexer a integridade do db non podes editar esta táboa</Master_Table_Protected>
 		<New>Novo</New>
 		<New_in_Memory_Db>Nova na base de datos da memoria</New_in_Memory_Db>
+		<NoUpdates>Non hai actualizacións</NoUpdates>
+		<No_Updates>Non hai actualizacións dispoñibles</No_Updates>
 		<Not_Supported>Non admitido</Not_Supported>
 		<Open>Aberto</Open>
 		<Opened>Apertura</Opened>
@@ -82,7 +88,7 @@
 		<Show_Help>Mostrar Axuda</Show_Help>
 		<Sort>Ordenar</Sort>
 		<Sort_by>Ordenar por</Sort_by>
-		<Stack_Trace>Seguimento de pila</Stack_Trace>
+		<Stack_Trace>Rastrexo de pila</Stack_Trace>
 		<Statistics_Page>Páxina de estatísticas</Statistics_Page>
 		<Strict_Search>Busca estrita</Strict_Search>
 		<Success>Éxito</Success>
@@ -96,5 +102,6 @@
 		<View>Ver</View>
 		<View_Function>Función de vista</View_Function>
 		<Views_Read_Only>As imaxes son de lectura e non se poden editar</Views_Read_Only>
+		<WMU>Wiki Markup</WMU>
 	</Language>
 </root>

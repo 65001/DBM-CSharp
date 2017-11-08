@@ -8,7 +8,7 @@
 		<Asc>سنبھالنے</Asc>
 		<Auto_Log>آٹو لاگ ان</Auto_Log>
 		<Browse>براؤز کر?ں</Browse>
-		<CMD_Tooltip>ڈ?ٹا ب?س پر اپن? مرض? کے مطابق SQL کمان کے ب?انات کو چلاتا ہے</CMD_Tooltip>
+		<CMD_Tooltip>ڈ?ٹا ب?س پر اپن? مرض? کے مطابق SQL کمانڈ کے ب?انات کو چلاتا ہے</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>غلط?: براہ کرم تفص?لات کے لئے لاگ ان ک? جانچ پڑتال کر?ں</Check_Log>
 		<Check_for_Updates>اپ ڈ?ٹ کے ل?ے چ?ک کر?ں</Check_for_Updates>
@@ -22,21 +22,22 @@
 		<Debug>ڈ?بگ</Debug>
 		<Define_New_Table>نئ? م?ز ک? وضاحت کر?ں</Define_New_Table>
 		<Deliminator>ڈ?ل?م?ٹر</Deliminator>
-		<Desc>در?افت</Desc>
+		<Desc>تشر?ح</Desc>
 		<Developer>ڈو?لپر</Developer>
 		<Display_Settings>ترت?بات دکھائ?ں</Display_Settings>
+		<Download_Update>اپ ڈ?ٹ ڈاؤن لوڈ کر?ں</Download_Update>
 		<Edit>ترم?م کر?ں</Edit>
-		<Error>خراب?</Error>
+		<Error>غلط?</Error>
 		<Error_Generic>اوہ نہ?ں کچھ غلط ہوا :(</Error_Generic>
 		<Error_No_DB>خراب?: کوئ? ڈ?ٹا ب?س لوڈ نہ?ں ک?ا گ?ا ہے</Error_No_DB>
 		<Export>برآمد کر?ں</Export>
-		<Export_CSV>ب?ورو پر برآمد برآمد</Export_CSV>
+		<Export_CSV>ب? ب? س? پر برآمد برآمد</Export_CSV>
 		<Export_HTML_Data>ا?چ ٹ? ا?م ا?ل ڈ?ٹا ک? طرف سے برآمد کر?ں</Export_HTML_Data>
 		<Export_HTML_Schema>ا?چ ٹ? ا?م ا?ل SCHEMA ک? طرف سے برآمد کر?ں</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>SQL برآمد کر?ں - شما - ک? جانب سے</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>SQL برآمد کر?ں - SQL - ک? جانب سے</Export_SQL_SQL>
 		<Export_UI>برآمد UI</Export_UI>
-		<Export_XML>ا?کسچ?نج پر ا?کس ا?کس ا?کس ا?کس</Export_XML>
+		<Export_XML>ا?کسچ?نج پر برآمد XML</Export_XML>
 		<Extensions>توس?ع</Extensions>
 		<Failed>ناکام</Failed>
 		<Failed_Load_Online_EULA>آن لائن EULA لوڈ کرنے م?ں ناکام</Failed_Load_Online_EULA>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>CSV م?ں ا?چ ٹ? ا?م ا?ل</HTML_to_CSV>
 		<Help>مدد</Help>
 		<Import>درآمد کر?ں</Import>
+		<Import_Completed>درآمد مکمل</Import_Completed>
 		<Import_SQL>SQL درآمد کر?ں</Import_SQL>
 		<Importer>درآمد</Importer>
 		<Index>انڈ?کس</Index>
 		<Invert>تبد?ل کر?ں</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>CSV راستہ لاگ ان کر?ں</LOG_CSV_Path>
 		<LOG_DB_PATH>لاگ ڈ?ٹا ڈ?ٹا ب?س</LOG_DB_PATH>
 		<Language>زبان</Language>
-		<Listview_Height>فہرست ک? اونچائ?</Listview_Height>
+		<Listview_Height>فہرست اونچائ?</Listview_Height>
 		<Listview_Width>فہرست ک? چوڑائ?</Listview_Width>
+		<MD>نشان لگانا</MD>
 		<Master_Table>ماسٹر ٹ?بل</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable ?ا 'ماسٹر ٹ?بل' ا?ک محفوظ م?ز ہے. ڈ? ب? کے صداقت ک? حفاظت کے لئے آپ اس م?ز م?ں ترم?م نہ?ں کرسکتے</Master_Table_Protected>
 		<New>نئ?</New>
 		<New_in_Memory_Db>?اد داشت ڈ?ٹا ب?س م?ں ن?ا</New_in_Memory_Db>
+		<NoUpdates>کوئ? اپ ڈ?ٹس نہ?ں</NoUpdates>
+		<No_Updates>کوئ? اپ ڈ?ٹ دست?اب نہ?ں ہے</No_Updates>
 		<Not_Supported>سہولت مہ?ا نہ?ں</Not_Supported>
 		<Open>کھول?ں</Open>
 		<Opened>کھول د?ا</Opened>
@@ -83,7 +89,7 @@
 		<Sort>ترت?ب د?ں</Sort>
 		<Sort_by>ک? طرف سے ترت?ب د?ں</Sort_by>
 		<Stack_Trace>اسٹ?ک ٹر?س</Stack_Trace>
-		<Statistics_Page>اعداد و شمار پ?ج</Statistics_Page>
+		<Statistics_Page>اعداد و شمار کا صفحہ</Statistics_Page>
 		<Strict_Search>سخت تلاش</Strict_Search>
 		<Success>کام?اب?</Success>
 		<System>نظام</System>
@@ -96,5 +102,6 @@
 		<View>د?کھ?ں</View>
 		<View_Function>فنکشن د?کھ?ں</View_Function>
 		<Views_Read_Only>مناظر پڑھنے والے ہ?ں اور ترم?م نہ?ں ک?ا جاسکتا ہے</Views_Read_Only>
+		<WMU>و?ک?پ?ڈ?ا مارک اپ</WMU>
 	</Language>
 </root>

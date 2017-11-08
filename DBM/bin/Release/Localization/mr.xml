@@ -10,14 +10,14 @@
 		<Browse>ब्राउझ करा</Browse>
 		<CMD_Tooltip>डेटाबेसवर कस्टमाइझ केलेल्या SQL आदेश स्टेटमेंटची अंमलबजावणी करा</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>त्रुटी: कृपया तपशीलासा� ी लॉग तपासा</Check_Log>
+		<Check_Log>त्रुटी: तपशीलांसा� ी कृपया लॉग तपासा</Check_Log>
 		<Check_for_Updates>अद्यतनांसा� ी तपासा</Check_for_Updates>
 		<Close_TW>TW बंद करा</Close_TW>
 		<Close_wo_saving>जतन न करता बंद करा</Close_wo_saving>
 		<Command>आदेश</Command>
 		<Converter>कनवर्टर</Converter>
 		<Create_Statistics_Page>सांख्यिकी पृष्�  तयार करा</Create_Statistics_Page>
-		<Critical_Fault_Error>गंभीर गलबत त्रुटी</Critical_Fault_Error>
+		<Critical_Fault_Error>गंभीर दोष त्रुटी</Critical_Fault_Error>
 		<Dataview_Error>डेटाबेस किंवा डेटाव्ह्यू अस्तित्वात नाही किंवा अद्याप लोड केले गेले नाही</Dataview_Error>
 		<Debug>डीबग करा</Debug>
 		<Define_New_Table>नवीन सारणी परिभाषित करा</Define_New_Table>
@@ -25,6 +25,7 @@
 		<Desc>उतरत्या क्रमाने</Desc>
 		<Developer>विकसक</Developer>
 		<Display_Settings>प्रदर्शन सेटिंग्ज</Display_Settings>
+		<Download_Update>अद्यतन डाउनलोड करा</Download_Update>
 		<Edit>संपादित करा</Edit>
 		<Error>त्रुटी</Error>
 		<Error_Generic>ओह काहीतरी चूक झाली! :(</Error_Generic>
@@ -33,7 +34,7 @@
 		<Export_CSV>च्या मागे CSV ची निर्यात करा</Export_CSV>
 		<Export_HTML_Data>च्या वतीने HTML डेटा निर्यात करा</Export_HTML_Data>
 		<Export_HTML_Schema>च्या वतीने HTML SCHEMA निर्यात करा</Export_HTML_Schema>
-		<Export_SQL_SCHEMA>एस क्यू एल एक्स - एसएपीएमए निर्यात करा -</Export_SQL_SCHEMA>
+		<Export_SQL_SCHEMA>निर्यात एस क्यू एल - SCHEMA - च्या वतीने</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>निर्यात एस क्यू एल - एसक्यूएल - च्या वतीने</Export_SQL_SQL>
 		<Export_UI>निर्यात UI</Export_UI>
 		<Export_XML>निर्यात एक्सएमएल च्या मागे</Export_XML>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>CSV मध्ये HTML</HTML_to_CSV>
 		<Help>मदत</Help>
 		<Import>आयात करा</Import>
+		<Import_Completed>आयात पूर्ण</Import_Completed>
 		<Import_SQL>एसक्यूएल आयात करा</Import_SQL>
 		<Importer>आयातकर्ता</Importer>
 		<Index>निर्देशांक</Index>
 		<Invert>उलट करा</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>लॉग CSV पथ</LOG_CSV_Path>
 		<LOG_DB_PATH>लॉग डेटाबेसपथ</LOG_DB_PATH>
 		<Language>भाषा</Language>
 		<Listview_Height>उंची पाहाणे</Listview_Height>
 		<Listview_Width>सूचीची चौकट</Listview_Width>
+		<MD>मार्कडाउन</MD>
 		<Master_Table>मास्टर टेबल</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable किंवा 'Master Table' संरक्षित सारणी आहे डीबीची एकाग्रता संरक्षित करण्यासा� ी आपण ही सारणी संपादित करु शकत नाही</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable किंवा 'Master Table' संरक्षित सारणी आहे डीबीची एकाग्रता संरक्षित करण्यासा� ी आपण ही सारणी संपादित करू शकत नाही</Master_Table_Protected>
 		<New>नवीन</New>
 		<New_in_Memory_Db>मेमरी डाटाबेसमध्ये नवीन</New_in_Memory_Db>
+		<NoUpdates>अद्यतने नाहीत</NoUpdates>
+		<No_Updates>कोणतीही अद्यतने उपलब्ध नाहीत</No_Updates>
 		<Not_Supported>समर्थित नाही</Not_Supported>
 		<Open>उघडा</Open>
 		<Opened>उघडलेले</Opened>
@@ -69,12 +75,12 @@
 		<Query>क्वेरी</Query>
 		<Query_Error>क्वेरी त्रुटी</Query_Error>
 		<Refresh_Schema>रिफ्रेश स्कीमा</Refresh_Schema>
-		<Run_Function>चालवा कार्य</Run_Function>
-		<SCHEMA_PRIVATE>SCHEMA- खाजगी</SCHEMA_PRIVATE>
+		<Run_Function>कार्य चालवा</Run_Function>
+		<SCHEMA_PRIVATE>स्केमा-खाजगी</SCHEMA_PRIVATE>
 		<SQL>एस क्यू एल</SQL>
 		<Save>जतन करा</Save>
 		<Save_and_Close>जतन करा आणि बंद करा</Save_and_Close>
-		<Search>शोधा</Search>
+		<Search>शोध</Search>
 		<Search_Settings>शोध सेटिंग्ज</Search_Settings>
 		<Search_in>शोधा</Search_in>
 		<Settings>सेटिंग्ज</Settings>
@@ -92,9 +98,10 @@
 		<Toggle_Transaction_Log>व्यवहार लॉग टॉगल करा</Toggle_Transaction_Log>
 		<Transaction_DB_Path>व्यवहार डेटाबेस पथ</Transaction_DB_Path>
 		<UI>UI</UI>
-		<User_Requested>वापरकर्त्याने विनंती केली</User_Requested>
+		<User_Requested>विनंती केलेली वापरकर्ता</User_Requested>
 		<View>पहा</View>
 		<View_Function>दृश्य पहा</View_Function>
 		<Views_Read_Only>दृश्ये केवळ वाचनीय आहेत आणि संपादित केली जाऊ शकत नाहीत</Views_Read_Only>
+		<WMU>विकी मार्कअप</WMU>
 	</Language>
 </root>

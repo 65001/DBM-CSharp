@@ -6,71 +6,77 @@
 		<App>Anwendung</App>
 		<Application>App</Application>
 		<Asc>Aufsteigend</Asc>
-		<Auto_Log>Auto Log</Auto_Log>
+		<Auto_Log>Automatisches Protokoll</Auto_Log>
 		<Browse>Durchsuchen</Browse>
-		<CMD_Tooltip>Führt maßgeschneiderte SQL-Befehlsanweisungen auf die Datenbank aus</CMD_Tooltip>
+		<CMD_Tooltip>Führt angepasste SQL-Befehlsanweisungen in der Datenbank aus</CMD_Tooltip>
 		<CSV>CSV</CSV>
 		<Check_Log>Fehler: Bitte überprüfen Sie das Protokoll auf Details</Check_Log>
 		<Check_for_Updates>Auf Updates prüfen</Check_for_Updates>
-		<Close_TW>Schließen TW</Close_TW>
-		<Close_wo_saving>Schließen ohne zu speichern</Close_wo_saving>
+		<Close_TW>TW schließen</Close_TW>
+		<Close_wo_saving>Schließen ohne Sparen</Close_wo_saving>
 		<Command>Befehl</Command>
 		<Converter>Konverter</Converter>
-		<Create_Statistics_Page>Statistik erstellen</Create_Statistics_Page>
-		<Critical_Fault_Error>Kritischer Fehlerfehler</Critical_Fault_Error>
-		<Dataview_Error>Die Datenbank oder der Dataview existiert nicht oder wurde noch nicht geladen</Dataview_Error>
+		<Create_Statistics_Page>Statistikseite erstellen</Create_Statistics_Page>
+		<Critical_Fault_Error>Kritischer Fehler Fehler</Critical_Fault_Error>
+		<Dataview_Error>Die Datenbank oder Dataview ist nicht vorhanden oder wurde noch nicht geladen</Dataview_Error>
 		<Debug>Debuggen</Debug>
 		<Define_New_Table>Neue Tabelle definieren</Define_New_Table>
 		<Deliminator>Deliminator</Deliminator>
 		<Desc>Absteigend</Desc>
 		<Developer>Entwickler</Developer>
 		<Display_Settings>Bildschirmeinstellungen</Display_Settings>
+		<Download_Update>Aktualisierung herunterladen</Download_Update>
 		<Edit>Bearbeiten</Edit>
 		<Error>Fehler</Error>
-		<Error_Generic>Oh nein schief etwas! :(</Error_Generic>
+		<Error_Generic>Oh, irgendwas ist schief gelaufen! :(</Error_Generic>
 		<Error_No_DB>Fehler: Es wurde keine Datenbank geladen</Error_No_DB>
 		<Export>Export</Export>
-		<Export_CSV>EXPORT CSV IM BEHALT VON</Export_CSV>
-		<Export_HTML_Data>Export HTML DATA im Auftrag von</Export_HTML_Data>
+		<Export_CSV>EXPORT CSV IM NAMEN VON</Export_CSV>
+		<Export_HTML_Data>HTML-Daten im Auftrag von exportieren</Export_HTML_Data>
 		<Export_HTML_Schema>Export HTML SCHEMA im Auftrag von</Export_HTML_Schema>
-		<Export_SQL_SCHEMA>Export SQL - SCHEMA - Im Auftrag von</Export_SQL_SCHEMA>
-		<Export_SQL_SQL>Export SQL - SQL - Im Auftrag von</Export_SQL_SQL>
-		<Export_UI>Export-Benutzeroberfläche</Export_UI>
-		<Export_XML>EXPORT XML AUF BEHALF VON</Export_XML>
+		<Export_SQL_SCHEMA>SQL exportieren - SCHEMA - Im Auftrag von</Export_SQL_SCHEMA>
+		<Export_SQL_SQL>SQL-SQL exportieren - Im Auftrag von</Export_SQL_SQL>
+		<Export_UI>Benutzeroberfläche exportieren</Export_UI>
+		<Export_XML>EXPORT XML IM NAMEN VON</Export_XML>
 		<Extensions>Erweiterungen</Extensions>
 		<Failed>Gescheitert</Failed>
-		<Failed_Load_Online_EULA>Fehler beim Laden von Online-EULA</Failed_Load_Online_EULA>
-		<Failed_Save_Settings>Fehler beim Speichern der Einstellungen</Failed_Save_Settings>
+		<Failed_Load_Online_EULA>Fehler beim Laden des Online-Endbenutzer-Lizenzvertrags</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Einstellungen konnten nicht gespeichert werden</Failed_Save_Settings>
 		<File>Datei</File>
 		<Functions>Funktionen</Functions>
 		<HTML>HTML</HTML>
 		<HTML_to_CSV>HTML zu CSV</HTML_to_CSV>
 		<Help>Hilfe</Help>
 		<Import>Einführen</Import>
+		<Import_Completed>Import abgeschlossen</Import_Completed>
 		<Import_SQL>SQL importieren</Import_SQL>
 		<Importer>Importeur</Importer>
 		<Index>Index</Index>
 		<Invert>Umkehren</Invert>
-		<LOG_CSV_Path>Log CSV Pfad</LOG_CSV_Path>
-		<LOG_DB_PATH>Protokoll-Datenbankpfad</LOG_DB_PATH>
+		<JSON>JSON</JSON>
+		<LOG_CSV_Path>CSV-Pfad protokollieren</LOG_CSV_Path>
+		<LOG_DB_PATH>DatenbankPath registrieren</LOG_DB_PATH>
 		<Language>Sprache</Language>
 		<Listview_Height>Listenansicht Höhe</Listview_Height>
 		<Listview_Width>Listenansicht Breite</Listview_Width>
-		<Master_Table>Master Tisch</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable oder 'Master Table' ist eine geschützte Tabelle. Um die Integrität des db zu schützen, kannst du diese Tabelle nicht bearbeiten</Master_Table_Protected>
+		<MD>MarkDown</MD>
+		<Master_Table>Haupttabelle</Master_Table>
+		<Master_Table_Protected>Sqlite_mastertable oder 'Master Table' ist eine geschützte Tabelle. Um die Integrität der Datenbank zu schützen, können Sie diese Tabelle nicht bearbeiten</Master_Table_Protected>
 		<New>Neu</New>
-		<New_in_Memory_Db>Neu in der Speicher-Datenbank</New_in_Memory_Db>
+		<New_in_Memory_Db>Neu in der Speicherdatenbank</New_in_Memory_Db>
+		<NoUpdates>Keine Updates</NoUpdates>
+		<No_Updates>Es sind keine Updates verfügbar</No_Updates>
 		<Not_Supported>Nicht unterstützt</Not_Supported>
 		<Open>Öffnen</Open>
-		<Opened>Eröffnet</Opened>
+		<Opened>Geöffnet</Opened>
 		<PRGM_Start>Programm gestartet</PRGM_Start>
 		<PXML>XML</PXML>
 		<Plugin>Plugin</Plugin>
 		<Query>Abfrage</Query>
 		<Query_Error>Abfragefehler</Query_Error>
 		<Refresh_Schema>Schema aktualisieren</Refresh_Schema>
-		<Run_Function>Funktion ausführen</Run_Function>
-		<SCHEMA_PRIVATE>SCHEMA-PRIVATE</SCHEMA_PRIVATE>
+		<Run_Function>Run-Funktion</Run_Function>
+		<SCHEMA_PRIVATE>SCHEMA-PRIVAT</SCHEMA_PRIVATE>
 		<SQL>SQL</SQL>
 		<Save>sparen</Save>
 		<Save_and_Close>Speichern und schließen</Save_and_Close>
@@ -78,7 +84,7 @@
 		<Search_Settings>Sucheinstellungen</Search_Settings>
 		<Search_in>Suchen in</Search_in>
 		<Settings>Einstellungen</Settings>
-		<Settings_Editor>Einstellungen Editor</Settings_Editor>
+		<Settings_Editor>Einstellungseditor</Settings_Editor>
 		<Show_Help>Zeig Hilfe</Show_Help>
 		<Sort>Sortieren</Sort>
 		<Sort_by>Sortiere nach</Sort_by>
@@ -88,13 +94,14 @@
 		<Success>Erfolg</Success>
 		<System>System</System>
 		<Table>Tabelle</Table>
-		<Toggle_Debug>Tuggle Debug</Toggle_Debug>
+		<Toggle_Debug>Debug aktivieren</Toggle_Debug>
 		<Toggle_Transaction_Log>Transaktionsprotokoll umschalten</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Transaktionsdatenbankpfad</Transaction_DB_Path>
-		<UI>UI</UI>
+		<UI>Benutzeroberfläche</UI>
 		<User_Requested>Benutzer angefordert</User_Requested>
 		<View>Aussicht</View>
-		<View_Function>Ansicht Funktion</View_Function>
-		<Views_Read_Only>Ansichten sind readonly und können nicht bearbeitet werden</Views_Read_Only>
+		<View_Function>Funktion anzeigen</View_Function>
+		<Views_Read_Only>Ansichten sind nur lesbar und können nicht bearbeitet werden</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

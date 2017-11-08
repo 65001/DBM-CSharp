@@ -8,9 +8,9 @@
 		<Asc>Stigande</Asc>
 		<Auto_Log>Automatisk logg</Auto_Log>
 		<Browse>Bläddra</Browse>
-		<CMD_Tooltip>Exekverar anpassade SQL-kommandotillstånd i databasen</CMD_Tooltip>
+		<CMD_Tooltip>Utför anpassade SQL-kommandotillstånd i databasen</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>Fel: Kontrollera loggen för detaljer</Check_Log>
+		<Check_Log>Fel: Var god kontrollera loggen för detaljer</Check_Log>
 		<Check_for_Updates>Sök efter uppdateringar</Check_for_Updates>
 		<Close_TW>Stäng TW</Close_TW>
 		<Close_wo_saving>Stäng utan att spara</Close_wo_saving>
@@ -20,11 +20,12 @@
 		<Critical_Fault_Error>Kritiskt felfel</Critical_Fault_Error>
 		<Dataview_Error>Databasen eller Dataview finns inte eller har inte laddats än</Dataview_Error>
 		<Debug>debug</Debug>
-		<Define_New_Table>Definiera ny tabell</Define_New_Table>
+		<Define_New_Table>Definiera nytt bord</Define_New_Table>
 		<Deliminator>Deliminator</Deliminator>
 		<Desc>Nedåtgående</Desc>
 		<Developer>Utvecklare</Developer>
 		<Display_Settings>Bildskärmsinställningar</Display_Settings>
+		<Download_Update>Hämta uppdatering</Download_Update>
 		<Edit>Redigera</Edit>
 		<Error>Fel</Error>
 		<Error_Generic>Åh inget, något gick fel! :(</Error_Generic>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>HTML till CSV</HTML_to_CSV>
 		<Help>Hjälpa</Help>
 		<Import>Importera</Import>
+		<Import_Completed>Importen är klar</Import_Completed>
 		<Import_SQL>Importera SQL</Import_SQL>
 		<Importer>Importör</Importer>
 		<Index>Index</Index>
 		<Invert>Invertera</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Logg CSV-sökväg</LOG_CSV_Path>
 		<LOG_DB_PATH>Logga databas</LOG_DB_PATH>
 		<Language>Språk</Language>
 		<Listview_Height>Listvy Höjd</Listview_Height>
 		<Listview_Width>Listvy bredd</Listview_Width>
+		<MD>Prissänkning</MD>
 		<Master_Table>Masterbord</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable eller 'Master Table' är ett skyddat bord. För att skydda integriteten hos db kan du inte redigera den här tabellen</Master_Table_Protected>
 		<New>Ny</New>
 		<New_in_Memory_Db>Nytt i minnesdatabasen</New_in_Memory_Db>
+		<NoUpdates>Inga uppdateringar</NoUpdates>
+		<No_Updates>Det finns inga uppdateringar tillgängliga</No_Updates>
 		<Not_Supported>Stöds inte</Not_Supported>
 		<Open>Öppen</Open>
 		<Opened>Öppnad</Opened>
@@ -92,9 +98,10 @@
 		<Toggle_Transaction_Log>Växla Transaktionslogg</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Transaktionsdatabasväg</Transaction_DB_Path>
 		<UI>UI</UI>
-		<User_Requested>Användaren begärt</User_Requested>
+		<User_Requested>Användaren begärde</User_Requested>
 		<View>Se</View>
 		<View_Function>Visa funktion</View_Function>
 		<Views_Read_Only>Visningar är readonly och kan inte redigeras</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

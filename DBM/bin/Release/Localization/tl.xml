@@ -22,9 +22,10 @@
 		<Debug>Debug</Debug>
 		<Define_New_Table>Tukuyin ang Bagong Talahanayan</Define_New_Table>
 		<Deliminator>Deliminator</Deliminator>
-		<Desc>Bumababa</Desc>
+		<Desc>Pababa</Desc>
 		<Developer>Developer</Developer>
 		<Display_Settings>Mga Setting ng Display</Display_Settings>
+		<Download_Update>I-download ang Update</Download_Update>
 		<Edit>I-edit</Edit>
 		<Error>Error</Error>
 		<Error_Generic>Oh walang nangyaring mali! :(</Error_Generic>
@@ -42,24 +43,29 @@
 		<Failed_Load_Online_EULA>Nabigong i-load ang online EULA</Failed_Load_Online_EULA>
 		<Failed_Save_Settings>Nabigong I-save ang Mga Setting</Failed_Save_Settings>
 		<File>File</File>
-		<Functions>Pag-andar</Functions>
+		<Functions>Mga Pag-andar</Functions>
 		<HTML>HTML</HTML>
 		<HTML_to_CSV>HTML sa CSV</HTML_to_CSV>
 		<Help>Tulong</Help>
 		<Import>Angkat</Import>
+		<Import_Completed>Nakumpleto ang Pag-import</Import_Completed>
 		<Import_SQL>Mag-import ng SQL</Import_SQL>
 		<Importer>Importer</Importer>
 		<Index>Index</Index>
 		<Invert>Baliktarin</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Mag-log ng Path ng CSV</LOG_CSV_Path>
 		<LOG_DB_PATH>Mag-log sa DatabasePath</LOG_DB_PATH>
 		<Language>Wika</Language>
 		<Listview_Height>Listview Taas</Listview_Height>
 		<Listview_Width>Listview Width</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Master Table</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' ay isang protektadong talahanayan. Upang maprotektahan ang integridad ng db hindi mo maaring i-edit ang talahanayan na ito</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable o 'Master Table' ay isang protektadong talahanayan. Upang protektahan ang integridad ng db hindi mo maaring i-edit ang talahanayan na ito</Master_Table_Protected>
 		<New>Bago</New>
 		<New_in_Memory_Db>Bago sa Memory Database</New_in_Memory_Db>
+		<NoUpdates>Walang Mga Update</NoUpdates>
+		<No_Updates>Walang available na mga update</No_Updates>
 		<Not_Supported>Hindi suportado</Not_Supported>
 		<Open>Buksan</Open>
 		<Opened>Binuksan</Opened>
@@ -76,7 +82,7 @@
 		<Save_and_Close>I-save at Isara</Save_and_Close>
 		<Search>Paghahanap</Search>
 		<Search_Settings>Mga Setting ng Paghahanap</Search_Settings>
-		<Search_in>Maghanap Sa</Search_in>
+		<Search_in>Maghanap sa</Search_in>
 		<Settings>Mga Setting</Settings>
 		<Settings_Editor>Mga Setting ng Editor</Settings_Editor>
 		<Show_Help>Ipakita ang Tulong</Show_Help>
@@ -88,7 +94,7 @@
 		<Success>Tagumpay</Success>
 		<System>System</System>
 		<Table>Table</Table>
-		<Toggle_Debug>I-toggle ang Pag-debug</Toggle_Debug>
+		<Toggle_Debug>I-toggle ang Debug</Toggle_Debug>
 		<Toggle_Transaction_Log>I-toggle ang Log ng Transaksyon</Toggle_Transaction_Log>
 		<Transaction_DB_Path>Path ng Database ng Transaksyon</Transaction_DB_Path>
 		<UI>UI</UI>
@@ -96,5 +102,6 @@
 		<View>Tingnan</View>
 		<View_Function>Tingnan ang Function</View_Function>
 		<Views_Read_Only>Ang mga panonood ay readonly at hindi ma-edit</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

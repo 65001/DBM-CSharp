@@ -9,19 +9,26 @@ namespace DBM
 {
     public partial class Engines
     {
-        private static class SQLITE
+        public abstract class Engine
         {
-            public static string GetSchema()
+            public abstract string GetSchemaQuery();
+            public abstract string GetColumnsOfTable(string Table);
+            public abstract List<string> GetColumnsOfTable(Primitive Data);
+        }
+
+        public class SQLITE : Engine
+        {
+            public override string GetSchemaQuery()
             {
                 return "SELECT tbl_name,name,type FROM sqlite_master UNION Select tbl_name,name,type From SQLite_Temp_Master;";
             }
 
-            public static string GetColumnsOfTable(string Table)
+            public override string GetColumnsOfTable(string Table)
             {
                 return string.Format("PRAGMA table_info(\"{0}\");", Table.SanitizeFieldName());
             }
 
-            public static List<string> GetColumnsOfTable(Primitive Data)
+            public override List<string> GetColumnsOfTable(Primitive Data)
             {
                 List<string> Schema = new List<string>();
                 for (int i = 1; i <= Data.GetItemCount(); i++)
@@ -32,27 +39,27 @@ namespace DBM
             }
         }
 
-        private static class OLDEB
+        private class OLDEB
         {
 
         }
 
-        private static class ODBC
+        private class ODBC
         {
 
         }
 
-        private static class OLEDB
+        private class OLEDB
         {
 
         }
 
-        private static class SQLServer
+        private class SQLServer
         {
 
         }
 
-        private static class MySQL
+        private class MySQL
         {
 
         }

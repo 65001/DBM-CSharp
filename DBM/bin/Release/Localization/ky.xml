@@ -25,6 +25,7 @@
 		<Desc>Азаюусу боюунча</Desc>
 		<Developer>Иштеп</Developer>
 		<Display_Settings>Display Орнотуулар</Display_Settings>
+		<Download_Update>Download элеси</Download_Update>
 		<Edit>редакциялоо</Edit>
 		<Error>ката</Error>
 		<Error_Generic>О, жок, бир нерсе туура эмес кетти! :(</Error_Generic>
@@ -47,19 +48,24 @@
 		<HTML_to_CSV>CSV ?ч?н HTML</HTML_to_CSV>
 		<Help>жардам</Help>
 		<Import>Import</Import>
+		<Import_Completed>Import ?т?лг?н</Import_Completed>
 		<Import_SQL>Import SQL</Import_SQL>
 		<Importer>импортер аял</Importer>
 		<Index>к?рс?тк?ч</Index>
 		<Invert>Белгиленгенди текскерилет??</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>Log CSV жол</LOG_CSV_Path>
 		<LOG_DB_PATH>Кир?? DatabasePath</LOG_DB_PATH>
 		<Language>тил</Language>
 		<Listview_Height>Listview Бийиктиги</Listview_Height>
 		<Listview_Width>Listview Ширина</Listview_Width>
+		<MD>Markdown</MD>
 		<Master_Table>Master токтому</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable же "Кожоюн стол" корголуучу стол болуп саналат. DB б?т?нд?г?н сактоо ?ч?н бул ?ст?л т?з?т?? м?мк?н болбой жатат</Master_Table_Protected>
 		<New>жа?ы</New>
 		<New_in_Memory_Db>Memory базасында жа?ы</New_in_Memory_Db>
+		<NoUpdates>эч кандай ?зг?р??л?р</NoUpdates>
+		<No_Updates>Мындан эч кандай ?зг?р??л?р жок</No_Updates>
 		<Not_Supported>эмес, колдоо</Not_Supported>
 		<Open>ачык</Open>
 		<Opened>ачылды</Opened>
@@ -96,5 +102,6 @@
 		<View>к?р?н?ш</View>
 		<View_Function>ЖМКнын иш-милдети</View_Function>
 		<Views_Read_Only>Views кир??н? жана аны т?з?т?? м?мк?н эмес болуп саналат</Views_Read_Only>
+		<WMU>Wiki белгил??</WMU>
 	</Language>
 </root>

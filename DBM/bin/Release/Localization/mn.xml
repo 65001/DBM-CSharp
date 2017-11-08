@@ -6,32 +6,33 @@
 		<App>Програм</App>
 		<Application>Апп</Application>
 		<Asc>Доошоо</Asc>
-		<Auto_Log>Авто лог</Auto_Log>
+		<Auto_Log>Авто лого</Auto_Log>
 		<Browse>Browse</Browse>
 		<CMD_Tooltip>SQL коммандын тохиргоог мэдээллийн сан руу шилж??лэх</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>Алдаа: дэлгэрэнг?й мэдээллийг б?ртгэж авна уу</Check_Log>
+		<Check_Log>Алдаа: Дэлгэрэнг?й мэдээллийг б?ртгэлийн хуудаснаас шалгана уу</Check_Log>
 		<Check_for_Updates>Шинэчлэлт??дийг шалгах</Check_for_Updates>
 		<Close_TW>TW-н Close</Close_TW>
-		<Close_wo_saving>Хадгалахг?йгээр хаах</Close_wo_saving>
+		<Close_wo_saving>Хадгалахг?й бол хаах</Close_wo_saving>
 		<Command>Тушаал</Command>
 		<Converter>Х?рв??лэгч</Converter>
 		<Create_Statistics_Page>Статистик хуудас ??сгэх</Create_Statistics_Page>
-		<Critical_Fault_Error>Чухал алдааны алдаа</Critical_Fault_Error>
+		<Critical_Fault_Error>Гэмтэлтэй алдаанууд</Critical_Fault_Error>
 		<Dataview_Error>?г?гдлийн сан эсвэл Dataview байхг?й эсвэл байхг?й байна</Dataview_Error>
 		<Debug>Дебаг хийх</Debug>
 		<Define_New_Table>Шинэ х?снэгтийг тодорхойл</Define_New_Table>
-		<Deliminator>Дебютатор</Deliminator>
+		<Deliminator>Нэн яаралтай</Deliminator>
 		<Desc>Удахг?й</Desc>
 		<Developer>Х?гж??лэгч</Developer>
 		<Display_Settings>Дэлгэцийн тохиргоо</Display_Settings>
+		<Download_Update>Шинэчлэлтийг татаж авах</Download_Update>
 		<Edit>Засварлах</Edit>
 		<Error>Алдаа</Error>
-		<Error_Generic>Ай ямар нэг з?йл буруугаар эргэв ??! :(</Error_Generic>
+		<Error_Generic>Ай ямар нэг з?йл буруу болоог?й! :(</Error_Generic>
 		<Error_No_DB>Алдаа: ?г?й мэдээллийн сан ачаалагдсан байна</Error_No_DB>
 		<Export>Экспорт</Export>
-		<Export_CSV>EXPORT CSV-ийн талаархи мэдээлэл</Export_CSV>
-		<Export_HTML_Data>Экспортын HTML DATA нэрийн ?мн??с Экспортын HTML DATA</Export_HTML_Data>
+		<Export_CSV>Экспресс CSV дээр</Export_CSV>
+		<Export_HTML_Data>Экспортын HTML DATA Экспортын нэрийн ?мн??с</Export_HTML_Data>
 		<Export_HTML_Schema>Экспортын HTML SCHEMA нэрийн ?мн??с</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>Экспортын SQL - SCHEMA - нэрийн ?мн??с</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>Экспорт SQL - SQL - нэрийн ?мн??с</Export_SQL_SQL>
@@ -39,27 +40,32 @@
 		<Export_XML>EXPORT XML ON BEHALF OF</Export_XML>
 		<Extensions>?рг?тг?л??д</Extensions>
 		<Failed>Амжилтг?й болсон</Failed>
-		<Failed_Load_Online_EULA>Онлайн EULA ачаалж чадсанг?й</Failed_Load_Online_EULA>
-		<Failed_Save_Settings>Тохиргоог хадгалахг?й байна</Failed_Save_Settings>
+		<Failed_Load_Online_EULA>Онлайн EULA дээр ачаалж чадсанг?й</Failed_Load_Online_EULA>
+		<Failed_Save_Settings>Тохиргоо хадгалааг?й байна</Failed_Save_Settings>
 		<File>Файл</File>
 		<Functions>Чиг ??рэг</Functions>
 		<HTML>HTML</HTML>
-		<HTML_to_CSV>CSV нь HTML</HTML_to_CSV>
+		<HTML_to_CSV>HTML р?? CSV</HTML_to_CSV>
 		<Help>Туслаач</Help>
 		<Import>Импорт</Import>
-		<Import_SQL>SQL импорт</Import_SQL>
+		<Import_Completed>Импорт дууссан</Import_Completed>
+		<Import_SQL>SQL оруулах</Import_SQL>
 		<Importer>Импортлогч</Importer>
 		<Index>Индекс</Index>
 		<Invert>Урвуу</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>CSV замыг б?ртгэх</LOG_CSV_Path>
 		<LOG_DB_PATH>Б?ртгэлийн файлын пат</LOG_DB_PATH>
 		<Language>Хэл</Language>
 		<Listview_Height>Listview ?нд?р</Listview_Height>
 		<Listview_Width>Listview Width</Listview_Width>
+		<MD>MarkDown</MD>
 		<Master_Table>Мастер х?снэгт</Master_Table>
 		<Master_Table_Protected>Sqlite_mastertable буюу 'Мастер х?снэгт' нь хамгаалагдсан х?снэгт юм. Db-ийн б?рэн б?тэн байдлыг хамгаалахын тулд та энэ х?снэгтийг засаж чадахг?й</Master_Table_Protected>
 		<New>Шинэ</New>
 		<New_in_Memory_Db>Санах ойн мэдээллийн санд шинэ</New_in_Memory_Db>
+		<NoUpdates>Шинэчлэл байхг?й</NoUpdates>
+		<No_Updates>Шинэчлэлт байхг?й байна</No_Updates>
 		<Not_Supported>Дэмжихг?й байна</Not_Supported>
 		<Open>Нээлттэй байна</Open>
 		<Opened>Нээгдсэн</Opened>
@@ -90,11 +96,12 @@
 		<Table>Х?снэгт</Table>
 		<Toggle_Debug>Дебаг сольно уу</Toggle_Debug>
 		<Toggle_Transaction_Log>Г?йлгэх логийг соль</Toggle_Transaction_Log>
-		<Transaction_DB_Path>Transaction мэдээллийн сангийн зам</Transaction_DB_Path>
+		<Transaction_DB_Path>Transaction мэдээллийн баазын зам</Transaction_DB_Path>
 		<UI>UI</UI>
 		<User_Requested>Хэрэглэгч х?ссэн</User_Requested>
 		<View>Харах</View>
 		<View_Function>Функцийг харах</View_Function>
 		<Views_Read_Only>Харах нь уншигдах б?г??д засварлах боломжг?й</Views_Read_Only>
+		<WMU>Wiki MarkUp</WMU>
 	</Language>
 </root>

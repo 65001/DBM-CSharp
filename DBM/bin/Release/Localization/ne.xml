@@ -10,7 +10,7 @@
 		<Browse>ब्राउज गर्नुहोस्</Browse>
 		<CMD_Tooltip>डेटाबेसमा अनुकूलित SQL आदेश विवरणहरू कार्यान्वयन गर्दछ</CMD_Tooltip>
 		<CSV>CSV</CSV>
-		<Check_Log>त्रुटि: कृपया विवरणका लागि लग जाँच गर्नुहोस्</Check_Log>
+		<Check_Log>त्रुटि: कृपया विवरणहरूको लागी लग जाँच गर्नुहोस्</Check_Log>
 		<Check_for_Updates>अद्यावधिकहरूको लागि जाँच गर्नुहोस्</Check_for_Updates>
 		<Close_TW>TW बन्द गर्नुहोस्</Close_TW>
 		<Close_wo_saving>बचत नगरी बन्द गर्नुहोस्</Close_wo_saving>
@@ -18,48 +18,54 @@
 		<Converter>कनवर्टर</Converter>
 		<Create_Statistics_Page>तथ्याङ्क पृष्�  सिर्जना गर्नुहोस्</Create_Statistics_Page>
 		<Critical_Fault_Error>आलोचनात्मक त्रुटि त्रुटि</Critical_Fault_Error>
-		<Dataview_Error>डाटाबेस वा डाटाभीडियो अवस्थित छैन वा अझै लोड भएको छैन</Dataview_Error>
+		<Dataview_Error>डेटाबेस वा डाटाभीडियो अवस्थित छैन वा अझै लोड गरिएको छैन</Dataview_Error>
 		<Debug>डिबग</Debug>
 		<Define_New_Table>नयाँ तालिका परिभाषित गर्नुहोस्</Define_New_Table>
 		<Deliminator>डिलिमेटर</Deliminator>
 		<Desc>घट्दो</Desc>
 		<Developer>विकासकर्ता</Developer>
 		<Display_Settings>सेटिंग्स प्रदर्शन गर्नुहोस्</Display_Settings>
+		<Download_Update>अद्यावधिक डाउनलोड गर्नुहोस्</Download_Update>
 		<Edit>सम्पादन गर्नुहोस्</Edit>
 		<Error>त्रुटि</Error>
 		<Error_Generic>ओह कुनै केहि गलत भयो! :(</Error_Generic>
 		<Error_No_DB>त्रुटि: डेटाबेस लोड गरिएको छैन</Error_No_DB>
 		<Export>निर्यात गर्नुहोस्</Export>
-		<Export_CSV>बेच्नका लागि सीएसवी निर्यात गर्नुहोस्</Export_CSV>
+		<Export_CSV>बेच्नका लागि CSV निर्यात गर्नुहोस्</Export_CSV>
 		<Export_HTML_Data>यसबाट HTML डाटा निर्यात गर्नुहोस्</Export_HTML_Data>
 		<Export_HTML_Schema>यसबाट HTML SCHEMA निर्यात गर्नुहोस्</Export_HTML_Schema>
 		<Export_SQL_SCHEMA>SQL निर्यात गर्नुहोस् - SCHEMA - को तर्फबाट</Export_SQL_SCHEMA>
 		<Export_SQL_SQL>SQL निर्यात गर्नुहोस् - SQL - को तर्फबाट</Export_SQL_SQL>
 		<Export_UI>निर्यात यूआई</Export_UI>
-		<Export_XML>एक्स एक्स एक्स बेल्लफ मा निर्यात गर्नुहोस्</Export_XML>
+		<Export_XML>निर्यात एक्सएमएल मा बेहुल</Export_XML>
 		<Extensions>एक्स्टेन्सनहरू</Extensions>
 		<Failed>असफल भयो</Failed>
 		<Failed_Load_Online_EULA>अनलाइन EULA लोड गर्न असफल भयो</Failed_Load_Online_EULA>
-		<Failed_Save_Settings>सेटिंग्स बचत गर्न असफल भयो</Failed_Save_Settings>
+		<Failed_Save_Settings>सेटिङ्हरू बचत गर्न असफल भयो</Failed_Save_Settings>
 		<File>फाइल</File>
 		<Functions>कार्यहरू</Functions>
 		<HTML>एचटीएमएल</HTML>
 		<HTML_to_CSV>CSV मा HTML</HTML_to_CSV>
 		<Help>मद्दत</Help>
 		<Import>आयात गर्नुहोस्</Import>
+		<Import_Completed>आयात आयो</Import_Completed>
 		<Import_SQL>SQL आयात गर्नुहोस्</Import_SQL>
 		<Importer>आयातक</Importer>
 		<Index>अनुक्रमणिका</Index>
 		<Invert>उल्टाउनुहोस्</Invert>
+		<JSON>JSON</JSON>
 		<LOG_CSV_Path>CSV मार्ग लग गर्नुहोस्</LOG_CSV_Path>
-		<LOG_DB_PATH>लग डेटाबेसप्याट</LOG_DB_PATH>
+		<LOG_DB_PATH>लग डेटाबेसप्याथ</LOG_DB_PATH>
 		<Language>भाषा</Language>
-		<Listview_Height>लम्बाई सूची</Listview_Height>
+		<Listview_Height>लम्बाई लाइट</Listview_Height>
 		<Listview_Width>सूची दृश्य चौडाइ</Listview_Width>
+		<MD>मार्क डाउन</MD>
 		<Master_Table>मास्टर तालिका</Master_Table>
-		<Master_Table_Protected>Sqlite_mastertable वा 'मास्टर टेबल' एक सुरक्षित तालिका हो। डीबीको सत्यताको रक्षा गर्न यो तालिका सम्पादन गर्न सक्नुहुन्न</Master_Table_Protected>
+		<Master_Table_Protected>Sqlite_mastertable वा 'मास्टर टेबल' एक सुरक्षित तालिका हो। डीबीको ईमानदारीको रक्षा गर्न यो तालिका सम्पादन गर्न सक्नुहुन्न</Master_Table_Protected>
 		<New>नयाँ</New>
-		<New_in_Memory_Db>मेमोरी डाटाबेसमा नयाँ</New_in_Memory_Db>
+		<New_in_Memory_Db>मेमोरी डेटाबेसमा नयाँ</New_in_Memory_Db>
+		<NoUpdates>अपडेटहरू छैनन्</NoUpdates>
+		<No_Updates>त्यहाँ कुनै अपडेट उपलब्ध छैनन्</No_Updates>
 		<Not_Supported>मेला खाएन</Not_Supported>
 		<Open>खोल्नुहोस्</Open>
 		<Opened>खोलियो</Opened>
@@ -75,7 +81,7 @@
 		<Save>बचत गर्नुहोस्</Save>
 		<Save_and_Close>बचत र बन्द गर्नुहोस्</Save_and_Close>
 		<Search>खोजी गर्नुहोस्</Search>
-		<Search_Settings>सेटिङहरू खोजी गर्नुहोस्</Search_Settings>
+		<Search_Settings>सेटिङहरू खोज्नुहोस्</Search_Settings>
 		<Search_in>खोजी गर्नुहोस्</Search_in>
 		<Settings>सेटिङ्हरू</Settings>
 		<Settings_Editor>सेटिङ सम्पादक</Settings_Editor>
@@ -96,5 +102,6 @@
 		<View>हेर्नुहोस्</View>
 		<View_Function>प्रकार्य हेर्नुहोस्</View_Function>
 		<Views_Read_Only>दृश्यहरू केवल पढ्न र सम्पादन गर्न सकिँदैन</Views_Read_Only>
+		<WMU>Wiki markUp</WMU>
 	</Language>
 </root>
