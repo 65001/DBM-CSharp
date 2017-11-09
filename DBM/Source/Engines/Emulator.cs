@@ -289,8 +289,9 @@ namespace DBM
 
         static void Write(Chart chart,string ChartType)
         {
-            string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + string.Format("\\{0} {1} Chart.html", Engines.CurrentTable, ChartType);
+            string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + string.Format("\\{0} {1} Chart.html",CurrentTable.SanitizeFieldName(), ChartType);
             chart.Write(OutPut, chart.Export());
+            LitDev.LDProcess.Start(OutPut, null);
         }
 
         static void Import(Chart chart, string[] Arguments)
