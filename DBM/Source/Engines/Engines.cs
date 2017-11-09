@@ -262,7 +262,7 @@ namespace DBM
             {
                 case EnginesMode.SQLITE:
                     _Schema.Clear();
-                    SchemaQuery = Sqlite.GetSchemaQuery();
+                    SchemaQuery = Sqlite.GetColumnsOfTable(table);
                     Primitive QSchema = Query(database, SchemaQuery, null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
                     _Schema = Sqlite.GetColumnsOfTable(QSchema);
                     break;

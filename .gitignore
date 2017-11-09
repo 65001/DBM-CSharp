@@ -28,3 +28,5 @@ DBM.exe.config
 *.userosscache
 *.sln.docstates
 DBM/bin/Release/Assets/setting.xml
+*.ide-wal
+.vs/DBM/v15/sqlite3/storage.ide-shm
