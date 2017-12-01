@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
+using Google_Charts;
 using NUnit.Framework;
 using DBM;
 using LitDev;
@@ -38,7 +38,7 @@ namespace Unit_Testing
         [Test]
         public void Load()
         {
-            Assert.That(() => Settings.LoadSettings(false, null), Throws.TypeOf < ArgumentNullException>());
+            Assert.That(() => Settings.Load(false, null), Throws.TypeOf < ArgumentNullException>());
         }
     }
 
@@ -58,18 +58,18 @@ namespace Unit_Testing
         [Test]
         public void AddColumns()
         {
-            DBM.Chart chart = new DBM.Chart.Bar();
+            Google_Charts.Chart chart = new Google_Charts.Chart.Bar();
             chart.AddColumn("President");
-            chart.AddColumn("Money",DBM.Chart.DataType.number);
+            chart.AddColumn("Money", Google_Charts.Chart.DataType.number);
             Assert.Pass();
         }
 
         [Test]
         public void AddData()
         {
-            DBM.Chart chart = new DBM.Chart.Bar();
+            Google_Charts.Chart chart = new Google_Charts.Chart.Bar();
             chart.AddColumn("President");
-            chart.AddColumn("Money", DBM.Chart.DataType.number);
+            chart.AddColumn("Money", Google_Charts.Chart.DataType.number);
             chart.AddRowData(1,"Obama");
             chart.AddRowData(2, "1000");
             Assert.Pass();

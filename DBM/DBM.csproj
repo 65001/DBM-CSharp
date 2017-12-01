@@ -89,8 +89,8 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Source\Chart.cs" />
-    <Compile Include="Source\DBM.cs">
+    <Compile Include="Source\UI\Chart UI.cs" />
+    <Compile Include="Source\UI\DBM.cs">
     </Compile>
     <Compile Include="Source\Engines\Bindings and Custom Functions.cs" />
     <Compile Include="Source\Engines\Emulator.cs" />
@@ -101,12 +101,11 @@
     </Compile>
     <Compile Include="Source\Settings.cs">
     </Compile>
-    <Compile Include="Source\Plugin.cs">
-    </Compile>
     <Compile Include="Source\GlobalStatic.cs">
     </Compile>
-    <Compile Include="Source\EULA.cs">
+    <Compile Include="Source\UI\EULA.cs">
     </Compile>
+    <Compile Include="Source\UI\UI Settings.cs" />
     <Compile Include="Source\Utilities.cs">
     </Compile>
     <Compile Include="Source\Handlers.cs">
@@ -129,6 +128,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -157,6 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Google Charts\Google Charts.csproj">
+      <Project>{d96fc270-5d88-4dea-b8e7-89bc12c768ad}</Project>
+      <Name>Google Charts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

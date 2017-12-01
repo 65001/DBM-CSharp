@@ -59,6 +59,10 @@
       <Project>{88f827aa-cad0-4fed-980d-83b9821e9bbb}</Project>
       <Name>DBM</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Google Charts\Google Charts.csproj">
+      <Project>{d96fc270-5d88-4dea-b8e7-89bc12c768ad}</Project>
+      <Name>Google Charts</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

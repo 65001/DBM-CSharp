@@ -34,7 +34,7 @@ namespace DBM
         /// </summary>
         public static Primitive Generate2DArrayFromLastQuery()
         {
-            return Generate2DArray(Engines.CurrentDatabase, Engines.LastNonSchemaQuery.Last());
+            return Generate2DArray(Engines.CurrentDatabase, Engines.NonSchemaQuery.Last());
         }
 
         public static Primitive GenerateSchemaFromQueryData(Primitive Data)
@@ -45,6 +45,17 @@ namespace DBM
         public static Primitive GenerateSchemaFromLastQuery()
         {
             return GenerateSchemaFromQueryData(Generate2DArrayFromLastQuery());
+        }
+
+        public static List<string> GenerateSchemaListFromLastQuery()
+        {
+            List<string> SchemaList = new List<string>();
+            Primitive Schema = GenerateSchemaFromLastQuery();
+            for (int i = 1; i <= Schema.GetItemCount(); i++)
+            {
+                SchemaList.Add(Schema[i]);
+            }
+            return SchemaList;
         }
 
         public static void CSV(Primitive Data, Primitive Schema, string FilePath, string deliminator)
@@ -74,9 +85,9 @@ namespace DBM
             SQL_Time.Start();
             string _SQL = SQL(Data, Schema, PK, Types, Engines.CurrentTable);
             System.IO.File.WriteAllText(FilePath, _SQL);
-#if DEBUG
-            Console.WriteLine("SQL void time {0} ms", SQL_Time.ElapsedMilliseconds);
-#endif
+            #if DEBUG
+                Console.WriteLine("SQL void time {0} ms", SQL_Time.ElapsedMilliseconds);
+            #endif
         }
 
         public static string SQL(Primitive Data, Primitive Schema, Dictionary<string, bool> PK, Dictionary<string, string> Types, string TableName)
@@ -146,9 +157,9 @@ namespace DBM
                 SQL.Append("');\n");
             }
             SQL.Replace("' '", "NULL").Replace("''", "NULL");
-#if DEBUG
-            Console.WriteLine("SQL string time {0} ms", SQL_Time.ElapsedMilliseconds);
-#endif
+            #if DEBUG
+                Console.WriteLine("SQL string time {0} ms", SQL_Time.ElapsedMilliseconds);
+            #endif
             return SQL.ToString();
         }
 

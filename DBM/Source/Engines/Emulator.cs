@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Microsoft.SmallBasic.Library;
+using Google_Charts;
 
 namespace DBM
 {
@@ -124,7 +125,7 @@ namespace DBM
                             {
                                 string Directory = DirectoryList[i];
                                 DirectoryInfo DI = new DirectoryInfo(Directory);
-                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','File Folder',NULL);", EmulatorTable, Directory, DI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"));
+                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','File Folder',NULL);", EmulatorTable, Directory.Replace("'","''"), DI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"));
                             }
 
                             for (int i = 0; i < FileList.Count; i++)
@@ -132,7 +133,7 @@ namespace DBM
                                 string File = FileList[i];
                                 FileInfo FI = new FileInfo(File);
 
-                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','{3}','{4}');", EmulatorTable, File, FI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"), FI.Extension, FI.Length);
+                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}','{3}','{4}');", EmulatorTable, File.Replace("'","''"), FI.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss"), FI.Extension, FI.Length);
                             }
                         }
                         catch (Exception ex)
@@ -154,12 +155,12 @@ namespace DBM
                                 Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}','{4}','{5}','{6}');", EmulatorTable, ii, LastQuery[ii].Replace("'", "''"), _Timer[i], _Explanation[i], _User[i], _UTC_Start[i]);
                                 ii++;
                             }
-#if DEBUG
+                        #if DEBUG
                             else
                             {
                                 Console.WriteLine("#{0} is a {1} with a time of {2}(ms)", i, _Type_Referer[i], _Timer[i]);
                             }
-#endif
+                        #endif
                         }
                     }
                     else if (SQL.StartsWith(".stacktrace", Comparison))
@@ -219,7 +220,11 @@ namespace DBM
                             {"column","Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis" },
                             {"pie","Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis" },
                             {"sankey","From,To,Weight,Title,SubTitle,Xaxis,Yaxis"},
-                            { "org","Position,Manager,Name,Title,SubTitle,Xaxis,Yaxis"}
+                            {"org","Position,Manager,Name,Title,SubTitle,Xaxis,Yaxis"},
+                            {"scatter" ,"Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis"},
+                            {"histogram","Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis"},
+                            {"table","Column1,Column2,Column3,Title,SubTitle,Xaxis,Yaxis"},
+                            {"line","Column1,Column2,Column3,Title,SubTitle,Xaxis,Yaxis"}
                         };
                         foreach (KeyValuePair<string, string> entry in Charts)
                         {
@@ -250,6 +255,14 @@ namespace DBM
                         Import(chart, Arguments);
                         Write(chart, "Column");
                     }
+                    else if (SQL.StartsWith(".line", Comparison))
+                    {
+                        //Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis
+                        Chart chart = new Chart.Line();
+                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 5).Split(',');
+                        Import(chart, Arguments);
+                        Write(chart, "Line");
+                    }
                     else if (SQL.StartsWith(".sankey", Comparison))
                     {
                         //Columns(From,To,..),Title,SubTitle,Xaxis,Yaxis
@@ -266,10 +279,34 @@ namespace DBM
                         Import(chart, Arguments);
                         Write(chart, "Org");
                     }
-                    else if (SQL.StartsWith(".histogram", Comparison)) { }
-                    else if (SQL.StartsWith(".scatter", Comparison)) { }
-                    else if (SQL.StartsWith(".table", Comparison)) { }
-                    else if (SQL.StartsWith(".geo", Comparison)) { }
+                    else if (SQL.StartsWith(".histogram", Comparison))
+                    {
+                        Chart chart = new Chart.Histograms();
+                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 10).Split(',');
+                        Import(chart, Arguments);
+                        Write(chart, "Histogram");
+                    }
+                    else if (SQL.StartsWith(".scatter", Comparison))
+                    {
+                        Chart chart = new Chart.Scatter();
+                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 8).Split(',');
+                        Import(chart, Arguments);
+                        Write(chart, "Scatter");
+                    }
+                    else if (SQL.StartsWith(".table", Comparison))
+                    {
+                        Chart chart = new Chart.Table();
+                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 6).Split(',');
+                        Import(chart, Arguments);
+                        Write(chart, "Table");
+                    }
+                    else if (SQL.StartsWith(".geo", Comparison))
+                    {
+                        Chart chart = new Chart.GeoCharts();
+                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 4).Split(',');
+                        Import(chart, Arguments);
+                        Write(chart, "GeoChart");
+                    }
                     break;
                 default:
                     throw new NotImplementedException();
@@ -290,14 +327,14 @@ namespace DBM
         static void Write(Chart chart,string ChartType)
         {
             string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + string.Format("\\{0} {1} Chart.html",CurrentTable.SanitizeFieldName(), ChartType);
-            chart.Write(OutPut, chart.Export());
+            chart.Write(OutPut);
             LitDev.LDProcess.Start(OutPut, null);
         }
 
         static void Import(Chart chart, string[] Arguments)
         {
             //TODO add support for multiple columns and value types..
-            Arguments[0] = Arguments[0].Replace("(", "").Replace(")", "");
+            Arguments[0] = Arguments[0].Remove(0,0)?.Replace("(","")?.Replace(")","");
             string SQLQuery = string.Empty;
             if (chart.MinColumns == 1)
             {

@@ -73,7 +73,7 @@ namespace DBM
                         {
                             string Database = LDDataBase.ConnectSQLite(Data["URI"]);
                             AddToList(Data["URI"], Database, ShortName, EnginesMode.SQLITE);
-                            Settings.SaveSettings();
+                            Settings.Save();
                             CurrentDatabase = Database;
                             _DB_Hash.Add(HashCode, CurrentDatabase);
                             GetConnection(Database).AutoBind();
@@ -243,7 +243,7 @@ namespace DBM
             get { return _Last_Query.AsReadOnly(); }
         }
 
-        public static IReadOnlyList<string> LastNonSchemaQuery
+        public static IReadOnlyList<string> NonSchemaQuery
         {
             get { return _Last_NonSchema_Query.AsReadOnly(); }
         }

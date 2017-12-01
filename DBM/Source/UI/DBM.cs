@@ -36,7 +36,7 @@ using Microsoft.SmallBasic.Library;
 
 namespace DBM
 {
-    public static class UI
+    public static partial class UI
     {
         private static Stopwatch StartUpStopWatch = Stopwatch.StartNew();
         private static Dictionary<string, string> _Buttons = new Dictionary<string, string>();
@@ -126,8 +126,8 @@ namespace DBM
             Utilities.AddtoStackTrace("UI.Startup()");
             try
             {
-                Settings.LoadSettings(GlobalStatic.RestoreSettings, GlobalStatic.SettingsPath); //Load Application Settings from text file
-                Settings.Paths
+                DBM.Settings.Load(GlobalStatic.RestoreSettings, GlobalStatic.SettingsPath); //Load Application Settings from text file
+                DBM.Settings.Paths
                     (
                     GlobalStatic.AssetPath,
                     GlobalStatic.PluginPath,
@@ -138,7 +138,7 @@ namespace DBM
                     ); //Makes sure passed paths are valid and creates them if they are not
             }
             catch (Exception) { }
-            Settings.IniateDatabases();
+            DBM.Settings.IniateDatabases();
             //Plugin.FindAll();
 
             Engines.CreateBindList();
@@ -160,7 +160,7 @@ namespace DBM
             }
             else
             {
-                Settings.SaveSettings();
+                DBM.Settings.Save();
                 EULA.UI(GlobalStatic.EULA_Text_File, 0, GlobalStatic.Title, GlobalStatic.Copyright,GlobalStatic.ProductID);
             }
             StartUpStopWatch.Stop();
@@ -201,6 +201,7 @@ namespace DBM
             MenuList[Utilities.Localization["Import"]] = "Main";
             MenuList[Utilities.Localization["Export"]] = "Main";
             MenuList[Utilities.Localization["Settings"]] = "Main";
+            MenuList["Charts"] = "Main"; //TODO Localize
 
             //File
             MenuList[Utilities.Localization["New"]] = Utilities.Localization["File"];
@@ -229,6 +230,17 @@ namespace DBM
             MenuList["Wiki MarkUp"] = Utilities.Localization["Export"]; //TODO Localize
             MenuList["-"] = Utilities.Localization["Export"];
 
+            //Charts
+            MenuList["Bar"] = "Charts";
+            MenuList["Column"] = "Charts";
+            MenuList["Histogram"] = "Charts";
+
+            MenuList["Line"] = "Charts";
+            MenuList["Org"] = "Charts";
+            MenuList["Pie"] = "Charts";
+
+            MenuList["Sankey"] = "Charts";
+            MenuList["Scatter Plot"] = "Charts";
             //Settings
             MenuList[Utilities.Localization["Help"]] = Utilities.Localization["Settings"];
             MenuList[Utilities.Localization["About"]] = Utilities.Localization["Help"];
@@ -257,11 +269,13 @@ namespace DBM
                 Engines.GetSchema(Engines.CurrentDatabase);
             }
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 8;
+            int UIx = GlobalStatic.Listview_Width - 380;
+
             string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, MenuList, IconList, null);
-            Shapes.Move(Shapes.AddText(Utilities.Localization["Sort"] + ":"), 990, 1);
+            Shapes.Move(Shapes.AddText(Utilities.Localization["Sort"] + ":"), UIx, 1);
 
-            int SortOffset = LDText.GetWidth(Utilities.Localization["Sort"] + ":") - LDText.GetWidth("Sort:"); //Offsets some controls when not using the default English encoding
 
+            int TextWidth= LDText.GetHeight(Utilities.Localization["Sort"] + ":");
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
 
             try
@@ -275,9 +289,9 @@ namespace DBM
 
             GlobalStatic.ComboBox["Sorts"] =LDControls.AddComboBox(Sorts, 100, 100);
             GlobalStatic.ComboBox["Database"]= LDControls.AddComboBox(Engines.DB_ShortName.ToPrimitiveArray(), 100, 100);
-            Controls.Move(GlobalStatic.ComboBox["Sorts"], 1155 + SortOffset, 5);
-            Controls.Move(GlobalStatic.ComboBox["Table"], 1260 + SortOffset, 5);
-            Controls.Move(GlobalStatic.ComboBox["Database"], 1050 + SortOffset, 5);
+            Controls.Move(GlobalStatic.ComboBox["Database"], UIx + TextWidth + 35, 5);
+            Controls.Move(GlobalStatic.ComboBox["Sorts"], UIx + TextWidth + 150, 5);
+            Controls.Move(GlobalStatic.ComboBox["Table"], UIx + TextWidth + 260, 5);
 
             //Virtual Call to Handler
             Events.MC(Utilities.Localization["View"]);
@@ -462,78 +476,6 @@ namespace DBM
 			GraphicsWindow.Title = SetTitle;
 		}
 
-		public static void SettingsUI()
-		{
-            Utilities.AddtoStackTrace( "UI.SettingsUI()");
-            ClearWindow();
-            GraphicsWindow.Title = Utilities.Localization["Settings"];
-
-            GraphicsWindow.CanResize = false;
-            LDGraphicsWindow.CancelClose = true;
-            LDGraphicsWindow.ExitOnClose = false;
-            LDGraphicsWindow.Closing += Events.Closing;
-            LDGraphicsWindow.ExitButtonMode(Utilities.Localization["Settings"], "Disabled");
-
-            GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 8;
-
-            GraphicsWindow.DrawText(10, 10, Utilities.Localization["Listview Width"]);
-            _TextBox["Settings_Width"] = Controls.AddTextBox(200, 10);
-
-            GraphicsWindow.DrawText(10, 50, Utilities.Localization["Listview Height"]);
-            _TextBox["Settings_Height"] = Controls.AddTextBox(200, 50);
-
-            GraphicsWindow.DrawText(10, 90, Utilities.Localization["Extensions"]);
-            _TextBox["Settings_Extensions"] = Controls.AddTextBox(200, 90);
-
-            GraphicsWindow.DrawText(10, 130, Utilities.Localization["Deliminator"]);
-            _TextBox["Settings_Deliminator"] = Controls.AddTextBox(200, 130);
-
-            GraphicsWindow.DrawText(10, 175, Utilities.Localization["Language"]);
-
-            GlobalStatic.ComboBox["Language"]= LDControls.AddComboBox(Utilities.ISO_Text.ToPrimitiveArray(), 200, 120);
-            Controls.Move(GlobalStatic.ComboBox["Language"], 200, 175);
-
-            GraphicsWindow.DrawText(10, 280, Utilities.Localization["LOG CSV Path"]);
-            _Buttons.AddOrReplace("Log_CSV",Controls.AddButton(Utilities.Localization["Browse"], 320, 280));
-
-            GraphicsWindow.DrawText(10, 330, Utilities.Localization["LOG DB PATH"]);
-            _Buttons.AddOrReplace("Log_DB", Controls.AddButton(Utilities.Localization["Browse"], 320, 330));
-
-            GraphicsWindow.DrawText(10, 380, Utilities.Localization["Transaction DB Path"]);
-            _Buttons.AddOrReplace("Transaction_DB", Controls.AddButton(Utilities.Localization["Browse"], 320, 380));
-
-            for (int i = 0; i < Utilities.ISO_LangCode.Count; i++)
-            {
-                if (Utilities.ISO_LangCode[i] == GlobalStatic.LanguageCode)
-                {
-                    int Index = i + 1;
-                    LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Language"], Index );
-                }
-            }
-
-            _Buttons.AddOrReplace("Settings Save", Controls.AddButton(Utilities.Localization["Save and Close"], 50, 450));
-            _Buttons.AddOrReplace("Settings Close", Controls.AddButton(Utilities.Localization["Close wo saving"], 50, 500));
-
-            Controls.SetSize(_Buttons["Settings Save"], 280, 40);
-            Controls.SetSize(_Buttons["Settings Close"], 280, 40);
-
-            Controls.SetTextBoxText(_TextBox["Settings_Width"], GlobalStatic.Listview_Width);
-            Controls.SetTextBoxText(_TextBox["Settings_Height"], GlobalStatic.Listview_Height);
-            Controls.SetTextBoxText(_TextBox["Settings_Extensions"], GlobalStatic.Extensions);
-            Controls.SetTextBoxText(_TextBox["Settings_Deliminator"], GlobalStatic.Deliminator);
-
-            GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
-
-            LDControls.ComboBoxItemChanged -= Events.CB;
-            Controls.ButtonClicked -= Events.BC;
-            Controls.ButtonClicked += SettingsUIHandler;
-        }
-
-        static void SettingsUIHandler()
-        {
-            SettingsUIButton(Controls.LastClickedButton);
-        }
-
         /// <summary>
         /// Clears the current window and associated UI dictionaries
         /// </summary>
@@ -542,44 +484,6 @@ namespace DBM
             GraphicsWindow.Clear();
             _Buttons.Clear();
             _TextBox.Clear();
-        }
-
-        static void SettingsUIButton(string LastClickedButton)
-        {
-            if (LastClickedButton == _Buttons["Settings Save"])
-            {
-                GlobalStatic.Settings["Listview"] = string.Format("Width={0};Height={1};", Controls.GetTextBoxText(_TextBox["Settings_Width"]), Controls.GetTextBoxText(_TextBox["Settings_Height"]));
-                GlobalStatic.Settings["Extensions"] = Controls.GetTextBoxText(_TextBox["Settings_Extensions"]);
-                GlobalStatic.Settings["Deliminator"] = Controls.GetTextBoxText(_TextBox["Settings_Deliminator"]);
-                GlobalStatic.Settings["Language"] = Utilities.ISO_LangCode[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Language"]) - 1];
-                GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
-                Settings.SaveSettings();
-                Settings.LoadSettings(GlobalStatic.RestoreSettings,GlobalStatic.SettingsPath);
-
-                Utilities.LocalizationXML(
-                    Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"),
-                    Path.Combine(GlobalStatic.Localization_LanguageCodes_Path, GlobalStatic.LanguageCode + ".txt")
-                    );
-
-                SettingsUIButton(_Buttons["Settings Close"]);
-                return;
-            }
-            else if (LastClickedButton == _Buttons["Settings Close"])
-            {
-                GlobalStatic.ListView = null;
-                GlobalStatic.Dataview = null;
-                MenuList = null;
-
-                Controls.ButtonClicked -= SettingsUIHandler;
-                Controls.ButtonClicked += Events.BC;
-                ClearWindow();
-                PreMainMenu();
-                HideDisplayResults();
-                LDControls.ComboBoxItemChanged += Events.CB;
-                MainMenu();
-                //Events.MC(Utilities.Localization["View"]);
-                return;
-            }
         }
 
 		public static void CreateTableUI()

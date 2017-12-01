@@ -184,8 +184,8 @@ namespace DBM
                     Primitive Temp = GlobalStatic.Settings["Updates"];
                     Temp["LastCheck"] = DateTime.Now.ToString("yyyy-MM-dd");
                     GlobalStatic.Settings["Updates"] = Temp;
-                    Settings.SaveSettings();
-                    Settings.LoadSettings(GlobalStatic.RestoreSettings,GlobalStatic.SettingsPath);
+                    Settings.Save();
+                    Settings.Load(GlobalStatic.RestoreSettings,GlobalStatic.SettingsPath);
                 }
                 else
                 {
@@ -334,6 +334,21 @@ namespace DBM
         public static string SanitizeFieldName(this string String)
         {
             return String?.Replace("\"", "").Replace("[", "").Replace("]", "");
+        }
+
+        public static bool IsInteger(this string text)
+        {
+            return int.TryParse(text, out int test);
+        }
+
+        public static bool IsDouble(this string text)
+        {
+            return double.TryParse(text, out double test);
+        }
+
+        public static bool IsFloat(this string text)
+        {
+            return float.TryParse(text, out float test);
         }
     }
 }

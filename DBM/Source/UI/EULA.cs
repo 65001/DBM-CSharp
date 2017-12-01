@@ -52,13 +52,13 @@ namespace DBM
             if (lastButton == Accept)
 			{
                 GlobalStatic.Settings["EULA"] = string.Format("Signed=true;Signer={0};", GlobalStatic.UserName);
-				Settings.SaveSettings();
+				Settings.Save();
 				DBM.UI.StartupGUI();
 			}
 			else if (lastButton == Decline)
 			{
 				GlobalStatic.Settings["EULA"] = false;
-				Settings.SaveSettings();
+				Settings.Save();
 				Events.LogMessage("EULA Declined", Utilities.Localization["UI"]); //Localize
 				Program.End();
 			}

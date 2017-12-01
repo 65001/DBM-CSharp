@@ -11,7 +11,7 @@ namespace DBM
 {
     public static class Settings
     {
-        public static void LoadSettings(bool RestoreSettings, string SettingsPath)
+        public static void Load(bool RestoreSettings, string SettingsPath)
         {
             Utilities.AddtoStackTrace($"Settings.LoadSettings({RestoreSettings},{SettingsPath})");
             if (string.IsNullOrWhiteSpace(SettingsPath))
@@ -37,7 +37,7 @@ namespace DBM
             SettingsToFields(); //Bind Settings.
             Defaults();
             SettingsToFields(); //Binds Settings in the event a default has been set.
-            SaveSettings(); //Save Settings in the event a value has been changed.
+            Save(); //Save Settings in the event a value has been changed.
         }
 
         static void Defaults()
@@ -160,7 +160,7 @@ namespace DBM
             GlobalStatic.EULA_UserName = (string)GlobalStatic.Settings["EULA"]["Signer"] ?? (string)GlobalStatic.Settings["EULA_By"] ?? null;
         }
 
-		public static void SaveSettings()
+		public static void Save()
 		{
             Utilities.AddtoStackTrace("Settings.SaveSettings()");
             try

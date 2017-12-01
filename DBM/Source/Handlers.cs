@@ -31,8 +31,8 @@ namespace DBM
                     GlobalStatic.ListView = null;
                     GlobalStatic.Dataview = null;
                     GlobalStatic.LastFolder = System.IO.Path.GetDirectoryName(Path);
-                    Settings.LoadSettings(GlobalStatic.RestoreSettings,GlobalStatic.SettingsPath);
-                    Settings.SaveSettings();
+                    Settings.Load(GlobalStatic.RestoreSettings, GlobalStatic.SettingsPath);
+                    Settings.Save();
                     LDDataBase.ConnectSQLite(Path);
                     Engines.Load.Sqlite(Path);
 
@@ -47,14 +47,14 @@ namespace DBM
             {
                 GlobalStatic.ListView = null;
                 GlobalStatic.Dataview = null;
-                Settings.LoadSettings(GlobalStatic.RestoreSettings,GlobalStatic.SettingsPath); //Reloads Settings
+                Settings.Load(GlobalStatic.RestoreSettings, GlobalStatic.SettingsPath); //Reloads Settings
                 string Path = UI.GetPath(Engines.EnginesMode.SQLITE);
 
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     Engines.Load.Sqlite(Path);
                     GlobalStatic.Settings["LastFolder"] = System.IO.Path.GetDirectoryName(Path);
-                    Settings.SaveSettings();
+                    Settings.Save();
                     UI.PreMainMenu();
                     UI.MainMenu();
 
@@ -78,7 +78,7 @@ namespace DBM
             {
                 string Name = string.Format("\"Statistics of {0}\"", Engines.CurrentTable.SanitizeFieldName());
                 Engines.Transform.CreateStatisticsTable(Engines.CurrentDatabase, Engines.CurrentTable, Name, Export.GenerateSchemaFromLastQuery());
-                Engines.Query(Engines.CurrentDatabase,$"SELECT * FROM {Name};", GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["Statistics Page"]);
+                Engines.Query(Engines.CurrentDatabase, $"SELECT * FROM {Name};", GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["Statistics Page"]);
 
                 Engines.GetSchema(Engines.CurrentDatabase);
                 Engines.SetDefaultTable(Name.SanitizeFieldName());
@@ -303,7 +303,7 @@ namespace DBM
             }
             else if (Item == Utilities.Localization["Settings Editor"])
             {
-                UI.SettingsUI();
+                UI.Settings.Display();
             }
             else if (Item == Utilities.Localization["Refresh Schema"])
             {
@@ -314,6 +314,47 @@ namespace DBM
             else if (Item == Utilities.Localization["Check for Updates"])
             {
                 Utilities.Updater.CheckForUpdates(GlobalStatic.UpdaterDBpath);
+            }
+            //Charts
+            else if (Item == "Bar") //TODO Localize 
+            {
+                Google_Charts.Chart.Bar Bar = new Google_Charts.Chart.Bar();
+                UI.Charts.Display(Bar);
+            }
+            else if (Item == "Column") //TODO Localize 
+            {
+                Google_Charts.Chart.Column Column = new Google_Charts.Chart.Column();
+                UI.Charts.Display(Column);
+            }
+            else if (Item == "Histogram") //TODO Localize 
+            {
+                Google_Charts.Chart.Histograms Histo = new Google_Charts.Chart.Histograms();
+                UI.Charts.Display(Histo);
+            }
+            else if (Item == "Line") //TODO Localize
+            {
+                Google_Charts.Chart.Line Line = new Google_Charts.Chart.Line();
+                UI.Charts.Display(Line);
+            }
+            else if (Item == "Org") //TODO Localize
+            {
+                Google_Charts.Chart.OrgChart Org = new Google_Charts.Chart.OrgChart();
+                UI.Charts.Display(Org);
+            }
+            else if (Item == "Pie") //TODO Localize
+            {
+                Google_Charts.Chart.Pie Pie = new Google_Charts.Chart.Pie();
+                UI.Charts.Display(Pie);
+            }
+            else if (Item == "Sankey") //TODO Localize
+            {
+                Google_Charts.Chart.SanKey SanKey = new Google_Charts.Chart.SanKey();
+                UI.Charts.Display(SanKey);
+            }
+            else if (Item == "Scatter Plot") //TODO Localize
+            {
+                Google_Charts.Chart.Scatter Scatter = new Google_Charts.Chart.Scatter();
+                UI.Charts.Display(Scatter);
             }
             else if (Item != null)
             {
