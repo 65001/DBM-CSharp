@@ -241,13 +241,15 @@ namespace DBM
 
             MenuList["Sankey"] = "Charts";
             MenuList["Scatter Plot"] = "Charts";
+            MenuList["Sortable Table"] = "Charts";
+
             //Settings
             MenuList[Utilities.Localization["Help"]] = Utilities.Localization["Settings"];
             MenuList[Utilities.Localization["About"]] = Utilities.Localization["Help"];
             MenuList[Utilities.Localization["Show Help"]] = Utilities.Localization["Help"];
             MenuList["-"] = Utilities.Localization["Help"];
             MenuList[Utilities.Localization["Settings Editor"]] = Utilities.Localization["Settings"];
-            //MenuList["DB Settings"] = Utilities.Localization["Settings"]; //TODO LOCALIZE //TODO Implement
+
             MenuList[Utilities.Localization["Refresh Schema"]] = Utilities.Localization["Settings"];
             MenuList[Utilities.Localization["Check for Updates"]] = Utilities.Localization["Settings"];
             MenuList["-"] = Utilities.Localization["Settings"];
@@ -287,8 +289,8 @@ namespace DBM
                 Events.LogMessage(ex.ToString(), "System");
             }
 
-            GlobalStatic.ComboBox["Sorts"] =LDControls.AddComboBox(Sorts, 100, 100);
-            GlobalStatic.ComboBox["Database"]= LDControls.AddComboBox(Engines.DB_ShortName.ToPrimitiveArray(), 100, 100);
+            GlobalStatic.ComboBox["Sorts"] = LDControls.AddComboBox(Sorts, 100, 100);
+            GlobalStatic.ComboBox["Database"] = LDControls.AddComboBox(Engines.DB_ShortName.ToPrimitiveArray(), 100, 100);
             Controls.Move(GlobalStatic.ComboBox["Database"], UIx + TextWidth + 35, 5);
             Controls.Move(GlobalStatic.ComboBox["Sorts"], UIx + TextWidth + 150, 5);
             Controls.Move(GlobalStatic.ComboBox["Table"], UIx + TextWidth + 260, 5);
@@ -652,13 +654,17 @@ namespace DBM
             {
                 GraphicsWindow.ShowMessage(Message, Caller);
             }
-            else if(Message.Contains("LDDataBase.Query") == true || Message.Contains("LDDataBase.Command") == true)
+            else if (Message.Contains("LDDataBase.Query") == true || Message.Contains("LDDataBase.Command") == true)
             {
                 if (Message.Contains("logic error"))
                 {
                     Type = "SQL Error";
                     GraphicsWindow.ShowMessage(Message, Type);
                 }
+            }
+            else if (Message.Contains("Shape not found"))
+            {
+                Type = "Shape";
             }
             
             Utilities.AddtoStackTrace($"Events.LogMessage({Message},{Type},{Caller})");

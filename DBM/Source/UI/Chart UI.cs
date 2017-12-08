@@ -26,6 +26,8 @@ namespace DBM
             static string XaxisCaptionTB;
             static string YaxisCaptionTB;
 
+            static string Inequality;
+
             static string DataView;
 
             static List<string> XColumns = new List<string>();
@@ -52,8 +54,12 @@ namespace DBM
                 //UI Stuff
                 GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 12;
 
-                GraphicsWindow.DrawText(5, 10,string.Format("Min Columns {0}",chart.MinColumns + 1));
+                GraphicsWindow.DrawText(5, 10,string.Format("Min Columns {0}",chart.MinColumns));
                 GraphicsWindow.DrawText(5, 30,string.Format("Max Columns {0}", chart.MaxColumns));
+
+                Inequality = Shapes.AddText("Equation");
+                Shapes.Move(Inequality, 400, 5);
+
                 GraphicsWindow.DrawText(5, 70, "X:");
                 GraphicsWindow.DrawText(300 + 100, 70, "Columns:");
                 GraphicsWindow.DrawText(600 + 200, 70,"Y:");
@@ -131,6 +137,8 @@ namespace DBM
                 Columns.AddRange(XColumns);
                 Columns.AddRange(YColumns);
 
+                Shapes.SetText(Inequality, $"{chart.MinColumns}≤{Columns.Count}≤{chart.MaxColumns}");
+
                 for (int i = 1; i <= LDControls.DataViewRowCount(DataView); i++)
                 {
                     string CurrentColumn = LDControls.DataViewGetValue(DataView, i, 1);
@@ -156,6 +164,8 @@ namespace DBM
                 Controls.ButtonClicked -= Handler;
                 GlobalStatic.ListView = null;
                 GlobalStatic.Dataview = null;
+                GlobalStatic.ComboBox = null;
+                Shapes.HideShape(Inequality);
                 ClearWindow();
                 PreMainMenu();
                 HideDisplayResults();
@@ -231,8 +241,12 @@ namespace DBM
                         YColumns.Add(Item);
                     }
                 }
-                Binder();
-                AutoHide();
+
+                if (LCB != Escape)
+                {
+                    Binder();
+                    AutoHide();
+                }
             }
 
             static void AutoHide()

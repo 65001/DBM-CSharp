@@ -138,7 +138,7 @@ namespace Google_Charts
             return Export(Function, Package, Title, SubTitle, Xaxis, Yaxis, RespectNumbers);
         }
 
-        public virtual string Export(string Function, string Package, string Title, string SubTitle, string Xaxis, string Yaxis, bool[] RespectNumbers)
+        protected virtual string Export(string Function, string Package, string Title, string SubTitle, string Xaxis, string Yaxis, bool[] RespectNumbers)
         {
             StringBuilder SB = new StringBuilder();
             string width = "95%";

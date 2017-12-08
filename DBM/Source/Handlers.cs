@@ -356,6 +356,11 @@ namespace DBM
                 Google_Charts.Chart.Scatter Scatter = new Google_Charts.Chart.Scatter();
                 UI.Charts.Display(Scatter);
             }
+            else if (Item == "Sortable Table") //TODO Localize
+            {
+                Google_Charts.Chart.Table Table = new Google_Charts.Chart.Table();
+                UI.Charts.Display(Table);
+            }
             else if (Item != null)
             {
                 Events.LogMessage(Item + " does not exist in context or is not yet implemented", Utilities.Localization["UI"]);
