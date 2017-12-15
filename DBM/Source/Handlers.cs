@@ -2,6 +2,7 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using LitDev;
 using Microsoft.SmallBasic.Library;
@@ -167,11 +168,22 @@ namespace DBM
                 {
                     //Outputted to a temporary path in the event the import doesn't work...
                     string TempPath = System.IO.Path.GetTempFileName();
-                    string SQL = Import.CSV(Path);
-                    System.IO.File.WriteAllText(TempPath, SQL);
+                    Stopwatch CSV = new Stopwatch();
+                    CSV.Start();
+                    Import.CSV(Path,TempPath);
+                    CSV.Stop();
+
                     LDProcess.Start(TempPath, null); // TODO Replace with native C# implentation...
-                    Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, null, false);
-                    Events.LogMessagePopUp("CSV Import Completed", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize 
+
+                    Stopwatch SQL = new Stopwatch();
+                    SQL.Start();
+                    Import.SQL(Engines.CurrentDatabase, TempPath);
+                    SQL.Stop();
+
+                    string ToolTip = string.Format("CSV Import Completed!\n CSV:{0}(ms)\nSQL:{1}(ms)",
+                        CSV.ElapsedMilliseconds,
+                        SQL.ElapsedMilliseconds);
+                    Events.LogMessagePopUp(ToolTip, Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize 
                     return;
                 }
                 Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Import.CSV");//TODO Localize
@@ -181,9 +193,11 @@ namespace DBM
                 string Path = LDDialogs.OpenFile("sql", null);
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
-                    string SQL = System.IO.File.ReadAllText(Path);
-                    Engines.Command(Engines.CurrentDatabase, SQL, GlobalStatic.UserName, null, false);
-                    Events.LogMessagePopUp("SQL Import Completed", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize
+                    Stopwatch SQL = new Stopwatch();
+                    SQL.Start();
+                    Import.SQL(Engines.CurrentDatabase, Path);
+                    SQL.Stop();
+                    Events.LogMessagePopUp("SQL Import Completed in " + SQL.ElapsedMilliseconds + "(ms)", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize
                     return;
                 }
                 Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Import.SQL");//TODO Localize
@@ -325,6 +339,11 @@ namespace DBM
             {
                 Google_Charts.Chart.Column Column = new Google_Charts.Chart.Column();
                 UI.Charts.Display(Column);
+            }
+            else if (Item == "Geo") //TODO Localize
+            {
+                Google_Charts.Chart.GeoCharts Geo = new Google_Charts.Chart.GeoCharts();
+                UI.Charts.Display(Geo);
             }
             else if (Item == "Histogram") //TODO Localize 
             {

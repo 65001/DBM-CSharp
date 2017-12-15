@@ -1,5 +1,6 @@
 ﻿using LitDev;
 using Microsoft.SmallBasic.Library;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
@@ -220,25 +221,32 @@ namespace DBM
                 }
                 else if (CurrentList?.Count >= Node)
                 {
-                    if (LCB == Left1)
+                    try
                     {
-                        Schema.RemoveAt(Node);
-                        XColumns.Add(Item);
+                        if (LCB == Left1)
+                        {
+                            Schema.RemoveAt(Node);
+                            XColumns.Add(Item);
+                        }
+                        else if (LCB == Right1)
+                        {
+                            XColumns.RemoveAt(Node);
+                            Schema.Add(Item);
+                        }
+                        else if (LCB == Left2)
+                        {
+                            YColumns.RemoveAt(Node);
+                            Schema.Add(Item);
+                        }
+                        else if (LCB == Right2)
+                        {
+                            Schema.RemoveAt(Node);
+                            YColumns.Add(Item);
+                        }
                     }
-                    else if (LCB == Right1)
+                    catch (ArgumentOutOfRangeException ex)
                     {
-                        XColumns.RemoveAt(Node);
-                        Schema.Add(Item);
-                    }
-                    else if (LCB == Left2)
-                    {
-                        YColumns.RemoveAt(Node);
-                        Schema.Add(Item);
-                    }
-                    else if (LCB == Right2)
-                    {
-                        Schema.RemoveAt(Node);
-                        YColumns.Add(Item);
+                        Events.LogMessage(ex.Message, Utilities.Localization["System"]);
                     }
                 }
 

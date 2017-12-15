@@ -12,11 +12,12 @@ using LitDev;
 using Microsoft.SmallBasic.Library;
 
 /*
+ * //TODO CSV to SQL Converter in Imports?
+ * 
 	TODO : SQLITE setup
 	TODO : Set it up so that if no table exists in a database then revert to sqlite_master or equivalent
 		
       TODO Remove dependecey on LitDev?
-	  TODO Start to use System.Version instead of an int and replace instances of GlobablStatic.VersionID to it as well
         Emulator stuff?
             Make Emulator use 
             Add entry for PRAGMA for sqlite3
@@ -71,6 +72,7 @@ namespace DBM
                 LDUtilities.ShowErrors = false;
                 LDUtilities.ShowFileErrors = false;
                 LDUtilities.ShowNoShapeErrors = false;
+
                 LDGraphicsWindow.ExitOnClose = false;
                 LDGraphicsWindow.CancelClose = true;
 
@@ -233,6 +235,7 @@ namespace DBM
             //Charts
             MenuList["Bar"] = "Charts";
             MenuList["Column"] = "Charts";
+            MenuList["Geo"] = "Charts";
             MenuList["Histogram"] = "Charts";
 
             MenuList["Line"] = "Charts";
@@ -275,7 +278,6 @@ namespace DBM
 
             string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, MenuList, IconList, null);
             Shapes.Move(Shapes.AddText(Utilities.Localization["Sort"] + ":"), UIx, 1);
-
 
             int TextWidth= LDText.GetHeight(Utilities.Localization["Sort"] + ":");
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;

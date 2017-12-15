@@ -12,7 +12,7 @@ namespace Google_Charts
         List<DataType> Types = new List<DataType>();
         List<List<string>> Data = new List<List<string>>();
 
-        public enum ChartTypes { Bar, Bubble, Column, Donut, Pie, Table, Org, Sankey, Histogram, Scatter, Line, GeoChart };
+        public enum ChartTypes { Bar, Bubble, Column, Donut, Pie, Table, Org, Sankey, Histogram, Scatter, Line, GeoChart,TimeLine };
         public enum DataType { number, text };
 
         public abstract ChartTypes ChartType { get; }
@@ -193,7 +193,7 @@ namespace Google_Charts
             SB.AppendFormat("\t\t\t\tchart.draw(data, options);\n", Function);
 
             SB.AppendLine("\t\t\t}");
-            if (Package == "corechart")
+            if (Package == "corechart" || Package == "geochart")
             {
                 SB.AppendLine("\t\t\tfunction NW()");
                 SB.AppendLine("\t\t\t{");
@@ -296,8 +296,8 @@ namespace Google_Charts
             {
                 get { return ChartTypes.Org; }
             }
-            public override int MinColumns { get { return 2; } }
-            public override int MaxColumns { get { return 2; } }
+            public override int MinColumns { get { return 1; } }
+            public override int MaxColumns { get { return 4; } }
             public override string Package { get { return "orgchart"; } }
             public override string Function { get { return "OrgChart"; } }
             public override bool[] RespectNumbers
@@ -316,8 +316,8 @@ namespace Google_Charts
             {
                 get { return new bool[2] { false, true }; }
             }
-            public override int MinColumns { get { return 2; } }
-            public override int MaxColumns { get { return 2; } }
+            public override int MinColumns { get { return 1; } }
+            public override int MaxColumns { get { return 3; } }
             public override string Package { get { return "sankey"; } }
             public override string Function { get { return "Sankey"; } }
         }
@@ -325,7 +325,7 @@ namespace Google_Charts
         public class GeoCharts : Chart
         {
             public override int MinColumns { get { return 1; } }
-            public override int MaxColumns { get { return 1; } }
+            public override int MaxColumns { get { return 3; } }
             public override string Function { get { return "GeoChart"; } }
             public override string Package { get { return "geochart"; } }
             public override ChartTypes ChartType { get { return ChartTypes.GeoChart; } }
@@ -333,6 +333,20 @@ namespace Google_Charts
             {
                 get { return new bool[2] { false, true }; }
             }
+        }
+
+        public class TimeLine : Chart
+        {
+            public override int MinColumns { get { return 2; } }
+            public override int MaxColumns { get { return 10; } }
+            public override string Function {get {return "Timeline";} }
+            public override string Package { get { return "timeline"; } }
+            public override ChartTypes ChartType { get { return ChartTypes.TimeLine; } }
+            public override bool[] RespectNumbers
+            {
+                get { return new bool[2] { false, true }; }
+            }
+
         }
     }
 }

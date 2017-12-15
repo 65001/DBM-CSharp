@@ -6,6 +6,7 @@ using System;
 using System.Text;
 using System.Linq;
 using System.IO;
+using System.Data.SQLite;
 using System.Collections.Generic;
 using LitDev;
 using System.Diagnostics;
@@ -59,8 +60,9 @@ namespace DBM
 				string CSV_SQL = ArrayToSql(Standard_Size,Name);
                 CSVHeaders(Standard_Size,Name);
 				//Appending
-				CSV_SQL = ("BEGIN;\n" + HeaderSQL + CSV_SQL + "COMMIT;").Replace("'NULL'","NULL").Replace("<<HEADERS>>", HeaderWOType);
+				CSV_SQL = (HeaderSQL +"\n" + CSV_SQL).Replace("'NULL'","NULL").Replace("<<HEADERS>>", HeaderWOType);
                 LDFastArray.Remove(Data);
+                Console.WriteLine("Import.CSV time {0} ms", Elappsed.ElapsedMilliseconds);
                 return CSV_SQL;
 			}
 			catch (Exception ex)
@@ -91,7 +93,7 @@ namespace DBM
                     CSV_SQL.Append("INSERT INTO \"" + TableName + "\" <<HEADERS>> VALUES('");
 					for (int ii = 1; ii <= LDFastArray.Size2(Data, i); ii++)
 					{
-                        string Temp = LDFastArray.Get2D(Data, i, ii).ToString().Replace("'", "''");
+                        string Temp = LDFastArray.Get2D(Data, i, ii).ToString().Replace("'", "''").Replace("\n"," ");
                         if (string.IsNullOrWhiteSpace(Temp))
 						{
 							Temp = "NULL";
@@ -147,5 +149,30 @@ namespace DBM
 			HeaderSQL += ");\n";
 			HeaderWOType += ")";
 		}
+
+        public static void SQL(string database,string Path)
+        {
+           string[] SQL = File.ReadAllLines(Path);
+           var cnn = Engines.GetConnection(database);
+           var cmd = new SQLiteCommand(cnn);
+
+            SQLiteTransaction transaction;
+            transaction = cnn.BeginTransaction();
+            for (int i = 0; i < SQL.Length; i++)
+            {
+                //Every 100 lines commit and start a new transaction...
+                if (i % 100 == 0)
+                {
+                    transaction.Commit();
+                    transaction = cnn.BeginTransaction();
+                }
+                if (SQL[i] != "');")
+                {
+                    cmd.CommandText = SQL[i];
+                    cmd.ExecuteNonQuery();
+                }
+            }
+           transaction.Commit();
+        }
 	}
 }
