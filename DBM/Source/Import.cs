@@ -39,7 +39,7 @@ namespace DBM
 			CSV_Length.Clear();
 			CSV_IsString.Clear();
 
-			string Name =Path.GetFileNameWithoutExtension(FilePath).Trim();
+			string Name = Path.GetFileNameWithoutExtension(FilePath).Trim();
 			Data = LDFastArray.ReadCSV(FilePath); 
 
 			//Calculate Lengths of Data
@@ -160,7 +160,7 @@ namespace DBM
             transaction = cnn.BeginTransaction();
             for (int i = 0; i < SQL.Length; i++)
             {
-                //Every 100 lines commit and start a new transaction...
+                //Every 100 lines commit and start a new transaction.
                 if (i % 100 == 0)
                 {
                     transaction.Commit();

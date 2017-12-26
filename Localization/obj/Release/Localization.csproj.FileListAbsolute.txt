@@ -8,3 +8,5 @@ C:\Users\Abhishek\Documents\Projects\DBM\Localization\obj\Release\Localization.c
 C:\Users\Abhishek\Documents\Projects\DBM\Localization\obj\Release\Localization.exe
 C:\Users\Abhishek\Documents\Projects\DBM\Localization\obj\Release\Localization.pdb
 C:\Users\Abhishek\Documents\Projects\DBM\Localization\obj\Release\Localization.csprojResolveAssemblyReference.cache
+C:\Users\Abhishek\Documents\Projects\DBM\Localization\bin\Release\Localization.exe.CodeAnalysisLog.xml
+C:\Users\Abhishek\Documents\Projects\DBM\Localization\bin\Release\Localization.exe.lastcodeanalysissucceeded
