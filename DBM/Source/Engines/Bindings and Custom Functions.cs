@@ -62,6 +62,7 @@ namespace DBM
             AddToBindList(new CustomFunctions.Encrypt());
             AddToBindList(new CustomFunctions.Decrypt());
             AddToBindList(new CustomFunctions.Hash());
+            AddToBindList(new CustomFunctions.Translate());
         }
 
         public static SQLiteConnection GetConnection(string DataBase)
@@ -214,6 +215,15 @@ namespace DBM
             public override object Invoke(object[] args)
             {
                 return LDEncryption.SHA512Hash(args[0].ToString() );
+            }
+        }
+
+        [SQLiteFunction(Arguments = 3, FuncType = FunctionType.Scalar, Name = "translate")]
+        public class Translate : SQLiteFunction
+        {
+            public override object Invoke(object[] args)
+            {
+                return LDTranslate.Translate(args[0].ToString(),args[1].ToString(),args[2].ToString());
             }
         }
 
