@@ -14,13 +14,14 @@ namespace DBM
         static IReadOnlyList<string> CorrectList;
         static List<string> Tracker = new List<string>();
 		public static Primitive TypeofSorts ="1="+ Utilities.Localization["Table"] +";2=" + Utilities.Localization["View"] +";3="+ Utilities.Localization["Index"] + ";4="+ Utilities.Localization["Master Table"]+";";
+       
         /// <summary>
         /// Handles Main Menu
         /// </summary>
         /// <param name="Item">Localized Menu Item</param>
 		public static void Menu(string Item)
 		{
-            Utilities.AddtoStackTrace($"Handlers.Menu({Item})");
+            int Stack = Utilities.AddtoStackTrace($"Handlers.Menu({Item})");
 
             //Switch and Enum cannot be used because values can change
             //File Menu Items
@@ -42,6 +43,7 @@ namespace DBM
                     UI.MainMenu();
                     LDDataBase.Connection = null;
                 }
+                Utilities.AddExit(Stack);
                 return;
             }
             else if (Item == Utilities.Localization["Open"])
@@ -63,11 +65,12 @@ namespace DBM
                     Handlers.ComboBox(GlobalStatic.ComboBox["Database"], Index);
                     LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Database"], Index);
                 }
+                Utilities.AddExit(Stack);
                 return;
             }
             else if (Item == Utilities.Localization["Define New Table"])
             {
-                UI.CreateTableUI();
+                UI.CreateTableUI();    
             }
             else if (Item == Utilities.Localization["New in Memory Db"])
             {
@@ -111,6 +114,7 @@ namespace DBM
                 {
                     Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Engines.CurrentTable + ";", GlobalStatic.ListView, false, Utilities.Localization["App"], Utilities.Localization["View Function"]);
                 }
+                Utilities.AddExit(Stack);
                 return;
             }
             else if (Item == Utilities.Localization["Save"])
@@ -124,6 +128,7 @@ namespace DBM
                 {
                     Events.LogMessagePopUp(Utilities.Localization["Dataview Error"], Utilities.Localization["UI"], "Save Error");
                 }
+                Utilities.AddExit(Stack);
                 return;
             }
             else if (Item == Utilities.Localization["Edit"])
@@ -158,6 +163,7 @@ namespace DBM
                 {
                     Events.LogMessagePopUp(Utilities.Localization["Error No DB"], Utilities.Localization["UI"], Utilities.Localization["Edit"]);
                 }
+                Utilities.AddExit(Stack);
                 return;
             }
             //Import
@@ -184,9 +190,12 @@ namespace DBM
                         CSV.ElapsedMilliseconds,
                         SQL.ElapsedMilliseconds);
                     Events.LogMessagePopUp(ToolTip, Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize 
+                    Utilities.AddExit(Stack);
                     return;
-                }
+                } 
                 Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Import.CSV");//TODO Localize
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == Utilities.Localization["SQL"])
             {
@@ -198,9 +207,12 @@ namespace DBM
                     Import.SQL(Engines.CurrentDatabase, Path);
                     SQL.Stop();
                     Events.LogMessagePopUp("SQL Import Completed in " + SQL.ElapsedMilliseconds + "(ms)", Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize
+                    Utilities.AddExit(Stack);
                     return;
                 }
                 Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Import.SQL");//TODO Localize
+                Utilities.AddExit(Stack);
+                return;
             }
             //else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
             //{ }
@@ -213,9 +225,12 @@ namespace DBM
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.XML(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable, Path);
                     Events.LogMessagePopUp("XML export of " + Engines.CurrentTable + " completed!", "Export", "Success");
+                    Utilities.AddExit(Stack);
                     return;
                 }
                 Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.XML");//TODO Localize
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == Utilities.Localization["HTML"] + " ")
             {
@@ -225,9 +240,12 @@ namespace DBM
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.HTML(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.SanitizeFieldName(), Path, GlobalStatic.ProductID + " V" + GlobalStatic.VersionID);
                     Events.LogMessagePopUp("HTML export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]);
+                    Utilities.AddExit(Stack);
                     return;
                 }
                 Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.HTML");//TODO Localize
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == Utilities.Localization["SQL"] + " ")
             {
@@ -250,9 +268,12 @@ namespace DBM
                     Export.SQL(Data, Schema, PK, Types, Engines.CurrentTable, Path);
                     LDProcess.Start(Path, null);
                     Events.LogMessagePopUp("SQL export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
+                    Utilities.AddExit(Stack);
                     return;
                 }
                 Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.SQL");//TODO Localize
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == Utilities.Localization["CSV"] + " ")
             {
@@ -262,9 +283,11 @@ namespace DBM
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.CSV(Data, Export.GenerateSchemaFromQueryData(Data), Path, GlobalStatic.Deliminator);
                     Events.LogMessagePopUp("CSV export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
+                    Utilities.AddExit(Stack);
                     return;
                 }
                 Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.CSV");//TODO Localize
+                Utilities.AddExit(Stack);
             }
             else if (Item == "JSON") //TODO Localize
             {
@@ -274,9 +297,11 @@ namespace DBM
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.JSON(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable.SanitizeFieldName(), Path);
                     Events.LogMessagePopUp("JSON export of " + Engines.CurrentTable + " completed!", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
+                    Utilities.AddExit(Stack);
                     return;
                 }
                 Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.JSON");//TODO Localize
+                Utilities.AddExit(Stack);
             }
             else if (Item == "MarkDown") //TODO Localize
             {
@@ -286,9 +311,11 @@ namespace DBM
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.MarkDown(Data, Export.GenerateSchemaFromQueryData(Data), Path);
                     Events.LogMessagePopUp("MarkDown export is now complete", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
+                    Utilities.AddExit(Stack);
                     return;
                 }
                 Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.MarkDown");//TODO Localize
+                Utilities.AddExit(Stack);
             }
             else if (Item == "Wiki MarkUp") //TODO Localize
             {
@@ -298,9 +325,11 @@ namespace DBM
                     Primitive Data = Export.Generate2DArrayFromLastQuery();
                     Export.MarkUp(Data, Export.GenerateSchemaFromQueryData(Data), Path);
                     Events.LogMessagePopUp("Wiki Markup export is now complete", Utilities.Localization["Export"], Utilities.Localization["Success"]); //TODO Localize
+                    Utilities.AddExit(Stack);
                     return;
                 }
                 Events.LogMessagePopUp(Utilities.Localization["Error Generic"], Utilities.Localization["UI"], "Export.Wiki Markup");//TODO Localize
+                Utilities.AddExit(Stack);
             }
             //Settings
             else if (Item == Utilities.Localization["About"])
@@ -309,86 +338,116 @@ namespace DBM
                 string About_Msg = string.Format("DBM C# is a Database Mangement Program developed by Abhishek Sathiabalan. (C){0}. All rights reserved.\n\nYou are running : {1} v{2}\n\n", GlobalStatic.Copyright, GlobalStatic.ProductID, GlobalStatic.VersionID);
                 About_Msg += string.Format("SQLite Version : {0}\nSQLITE Source ID : {1}", About_Data[1]["SQLITE_VERSION()"], About_Data[1]["sqlite_source_id()"]);
                 Events.LogMessagePopUp(About_Msg, "Debug", "About");//DO NOT LOCALIZE
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == Utilities.Localization["Show Help"])
             {
                 string Path = System.IO.Path.Combine(GlobalStatic.AssetPath, "HELP Table.html");
                 LDProcess.Start(Path, null);
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == Utilities.Localization["Settings Editor"])
             {
                 UI.Settings.Display();
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == Utilities.Localization["Refresh Schema"])
             {
                 Engines.GetSchema(Engines.CurrentDatabase);
                 Engines.GetColumnsofTable(Engines.CurrentDatabase, Engines.CurrentTable);
+                Utilities.AddExit(Stack);
                 return;
             }
             else if (Item == Utilities.Localization["Check for Updates"])
             {
                 Utilities.Updater.CheckForUpdates(GlobalStatic.UpdaterDBpath);
+                Utilities.AddExit(Stack);
+                return;
             }
             //Charts
             else if (Item == "Bar") //TODO Localize 
             {
                 Google_Charts.Chart.Bar Bar = new Google_Charts.Chart.Bar();
                 UI.Charts.Display(Bar);
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == "Column") //TODO Localize 
             {
                 Google_Charts.Chart.Column Column = new Google_Charts.Chart.Column();
                 UI.Charts.Display(Column);
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == "Geo") //TODO Localize
             {
                 Google_Charts.Chart.GeoCharts Geo = new Google_Charts.Chart.GeoCharts();
                 UI.Charts.Display(Geo);
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == "Histogram") //TODO Localize 
             {
                 Google_Charts.Chart.Histograms Histo = new Google_Charts.Chart.Histograms();
                 UI.Charts.Display(Histo);
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == "Line") //TODO Localize
             {
                 Google_Charts.Chart.Line Line = new Google_Charts.Chart.Line();
                 UI.Charts.Display(Line);
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == "Org") //TODO Localize
             {
                 Google_Charts.Chart.OrgChart Org = new Google_Charts.Chart.OrgChart();
                 UI.Charts.Display(Org);
+                Utilities.AddExit(Stack);
+                return;
             }
-            else if (Item == "Pie") //TODO Localize
+            else if (Item == "Pie") //TODO: Localize
             {
                 Google_Charts.Chart.Pie Pie = new Google_Charts.Chart.Pie();
                 UI.Charts.Display(Pie);
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == "Sankey") //TODO Localize
             {
                 Google_Charts.Chart.SanKey SanKey = new Google_Charts.Chart.SanKey();
                 UI.Charts.Display(SanKey);
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == "Scatter Plot") //TODO Localize
             {
                 Google_Charts.Chart.Scatter Scatter = new Google_Charts.Chart.Scatter();
                 UI.Charts.Display(Scatter);
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item == "Sortable Table") //TODO Localize
             {
                 Google_Charts.Chart.Table Table = new Google_Charts.Chart.Table();
                 UI.Charts.Display(Table);
+                Utilities.AddExit(Stack);
+                return;
             }
             else if (Item != null)
             {
                 Events.LogMessage(Item + " does not exist in context or is not yet implemented", Utilities.Localization["UI"]);
             }
-		}
+            Utilities.AddExit(Stack);
+        }
         
         public static void ContextMenu(string Control,int Index)
         {
-            Utilities.AddtoStackTrace($"Handlers.ContextMenu({Control},{Index})");
+            int Stack = Utilities.AddtoStackTrace($"Handlers.ContextMenu({Control},{Index})");
             if (Control == GlobalStatic.ListView)
             {
                 if (Index <= 3)
@@ -399,11 +458,12 @@ namespace DBM
                     Buttons(UI.Buttons["Sort"]);
                 }
             }
+            Utilities.AddExit(Stack);
         }
 
         public static void Buttons(string LastButton)
 		{
-            Utilities.AddtoStackTrace($"Handlers.Buttons({LastButton})");
+            int Stack = Utilities.AddtoStackTrace($"Handlers.Buttons({LastButton})");
             try
             {
                 if (LastButton == UI.Buttons["Search"] || LastButton == UI.Buttons["Sort"] || LastButton == UI.Buttons["RunFunction"])
@@ -430,20 +490,43 @@ namespace DBM
                     {
                         Function = true;
                     }
-
-                    if (ASCDESC == "RANDOM()")
-                    {
-                        SortBy = string.Empty;
-                    }
-
-                #if DEBUG
+                    /*
                     Console.WriteLine();
                     Console.WriteLine("Search: {0} Sort : {1} Function :{2}", Search, Sort, Function);
                     Console.WriteLine("Strict Search : {0} Invert Search : {1}", StrictSearch, InvertSearch);
                     Console.WriteLine("SearchIn : {0} Search Text : {1} FunctionIn : {2} FunctionCalled : {3} SortBy : {4} ASCDESC : {5} LastButton : {6}", SearchIn, SearchText, FunctionIn, FunctionCalled, SortBy, ASCDESC, Controls.GetButtonCaption(LastButton));
-                #endif
+                    */
+                    var GQS = new Engines.GenerateQuerySettings
+                    {
+                        //bool
+                        Search = Search,
+                        Sort = Sort,
+                        RunFunction = Function,
 
-                    Engines.GenerateQuery(Search, Sort, Function, SearchIn, SortBy, ASCDESC, StrictSearch, InvertSearch, FunctionCalled, FunctionIn, SearchText);
+                        SearchBy = SearchIn,
+                        OrderBy = SortBy,
+
+                        StrictSearch = StrictSearch,
+                        InvertSearch = InvertSearch,
+                        FunctionSelected = FunctionCalled,
+                        FunctionColumn = FunctionIn,
+                        SearchText = SearchText
+                    };
+                    switch (ASCDESC)
+                    {
+                        case "ASC":
+                            GQS.Order = Engines.GenerateQuerySettings.SortOrder.Ascending;
+                            break;
+                        case "DESC":
+                            GQS.Order = Engines.GenerateQuerySettings.SortOrder.Descding;
+                            break;
+                        case "RANDOM()":
+                            GQS.Order = Engines.GenerateQuerySettings.SortOrder.Random;
+                            break;
+                    }
+                    string Query = Engines.GenerateQuery(GQS, Engines.CurrentTable.SanitizeFieldName());
+                    Engines.Query(Engines.CurrentDatabase, Query, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.UserName);
+                    
                 }
                 else if (LastButton == UI.Buttons["Query"])
                 {
@@ -459,27 +542,30 @@ namespace DBM
                 string Message = Controls.GetButtonCaption(LastButton) + "(" + LastButton + ") |" + UI.Buttons.ContainsKey(LastButton) + "|" + Controls.GetButtonCaption(LastButton) == Utilities.Localization["Query"].ToUpper() + "| does not exist in context or has not yet implemented.";
                 Events.LogMessage(Message, "System");
             }
-            
+            Utilities.AddExit(Stack);
 		}
 
 		public static void ComboBox(string ComboBox, int Index)
 		{
-            Utilities.AddtoStackTrace($"Handlers.ComboBox({ComboBox},{Index})");
+            int Stack = Utilities.AddtoStackTrace($"Handlers.ComboBox({ComboBox},{Index})");
             try
             {
                 if (ComboBox == GlobalStatic.ComboBox["Table"])
                 {
                     TableComboBox(Index);
+                    Utilities.AddExit(Stack);
                     return;
                 }
                 else if (ComboBox == GlobalStatic.ComboBox["Sorts"])
                 {
                     SortsComboBox(Index);
+                    Utilities.AddExit(Stack);
                     return;
                 }
                 else if (ComboBox == GlobalStatic.ComboBox["Database"])
                 {
                     DatabaseComboBox(Index);
+                    Utilities.AddExit(Stack);
                     return;
                 }
             }
@@ -488,6 +574,7 @@ namespace DBM
                 string Message = string.Format("{0} at {1} does not exist in context or has not yet implemented.", ComboBox, Index);
                 Events.LogMessage(Message, "System");
             }
+            Utilities.AddExit(Stack);
 		}
 
 		static void DatabaseComboBox(int Index)

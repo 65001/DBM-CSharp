@@ -8,7 +8,7 @@ namespace DBM
 
 		public static void UI(string FilePath,decimal Ping,string Title,string CopyrightDate,string ProductID)
 		{
-            Utilities.AddtoStackTrace("EULA.UI()");
+            int Stack = Utilities.AddtoStackTrace("EULA.UI()");
 			GraphicsWindow.Show();
 			GraphicsWindow.Left = Desktop.Width / 3;
 			GraphicsWindow.Top = Desktop.Height / 4;
@@ -27,7 +27,7 @@ namespace DBM
 
 			if (string.IsNullOrWhiteSpace(CNTS)) //TODO
 			{
-				Program.End();
+                System.Environment.Exit(2);
 			}
 		
 			LDControls.RichTextBoxSetText(EulaTextBox, CNTS, false);
@@ -38,11 +38,12 @@ namespace DBM
 			Controls.SetSize(Accept, 70, 30);
 			Controls.SetSize(Decline, 70, 30);
 			Controls.ButtonClicked += Handler;
+            Utilities.AddExit(Stack);
 		}
 
 		public static void Handler()
 		{
-            Utilities.AddtoStackTrace("EULA.Handler()");
+            int Stack = Utilities.AddtoStackTrace("EULA.Handler()");
 			string lastButton = Controls.LastClickedButton;
 			GlobalStatic.Settings["VersionID"] = GlobalStatic.VersionID;
 
@@ -54,13 +55,15 @@ namespace DBM
                 GlobalStatic.Settings["EULA"] = string.Format("Signed=true;Signer={0};", GlobalStatic.UserName);
 				Settings.Save();
 				DBM.UI.StartupGUI();
+                Utilities.AddExit(Stack);
 			}
 			else if (lastButton == Decline)
 			{
 				GlobalStatic.Settings["EULA"] = false;
 				Settings.Save();
 				Events.LogMessage("EULA Declined", Utilities.Localization["UI"]); //Localize
-				Program.End();
+                Utilities.AddExit(Stack);
+                System.Environment.Exit(5);
 			}
 		}
 	}

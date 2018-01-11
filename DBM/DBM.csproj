@@ -89,6 +89,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Source\Engines\GQ.cs" />
     <Compile Include="Source\UI\Chart UI.cs" />
     <Compile Include="Source\UI\DBM.cs">
     </Compile>

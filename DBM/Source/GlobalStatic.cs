@@ -57,18 +57,6 @@ namespace DBM
 			public static string EULA_UserName;
 			public static string LanguageCode;
 
-        //Lists
-        /*
-        public const string ExportT2 = "Export T2",ExportT1 = "Export T1";
-        public const string TrackDefaultTable = "TrackDefaultTable";
-        public const string List_Mod_Name = "Mod_Name";
-        public const string List_Mod_Path = "Mod_Path";
-        public const string List_Command_Parser = "Command_SQL_Parser";
-        public const string List_Command_Parser_Status = "Command_SQL_Parser_Status";
-        public const string List_Command_Parser_OnFail = "Command_SQL_Parser_Fail";
-        public const string List_Command_Parser_OnFail_Index = "Command_SQL_Parser_Fail_Index";
-        */
-
             public static Primitive TextBox,CheckBox,ComboBox; //Change to a Dictionaries in the future and move to UI.
 
 			public static readonly string Title = string.Format("Database Manager ({0}) v {1} ", ProductID, VersionIDS.ToString());

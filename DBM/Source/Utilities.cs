@@ -14,7 +14,9 @@ namespace DBM
 	{
         static Dictionary<string, string> _Localization = new Dictionary<string, string>();
         static List<string> _StackTrace = new List<string>();
-        static List<string> _StackIniationTime = new List<string>();
+        static List<DateTime> _StackIniationTime = new List<DateTime>();
+        static List<DateTime> _StackExitTime = new List<DateTime>();
+        static List<TimeSpan> _StackDuration = new List<TimeSpan>();
         static List<string> _ISO_Text = new List<string>();
         static List<string> _ISO_LangCode = new List<string>();
         static List<string> _UI_Name = new List<string>();
@@ -32,9 +34,19 @@ namespace DBM
             get { return _StackTrace.AsReadOnly(); }
         }
 
-        public static IReadOnlyList<string> StackIniationTime
+        public static IReadOnlyList<DateTime> StackIniationTime
         {
             get { return _StackIniationTime.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<DateTime> StackExitTime
+        {
+            get { return _StackExitTime.AsReadOnly(); }
+        }
+
+        public static IReadOnlyList<TimeSpan> StackDuration
+        {
+            get { return _StackDuration.AsReadOnly(); }
         }
 
         public static IReadOnlyList<string> ISO_Text
@@ -53,7 +65,7 @@ namespace DBM
         /// <param name="XMLPath"></param>
         public static void LocalizationXML(string XMLPath,string DataPath)
 		{
-			AddtoStackTrace("Utilities.LocalizationXML()");
+			int StackReference = AddtoStackTrace("Utilities.LocalizationXML()");
            
 			string XMLDoc = LDxml.Open(XMLPath);
 			if (System.IO.File.Exists(XMLPath) && System.IO.File.Exists(DataPath))
@@ -87,6 +99,7 @@ namespace DBM
 			{
                 throw new FileNotFoundException("Localization File not found!"); //DO NOT LOCALIZE
 			}
+            Utilities.AddExit(StackReference);
 		}
 
         static void AddLocalization()
@@ -110,16 +123,26 @@ namespace DBM
 
 	    public static string XMLAttributes() { return "1= ;2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
 
-        public static void AddtoStackTrace(string Data)
+        public static int AddtoStackTrace(string Data)
         {
             _StackTrace.Add(Data);
-            _StackIniationTime.Add(DateTime.UtcNow.ToString("hh:mm:ss ffffff"));
+            _StackIniationTime.Add(DateTime.UtcNow);
+            _StackExitTime.Add(DateTime.MinValue);
+            _StackDuration.Add(TimeSpan.MinValue);
+            return _StackTrace.Count - 1;
+        }
+
+        public static void AddExit(int Index)
+        {
+            _StackExitTime[Index] = DateTime.UtcNow;
+            TimeSpan Span = _StackExitTime[Index] - _StackIniationTime[Index];
+            _StackDuration[Index] = Span;
         }
 
 		// Reads File and Parses it
 		public static string[] ReadFile(string URI) //Reads a file and ignores certain types of data
 		{
-			AddtoStackTrace("Utilities.ReadFile()");
+			int StackReference = AddtoStackTrace("Utilities.ReadFile()");
             List<string> File_Read = new List<string>();
 
 			if (System.IO.File.Exists(URI) == true)
@@ -139,6 +162,7 @@ namespace DBM
 				{
 					CNTS2[i] = File_Read[i];
 				}
+                Utilities.AddExit(StackReference);
 				return CNTS2;
 			}
 			else 
@@ -146,6 +170,7 @@ namespace DBM
 				Events.LogMessage("URI isn't accessable or incorrect Parameters given.", "Exception");
 			}
 
+            AddExit(StackReference);
 			return null;
 		}
 
@@ -153,7 +178,7 @@ namespace DBM
         {
             public static void CheckForUpdates(string downloadlocation, string URI = GlobalStatic.OnlineDB_Refrence_Location, bool UI = true)
             {
-                AddtoStackTrace($"Utilities.Updater.CheckForUpdates({UI})");
+                int StackReference = AddtoStackTrace($"Utilities.Updater.CheckForUpdates({UI})");
                 if (string.IsNullOrWhiteSpace(UpdaterDB) == false || LDNetwork.DownloadFile(downloadlocation, URI) != -1)
                 {
                     int LatestVersion = LatestUpdate();
@@ -191,21 +216,25 @@ namespace DBM
                 {
                     GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
                 }
+                Utilities.AddExit(StackReference);
             }
 
             public static int LatestUpdate()
             {
+                int StackReference = Utilities.AddtoStackTrace("Updater.LatestUpdate()");
                 if (string.IsNullOrWhiteSpace(UpdaterDB))
                 {
                     UpdaterDB = LDDataBase.ConnectSQLite(GlobalStatic.UpdaterDBpath);
                 }
                 Primitive QueryItems = LDDataBase.Query(UpdaterDB, $"SELECT * FROM updates WHERE PRODUCTID = '{ GlobalStatic.ProductID }';", null, true);
                 int.TryParse(QueryItems[1]["VERSION"], out int LatestVersion);
+                Utilities.AddExit(StackReference);
                 return LatestVersion;
             }
 
             public static string[] DownloadLinks()
             {
+                int Stack = Utilities.AddtoStackTrace("Updater.DownloadLinks");
                 if (string.IsNullOrWhiteSpace(UpdaterDB))
                 {
                     UpdaterDB = LDDataBase.ConnectSQLite(GlobalStatic.UpdaterDBpath);
@@ -214,12 +243,13 @@ namespace DBM
                 string[] Locations = new string[2];
                 Locations[0] = QueryItems[1]["URL"];
                 Locations[1] = QueryItems[1]["URL2"];
+                Utilities.AddExit(Stack);
                 return Locations;
             }
 
             static bool Download(string URL)
             {
-                AddtoStackTrace("Utilities.DownloadUpdate(" + URL + ")");
+                int Stack = AddtoStackTrace("Utilities.DownloadUpdate(" + URL + ")");
                 string DownloadFolder = string.Empty;
                 while (string.IsNullOrWhiteSpace(DownloadFolder) || string.IsNullOrWhiteSpace(LDFile.GetExtension(DownloadFolder)))
                 {
@@ -231,9 +261,11 @@ namespace DBM
                 {
                     case -1:
                         GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
+                        AddExit(Stack);
                         return false;
                     default:
                         GraphicsWindow.ShowMessage("SUCCESS", "Update Downloaded");
+                        AddExit(Stack);
                         return true;
                 }
             }
@@ -251,84 +283,103 @@ namespace DBM
     {
         public static Primitive ToPrimitiveArray<T>(this List<T> List)
         {
+            int Stack = Utilities.AddtoStackTrace("Transform.ListToPrimitiveArray");
             Primitive _return = null;
             for (int i = 0; i < List.Count; i++)
             {
                 _return[i + 1] = List[i].ToString();
             }
+            Utilities.AddExit(Stack);
             return _return;
         }
 
         public static Primitive ToPrimitiveArray<T>(this ReadOnlyCollection<T> List)
         {
+            int Stack = Utilities.AddtoStackTrace("Transform.ReadOnlyCollectionToPrimitiveArray");
             Primitive _return = null;
             for (int i = 0; i < List.Count; i++)
             {
                 _return[i + 1] = List[i].ToString();
             }
+            Utilities.AddExit(Stack);
             return _return;
         }
 
         public static Primitive ToPrimitiveArray<T>(this IReadOnlyList<T> List)
         {
+            int Stack = Utilities.AddtoStackTrace("Transform.IReadOnlyListToPrimitiveArray");
             Primitive _return = null;
             for (int i = 0; i < List.Count; i++)
             {
                 _return[i + 1] = List[i].ToString();
             }
+            Utilities.AddExit(Stack);
             return _return;
         }
 
         public static Primitive ToPrimitiveArray<T>(this Dictionary<T, T> Dictionary)
         {
+            int Stack = Utilities.AddtoStackTrace("Transform.DictionaryToPrimitiveArray");
             StringBuilder Exporter = new StringBuilder();
             foreach (KeyValuePair<T, T> entry in Dictionary)
             {
                 Exporter.Append(entry.Key + "=" + entry.Value + ";");
             }
+            Utilities.AddExit(Stack);
             return Exporter.ToString();
         }
 
         public static void AddOrReplace<T>(this Dictionary<T,T> Dictionary,T Key,T Value)
         {
+            int Stack = Utilities.AddtoStackTrace("Transform.AddorReplaceDictionary");
             if (Dictionary.ContainsKey(Key)==true)
             {
                 Dictionary[Key] = Value;
+                Utilities.AddExit(Stack);
                 return;
             }
             Dictionary.Add(Key, Value);
+            Utilities.AddExit(Stack);
         }
 
         public static void Print<T>(this List<T> List)
         {
+            int Stack = Utilities.AddtoStackTrace("Transform.PrintList");
             for (int i = 0; i < List.Count; i++)
             {
                 Console.WriteLine("{0} : {1}", i, List[i]);
             }
+            Utilities.AddExit(Stack);
         }
 
         public static void Print<T>(this IReadOnlyList<T> List)
         {
+            int Stack = Utilities.AddtoStackTrace("Transform.PrintIReadOnlyList");
             for (int i = 0; i < List.Count; i++)
             {
                 Console.WriteLine("{0} : {1}", i, List[i]);
             }
+            Utilities.AddExit(Stack);
         }
 
         public static void Print<T>(this Dictionary<T, T> Dictionary)
         {
+            int Stack = Utilities.AddtoStackTrace("Transform.PrintDictionary");
             foreach (KeyValuePair<T,T> entry in Dictionary)
             {
                 Console.WriteLine("{0} : {1}", entry.Key, entry.Value);
             }
+            Utilities.AddExit(Stack);
         }
 
         public static void Print<T>(this IReadOnlyDictionary<T, T> Dictionary)
         {
+            int Stack = Utilities.AddtoStackTrace("Transform.PrintIReadOnlyDictionary");
             foreach (KeyValuePair<T, T> entry in Dictionary)
             {
                 Console.WriteLine("{0} : {1}", entry.Key, entry.Value);
             }
+            Utilities.AddExit(Stack);
         }
 
         public static string SanitizeFieldName(this string String)

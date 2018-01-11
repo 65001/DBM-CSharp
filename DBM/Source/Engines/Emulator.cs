@@ -12,7 +12,7 @@ namespace DBM
         public static void Emulator(EnginesMode Mode, string Database, string SQL, string Username, string Listview) //TODO Implement Emulator atleast for sqlite for DBM
         {
             //Attempts to emulate some if not all commands of a database engine by aliasing it to SQL
-            Utilities.AddtoStackTrace($"Engines.Emulator({Mode},{Database},{SQL}");
+            int StackPointer = Utilities.AddtoStackTrace($"Engines.Emulator({Mode},{Database},{SQL}");
             StringBuilder Emulator_Sql = new StringBuilder();
             string EmulatorTable = null;
 
@@ -165,11 +165,17 @@ namespace DBM
                     }
                     else if (SQL.StartsWith(".stacktrace", Comparison))
                     {
+                        //"hh:mm:ss ffffff"
                         EmulatorTable = "DBM_SQLITE_StackTrace";
-                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,Item TEXT,\"Start Time (UTC)\" TEXT);", EmulatorTable);
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,Item TEXT,\"Start Time (UTC)\" TEXT,\"Exit Time (UTC)\" TEXT,\"Duration (ms)\" TEXT);", EmulatorTable);
                         for (int i = 0; i < Utilities.StackTrace.Count; i++)
                         {
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}');", EmulatorTable, i, Utilities.StackTrace[i], Utilities.StackIniationTime[i]);
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}','{4}','{5}');", EmulatorTable, i, 
+                                Utilities.StackTrace[i], 
+                                Utilities.StackIniationTime[i].ToString("hh:mm:ss ffffff"),
+                                Utilities.StackExitTime[i].ToString("hh:mm:ss ffffff"),
+                                Utilities.StackDuration[i].TotalMilliseconds
+                                );
                         }
                     }
                     else if (SQL.StartsWith(".localization", Comparison))
@@ -322,6 +328,7 @@ namespace DBM
                 SetDefaultTable(EmulatorTable);
                 GetColumnsofTable(Database, EmulatorTable);
             }
+            Utilities.AddExit(StackPointer);
         }
 
         static void Write(Chart chart,string ChartType)

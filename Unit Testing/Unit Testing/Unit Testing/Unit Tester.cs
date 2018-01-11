@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using Google_Charts;
 using NUnit.Framework;
@@ -33,6 +34,144 @@ namespace Unit_Testing
     }
 
     [TestFixture]
+    class GQ
+    {
+        [Test]
+        public void NullGQSTest()
+        {
+            Assert.That(() => DBM.Engines.GenerateQuery(null, "Test"), Throws.TypeOf<ArgumentNullException>());
+        }
+
+        [Test]
+        public void NullTableTest()
+        {
+            var GQS = new Engines.GenerateQuerySettings();
+            Assert.That(() => Engines.GenerateQuery(GQS, null), Throws.TypeOf<ArgumentNullException>());
+        }
+
+        [Test]
+        public void WhiteSpaceTableTest()
+        {
+            var GQS = new Engines.GenerateQuerySettings();
+            Assert.That(() => Engines.GenerateQuery(GQS, string.Empty), Throws.TypeOf<ArgumentNullException>());
+        }
+
+        
+        [TestFixture]
+        public class Search
+        {
+            [TestCase("ID", "10", "Log")]
+            public void LikeSearch(string Column, string Text, string Table)
+            {
+                var GQS = new Engines.GenerateQuerySettings
+                {
+                    Search = true,
+                    SearchBy = Column,
+                    SearchText = Text
+                };
+                Assert.AreEqual(Engines.GenerateQuery(GQS, Table), string.Format("SELECT * FROM \"{0}\" WHERE \"{1}\" LIKE \'%{2}%\' ",Table,Column,Text));
+            }
+
+            [TestCase("ID", "10", "Log")]
+            public void StrictSearch(string Column, string Text, string Table)
+            {
+                var GQS = new Engines.GenerateQuerySettings
+                {
+                    Search = true,
+                    StrictSearch = true,
+                    SearchBy = Column,
+                    SearchText = Text
+                };
+                Assert.AreEqual(Engines.GenerateQuery(GQS, Table), string.Format("SELECT * FROM \"{0}\" WHERE \"{1}\"='{2}' ",Table,Column,Text));
+            }
+
+            [TestCase("ID","10","Log")]
+            public void InvertSearchStrict(string Column, string Text, string Table)
+            {
+                var GQS = new Engines.GenerateQuerySettings
+                {
+                    Search = true,
+                    StrictSearch = true,
+                    InvertSearch = true,
+                    SearchBy = Column,
+                    SearchText = Text
+                };
+                Assert.AreEqual(Engines.GenerateQuery(GQS, Table), string.Format( "SELECT * FROM \"{0}\" WHERE \"{1}\"!='{2}' ",Table,Column,Text));
+            }
+
+            [TestCase("ID","10","Log")]
+            public void InvertSearchLike(string Column,string Text,string Table)
+            {
+                var GQS = new Engines.GenerateQuerySettings
+                {
+                    Search = true,
+                    InvertSearch = true,
+                    SearchBy = Column,
+                    SearchText = Text
+                };
+                Assert.AreEqual(Engines.GenerateQuery(GQS, Table), string.Format("SELECT * FROM \"{0}\" WHERE \"{1}\" NOT LIKE '%{2}%' ",Table.SanitizeFieldName(),Column.SanitizeFieldName(),Text.SanitizeFieldName()));
+            }
+        }
+
+        [TestFixture]
+        public class Sort
+        {
+            [TestCase("ID", "Log")]
+            [TestCase("city","SA Realestate")]
+            public void ASC(string Column, string Table)
+            {
+                var GQS = new Engines.GenerateQuerySettings
+                {
+                    Sort = true,
+                    OrderBy = Column,
+                    Order = Engines.GenerateQuerySettings.SortOrder.Ascending
+                };
+                Assert.AreEqual(Engines.GenerateQuery(GQS, Table),string.Format("SELECT * FROM \"{0}\" ORDER BY \"{1}\" ASC;", Table.SanitizeFieldName(), Column.SanitizeFieldName()));
+            }
+
+            [TestCase("ID", "Log")]
+            public void DESC(string Column,string Table)
+            {
+                var GQS = new Engines.GenerateQuerySettings
+                {
+                    Sort = true,
+                    OrderBy = Column,
+                    Order = Engines.GenerateQuerySettings.SortOrder.Descding
+                };
+                Assert.AreEqual(Engines.GenerateQuery(GQS, Table), string.Format("SELECT * FROM \"{0}\" ORDER BY \"{1}\" DESC;",Table.SanitizeFieldName(),Column.SanitizeFieldName()));
+            }
+
+            [TestCase("ID","Log")]
+            public void Random(string Column,string Table)
+            {
+                var GQS = new Engines.GenerateQuerySettings
+                {
+                    Sort = true,
+                    OrderBy = Column,
+                    Order = Engines.GenerateQuerySettings.SortOrder.Random
+                };
+                Assert.AreEqual(Engines.GenerateQuery(GQS, Table), string.Format("SELECT * FROM \"{0}\" ORDER BY RANDOM();",Table.SanitizeFieldName()));
+            }
+        }
+
+        [TestFixture]
+        public class Function
+        {
+            [TestCase("AVG","ID","Log")]
+            public void Functions(string Function,string Column,string Table)
+            {
+                var GQS = new Engines.GenerateQuerySettings
+                {
+                    RunFunction = true,
+                    FunctionSelected = Function,
+                    FunctionColumn = Column
+                };
+                Assert.AreEqual(Engines.GenerateQuery(GQS, Table),string.Format("SELECT {0}(\"{1}\") FROM \"{2}\"",Function,Column.SanitizeFieldName(),Table.SanitizeFieldName()));
+            }
+        }
+    }
+
+    [TestFixture]
     class SettingsTest
     {
         [Test]
@@ -45,10 +184,14 @@ namespace Unit_Testing
     [TestFixture]
     class ImportTest
     {
-        [Test]
-        public void CSV()
+        [TestFixture]
+        public class CSV
         {
-            Assert.That( () => Import.CSV(""), Throws.TypeOf<FileNotFoundException>());
+            [Test]
+            public void FileNotFound()
+            {
+                Assert.That(() => Import.CSV(""), Throws.TypeOf<FileNotFoundException>());
+            }
         }
     }
 
@@ -74,16 +217,10 @@ namespace Unit_Testing
             chart.AddRowData(2, "1000");
             Assert.Pass();
         }
-
-        [Test]
-        public void Export()
-        {
-            Assert.Pass();
-        }
     }
 
     [TestFixture]
-    class ExportTest
+    class ExportTest //TODO Add a good Export Test for HTML
     {
         static Primitive Schema;
         static Primitive Data;
@@ -94,14 +231,6 @@ namespace Unit_Testing
             Load(URI, Query);
             string JSON = Export.JSON(Data, Schema, Title);
             Assert.AreEqual(JSON, System.IO.File.ReadAllText(JSONPath));
-        }
-
-        [TestCase("C:\\Users\\Abhishek\\Documents\\Projects\\DBM\\Test Files\\Sacramento realestate transactions.db", "Select * FROM \"Sacramento realestate transactions\";", "Sacramento realestate transactions", "C:\\Users\\Abhishek\\Documents\\Projects\\DBM\\Test Files\\Sacramento realestate transactions.html")]
-        public void HTML(string URI,string Query,string Title,string HTMLPath)
-        {
-            Load(URI, Query);
-            string HTML = Export.HTML(Data, Schema, Title,  "DBM C# V1240"); //TODO
-            Assert.AreEqual(HTML, System.IO.File.ReadAllText(HTMLPath));
         }
 
         [TestCase("C:\\Users\\Abhishek\\Documents\\Projects\\DBM\\Test Files\\Sacramento realestate transactions.db", "Select * FROM \"Sacramento realestate transactions\";", "Sacramento realestate transactions", "C:\\Users\\Abhishek\\Documents\\Projects\\DBM\\Test Files\\Sacramento realestate transactions.csv")]

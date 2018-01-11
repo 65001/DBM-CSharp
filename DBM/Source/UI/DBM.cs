@@ -68,7 +68,7 @@ namespace DBM
         {
             try
             {
-                Utilities.AddtoStackTrace("UI.Main()");
+                int Stack = Utilities.AddtoStackTrace("UI.Main()");
                 LDUtilities.ShowErrors = false;
                 LDUtilities.ShowFileErrors = false;
                 LDUtilities.ShowNoShapeErrors = false;
@@ -83,6 +83,7 @@ namespace DBM
                 Engines.OnSchemaChange += SchemaChanged;
 
                 Startup();
+                Utilities.AddExit(Stack);
             }
             catch (Exception ex)
             {
@@ -90,24 +91,25 @@ namespace DBM
                 Utilities.StackTrace.Print();
                 Events.LogMessage(ex.Message, Utilities.Localization["System"]);
                 Program.Delay(1000);
-                Program.End();
+                Environment.Exit(31);
             }
         }
 
         static void ColumnsChanged(object sender, EventArgs e)
         {
-            Utilities.AddtoStackTrace("ColumnsChanged");
+            int Stack = Utilities.AddtoStackTrace("ColumnsChanged");
             if (GlobalStatic.SortBy != 0)
             {
                 LDControls.ComboBoxContent(GlobalStatic.ComboBox["Sort"], Engines.Schema);
                 LDControls.ComboBoxContent(GlobalStatic.ComboBox["Search"], Engines.Schema);
                 LDControls.ComboBoxContent(GlobalStatic.ComboBox["ColumnList"], Engines.Schema);
             }
+            Utilities.AddExit(Stack);
         }
 
         static void SchemaChanged(object sender, EventArgs e)
         {
-            Utilities.AddtoStackTrace("SchemaChanged");
+            int Stack = Utilities.AddtoStackTrace("SchemaChanged");
             switch (GlobalStatic.SortBy)
             {
                 case 1:
@@ -121,11 +123,12 @@ namespace DBM
                     break;
             }
             Title();
+            Utilities.AddExit(Stack);
         }
 
         public static void Startup()
         {
-            Utilities.AddtoStackTrace("UI.Startup()");
+            int Stack = Utilities.AddtoStackTrace("UI.Startup()");
             try
             {
                 DBM.Settings.Load(GlobalStatic.RestoreSettings, GlobalStatic.SettingsPath); //Load Application Settings from text file
@@ -167,6 +170,7 @@ namespace DBM
             }
             StartUpStopWatch.Stop();
             Events.LogMessage($"Startup Time : {StartUpStopWatch.ElapsedMilliseconds} (ms)", Utilities.Localization["UI"]);
+            Utilities.AddExit(Stack);
         }
 
         static bool RunProgram()
@@ -176,7 +180,7 @@ namespace DBM
 
         public static void StartupGUI()
         {
-            Utilities.AddtoStackTrace("UI.StartupGUI()");
+            int Stack = Utilities.AddtoStackTrace("UI.StartupGUI()");
             ClearWindow();
             LDScrollBars.Add(GlobalStatic.Listview_Width + 200, GlobalStatic.Listview_Height);
             LDGraphicsWindow.State = 2;
@@ -188,11 +192,12 @@ namespace DBM
                 Events.LogMessage("Autoupdate Check", "Updater");
                 Utilities.Updater.CheckForUpdates(GlobalStatic.UpdaterDBpath,GlobalStatic.OnlineDB_Refrence_Location,false);
             }
+            Utilities.AddExit(Stack);
         }
 
         public static void PreMainMenu()
         {
-            Utilities.AddtoStackTrace("UI.PreMainMenu()");
+            int StackReference = Utilities.AddtoStackTrace("UI.PreMainMenu()");
             GraphicsWindow.FontName = "Segoe UI";
 
             //Main
@@ -257,12 +262,13 @@ namespace DBM
             MenuList[Utilities.Localization["Check for Updates"]] = Utilities.Localization["Settings"];
             MenuList["-"] = Utilities.Localization["Settings"];
 
+            Utilities.AddExit(StackReference);
             //IconList[Utilities.Localization["Settings Editor"]] = LDImage.LoadSVG( GlobalStatic.AssetPath + "\\Images\\settings.svg");
         }
 
         public static void MainMenu()
         {
-            Utilities.AddtoStackTrace("UI.MainMenu()");
+            int StackReference = Utilities.AddtoStackTrace("UI.MainMenu()");
             LDGraphicsWindow.ExitButtonMode(GraphicsWindow.Title, "Enabled");
             GraphicsWindow.CanResize = true;
 
@@ -306,19 +312,23 @@ namespace DBM
             LDControls.MenuClicked += Events.MC;
             LDControls.ComboBoxItemChanged += Events.CB;
             LDControls.ContextMenuClicked += Events.MI;
+
+            Utilities.AddExit(StackReference);
         }
 
         public static string GetPath(Engines.EnginesMode EngineMode)
         {
-            Utilities.AddtoStackTrace($"UI.GetPath({EngineMode})");
+            int Stack = Utilities.AddtoStackTrace($"UI.GetPath({EngineMode})");
             if (Program.ArgumentCount == 1 && GlobalStatic.LoadedFile == false)
             {
                 GlobalStatic.LoadedFile = true;
+                Utilities.AddExit(Stack);
                 return Program.GetArgument(1);
             }
             switch (EngineMode)
             {
                 case Engines.EnginesMode.SQLITE:
+                    Utilities.AddExit(Stack);
                     return LDDialogs.OpenFile(GlobalStatic.Extensions, GlobalStatic.LastFolder + "\\");
                 default:
                     throw new NotImplementedException();
@@ -327,7 +337,7 @@ namespace DBM
 
         public static void HideDisplayResults()
         {
-            Utilities.AddtoStackTrace("UI.HideDisplayResults()");
+            int Stack = Utilities.AddtoStackTrace("UI.HideDisplayResults()");
             string Default_Brush = GraphicsWindow.BrushColor;
             GraphicsWindow.BrushColor = "WHITE";
             GraphicsWindow.FillRectangle(GlobalStatic.UIx - 5, 45, 320, 350);
@@ -336,21 +346,24 @@ namespace DBM
             {
                 Controls.HideControl(_HideDisplay[i]);
             }
+            Utilities.AddExit(Stack);
         }
 
         public static void ShowDisplayResults()
         {
-            Utilities.AddtoStackTrace("UI.ShowDisplayResults()");
+            int Stack = Utilities.AddtoStackTrace("UI.ShowDisplayResults()");
             DisplayHelper();
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
             for (int i = 0; i < _HideDisplay.Count; i++)
             {
                 Controls.ShowControl(_HideDisplay[i]);
             }
+            Utilities.AddExit(Stack);
         }
 
         static void DisplayHelper()
         {
+            int Stack = Utilities.AddtoStackTrace("UI.DisplayHelper");
             string Default_Brush = GraphicsWindow.BrushColor;
             GraphicsWindow.BrushColor = "WHITE";
             GraphicsWindow.FillRectangle(GlobalStatic.UIx - 5, 45, 320, 350);
@@ -365,11 +378,12 @@ namespace DBM
             GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 180, Utilities.Localization["Search in"]);
             GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210, Utilities.Localization["Search"] + ":");
             GraphicsWindow.DrawText(GlobalStatic.UIx + 127, 290, Utilities.Localization["Functions"] + ":");
+            Utilities.AddExit(Stack);
         }
 
 		public static void DisplayResults()
 		{
-            Utilities.AddtoStackTrace( "UI.DisplayResults()");
+            int Stack = Utilities.AddtoStackTrace( "UI.DisplayResults()");
             //Clears the Dictionary to prevent errors
             _Buttons.Clear();
             _TextBox.Clear();
@@ -454,11 +468,13 @@ namespace DBM
             _HideDisplay.Add(_TextBox["CustomQuery"]);
             _HideDisplay.Add(Buttons["Query"]);
             _HideDisplay.Add(Buttons["Command"]);
+
+            Utilities.AddExit(Stack);
 		}
 
 		public static void Title()
 		{
-            Utilities.AddtoStackTrace( "UI.Title()");
+            int Stack = Utilities.AddtoStackTrace( "UI.Title()");
 			string SetTitle;
 			SetTitle = GlobalStatic.Title + " " + Engines.DatabaseShortname + "(" + Engines.CurrentDatabase + ") : " + Handlers.TypeofSorts[(GlobalStatic.SortBy)] + " : " + Engines.CurrentTable;
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
@@ -478,6 +494,7 @@ namespace DBM
 				}
 			}
 			GraphicsWindow.Title = SetTitle;
+            Utilities.AddExit(Stack);
 		}
 
         /// <summary>
@@ -485,14 +502,16 @@ namespace DBM
         /// </summary>
         static void ClearWindow()
         {
+            int Stack = Utilities.AddtoStackTrace("UI.ClearWindow()");
             GraphicsWindow.Clear();
             _Buttons.Clear();
             _TextBox.Clear();
+            Utilities.AddExit(Stack);
         }
 
 		public static void CreateTableUI()
 		{
-            Utilities.AddtoStackTrace( "UI.CreateTableUI()");
+            int Stack = Utilities.AddtoStackTrace("UI.CreateTableUI()");
             Controls.HideControl(GlobalStatic.Dataview);
             Controls.HideControl(GlobalStatic.ListView);
             GlobalStatic.ListView = null;
@@ -521,11 +540,12 @@ namespace DBM
 
             Controls.ButtonClicked -= Events.BC;
             Controls.ButtonClicked += CreateTableHandler;
+            Utilities.AddExit(Stack);
         }
 
 		public static void CreateTableHandler()
 		{
-            Utilities.AddtoStackTrace( "UI.CreateTableHandler()");
+            int Stack = Utilities.AddtoStackTrace( "UI.CreateTableHandler()");
             string LastButton = Controls.LastClickedButton;
             string Name = Controls.GetTextBoxText(_TextBox["Table_Name"]);
             if (LastButton == _Buttons["Commit"])
@@ -589,6 +609,7 @@ namespace DBM
                 {
                     GraphicsWindow.ShowMessage("Table Name is not empty, please fill it!", "NAME");
                 }
+                Utilities.AddExit(Stack);
                 return;
             }
 
@@ -601,8 +622,10 @@ namespace DBM
                 ShowDisplayResults();
                 MainMenu();
                 //Events.MC("View");
+                Utilities.AddExit(Stack);
                 return;
-            } 
+            }
+            Utilities.AddExit(Stack);
 		}
 	}
 
@@ -611,7 +634,8 @@ namespace DBM
         public static void LogEvents() //Error Handler
 		{
 			LogMessage(LDEvents.LastError, Utilities.Localization["System"]);
-            Utilities.AddtoStackTrace("Events.LogEvents()");
+            int Stack = Utilities.AddtoStackTrace("Events.LogEvents()");
+            Utilities.AddExit(Stack);
 		}
         
         /// <param name="UI_Message">Message Shown on the popup</param>
@@ -634,7 +658,7 @@ namespace DBM
         public static void LogMessage(string Message, string Type) //Logs Message to all applicable locations
 		{
             LogMessage(Message,Type, Utilities.StackTrace[Utilities.StackTrace.Count- 1] );
-            Utilities.AddtoStackTrace("Events.LogMessage()");
+            Utilities.AddExit( Utilities.AddtoStackTrace("Events.LogMessage()"));
 		}
 
         static void LogMessage(string Message, string Type, string Caller)
@@ -669,16 +693,17 @@ namespace DBM
                 Type = "Shape";
             }
             
-            Utilities.AddtoStackTrace($"Events.LogMessage({Message},{Type},{Caller})");
+            int Stack = Utilities.AddtoStackTrace($"Events.LogMessage({Message},{Type},{Caller})");
 
             string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'" + GlobalStatic.UserName + "','"+ GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message.Replace("\n","") + "','" + Type + "');"; ;
 
             Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"], false);
+            Utilities.AddExit(Stack);
         }
 
 		public static void Closing()
 		{
-            Utilities.AddtoStackTrace( "Events.Closing()");
+            int Stack = Utilities.AddtoStackTrace( "Events.Closing()");
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
 			{
                 LogMessage("Program Closing", Utilities.Localization["Application"]); //Localize
@@ -689,6 +714,7 @@ namespace DBM
             }
             GraphicsWindow.Clear();
             GraphicsWindow.Hide();
+            Utilities.AddExit(Stack);
             Environment.Exit(0);
         }
 
@@ -700,13 +726,13 @@ namespace DBM
 		public static void BC()
 		{
             BC(Controls.LastClickedButton);
-            Utilities.AddtoStackTrace("Events.BC()");
+            Utilities.AddExit( Utilities.AddtoStackTrace("Events.BC()"));
 		}
 
         public async static void BC(string LastClickedButton)
         {
             await Task.Run(() => { Handlers.Buttons(LastClickedButton); });
-            Utilities.AddtoStackTrace($"Events.BC({ LastClickedButton}");
+            Utilities.AddExit( Utilities.AddtoStackTrace($"Events.BC({ LastClickedButton}"));
         }
 
         /// <summary>
@@ -715,13 +741,13 @@ namespace DBM
         public static void MC()
 		{
             MC(LDControls.LastMenuItem);
-            Utilities.AddtoStackTrace("Events.MC()");
+            Utilities.AddExit( Utilities.AddtoStackTrace("Events.MC()"));
 		}
 
         public async static void MC(string LastMenuItem)
         {
             await Task.Run(() => { Handlers.Menu(LastMenuItem); });
-            Utilities.AddtoStackTrace($"Events.MC({LastMenuItem})");
+            Utilities.AddExit( Utilities.AddtoStackTrace($"Events.MC({LastMenuItem})"));
         }
 
         /// <summary>
@@ -730,13 +756,13 @@ namespace DBM
 		public async static void CB()
 		{
 			await Task.Run(() => { Handlers.ComboBox(LDControls.LastComboBox, LDControls.LastComboBoxIndex); });
-            Utilities.AddtoStackTrace("Events.CB()");
+            Utilities.AddExit( Utilities.AddtoStackTrace("Events.CB()"));
 		}
 
         public async static void CB(string LastComboBox,int ComboBoxIndex)
         {
             await Task.Run(() => { Handlers.ComboBox(LastComboBox, ComboBoxIndex); });
-            Utilities.AddtoStackTrace("Events.CB()");
+            Utilities.AddExit( Utilities.AddtoStackTrace("Events.CB()"));
         }
 
         /// <summary>
@@ -745,6 +771,7 @@ namespace DBM
         public async static void MI()
         {
             await Task.Run(() => { Handlers.ContextMenu(LDControls.LastContextControl,LDControls.LastContextItem); });
+            Utilities.AddExit(Utilities.AddtoStackTrace("Events.MI()"));
         }
 	}
 }

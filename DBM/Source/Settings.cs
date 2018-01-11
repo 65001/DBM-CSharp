@@ -13,7 +13,7 @@ namespace DBM
     {
         public static void Load(bool RestoreSettings, string SettingsPath)
         {
-            Utilities.AddtoStackTrace($"Settings.LoadSettings({RestoreSettings},{SettingsPath})");
+            int StackReference = Utilities.AddtoStackTrace($"Settings.LoadSettings({RestoreSettings},{SettingsPath})");
             if (string.IsNullOrWhiteSpace(SettingsPath))
             {
                 throw new ArgumentNullException("The Settings Path was null or whitespace");
@@ -38,10 +38,12 @@ namespace DBM
             Defaults();
             SettingsToFields(); //Binds Settings in the event a default has been set.
             Save(); //Save Settings in the event a value has been changed.
+            Utilities.AddExit(StackReference);
         }
 
         static void Defaults()
         {
+            int Stack = Utilities.AddtoStackTrace("Settings.Defaults");
             GlobalStatic.Settings["VersionID"] = GlobalStatic.VersionID;
 
             if (GlobalStatic.Listview_Width == 0)
@@ -115,6 +117,7 @@ namespace DBM
             {
                 SetSettingsValue("EULA", "Signed", false);
             }
+            Utilities.AddExit(Stack);
         }
 
         static void SetSettingsValue<T>(string Key1,string Key2,T Value)
@@ -129,6 +132,7 @@ namespace DBM
         /// </summary>
         static void SettingsToFields()
         {
+            int Stack = Utilities.AddtoStackTrace("Settings.SettingsToFields");
             //Listview
             GlobalStatic.Listview_Width = (int?)GlobalStatic.Settings["listview"]["Width"] ?? GlobalStatic.Settings["Listview_Width"];
             GlobalStatic.Listview_Height = (int?)GlobalStatic.Settings["listview"]["Height"] ?? GlobalStatic.Settings["Listview_Height"];
@@ -158,11 +162,12 @@ namespace DBM
 
             GlobalStatic.EULA_Acceptance = (bool?)GlobalStatic.Settings["EULA"]["Signed"] ?? (bool?)GlobalStatic.Settings["EULA"] ?? false;
             GlobalStatic.EULA_UserName = (string)GlobalStatic.Settings["EULA"]["Signer"] ?? (string)GlobalStatic.Settings["EULA_By"] ?? null;
+            Utilities.AddExit(Stack);
         }
 
 		public static void Save()
 		{
-            Utilities.AddtoStackTrace("Settings.SaveSettings()");
+            int StackReference = Utilities.AddtoStackTrace("Settings.SaveSettings()");
             try
             {
                 ConverttoXML(GlobalStatic.Settings, GlobalStatic.SettingsPath.Replace(".txt", ".xml"));
@@ -171,13 +176,15 @@ namespace DBM
             {
                 Events.LogMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["UI"]);
             }
+            Utilities.AddExit(StackReference);
 		}
 
         /// <summary>
         /// Converts a text settings file to an XML settings file.
         /// </summary>
         static void ConverttoXML(Primitive Settings, string URI)
-        { 
+        {
+            int Stack = Utilities.AddtoStackTrace("Settings.ConvertToXML");
             try
             {
                 System.IO.File.WriteAllText(URI,ConverttoXML(Settings));
@@ -186,6 +193,7 @@ namespace DBM
             {
                 GraphicsWindow.ShowMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["Error"]);
             }
+            Utilities.AddExit(Stack);
         }
 
         /// <summary>
@@ -193,6 +201,7 @@ namespace DBM
         /// </summary>
         static string ConverttoXML(Primitive Settings)
         {
+            int Stack = Utilities.AddtoStackTrace("Settings.ConvertToXML");
             StringBuilder SB = new StringBuilder();
             SB.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
             SB.AppendLine("<root>");
@@ -234,12 +243,14 @@ namespace DBM
             SB.AppendFormat("\t\t<height>{0}</height>\n", (int?)Settings["listview"]["height"] ?? Settings["Listview_Height"]);
             SB.AppendLine("\t</listview>");
             SB.Append("</root>");
+            Utilities.AddExit(Stack);
             return SB.ToString();
         }
 
 
         static Primitive XML(string URI)
         {
+            int Stack = Utilities.AddtoStackTrace("Settings.XML");
             LDxml.Open(URI);
             Primitive Data = LDxml.ToArray();
             Data = Data["root"]["children"];
@@ -266,6 +277,7 @@ namespace DBM
                     //GraphicsWindow.ShowMessage(Data[i], "XML");
                 }
             }
+            Utilities.AddExit(Stack);
             return RData;
         }
 
@@ -274,7 +286,7 @@ namespace DBM
         /// </summary>
 		public static void Paths(string AssetPath,string PluginPath,string LocalizationFolder,string AutoRunPluginPath,string Localization_LanguageCodes_Path,string AutoRunPluginMessage)
 		{
-            Utilities.AddtoStackTrace("Settings.Paths()");
+            int Stack = Utilities.AddtoStackTrace("Settings.Paths()");
 			if (Directory.Exists(AssetPath) == false || Directory.Exists(LocalizationFolder) == false) //Creates Folders if one is missing
 			{
 				Directory.CreateDirectory(AssetPath);
@@ -286,6 +298,7 @@ namespace DBM
 			{
 				System.IO.File.WriteAllText(AutoRunPluginPath, AutoRunPluginMessage);
 			}
+            Utilities.AddExit(Stack);
 		}
 
         /// <summary>
@@ -293,7 +306,7 @@ namespace DBM
         /// </summary>
 		public static void IniateDatabases()
 		{
-            Utilities.AddtoStackTrace("Settings.IniateDatabases()");
+            int Stack = Utilities.AddtoStackTrace("Settings.IniateDatabases()");
             if (string.IsNullOrWhiteSpace(GlobalStatic.TransactionDBPath) || string.IsNullOrWhiteSpace(GlobalStatic.LogDBpath))
             {
                 throw new ArgumentNullException("Transaction or Log Path is null");
@@ -304,6 +317,7 @@ namespace DBM
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQL, GlobalStatic.UserName, "Auto Creation Statements", false);
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQLVIEW , GlobalStatic.UserName, "Auto Creation Statements", false);
 			Engines.Command(GlobalStatic.TransactionDB, GlobalStatic.TransactionsSQL , GlobalStatic.UserName, "Auto Creation Statements", false);
-		}
+            Utilities.AddExit(Stack);
+        }
 	}
 }

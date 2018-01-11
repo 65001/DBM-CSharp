@@ -69,6 +69,7 @@ namespace DBM
         {
             for (int i = 0; i < LDDataBase.dataBases.Count; i++)
             {
+                
                 if (DataBase == LDDataBase.dataBases[i].name)
                 {
                     return LDDataBase.dataBases[i].cnnSQLite;
@@ -226,6 +227,5 @@ namespace DBM
                 return LDTranslate.Translate(args[0].ToString(),args[1].ToString(),args[2].ToString());
             }
         }
-
     }
 }

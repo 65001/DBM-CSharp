@@ -21,18 +21,22 @@ namespace DBM
             /// <returns></returns>
             public static string DB(EnginesMode Mode, Primitive Data)
             {
+                int Stack = Utilities.AddtoStackTrace($"Engines.Load.DB({Mode})");
                 Dictionary<string, string> _Data = new Dictionary<string, string>
                 {
                     ["URI"] = Data
                 };
+                Utilities.AddExit(Stack);
                 return DB(Mode, _Data);
             }
 
             public static string DB(EnginesMode Mode, Dictionary<string, string> Data) //Tasked with connecting to a Database and adding the DB Connection Name to a list.
             {
+                int Stack = Utilities.AddtoStackTrace($"Engines.Load.DB({Mode})");
                 switch (Mode)
                 {
                     case EnginesMode.SQLITE:
+                        Utilities.AddExit(Stack);
                         return DB(Mode, Data, Path.GetFileNameWithoutExtension(Data["URI"]));
                     default:
                         throw new NotImplementedException();
@@ -42,13 +46,14 @@ namespace DBM
             public static string DB(EnginesMode Mode, Dictionary<string, string> Data, string ShortName)
             {
                 //MAKE SURE The CurrentMode is always currently changed.
-                Utilities.AddtoStackTrace($"Engines.Load.DB({Mode},{ShortName})");
+                int StackPointer = Utilities.AddtoStackTrace($"Engines.Load.DB({Mode},{ShortName})");
                 string HashCode = Data.ToPrimitiveArray();
                 //If DB is already in the list...
                 if (_DB_Hash.ContainsKey(HashCode))
                 {
                     CurrentDatabase = _DB_Hash[HashCode];
                     DatabaseShortname = ShortName;
+                    Utilities.AddExit(StackPointer);
                     return CurrentDatabase;
                 }
 
@@ -58,14 +63,17 @@ namespace DBM
                     case EnginesMode.MySQL:
                         CurrentDatabase = LDDataBase.ConnectMySQL(Data["Server"], Data["User"], Data["Password"], Data["Database"]);
                         _DB_Hash.Add(HashCode, CurrentDatabase);
+                        Utilities.AddExit(StackPointer);
                         return CurrentDatabase;
                     case EnginesMode.ODBC:
                         CurrentDatabase = LDDataBase.ConnectOdbc(Data["Driver"], Data["Server"], Data["Port"], Data["User"], Data["Password"], Data["Option"], Data["Database"]);
                         _DB_Hash.Add(HashCode, CurrentDatabase);
+                        Utilities.AddExit(StackPointer);
                         return CurrentDatabase;
                     case EnginesMode.OLEDB:
                         CurrentDatabase = LDDataBase.ConnectOleDb(Data["Provider"], Data["Server"], Data["Database"]);
                         _DB_Hash.Add(HashCode, CurrentDatabase);
+                        Utilities.AddExit(StackPointer);
                         return CurrentDatabase;
                     case EnginesMode.SQLITE:
 
@@ -77,20 +85,25 @@ namespace DBM
                             CurrentDatabase = Database;
                             _DB_Hash.Add(HashCode, CurrentDatabase);
                             GetConnection(Database).AutoBind();
+                            Utilities.AddExit(StackPointer);
                             return Database;
                         }
+                        Utilities.AddExit(StackPointer);
                         return null;
                     case EnginesMode.SQLSERVER:
                         CurrentDatabase = LDDataBase.ConnectSqlServer(Data["Server"], Data["Database"]);
                         _DB_Hash.Add(HashCode, CurrentDatabase);
+                        Utilities.AddExit(StackPointer);
                         return CurrentDatabase;
                     default:
+                        Utilities.AddExit(StackPointer);
                         return "Incorrect Paramters";
                 }
             }
 
             public static void MemoryDB(EnginesMode Mode)
             {
+                int Stack = Utilities.AddtoStackTrace($"Engines.Load.MemoryDB({Mode})");
                 switch (Mode)
                 {
                     case EnginesMode.SQLITE:
@@ -101,38 +114,46 @@ namespace DBM
                     default:
                         throw new NotImplementedException();
                 }
+                Utilities.AddExit(Stack);
             }
 
             public static string Sqlite(string FilePath)
             {
+                int Stack = Utilities.AddtoStackTrace($"Engines.Load.Sqlite({FilePath})");
                 Dictionary<string, string> _Data = new Dictionary<string, string>
                 {
                     ["URI"] = FilePath
                 };
+                Utilities.AddExit(Stack);
                 return DB(EnginesMode.SQLITE, _Data);
             }
 
             public static string Sqlite(string FilePath, string ShortName)
             {
+                int Stack = Utilities.AddtoStackTrace($"Engines.Load.Sqlite({FilePath},{ShortName})");
                 Dictionary<string, string> _Data = new Dictionary<string, string>
                 {
                     ["URI"] = FilePath
                 };
+                Utilities.AddExit(Stack);
                 return DB(EnginesMode.SQLITE, _Data, ShortName);
             }
 
             public static string SQLServer(string Server, string Database)
             {
+                int Stack = Utilities.AddtoStackTrace($"Engines.Load.SQLServer({Server},{Database})");
                 Dictionary<string, string> Data = new Dictionary<string, string>
                 {
                     ["Server"] = Server,
                     ["Database"] = Database
                 };
+                Utilities.AddExit(Stack);
                 return DB(EnginesMode.SQLSERVER, Data);
             }
 
             public static string MySQL(string Server, string Database, string User, string Password)
             {
+                int Stack = Utilities.AddtoStackTrace($"Engines.Load.MySQL({Server},{Database}");
                 Dictionary<string, string> Data = new Dictionary<string, string>
                 {
                     ["Server"] = Server,
@@ -140,22 +161,26 @@ namespace DBM
                     ["Password"] = Password,
                     ["Database"] = Database
                 };
+                Utilities.AddExit(Stack);
                 return DB(EnginesMode.MySQL, Data);
             }
 
             public static string OLEDB(string Server, string Database, string Provider)
             {
+                int Stack = Utilities.AddtoStackTrace($"Engines.Load.OLEDB({Server},{Database},{Provider})");
                 Dictionary<string, string> Data = new Dictionary<string, string>
                 {
                     ["Provider"] = Provider,
                     ["Server"] = Server,
                     ["Database"] = Database
                 };
+                Utilities.AddExit(Stack);
                 return DB(EnginesMode.OLEDB, Data);
             }
 
             public static string ODBC(string Server, string Database, string User, string Password, int Port, string Driver, string Option)
             {
+                int Stack = Utilities.AddtoStackTrace($"Engines.Load.ODBC({Server},{Database})");
                 Dictionary<string, string> Data = new Dictionary<string, string>
                 {
                     ["Driver"] = Driver,
@@ -166,6 +191,7 @@ namespace DBM
                     ["Option"] = Option,
                     ["Database"] = Database
                 };
+                Utilities.AddExit(Stack);
                 return DB(EnginesMode.ODBC, Data);
             }
         }
@@ -174,7 +200,7 @@ namespace DBM
         {
             public static void CreateStatisticsTable(string Database, string Table, string StatTableName, Primitive Schema)
             {
-                Utilities.AddtoStackTrace($"Engines.Transform.CreateStatisticsPage({Database},{Table},{StatTableName})");
+                int StackPointer = Utilities.AddtoStackTrace($"Engines.Transform.CreateStatisticsPage({Database},{Table},{StatTableName})");
                 StringBuilder SQL = new StringBuilder();
                 switch (Engines.DB_Engine[Engines.DB_Name.IndexOf(Database)])
                 {
@@ -189,6 +215,7 @@ namespace DBM
                         Command(Database, SQL.ToString(), Utilities.Localization["Application"] + ":" + Utilities.Localization["User Requested"] + ":" + Utilities.Localization["Statistics Page"]);
                         break;
                 }
+                Utilities.AddExit(StackPointer);
             }
         }
 

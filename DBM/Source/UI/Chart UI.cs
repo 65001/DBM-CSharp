@@ -38,7 +38,7 @@ namespace DBM
 
             public static void Display(Google_Charts.Chart chart)
             {
-                Utilities.AddtoStackTrace("UI.Charts.Display()");
+                int Stack = Utilities.AddtoStackTrace("UI.Charts.Display()");
                 Charts.chart = chart;
                 ClearWindow();
                 GraphicsWindow.Title = "Charts";
@@ -127,6 +127,7 @@ namespace DBM
                 //Event Handler Hooking
                 Controls.ButtonClicked += Handler;
                 AutoHide();
+                Utilities.AddExit(Stack);
             }
 
             static void Binder()

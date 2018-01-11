@@ -22,11 +22,14 @@ namespace DBM
 
         public static void CSV(string InputFilePath, string OutPutFilePath)
         {
+            int Stack = Utilities.AddtoStackTrace($"Import.CSV({InputFilePath},{OutPutFilePath})");
             File.WriteAllText(OutPutFilePath, CSV(InputFilePath));
+            Utilities.AddExit(Stack);
         }
 
 		public static string CSV(string FilePath)
-		{			
+		{
+            int Stack = Utilities.AddtoStackTrace($"Utilities.CSV({FilePath})");
 			//TODO Make sure comment's are universal across SQL.Then use them to insert data such as how long it took to generate the SQL and how many rows were skipped if any?
 			if (File.Exists(FilePath) == false)
 			{
@@ -62,7 +65,7 @@ namespace DBM
 				//Appending
 				CSV_SQL = (HeaderSQL +"\n" + CSV_SQL).Replace("'NULL'","NULL").Replace("<<HEADERS>>", HeaderWOType);
                 LDFastArray.Remove(Data);
-                Console.WriteLine("Import.CSV time {0} ms", Elappsed.ElapsedMilliseconds);
+                Utilities.AddExit(Stack);
                 return CSV_SQL;
 			}
 			catch (Exception ex)
@@ -72,15 +75,13 @@ namespace DBM
 
 			//Drops The FastArray
 			LDFastArray.Remove(Data);
-
-        #if DEBUG
-            Console.WriteLine("Import.CSV time {0} ms", Elappsed.ElapsedMilliseconds);
-        #endif
+            Utilities.AddExit(Stack);
             return string.Empty;
 		}
 
 		static string ArrayToSql(int Standard_Size,string TableName)
 		{
+            int Stack = Utilities.AddtoStackTrace("Import.ArrayToSql");
 			StringBuilder CSV_SQL = new StringBuilder();
 
 			for (int i = 2; i <= LDFastArray.Size1(Data); i++)
@@ -118,11 +119,13 @@ namespace DBM
 
 				CSV_SQL.AppendLine("');");
 			}
+            Utilities.AddExit(Stack);
 			return CSV_SQL.ToString();
 		}
 
 		static void CSVHeaders(int Standard_Size,string TableName) 
 		{
+            int Stack = Utilities.AddtoStackTrace("Import.CSVHeaders");
             HeaderSQL = "CREATE TABLE IF NOT EXISTS \"" + TableName + "\" (";
 			HeaderWOType = "(";
 			for (int i = 1; i <= Standard_Size; i++)
@@ -148,10 +151,12 @@ namespace DBM
 			}
 			HeaderSQL += ");\n";
 			HeaderWOType += ")";
+            Utilities.AddExit(Stack);
 		}
 
         public static void SQL(string database,string Path)
         {
+           int Stack = Utilities.AddtoStackTrace($"Import.SQL({database},{Path})");
            string[] SQL = File.ReadAllLines(Path);
            var cnn = Engines.GetConnection(database);
            var cmd = new SQLiteCommand(cnn);
@@ -172,7 +177,8 @@ namespace DBM
                     cmd.ExecuteNonQuery();
                 }
             }
-           transaction.Commit();
+            transaction.Commit();
+            Utilities.AddExit(Stack);
         }
 	}
 }
