@@ -20,6 +20,10 @@ namespace DBM
 		public static string CurrentDatabase { get; private set; }
 		public static string CurrentTable { get; private set; }
 		public static string DatabaseShortname { get; private set; }
+        /// <summary>
+        /// Feature Flag
+        /// </summary>
+        public static bool UseCache = false;
 
         static SQLITE Sqlite = new SQLITE();
         static OLDEB Oldeb = new OLDEB();
@@ -74,6 +78,10 @@ namespace DBM
         static List<string> _Explanation = new List<string>();
         static List<string> _User = new List<string>();
         static List<string> _Last_Query = new List<string>();
+
+        static Dictionary<string, Cache> _Cache = new Dictionary<string, Cache>();
+        static List<string> _CacheStatus = new List<string>();
+
         static List<string> _Last_NonSchema_Query = new List<string>();
         static List<string> _UTC_Start = new List<string>();
         public static event EventHandler OnSchemaChange;
@@ -81,7 +89,7 @@ namespace DBM
         
         public static int Command(string Database, string SQL,string Explanation)
         {
-            return Command(Database, SQL, GlobalStatic.UserName, Explanation, false);
+            return Command(Database, SQL, GlobalStatic.UserName, Explanation);
         }
 
         /// <summary>
@@ -93,29 +101,25 @@ namespace DBM
         /// <param name="Explanation">Any notes for transactions</param>
         /// <param name="RunParser">Run Custom Parser... Yet to be implemented</param>
         /// <returns></returns>
-        public static int Command(string Database, string SQL, string User, string Explanation, bool RunParser)
+        public static int Command(string Database, string SQL, string User, string Explanation)
 		{
             int Stack = Utilities.AddtoStackTrace($"Engines.Command({Database})");
             _UTC_Start.Add(DateTime.UtcNow.ToString("hh:mm:ss tt"));
             Stopwatch CommandTime = Stopwatch.StartNew();
-			if (RunParser == false)
-			{
-                if (GlobalStatic.Transaction_Commands == true)
-                {
-                    TransactionRecord(User, Database, SQL, Type.Command, Explanation);
-                 }
-                Utilities.AddExit(Stack);
-                return LDDataBase.Command(Database, SQL);
-			}
 
+            if (GlobalStatic.Transaction_Commands == true)
+            {
+                TransactionRecord(User, Database, SQL, Type.Command, Explanation);
+            }
+
+            int Updated = LDDataBase.Command(Database, SQL);
             _Type_Referer.Add(Type.Command);
             _Timer.Add(CommandTime.ElapsedMilliseconds);
             _Explanation.Add(Explanation);
             _User.Add(User);
-            //TODO Implement Parser Stuff 
 
             Utilities.AddExit(Stack);
-			return 0;
+            return Updated;
 		}
 
 		public static Primitive Query(string DataBase, string SQL, string ListView, bool FetchRecords, string UserName, string Explanation) //Expand
@@ -136,7 +140,48 @@ namespace DBM
             {
                 TransactionRecord(UserName, DataBase, SQL, Type.Query, Explanation);
             }
-			Primitive QueryResults = LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
+
+            if (UseCache == false)
+            {
+                _CacheStatus.Add("Disabled");
+            }
+            else if(FetchRecords == false)
+            {
+                //The Cache can never be hit :(
+                _CacheStatus.Add("NA");
+            }
+
+            Primitive QueryResults;
+
+            if (UseCache == false && FetchRecords == true && string.IsNullOrWhiteSpace(ListView) == true && _Cache.ContainsKey(SQL) == true)
+            {
+                _CacheStatus.Add("Hit!");
+               QueryResults = _Cache[SQL].Results;
+                _Cache[SQL].LifeTime -= 1;
+                if (_Cache[SQL].LifeTime <= 0)
+                {
+                    _Cache.Remove(SQL);
+                }
+            }
+            else
+            {
+                //Data is not in Cache :(
+                QueryResults = LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
+                if (UseCache == true && FetchRecords == true && _Cache.ContainsKey(SQL) == false)
+                {
+                    Cache cache = new Cache
+                    {
+                        LifeTime = 10,
+                        Results = QueryResults
+                    };
+                    _Cache.Add(SQL, cache);
+                    _CacheStatus.Add("Results added to cache");
+                }
+                else if(UseCache == true && _Cache.ContainsKey(SQL))
+                {
+                    _CacheStatus.Add("Error");
+                }
+            }
 
             _Type_Referer.Add(Type.Query);
 
@@ -157,6 +202,24 @@ namespace DBM
             Utilities.AddExit(Stack);
 			return QueryResults;
 		}
+
+        public class Cache
+        {
+            public Primitive Results;
+            /// <summary>
+            /// Lifetime decrements every time the cache hit til it hits zero where it should be invalidated.
+            /// </summary>
+            public int LifeTime;
+        }
+
+        /// <summary>
+        /// Forces the invalidation of the query cache
+        /// </summary>
+        public static void InvalidateCache()
+        {
+            _Cache.Clear();
+            _Cache = new Dictionary<string, Cache>();
+        }
 
         /// <summary>
         /// This method should only run when the correct global Paramters are set.
@@ -193,14 +256,10 @@ namespace DBM
             if (Index >= 0) //Prevents Out of bound errors
             {
                 string URI = _DB_Path[Index];
+                
                 string _SQL = "INSERT INTO Transactions (USER,DB,SQL,TYPE,Reason,\"UTC DATE\",\"UTC TIME\",PATH,SNAME) VALUES('" + UserName + "','" + DataBase + "','" + SQL.Replace("'", "''") + "','" +Type+ "','" + Reason.Replace("'", "''") + "',Date(),TIME(),'" + URI + "','" + Path.GetDirectoryName(URI) + "');";
                 LDDataBase.Command(GlobalStatic.TransactionDB, _SQL);
             }
-        }
-
-        public static void Parser()  //TODO: Implement Parser
-        {
-            Utilities.AddtoStackTrace("Engines.Parser()");
         }
 
         public static void GetSchema(string Database)
@@ -219,7 +278,7 @@ namespace DBM
                     _Tables.Clear();
                     _Views.Clear();
                     _Indexes.Clear();
-                    Primitive Master_Schema_List = Query(Database,Sqlite.GetSchemaQuery(), null, true, Utilities.Localization["App"], "SCHEMA");
+                    Primitive Master_Schema_List = Query(Database,Sqlite.GetSchema(), null, true, Utilities.Localization["App"], "SCHEMA");
                     for (int i = 1; i <= Master_Schema_List.GetItemCount(); i++)
                     {
                         string Name = Master_Schema_List[i]["tbl_name"];
