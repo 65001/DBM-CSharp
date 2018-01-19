@@ -3,6 +3,7 @@
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 using System;
 using System.Text;
+using System.Diagnostics;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.IO;
@@ -10,8 +11,8 @@ using LitDev;
 using Microsoft.SmallBasic.Library;
 namespace DBM
 {
-	public static class Utilities
-	{
+    public static class Utilities
+    {
         static Dictionary<string, string> _Localization = new Dictionary<string, string>();
         static List<string> _StackTrace = new List<string>();
         static List<DateTime> _StackIniationTime = new List<DateTime>();
@@ -23,6 +24,7 @@ namespace DBM
         static List<string> _UI_Action = new List<string>();
         static List<string> _UI_Handler = new List<string>();
         static string UpdaterDB = null;
+        static Stopwatch SW = new Stopwatch();
 
         public static IReadOnlyDictionary<string, string> Localization
         {
@@ -57,6 +59,16 @@ namespace DBM
         public static IReadOnlyList<string> ISO_LangCode
         {
             get { return _ISO_LangCode.AsReadOnly(); }
+        }
+
+        public static long GetStackOverHead()
+        {
+            return SW.ElapsedMilliseconds;
+        }
+
+        public static long GetStackOverHeadTicks()
+        {
+            return SW.ElapsedTicks;
         }
 
         /// <summary>
@@ -125,17 +137,22 @@ namespace DBM
 
         public static int AddtoStackTrace(string Data)
         {
+            SW.Start();
             _StackTrace.Add(Data);
             _StackIniationTime.Add(DateTime.UtcNow);
             _StackExitTime.Add(DateTime.MinValue);
             _StackDuration.Add(TimeSpan.MinValue);
+            SW.Stop();
             return _StackTrace.Count - 1;
         }
 
         public static void AddExit(int Index)
         {
+
+            SW.Start();
             _StackExitTime[Index] = DateTime.UtcNow;
             TimeSpan Span = _StackExitTime[Index] - _StackIniationTime[Index];
+            SW.Stop();
             _StackDuration[Index] = Span;
         }
 

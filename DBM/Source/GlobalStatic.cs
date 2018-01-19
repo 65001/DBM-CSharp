@@ -7,8 +7,7 @@ using System.IO;
 namespace DBM
 {
 		public static class GlobalStatic //List of Variables shared across everything through this class
-		{
-			public static readonly string Directory = Program.Directory;
+        { 
 			public static readonly string UserName =  Environment.UserName;
 			public static bool  EulaTest, LoadedFile;
 
@@ -26,14 +25,18 @@ namespace DBM
 
             /// <summary>
             /// String form of VersionIDS with all the periods being stripped.
-             /// </summary>
+            /// </summary>
             public static readonly string VersionID = VersionIDS.ToString().Replace(".","");
-			public static int DefaultFontSize;
-        
-			//URI
-			public static string AssetPath = Path.Combine( Directory , "Assets");
+			public static int DefaultFontSize,CSVInterval,SQLInterval;
+
+
+        //URI
+        //Folders
+            public static readonly string Directory = Program.Directory;
+            public static string AssetPath = Path.Combine( Directory , "Assets");
 			public static string LocalizationFolder = Path.Combine( Directory , "Localization");
 			public static string Localization_LanguageCodes_Path = Path.Combine(LocalizationFolder, "Lang");
+        //Files
 			public static string PluginPath = Path.Combine( Directory ,"Plugin");
 			public static string LogDBpath = Path.Combine(AssetPath , "Log.db");
             public static string UpdaterDBpath = Path.Combine(AssetPath, "Updater.db");

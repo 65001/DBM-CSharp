@@ -11,14 +11,14 @@ namespace DBM
     {
         public abstract class Engine
         {
-            public abstract string GetSchemaQuery();
+            public abstract string GetSchema();
             public abstract string GetColumnsOfTable(string Table);
             public abstract List<string> GetColumnsOfTable(Primitive Data);
         }
 
         public class SQLITE : Engine
         {
-            public override string GetSchemaQuery()
+            public override string GetSchema()
             {
                 return "SELECT tbl_name,name,type FROM sqlite_master UNION Select tbl_name,name,type From SQLite_Temp_Master;";
             }

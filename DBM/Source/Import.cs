@@ -2,14 +2,16 @@
 // Author : Abhishek Sathiabalan
 // (C) 2016 - 2017. All rights Reserved. Goverened by Included EULA
 // Created : 3/14/2017 5:55 PM 2017314 17:55:30
+
+using LitDev;
 using System;
 using System.Text;
 using System.Linq;
 using System.IO;
 using System.Data.SQLite;
-using System.Collections.Generic;
-using LitDev;
 using System.Diagnostics;
+using System.Collections.Generic;
+
 namespace DBM
 {
 	public static class Import
@@ -19,15 +21,20 @@ namespace DBM
 		static List<bool> CSV_IsString = new List<bool>();
 		static string HeaderSQL;
 		static string HeaderWOType;
-
+        static int CSVInterval = GlobalStatic.CSVInterval;
+        static int SQLInterval = GlobalStatic.SQLInterval;
+        
         public static void CSV(string InputFilePath, string OutPutFilePath)
         {
             int Stack = Utilities.AddtoStackTrace($"Import.CSV({InputFilePath},{OutPutFilePath})");
-            File.WriteAllText(OutPutFilePath, CSV(InputFilePath));
+            StreamWriter SW = new StreamWriter(OutPutFilePath,false);
+            
+            CSV(InputFilePath,ref SW);
             Utilities.AddExit(Stack);
         }
+        
 
-		public static string CSV(string FilePath)
+		public static void CSV(string FilePath,ref StreamWriter SW)
 		{
             int Stack = Utilities.AddtoStackTrace($"Utilities.CSV({FilePath})");
 			//TODO Make sure comment's are universal across SQL.Then use them to insert data such as how long it took to generate the SQL and how many rows were skipped if any?
@@ -38,7 +45,7 @@ namespace DBM
 
 			Stopwatch Elappsed = Stopwatch.StartNew();
             Elappsed.Start();
-            
+
 			CSV_Length.Clear();
 			CSV_IsString.Clear();
 
@@ -58,75 +65,104 @@ namespace DBM
 				CSV_IsString.Add(true);
 			}
 
-			try
+            //Tests all Data to see if it is a integer type
+            for (int i = 2; i <= Standard_Size; i++)
+            {
+                //This prevent out of bound errors.
+                //The Minus one is for the difference in data sets. C# counts from Zero and the LD from one
+                if (CSV_Length[(i - 1)] != Standard_Size)
+                {
+                    continue;
+                }
+
+                for (int ii = 1; ii <= LDFastArray.Size2(Data, i); ii++)
+                {
+                    if (CSV_IsString[(ii - 1)] == false)
+                    {
+                        continue;
+                    }
+
+                    string Temp = LDFastArray.Get2D(Data, i, ii).ToString().Replace("'", "''").Replace("\n", " ");
+                    if (double.TryParse(Temp, out double double2) == true) //Tests a String to see if its a number
+                    {
+                        CSV_IsString[ii] = false;
+                     }
+                }
+            }
+
+            try
 			{
-				string CSV_SQL = ArrayToSql(Standard_Size,Name);
-                CSVHeaders(Standard_Size,Name);
-				//Appending
-				CSV_SQL = (HeaderSQL +"\n" + CSV_SQL).Replace("'NULL'","NULL").Replace("<<HEADERS>>", HeaderWOType);
+                CSVHeaders(Standard_Size, Name,ref SW);
+                ArrayToSql(Standard_Size,Name,HeaderWOType,ref SW);
                 LDFastArray.Remove(Data);
                 Utilities.AddExit(Stack);
-                return CSV_SQL;
+                SW.Close();
+                return;
 			}
 			catch (Exception ex)
 			{
-                Events.LogMessage(ex.Message, "System");
+                
+                Events.LogMessagePopUp(ex.Message +"\n" + ex.StackTrace, "System","CSV Conversion Error");
 			}
 
 			//Drops The FastArray
 			LDFastArray.Remove(Data);
             Utilities.AddExit(Stack);
-            return string.Empty;
+            SW.Close();
+            return;
 		}
 
-		static string ArrayToSql(int Standard_Size,string TableName)
+		static void ArrayToSql(int Standard_Size,string TableName,string Headers,ref StreamWriter SW)
 		{
             int Stack = Utilities.AddtoStackTrace("Import.ArrayToSql");
-			StringBuilder CSV_SQL = new StringBuilder();
 
 			for (int i = 2; i <= LDFastArray.Size1(Data); i++)
 			{
-				if (CSV_Length[(i-1)] == Standard_Size) 
-					//To Prevent out of bound eras
-					//The Minus one is for the difference in data sets. C# counts from Zero and the LD from one
-					//The pain of mixing these systems.
+                //This prevent out of bound errors.
+                //The Minus one is for the difference in data sets. C# counts from Zero and the LD from one
+                if (CSV_Length[(i - 1)] != Standard_Size)
+                {
+                    continue;
+                }
+
+                SW.Write($"INSERT INTO \"{TableName}\" {Headers} VALUES(");
+				for (int ii = 1; ii <= LDFastArray.Size2(Data, i); ii++)
 				{
-                    CSV_SQL.Append("INSERT INTO \"" + TableName + "\" <<HEADERS>> VALUES('");
-					for (int ii = 1; ii <= LDFastArray.Size2(Data, i); ii++)
+                    string Temp = "'" + LDFastArray.Get2D(Data, i, ii).ToString().Replace("'", "''").Replace("\n"," ");
+                    if (string.IsNullOrWhiteSpace(Temp))
 					{
-                        string Temp = LDFastArray.Get2D(Data, i, ii).ToString().Replace("'", "''").Replace("\n"," ");
-                        if (string.IsNullOrWhiteSpace(Temp))
-						{
-							Temp = "NULL";
-						}
-						CSV_SQL.Append(Temp); //Adds the value of Temp to the Current SB
-						Temp = null;
-
-						if (CSV_IsString[(ii - 1)] == true)
-						{
-							if (double.TryParse(Temp, out double double2) == true) //Tests a String to see if its a number
-							{
-								CSV_IsString[ii] = false;
-							}
-						}
-
-						if (ii < Standard_Size)
-						{
-                            CSV_SQL.Append("','");
-						}
+						Temp = "NULL";
 					}
+
+					if (ii < Standard_Size)
+					{
+                        Temp += "',";
+					}
+
+                    if (Temp == "'NULL','")
+                    {
+                        SW.Write("NULL");
+                    }
+                    else
+                    {
+                        SW.Write(Temp);
+                    }
 				}
 
-				CSV_SQL.AppendLine("');");
+                SW.WriteLine("');");
+                if (i % CSVInterval == 0)
+                {
+                    SW.Flush();
+                }
 			}
+            SW.Flush();
             Utilities.AddExit(Stack);
-			return CSV_SQL.ToString();
 		}
 
-		static void CSVHeaders(int Standard_Size,string TableName) 
+		static void CSVHeaders(int Standard_Size,string TableName,ref StreamWriter SW) 
 		{
             int Stack = Utilities.AddtoStackTrace("Import.CSVHeaders");
-            HeaderSQL = "CREATE TABLE IF NOT EXISTS \"" + TableName + "\" (";
+            HeaderSQL = $"CREATE TABLE IF NOT EXISTS \"{TableName}\" (";
 			HeaderWOType = "(";
 			for (int i = 1; i <= Standard_Size; i++)
 			{
@@ -151,33 +187,49 @@ namespace DBM
 			}
 			HeaderSQL += ");\n";
 			HeaderWOType += ")";
+            SW.WriteLine(HeaderSQL);
+            SW.Flush();
             Utilities.AddExit(Stack);
 		}
 
         public static void SQL(string database,string Path)
         {
-           int Stack = Utilities.AddtoStackTrace($"Import.SQL({database},{Path})");
-           string[] SQL = File.ReadAllLines(Path);
+            int Stack = Utilities.AddtoStackTrace($"Import.SQL({database},{Path})");
+            StreamReader SR = new StreamReader(Path);
+
            var cnn = Engines.GetConnection(database);
            var cmd = new SQLiteCommand(cnn);
 
             SQLiteTransaction transaction;
             transaction = cnn.BeginTransaction();
-            for (int i = 0; i < SQL.Length; i++)
+            int Lines = 0;
+            while (SR.EndOfStream == false)
             {
-                //Every 100 lines commit and start a new transaction.
-                if (i % 100 == 0)
+                string SQL = SR.ReadLine();
+                //Every Interval commit and start a new transaction.
+                if (Lines % SQLInterval == 0)
                 {
                     transaction.Commit();
                     transaction = cnn.BeginTransaction();
                 }
-                if (SQL[i] != "');")
+                if (SQL != "');")
                 {
-                    cmd.CommandText = SQL[i];
+                    cmd.CommandText = SQL;
+                    cmd.CommandTimeout = 20;
                     cmd.ExecuteNonQuery();
                 }
+                else
+                {
+                    Console.WriteLine($"Error on {Lines} due to bad SQL");
+                }
+                Lines = Lines + 1;
             }
             transaction.Commit();
+            //Disposing of appropriate resources
+            //Do NOT dispose of the connection.
+            transaction.Dispose();
+            cmd.Dispose();
+            SR.Dispose();
             Utilities.AddExit(Stack);
         }
 	}

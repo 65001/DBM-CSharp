@@ -70,6 +70,7 @@ namespace DBM
             }
             else if (Item == Utilities.Localization["Define New Table"])
             {
+                Engines.InvalidateCache();
                 UI.CreateTableUI();    
             }
             else if (Item == Utilities.Localization["New in Memory Db"])
@@ -173,13 +174,11 @@ namespace DBM
                 if (!string.IsNullOrWhiteSpace(Path))
                 {
                     //Outputted to a temporary path in the event the import doesn't work...
-                    string TempPath = System.IO.Path.GetTempFileName();
+                    string TempPath = System.IO.Path.GetTempFileName().Replace(".tmp",".sql");
                     Stopwatch CSV = new Stopwatch();
                     CSV.Start();
                     Import.CSV(Path,TempPath);
                     CSV.Stop();
-
-                    LDProcess.Start(TempPath, null); // TODO Replace with native C# implentation...
 
                     Stopwatch SQL = new Stopwatch();
                     SQL.Start();
@@ -189,7 +188,8 @@ namespace DBM
                     string ToolTip = string.Format("CSV Import Completed!\n CSV:{0}(ms)\nSQL:{1}(ms)",
                         CSV.ElapsedMilliseconds,
                         SQL.ElapsedMilliseconds);
-                    Events.LogMessagePopUp(ToolTip, Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize 
+                    Events.LogMessagePopUp(ToolTip, Utilities.Localization["UI"], Utilities.Localization["Importer"]); //TODO Localize
+                    
                     Utilities.AddExit(Stack);
                     return;
                 } 
@@ -214,8 +214,6 @@ namespace DBM
                 Utilities.AddExit(Stack);
                 return;
             }
-            //else if (Item == Utilities.Localization["HTML to CSV"]) //Plugin //TODO
-            //{ }
             //Export
             else if (Item == Utilities.Localization["PXML"] + " ")
             {
@@ -530,11 +528,13 @@ namespace DBM
                 }
                 else if (LastButton == UI.Buttons["Query"])
                 {
+                    Engines.InvalidateCache();
                     Engines.Query(Engines.CurrentDatabase, Controls.GetTextBoxText(UI.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.UserName, Utilities.Localization["User Requested"]);
                 }
                 else if (LastButton == UI.Buttons["Command"]) //Custom Command
                 {
-                    Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(UI.TextBox["CustomQuery"]), GlobalStatic.UserName, Utilities.Localization["User Requested"], false);
+                    Engines.InvalidateCache();
+                    Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(UI.TextBox["CustomQuery"]), GlobalStatic.UserName, Utilities.Localization["User Requested"]);
                 }
             }
             catch (KeyNotFoundException)

@@ -11,6 +11,11 @@ namespace DBM
 {
     public static class Settings
     {
+        /// <summary>
+        /// Loads Application Settings from text/xml file
+        /// </summary>
+        /// <param name="RestoreSettings"></param>
+        /// <param name="SettingsPath"></param>
         public static void Load(bool RestoreSettings, string SettingsPath)
         {
             int StackReference = Utilities.AddtoStackTrace($"Settings.LoadSettings({RestoreSettings},{SettingsPath})");
@@ -69,6 +74,17 @@ namespace DBM
             if (string.IsNullOrWhiteSpace(GlobalStatic.Deliminator))
             {
                 GlobalStatic.Settings["Deliminator"] = ",";
+            }
+
+           
+            if (GlobalStatic.CSVInterval <= 0)
+            {
+                SetSettingsValue("Intervals", "CSV", 100);
+            }
+
+            if (GlobalStatic.SQLInterval <= 0)
+            {
+                SetSettingsValue("Intervals", "SQL", 100);
             }
 
             //Directories
@@ -133,6 +149,9 @@ namespace DBM
         static void SettingsToFields()
         {
             int Stack = Utilities.AddtoStackTrace("Settings.SettingsToFields");
+            //Intervals
+            GlobalStatic.CSVInterval = GlobalStatic.Settings["Intervals"]["CSV"];
+            GlobalStatic.SQLInterval = GlobalStatic.Settings["Intervals"]["SQL"];
             //Listview
             GlobalStatic.Listview_Width = (int?)GlobalStatic.Settings["listview"]["Width"] ?? GlobalStatic.Settings["Listview_Width"];
             GlobalStatic.Listview_Height = (int?)GlobalStatic.Settings["listview"]["Height"] ?? GlobalStatic.Settings["Listview_Height"];
@@ -242,6 +261,11 @@ namespace DBM
             SB.AppendFormat("\t\t<width>{0}</width>\n", (int?)Settings["listview"]["width"] ?? Settings["Listview_Width"]);
             SB.AppendFormat("\t\t<height>{0}</height>\n", (int?)Settings["listview"]["height"] ?? Settings["Listview_Height"]);
             SB.AppendLine("\t</listview>");
+
+            SB.AppendLine("\t<Intervals>");
+            SB.AppendFormat($"\t\t<CSV>{Settings["Intervals"]["CSV"]}</CSV>\n");
+            SB.AppendFormat($"\t\t<SQL>{Settings["Intervals"]["SQL"]}</SQL>\n");
+            SB.AppendLine("\t</Intervals>");
             SB.Append("</root>");
             Utilities.AddExit(Stack);
             return SB.ToString();
@@ -314,9 +338,9 @@ namespace DBM
             GlobalStatic.TransactionDB =Engines.Load.Sqlite(GlobalStatic.TransactionDBPath,"Transaction Log");
             GlobalStatic.LogDB = Engines.Load.Sqlite(GlobalStatic.LogDBpath, "Master Log");
             
-			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQL, GlobalStatic.UserName, "Auto Creation Statements", false);
-			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQLVIEW , GlobalStatic.UserName, "Auto Creation Statements", false);
-			Engines.Command(GlobalStatic.TransactionDB, GlobalStatic.TransactionsSQL , GlobalStatic.UserName, "Auto Creation Statements", false);
+			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQL, GlobalStatic.UserName, "Auto Creation Statements");
+			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQLVIEW , GlobalStatic.UserName, "Auto Creation Statements");
+			Engines.Command(GlobalStatic.TransactionDB, GlobalStatic.TransactionsSQL , GlobalStatic.UserName, "Auto Creation Statements");
             Utilities.AddExit(Stack);
         }
 	}

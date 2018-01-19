@@ -110,17 +110,16 @@ namespace DBM
         static void SchemaChanged(object sender, EventArgs e)
         {
             int Stack = Utilities.AddtoStackTrace("SchemaChanged");
-            switch (GlobalStatic.SortBy)
+            if (GlobalStatic.SortBy >= 1 && GlobalStatic.SortBy <= 3)
             {
-                case 1:
-                    LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], Engines.Tables.ToPrimitiveArray() );
-                    break;
-                case 2:
-                    LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], Engines.Views.ToPrimitiveArray());
-                    break;
-                case 3:
-                    LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], Engines.Indexes.ToPrimitiveArray());
-                    break;
+                Dictionary<int, IReadOnlyList<string>> dictionary = new Dictionary<int, IReadOnlyList<string>>
+                {
+                    { 1, Engines.Tables },
+                    { 2, Engines.Views },
+                    { 3, Engines.Indexes }
+                };
+
+                LDControls.ComboBoxContent(GlobalStatic.ComboBox["Table"], dictionary[GlobalStatic.SortBy].ToPrimitiveArray());
             }
             Title();
             Utilities.AddExit(Stack);
@@ -131,7 +130,8 @@ namespace DBM
             int Stack = Utilities.AddtoStackTrace("UI.Startup()");
             try
             {
-                DBM.Settings.Load(GlobalStatic.RestoreSettings, GlobalStatic.SettingsPath); //Load Application Settings from text file
+                DBM.Settings.Load(GlobalStatic.RestoreSettings, 
+                    GlobalStatic.SettingsPath);
                 DBM.Settings.Paths
                     (
                     GlobalStatic.AssetPath,
@@ -144,8 +144,6 @@ namespace DBM
             }
             catch (Exception) { }
             DBM.Settings.IniateDatabases();
-            //Plugin.FindAll();
-
             Engines.CreateBindList();
 
             Utilities.LocalizationXML(
@@ -159,7 +157,7 @@ namespace DBM
             {
                 Engines.Load.Sqlite(GetPath(Engines.EnginesMode.SQLITE));
             }
-            if (RunProgram())
+            if (RunProgram)
             {
                 StartupGUI();
             }
@@ -169,13 +167,13 @@ namespace DBM
                 EULA.UI(GlobalStatic.EULA_Text_File, 0, GlobalStatic.Title, GlobalStatic.Copyright,GlobalStatic.ProductID);
             }
             StartUpStopWatch.Stop();
-            Events.LogMessage($"Startup Time : {StartUpStopWatch.ElapsedMilliseconds} (ms)", Utilities.Localization["UI"]);
+            Events.LogMessage($"Startup Time : {StartUpStopWatch.ElapsedMilliseconds} (ms).", Utilities.Localization["UI"]);
             Utilities.AddExit(Stack);
         }
 
-        static bool RunProgram()
+        static bool RunProgram
         {
-            return GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_UserName == GlobalStatic.UserName && GlobalStatic.EulaTest == false;
+            get { return GlobalStatic.EULA_Acceptance == true && GlobalStatic.EULA_UserName == GlobalStatic.UserName && GlobalStatic.EulaTest == false; }
         }
 
         public static void StartupGUI()
@@ -274,6 +272,7 @@ namespace DBM
 
             LDGraphicsWindow.State = 2;
             GraphicsWindow.Title = GlobalStatic.Title + " ";
+
             Primitive Sorts = $"1={Utilities.Localization["Table"]};2={Utilities.Localization["View"]};3={Utilities.Localization["Index"]};4={Utilities.Localization["Master Table"]};";
             if (Engines.CurrentDatabase != null && Engines.CurrentDatabase != null)
             {
@@ -384,6 +383,7 @@ namespace DBM
 		public static void DisplayResults()
 		{
             int Stack = Utilities.AddtoStackTrace( "UI.DisplayResults()");
+            LDGraphicsWindow.PauseUpdates();
             //Clears the Dictionary to prevent errors
             _Buttons.Clear();
             _TextBox.Clear();
@@ -469,6 +469,7 @@ namespace DBM
             _HideDisplay.Add(Buttons["Query"]);
             _HideDisplay.Add(Buttons["Command"]);
 
+            LDGraphicsWindow.ResumeUpdates();
             Utilities.AddExit(Stack);
 		}
 
@@ -503,9 +504,11 @@ namespace DBM
         static void ClearWindow()
         {
             int Stack = Utilities.AddtoStackTrace("UI.ClearWindow()");
+
             GraphicsWindow.Clear();
             _Buttons.Clear();
             _TextBox.Clear();
+
             Utilities.AddExit(Stack);
         }
 
@@ -601,7 +604,7 @@ namespace DBM
                         string Confirmation =   LDDialogs.Confirm("Do you wish to commit the following SQL:\n" + Define_SQL.ToString() + "\n to " + Engines.DB_ShortName[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)], "Commit SQL");
                         if (Confirmation == "Yes")
                         {
-                            Engines.Command(Engines.CurrentDatabase, Define_SQL.ToString(), GlobalStatic.UserName, "User Defining a Table", false); //Localize
+                            Engines.Command(Engines.CurrentDatabase, Define_SQL.ToString(), GlobalStatic.UserName, "User Defining a Table"); //Localize
                         }
                     }
                 }
@@ -697,7 +700,7 @@ namespace DBM
 
             string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'" + GlobalStatic.UserName + "','"+ GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message.Replace("\n","") + "','" + Type + "');"; ;
 
-            Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"], false);
+            Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"]);
             Utilities.AddExit(Stack);
         }
 
