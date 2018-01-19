@@ -187,11 +187,6 @@ namespace Unit_Testing
         [TestFixture]
         public class CSV
         {
-            [Test]
-            public void FileNotFound()
-            {
-                Assert.That(() => Import.CSV(""), Throws.TypeOf<FileNotFoundException>());
-            }
         }
     }
 
