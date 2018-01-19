@@ -144,15 +144,14 @@ namespace DBM
                     else if (SQL.StartsWith(".querytimes", Comparison))
                     {
                         EmulatorTable = "DBM_SQLITE_QueryTimes";
-                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,SQL TEXT,\"Execution Time (ms)\" INTEGER,Explanation TEXT,User TEXT,\"Start Time (UTC)\" TEXT);", EmulatorTable);
+                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,SQL TEXT,\"Execution Time (ms)\" INTEGER,Explanation TEXT,User TEXT,\"Start Time (UTC)\" TEXT,Cache TEXT);", EmulatorTable);
 
                         int ii = 0;
-                        LastQuery.Print();
                         for (int i = 0; i < _Type_Referer.Count; i++)
                         {
                             if (_Type_Referer[i] == Type.Query)
                             {
-                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}','{4}','{5}','{6}');", EmulatorTable, ii, LastQuery[ii].Replace("'", "''"), _Timer[i], _Explanation[i], _User[i], _UTC_Start[i]);
+                                Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES('{1}','{2}','{3}','{4}','{5}','{6}','{7}');", EmulatorTable, ii, LastQuery[ii].Replace("'", "''"), _Timer[i], _Explanation[i], _User[i], _UTC_Start[i],_CacheStatus[ii]);
                                 ii++;
                             }
                         #if DEBUG
