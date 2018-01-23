@@ -13,102 +13,11 @@ namespace DBM
 {
     public static class Utilities
     {
-        static Dictionary<string, string> _Localization = new Dictionary<string, string>();
-        static List<string> _ISO_Text = new List<string>();
-        static List<string> _ISO_LangCode = new List<string>();
         static List<string> _UI_Name = new List<string>();
         static List<string> _UI_Action = new List<string>();
         static List<string> _UI_Handler = new List<string>();
         static string UpdaterDB = null;
-        static Stopwatch SW = new Stopwatch();
-
-        public static IReadOnlyDictionary<string, string> Localization
-        {
-            get { return _Localization; }
-        }
-
-        public static IReadOnlyList<string> ISO_Text
-        {
-            get { return _ISO_Text.AsReadOnly(); }
-        }
-
-        public static IReadOnlyList<string> ISO_LangCode
-        {
-            get { return _ISO_LangCode.AsReadOnly(); }
-        }
-
-        public static long GetStackOverHead()
-        {
-            return SW.ElapsedMilliseconds;
-        }
-
-        public static long GetStackOverHeadTicks()
-        {
-            return SW.ElapsedTicks;
-        }
-
-        /// <summary>
-        /// Loads localized text from a XML File
-        /// </summary>
-        /// <param name="XMLPath"></param>
-        public static void LocalizationXML(string XMLPath,string DataPath)
-		{
-			int StackReference = Stack.Add("Utilities.LocalizationXML()");
-           
-			string XMLDoc = LDxml.Open(XMLPath);
-			if (System.IO.File.Exists(XMLPath) && System.IO.File.Exists(DataPath))
-			{
-                _Localization.Clear();
-
-                LDxml.FirstNode();
-                LDxml.FirstChild();
-                LDxml.LastChild();
-
-                AddLocalization();
-                while (LDxml.PreviousSibling() == "SUCCESS")
-                {
-                    AddLocalization();
-                }
-
-                Primitive Localization_Temp = System.IO.File.ReadAllText(DataPath);
-                string[] LocalizationFiles  = Directory.GetFiles(Path.GetDirectoryName(XMLPath));
-
-                _ISO_Text.Clear();
-                _ISO_LangCode.Clear();
-
-                foreach (string FilePath in LocalizationFiles)
-                {
-                    string LanguageFile = Path.GetFileNameWithoutExtension(FilePath);
-                    _ISO_LangCode.Add(LanguageFile);
-                    _ISO_Text.Add(Localization_Temp[ LanguageFile ]);
-                }
-			}
-			else
-			{
-                throw new FileNotFoundException("Localization File not found!"); //DO NOT LOCALIZE
-			}
-            Stack.Exit(StackReference);
-		}
-
-        static void AddLocalization()
-        {
-            Primitive XML_Array = XMLAttributes();
-            string key = ((string)XML_Array[4]).Replace("_"," ");
-            string value = XML_Array[6];
-            if (string.IsNullOrWhiteSpace(key) || string.IsNullOrWhiteSpace(value) )
-            {
-                throw new ArgumentException("The key or value is null." + XML_Array,$"{key} = {value};");
-            }
-            else if (_Localization.ContainsKey(key) == false)
-            {
-                _Localization.Add(key, value);
-            }
-            else
-            {
-                throw new Exception("The key : " + key +" already exists in the Localization Dictionary. " + XML_Array);
-            }
-        }
-
+        
 	    public static string XMLAttributes() { return "1= ;2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
 
 		// Reads File and Parses it
@@ -162,11 +71,12 @@ namespace DBM
 
                     if (CurrentVersion == LatestVersion && UI == true)
                     {
-                        GraphicsWindow.ShowMessage("There are no updates available", Localization["NoUpdates"] ?? "No Updates"); //TODO LOCALIZE
+                        GraphicsWindow.ShowMessage("There are no updates available",Language.Localization["NoUpdates"] ?? "No Updates"); //TODO LOCALIZE
                     }
                     else if (CurrentVersion > LatestVersion && UI == true)
                     {
-                        GraphicsWindow.ShowMessage("You have a more recent edition of the program than that offered to the public.\nYou have version " + CurrentVersion + " while the most recent public release is version " + LatestVersion, Localization["NoUpdates"] ?? "No Updates");
+                        GraphicsWindow.ShowMessage("You have a more recent edition of the program than that offered to the public.\nYou have version " + CurrentVersion + " while the most recent public release is version " + LatestVersion, 
+                            Language.Localization["NoUpdates"] ?? "No Updates");
                     }
                     else if (CurrentVersion < LatestVersion)
                     {
@@ -186,7 +96,9 @@ namespace DBM
                 }
                 else
                 {
-                    GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
+                    GraphicsWindow.ShowMessage(
+                        Language.Localization["Check Log"],
+                        Language.Localization["Error"]);
                 }
                 Stack.Exit(StackReference);
             }
@@ -232,7 +144,9 @@ namespace DBM
                 switch (UpdaterSize)
                 {
                     case -1:
-                        GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
+                        GraphicsWindow.ShowMessage(
+                            Language.Localization["Check Log"],
+                            Language.Localization["Error"]);
                         Stack.Exit(StackPointer);
                         return false;
                     default:

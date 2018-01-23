@@ -88,10 +88,10 @@ namespace DBM
             }
             catch (Exception ex)
             {
-                Utilities.Localization.Print();
+                Language.Localization.Print();
 
                 Stack.Print();
-                Events.LogMessage(ex.Message, Utilities.Localization["System"]);
+                Events.LogMessage(ex.Message, Language.Localization["System"]);
                 Program.Delay(1000);
                 Environment.Exit(31);
             }
@@ -148,12 +148,12 @@ namespace DBM
             DBM.Settings.IniateDatabases();
             Engines.CreateBindList();
 
-            Utilities.LocalizationXML(
+            Language.Load(
                 Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"), 
                 Path.Combine(GlobalStatic.Localization_LanguageCodes_Path, GlobalStatic.LanguageCode + ".txt")
                 );
 
-            Events.LogMessage(Utilities.Localization["PRGM Start"], Utilities.Localization["Application"]);
+            Events.LogMessage(Language.Localization["PRGM Start"], Language.Localization["Application"]);
             
             if (Program.ArgumentCount == 1)
             {
@@ -169,7 +169,7 @@ namespace DBM
                 EULA.UI(GlobalStatic.EULA_Text_File, 0, GlobalStatic.Title, GlobalStatic.Copyright,GlobalStatic.ProductID);
             }
             StartUpStopWatch.Stop();
-            Events.LogMessage($"Startup Time : {StartUpStopWatch.ElapsedMilliseconds} (ms).", Utilities.Localization["UI"]);
+            Events.LogMessage($"Startup Time : {StartUpStopWatch.ElapsedMilliseconds} (ms).", Language.Localization["UI"]);
             Stack.Exit(StackPointer);
         }
 
@@ -251,12 +251,12 @@ namespace DBM
 
             GraphicsWindow.DrawRectangle(GlobalStatic.UIx, 50, 310, 340);
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 3;
-            GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 52, Utilities.Localization["Display Settings"]);
-            GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 78, Utilities.Localization["Sort by"]);
-            GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 150, Utilities.Localization["Search Settings"]);
-            GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 180, Utilities.Localization["Search in"]);
-            GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210, Utilities.Localization["Search"] + ":");
-            GraphicsWindow.DrawText(GlobalStatic.UIx + 127, 290, Utilities.Localization["Functions"] + ":");
+            GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 52, Language.Localization["Display Settings"]);
+            GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 78, Language.Localization["Sort by"]);
+            GraphicsWindow.DrawText(GlobalStatic.UIx + 100, 150, Language.Localization["Search Settings"]);
+            GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 180, Language.Localization["Search in"]);
+            GraphicsWindow.DrawText(GlobalStatic.UIx + 20, 210, Language.Localization["Search"] + ":");
+            GraphicsWindow.DrawText(GlobalStatic.UIx + 127, 290, Language.Localization["Functions"] + ":");
             Stack.Exit(StackPointer);
         }
 
@@ -281,11 +281,11 @@ namespace DBM
 
             //Sort
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 1;
-			string AscDesc = "1=" + Utilities.Localization["Asc"] + ";2=" + Utilities.Localization["Desc"] + ";3=RANDOM();";
+			string AscDesc = "1=" + Language.Localization["Asc"] + ";2=" + Language.Localization["Desc"] + ";3=RANDOM();";
             GlobalStatic.ComboBox["Sort"]= LDControls.AddComboBox(Engines.Schema, 100, 100);
             GlobalStatic.ComboBox["ASCDESC"]= LDControls.AddComboBox(AscDesc, 110, 100);
 
-            _Buttons.AddOrReplace("Sort", Controls.AddButton(Utilities.Localization["Sort"], GlobalStatic.UIx + 10, 120));
+            _Buttons.AddOrReplace("Sort", Controls.AddButton(Language.Localization["Sort"], GlobalStatic.UIx + 10, 120));
 
 			Controls.Move(GlobalStatic.ComboBox["Sort"], GlobalStatic.UIx + 80, 77);
 			Controls.Move(GlobalStatic.ComboBox["ASCDESC"], GlobalStatic.UIx+ 190, 77);
@@ -297,9 +297,9 @@ namespace DBM
             //Search
             GlobalStatic.ComboBox["Search"]=LDControls.AddComboBox(Engines.Schema, 200, 120);
 			_TextBox.AddOrReplace("Search",  Controls.AddTextBox(GlobalStatic.UIx + 100, 210));
-            GlobalStatic.CheckBox["StrictSearch"]= LDControls.AddCheckBox(Utilities.Localization["Strict Search"]);
-            GlobalStatic.CheckBox["InvertSearch"]=LDControls.AddCheckBox(Utilities.Localization["Invert"]);
-            _Buttons.AddOrReplace("Search", Controls.AddButton(Utilities.Localization["Search"].ToUpper(), GlobalStatic.UIx + 10, 260));
+            GlobalStatic.CheckBox["StrictSearch"]= LDControls.AddCheckBox(Language.Localization["Strict Search"]);
+            GlobalStatic.CheckBox["InvertSearch"]=LDControls.AddCheckBox(Language.Localization["Invert"]);
+            _Buttons.AddOrReplace("Search", Controls.AddButton(Language.Localization["Search"].ToUpper(), GlobalStatic.UIx + 10, 260));
 
 			Controls.Move(GlobalStatic.CheckBox["StrictSearch"], GlobalStatic.UIx + 20, 240);
 			Controls.Move(GlobalStatic.CheckBox["InvertSearch"], GlobalStatic.UIx + 150, 240);
@@ -315,17 +315,17 @@ namespace DBM
             Controls.Move(GlobalStatic.ComboBox["FunctionList"], GlobalStatic.UIx + 10, 315);
 			Controls.Move(GlobalStatic.ComboBox["ColumnList"], GlobalStatic.UIx + 160, 315);
 
-            _Buttons.AddOrReplace("RunFunction", Controls.AddButton(Utilities.Localization["Run Function"].ToUpper(), GlobalStatic.UIx + 10, 345));
+            _Buttons.AddOrReplace("RunFunction", Controls.AddButton(Language.Localization["Run Function"].ToUpper(), GlobalStatic.UIx + 10, 345));
 			Controls.SetSize(_Buttons["RunFunction"], 290, 30);
 
 			//Custom Query
 			_TextBox["CustomQuery"] = Controls.AddMultiLineTextBox(GlobalStatic.UIx, 420);
 			Controls.SetSize(_TextBox["CustomQuery"], 310, 150);
 
-            _Buttons.AddOrReplace("Query", Controls.AddButton(Utilities.Localization["Query"].ToUpper(), GlobalStatic.UIx, 580) );
+            _Buttons.AddOrReplace("Query", Controls.AddButton(Language.Localization["Query"].ToUpper(), GlobalStatic.UIx, 580) );
   			Controls.SetSize(_Buttons["Query"], 310, 30);
 
-            _Buttons.AddOrReplace("Command", Controls.AddButton(Utilities.Localization["Command"].ToUpper(), GlobalStatic.UIx, 615));
+            _Buttons.AddOrReplace("Command", Controls.AddButton(Language.Localization["Command"].ToUpper(), GlobalStatic.UIx, 615));
 
 			Controls.SetSize(_Buttons["Command"] , 310, 30);
 			LDDialogs.ToolTip(_Buttons["Command"], "Executes customized SQL command statements onto the database"); //Localize
@@ -516,7 +516,7 @@ namespace DBM
 	{
         public static void LogEvents() //Error Handler
 		{
-			LogMessage(LDEvents.LastError, Utilities.Localization["System"]);
+			LogMessage(LDEvents.LastError, Language.Localization["System"]);
             int StackPointer = Stack.Add("Events.LogEvents()");
             Stack.Exit(StackPointer);
 		}
@@ -581,7 +581,7 @@ namespace DBM
 
             string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'" + GlobalStatic.UserName + "','"+ GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message.Replace("\n","") + "','" + Type + "');"; ;
 
-            Engines.Command(GlobalStatic.LogDB, LogCMD, Utilities.Localization["App"], Utilities.Localization["Auto Log"]);
+            Engines.Command(GlobalStatic.LogDB, LogCMD, Language.Localization["App"], Language.Localization["Auto Log"]);
             Stack.Exit(StackPointer);
         }
 
@@ -590,11 +590,11 @@ namespace DBM
             int StackPointer = Stack.Add( "Events.Closing()");
 			if (string.IsNullOrEmpty(Engines.CurrentDatabase))
 			{
-                LogMessage("Program Closing", Utilities.Localization["Application"]); //Localize
+                LogMessage("Program Closing", Language.Localization["Application"]); //Localize
             } 
 			else 
 			{
-                LogMessage("Program Closing - Closing : " + Engines.DatabaseShortname , Utilities.Localization["Application"]); //Localize
+                LogMessage("Program Closing - Closing : " + Engines.DatabaseShortname , Language.Localization["Application"]); //Localize
             }
             GraphicsWindow.Clear();
             GraphicsWindow.Hide();

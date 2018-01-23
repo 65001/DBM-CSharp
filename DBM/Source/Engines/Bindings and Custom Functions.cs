@@ -31,7 +31,7 @@ namespace DBM
                 }
                 catch (Exception ex)
                 {
-                    Events.LogMessage(ex.Message, Utilities.Localization["System"]);
+                    Events.LogMessage(ex.Message, Language.Localization["System"]);
                 }
             }
         }

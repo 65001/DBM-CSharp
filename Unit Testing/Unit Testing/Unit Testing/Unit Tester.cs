@@ -22,14 +22,14 @@ namespace Unit_Testing
         [Test]
         public void Localization()
         {
-            Assert.That(() => DBM.Utilities.LocalizationXML(null, null), Throws.TypeOf<FileNotFoundException>());
+            Assert.That(() => Language.Load(null, null), Throws.TypeOf<FileNotFoundException>());
         }
 
         [TestCase("C:\\Users\\Abhishek\\Documents\\Projects\\DBM\\DBM\\bin\\Release\\Localization\\en.xml", "C:\\Users\\Abhishek\\Documents\\Projects\\DBM\\DBM\\bin\\Release\\Localization\\Lang\\en.txt")]
         public void Localization(string XML, string DataFile)
         {
-            DBM.Utilities.LocalizationXML(XML, DataFile);
-            Assert.IsNotNull(DBM.Utilities.Localization);
+            Language.Load(XML, DataFile);
+            Assert.IsNotNull(DBM.Language.Localization);
         }
     }
 

@@ -12,41 +12,41 @@ namespace DBM
             GraphicsWindow.FontName = "Segoe UI";
             
             //Main
-            MenuList[Utilities.Localization["File"]] = "Main";
-            MenuList[Utilities.Localization["Edit"]] = "Main";
-            MenuList[Utilities.Localization["View"] + " "] = "Main";
-            MenuList[Utilities.Localization["Save"]] = "Main";
-            MenuList[Utilities.Localization["Import"]] = "Main";
-            MenuList[Utilities.Localization["Export"]] = "Main";
-            MenuList[Utilities.Localization["Settings"]] = "Main";
+            MenuList[Language.Localization["File"]] = "Main";
+            MenuList[Language.Localization["Edit"]] = "Main";
+            MenuList[Language.Localization["View"] + " "] = "Main";
+            MenuList[Language.Localization["Save"]] = "Main";
+            MenuList[Language.Localization["Import"]] = "Main";
+            MenuList[Language.Localization["Export"]] = "Main";
+            MenuList[Language.Localization["Settings"]] = "Main";
             MenuList["Charts"] = "Main"; //TODO Localize
 
             //File
-            MenuList[Utilities.Localization["New"]] = Utilities.Localization["File"];
-            MenuList[Utilities.Localization["Open"]] = Utilities.Localization["File"];
-            MenuList["Other"] = Utilities.Localization["File"]; // TODO Localize
-            MenuList[Utilities.Localization["Define New Table"]] = "Other";
-            MenuList[Utilities.Localization["New in Memory Db"]] = "Other";
-            MenuList[Utilities.Localization["Create Statistics Page"]] = "Other";
-            MenuList["-"] = Utilities.Localization["File"];
+            MenuList[Language.Localization["New"]] = Language.Localization["File"];
+            MenuList[Language.Localization["Open"]] = Language.Localization["File"];
+            MenuList["Other"] = Language.Localization["File"]; // TODO Localize
+            MenuList[Language.Localization["Define New Table"]] = "Other";
+            MenuList[Language.Localization["New in Memory Db"]] = "Other";
+            MenuList[Language.Localization["Create Statistics Page"]] = "Other";
+            MenuList["-"] = Language.Localization["File"];
 
             //Import
-            MenuList[Utilities.Localization["CSV"]] = Utilities.Localization["Import"];
-            MenuList[Utilities.Localization["SQL"]] = Utilities.Localization["Import"];
-            //MenuList["Converter"] = Utilities.Localization["Import"]; //Localize
+            MenuList[Language.Localization["CSV"]] = Language.Localization["Import"];
+            MenuList[Language.Localization["SQL"]] = Language.Localization["Import"];
+            //MenuList["Converter"] = Language.Localization["Import"]; //Localize
             //MenuList["HTML to CSV"] = "Converter"; //Localize
             //MenuList["-"] = "Converter";
-            MenuList["-"] = Utilities.Localization["Import"];
+            MenuList["-"] = Language.Localization["Import"];
 
             //Export
-            MenuList[Utilities.Localization["CSV"] + " "] = Utilities.Localization["Export"];
-            MenuList[Utilities.Localization["HTML"] + " "] = Utilities.Localization["Export"];
-            MenuList["JSON"] = Utilities.Localization["Export"]; //TODO Localize
-            MenuList[Utilities.Localization["SQL"] + " "] = Utilities.Localization["Export"];
-            MenuList[Utilities.Localization["PXML"] + " "] = Utilities.Localization["Export"];
-            MenuList["MarkDown"] = Utilities.Localization["Export"]; //TODO Localize
-            MenuList["Wiki MarkUp"] = Utilities.Localization["Export"]; //TODO Localize
-            MenuList["-"] = Utilities.Localization["Export"];
+            MenuList[Language.Localization["CSV"] + " "] = Language.Localization["Export"];
+            MenuList[Language.Localization["HTML"] + " "] = Language.Localization["Export"];
+            MenuList["JSON"] = Language.Localization["Export"]; //TODO Localize
+            MenuList[Language.Localization["SQL"] + " "] = Language.Localization["Export"];
+            MenuList[Language.Localization["PXML"] + " "] = Language.Localization["Export"];
+            MenuList["MarkDown"] = Language.Localization["Export"]; //TODO Localize
+            MenuList["Wiki MarkUp"] = Language.Localization["Export"]; //TODO Localize
+            MenuList["-"] = Language.Localization["Export"];
 
             //Charts
             MenuList["Bar"] = "Charts";
@@ -64,18 +64,18 @@ namespace DBM
             MenuList["TimeLine"] = "Charts";
 
             //Settings
-            MenuList[Utilities.Localization["Help"]] = Utilities.Localization["Settings"];
-            MenuList[Utilities.Localization["About"]] = Utilities.Localization["Help"];
-            MenuList[Utilities.Localization["Show Help"]] = Utilities.Localization["Help"];
-            MenuList["-"] = Utilities.Localization["Help"];
-            MenuList[Utilities.Localization["Settings Editor"]] = Utilities.Localization["Settings"];
+            MenuList[Language.Localization["Help"]] = Language.Localization["Settings"];
+            MenuList[Language.Localization["About"]] = Language.Localization["Help"];
+            MenuList[Language.Localization["Show Help"]] = Language.Localization["Help"];
+            MenuList["-"] = Language.Localization["Help"];
+            MenuList[Language.Localization["Settings Editor"]] = Language.Localization["Settings"];
 
-            MenuList[Utilities.Localization["Refresh Schema"]] = Utilities.Localization["Settings"];
-            MenuList[Utilities.Localization["Check for Updates"]] = Utilities.Localization["Settings"];
-            MenuList["-"] = Utilities.Localization["Settings"];
+            MenuList[Language.Localization["Refresh Schema"]] = Language.Localization["Settings"];
+            MenuList[Language.Localization["Check for Updates"]] = Language.Localization["Settings"];
+            MenuList["-"] = Language.Localization["Settings"];
 
             Stack.Exit(StackReference);
-            //IconList[Utilities.Localization["Settings Editor"]] = LDImage.LoadSVG( GlobalStatic.AssetPath + "\\Images\\settings.svg");
+            //IconList[Language.Localization["Settings Editor"]] = LDImage.LoadSVG( GlobalStatic.AssetPath + "\\Images\\settings.svg");
         }
 
         public static void MainMenu()
@@ -87,7 +87,7 @@ namespace DBM
             LDGraphicsWindow.State = 2;
             GraphicsWindow.Title = GlobalStatic.Title + " ";
 
-            Primitive Sorts = $"1={Utilities.Localization["Table"]};2={Utilities.Localization["View"]};3={Utilities.Localization["Index"]};4={Utilities.Localization["Master Table"]};";
+            Primitive Sorts = $"1={Language.Localization["Table"]};2={Language.Localization["View"]};3={Language.Localization["Index"]};4={Language.Localization["Master Table"]};";
             if (Engines.CurrentDatabase != null && Engines.CurrentDatabase != null)
             {
                 Engines.GetSchema(Engines.CurrentDatabase);
@@ -96,9 +96,9 @@ namespace DBM
             int UIx = GlobalStatic.Listview_Width - 380;
 
             string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, MenuList, IconList, null);
-            Shapes.Move(Shapes.AddText(Utilities.Localization["Sort"] + ":"), UIx, 1);
+            Shapes.Move(Shapes.AddText(Language.Localization["Sort"] + ":"), UIx, 1);
 
-            int TextWidth = LDText.GetHeight(Utilities.Localization["Sort"] + ":");
+            int TextWidth = LDText.GetHeight(Language.Localization["Sort"] + ":");
             GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize;
 
             try
@@ -117,7 +117,7 @@ namespace DBM
             Controls.Move(GlobalStatic.ComboBox["Table"], UIx + TextWidth + 260, 5);
 
             //Virtual Call to Handler
-            Events.MC(Utilities.Localization["View"]);
+            Events.MC(Language.Localization["View"]);
 
             Title();
 

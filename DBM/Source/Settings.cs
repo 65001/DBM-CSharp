@@ -193,7 +193,7 @@ namespace DBM
             }
             catch (Exception) //Settings could not be saved for some reason!
             {
-                Events.LogMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["UI"]);
+                Events.LogMessage(Language.Localization["Failed Save Settings"], Language.Localization["UI"]);
             }
             Stack.Exit(StackReference);
 		}
@@ -210,7 +210,7 @@ namespace DBM
             }
             catch (Exception)
             {
-                GraphicsWindow.ShowMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["Error"]);
+                GraphicsWindow.ShowMessage(Language.Localization["Failed Save Settings"], Language.Localization["Error"]);
             }
             Stack.Exit(StackPointer);
         }

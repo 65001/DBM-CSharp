@@ -12,53 +12,53 @@ namespace DBM
             {
                 int StackPointer = Stack.Add("UI.Settings.Display()");
                 ClearWindow();
-                GraphicsWindow.Title = Utilities.Localization["Settings"];
+                GraphicsWindow.Title = Language.Localization["Settings"];
 
                 GraphicsWindow.CanResize = false;
                 LDGraphicsWindow.CancelClose = true;
                 LDGraphicsWindow.ExitOnClose = false;
                 LDGraphicsWindow.Closing += Events.Closing;
-                LDGraphicsWindow.ExitButtonMode(Utilities.Localization["Settings"], "Disabled");
+                LDGraphicsWindow.ExitButtonMode(Language.Localization["Settings"], "Disabled");
 
                 GraphicsWindow.FontSize = GlobalStatic.DefaultFontSize + 8;
 
-                GraphicsWindow.DrawText(10, 10, Utilities.Localization["Listview Width"]);
+                GraphicsWindow.DrawText(10, 10, Language.Localization["Listview Width"]);
                 _TextBox["Settings_Width"] = Controls.AddTextBox(200, 10);
 
-                GraphicsWindow.DrawText(10, 50, Utilities.Localization["Listview Height"]);
+                GraphicsWindow.DrawText(10, 50, Language.Localization["Listview Height"]);
                 _TextBox["Settings_Height"] = Controls.AddTextBox(200, 50);
 
-                GraphicsWindow.DrawText(10, 90, Utilities.Localization["Extensions"]);
+                GraphicsWindow.DrawText(10, 90, Language.Localization["Extensions"]);
                 _TextBox["Settings_Extensions"] = Controls.AddTextBox(200, 90);
 
-                GraphicsWindow.DrawText(10, 130, Utilities.Localization["Deliminator"]);
+                GraphicsWindow.DrawText(10, 130, Language.Localization["Deliminator"]);
                 _TextBox["Settings_Deliminator"] = Controls.AddTextBox(200, 130);
 
-                GraphicsWindow.DrawText(10, 175, Utilities.Localization["Language"]);
+                GraphicsWindow.DrawText(10, 175, Language.Localization["Language"]);
 
-                GlobalStatic.ComboBox["Language"] = LDControls.AddComboBox(Utilities.ISO_Text.ToPrimitiveArray(), 200, 120);
+                GlobalStatic.ComboBox["Language"] = LDControls.AddComboBox(Language.ISO_Text.ToPrimitiveArray(), 200, 120);
                 Controls.Move(GlobalStatic.ComboBox["Language"], 200, 175);
 
-                GraphicsWindow.DrawText(10, 280, Utilities.Localization["LOG CSV Path"]);
-                _Buttons.AddOrReplace("Log_CSV", Controls.AddButton(Utilities.Localization["Browse"], 320, 280));
+                GraphicsWindow.DrawText(10, 280, Language.Localization["LOG CSV Path"]);
+                _Buttons.AddOrReplace("Log_CSV", Controls.AddButton(Language.Localization["Browse"], 320, 280));
 
-                GraphicsWindow.DrawText(10, 330, Utilities.Localization["LOG DB PATH"]);
-                _Buttons.AddOrReplace("Log_DB", Controls.AddButton(Utilities.Localization["Browse"], 320, 330));
+                GraphicsWindow.DrawText(10, 330, Language.Localization["LOG DB PATH"]);
+                _Buttons.AddOrReplace("Log_DB", Controls.AddButton(Language.Localization["Browse"], 320, 330));
 
-                GraphicsWindow.DrawText(10, 380, Utilities.Localization["Transaction DB Path"]);
-                _Buttons.AddOrReplace("Transaction_DB", Controls.AddButton(Utilities.Localization["Browse"], 320, 380));
+                GraphicsWindow.DrawText(10, 380, Language.Localization["Transaction DB Path"]);
+                _Buttons.AddOrReplace("Transaction_DB", Controls.AddButton(Language.Localization["Browse"], 320, 380));
 
-                for (int i = 0; i < Utilities.ISO_LangCode.Count; i++)
+                for (int i = 0; i < Language.ISO_LangCode.Count; i++)
                 {
-                    if (Utilities.ISO_LangCode[i] == GlobalStatic.LanguageCode)
+                    if (Language.ISO_LangCode[i] == GlobalStatic.LanguageCode)
                     {
                         int Index = i + 1;
                         LDControls.ComboBoxSelect(GlobalStatic.ComboBox["Language"], Index);
                     }
                 }
 
-                _Buttons.AddOrReplace("Settings Save", Controls.AddButton(Utilities.Localization["Save and Close"], 50, 450));
-                _Buttons.AddOrReplace("Settings Close", Controls.AddButton(Utilities.Localization["Close wo saving"], 50, 500));
+                _Buttons.AddOrReplace("Settings Save", Controls.AddButton(Language.Localization["Save and Close"], 50, 450));
+                _Buttons.AddOrReplace("Settings Close", Controls.AddButton(Language.Localization["Close wo saving"], 50, 500));
 
                 Controls.SetSize(_Buttons["Settings Save"], 280, 40);
                 Controls.SetSize(_Buttons["Settings Close"], 280, 40);
@@ -108,12 +108,12 @@ namespace DBM
                     GlobalStatic.Settings["Listview"] = string.Format("Width={0};Height={1};", Controls.GetTextBoxText(_TextBox["Settings_Width"]), Controls.GetTextBoxText(_TextBox["Settings_Height"]));
                     GlobalStatic.Settings["Extensions"] = Controls.GetTextBoxText(_TextBox["Settings_Extensions"]);
                     GlobalStatic.Settings["Deliminator"] = Controls.GetTextBoxText(_TextBox["Settings_Deliminator"]);
-                    GlobalStatic.Settings["Language"] = Utilities.ISO_LangCode[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Language"]) - 1];
+                    GlobalStatic.Settings["Language"] = Language.ISO_LangCode[LDControls.ComboBoxGetSelected(GlobalStatic.ComboBox["Language"]) - 1];
                     GlobalStatic.LanguageCode = GlobalStatic.Settings["Language"];
                     DBM.Settings.Save();
                     DBM.Settings.Load(GlobalStatic.RestoreSettings, GlobalStatic.SettingsPath);
 
-                    Utilities.LocalizationXML(
+                    Language.Load(
                         Path.Combine(GlobalStatic.LocalizationFolder, GlobalStatic.LanguageCode + ".xml"),
                         Path.Combine(GlobalStatic.Localization_LanguageCodes_Path, GlobalStatic.LanguageCode + ".txt")
                         );

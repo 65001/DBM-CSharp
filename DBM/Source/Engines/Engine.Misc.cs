@@ -212,7 +212,7 @@ namespace DBM
                             string Row = "\"" + Schema[i] + "\"";
                             SQL.AppendFormat("INSERT INTO {0} Select '{1}',SUM({1}),AVG({1}),COUNT({1}),COUNT(DISTINCT {1}),MAX({1}),MIN({1}),typeOf({1}),Length({1}),DATE(),TIME() FROM {2};;", StatTableName, Row, Table);
                         }
-                        Command(Database, SQL.ToString(), Utilities.Localization["Application"] + ":" + Utilities.Localization["User Requested"] + ":" + Utilities.Localization["Statistics Page"]);
+                        Command(Database, SQL.ToString(), Language.Localization["Application"] + ":" + Language.Localization["User Requested"] + ":" + Language.Localization["Statistics Page"]);
                         break;
                 }
                 Stack.Exit(StackPointer);

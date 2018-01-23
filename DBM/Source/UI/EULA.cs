@@ -22,7 +22,7 @@ namespace DBM
 
 			if (Ping == -1) // DEV //TODO
 			{
-                Events.LogMessage(Utilities.Localization["Failed Load Online EULA"], Utilities.Localization["Error"]);
+                Events.LogMessage(Language.Localization["Failed Load Online EULA"], Language.Localization["Error"]);
 			}
 
 			if (string.IsNullOrWhiteSpace(CNTS)) //TODO
@@ -61,7 +61,7 @@ namespace DBM
 			{
 				GlobalStatic.Settings["EULA"] = false;
 				Settings.Save();
-				Events.LogMessage("EULA Declined", Utilities.Localization["UI"]); //Localize
+				Events.LogMessage("EULA Declined", Language.Localization["UI"]); //Localize
                 Stack.Exit(StackPointer);
                 System.Environment.Exit(5);
 			}

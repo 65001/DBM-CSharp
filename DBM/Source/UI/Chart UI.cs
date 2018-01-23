@@ -247,7 +247,7 @@ namespace DBM
                     }
                     catch (ArgumentOutOfRangeException ex)
                     {
-                        Events.LogMessage(ex.Message, Utilities.Localization["System"]);
+                        Events.LogMessage(ex.Message, Language.Localization["System"]);
                     }
                 }
 

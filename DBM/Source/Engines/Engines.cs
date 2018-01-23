@@ -278,7 +278,7 @@ namespace DBM
                     _Tables.Clear();
                     _Views.Clear();
                     _Indexes.Clear();
-                    Primitive Master_Schema_List = Query(Database,Sqlite.GetSchema(), null, true, Utilities.Localization["App"], "SCHEMA");
+                    Primitive Master_Schema_List = Query(Database,Sqlite.GetSchema(), null, true, Language.Localization["App"], "SCHEMA");
                     for (int i = 1; i <= Master_Schema_List.GetItemCount(); i++)
                     {
                         string Name = Master_Schema_List[i]["tbl_name"];
@@ -331,7 +331,7 @@ namespace DBM
                 case EnginesMode.SQLITE:
                     _Schema.Clear();
                     SchemaQuery = Sqlite.GetColumnsOfTable(table);
-                    Primitive QSchema = Query(database, SchemaQuery, null, true, Utilities.Localization["App"], Utilities.Localization["SCHEMA PRIVATE"]);
+                    Primitive QSchema = Query(database, SchemaQuery, null, true, Language.Localization["App"], Language.Localization["SCHEMA PRIVATE"]);
                     _Schema = Sqlite.GetColumnsOfTable(QSchema);
                     break;
                 default:
@@ -363,7 +363,7 @@ namespace DBM
                     Stack.Exit(StackPointer);
                     return;
                 }
-                Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
+                Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Language.Localization["System"]);
             Stack.Exit(StackPointer);
         }
 

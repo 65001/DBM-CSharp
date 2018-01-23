@@ -138,7 +138,7 @@ namespace DBM
                         }
                         catch (Exception ex)
                         {
-                            Events.LogMessage(ex.Message, Utilities.Localization["System"]);
+                            Events.LogMessage(ex.Message, Language.Localization["System"]);
                         }
                     }
                     else if (SQL.StartsWith(".querytimes", Comparison))
@@ -182,7 +182,7 @@ namespace DBM
                     {
                         EmulatorTable = "DBM_SQLITE_Localizations";
                         Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,KEY TEXT,VALUE TEXT);", EmulatorTable);
-                        foreach (KeyValuePair<string, string> entry in Utilities.Localization)
+                        foreach (KeyValuePair<string, string> entry in Language.Localization)
                         {
                             Emulator_Sql.AppendFormat("INSERT INTO {0} (Key,Value) VALUES('{1}','{2}');", EmulatorTable, entry.Key, entry.Value);
                         }
@@ -321,8 +321,8 @@ namespace DBM
             if (EmulatorTable != null)
             {
                 string _SQL = Emulator_Sql.ToString();
-                Command(Database,$"DROP TABLE IF EXISTS {EmulatorTable};" + _SQL, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
-                Query(Database, $"SELECT * FROM {EmulatorTable};", Listview, false, Username, Utilities.Localization["User Requested"] + ": CLI EMULATOR");
+                Command(Database,$"DROP TABLE IF EXISTS {EmulatorTable};" + _SQL, Language.Localization["User Requested"] + ": CLI EMULATOR");
+                Query(Database, $"SELECT * FROM {EmulatorTable};", Listview, false, Username, Language.Localization["User Requested"] + ": CLI EMULATOR");
 
                 GetSchema(Database);
                 SetDefaultTable(EmulatorTable);
