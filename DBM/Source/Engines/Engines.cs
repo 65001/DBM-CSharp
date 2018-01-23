@@ -103,7 +103,7 @@ namespace DBM
         /// <returns></returns>
         public static int Command(string Database, string SQL, string User, string Explanation)
 		{
-            int Stack = Utilities.AddtoStackTrace($"Engines.Command({Database})");
+            int StackPointer = Stack.Add($"Engines.Command({Database})");
             _UTC_Start.Add(DateTime.UtcNow.ToString("hh:mm:ss tt"));
             Stopwatch CommandTime = Stopwatch.StartNew();
 
@@ -118,13 +118,13 @@ namespace DBM
             _Explanation.Add(Explanation);
             _User.Add(User);
 
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return Updated;
 		}
 
 		public static Primitive Query(string DataBase, string SQL, string ListView, bool FetchRecords, string UserName, string Explanation) //Expand
 		{
-            int Stack = Utilities.AddtoStackTrace("Engines.Query()");
+            int StackPointer = Stack.Add("Engines.Query()");
 
             _UTC_Start.Add(DateTime.UtcNow.ToString("hh:mm:ss tt"));
             Stopwatch QueryTime = Stopwatch.StartNew();
@@ -132,7 +132,7 @@ namespace DBM
             if (SQL.StartsWith("."))
             {
                 Emulator(DB_Engine[DB_Name.IndexOf(DataBase)],DataBase, SQL,UserName,ListView);
-                Utilities.AddExit(Stack);
+                Stack.Exit(StackPointer);
                 return null;
             }
 
@@ -199,7 +199,7 @@ namespace DBM
             _Timer.Add(QueryTime.ElapsedMilliseconds);
             _Explanation.Add(Explanation);
             _User.Add(UserName);
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
 			return QueryResults;
 		}
 
@@ -227,12 +227,12 @@ namespace DBM
         /// </summary>
 		public static void TransactionRecord(string UserName, string DataBase, string SQL, Type Type, string Reason) 
 		{
-            int Stack = Utilities.AddtoStackTrace( "Engines.TransactionRecord("+DataBase+")");
+            int StackPointer = Stack.Add( "Engines.TransactionRecord("+DataBase+")");
             //Escapes function when conditions are correct
             
             if (DataBase == GlobalStatic.TransactionDB ) //This is done to prevent a stackoverflow. 
             {
-                Utilities.AddExit(Stack);
+                Stack.Exit(StackPointer);
                 return;
             }
 
@@ -247,7 +247,7 @@ namespace DBM
                 string _Type = "Query";
                 _TransactionRecord(UserName, DataBase, SQL, _Type, Reason);
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
 		}
 
         static void _TransactionRecord(string UserName, string DataBase, string SQL, string Type, string Reason)
@@ -264,10 +264,10 @@ namespace DBM
 
         public static void GetSchema(string Database)
         {
-            int Stack = Utilities.AddtoStackTrace($"Engines.GetSchema({Database})");
+            int StackPointer = Stack.Add($"Engines.GetSchema({Database})");
             if (string.IsNullOrEmpty(Database))//Prevents Prevents Application from querying a nonexistent db 
             {
-                Utilities.AddExit(Stack);
+                Stack.Exit(StackPointer);
                 return;
             }
             
@@ -312,12 +312,12 @@ namespace DBM
                 GetColumnsofTable(Database, CurrentTable);
             }
             OnSchemaChange?.Invoke(null, EventArgs.Empty);
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         public static void GetColumnsofTable(string database, string table)
         {
-            int Stack = Utilities.AddtoStackTrace($"Engines.GetSchemaofTable({database},{table})");
+            int StackPointer = Stack.Add($"Engines.GetSchemaofTable({database},{table})");
 
             if (string.IsNullOrEmpty(database)) //Prevents calls to nonexistent Databases
             {
@@ -339,7 +339,7 @@ namespace DBM
             }
             Schema = _Schema.ToPrimitiveArray();
             OnGetColumnsofTable?.Invoke(null, EventArgs.Empty);
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         public static void EditTable(string Table, string Control)
@@ -349,7 +349,7 @@ namespace DBM
 
         public static void SetDefaultTable(string table)
         {
-            int Stack = Utilities.AddtoStackTrace($"Enginges.SetDefaultTable({table})");
+            int StackPointer = Stack.Add($"Enginges.SetDefaultTable({table})");
                 string Characters = "\"[]";
 
                 if (!string.IsNullOrEmpty(table))
@@ -360,11 +360,11 @@ namespace DBM
                     }
                     CurrentTable = $"\"{table.SanitizeFieldName()}\"";
                     _TrackingDefaultTable.Add(CurrentDatabase + "." + CurrentTable);
-                    Utilities.AddExit(Stack);
+                    Stack.Exit(StackPointer);
                     return;
                 }
                 Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Utilities.Localization["System"]);
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         public static List<string> Functions(EnginesMode Mode)

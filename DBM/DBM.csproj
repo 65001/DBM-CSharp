@@ -106,14 +106,17 @@
     </Compile>
     <Compile Include="Source\UI\EULA.cs">
     </Compile>
+    <Compile Include="Source\UI\Menu.cs" />
     <Compile Include="Source\UI\UI Settings.cs" />
-    <Compile Include="Source\Utilities.cs">
+    <Compile Include="Source\Utilities\Utilities.cs">
     </Compile>
     <Compile Include="Source\Handlers.cs">
     </Compile>
-    <Compile Include="Source\Import.cs" />
-    <Compile Include="Source\Export.cs" />
+    <Compile Include="Source\IO\Import.cs" />
+    <Compile Include="Source\IO\Export.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Utilities\Localizer.cs" />
+    <Compile Include="Source\Utilities\Stack.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="LitDev, Version=1.2.16.0, Culture=neutral, processorArchitecture=MSIL">

@@ -337,7 +337,7 @@ namespace Google_Charts
 
         public class TimeLine : Chart
         {
-            public override int MinColumns { get { return 2; } }
+            public override int MinColumns { get { return 3; } }
             public override int MaxColumns { get { return 10; } }
             public override string Function {get {return "Timeline";} }
             public override string Package { get { return "timeline"; } }

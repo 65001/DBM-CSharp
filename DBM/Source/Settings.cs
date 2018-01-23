@@ -18,7 +18,7 @@ namespace DBM
         /// <param name="SettingsPath"></param>
         public static void Load(bool RestoreSettings, string SettingsPath)
         {
-            int StackReference = Utilities.AddtoStackTrace($"Settings.LoadSettings({RestoreSettings},{SettingsPath})");
+            int StackReference = Stack.Add($"Settings.LoadSettings({RestoreSettings},{SettingsPath})");
             if (string.IsNullOrWhiteSpace(SettingsPath))
             {
                 throw new ArgumentNullException("The Settings Path was null or whitespace");
@@ -43,12 +43,12 @@ namespace DBM
             Defaults();
             SettingsToFields(); //Binds Settings in the event a default has been set.
             Save(); //Save Settings in the event a value has been changed.
-            Utilities.AddExit(StackReference);
+            Stack.Exit(StackReference);
         }
 
         static void Defaults()
         {
-            int Stack = Utilities.AddtoStackTrace("Settings.Defaults");
+            int StackPointer = Stack.Add("Settings.Defaults");
             GlobalStatic.Settings["VersionID"] = GlobalStatic.VersionID;
 
             if (GlobalStatic.Listview_Width == 0)
@@ -133,7 +133,7 @@ namespace DBM
             {
                 SetSettingsValue("EULA", "Signed", false);
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         static void SetSettingsValue<T>(string Key1,string Key2,T Value)
@@ -148,7 +148,7 @@ namespace DBM
         /// </summary>
         static void SettingsToFields()
         {
-            int Stack = Utilities.AddtoStackTrace("Settings.SettingsToFields");
+            int StackPointer = Stack.Add("Settings.SettingsToFields");
             //Intervals
             GlobalStatic.CSVInterval = GlobalStatic.Settings["Intervals"]["CSV"];
             GlobalStatic.SQLInterval = GlobalStatic.Settings["Intervals"]["SQL"];
@@ -181,12 +181,12 @@ namespace DBM
 
             GlobalStatic.EULA_Acceptance = (bool?)GlobalStatic.Settings["EULA"]["Signed"] ?? (bool?)GlobalStatic.Settings["EULA"] ?? false;
             GlobalStatic.EULA_UserName = (string)GlobalStatic.Settings["EULA"]["Signer"] ?? (string)GlobalStatic.Settings["EULA_By"] ?? null;
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
 		public static void Save()
 		{
-            int StackReference = Utilities.AddtoStackTrace("Settings.SaveSettings()");
+            int StackReference = Stack.Add("Settings.SaveSettings()");
             try
             {
                 ConverttoXML(GlobalStatic.Settings, GlobalStatic.SettingsPath.Replace(".txt", ".xml"));
@@ -195,7 +195,7 @@ namespace DBM
             {
                 Events.LogMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["UI"]);
             }
-            Utilities.AddExit(StackReference);
+            Stack.Exit(StackReference);
 		}
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace DBM
         /// </summary>
         static void ConverttoXML(Primitive Settings, string URI)
         {
-            int Stack = Utilities.AddtoStackTrace("Settings.ConvertToXML");
+            int StackPointer = Stack.Add("Settings.ConvertToXML");
             try
             {
                 System.IO.File.WriteAllText(URI,ConverttoXML(Settings));
@@ -212,7 +212,7 @@ namespace DBM
             {
                 GraphicsWindow.ShowMessage(Utilities.Localization["Failed Save Settings"], Utilities.Localization["Error"]);
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace DBM
         /// </summary>
         static string ConverttoXML(Primitive Settings)
         {
-            int Stack = Utilities.AddtoStackTrace("Settings.ConvertToXML");
+            int StackPointer = Stack.Add("Settings.ConvertToXML");
             StringBuilder SB = new StringBuilder();
             SB.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
             SB.AppendLine("<root>");
@@ -267,14 +267,14 @@ namespace DBM
             SB.AppendFormat($"\t\t<SQL>{Settings["Intervals"]["SQL"]}</SQL>\n");
             SB.AppendLine("\t</Intervals>");
             SB.Append("</root>");
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return SB.ToString();
         }
 
 
         static Primitive XML(string URI)
         {
-            int Stack = Utilities.AddtoStackTrace("Settings.XML");
+            int StackPointer = Stack.Add("Settings.XML");
             LDxml.Open(URI);
             Primitive Data = LDxml.ToArray();
             Data = Data["root"]["children"];
@@ -301,7 +301,7 @@ namespace DBM
                     //GraphicsWindow.ShowMessage(Data[i], "XML");
                 }
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return RData;
         }
 
@@ -310,7 +310,7 @@ namespace DBM
         /// </summary>
 		public static void Paths(string AssetPath,string PluginPath,string LocalizationFolder,string AutoRunPluginPath,string Localization_LanguageCodes_Path,string AutoRunPluginMessage)
 		{
-            int Stack = Utilities.AddtoStackTrace("Settings.Paths()");
+            int StackPointer = Stack.Add("Settings.Paths()");
 			if (Directory.Exists(AssetPath) == false || Directory.Exists(LocalizationFolder) == false) //Creates Folders if one is missing
 			{
 				Directory.CreateDirectory(AssetPath);
@@ -322,7 +322,7 @@ namespace DBM
 			{
 				System.IO.File.WriteAllText(AutoRunPluginPath, AutoRunPluginMessage);
 			}
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
 		}
 
         /// <summary>
@@ -330,7 +330,7 @@ namespace DBM
         /// </summary>
 		public static void IniateDatabases()
 		{
-            int Stack = Utilities.AddtoStackTrace("Settings.IniateDatabases()");
+            int StackPointer = Stack.Add("Settings.IniateDatabases()");
             if (string.IsNullOrWhiteSpace(GlobalStatic.TransactionDBPath) || string.IsNullOrWhiteSpace(GlobalStatic.LogDBpath))
             {
                 throw new ArgumentNullException("Transaction or Log Path is null");
@@ -341,7 +341,7 @@ namespace DBM
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQL, GlobalStatic.UserName, "Auto Creation Statements");
 			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQLVIEW , GlobalStatic.UserName, "Auto Creation Statements");
 			Engines.Command(GlobalStatic.TransactionDB, GlobalStatic.TransactionsSQL , GlobalStatic.UserName, "Auto Creation Statements");
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 	}
 }

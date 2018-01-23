@@ -60,7 +60,7 @@ namespace DBM
 
         public static void CSV(Primitive Data, Primitive Schema, string FilePath, string deliminator)
         {
-            int StackReference = Utilities.AddtoStackTrace("Export.CSV");
+            int StackReference = Stack.Add("Export.CSV");
             Primitive _Data = null;
 
             Data[0] = Schema; //Sets the Schema at Indicie zero
@@ -76,12 +76,12 @@ namespace DBM
                 LDUtilities.CSVDeliminator = deliminator;
             }
             LDFile.WriteCSV(FilePath, _Data);
-            Utilities.AddExit(StackReference);
+            Stack.Exit(StackReference);
         }
 
         public static void SQL(Primitive Data, Primitive Schema, Dictionary<string, bool> PK, Dictionary<string, string> Types, string TableName, string FilePath)
         {
-            int StackReference = Utilities.AddtoStackTrace("Export.SQL");
+            int StackReference = Stack.Add("Export.SQL");
             Stopwatch SQL_Time = new Stopwatch();
             SQL_Time.Start();
             string _SQL = SQL(Data, Schema, PK, Types, Engines.CurrentTable);
@@ -89,12 +89,12 @@ namespace DBM
             #if DEBUG
                 Console.WriteLine("SQL void time {0} ms", SQL_Time.ElapsedMilliseconds);
             #endif
-            Utilities.AddExit(StackReference);
+            Stack.Exit(StackReference);
         }
 
         public static string SQL(Primitive Data, Primitive Schema, Dictionary<string, bool> PK, Dictionary<string, string> Types, string TableName)
         {
-            int Stack = Utilities.AddtoStackTrace("Export.SQL()");
+            int StackPointer = Stack.Add("Export.SQL()");
             Stopwatch SQL_Time = new Stopwatch();
             SQL_Time.Start();
 
@@ -159,7 +159,7 @@ namespace DBM
                 SQL.Append("');\n");
             }
             SQL.Replace("' '", "NULL").Replace("''", "NULL");
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return SQL.ToString();
         }
 
@@ -169,7 +169,7 @@ namespace DBM
         /// </summary>
         public static Dictionary<string, bool> SQL_Fetch_PK(Primitive SchemaQuery, Primitive Schema, Engines.EnginesMode CurrentEngine)
         {
-            int Stack = Utilities.AddtoStackTrace("Export.SQL_Fetch_PK");
+            int StackPointer = Stack.Add("Export.SQL_Fetch_PK");
             Dictionary<string, bool> _Dictionary = new Dictionary<string, bool>();
             switch (CurrentEngine)
             {
@@ -191,7 +191,7 @@ namespace DBM
                             }
                         }
                     }
-                    Utilities.AddExit(Stack);
+                    Stack.Exit(StackPointer);
                     return _Dictionary;
                 default:
                     throw new NotImplementedException("Current Engine is not supported");
@@ -200,7 +200,7 @@ namespace DBM
 
         public static Dictionary<string, string> SQL_Fetch_Type(Primitive SchemaQuery, Primitive Schema, Engines.EnginesMode CurrentEngine)
         {
-            int Stack = Utilities.AddtoStackTrace("Export.SQL_Fetch_Type");
+            int StackPointer = Stack.Add("Export.SQL_Fetch_Type");
             Dictionary<string, string> _Dictionary = new Dictionary<string, string>();
             switch (CurrentEngine)
             {
@@ -218,7 +218,7 @@ namespace DBM
                             }
                         }
                     }
-                    Utilities.AddExit(Stack);
+                    Stack.Exit(StackPointer);
                     return _Dictionary;
                 default:
                     throw new PlatformNotSupportedException("Current Engine is not supported");
@@ -234,7 +234,7 @@ namespace DBM
         /// <param name="FilePath"></param>
         public static void XML(Primitive Data,Primitive Schema,string Title,string FilePath)
         {
-            int Stack = Utilities.AddtoStackTrace("Export.XML");
+            int StackPointer = Stack.Add("Export.XML");
 
             const string XML_Creation_Statement = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n";
 
@@ -263,7 +263,7 @@ namespace DBM
             _XML.AppendFormat("\t</{0}>\n", Title);
             _XML.Append("</root>");
             System.IO.File.WriteAllText(FilePath, _XML.ToString());
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         /// <summary>
@@ -271,9 +271,9 @@ namespace DBM
         /// </summary>
         public static void MarkUp(Primitive Data, Primitive Schema, string FilePath)
         {
-            int Stack = Utilities.AddtoStackTrace($"Export.MarkUp({FilePath})");
+            int StackPointer = Stack.Add($"Export.MarkUp({FilePath})");
             System.IO.File.WriteAllText(FilePath, MarkUp(Data, Schema) );
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         /// <summary>
@@ -281,7 +281,7 @@ namespace DBM
         /// </summary>
         public static string MarkUp(Primitive Data, Primitive Schema)
         {
-            int Stack = Utilities.AddtoStackTrace("Export.MarkUp");
+            int StackPointer = Stack.Add("Export.MarkUp");
             Primitive Index = Schema.GetAllIndices();
 
             int DataCount = Data.GetItemCount();
@@ -325,7 +325,7 @@ namespace DBM
             }
 
             SB.AppendLine("|}");
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return SB.ToString();
         }
 
@@ -334,10 +334,10 @@ namespace DBM
         /// </summary>
         public static void MarkDown(Primitive Data, Primitive Schema, string FilePath)
         {
-            int Stack = Utilities.AddtoStackTrace("Export.MarkDown");
+            int StackPointer = Stack.Add("Export.MarkDown");
             string Output = MarkDown(Data, Schema);
             System.IO.File.WriteAllText(FilePath, Output);
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         /// <summary>
@@ -345,7 +345,7 @@ namespace DBM
         /// </summary>
         public static string MarkDown(Primitive Data, Primitive Schema)
         {
-            int Stack = Utilities.AddtoStackTrace("Export.MarkDown");
+            int StackPointer = Stack.Add("Export.MarkDown");
             Primitive Index = Schema.GetAllIndices();
             Stopwatch MD = new Stopwatch();
             MD.Start();
@@ -382,21 +382,21 @@ namespace DBM
                 }
                 SB.AppendLine();
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return SB.ToString();
         }
 
         public static void HTML(Primitive Data, Primitive Schema, string Title, string FilePath, string Generator) 
         {
-            int Stack = Utilities.AddtoStackTrace($"Export.HTML({FilePath})");
+            int StackPointer = Stack.Add($"Export.HTML({FilePath})");
             string Output = HTML(Data, Schema, Title, Generator);
             System.IO.File.WriteAllText(FilePath, Output);
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         public static string HTML(Primitive Data, Primitive Schema, string Title, string Generator)
         {
-            int Stack = Utilities.AddtoStackTrace("Export.HTML");
+            int StackPointer = Stack.Add("Export.HTML");
             Stopwatch HTML_Timer = new Stopwatch();
 
             HTML_Timer.Start();
@@ -465,16 +465,16 @@ namespace DBM
                 "<a target='_blank' href='$1'>$1</a>")
                 ;
             HTML_Timer.Stop();
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return HTML;
             
         }
 
         public static void JSON(Primitive Data, Primitive Schema, string Title, string Path)
         {
-            int Stack = Utilities.AddtoStackTrace($"Export.JSON({Path})");
+            int StackPointer = Stack.Add($"Export.JSON({Path})");
             System.IO.File.WriteAllText(Path, JSON(Data, Schema, Title) );
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         /// <summary>
@@ -486,7 +486,7 @@ namespace DBM
         /// <returns></returns>
         public static string JSON(Primitive Data, Primitive Schema, string Title)
         {
-            int Stack = Utilities.AddtoStackTrace("Export.JSON");
+            int StackPointer = Stack.Add("Export.JSON");
             StringBuilder _JSON = new StringBuilder();
             _JSON.Append("{\"" + Title +"\": {");
             _JSON.Append("\"Record\": [");
@@ -514,13 +514,13 @@ namespace DBM
                 }
             }
             _JSON.Append("]}}");
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return _JSON.ToString();
         }
 
         public static string[,] ConvertData(Primitive Schema, Primitive Data)
         {
-            int Stack = Utilities.AddtoStackTrace("Export.ConvertData()");
+            int StackPointer = Stack.Add("Export.ConvertData()");
             int DataCount = Data.GetItemCount();
             int SchemaCount = Schema.GetItemCount();
             string[,] DataArray = new string[DataCount, SchemaCount];
@@ -533,20 +533,20 @@ namespace DBM
                     DataArray[i - 1, ii - 1] = Temp_HTML[Schema[ii]];
                 }
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return DataArray;
         }
 
         public static string[] ConvertSchema(Primitive Schema)
         {
-            int Stack = Utilities.AddtoStackTrace("Export.ConvertSchema()");
+            int StackPointer = Stack.Add("Export.ConvertSchema()");
             int SchemaCount = Schema.GetItemCount();
             string[] SchemaArray = new string[SchemaCount];
             for (int i = 1; i <= SchemaCount; i++)
             {
                 SchemaArray[i - 1] = Schema[i];
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return SchemaArray;
         }
 

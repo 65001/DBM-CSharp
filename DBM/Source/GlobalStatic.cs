@@ -52,7 +52,11 @@ namespace DBM
 			//Settings Data
 			public static bool RestoreSettings,AutoUpdate;
 			public static Primitive Settings,Extensions;
-			public static int Listview_Width,Listview_Height,UIx,Timeout,SortBy,LastUpdateCheck,ISO_Today;
+			public static int Listview_Width,Listview_Height,UIx,Timeout,LastUpdateCheck,ISO_Today;
+            /// <summary>
+            /// Counts from 1 not 0.
+            /// </summary>
+            public static int SortBy;
 
 			public static bool Transaction_Query,Transaction_Commands, EULA_Acceptance;
 			public static string Deliminator;

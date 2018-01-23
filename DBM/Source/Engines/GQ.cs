@@ -40,7 +40,7 @@ namespace DBM
 
         public static string GenerateQuery(GenerateQuerySettings GQS, string CurrentTable)
         {
-            int StackReference = Utilities.AddtoStackTrace("Engines.GenerateQuery()");
+            int StackReference = Stack.Add("Engines.GenerateQuery()");
             if (string.IsNullOrEmpty(CurrentTable))
             {
                 throw new ArgumentNullException();
@@ -66,7 +66,7 @@ namespace DBM
                 GQ_CMD += GenerateSort(GQS.OrderBy, GQS.Order);
             }
             Console.WriteLine("Generated Query :{0}", GQ_CMD);
-            Utilities.AddExit(StackReference);
+            Stack.Exit(StackReference);
             return GQ_CMD;
         }
 

@@ -14,10 +14,6 @@ namespace DBM
     public static class Utilities
     {
         static Dictionary<string, string> _Localization = new Dictionary<string, string>();
-        static List<string> _StackTrace = new List<string>();
-        static List<DateTime> _StackIniationTime = new List<DateTime>();
-        static List<DateTime> _StackExitTime = new List<DateTime>();
-        static List<TimeSpan> _StackDuration = new List<TimeSpan>();
         static List<string> _ISO_Text = new List<string>();
         static List<string> _ISO_LangCode = new List<string>();
         static List<string> _UI_Name = new List<string>();
@@ -29,26 +25,6 @@ namespace DBM
         public static IReadOnlyDictionary<string, string> Localization
         {
             get { return _Localization; }
-        }
-
-        public static IReadOnlyList<string> StackTrace
-        {
-            get { return _StackTrace.AsReadOnly(); }
-        }
-
-        public static IReadOnlyList<DateTime> StackIniationTime
-        {
-            get { return _StackIniationTime.AsReadOnly(); }
-        }
-
-        public static IReadOnlyList<DateTime> StackExitTime
-        {
-            get { return _StackExitTime.AsReadOnly(); }
-        }
-
-        public static IReadOnlyList<TimeSpan> StackDuration
-        {
-            get { return _StackDuration.AsReadOnly(); }
         }
 
         public static IReadOnlyList<string> ISO_Text
@@ -77,7 +53,7 @@ namespace DBM
         /// <param name="XMLPath"></param>
         public static void LocalizationXML(string XMLPath,string DataPath)
 		{
-			int StackReference = AddtoStackTrace("Utilities.LocalizationXML()");
+			int StackReference = Stack.Add("Utilities.LocalizationXML()");
            
 			string XMLDoc = LDxml.Open(XMLPath);
 			if (System.IO.File.Exists(XMLPath) && System.IO.File.Exists(DataPath))
@@ -111,7 +87,7 @@ namespace DBM
 			{
                 throw new FileNotFoundException("Localization File not found!"); //DO NOT LOCALIZE
 			}
-            Utilities.AddExit(StackReference);
+            Stack.Exit(StackReference);
 		}
 
         static void AddLocalization()
@@ -135,31 +111,10 @@ namespace DBM
 
 	    public static string XMLAttributes() { return "1= ;2=" + LDxml.AttributesCount + ";3=" + LDxml.ChildrenCount + ";4=" + LDxml.NodeName + ";5=" + LDxml.NodeType + ";6=" + LDxml.NodeInnerText + ";"; }
 
-        public static int AddtoStackTrace(string Data)
-        {
-            SW.Start();
-            _StackTrace.Add(Data);
-            _StackIniationTime.Add(DateTime.UtcNow);
-            _StackExitTime.Add(DateTime.MinValue);
-            _StackDuration.Add(TimeSpan.MinValue);
-            SW.Stop();
-            return _StackTrace.Count - 1;
-        }
-
-        public static void AddExit(int Index)
-        {
-
-            SW.Start();
-            _StackExitTime[Index] = DateTime.UtcNow;
-            TimeSpan Span = _StackExitTime[Index] - _StackIniationTime[Index];
-            SW.Stop();
-            _StackDuration[Index] = Span;
-        }
-
 		// Reads File and Parses it
 		public static string[] ReadFile(string URI) //Reads a file and ignores certain types of data
 		{
-			int StackReference = AddtoStackTrace("Utilities.ReadFile()");
+			int StackReference = Stack.Add("Utilities.ReadFile()");
             List<string> File_Read = new List<string>();
 
 			if (System.IO.File.Exists(URI) == true)
@@ -179,7 +134,7 @@ namespace DBM
 				{
 					CNTS2[i] = File_Read[i];
 				}
-                Utilities.AddExit(StackReference);
+                Stack.Exit(StackReference);
 				return CNTS2;
 			}
 			else 
@@ -187,7 +142,7 @@ namespace DBM
 				Events.LogMessage("URI isn't accessable or incorrect Parameters given.", "Exception");
 			}
 
-            AddExit(StackReference);
+            Stack.Exit(StackReference);
 			return null;
 		}
 
@@ -195,7 +150,7 @@ namespace DBM
         {
             public static void CheckForUpdates(string downloadlocation, string URI = GlobalStatic.OnlineDB_Refrence_Location, bool UI = true)
             {
-                int StackReference = AddtoStackTrace($"Utilities.Updater.CheckForUpdates({UI})");
+                int StackReference = Stack.Add($"Utilities.Updater.CheckForUpdates({UI})");
                 if (string.IsNullOrWhiteSpace(UpdaterDB) == false || LDNetwork.DownloadFile(downloadlocation, URI) != -1)
                 {
                     int LatestVersion = LatestUpdate();
@@ -233,25 +188,25 @@ namespace DBM
                 {
                     GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
                 }
-                Utilities.AddExit(StackReference);
+                Stack.Exit(StackReference);
             }
 
             public static int LatestUpdate()
             {
-                int StackReference = Utilities.AddtoStackTrace("Updater.LatestUpdate()");
+                int StackReference = Stack.Add("Updater.LatestUpdate()");
                 if (string.IsNullOrWhiteSpace(UpdaterDB))
                 {
                     UpdaterDB = LDDataBase.ConnectSQLite(GlobalStatic.UpdaterDBpath);
                 }
                 Primitive QueryItems = LDDataBase.Query(UpdaterDB, $"SELECT * FROM updates WHERE PRODUCTID = '{ GlobalStatic.ProductID }';", null, true);
                 int.TryParse(QueryItems[1]["VERSION"], out int LatestVersion);
-                Utilities.AddExit(StackReference);
+                Stack.Exit(StackReference);
                 return LatestVersion;
             }
 
             public static string[] DownloadLinks()
             {
-                int Stack = Utilities.AddtoStackTrace("Updater.DownloadLinks");
+                int StackPointer = Stack.Add("Updater.DownloadLinks");
                 if (string.IsNullOrWhiteSpace(UpdaterDB))
                 {
                     UpdaterDB = LDDataBase.ConnectSQLite(GlobalStatic.UpdaterDBpath);
@@ -260,13 +215,13 @@ namespace DBM
                 string[] Locations = new string[2];
                 Locations[0] = QueryItems[1]["URL"];
                 Locations[1] = QueryItems[1]["URL2"];
-                Utilities.AddExit(Stack);
+                Stack.Exit(StackPointer);
                 return Locations;
             }
 
             static bool Download(string URL)
             {
-                int Stack = AddtoStackTrace("Utilities.DownloadUpdate(" + URL + ")");
+                int StackPointer = Stack.Add("Utilities.DownloadUpdate(" + URL + ")");
                 string DownloadFolder = string.Empty;
                 while (string.IsNullOrWhiteSpace(DownloadFolder) || string.IsNullOrWhiteSpace(LDFile.GetExtension(DownloadFolder)))
                 {
@@ -278,11 +233,11 @@ namespace DBM
                 {
                     case -1:
                         GraphicsWindow.ShowMessage(Localization["Check Log"], Localization["Error"]);
-                        AddExit(Stack);
+                        Stack.Exit(StackPointer);
                         return false;
                     default:
                         GraphicsWindow.ShowMessage("SUCCESS", "Update Downloaded");
-                        AddExit(Stack);
+                        Stack.Exit(StackPointer);
                         return true;
                 }
             }
@@ -298,105 +253,106 @@ namespace DBM
 
     public static class Transform
     {
+        
         public static Primitive ToPrimitiveArray<T>(this List<T> List)
         {
-            int Stack = Utilities.AddtoStackTrace("Transform.ListToPrimitiveArray");
+            int StackPointer = Stack.Add("Transform.ListToPrimitiveArray");
             Primitive _return = null;
             for (int i = 0; i < List.Count; i++)
             {
                 _return[i + 1] = List[i].ToString();
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return _return;
         }
 
         public static Primitive ToPrimitiveArray<T>(this ReadOnlyCollection<T> List)
         {
-            int Stack = Utilities.AddtoStackTrace("Transform.ReadOnlyCollectionToPrimitiveArray");
+            int StackPointer = Stack.Add("Transform.ReadOnlyCollectionToPrimitiveArray");
             Primitive _return = null;
             for (int i = 0; i < List.Count; i++)
             {
                 _return[i + 1] = List[i].ToString();
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return _return;
         }
 
         public static Primitive ToPrimitiveArray<T>(this IReadOnlyList<T> List)
         {
-            int Stack = Utilities.AddtoStackTrace("Transform.IReadOnlyListToPrimitiveArray");
+            int StackPointer = Stack.Add("Transform.IReadOnlyListToPrimitiveArray");
             Primitive _return = null;
             for (int i = 0; i < List.Count; i++)
             {
                 _return[i + 1] = List[i].ToString();
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return _return;
         }
 
         public static Primitive ToPrimitiveArray<T>(this Dictionary<T, T> Dictionary)
         {
-            int Stack = Utilities.AddtoStackTrace("Transform.DictionaryToPrimitiveArray");
+            int StackPointer = Stack.Add("Transform.DictionaryToPrimitiveArray");
             StringBuilder Exporter = new StringBuilder();
             foreach (KeyValuePair<T, T> entry in Dictionary)
             {
                 Exporter.Append(entry.Key + "=" + entry.Value + ";");
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             return Exporter.ToString();
         }
 
         public static void AddOrReplace<T>(this Dictionary<T,T> Dictionary,T Key,T Value)
         {
-            int Stack = Utilities.AddtoStackTrace("Transform.AddorReplaceDictionary");
+            int StackPointer = Stack.Add("Transform.AddorReplaceDictionary");
             if (Dictionary.ContainsKey(Key)==true)
             {
                 Dictionary[Key] = Value;
-                Utilities.AddExit(Stack);
+                Stack.Exit(StackPointer);
                 return;
             }
             Dictionary.Add(Key, Value);
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         public static void Print<T>(this List<T> List)
         {
-            int Stack = Utilities.AddtoStackTrace("Transform.PrintList");
+            int StackPointer = Stack.Add("Transform.PrintList");
             for (int i = 0; i < List.Count; i++)
             {
                 Console.WriteLine("{0} : {1}", i, List[i]);
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         public static void Print<T>(this IReadOnlyList<T> List)
         {
-            int Stack = Utilities.AddtoStackTrace("Transform.PrintIReadOnlyList");
+            int StackPointer = Stack.Add("Transform.PrintIReadOnlyList");
             for (int i = 0; i < List.Count; i++)
             {
                 Console.WriteLine("{0} : {1}", i, List[i]);
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         public static void Print<T>(this Dictionary<T, T> Dictionary)
         {
-            int Stack = Utilities.AddtoStackTrace("Transform.PrintDictionary");
+            int StackPointer = Stack.Add("Transform.PrintDictionary");
             foreach (KeyValuePair<T,T> entry in Dictionary)
             {
                 Console.WriteLine("{0} : {1}", entry.Key, entry.Value);
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         public static void Print<T>(this IReadOnlyDictionary<T, T> Dictionary)
         {
-            int Stack = Utilities.AddtoStackTrace("Transform.PrintIReadOnlyDictionary");
+            int StackPointer = Stack.Add("Transform.PrintIReadOnlyDictionary");
             foreach (KeyValuePair<T, T> entry in Dictionary)
             {
                 Console.WriteLine("{0} : {1}", entry.Key, entry.Value);
             }
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 
         public static string SanitizeFieldName(this string String)

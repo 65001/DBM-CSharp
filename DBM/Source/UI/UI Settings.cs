@@ -10,7 +10,7 @@ namespace DBM
         {
             public static void Display()
             {
-                int Stack = Utilities.AddtoStackTrace("UI.Settings.Display()");
+                int StackPointer = Stack.Add("UI.Settings.Display()");
                 ClearWindow();
                 GraphicsWindow.Title = Utilities.Localization["Settings"];
 
@@ -73,12 +73,12 @@ namespace DBM
                 LDControls.ComboBoxItemChanged -= Events.CB;
                 Controls.ButtonClicked -= Events.BC;
                 Controls.ButtonClicked += Handler;
-                Utilities.AddExit(Stack);
+                Stack.Exit(StackPointer);
             }
 
             public static void Clear()
             {
-                int Stack = Utilities.AddtoStackTrace("UI.Settings.Clear()");
+                int StackPointer = Stack.Add("UI.Settings.Clear()");
                 GlobalStatic.ListView = null;
                 GlobalStatic.Dataview = null;
                 MenuList = null;
@@ -90,19 +90,19 @@ namespace DBM
                 HideDisplayResults();
                 LDControls.ComboBoxItemChanged += Events.CB;
                 MainMenu();
-                Utilities.AddExit(Stack);
+                Stack.Exit(StackPointer);
             }
 
             static void Handler()
             {
-                int Stack = Utilities.AddtoStackTrace("UI.Settings.Handler()");
+                int StackPointer = Stack.Add("UI.Settings.Handler()");
                 Button(Controls.LastClickedButton);
-                Utilities.AddExit(Stack);
+                Stack.Exit(StackPointer);
             }
 
             static void Button(string LastClickedButton)
             {
-                int Stack = Utilities.AddtoStackTrace($"UI.Settings.Button({LastClickedButton})");
+                int StackPointer = Stack.Add($"UI.Settings.Button({LastClickedButton})");
                 if (LastClickedButton == _Buttons["Settings Save"])
                 {
                     GlobalStatic.Settings["Listview"] = string.Format("Width={0};Height={1};", Controls.GetTextBoxText(_TextBox["Settings_Width"]), Controls.GetTextBoxText(_TextBox["Settings_Height"]));
@@ -119,13 +119,13 @@ namespace DBM
                         );
 
                     Button(_Buttons["Settings Close"]);
-                    Utilities.AddExit(Stack);
+                    Stack.Exit(StackPointer);
                     return;
                 }
                 else if (LastClickedButton == _Buttons["Settings Close"])
                 {
                     Clear();
-                    Utilities.AddExit(Stack);
+                    Stack.Exit(StackPointer);
                     return;
                 }
             }

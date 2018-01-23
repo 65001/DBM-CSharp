@@ -26,17 +26,17 @@ namespace DBM
         
         public static void CSV(string InputFilePath, string OutPutFilePath)
         {
-            int Stack = Utilities.AddtoStackTrace($"Import.CSV({InputFilePath},{OutPutFilePath})");
+            int StackPointer = Stack.Add($"Import.CSV({InputFilePath},{OutPutFilePath})");
             StreamWriter SW = new StreamWriter(OutPutFilePath,false);
             
             CSV(InputFilePath,ref SW);
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
         
 
 		public static void CSV(string FilePath,ref StreamWriter SW)
 		{
-            int Stack = Utilities.AddtoStackTrace($"Utilities.CSV({FilePath})");
+            int StackPointer = Stack.Add($"Utilities.CSV({FilePath})");
 			//TODO Make sure comment's are universal across SQL.Then use them to insert data such as how long it took to generate the SQL and how many rows were skipped if any?
 			if (File.Exists(FilePath) == false)
 			{
@@ -95,7 +95,7 @@ namespace DBM
                 CSVHeaders(Standard_Size, Name,ref SW);
                 ArrayToSql(Standard_Size,Name,HeaderWOType,ref SW);
                 LDFastArray.Remove(Data);
-                Utilities.AddExit(Stack);
+                Stack.Exit(StackPointer);
                 SW.Close();
                 return;
 			}
@@ -107,14 +107,14 @@ namespace DBM
 
 			//Drops The FastArray
 			LDFastArray.Remove(Data);
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
             SW.Close();
             return;
 		}
 
 		static void ArrayToSql(int Standard_Size,string TableName,string Headers,ref StreamWriter SW)
 		{
-            int Stack = Utilities.AddtoStackTrace("Import.ArrayToSql");
+            int StackPointer = Stack.Add("Import.ArrayToSql");
 
 			for (int i = 2; i <= LDFastArray.Size1(Data); i++)
 			{
@@ -156,12 +156,12 @@ namespace DBM
                 }
 			}
             SW.Flush();
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
 		}
 
 		static void CSVHeaders(int Standard_Size,string TableName,ref StreamWriter SW) 
 		{
-            int Stack = Utilities.AddtoStackTrace("Import.CSVHeaders");
+            int StackPointer = Stack.Add("Import.CSVHeaders");
             HeaderSQL = $"CREATE TABLE IF NOT EXISTS \"{TableName}\" (";
 			HeaderWOType = "(";
 			for (int i = 1; i <= Standard_Size; i++)
@@ -189,12 +189,12 @@ namespace DBM
 			HeaderWOType += ")";
             SW.WriteLine(HeaderSQL);
             SW.Flush();
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
 		}
 
         public static void SQL(string database,string Path)
         {
-            int Stack = Utilities.AddtoStackTrace($"Import.SQL({database},{Path})");
+            int StackPointer = Stack.Add($"Import.SQL({database},{Path})");
             StreamReader SR = new StreamReader(Path);
 
            var cnn = Engines.GetConnection(database);
@@ -230,7 +230,7 @@ namespace DBM
             transaction.Dispose();
             cmd.Dispose();
             SR.Dispose();
-            Utilities.AddExit(Stack);
+            Stack.Exit(StackPointer);
         }
 	}
 }
