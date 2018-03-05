@@ -8,9 +8,8 @@ using System.Text;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using LitDev;
 using Microsoft.SmallBasic.Library;
-
+using LitDev;
 /*
  * //TODO CSV to SQL Converter in Imports?
  * 
@@ -84,6 +83,7 @@ namespace DBM
                 Engines.OnSchemaChange += SchemaChanged;
 
                 Startup();
+                
                 Stack.Exit(StackPointer);
             }
             catch (Exception ex)
@@ -190,7 +190,7 @@ namespace DBM
             if (GlobalStatic.AutoUpdate == true && GlobalStatic.LastUpdateCheck + 14 <= GlobalStatic.ISO_Today)
             {
                 Events.LogMessage("Autoupdate Check", "Updater");
-                Utilities.Updater.CheckForUpdates(GlobalStatic.UpdaterDBpath,GlobalStatic.OnlineDB_Refrence_Location,false);
+                Updater.CheckForUpdates(GlobalStatic.UpdaterDBpath,GlobalStatic.OnlineDB_Refrence_Location,false);
             }
             Stack.Exit(StackPointer);
         }
@@ -484,7 +484,14 @@ namespace DBM
                         string Confirmation =   LDDialogs.Confirm("Do you wish to commit the following SQL:\n" + Define_SQL.ToString() + "\n to " + Engines.DB_ShortName[Engines.DB_Name.IndexOf(Engines.CurrentDatabase)], "Commit SQL");
                         if (Confirmation == "Yes")
                         {
-                            Engines.Command(Engines.CurrentDatabase, Define_SQL.ToString(), GlobalStatic.UserName, "User Defining a Table"); //Localize
+                            Engines.CommandSettings CS = new Engines.CommandSettings()
+                            {
+                                Database = Engines.CurrentDatabase,
+                                SQL = Define_SQL.ToString(),
+                                User = GlobalStatic.UserName,
+                                Explanation = "User Defining a Table" //Localize
+                            };
+                            Engines.Command(CS); 
                         }
                     }
                 }
@@ -508,17 +515,21 @@ namespace DBM
                 Stack.Exit(StackPointer);
                 return;
             }
+
+            
             Stack.Exit(StackPointer);
 		}
 	}
 
-	public static class Events
+    public static class Events
 	{
-        public static void LogEvents() //Error Handler
+        /// <summary>
+        /// Error Handler
+        /// </summary>
+        public static void LogEvents()
 		{
-			LogMessage(LDEvents.LastError, Language.Localization["System"]);
-            int StackPointer = Stack.Add("Events.LogEvents()");
-            Stack.Exit(StackPointer);
+            LogMessage(LDEvents.LastError, Language.Localization["System"]);
+            Stack.Exit(Stack.Add("Events.LogEvents()"));
 		}
         
         /// <param name="UI_Message">Message Shown on the popup</param>
@@ -547,9 +558,9 @@ namespace DBM
 
         static void LogMessage(string Message, string Type, string Caller)
         {
-        #if DEBUG
+#if DEBUG
             Console.WriteLine("Log : Caller was : {0}; Type: {1}; Message: {2} ;", Caller, Type, Message);
-        #endif
+#endif
             if (string.IsNullOrWhiteSpace(Type))
             {
                 Type = "Unknown";
@@ -580,8 +591,15 @@ namespace DBM
             int StackPointer = Stack.Add($"Events.LogMessage({Message},{Type},{Caller})");
 
             string LogCMD = "INSERT INTO LOG ([UTC DATE],[UTC TIME],DATE,TIME,USER,ProductID,ProductVersion,Event,Type) VALUES(DATE(),TIME(),DATE('now','localtime'),TIME('now','localtime'),'" + GlobalStatic.UserName + "','"+ GlobalStatic.ProductID + "','" + GlobalStatic.VersionID + "','" + Message.Replace("\n","") + "','" + Type + "');"; ;
+            var CS = new Engines.CommandSettings()
+            {
+                Database = GlobalStatic.LogDB,
+                SQL = LogCMD,
+                User = Language.Localization["App"],
+                Explanation = Language.Localization["Auto Log"]
+            };
 
-            Engines.Command(GlobalStatic.LogDB, LogCMD, Language.Localization["App"], Language.Localization["Auto Log"]);
+            Engines.Command(CS);
             Stack.Exit(StackPointer);
         }
 
@@ -610,13 +628,13 @@ namespace DBM
 		public static void BC()
 		{
             BC(Controls.LastClickedButton);
-            Stack.Exit( Stack.Add("Events.BC()"));
+            Stack.Exit(Stack.Add("Events.BC()"));
 		}
 
         public async static void BC(string LastClickedButton)
         {
             await Task.Run(() => { Handlers.Buttons(LastClickedButton); });
-            Stack.Exit( Stack.Add($"Events.BC({ LastClickedButton}"));
+            Stack.Exit(Stack.Add($"Events.BC({ LastClickedButton}"));
         }
 
         /// <summary>
@@ -625,13 +643,13 @@ namespace DBM
         public static void MC()
 		{
             MC(LDControls.LastMenuItem);
-            Stack.Exit( Stack.Add("Events.MC()"));
+            Stack.Exit(Stack.Add("Events.MC()"));
 		}
 
         public async static void MC(string LastMenuItem)
         {
             await Task.Run(() => { Handlers.Menu(LastMenuItem); });
-            Stack.Exit( Stack.Add($"Events.MC({LastMenuItem})"));
+            Stack.Exit(Stack.Add($"Events.MC({LastMenuItem})"));
         }
 
         /// <summary>
@@ -640,13 +658,13 @@ namespace DBM
 		public async static void CB()
 		{
 			await Task.Run(() => { Handlers.ComboBox.CB(LDControls.LastComboBox, LDControls.LastComboBoxIndex); });
-            Stack.Exit( Stack.Add("Events.CB()"));
+            Stack.Exit(Stack.Add("Events.CB()"));
 		}
 
         public async static void CB(string LastComboBox,int ComboBoxIndex)
         {
             await Task.Run(() => { Handlers.ComboBox.CB(LastComboBox, ComboBoxIndex); } );
-            Stack.Exit( Stack.Add("Events.CB()"));
+            Stack.Exit(Stack.Add("Events.CB()"));
         }
 
         /// <summary>

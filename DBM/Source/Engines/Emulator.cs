@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Microsoft.SmallBasic.Library;
-using Google_Charts;
+using LitDev;
 
 namespace DBM
 {
@@ -23,7 +22,8 @@ namespace DBM
                 case EnginesMode.SQLITE:
                     if (SQL.StartsWith(".help", Comparison))
                     {
-                        EmulatorTable = "DBM_SQLITE_Help";
+                        
+                        //EmulatorTable = "DBM_SQLITE_Help";
                         List<string> Arguments = new List<string>()
                         {
                             ".help",".databases",".tables",".index",".pragma",".querytimes",".filesystem $Path",".stacktrace",".localizations",".functions"
@@ -43,8 +43,8 @@ namespace DBM
                             { ".charts","A List of all charts currentley implemented"}
                         };
                         Arguments.Sort();
+                        
                         Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (Arguments TEXT,Description TEXT);", EmulatorTable);
-
                         for (int i = 0; i < Arguments.Count; i++)
                         {
                             Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}');", EmulatorTable, Arguments[i], Description[Arguments[i]]);
@@ -103,7 +103,21 @@ namespace DBM
                          */
                         for (int i = 0; i < PRAGMA.Count; i++)
                         {
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}');", EmulatorTable, PRAGMA[i].Replace("_", " "), Query(Engines.CurrentDatabase, "PRAGMA " + PRAGMA[i] + ";", null, true, Username, "Emulator")[1][PRAGMA[i]]);
+                            var QS = new QuerySettings
+                            {
+                                Database = CurrentDatabase,
+                                SQL = $"PRAGMA {PRAGMA[i]};",
+                                ListView = null,
+                                FetchRecords = true,
+                                User = Username,
+                                Explanation = "Emulator"
+                            };
+
+                            Emulator_Sql.AppendFormat("INSERT INTO {0} VALUES ('{1}','{2}');", 
+                                EmulatorTable, 
+                                PRAGMA[i].Replace("_", " "), 
+                                Query(QS)[1][PRAGMA[i]]);
+                            
                         }
                     }
                     else if (SQL.StartsWith(".filesystem", Comparison))
@@ -215,104 +229,6 @@ namespace DBM
                             Emulator_Sql.AppendFormat("INSERT INTO {0} (Function,Description) VALUES('{1}','{2}');", EmulatorTable, entry.Key, entry.Value);
                         }
                     }
-                    else if (SQL.StartsWith(".charts", Comparison))
-                    {
-                        //TODO Make a list of all available charts
-                        EmulatorTable = "DBM_Charts";
-                        Emulator_Sql.AppendFormat("CREATE TEMP TABLE {0} (ID INTEGER PRIMARY KEY,Chart TEXT,Arguments TEXT);", EmulatorTable);
-                        Dictionary<string, string> Charts = new Dictionary<string, string>()
-                        {
-                            {"bar","Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis" },
-                            {"column","Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis" },
-                            {"pie","Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis" },
-                            {"sankey","From,To,Weight,Title,SubTitle,Xaxis,Yaxis"},
-                            {"org","Position,Manager,Name,Title,SubTitle,Xaxis,Yaxis"},
-                            {"scatter" ,"Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis"},
-                            {"histogram","Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis"},
-                            {"table","Column1,Column2,Column3,Title,SubTitle,Xaxis,Yaxis"},
-                            {"line","Column1,Column2,Column3,Title,SubTitle,Xaxis,Yaxis"}
-                        };
-                        foreach (KeyValuePair<string, string> entry in Charts)
-                        {
-                            Emulator_Sql.AppendFormat("INSERT INTO {0} (Chart,Arguments) VALUES('{1}','{2}');", EmulatorTable, entry.Key, entry.Value);
-                        }
-                    }
-                    else if (SQL.StartsWith(".bar", Comparison))
-                    {
-                        //Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis
-                        Chart chart = new Chart.Bar();
-                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 5).Split(',');
-                        Import(chart, Arguments);
-                        Write(chart, "Bar");
-                    }
-                    else if (SQL.StartsWith(".pie", Comparison))
-                    {
-                        //Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis
-                        Chart chart = new Chart.Pie();
-                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 5).Split(',');
-                        Import(chart, Arguments);
-                        Write(chart, "Pie");
-                    }
-                    else if (SQL.StartsWith(".column", Comparison))
-                    {
-                        //Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis
-                        Chart chart = new Chart.Column();
-                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 7).Split(',');
-                        Import(chart, Arguments);
-                        Write(chart, "Column");
-                    }
-                    else if (SQL.StartsWith(".line", Comparison))
-                    {
-                        //Column(s)?,Values,Title,SubTitle,Xaxis,Yaxis
-                        Chart chart = new Chart.Line();
-                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 5).Split(',');
-                        Import(chart, Arguments);
-                        Write(chart, "Line");
-                    }
-                    else if (SQL.StartsWith(".sankey", Comparison))
-                    {
-                        //Columns(From,To,..),Title,SubTitle,Xaxis,Yaxis
-                        Chart chart = new Chart.SanKey();
-                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 7).Split(',');
-                        Import(chart, Arguments);
-                        Write(chart, "Sankey");
-                    }
-                    else if (SQL.StartsWith(".org", Comparison))
-                    {
-                        //Columns(From,To,..),Title,SubTitle,Xaxis,Yaxis
-                        Chart chart = new Chart.OrgChart();
-                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 4).Split(',');
-                        Import(chart, Arguments);
-                        Write(chart, "Org");
-                    }
-                    else if (SQL.StartsWith(".histogram", Comparison))
-                    {
-                        Chart chart = new Chart.Histograms();
-                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 10).Split(',');
-                        Import(chart, Arguments);
-                        Write(chart, "Histogram");
-                    }
-                    else if (SQL.StartsWith(".scatter", Comparison))
-                    {
-                        Chart chart = new Chart.Scatter();
-                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 8).Split(',');
-                        Import(chart, Arguments);
-                        Write(chart, "Scatter");
-                    }
-                    else if (SQL.StartsWith(".table", Comparison))
-                    {
-                        Chart chart = new Chart.Table();
-                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 6).Split(',');
-                        Import(chart, Arguments);
-                        Write(chart, "Table");
-                    }
-                    else if (SQL.StartsWith(".geo", Comparison))
-                    {
-                        Chart chart = new Chart.GeoCharts();
-                        string[] Arguments = SQL.Substring(0, SQL.Length - 1).Remove(0, 4).Split(',');
-                        Import(chart, Arguments);
-                        Write(chart, "GeoChart");
-                    }
                     break;
                 default:
                     throw new NotImplementedException();
@@ -321,98 +237,31 @@ namespace DBM
             if (EmulatorTable != null)
             {
                 string _SQL = Emulator_Sql.ToString();
-                Command(Database,$"DROP TABLE IF EXISTS {EmulatorTable};" + _SQL, Language.Localization["User Requested"] + ": CLI EMULATOR");
-                Query(Database, $"SELECT * FROM {EmulatorTable};", Listview, false, Username, Language.Localization["User Requested"] + ": CLI EMULATOR");
+                var CS = new Engines.CommandSettings()
+                {
+                    Database = Database,
+                    SQL = $"DROP TABLE IF EXISTS {EmulatorTable};" + _SQL,
+                    User = GlobalStatic.UserName,
+                    Explanation = Language.Localization["User Requested"] + ": CLI EMULATOR"
+                };
+                Command(CS);
+
+                QuerySettings QS = new QuerySettings
+                {
+                    Database = Database,
+                    SQL = $"SELECT * FROM {EmulatorTable};",
+                    ListView = Listview,
+                    FetchRecords = false,
+                    User = Username,
+                    Explanation = Language.Localization["User Requested"] + ": CLI EMULATOR"
+                };
+                Query(QS);
 
                 GetSchema(Database);
                 SetDefaultTable(EmulatorTable);
                 GetColumnsofTable(Database, EmulatorTable);
             }
             Stack.Exit(StackPointer);
-        }
-
-        static void Write(Chart chart,string ChartType)
-        {
-            string OutPut = Path.GetDirectoryName(DB_Path[GetDataBaseIndex(CurrentDatabase)]) + string.Format("\\{0} {1} Chart.html",CurrentTable.SanitizeFieldName(), ChartType);
-            chart.Write(OutPut);
-            LitDev.LDProcess.Start(OutPut, null);
-        }
-
-        static void Import(Chart chart, string[] Arguments)
-        {
-            //TODO add support for multiple columns and value types..
-            Arguments[0] = Arguments[0].Remove(0,0)?.Replace("(","")?.Replace(")","");
-            string SQLQuery = string.Empty;
-            if (chart.MinColumns == 1)
-            {
-                SQLQuery = string.Format("SELECT {0},{1} FROM \"{2}\" GROUP BY {0};", Arguments[0], Arguments[1], CurrentTable.SanitizeFieldName());
-            }
-            else if (chart.MinColumns == 2)
-            {
-                SQLQuery = string.Format("SELECT {0},{1},{2} FROM \"{3}\";", Arguments[0], Arguments[1],Arguments[2], CurrentTable.SanitizeFieldName());
-            }
-            Console.WriteLine(SQLQuery);
-            Primitive Data = Query(CurrentDatabase,
-                SQLQuery,
-                null,
-                true,
-                "App",
-                "Chart"
-                );
-            Console.WriteLine((string)Data);
-            Import(chart, Data, Arguments);
-        }
-
-        static void Import(Chart chart,Primitive Data,string[] Arguments)
-        {
-            Primitive Columns = Data[1].GetAllIndices();
-            //TODO add better type determination for charts...
-            //Current Assumption is the last value will always be a number
-            //and all previous columns are string data types..
-            for (int i = 1; i <= Columns.GetItemCount(); i++)
-            {
-                if (i < Columns.GetItemCount())
-                {
-                    chart.AddColumn(Columns[i]);
-                }
-                else
-                {
-                    chart.AddColumn(Columns[i], Chart.DataType.number);
-                }
-            }
-
-            for (int i = 1; i <= Data.GetItemCount(); i++)
-            {
-                for (int ii = 1; ii <= Data[i].GetItemCount(); ii++)
-                {
-                    chart.AddRowData(i - 1, Data[i][Columns[ii]]);
-                }
-            }
-
-            if (Arguments.Length > chart.MinColumns + 1)
-            {
-                chart.Title = (Arguments[chart.MinColumns + 1] ?? CurrentTable)?.Replace("'", "");
-            }
-            else
-            {
-                chart.Title = CurrentTable.Replace("'","").Replace("\"","");
-            }
-
-            if (Arguments.Length > chart.MinColumns + 2)
-            {
-                chart.SubTitle = (Arguments[chart.MinColumns + 2] ?? string.Empty)?.Replace("'", "");
-            }
-
-            if (Arguments.Length > chart.MinColumns + 3)
-            {
-                chart.Xaxis = (Arguments[chart.MinColumns + 3] ?? string.Empty)?.Replace("'", "");
-            }
-
-            if (Arguments.Length > chart.MinColumns + 4)
-            {
-                chart.Yaxis = (Arguments[chart.MinColumns + 4] ?? string.Empty)?.Replace("'", "");
-            }
-
         }
     }
 }

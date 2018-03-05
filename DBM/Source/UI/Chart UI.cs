@@ -212,7 +212,16 @@ namespace DBM
                     {
                         Types.Add(LDControls.DataViewGetValue(DataView, i, 1), LDControls.DataViewGetValue(DataView, i, 2));
                     }
-                    GenerateChart(Columns, Types , Engines.Query(Engines.CurrentDatabase, Engines.NonSchemaQuery.Last(), null, true, GlobalStatic.UserName, "Generating Chart"));
+                    Engines.QuerySettings QS = new Engines.QuerySettings
+                    {
+                        Database = Engines.CurrentDatabase,
+                        SQL = Engines.NonSchemaQuery.Last(),
+                        FetchRecords = true,
+                        User = GlobalStatic.UserName,
+                        Explanation = "Generating Chart" //TODO Localize
+                    };
+
+                    GenerateChart(Columns, Types , Engines.Query(QS));
                     Clear();
                     GraphicsWindow.ShowMessage("Exported Chart!", "Success");
                 }

@@ -4,9 +4,9 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Data.SQLite;
 using System.Collections.Generic;
 using System.Linq;
-using System.Diagnostics;
 using LitDev;
 using Microsoft.SmallBasic.Library;
 
@@ -25,7 +25,7 @@ namespace DBM
         /// </summary>
         public static bool UseCache = false;
 
-        static SQLITE Sqlite = new SQLITE();
+        static SQLite Sqlite = new SQLite();
         static OLDEB Oldeb = new OLDEB();
         static ODBC Odbc = new ODBC();
         static MySQL Mysql = new MySQL();
@@ -45,7 +45,7 @@ namespace DBM
             {
                 try
                 {
-                    return DB_Engine[DB_Name.IndexOf(CurrentDatabase)];
+                    return DB_Info[CurrentDatabase].Engine;
                 }
                 catch (Exception)
                 {
@@ -57,13 +57,26 @@ namespace DBM
         /// <summary>
         /// Auto Generated Query SQL Statements 
         /// </summary>
-		public static string GQ_CMD { get; private set; } 
+		public static string GQ_CMD { get; private set; }
 
-		static List<string> _DB_Path = new List<string>();
-		static List<string> _DB_Name = new List<string>();
-		static List<string> _DB_ShortName = new List<string>();
-		static List<EnginesMode> _DB_Engine = new List<EnginesMode>();
+        public struct Connections
+        {
+            public SQLiteConnection SQLITE;
+        }
+
+        public struct DatabaseInfo
+        {
+            public string Path;
+            public string ID;
+            public string ShortName;
+            public EnginesMode Engine;
+            public string Hash;
+            public Connections Connections;
+        }
+
+        static Dictionary<string, DatabaseInfo> _DBInfo = new Dictionary<string, DatabaseInfo>();
         static Dictionary<string, string> _DB_Hash = new Dictionary<string, string>();
+        
         static List<string> _TrackingDefaultTable = new List<string>();
 
         static List<string> _Tables = new List<string>();
@@ -79,131 +92,15 @@ namespace DBM
         static List<string> _User = new List<string>();
         static List<string> _Last_Query = new List<string>();
 
-        static Dictionary<string, Cache> _Cache = new Dictionary<string, Cache>();
+        static Dictionary<string, CacheEntry> _Cache = new Dictionary<string, CacheEntry>();
         static List<string> _CacheStatus = new List<string>();
 
         static List<string> _Last_NonSchema_Query = new List<string>();
         static List<string> _UTC_Start = new List<string>();
         public static event EventHandler OnSchemaChange;
         public static event EventHandler OnGetColumnsofTable;
-        
-        public static int Command(string Database, string SQL,string Explanation)
-        {
-            return Command(Database, SQL, GlobalStatic.UserName, Explanation);
-        }
 
-        /// <summary>
-        /// Executes a Command against a database.
-        /// </summary>
-        /// <param name="Database">Database. Use the Database name you recieve from LoadDB</param>
-        /// <param name="SQL"></param>
-        /// <param name="User">UserName of the requested username</param>
-        /// <param name="Explanation">Any notes for transactions</param>
-        /// <param name="RunParser">Run Custom Parser... Yet to be implemented</param>
-        /// <returns></returns>
-        public static int Command(string Database, string SQL, string User, string Explanation)
-		{
-            int StackPointer = Stack.Add($"Engines.Command({Database})");
-            _UTC_Start.Add(DateTime.UtcNow.ToString("hh:mm:ss tt"));
-            Stopwatch CommandTime = Stopwatch.StartNew();
-
-            if (GlobalStatic.Transaction_Commands == true)
-            {
-                TransactionRecord(User, Database, SQL, Type.Command, Explanation);
-            }
-
-            int Updated = LDDataBase.Command(Database, SQL);
-            _Type_Referer.Add(Type.Command);
-            _Timer.Add(CommandTime.ElapsedMilliseconds);
-            _Explanation.Add(Explanation);
-            _User.Add(User);
-
-            Stack.Exit(StackPointer);
-            return Updated;
-		}
-
-		public static Primitive Query(string DataBase, string SQL, string ListView, bool FetchRecords, string UserName, string Explanation) //Expand
-		{
-            int StackPointer = Stack.Add("Engines.Query()");
-
-            _UTC_Start.Add(DateTime.UtcNow.ToString("hh:mm:ss tt"));
-            Stopwatch QueryTime = Stopwatch.StartNew();
-            
-            if (SQL.StartsWith("."))
-            {
-                Emulator(DB_Engine[DB_Name.IndexOf(DataBase)],DataBase, SQL,UserName,ListView);
-                Stack.Exit(StackPointer);
-                return null;
-            }
-
-            if (GlobalStatic.Transaction_Query == true)
-            {
-                TransactionRecord(UserName, DataBase, SQL, Type.Query, Explanation);
-            }
-
-            if (UseCache == false)
-            {
-                _CacheStatus.Add("Disabled");
-            }
-            else if(FetchRecords == false)
-            {
-                //The Cache can never be hit :(
-                _CacheStatus.Add("NA");
-            }
-
-            Primitive QueryResults;
-
-            if (UseCache == false && FetchRecords == true && string.IsNullOrWhiteSpace(ListView) == true && _Cache.ContainsKey(SQL) == true)
-            {
-                _CacheStatus.Add("Hit!");
-               QueryResults = _Cache[SQL].Results;
-                _Cache[SQL].LifeTime -= 1;
-                if (_Cache[SQL].LifeTime <= 0)
-                {
-                    _Cache.Remove(SQL);
-                }
-            }
-            else
-            {
-                //Data is not in Cache :(
-                QueryResults = LDDataBase.Query(DataBase, SQL, ListView, FetchRecords);
-                if (UseCache == true && FetchRecords == true && _Cache.ContainsKey(SQL) == false)
-                {
-                    Cache cache = new Cache
-                    {
-                        LifeTime = 10,
-                        Results = QueryResults
-                    };
-                    _Cache.Add(SQL, cache);
-                    _CacheStatus.Add("Results added to cache");
-                }
-                else if(UseCache == true && _Cache.ContainsKey(SQL))
-                {
-                    _CacheStatus.Add("Error");
-                }
-            }
-
-            _Type_Referer.Add(Type.Query);
-
-            switch (Explanation)
-            {
-                case "SCHEMA-PRIVATE":
-                case "SCHEMA":
-                    break;
-                default:
-                    _Last_NonSchema_Query.Add(SQL);
-                    break;
-            }
-
-            _Last_Query.Add(SQL);
-            _Timer.Add(QueryTime.ElapsedMilliseconds);
-            _Explanation.Add(Explanation);
-            _User.Add(UserName);
-            Stack.Exit(StackPointer);
-			return QueryResults;
-		}
-
-        public class Cache
+        public class CacheEntry
         {
             public Primitive Results;
             /// <summary>
@@ -212,13 +109,16 @@ namespace DBM
             public int LifeTime;
         }
 
-        /// <summary>
-        /// Forces the invalidation of the query cache
-        /// </summary>
-        public static void InvalidateCache()
+        public static class Cache
         {
-            _Cache.Clear();
-            _Cache = new Dictionary<string, Cache>();
+            /// <summary>
+            /// Forces the invalidation of the query cache
+            /// </summary>
+            public static void Clear()
+            {
+                _Cache.Clear();
+                _Cache = new Dictionary<string, CacheEntry>();
+            }
         }
 
         /// <summary>
@@ -252,10 +152,9 @@ namespace DBM
 
         static void _TransactionRecord(string UserName, string DataBase, string SQL, string Type, string Reason)
         {
-            int Index = _DB_Name.IndexOf(DataBase);
-            if (Index >= 0) //Prevents Out of bound errors
+            if (DB_Info.ContainsKey(DataBase)) //Prevents Out of bound errors
             {
-                string URI = _DB_Path[Index];
+                string URI = _DBInfo[DataBase].Path;
                 
                 string _SQL = "INSERT INTO Transactions (USER,DB,SQL,TYPE,Reason,\"UTC DATE\",\"UTC TIME\",PATH,SNAME) VALUES('" + UserName + "','" + DataBase + "','" + SQL.Replace("'", "''") + "','" +Type+ "','" + Reason.Replace("'", "''") + "',Date(),TIME(),'" + URI + "','" + Path.GetDirectoryName(URI) + "');";
                 LDDataBase.Command(GlobalStatic.TransactionDB, _SQL);
@@ -278,7 +177,17 @@ namespace DBM
                     _Tables.Clear();
                     _Views.Clear();
                     _Indexes.Clear();
-                    Primitive Master_Schema_List = Query(Database,Sqlite.GetSchema(), null, true, Language.Localization["App"], "SCHEMA");
+
+                    QuerySettings QS = new QuerySettings
+                    {
+                        Database = Database,
+                        SQL = Sqlite.GetSchema(),
+                        FetchRecords = true,
+                        User = Language.Localization["App"],
+                        Explanation = "SCHEMA"
+                    };
+
+                    Primitive Master_Schema_List = Query(QS);
                     for (int i = 1; i <= Master_Schema_List.GetItemCount(); i++)
                     {
                         string Name = Master_Schema_List[i]["tbl_name"];
@@ -325,13 +234,20 @@ namespace DBM
             }
 
             EnginesMode EngineMode = Engine_Type(database);
-            string SchemaQuery;
             switch (EngineMode)
             {
                 case EnginesMode.SQLITE:
                     _Schema.Clear();
-                    SchemaQuery = Sqlite.GetColumnsOfTable(table);
-                    Primitive QSchema = Query(database, SchemaQuery, null, true, Language.Localization["App"], Language.Localization["SCHEMA PRIVATE"]);
+                    QuerySettings QS = new QuerySettings
+                    {
+                        Database = database,
+                        SQL = Sqlite.GetColumnsOfTable(table),
+                        FetchRecords = true,
+                        User = Language.Localization["App"],
+                        Explanation = Language.Localization["SCHEMA PRIVATE"]
+                    };
+
+                    Primitive QSchema = Query(QS);
                     _Schema = Sqlite.GetColumnsOfTable(QSchema);
                     break;
                 default:
@@ -380,12 +296,14 @@ namespace DBM
             }
         }
 
-        static EnginesMode Engine_Type(string Database) //Fetches Engine Mode/Type associated with the Database 
+        /// <summary>
+        /// Fetches Engine Mode/Type associated with the Database 
+        /// </summary>
+        static EnginesMode Engine_Type(string Database) 
         {
-            int Index = _DB_Name.IndexOf(Database);
-            if (Index >= 0)
+            if (DB_Info.ContainsKey(Database))
             {
-                return _DB_Engine[Index];
+                return _DBInfo[Database].Engine;
             }
             return EnginesMode.NONE;
         }
@@ -394,15 +312,30 @@ namespace DBM
         {
             AddToList(path, Name, ShortName, Mode);
             _DB_Hash.Add(Hash, Name);
+
+            var Info = _DBInfo[Name];
+            Info.Hash = Hash;
+            _DBInfo[Name] = Info;
         }
 
         static void AddToList(string path, string Name, string ShortName, EnginesMode Engine)
         {
             DatabaseShortname = ShortName;
-            _DB_Name.Add(Name);
-            _DB_Path.Add(path);
-            _DB_ShortName.Add(ShortName);
-            _DB_Engine.Add(Engine);
+            var Connections = new Connections
+            {
+                SQLITE = GetConnection(Name),
+            };
+
+            var Info = new DatabaseInfo
+            {
+                ID = Name,
+                Path = path,
+                ShortName = ShortName,
+                Engine = Engine,
+                Connections = Connections
+            };
+
+            _DBInfo.Add(Name, Info);
         }
     }
 }

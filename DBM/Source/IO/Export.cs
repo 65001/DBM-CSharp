@@ -4,19 +4,28 @@
 // Created : 3/14/2017 5:55 PM 2017314 17:55:44
 using System;
 using System.Text;
-using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Diagnostics;
-using Microsoft.SmallBasic.Library;
+using System.Collections.Generic;
+
 using LitDev;
+using Microsoft.SmallBasic.Library;
+
 namespace DBM
 {
     public static partial class Export
     {
         public static Primitive Generate2DArray(string Database, string SQL)
         {
-            return Engines.Query(Database, SQL, null, true, GlobalStatic.UserName, ""); 
+            Engines.QuerySettings QS = new Engines.QuerySettings
+            {
+                Database = Database,
+                SQL = SQL,
+                FetchRecords = true,
+                User = GlobalStatic.UserName
+            };
+            return Engines.Query(QS); 
         }
 
         public static Primitive Generate2DArrayFromTable(string Database, string Table)
@@ -82,21 +91,14 @@ namespace DBM
         public static void SQL(Primitive Data, Primitive Schema, Dictionary<string, bool> PK, Dictionary<string, string> Types, string TableName, string FilePath)
         {
             int StackReference = Stack.Add("Export.SQL");
-            Stopwatch SQL_Time = new Stopwatch();
-            SQL_Time.Start();
             string _SQL = SQL(Data, Schema, PK, Types, Engines.CurrentTable);
             System.IO.File.WriteAllText(FilePath, _SQL);
-            #if DEBUG
-                Console.WriteLine("SQL void time {0} ms", SQL_Time.ElapsedMilliseconds);
-            #endif
             Stack.Exit(StackReference);
         }
 
         public static string SQL(Primitive Data, Primitive Schema, Dictionary<string, bool> PK, Dictionary<string, string> Types, string TableName)
         {
             int StackPointer = Stack.Add("Export.SQL()");
-            Stopwatch SQL_Time = new Stopwatch();
-            SQL_Time.Start();
 
             if (string.IsNullOrWhiteSpace(Data))
             {
@@ -201,28 +203,16 @@ namespace DBM
         public static Dictionary<string, string> SQL_Fetch_Type(Primitive SchemaQuery, Primitive Schema, Engines.EnginesMode CurrentEngine)
         {
             int StackPointer = Stack.Add("Export.SQL_Fetch_Type");
-            Dictionary<string, string> _Dictionary = new Dictionary<string, string>();
+            Engines.IEngine engine;
             switch (CurrentEngine)
             {
                 case Engines.EnginesMode.SQLITE:
-                    int SchemaQueryCount = SchemaQuery.GetItemCount();
-                    int SchemaCount = Schema.GetItemCount();
-
-                    for (int i = 1; i <= SchemaQueryCount; i++)
-                    {
-                        for (int ii = 1; ii <= SchemaCount; ii++)
-                        {
-                            if (Schema[ii] == SchemaQuery[i]["name"])
-                            {
-                                _Dictionary.Add(SchemaQuery[i]["name"], SchemaQuery[i]["type"]);
-                            }
-                        }
-                    }
-                    Stack.Exit(StackPointer);
-                    return _Dictionary;
+                    engine = new Engines.SQLite();
+                    break;
                 default:
                     throw new PlatformNotSupportedException("Current Engine is not supported");
             }
+            return engine.GetTypes(SchemaQuery, Schema);
         }
 
         /// <summary>

@@ -6,6 +6,7 @@ using Microsoft.SmallBasic.Library;
 using LitDev;
 using System.Text;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace DBM
 {
@@ -26,7 +27,7 @@ namespace DBM
 
             string XMLPath = SettingsPath?.Replace(".txt", ".xml");
 
-            if (RestoreSettings == false && (System.IO.File.Exists(SettingsPath) || System.IO.File.Exists(XMLPath)) )
+            if (RestoreSettings == false && (System.IO.File.Exists(SettingsPath) || System.IO.File.Exists(XMLPath)))
             {
                 if (Path.GetExtension(SettingsPath) == ".txt") //Auto Converts Text file to an XML Settings file
                 {
@@ -76,7 +77,7 @@ namespace DBM
                 GlobalStatic.Settings["Deliminator"] = ",";
             }
 
-           
+
             if (GlobalStatic.CSVInterval <= 0)
             {
                 SetSettingsValue("Intervals", "CSV", 100);
@@ -136,12 +137,12 @@ namespace DBM
             Stack.Exit(StackPointer);
         }
 
-        static void SetSettingsValue<T>(string Key1,string Key2,T Value)
+        static void SetSettingsValue<T>(string Key1, string Key2, T Value)
         {
             Primitive Temp = GlobalStatic.Settings[Key1];
             Temp[Key2] = Value.ToString();
             GlobalStatic.Settings[Key1] = Temp;
-        }
+        } 
 
         /// <summary>
         /// Binds Primitive GlobalStatic.Settings to GlobalStatic.SettingKey. 
@@ -335,12 +336,37 @@ namespace DBM
             {
                 throw new ArgumentNullException("Transaction or Log Path is null");
             }
-            GlobalStatic.TransactionDB =Engines.Load.Sqlite(GlobalStatic.TransactionDBPath,"Transaction Log");
+
+            GlobalStatic.TransactionDB = Engines.Load.Sqlite(GlobalStatic.TransactionDBPath, "Transaction Log");
             GlobalStatic.LogDB = Engines.Load.Sqlite(GlobalStatic.LogDBpath, "Master Log");
-            
-			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQL, GlobalStatic.UserName, "Auto Creation Statements");
-			Engines.Command(GlobalStatic.LogDB, GlobalStatic.LOGSQLVIEW , GlobalStatic.UserName, "Auto Creation Statements");
-			Engines.Command(GlobalStatic.TransactionDB, GlobalStatic.TransactionsSQL , GlobalStatic.UserName, "Auto Creation Statements");
+
+            var LogCS = new Engines.CommandSettings()
+            {
+                    Database = GlobalStatic.LogDB, 
+                    SQL = GlobalStatic.LOGSQL,
+                    User = GlobalStatic.UserName,
+                    Explanation = "Auto Creation Statements"
+            };
+
+            var LogView = new Engines.CommandSettings()
+            {
+                Database = GlobalStatic.LogDB,
+                SQL = GlobalStatic.LOGSQLVIEW,
+                User = GlobalStatic.UserName,
+                Explanation = "Auto Creation Statements"
+            };
+
+            var Transactions = new Engines.CommandSettings()
+            {
+                Database = GlobalStatic.TransactionDB,
+                SQL = GlobalStatic.TransactionsSQL,
+                User = GlobalStatic.UserName,
+                Explanation = "Auto Creation Statements"
+            };
+
+            Engines.Command(LogCS);
+            Engines.Command(LogView);
+            Engines.Command(Transactions);
             Stack.Exit(StackPointer);
         }
 	}

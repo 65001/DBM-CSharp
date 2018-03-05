@@ -70,7 +70,7 @@ namespace DBM
             }
             else if (Item == Language.Localization["Define New Table"])
             {
-                Engines.InvalidateCache();
+                Engines.Cache.Clear();
                 UI.CreateTableUI();
             }
             else if (Item == Language.Localization["New in Memory Db"])
@@ -83,7 +83,17 @@ namespace DBM
             {
                 string Name = string.Format("\"Statistics of {0}\"", Engines.CurrentTable.SanitizeFieldName());
                 Engines.Transform.CreateStatisticsTable(Engines.CurrentDatabase, Engines.CurrentTable, Name, Export.GenerateSchemaFromLastQuery());
-                Engines.Query(Engines.CurrentDatabase, $"SELECT * FROM {Name};", GlobalStatic.ListView, false, GlobalStatic.UserName, Language.Localization["Statistics Page"]);
+
+                Engines.QuerySettings QS = new Engines.QuerySettings
+                {
+                    Database = Engines.CurrentDatabase,
+                    SQL = $"SELECT * FROM {Name};",
+                    ListView = GlobalStatic.ListView,
+                    User = GlobalStatic.UserName,
+                    Explanation = Language.Localization["Statistics Page"]
+                };
+
+                Engines.Query(QS);
 
                 Engines.GetSchema(Engines.CurrentDatabase);
                 Engines.SetDefaultTable(Name.SanitizeFieldName());
@@ -113,7 +123,16 @@ namespace DBM
                 }
                 if (!string.IsNullOrEmpty(Engines.CurrentTable))
                 {
-                    Engines.Query(Engines.CurrentDatabase, "SELECT * FROM " + Engines.CurrentTable + ";", GlobalStatic.ListView, false, Language.Localization["App"], Language.Localization["View Function"]);
+                    Engines.QuerySettings QS = new Engines.QuerySettings
+                    {
+                        Database = Engines.CurrentDatabase,
+                        SQL = $"SELECT * FROM {Engines.CurrentTable};",
+                        ListView = GlobalStatic.ListView,
+                        User = Language.Localization["App"],
+                        Explanation = Language.Localization["View Function"]
+                    };
+
+                    Engines.Query(QS);
                 }
                 Stack.Exit(StackPointer);
                 return;
@@ -256,7 +275,18 @@ namespace DBM
                     switch (Engines.CurrentEngine)
                     {
                         case Engines.EnginesMode.SQLITE:
-                            SchemaQuery = Engines.Query(Engines.CurrentDatabase, "PRAGMA table_info(" + Engines.CurrentTable.SanitizeFieldName() + ");", null, true, GlobalStatic.UserName, "SCHEMA");
+                            Engines.SQLite SQLite = new Engines.SQLite();
+
+                            Engines.QuerySettings QS = new Engines.QuerySettings
+                            {
+                                Database = Engines.CurrentDatabase,
+                                SQL = SQLite.GetColumnsOfTable(Engines.CurrentTable),
+                                FetchRecords = true,
+                                User = GlobalStatic.UserName,
+                                Explanation = "SCHEMA"
+                            };
+
+                            SchemaQuery = Engines.Query(QS);
                             break;
                         default:
                             throw new PlatformNotSupportedException("Currently database is not supported");
@@ -329,10 +359,33 @@ namespace DBM
                 Events.LogMessagePopUp(Language.Localization["Error Generic"], Language.Localization["UI"], "Export.Wiki Markup");//TODO Localize
                 Stack.Exit(StackPointer);
             }
+            else if (Item == "Excel") //TODO Localize
+            {
+                string Path = LDDialogs.SaveFile("xlsx", null);
+                if (!string.IsNullOrWhiteSpace(Path))
+                {
+                    Primitive Data = Export.Generate2DArrayFromLastQuery();
+                    //Export.Excel(Data, Export.GenerateSchemaFromQueryData(Data), Engines.CurrentTable, Path);
+                    Events.LogMessagePopUp("Excel export is now complete", Language.Localization["Export"], Language.Localization["Success"]); //TODO Localize
+                    Stack.Exit(StackPointer);
+                    return;
+                }
+                Events.LogMessagePopUp(Language.Localization["Error Generic"], Language.Localization["UI"], "Export.Excel Markup");//TODO Localize
+                Stack.Exit(StackPointer);
+            }
             //Settings
             else if (Item == Language.Localization["About"])
             {
-                Primitive About_Data = Engines.Query(Engines.CurrentDatabase, "SELECT SQLITE_VERSION(),sqlite_source_id();", null, true, GlobalStatic.UserName, Language.Localization["User Requested"] + ":" + Language.Localization["App"]);
+                Engines.QuerySettings QS = new Engines.QuerySettings
+                {
+                    Database = Engines.CurrentDatabase,
+                    SQL = "SELECT SQLITE_VERSION(),sqlite_source_id();",
+                    FetchRecords = true,
+                    User = GlobalStatic.UserName,
+                    Explanation = Language.Localization["User Requested"] + ":" + Language.Localization["App"]
+                };
+
+                Primitive About_Data = Engines.Query(QS);
                 string About_Msg = string.Format("DBM C# is a Database Mangement Program developed by Abhishek Sathiabalan. (C){0}. All rights reserved.\n\nYou are running : {1} v{2}\n\n", GlobalStatic.Copyright, GlobalStatic.ProductID, GlobalStatic.VersionID);
                 About_Msg += string.Format("SQLite Version : {0}\nSQLITE Source ID : {1}", About_Data[1]["SQLITE_VERSION()"], About_Data[1]["sqlite_source_id()"]);
                 Events.LogMessagePopUp(About_Msg, "Debug", "About");//DO NOT LOCALIZE
@@ -361,7 +414,7 @@ namespace DBM
             }
             else if (Item == Language.Localization["Check for Updates"])
             {
-                Utilities.Updater.CheckForUpdates(GlobalStatic.UpdaterDBpath);
+                Updater.CheckForUpdates(GlobalStatic.UpdaterDBpath);
                 Stack.Exit(StackPointer);
                 return;
             }
@@ -530,18 +583,42 @@ namespace DBM
                             break;
                     }
                     string Query = Engines.GenerateQuery(GQS, Engines.CurrentTable.SanitizeFieldName());
-                    Engines.Query(Engines.CurrentDatabase, Query, GlobalStatic.ListView, false, GlobalStatic.UserName, "Auto Generated Query on behalf of " + GlobalStatic.UserName);
+                    Engines.QuerySettings QS = new Engines.QuerySettings
+                    {
+                        Database = Engines.CurrentDatabase,
+                        SQL = Query,
+                        ListView = GlobalStatic.ListView,
+                        User = GlobalStatic.UserName,
+                        Explanation = "Auto Generated Query on behalf of " + GlobalStatic.UserName
+                    };
+
+                    Engines.Query(QS);
 
                 }
                 else if (LastButton == UI.Buttons["Query"])
                 {
-                    Engines.InvalidateCache();
-                    Engines.Query(Engines.CurrentDatabase, Controls.GetTextBoxText(UI.TextBox["CustomQuery"]), GlobalStatic.ListView, false, GlobalStatic.UserName, Language.Localization["User Requested"]);
+                    Engines.Cache.Clear();
+                    Engines.QuerySettings QS = new Engines.QuerySettings
+                    {
+                        Database = Engines.CurrentDatabase,
+                        SQL = Controls.GetTextBoxText(UI.TextBox["CustomQuery"]),
+                        ListView = GlobalStatic.ListView,
+                        User = GlobalStatic.UserName,
+                        Explanation = Language.Localization["User Requested"]
+                    };
+                    Engines.Query(QS);
                 }
                 else if (LastButton == UI.Buttons["Command"]) //Custom Command
                 {
-                    Engines.InvalidateCache();
-                    Engines.Command(Engines.CurrentDatabase, Controls.GetTextBoxText(UI.TextBox["CustomQuery"]), GlobalStatic.UserName, Language.Localization["User Requested"]);
+                    Engines.Cache.Clear();
+                    var CS = new Engines.CommandSettings()
+                    {
+                        Database = Engines.CurrentDatabase,
+                        SQL = Controls.GetTextBoxText(UI.TextBox["CustomQuery"]),
+                        User = GlobalStatic.UserName,
+                        Explanation = Language.Localization["User Requested"]
+                    };
+                    Engines.Command(CS);
                 }
             }
             catch (KeyNotFoundException)

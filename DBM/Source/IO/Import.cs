@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 namespace DBM
 {
-	public static class Import
+	public static partial class Import
 	{
 		static string Data; //Refers to an Instance of LDFASTARRAY
 		static List<int> CSV_Length = new List<int>();
@@ -197,7 +197,7 @@ namespace DBM
             int StackPointer = Stack.Add($"Import.SQL({database},{Path})");
             StreamReader SR = new StreamReader(Path);
 
-           var cnn = Engines.GetConnection(database);
+           var cnn = Engines.DB_Info[database].Connections.SQLITE;
            var cmd = new SQLiteCommand(cnn);
 
             SQLiteTransaction transaction;

@@ -89,33 +89,36 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Source\Engines\Command.cs" />
     <Compile Include="Source\Engines\GQ.cs" />
+    <Compile Include="Source\Engines\Query.cs" />
     <Compile Include="Source\UI\Chart UI.cs" />
     <Compile Include="Source\UI\DBM.cs">
     </Compile>
     <Compile Include="Source\Engines\Bindings and Custom Functions.cs" />
     <Compile Include="Source\Engines\Emulator.cs" />
     <Compile Include="Source\Engines\Engine.Misc.cs" />
-    <Compile Include="Source\Engines\Generic Engines.cs" />
-    <Compile Include="Source\GlobalSuppressions.cs" />
+    <Compile Include="Source\Engines\IEngine.cs" />
     <Compile Include="Source\Engines\Engines.cs">
     </Compile>
-    <Compile Include="Source\Settings.cs">
+    <Compile Include="Source\Utilities\Settings.cs">
     </Compile>
-    <Compile Include="Source\GlobalStatic.cs">
+    <Compile Include="Source\Utilities\GlobalStatic.cs">
     </Compile>
     <Compile Include="Source\UI\EULA.cs">
     </Compile>
     <Compile Include="Source\UI\Menu.cs" />
     <Compile Include="Source\UI\UI Settings.cs" />
+    <Compile Include="Source\Utilities\Transform.cs" />
+    <Compile Include="Source\Utilities\Updater.cs" />
     <Compile Include="Source\Utilities\Utilities.cs">
     </Compile>
-    <Compile Include="Source\Handlers.cs">
+    <Compile Include="Source\Utilities\Handlers.cs">
     </Compile>
     <Compile Include="Source\IO\Import.cs" />
     <Compile Include="Source\IO\Export.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Utilities\Localizer.cs" />
+    <Compile Include="Source\Utilities\Language.cs" />
     <Compile Include="Source\Utilities\Stack.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,7 +135,9 @@
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -167,6 +172,9 @@
       <Project>{d96fc270-5d88-4dea-b8e7-89bc12c768ad}</Project>
       <Name>Google Charts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

@@ -8,7 +8,7 @@ namespace DBM
 {
     public static partial class Engines
     {
-        public class GenerateQuerySettings
+        public struct GenerateQuerySettings
         {
             public bool Search;
             public bool StrictSearch;
@@ -42,11 +42,6 @@ namespace DBM
         {
             int StackReference = Stack.Add("Engines.GenerateQuery()");
             if (string.IsNullOrEmpty(CurrentTable))
-            {
-                throw new ArgumentNullException();
-            }
-
-            if (GQS == null)
             {
                 throw new ArgumentNullException();
             }

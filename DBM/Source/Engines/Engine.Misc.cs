@@ -48,6 +48,7 @@ namespace DBM
                 //MAKE SURE The CurrentMode is always currently changed.
                 int StackPointer = Stack.Add($"Engines.Load.DB({Mode},{ShortName})");
                 string HashCode = Data.ToPrimitiveArray();
+                
                 //If DB is already in the list...
                 if (_DB_Hash.ContainsKey(HashCode))
                 {
@@ -76,15 +77,21 @@ namespace DBM
                         Stack.Exit(StackPointer);
                         return CurrentDatabase;
                     case EnginesMode.SQLITE:
+                        //Add Custom Password handling code here
+                        if (Data.ContainsKey("Password"))
+                        { 
+                            LDDataBase.Connection = $"Data Source{Data["URI"]};Password={Data["Password"]}";
+                        }
 
                         if (Directory.Exists(Path.GetDirectoryName(Data["URI"])))
                         {
                             string Database = LDDataBase.ConnectSQLite(Data["URI"]);
                             AddToList(Data["URI"], Database, ShortName, EnginesMode.SQLITE);
+
                             Settings.Save();
                             CurrentDatabase = Database;
                             _DB_Hash.Add(HashCode, CurrentDatabase);
-                            GetConnection(Database).AutoBind();
+                            DB_Info[Database].Connections.SQLITE.Bind();
                             Stack.Exit(StackPointer);
                             return Database;
                         }
@@ -119,13 +126,7 @@ namespace DBM
 
             public static string Sqlite(string FilePath)
             {
-                int StackPointer = Stack.Add($"Engines.Load.Sqlite({FilePath})");
-                Dictionary<string, string> _Data = new Dictionary<string, string>
-                {
-                    ["URI"] = FilePath
-                };
-                Stack.Exit(StackPointer);
-                return DB(EnginesMode.SQLITE, _Data);
+                return Sqlite(FilePath, null);
             }
 
             public static string Sqlite(string FilePath, string ShortName)
@@ -136,6 +137,11 @@ namespace DBM
                     ["URI"] = FilePath
                 };
                 Stack.Exit(StackPointer);
+
+                if (string.IsNullOrWhiteSpace(ShortName))
+                {
+                    return DB(EnginesMode.SQLITE, _Data);
+                }
                 return DB(EnginesMode.SQLITE, _Data, ShortName);
             }
 
@@ -202,7 +208,7 @@ namespace DBM
             {
                 int StackPointer = Stack.Add($"Engines.Transform.CreateStatisticsPage({Database},{Table},{StatTableName})");
                 StringBuilder SQL = new StringBuilder();
-                switch (Engines.DB_Engine[Engines.DB_Name.IndexOf(Database)])
+                switch (DB_Info[Database].Engine)
                 {
                     case EnginesMode.SQLITE:
                         SQL.AppendFormat("DROP TABLE IF EXISTS {0};", StatTableName);
@@ -212,7 +218,14 @@ namespace DBM
                             string Row = "\"" + Schema[i] + "\"";
                             SQL.AppendFormat("INSERT INTO {0} Select '{1}',SUM({1}),AVG({1}),COUNT({1}),COUNT(DISTINCT {1}),MAX({1}),MIN({1}),typeOf({1}),Length({1}),DATE(),TIME() FROM {2};;", StatTableName, Row, Table);
                         }
-                        Command(Database, SQL.ToString(), Language.Localization["Application"] + ":" + Language.Localization["User Requested"] + ":" + Language.Localization["Statistics Page"]);
+                        var CS = new CommandSettings()
+                        {
+                            Database = Database,
+                            SQL = SQL.ToString(),
+                            User = GlobalStatic.UserName,
+                            Explanation = Language.Localization["Application"] + ":" + Language.Localization["User Requested"] + ":" + Language.Localization["Statistics Page"]
+                        };
+                        Command(CS);
                         break;
                 }
                 Stack.Exit(StackPointer);
@@ -222,22 +235,59 @@ namespace DBM
         //Read Only Collections of Private Data
         public static ReadOnlyCollection<string> DB_Name
         {
-            get { return _DB_Name.AsReadOnly(); }
+            get
+            {
+                var Name = new List<string>();
+                foreach (KeyValuePair<string,DatabaseInfo> kv in DB_Info)
+                {
+                    Name.Add(kv.Value.ID);
+                }
+                return Name.AsReadOnly();
+            }
         }
 
-        public static ReadOnlyCollection<string> DB_Path
+        public static IReadOnlyList<string> DB_Path
         {
-            get { return _DB_Path.AsReadOnly(); }
+            get
+            {
+                var Path = new List<string>();
+                foreach (KeyValuePair<string, DatabaseInfo> kv in DB_Info)
+                {
+                    Path.Add(kv.Value.Path);
+                }
+                return Path.AsReadOnly();
+            }
         }
 
-        public static ReadOnlyCollection<string> DB_ShortName
+        public static IReadOnlyList<string> DB_ShortName
         {
-            get { return _DB_ShortName.AsReadOnly(); }
+            get
+            {
+                var DisplayName = new List<string>();
+                foreach (KeyValuePair<string, DatabaseInfo> kv in DB_Info)
+                {
+                    DisplayName.Add(kv.Value.ShortName);
+                }
+                return DisplayName.AsReadOnly();
+            }
         }
 
-        public static ReadOnlyCollection<EnginesMode> DB_Engine
+        public static IReadOnlyList<EnginesMode> DB_Engine
         {
-            get { return _DB_Engine.AsReadOnly(); }
+            get
+            {
+                var Engine = new List<EnginesMode>();
+                foreach (KeyValuePair<string, DatabaseInfo> kv in DB_Info)
+                {
+                    Engine.Add(kv.Value.Engine);
+                }
+                return Engine.AsReadOnly();
+            }
+        }
+
+        public static IReadOnlyDictionary<string,DatabaseInfo> DB_Info
+        {
+            get { return _DBInfo; }
         }
 
         public static IReadOnlyList<string> Tables

@@ -75,7 +75,6 @@ namespace DBM
             MenuList["-"] = Language.Localization["Settings"];
 
             Stack.Exit(StackReference);
-            //IconList[Language.Localization["Settings Editor"]] = LDImage.LoadSVG( GlobalStatic.AssetPath + "\\Images\\settings.svg");
         }
 
         public static void MainMenu()
@@ -96,6 +95,7 @@ namespace DBM
             int UIx = GlobalStatic.Listview_Width - 380;
 
             string Menu = LDControls.AddMenu(Desktop.Width * 1.5, 30, MenuList, IconList, null);
+
             Shapes.Move(Shapes.AddText(Language.Localization["Sort"] + ":"), UIx, 1);
 
             int TextWidth = LDText.GetHeight(Language.Localization["Sort"] + ":");

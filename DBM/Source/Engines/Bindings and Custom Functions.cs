@@ -4,7 +4,6 @@ using System.Linq;
 using System.Data.SQLite;
 using LitDev;
 
-
 namespace DBM
 {
     public partial class Engines
@@ -21,7 +20,7 @@ namespace DBM
             connection.BindFunction(attributes[0], function);
         }
 
-        public static void AutoBind(this SQLiteConnection connection)
+        public static void Bind(this SQLiteConnection connection)
         {
             for (int i = 0; i < FunctionList.Count; i++)
             {
@@ -46,30 +45,33 @@ namespace DBM
         /// </summary>
         public static void CreateBindList()
         {
-            AddToBindList(new CustomFunctions.RegEx());
+            int StackPointer = Stack.Add("Engines.CreateBindList()");
+            //Math Functions
             AddToBindList(new CustomFunctions.Power());
             AddToBindList(new CustomFunctions.Sqrt());
             AddToBindList(new CustomFunctions.e());
             AddToBindList(new CustomFunctions.PI());
             AddToBindList(new CustomFunctions.Log());
-
             AddToBindList(new CustomFunctions.Sin());
             AddToBindList(new CustomFunctions.Sinh());
             AddToBindList(new CustomFunctions.Cos());
             AddToBindList(new CustomFunctions.Cosh());
             AddToBindList(new CustomFunctions.Tan());
             AddToBindList(new CustomFunctions.Tanh());
+            //Crypthological Functions
             AddToBindList(new CustomFunctions.Encrypt());
             AddToBindList(new CustomFunctions.Decrypt());
             AddToBindList(new CustomFunctions.Hash());
+            //Misc Functions
             AddToBindList(new CustomFunctions.Translate());
+            AddToBindList(new CustomFunctions.RegEx());
+            Stack.Exit(StackPointer);
         }
 
         public static SQLiteConnection GetConnection(string DataBase)
         {
             for (int i = 0; i < LDDataBase.dataBases.Count; i++)
             {
-                
                 if (DataBase == LDDataBase.dataBases[i].name)
                 {
                     return LDDataBase.dataBases[i].cnnSQLite;

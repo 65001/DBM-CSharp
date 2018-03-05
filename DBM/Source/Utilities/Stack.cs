@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DBM
 {
     public static class Stack
     {
-        public class StackEntry
+        public struct StackEntry
         {
             public string Trace;
             public DateTime StartTime;
@@ -49,8 +45,7 @@ namespace DBM
         {
             for (int i = 0; i < StackEntries.Count; i++)
             {
-                var SE = StackEntries[i];
-                Console.WriteLine(SE.Trace);
+                Console.WriteLine(StackEntries[i].Trace);
             }
         }
     }

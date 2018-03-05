@@ -36,11 +36,6 @@ namespace Unit_Testing
     [TestFixture]
     class GQ
     {
-        [Test]
-        public void NullGQSTest()
-        {
-            Assert.That(() => DBM.Engines.GenerateQuery(null, "Test"), Throws.TypeOf<ArgumentNullException>());
-        }
 
         [Test]
         public void NullTableTest()
