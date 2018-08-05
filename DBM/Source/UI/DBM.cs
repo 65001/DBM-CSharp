@@ -182,7 +182,7 @@ namespace DBM
         {
             int StackPointer = Stack.Add("UI.StartupGUI()");
             ClearWindow();
-            LDScrollBars.Add(GlobalStatic.Listview_Width + 200, GlobalStatic.Listview_Height);
+            LDScrollBars.Add(GlobalStatic.Listview_Width + 370, GlobalStatic.Listview_Height);
             LDGraphicsWindow.State = 2;
             PreMainMenu();
             MainMenu();

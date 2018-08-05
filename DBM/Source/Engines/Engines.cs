@@ -205,6 +205,7 @@ namespace DBM
                         }
                     }
                     break;
+                    
             }
 
             try
@@ -220,6 +221,8 @@ namespace DBM
             {
                 GetColumnsofTable(Database, CurrentTable);
             }
+
+            _Views.Sort();
             OnSchemaChange?.Invoke(null, EventArgs.Empty);
             Stack.Exit(StackPointer);
         }
@@ -255,6 +258,7 @@ namespace DBM
             }
             Schema = _Schema.ToPrimitiveArray();
             OnGetColumnsofTable?.Invoke(null, EventArgs.Empty);
+            
             Stack.Exit(StackPointer);
         }
 
@@ -281,6 +285,7 @@ namespace DBM
                 }
                 Events.LogMessagePopUp("Table does not exist in context", "Table does not exist in context", "Error", Language.Localization["System"]);
             Stack.Exit(StackPointer);
+            
         }
 
         public static List<string> Functions(EnginesMode Mode)
